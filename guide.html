@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f3f9e">
+<link rel="icon" type="image/png" href="icon-192.png">
+<title>راه‌اندازی واژه‌یار</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: RTL wizard. Step list on the right (desktop) or collapsed on top (phone);
+   one step at a time on the left, each with a left-to-right "screen" picture of GitHub. */
+:root{
+  --bg:#f3f5fa; --surface:#ffffff; --surface-2:#eaeef7; --ink:#141c33; --muted:#59647f; --line:#d8dfec;
+  --cobalt:#1f3f9e; --cobalt-ink:#ffffff; --cobalt-soft:#e2e8f8; --cobalt-line:#9fb0e0;
+  --mark:#d9601f; --mark-soft:#fde9dc;
+  --good:#1b7547; --good-soft:#dff1e7; --warn-soft:#f8edd3; --bad-soft:#f9e1de;
+  --scr:#ffffff; --scr-2:#f6f8fa; --scr-line:#d1d9e0; --scr-ink:#1f2328; --scr-muted:#59636e; --scr-link:#0969da;
+  --gh-green:#1f883d; --gh-green-ink:#ffffff;
+  --f-fa:"Vazirmatn",Tahoma,"Segoe UI",system-ui,sans-serif;
+  --f-ui:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --f-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1223; --surface:#141c32; --surface-2:#1b2540; --ink:#e6ebf7; --muted:#9aa5c2; --line:#28334f;
+    --cobalt:#8ea6ff; --cobalt-ink:#0c1223; --cobalt-soft:#1d2a52; --cobalt-line:#3a4d8c;
+    --mark:#ff9a5a; --mark-soft:#3b2416;
+    --good:#5fcb94; --good-soft:#163527; --warn-soft:#3a2e12; --bad-soft:#3e1d1b;
+    --scr:#0d1117; --scr-2:#151b23; --scr-line:#3d444d; --scr-ink:#f0f6fc; --scr-muted:#9198a1; --scr-link:#4493f8;
+    --gh-green:#238636; --gh-green-ink:#ffffff;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1223; --surface:#141c32; --surface-2:#1b2540; --ink:#e6ebf7; --muted:#9aa5c2; --line:#28334f;
+  --cobalt:#8ea6ff; --cobalt-ink:#0c1223; --cobalt-soft:#1d2a52; --cobalt-line:#3a4d8c;
+  --mark:#ff9a5a; --mark-soft:#3b2416;
+  --good:#5fcb94; --good-soft:#163527; --warn-soft:#3a2e12; --bad-soft:#3e1d1b;
+  --scr:#0d1117; --scr-2:#151b23; --scr-line:#3d444d; --scr-ink:#f0f6fc; --scr-muted:#9198a1; --scr-link:#4493f8;
+  --gh-green:#238636; --gh-green-ink:#ffffff;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font-family:var(--f-fa);font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+a{color:var(--cobalt)}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;border-radius:8px}
+
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-inline:clamp(16px,4vw,40px)}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.top h1{margin:0;font-size:28px;font-weight:800;line-height:1.4}
+.top p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.meter{min-width:220px;flex:0 1 320px}
+.meter-txt{font-size:13px;color:var(--muted);display:flex;justify-content:space-between}
+.meter-bar{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.meter-bar span{display:block;height:100%;background:var(--cobalt);transition:width .3s}
+
+.grid{display:grid;grid-template-columns:280px minmax(0,1fr);gap:22px;align-items:start}
+.steps{position:sticky;top:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px;max-height:calc(100vh - 32px);overflow:auto}
+.steps h2{font-size:13px;color:var(--muted);margin:0 8px 8px;font-weight:700}
+.phase{margin-bottom:6px}
+.phase-name{font-size:12.5px;font-weight:800;color:var(--cobalt);padding:6px 8px 2px}
+.step-link{display:flex;align-items:flex-start;gap:8px;width:100%;text-align:start;border:0;background:none;padding:5px 8px;border-radius:8px;cursor:pointer;color:var(--muted);font-size:14px;line-height:1.6}
+.step-link:hover{background:var(--surface-2);color:var(--ink)}
+.step-link[aria-current="step"]{background:var(--cobalt-soft);color:var(--ink);font-weight:700}
+.step-link .n{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:11.5px;margin-top:1px}
+.step-link.done .n{background:var(--good);border-color:var(--good);color:var(--surface)}
+.step-link[aria-current="step"] .n{border-color:var(--cobalt);color:var(--cobalt)}
+.steps-mobile{display:none}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,3vw,30px);min-width:0}
+.eyebrow{font-size:13.5px;color:var(--muted);font-weight:600}
+.eyebrow b{color:var(--cobalt)}
+.card h2{font-size:24px;font-weight:800;margin:2px 0 16px;line-height:1.5;text-wrap:balance}
+.do{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:12px}
+.do li{display:flex;gap:12px;align-items:flex-start}
+.do .num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--mark);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;margin-top:2px}
+.do .num.plain{background:var(--surface-2);color:var(--muted)}
+.do .txt{flex:1;min-width:0}
+bdi.k{display:inline-block;direction:ltr;unicode-bidi:isolate;font-family:var(--f-ui);font-size:.86em;font-weight:600;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:0 .45em;line-height:1.7;margin-inline:.1em;max-width:100%;overflow-wrap:anywhere}
+.copy{display:flex;align-items:stretch;gap:8px;margin-top:8px;max-width:520px}
+.copy code{flex:1;min-width:0;direction:ltr;text-align:left;font-family:var(--f-mono);font-size:15px;padding:8px 12px;border-radius:9px;background:var(--surface-2);border:1px dashed var(--cobalt-line);overflow-wrap:anywhere}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.btn:hover{border-color:var(--cobalt-line)}
+.btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--cobalt-ink)}
+.btn.sm{padding:6px 12px;font-size:13.5px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.open-link{margin-top:8px}
+.field{display:flex;gap:8px;margin-top:8px;max-width:420px}
+.field input{flex:1;min-width:0;padding:8px 12px;border-radius:9px;border:1px solid var(--line);background:var(--surface);direction:ltr;text-align:left}
+
+.note{border-radius:12px;padding:12px 16px;font-size:15px;margin:0 0 14px;display:flex;gap:10px}
+.note b{flex:none}
+.note.tip{background:var(--cobalt-soft)}
+.note.warn{background:var(--warn-soft)}
+.note.stop{background:var(--bad-soft)}
+
+.scr-label{font-size:13px;color:var(--muted);margin:22px 0 8px;font-weight:700}
+.screen{direction:ltr;text-align:left;border:1px solid var(--scr-line);border-radius:12px;overflow:hidden;background:var(--scr);color:var(--scr-ink);font-family:var(--f-ui);font-size:14px;line-height:1.5;box-shadow:0 8px 28px rgba(20,28,51,.08)}
+.screen.rtl-app .body{direction:rtl;text-align:right;font-family:var(--f-fa)}
+.chrome{display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--scr-2);border-bottom:1px solid var(--scr-line)}
+.chrome i{width:10px;height:10px;border-radius:50%;background:var(--scr-line);display:block}
+.chrome .url{margin-left:8px;flex:1;min-width:0;background:var(--scr);border:1px solid var(--scr-line);border-radius:99px;padding:2px 12px;font-size:12.5px;color:var(--scr-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chrome .ins{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;color:var(--scr-muted)}
+.body{padding:18px;overflow-x:auto}
+.s-h{font-size:18px;font-weight:600;margin:0 0 12px}
+.s-sub{font-size:12px;color:var(--scr-muted);font-weight:600;margin:12px 0 6px;text-transform:none}
+.s-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.s-lbl{font-size:13px;font-weight:600;min-width:150px}
+.s-in{border:1px solid var(--scr-line);border-radius:6px;padding:4px 10px;background:var(--scr);min-width:160px;font-size:13.5px}
+.s-dd{border:1px solid var(--scr-line);border-radius:6px;padding:4px 10px;background:var(--scr-2);font-size:13.5px;font-weight:600}
+.s-dd::after{content:" ▾";color:var(--scr-muted)}
+.s-btn{display:inline-block;border:1px solid var(--scr-line);border-radius:6px;padding:4px 12px;background:var(--scr-2);font-size:13.5px;font-weight:600}
+.s-btn.green{background:var(--gh-green);border-color:var(--gh-green);color:var(--gh-green-ink)}
+.s-muted{color:var(--scr-muted);font-size:12.5px}
+.s-menu{display:inline-flex;flex-direction:column;border:1px solid var(--scr-line);border-radius:8px;background:var(--scr);padding:4px;box-shadow:0 6px 18px rgba(0,0,0,.12);font-size:13.5px}
+.s-menu span{padding:4px 10px;border-radius:5px}
+.s-tabs{display:flex;gap:16px;border-bottom:1px solid var(--scr-line);padding-bottom:8px;margin-bottom:12px;font-size:13.5px;flex-wrap:wrap}
+.s-side{display:flex;flex-direction:column;gap:2px;font-size:13.5px;min-width:180px}
+.s-side span{padding:3px 8px;border-radius:6px}
+.s-side .grp{font-size:11.5px;color:var(--scr-muted);font-weight:600;padding-top:8px}
+.s-cols{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+.s-drop{border:2px dashed var(--scr-line);border-radius:8px;padding:26px;text-align:center;color:var(--scr-muted)}
+.s-files{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.s-files span{border:1px solid var(--scr-line);border-radius:6px;padding:2px 8px;font-size:12.5px;background:var(--scr-2)}
+.s-banner{border:1px solid var(--gh-green);background:color-mix(in srgb,var(--gh-green) 10%,var(--scr));border-radius:6px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.s-toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.s-toggle i{width:30px;height:16px;border-radius:99px;background:var(--gh-green);position:relative;display:inline-block}
+.s-toggle i::after{content:"";position:absolute;top:2px;right:2px;width:12px;height:12px;border-radius:50%;background:#fff}
+.s-radio{display:flex;flex-direction:column;gap:4px;font-size:13.5px}
+.s-radio span::before{content:"○ ";color:var(--scr-muted)}
+.s-radio span.on::before{content:"◉ ";color:var(--scr-link)}
+.s-file{display:flex;align-items:center;gap:8px;padding:4px 6px;font-size:13.5px}
+.s-file::before{content:"";width:14px;height:16px;border:1.5px solid var(--scr-muted);border-radius:2px;flex:none}
+.s-file.folder::before{width:18px;height:13px;border-radius:2px;background:var(--scr-2)}
+.s-arrow{color:var(--scr-muted);font-size:20px;align-self:center}
+/* highlight: the thing to click */
+.hl{position:relative;outline:3px solid var(--mark);outline-offset:3px;border-radius:6px}
+.hl::after{content:attr(data-n);position:absolute;top:-14px;right:-14px;width:24px;height:24px;border-radius:50%;background:var(--mark);color:#fff;font:800 13px/24px var(--f-fa);text-align:center;box-shadow:0 0 0 3px var(--scr)}
+@media (prefers-reduced-motion:no-preference){.hl{animation:glow 1.6s ease-in-out infinite}}
+@keyframes glow{50%{outline-color:color-mix(in srgb,var(--mark) 45%,transparent)}}
+
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:26px;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap}
+.stuck{margin-top:14px;font-size:14px;color:var(--muted)}
+.done-card{text-align:center;padding:40px 24px}
+.done-card .big{font-size:44px;font-weight:800;color:var(--good);line-height:1.2}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .steps{display:none}
+  .steps-mobile{display:block;margin-bottom:14px}
+  .steps-mobile summary{cursor:pointer;font-weight:700;padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+  .steps-mobile[open] .steps{display:block;position:static;max-height:none;margin-top:8px}
+}
+@media (max-width:520px){
+  .top h1{font-size:23px}
+  .card h2{font-size:20px}
+  .s-lbl{min-width:0;width:100%}
+  .nav .btn{flex:1}
+}
+</style>
+</head>
+<body>
+<div class="wrap" dir="rtl">
+  <header class="top">
+    <div>
+      <h1>راه‌اندازی واژه‌یار</h1>
+      <p>یک بار، حدود ۱۵ دقیقه، بدون ترمینال. هر گام را انجام دهید و بعد «انجام دادم» را بزنید.</p>
+    </div>
+    <div class="meter"><div class="meter-txt"><span id="mTxt"></span><span id="mPct"></span></div><div class="meter-bar"><span id="mBar"></span></div></div>
+  </header>
+  <details class="steps-mobile" id="mobList"><summary>فهرست همهٔ گام‌ها</summary><nav class="steps" id="stepsM" aria-label="گام‌ها"></nav></details>
+  <div class="grid">
+    <nav class="steps" id="stepsD" aria-label="گام‌ها"><h2>گام‌ها</h2></nav>
+    <main class="card" id="card" aria-live="polite"></main>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+document.documentElement.lang='fa';document.documentElement.dir='rtl';
+const $=s=>document.querySelector(s);
+const fa=n=>Number(n).toLocaleString('fa-IR');
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='vazheyar.guide.v1';
+let st={i:0,done:[],user:''};
+try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s)st=Object.assign(st,s)}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const U=()=>st.user||'your-username';
+const site=()=>'https://'+U().toLowerCase()+'.github.io/vazheyar/';
+
+/* building blocks */
+const k=t=>`<bdi class="k">${esc(t)}</bdi>`;
+const hl=(n,html,tag='span')=>`<${tag} class="hl" data-n="${fa(n)}">${html}</${tag}>`;
+const win=(url,inner,cls='')=>`<div class="screen ${cls}"><div class="chrome"><i></i><i></i><i></i><span class="url">${esc(url)}</span></div><div class="body">${inner}</div></div>`;
+const copyBox=t=>`<div class="copy"><code>${esc(t)}</code><button class="btn sm" type="button" data-copy="${esc(t)}">کپی</button></div>`;
+const openBtn=(url,label)=>`<div class="open-link"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${label}</a></div>`;
+const userField=()=>`<div class="field"><input type="text" id="userIn" placeholder="your-username" spellcheck="false" autocapitalize="off" value="${esc(st.user)}" aria-label="نام کاربری GitHub"><button class="btn sm" type="button" id="userSave">ذخیره</button></div>`;
+const FILES=['index.html','guide.html','sw.js','manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png','README.md'];
+const N_FILES=FILES.length;
+
+function repoForm(name,vis){
+  return win('github.com/new',`
+    <p class="s-h">Create a new repository</p>
+    <div class="s-row"><span class="s-lbl">Owner</span><span class="s-dd">${esc(U())}</span><span>/</span></div>
+    <div class="s-row"><span class="s-lbl">Repository name *</span>${hl(1,`<span class="s-in">${esc(name)}</span>`)}</div>
+    <div class="s-row"><span class="s-lbl">Description</span><span class="s-in s-muted">(optional)</span></div>
+    <p class="s-sub">Configuration</p>
+    <div class="s-row"><span class="s-lbl">Choose visibility *</span>${hl(2,`<span class="s-dd">${vis}</span>`)}</div>
+    <div class="s-row"><span class="s-lbl">Add README</span>${hl(3,`<span class="s-toggle">On <i></i></span>`)}</div>
+    <div class="s-row" style="justify-content:flex-end;margin:16px 0 0">${hl(4,`<span class="s-btn green">Create repository</span>`)}</div>`);
+}
+
+/* ===== the steps ===== */
+const PHASES=['آماده کردن فایل‌ها','ساختن مخزن برنامه','آپلود فایل‌ها','روشن کردن GitHub Pages','ساختن مخزن خصوصی داده','ساختن کلید دسترسی','وصل کردن برنامه','نصب روی دستگاه‌ها'];
+const STEPS=[
+{p:0,t:'فایل برنامه را دانلود و باز کنید',
+ do:[
+  `فایل ${k('vazheyar-app.zip')} را که در گفتگو فرستادم دانلود کنید.`,
+  `روی فایل راست‌کلیک کنید و ${k('Extract All…')} را بزنید. در مک فقط روی فایل دوبار کلیک کنید.`,
+  `یک پوشه با ${fa(N_FILES)} فایل ساخته می‌شود. این پوشه را باز نگه دارید؛ در گام ${fa(5)} لازمش دارید.`],
+ numsMap:[0,1,2],
+ tip:'اگر از قبل فایل zip را دانلود کرده‌اید، نسخهٔ تازه را دوباره دانلود کنید. فایل راهنما هم به آن اضافه شده است.',
+ screen:()=>win('Downloads',`<div class="s-cols">
+   <div><div class="s-file">vazheyar-app.zip</div><div class="s-menu" style="margin:6px 0 0 24px"><span>Open</span>${hl(1,'<span>Extract All…</span>')}<span>Copy</span></div></div>
+   <div class="s-arrow">→</div>
+   ${hl(2,`<div style="padding:6px 10px"><div class="s-file folder"><b>vazheyar-app</b></div>${FILES.map(f=>`<div class="s-file" style="margin-left:22px">${f}</div>`).join('')}</div>`,'div')}
+ </div>`)},
+
+{p:1,t:'صفحهٔ ساختن مخزن را باز کنید',
+ do:[
+  'وارد حساب GitHub خود شوید.',
+  'نام کاربری GitHub خود را اینجا بنویسید تا نشانی‌های این راهنما دقیق شوند:'+userField(),
+  'دکمهٔ زیر را بزنید تا صفحهٔ ساختن مخزن تازه باز شود:'+openBtn('https://github.com/new','باز کردن صفحهٔ ساختن مخزن')],
+ numsMap:[0,0,0],
+ tip:`راه دستی (دایره‌های ۱ و ۲ در تصویر): در GitHub بالای صفحه، سمت راست، روی ${k('+')} بزنید و ${k('New repository')} را انتخاب کنید.`,
+ screen:()=>win('github.com',`<div class="s-row" style="justify-content:flex-end">${hl(1,'<span class="s-btn">+ ▾</span>')}</div>
+   <div style="display:flex;justify-content:flex-end">${'<div class="s-menu">'+hl(2,'<span>New repository</span>')+'<span>Import repository</span><span>New gist</span></div>'}</div>`)},
+
+{p:1,t:'مخزن عمومی برنامه را بسازید',
+ do:[
+  `در کادر ${k('Repository name')} این نام را بنویسید:`+copyBox('vazheyar'),
+  `در بخش ${k('Choose visibility')} گزینهٔ ${k('Public')} را انتخاب کنید.`,
+  `گزینهٔ ${k('Add README')} را روشن کنید.`,
+  `دکمهٔ سبز ${k('Create repository')} را بزنید.`],
+ tip:'این مخزن باید عمومی باشد، چون میزبانی رایگان GitHub فقط برای مخزن عمومی است. نگران نباشید: واژه‌ها و پیشرفت شما اینجا ذخیره نمی‌شود.',
+ alt:'اگر صفحه کمی با این تصویر فرق داشت (مثلاً به‌جای فهرست کشویی، دکمه‌های انتخاب دیدید)، دنبال همین کلمه‌ها بگردید.',
+ screen:()=>repoForm('vazheyar','Public')},
+
+{p:2,t:'صفحهٔ آپلود را باز کنید',
+ do:[
+  `در صفحهٔ مخزن تازه، روی دکمهٔ ${k('Add file')} بزنید.`,
+  `از فهرستی که باز می‌شود ${k('Upload files')} را انتخاب کنید.`],
+ screen:()=>win('github.com/'+U()+'/vazheyar',`
+   <p class="s-h">${esc(U())} / vazheyar <span class="s-btn" style="font-size:11px;padding:0 8px">Public</span></p>
+   <div class="s-row" style="justify-content:space-between"><span class="s-dd">main</span><span class="s-row" style="margin:0"><span class="s-btn">Go to file</span>${hl(1,'<span class="s-btn">Add file</span>')}<span class="s-btn green">Code ▾</span></span></div>
+   <div style="display:flex;justify-content:flex-end;margin:-4px 70px 10px 0"><div class="s-menu"><span>Create new file</span>${hl(2,'<span>Upload files</span>')}</div></div>
+   <div style="border:1px solid var(--scr-line);border-radius:6px"><div class="s-file" style="padding:8px 12px">README.md</div></div>`)},
+
+{p:2,t:'فایل‌ها را بکشید و رها کنید',
+ do:[
+  `پوشه‌ای را که در گام ${fa(1)} باز کردید پیدا کنید و واردش شوید.`,
+  `همهٔ فایل‌های داخل آن را انتخاب کنید: کلیدهای ${k('Ctrl + A')} در ویندوز یا ${k('Cmd + A')} در مک.`,
+  'فایل‌ها را با موس بکشید و داخل کادر خط‌چین صفحهٔ GitHub رها کنید.',
+  `صبر کنید تا نام هر ${fa(N_FILES)} فایل زیر کادر نمایش داده شود.`],
+ numsMap:[0,0,1,2],
+ warn:'خود پوشه را نکشید؛ فایل‌های داخل پوشه را بکشید. فایل index.html باید مستقیم در مخزن باشد، نه داخل یک پوشه.',
+ screen:()=>win('github.com/'+U()+'/vazheyar/upload/main',`
+   ${hl(1,'<div class="s-drop"><b style="color:var(--scr-ink)">Drag files here to add them to your repository</b><br>Or <span style="color:var(--scr-link)">choose your files</span></div>','div')}
+   ${hl(2,`<div class="s-files">${FILES.map(f=>`<span>${f}</span>`).join('')}</div>`,'div')}`)},
+
+{p:2,t:'آپلود را ثبت کنید',
+ do:[
+  'پایین همان صفحه بروید.',
+  `گزینهٔ ${k('Commit directly to the main branch')} را انتخاب‌شده بگذارید (معمولاً از قبل انتخاب شده است).`,
+  `دکمهٔ سبز ${k('Commit changes')} را بزنید و چند ثانیه صبر کنید.`],
+ numsMap:[0,1,2],
+ tip:'بعد از این، فهرست فایل‌ها در صفحهٔ مخزن نمایش داده می‌شود. اگر index.html را در فهرست دیدید، این مرحله تمام است.',
+ screen:()=>win('github.com/'+U()+'/vazheyar/upload/main',`
+   <p class="s-h" style="font-size:15px">Commit changes</p>
+   <div class="s-row"><span class="s-in" style="flex:1">Add files via upload</span></div>
+   ${hl(1,'<div class="s-radio"><span class="on">Commit directly to the <b>main</b> branch.</span><span>Create a new branch for this commit and start a pull request.</span></div>','div')}
+   <div class="s-row" style="margin:16px 0 0">${hl(2,'<span class="s-btn green">Commit changes</span>')}<span class="s-btn">Cancel</span></div>`)},
+
+{p:3,t:'تنظیمات مخزن را باز کنید',
+ do:[`در بالای صفحهٔ مخزن، در ردیف زبانه‌ها، روی ${k('Settings')} بزنید.`],
+ alt:`اگر ${k('Settings')} را ندیدید، پنجره کوچک است: روی ${k('···')} در انتهای ردیف بزنید و ${k('Settings')} را از فهرست انتخاب کنید.`,
+ screen:()=>win('github.com/'+U()+'/vazheyar',`<div class="s-tabs"><span><b>Code</b></span><span>Issues</span><span>Pull requests</span><span>Actions</span><span>Projects</span><span>Security</span><span>Insights</span>${hl(1,'<span>⚙ Settings</span>')}</div><div class="s-muted">…</div>`)},
+
+{p:3,t:'بخش Pages را باز کنید',
+ do:[`در فهرست کناری صفحه (سمت چپ)، زیر عنوان ${k('Code, planning, and automation')}، روی ${k('Pages')} بزنید.`],
+ screen:()=>win('github.com/'+U()+'/vazheyar/settings',`<div class="s-cols">
+   <div class="s-side"><span style="background:var(--scr-2)"><b>General</b></span><span class="grp">Access</span><span>Collaborators</span><span class="grp">Code, planning, and automation</span><span>Branches</span><span>Tags</span><span>Rules</span><span>Actions</span><span>Webhooks</span><span>Environments</span>${hl(1,'<span>Pages</span>')}</div>
+   <div style="flex:1;min-width:160px"><p class="s-h">General</p><div class="s-muted">Repository name …</div></div></div>`)},
+
+{p:3,t:'Pages را روشن کنید',
+ do:[
+  `زیر ${k('Source')} باید ${k('Deploy from a branch')} انتخاب شده باشد. اگر نیست، آن را انتخاب کنید.`,
+  `زیر ${k('Branch')}، فهرستی را که روی ${k('None')} است باز کنید و ${k('main')} را انتخاب کنید.`,
+  `کنار آن ${k('/ (root)')} را تغییر ندهید و دکمهٔ ${k('Save')} را بزنید.`],
+ screen:()=>win('github.com/'+U()+'/vazheyar/settings/pages',`
+   <p class="s-h">GitHub Pages</p><p class="s-sub">Build and deployment</p>
+   <div class="s-row"><span class="s-lbl">Source</span>${hl(1,'<span class="s-dd">Deploy from a branch</span>')}</div>
+   <div class="s-row"><span class="s-lbl">Branch</span>${hl(2,'<span class="s-dd">main</span>')}<span class="s-dd">/ (root)</span>${hl(3,'<span class="s-btn">Save</span>')}</div>`)},
+
+{p:3,t:'نشانی برنامه را بگیرید',
+ do:[
+  `یکی دو دقیقه صبر کنید، سپس صفحه را تازه کنید (کلید ${k('F5')}).`,
+  `بالای صفحه پیامی با عبارت ${k('Your site is live at')} ظاهر می‌شود.`,
+  `روی ${k('Visit site')} بزنید. برنامهٔ واژه‌یار باز می‌شود. نشانی آن را نگه دارید:`+copyBox(site())],
+ numsMap:[0,0,1],
+ tip:'این نشانی برنامهٔ شماست. آن را در مرورگر بوک‌مارک کنید. اگر هنوز پیام را نمی‌بینید، یک دقیقهٔ دیگر صبر کنید و دوباره صفحه را تازه کنید.',
+ screen:()=>win('github.com/'+U()+'/vazheyar/settings/pages',`<p class="s-h">GitHub Pages</p>
+   <div class="s-banner"><span>Your site is live at <a style="color:var(--scr-link)">${esc(site())}</a></span>${hl(1,'<span class="s-btn">Visit site ↗</span>')}</div>`)},
+
+{p:4,t:'مخزن خصوصی داده را بسازید',
+ do:[
+  'دوباره صفحهٔ ساختن مخزن را باز کنید:'+openBtn('https://github.com/new','باز کردن صفحهٔ ساختن مخزن'),
+  `در ${k('Repository name')} این نام را بنویسید:`+copyBox('vazheyar-data'),
+  `این بار در ${k('Choose visibility')} گزینهٔ ${k('Private')} را انتخاب کنید.`,
+  `${k('Add README')} را روشن کنید و ${k('Create repository')} را بزنید.`],
+ warn:'این یکی حتماً باید خصوصی (Private) باشد. واژه‌ها و پیشرفت شما در این مخزن ذخیره می‌شود و فقط خودتان باید آن را ببینید.',
+ numsMap:[0,1,2,'3-4'],
+ screen:()=>repoForm('vazheyar-data','Private')},
+
+{p:5,t:'صفحهٔ ساختن کلید را باز کنید',
+ do:[
+  'دکمهٔ زیر را بزنید:'+openBtn('https://github.com/settings/personal-access-tokens/new','باز کردن صفحهٔ ساختن کلید'),
+  'اگر GitHub دوباره رمز عبور یا کد تأیید خواست، وارد کنید.'],
+ numsMap:[0,0],
+ tip:`راه دستی (دایره‌های ۱ و ۲ در تصویر): روی عکس پروفایل بالای صفحه بزنید و این‌ها را به ترتیب انتخاب کنید: ${k('Settings')}، بعد ${k('Developer settings')} (پایین فهرست کناری)، بعد ${k('Fine-grained tokens')}، و در آخر ${k('Generate new token')}.`,
+ screen:()=>win('github.com/settings/personal-access-tokens',`<div class="s-cols">
+   <div class="s-side"><span>GitHub Apps</span><span>OAuth Apps</span><span class="grp">Personal access tokens</span>${hl(1,'<span>Fine-grained tokens</span>')}<span>Tokens (classic)</span></div>
+   <div style="flex:1;min-width:200px"><div class="s-row" style="justify-content:space-between"><p class="s-h" style="margin:0">Fine-grained personal access tokens</p>${hl(2,'<span class="s-btn green">Generate new token</span>')}</div></div></div>`)},
+
+{p:5,t:'نام و مدت کلید',
+ do:[
+  `در ${k('Token name')} بنویسید:`+copyBox('vazheyar'),
+  `در ${k('Expiration')} طولانی‌ترین مدتی را که فهرست اجازه می‌دهد انتخاب کنید.`,
+  `${k('Resource owner')} را تغییر ندهید؛ باید نام کاربری خودتان باشد.`],
+ tip:'تاریخ انقضا را در تقویم یادداشت کنید. بعد از آن تاریخ، همگام‌سازی پیام خطا می‌دهد و فقط کافی است یک کلید تازه بسازید و در تنظیمات برنامه بگذارید.',
+ screen:()=>win('github.com/settings/personal-access-tokens/new',`<p class="s-h">New fine-grained personal access token</p>
+   <div class="s-row"><span class="s-lbl">Token name *</span>${hl(1,'<span class="s-in">vazheyar</span>')}</div>
+   <div class="s-row"><span class="s-lbl">Expiration *</span>${hl(2,'<span class="s-dd">1 year</span>')}</div>
+   <div class="s-row"><span class="s-lbl">Resource owner</span>${hl(3,`<span class="s-dd">${esc(U())}</span>`)}</div>`)},
+
+{p:5,t:'دسترسی فقط به مخزن داده',
+ do:[
+  `پایین‌تر، در بخش ${k('Repository access')}، گزینهٔ ${k('Only select repositories')} را بزنید.`,
+  `از فهرست ${k('Select repositories')} فقط ${k('vazheyar-data')} را انتخاب کنید.`],
+ warn:'مخزن vazheyar (برنامه) را انتخاب نکنید. کلید فقط باید به مخزن داده دسترسی داشته باشد.',
+ screen:()=>win('github.com/settings/personal-access-tokens/new',`<p class="s-sub">Repository access</p>
+   <div class="s-radio"><span>Public repositories</span><span>All repositories</span>${hl(1,'<span class="on">Only select repositories</span>')}</div>
+   <div class="s-row" style="margin-top:10px">${hl(2,`<span class="s-dd">Select repositories</span>`)}<span class="s-muted">Selected: ${esc(U())}/vazheyar-data ✓</span></div>`)},
+
+{p:5,t:'اجازهٔ خواندن و نوشتن',
+ do:[
+  `در بخش ${k('Permissions')}، اگر دکمهٔ ${k('Add permissions')} را می‌بینید، آن را بزنید و ${k('Contents')} را انتخاب کنید.`,
+  `جلوی ${k('Contents')}، سطح دسترسی را روی ${k('Read and write')} بگذارید.`],
+ tip:`اگر فهرست بلندی از مجوزها دیدید، فقط دنبال سطر ${k('Contents')} بگردید. ${k('Metadata')} خودکار ${k('Read-only')} می‌شود؛ به بقیه دست نزنید.`,
+ screen:()=>win('github.com/settings/personal-access-tokens/new',`<p class="s-sub">Permissions</p>
+   <div class="s-row">${hl(1,'<span class="s-btn">+ Add permissions</span>')}</div>
+   <div style="border:1px solid var(--scr-line);border-radius:6px">
+     <div class="s-row" style="justify-content:space-between;padding:8px 12px;margin:0;border-bottom:1px solid var(--scr-line)"><span><b>Contents</b> <span class="s-muted">Repository contents, commits…</span></span>${hl(2,'<span class="s-dd">Read and write</span>')}</div>
+     <div class="s-row" style="justify-content:space-between;padding:8px 12px;margin:0"><span><b>Metadata</b> <span class="s-muted">mandatory</span></span><span class="s-muted">Read-only</span></div></div>`)},
+
+{p:5,t:'کلید را بسازید و کپی کنید',
+ do:[
+  `پایین صفحه دکمهٔ سبز ${k('Generate token')} را بزنید. اگر پنجرهٔ تأیید باز شد، دوباره ${k('Generate token')} را بزنید.`,
+  `کلیدی که با ${k('github_pat_')} شروع می‌شود نمایش داده می‌شود. روی دکمهٔ کپی کنارش بزنید.`],
+ warn:'این کلید فقط همین یک بار نشان داده می‌شود. صفحه را نبندید تا در گام بعد آن را در برنامه بچسبانید. کلید را برای هیچ‌کس نفرستید.',
+ screen:()=>win('github.com/settings/personal-access-tokens',`
+   <div class="s-row">${hl(1,'<span class="s-btn green">Generate token</span>')}</div>
+   <div style="border-top:1px dashed var(--scr-line);margin:12px 0"></div>
+   <div class="s-banner" style="margin-bottom:10px"><span>Make sure to copy your personal access token now. You won’t be able to see it again!</span></div>
+   <div class="s-row"><span class="s-in" style="font-family:var(--f-mono);flex:1">github_pat_11ABCDEFG0…</span>${hl(2,'<span class="s-btn">⧉</span>')}</div>`)},
+
+{p:6,t:'برنامه را به GitHub وصل کنید',
+ do:[
+  'برنامه را از نشانی خودش روی لپ‌تاپ باز کنید:'+copyBox(site()),
+  'به بخش «تنظیمات» برنامه بروید و این سه کادر را پر کنید: نام کاربری GitHub، نام مخزن داده و کلید.',
+  'دکمهٔ «اتصال و همگام‌سازی» را بزنید.'],
+ tip:'نام مخزن داده از قبل vazheyar-data نوشته شده است. کلید را از صفحهٔ GitHub که باز گذاشتید بچسبانید.',
+ numsMap:[0,'1-3',4],
+ screen:()=>win(site().replace('https://','')+'#settings',`
+   <p style="font-weight:800;font-size:16px;margin:0 0 10px">همگام‌سازی بین دستگاه‌ها</p>
+   <div class="s-row"><span class="s-lbl">نام کاربری GitHub</span>${hl(1,`<span class="s-in" dir="ltr">${esc(U())}</span>`)}</div>
+   <div class="s-row"><span class="s-lbl">نام مخزن داده</span>${hl(2,'<span class="s-in" dir="ltr">vazheyar-data</span>')}</div>
+   <div class="s-row"><span class="s-lbl">کلید دسترسی</span>${hl(3,'<span class="s-in" dir="ltr">github_pat_••••••••</span>')}</div>
+   <div class="s-row" style="margin-top:14px">${hl(4,'<span class="s-btn" style="background:#1f3f9e;border-color:#1f3f9e;color:#fff">اتصال و همگام‌سازی</span>')}</div>`,'rtl-app')},
+
+{p:6,t:'مطمئن شوید وصل شده',
+ do:[
+  'چند ثانیه صبر کنید. کادر سبزی با عبارت «وصل به …» نمایش داده می‌شود و کنار برنامه «همگام» با نقطهٔ سبز دیده می‌شود.',
+  'اگر کادر قرمز آمد، متنش را بخوانید. دقیق می‌گوید کدام کادر یا کدام تنظیم کلید اشتباه است.'],
+ numsMap:[1,0],
+ tip:'حالا می‌توانید صفحهٔ کلید را در GitHub ببندید.',
+ screen:()=>win(site().replace('https://','')+'#settings',`
+   <div class="s-row">${hl(1,'<span class="s-btn" style="border-radius:99px"><span style="color:#1b7547">●</span> همگام · همین حالا</span>')}</div>
+   <div style="background:#dff1e7;color:#141c33;border-radius:8px;padding:8px 12px" dir="rtl">وصل به <span dir="ltr">${esc(U())}/vazheyar-data</span></div>`,'rtl-app')},
+
+{p:7,t:'نصب روی لپ‌تاپ',
+ do:[
+  `برنامه را در ${k('Chrome')} یا ${k('Edge')} باز کنید.`,
+  'در نوار نشانی، سمت راست، روی آیکون کوچک نصب (یک صفحه با فلش رو به پایین) بزنید.',
+  `در پنجره‌ای که باز می‌شود ${k('Install')} را بزنید.`],
+ tip:'از این به بعد واژه‌یار مثل یک برنامهٔ معمولی در منوی استارت (یا Launchpad در مک) و نوار وظیفه است و بدون اینترنت هم باز می‌شود.',
+ numsMap:[0,1,2],
+ screen:()=>win(site().replace('https://',''),`
+   <div class="s-row" style="justify-content:flex-end">${hl(1,'<span class="s-btn">⤓ Install</span>')}</div>
+   <div style="display:flex;justify-content:flex-end"><div class="s-menu" style="padding:12px;gap:8px;min-width:220px"><b>Install app?</b><span style="padding:0">واژه‌یار</span><span style="padding:0;display:flex;gap:8px;justify-content:flex-end">${hl(2,'<span class="s-btn" style="background:var(--scr-link);border-color:var(--scr-link);color:#fff">Install</span>')}<span class="s-btn">Cancel</span></span></div></div>`)},
+
+{p:7,t:'وصل و نصب کردن گوشی',
+ do:[
+  'روی لپ‌تاپ، در تنظیمات برنامه بخش «اتصال گوشی یا دستگاه دیگر» را باز کنید و «نمایش کد اتصال» را بزنید.',
+  'با دوربین گوشی کد QR را اسکن کنید و پیوندی را که نمایش داده می‌شود باز کنید.',
+  'روی گوشی پیام «اتصال این دستگاه» را با دکمهٔ «اتصال» تأیید کنید.',
+  `نصب روی اندروید: در ${k('Chrome')} منوی سه‌نقطه را باز کنید و ${k('Add to home screen')} یا ${k('Install app')} را بزنید.`,
+  `نصب روی آیفون: در ${k('Safari')} دکمهٔ ${k('Share')} را بزنید و ${k('Add to Home Screen')} را انتخاب کنید.`],
+ numsMap:[1,2,3,0,0],
+ screen:()=>win(site().replace('https://','')+'#settings',`
+   <p style="font-weight:800;margin:0 0 10px">اتصال گوشی یا دستگاه دیگر</p>
+   <div class="s-row">${hl(1,'<span class="s-btn">نمایش کد اتصال</span>')}</div>
+   <div class="s-row">${hl(2,'<span style="display:inline-grid;grid-template-columns:repeat(7,8px);gap:2px;background:#fff;padding:8px;border-radius:6px">'+Array.from({length:49},(_,i)=>`<i style="width:8px;height:8px;background:${[0,1,2,7,9,14,15,16,4,5,6,11,13,18,19,20,24,28,29,30,35,37,42,43,44,32,40,46].includes(i)?'#141c33':'transparent'}"></i>`).join('')+'</span>')}</div>
+   <div class="s-row">${hl(3,'<span class="s-btn" style="background:#1f3f9e;border-color:#1f3f9e;color:#fff">اتصال</span>')}<span class="s-muted">← روی گوشی</span></div>`,'rtl-app')}
+];
+
+/* numbering: by default line i ↔ pin i+1 */
+function nums(s){
+  if(s.numsMap)return s.numsMap.map(v=>v===0?null:String(v));
+  return s.do.map((_,i)=>String(i+1+(s.numsShift?-s.numsShift:0))).map(v=>+v>0?v:null);
+}
+const faRange=v=>v.includes('-')?v.split('-').map(x=>fa(+x)).join(' تا '):fa(+v);
+
+/* ===== render ===== */
+function renderList(){
+  let h='';
+  PHASES.forEach((ph,pi)=>{
+    h+=`<div class="phase"><div class="phase-name">${fa(pi+1)}. ${ph}</div>`;
+    STEPS.forEach((s,i)=>{if(s.p!==pi)return;
+      h+=`<button type="button" class="step-link${st.done.includes(i)?' done':''}" data-go="${i}" ${i===st.i?'aria-current="step"':''}><span class="n">${st.done.includes(i)?'✓':fa(i+1)}</span><span>${s.t}</span></button>`});
+    h+='</div>';
+  });
+  $('#stepsD').innerHTML='<h2>گام‌ها</h2>'+h;$('#stepsM').innerHTML=h;
+  const d=st.done.length,t=STEPS.length;
+  $('#mTxt').textContent=fa(d)+' از '+fa(t)+' گام انجام شد';$('#mPct').textContent=fa(Math.round(d/t*100))+'٪';
+  $('#mBar').style.width=(d/t*100)+'%';
+}
+function render(){
+  if(st.i>=STEPS.length){renderDone();renderList();return}
+  const s=STEPS[st.i];const n=nums(s);
+  let h=`<div class="eyebrow">مرحلهٔ ${fa(s.p+1)} از ${fa(PHASES.length)}: <b>${PHASES[s.p]}</b> · گام ${fa(st.i+1)} از ${fa(STEPS.length)}</div><h2>${s.t}</h2>`;
+  h+='<ol class="do">'+s.do.map((d,i)=>`<li><span class="num${n[i]?'':' plain'}">${n[i]?faRange(n[i]):'•'}</span><div class="txt">${d}</div></li>`).join('')+'</ol>';
+  if(s.warn)h+=`<p class="note stop"><b>مهم:</b><span>${s.warn}</span></p>`;
+  if(s.tip)h+=`<p class="note tip"><b>نکته:</b><span>${s.tip}</span></p>`;
+  if(s.alt)h+=`<p class="note warn"><b>اگر فرق داشت:</b><span>${s.alt}</span></p>`;
+  if(s.screen){h+=`<p class="scr-label">چیزی که روی صفحه می‌بینید (دایره‌های نارنجی شماره‌دار = جایی که باید کلیک یا تایپ کنید):</p>`+s.screen()}
+  h+=`<div class="nav"><button class="btn" type="button" id="prev" ${st.i===0?'disabled':''}>→ گام قبلی</button><button class="btn primary" type="button" id="next">انجام دادم، گام بعدی ←</button></div>`;
+  h+=`<p class="stuck">گیر کردید؟ از صفحه‌ای که می‌بینید اسکرین‌شات بگیرید و در گفتگو بفرستید و بگویید در کدام گام هستید.</p>`;
+  $('#card').innerHTML=h;renderList();
+}
+function renderDone(){
+  $('#card').innerHTML=`<div class="done-card"><div class="big">✓ تمام شد</div><p>واژه‌یار روی اینترنت است، لپ‌تاپ و گوشی با هم همگام‌اند و هر دو برنامه را نصب کرده‌اید.</p><p class="stuck">از این به بعد فقط از خود برنامه استفاده کنید. لازم نیست دوباره سراغ GitHub بروید، مگر وقتی کلید منقضی شد.</p><div class="nav" style="justify-content:center"><button class="btn" type="button" data-go="0">مرور دوبارهٔ راهنما از اول</button></div></div>`;
+}
+function go(i){st.i=Math.max(0,Math.min(STEPS.length,i));save();render();window.scrollTo({top:0,behavior:'smooth'});$('#mobList').open=false}
+document.addEventListener('click',async e=>{
+  const g=e.target.closest('[data-go]');if(g){go(+g.dataset.go);return}
+  if(e.target.closest('#next')){if(!st.done.includes(st.i))st.done.push(st.i);go(st.i+1);return}
+  if(e.target.closest('#prev')){go(st.i-1);return}
+  if(e.target.closest('#userSave')){const v=$('#userIn').value.trim().replace(/^@/,'').replace(/^https?:\/\/github\.com\//,'').split('/')[0];st.user=v;save();render();return}
+  const c=e.target.closest('[data-copy]');
+  if(c){const t=c.dataset.copy;try{await navigator.clipboard.writeText(t);c.textContent='کپی شد ✓'}catch(err){const code=c.previousElementSibling;const r=document.createRange();r.selectNodeContents(code);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);c.textContent='انتخاب شد؛ Ctrl+C'}setTimeout(()=>{c.textContent='کپی'},1800)}
+});
+document.addEventListener('keydown',e=>{if(e.target.id==='userIn'&&e.key==='Enter'){e.preventDefault();$('#userSave').click()}});
+render();
+})();
+</script>
+</body>
+</html>

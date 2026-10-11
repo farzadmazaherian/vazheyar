@@ -1,0 +1,1408 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f3f9e">
+<meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="واژه‌یار">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px)}</style>
+<title>واژه‌یار</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Vazirmatn:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: RTL app shell. Right-hand rail on wide screens, bottom tab bar on phones.
+   The Delft-tile flashcard is the one ornamental moment; everything else stays quiet. */
+:root{
+  --bg:#f3f5fa; --surface:#ffffff; --surface-2:#eaeef7; --ink:#141c33; --muted:#59647f; --line:#d8dfec;
+  --cobalt:#1f3f9e; --cobalt-ink:#ffffff; --cobalt-soft:#e2e8f8; --cobalt-line:#9fb0e0;
+  --het:#b4501a; --het-soft:#fae6d8;
+  --good:#1b7547; --good-soft:#dff1e7; --warn:#946000; --warn-soft:#f8edd3; --bad:#b0281f; --bad-soft:#f9e1de;
+  --shadow:0 1px 2px rgba(20,28,51,.05),0 10px 30px rgba(20,28,51,.07);
+  --f-fa:"Vazirmatn",Tahoma,"Segoe UI",system-ui,sans-serif;
+  --f-lat:"Literata",Georgia,"Times New Roman",serif;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1223; --surface:#141c32; --surface-2:#1b2540; --ink:#e6ebf7; --muted:#9aa5c2; --line:#28334f;
+    --cobalt:#8ea6ff; --cobalt-ink:#0c1223; --cobalt-soft:#1d2a52; --cobalt-line:#3a4d8c;
+    --het:#ff9a5a; --het-soft:#3b2416;
+    --good:#5fcb94; --good-soft:#163527; --warn:#e8b54a; --warn-soft:#3a2e12; --bad:#ff8b80; --bad-soft:#3e1d1b;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1223; --surface:#141c32; --surface-2:#1b2540; --ink:#e6ebf7; --muted:#9aa5c2; --line:#28334f;
+  --cobalt:#8ea6ff; --cobalt-ink:#0c1223; --cobalt-soft:#1d2a52; --cobalt-line:#3a4d8c;
+  --het:#ff9a5a; --het-soft:#3b2416;
+  --good:#5fcb94; --good-soft:#163527; --warn:#e8b54a; --warn-soft:#3a2e12; --bad:#ff8b80; --bad-soft:#3e1d1b;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font-family:var(--f-fa);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+[hidden]{display:none!important}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--cobalt)}
+.lat{font-family:var(--f-lat);direction:ltr;unicode-bidi:isolate}
+.ltr{direction:ltr;text-align:left;unicode-bidi:isolate}
+.num{font-variant-numeric:tabular-nums}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;border-radius:8px}
+
+/* ---------- shell ---------- */
+.app{display:grid;grid-template-columns:236px minmax(0,1fr);min-height:100vh;min-height:100dvh}
+.rail{position:sticky;top:0;align-self:start;height:100vh;height:100dvh;display:flex;flex-direction:column;gap:18px;padding:22px 16px;border-inline-end:1px solid var(--line);background:var(--surface)}
+.brand{display:flex;align-items:center;gap:10px;padding-inline:8px}
+.brand-mark{width:34px;height:34px;border-radius:8px;background:var(--cobalt);display:grid;place-items:center;flex:none}
+.brand-mark svg{width:26px;height:26px}
+.brand-name{font-weight:800;font-size:19px;letter-spacing:-.01em}
+.brand-sub{display:block;font-size:11.5px;color:var(--muted);font-weight:500;line-height:1.3}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav button{display:flex;align-items:center;gap:12px;padding:10px 12px;border:0;border-radius:10px;background:none;cursor:pointer;color:var(--muted);font-weight:500;text-align:start}
+.nav button:hover{background:var(--surface-2);color:var(--ink)}
+.nav button[aria-current="page"]{background:var(--cobalt-soft);color:var(--cobalt);font-weight:700}
+.nav .badge{margin-inline-start:auto;font-size:12px;min-width:22px;padding:0 7px;border-radius:99px;background:var(--cobalt);color:var(--cobalt-ink);text-align:center;font-weight:700;line-height:20px}
+.rail-foot{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.mhead{display:none}
+.main{min-width:0;padding-block:30px 56px;padding-inline:clamp(16px,4vw,48px)}
+.view{max-width:1100px;margin-inline:auto}
+
+/* sync chip */
+.sync-chip{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);font-size:12.5px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.sync-chip .dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.sync-chip[data-s="ok"] .dot{background:var(--good)}
+.sync-chip[data-s="busy"] .dot{background:var(--cobalt);animation:pulse 1s infinite alternate}
+.sync-chip[data-s="error"]{color:var(--bad);border-color:var(--bad)}
+.sync-chip[data-s="error"] .dot{background:var(--bad)}
+.sync-chip[data-s="offline"] .dot{background:var(--warn)}
+@keyframes pulse{to{opacity:.3}}
+
+/* ---------- type & common ---------- */
+.dateline{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--muted);font-size:13.5px}
+.dateline .lat{font-size:13px;font-style:italic}
+.view-title{font-size:28px;font-weight:800;line-height:1.35;margin:4px 0 6px;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 22px;max-width:62ch}
+h2.h2{font-size:15px;font-weight:700;margin:0 0 12px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0}
+.stack{display:flex;flex-direction:column;gap:16px}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:600;font-size:14.5px;line-height:1.5;text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--cobalt-line)}
+.btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--cobalt-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;border-color:transparent;color:var(--muted)}
+.btn.ghost:hover{background:var(--surface-2);color:var(--ink)}
+.btn.danger{color:var(--bad)}
+.btn.danger.solid{background:var(--bad);border-color:var(--bad);color:var(--surface)}
+.btn.lg{padding:12px 22px;font-size:16px}
+.btn.sm{padding:5px 11px;font-size:13px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.icon-btn{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;color:var(--cobalt);flex:none}
+.icon-btn:hover{background:var(--cobalt-soft)}
+.link{background:none;border:0;padding:0;color:var(--cobalt);cursor:pointer;font-weight:600}
+kbd{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;padding:1px 6px;border-radius:5px;border:1px solid currentColor;opacity:.75;direction:ltr;unicode-bidi:isolate}
+.hint{font-size:13px;color:var(--muted)}
+.note-box{border-radius:10px;padding:12px 14px;background:var(--warn-soft);color:var(--ink);font-size:14px;border:1px solid transparent}
+.note-box.info{background:var(--cobalt-soft)}
+.note-box.bad{background:var(--bad-soft)}
+.note-box.good{background:var(--good-soft)}
+
+.seg{display:inline-flex;flex-wrap:wrap;padding:3px;border-radius:11px;background:var(--surface-2);gap:2px}
+.seg button{border:0;background:none;padding:6px 14px;border-radius:8px;cursor:pointer;color:var(--muted);font-weight:600;font-size:14px}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(20,28,51,.12)}
+.seg .lat{font-size:15px}
+
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.lbl{font-size:13px;font-weight:700;color:var(--muted)}
+.lbl em{font-style:normal;font-weight:400}
+input[type=text],input[type=password],input[type=search],input[type=number],select,textarea{width:100%;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);min-width:0}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--cobalt-line);outline-offset:0;border-color:var(--cobalt)}
+textarea{resize:vertical}
+input.lat,textarea.lat{font-size:16px}
+.input-with-btn{display:flex;gap:8px}
+.check{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.check input{margin-top:6px;accent-color:var(--cobalt);width:17px;height:17px;flex:none}
+
+.lang-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;padding:1px 7px;border-radius:6px;background:var(--surface-2);color:var(--muted);direction:ltr;font-family:var(--f-fa)}
+.lang-badge.nl{background:var(--het-soft);color:var(--het)}
+.lang-badge.en{background:var(--cobalt-soft);color:var(--cobalt)}
+.art{font-weight:600;padding:0 .18em;border-radius:5px}
+.art.de{color:var(--cobalt)}
+.art.het{color:var(--het)}
+.pill{display:inline-block;font-size:12px;padding:1px 9px;border-radius:99px;background:var(--surface-2);color:var(--muted);white-space:nowrap;font-weight:500}
+.pill.new{background:var(--cobalt-soft);color:var(--cobalt)}
+.pill.due{background:var(--warn-soft);color:var(--warn)}
+.pill.mature{background:var(--good-soft);color:var(--good)}
+.tag{display:inline-block;font-size:12px;padding:0 8px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+
+/* ---------- today ---------- */
+.today-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}
+.due-panel{grid-row:span 2;display:flex;flex-direction:column;gap:18px;padding:26px}
+.due-num{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.due-num b{font-size:64px;font-weight:800;line-height:1;color:var(--cobalt);letter-spacing:-.02em}
+.due-num span{font-size:18px;font-weight:600}
+.due-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.due-split .cell{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.due-split .cell b{font-size:22px;font-weight:800}
+.due-split .cell small{color:var(--muted);font-size:13px}
+.heat{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;direction:ltr}
+.heat i{display:block;aspect-ratio:1;border-radius:4px;background:var(--surface-2);max-width:100%}
+.heat i[data-l="1"]{background:var(--cobalt-soft)}
+.heat i[data-l="2"]{background:var(--cobalt-line)}
+.heat i[data-l="3"]{background:color-mix(in srgb,var(--cobalt) 70%,var(--cobalt-line))}
+.heat i[data-l="4"]{background:var(--cobalt)}
+.heat i.today{outline:2px solid var(--het);outline-offset:1px}
+.kv-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+.kv-row div{display:flex;flex-direction:column}
+.kv-row b{font-size:22px;font-weight:800}
+.kv-row span{font-size:12.5px;color:var(--muted)}
+.coll-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.coll-row:last-of-type{border-bottom:0;margin-bottom:12px}
+.tip-panel p{margin:0 0 10px}
+.tip-panel .lat{font-size:15.5px}
+
+/* ---------- review: the Delft tile ---------- */
+.rev-top{display:flex;align-items:center;gap:14px;margin-bottom:18px;max-width:640px;margin-inline:auto}
+.progress{flex:1;height:6px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.progress span{display:block;height:100%;background:var(--cobalt);border-radius:99px;transition:width .3s}
+.rev-count{font-size:13px;color:var(--muted);white-space:nowrap}
+.tile{position:relative;max-width:640px;margin-inline:auto;background:var(--surface);border:1.5px solid var(--cobalt);border-radius:6px;padding:10px;box-shadow:var(--shadow)}
+.tile-frame{position:relative;border:1px solid var(--cobalt-line);border-radius:3px;min-height:330px;padding:40px clamp(18px,5vw,48px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}
+.corner{position:absolute;width:34px;height:34px;color:var(--cobalt);pointer-events:none}
+.corner.tl{top:4px;left:4px}
+.corner.tr{top:4px;right:4px;transform:scaleX(-1)}
+.corner.bl{bottom:4px;left:4px;transform:scaleY(-1)}
+.corner.br{bottom:4px;right:4px;transform:scale(-1,-1)}
+.card-meta{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px}
+.card-word{font-family:var(--f-lat);font-size:clamp(30px,6vw,46px);font-weight:600;line-height:1.25;direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere;text-wrap:balance}
+.card-word.sentence{font-size:clamp(22px,4.2vw,30px);font-weight:400}
+.card-q-fa{font-size:clamp(24px,5vw,34px);font-weight:700;line-height:1.5;text-wrap:balance}
+.art-q{font-size:.55em;color:var(--muted);border:1px dashed var(--cobalt-line);border-radius:6px;padding:0 .3em;vertical-align:middle;font-weight:400}
+.card-back{width:100%;display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:16px;margin-top:6px;border-top:1px solid var(--line)}
+.card-fa{font-size:22px;font-weight:700;line-height:1.6}
+.card-en{color:var(--muted);font-size:15.5px}
+.card-plural{color:var(--muted);font-size:14px}
+.card-ex{background:var(--surface-2);border-radius:10px;padding:10px 14px;width:100%;max-width:480px;display:flex;flex-direction:column;gap:2px}
+.card-ex p{margin:0}
+.card-ex .lat{font-size:16px;font-style:italic}
+.card-ex p:last-child{color:var(--muted);font-size:14px}
+.card-note{background:var(--het-soft);border-radius:10px;padding:8px 14px;font-size:14px;max-width:480px;width:100%;text-align:start}
+.rev-actions{max-width:640px;margin:18px auto 0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.grades{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%}
+.grade{display:flex;flex-direction:column;align-items:center;gap:0;padding:10px 6px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-size:15px}
+.grade small{font-weight:500;color:var(--muted);font-size:12px}
+.grade[data-g="0"]{color:var(--bad)}
+.grade[data-g="1"]{color:var(--warn)}
+.grade[data-g="2"]{color:var(--cobalt)}
+.grade[data-g="3"]{color:var(--good)}
+.grade:hover{background:var(--surface-2)}
+.kbd-hint{text-align:center;color:var(--muted);font-size:12.5px;margin:6px 0 0}
+.done-panel{max-width:560px;margin-inline:auto;text-align:center;padding:36px 24px}
+.done-panel .big{font-size:56px;font-weight:800;color:var(--cobalt);line-height:1.1}
+
+/* ---------- quiz ---------- */
+.choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.choice{display:flex;flex-direction:column;gap:4px;text-align:start;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
+.choice b{font-size:15.5px}
+.choice span{font-size:13px;color:var(--muted)}
+.choice[aria-pressed="true"]{border-color:var(--cobalt);background:var(--cobalt-soft)}
+.quiz-wrap{max-width:680px;margin-inline:auto}
+.quiz-q{display:flex;flex-direction:column;gap:18px;align-items:stretch;padding:26px}
+.q-prompt{display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;flex-wrap:wrap}
+.q-prompt .card-word{font-size:clamp(26px,5vw,38px)}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.opt{padding:12px 14px;border-radius:11px;border:1px solid var(--line);background:var(--surface);cursor:pointer;text-align:center;font-size:16px;font-weight:600;display:flex;gap:10px;align-items:center;justify-content:center;min-width:0;overflow-wrap:anywhere}
+.opt:hover:not(:disabled){border-color:var(--cobalt)}
+.opt:disabled{cursor:default}
+.opt.ok{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.opt.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.opt .k{font-size:11px;color:var(--muted);font-weight:500}
+.opt.art-opt{font-family:var(--f-lat);font-size:24px;padding:16px}
+.fb{border-radius:11px;padding:12px 14px;font-size:14.5px}
+.fb.ok{background:var(--good-soft)}
+.fb.bad{background:var(--bad-soft)}
+.mist{display:flex;flex-direction:column;gap:8px;text-align:start;margin:16px 0}
+.mist div{display:flex;justify-content:space-between;gap:12px;padding:8px 12px;border-radius:10px;background:var(--surface-2);flex-wrap:wrap}
+
+/* ---------- manage ---------- */
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.head-row .sub{margin:0}
+.man-grid{display:grid;grid-template-columns:minmax(0,390px) minmax(0,1fr);gap:18px;align-items:start}
+.form-panel{position:sticky;top:20px}
+.form-panel form,.form-panel .bulk{display:flex;flex-direction:column;gap:14px}
+.form-title{font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.dup{font-size:13px;color:var(--warn)}
+.filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.filters .search{grid-column:1/-1}
+.list-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px;font-size:13.5px;color:var(--muted)}
+.irow{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:11px 4px;border-top:1px solid var(--line)}
+.irow:hover{background:color-mix(in srgb,var(--surface-2) 50%,transparent)}
+.irow.editing{background:var(--cobalt-soft)}
+.i-main{min-width:0}
+.i-text{font-family:var(--f-lat);font-size:16.5px;direction:ltr;text-align:right;unicode-bidi:plaintext;overflow-wrap:anywhere}
+.i-fa{font-size:14px;color:var(--muted);overflow-wrap:anywhere}
+.i-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end;max-width:260px}
+.i-act{display:flex;gap:6px}
+.empty{padding:28px 10px;text-align:center;color:var(--muted)}
+.bulk-prev{max-height:280px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.bulk-prev table{width:100%;border-collapse:collapse;font-size:13.5px}
+.bulk-prev td,.bulk-prev th{padding:6px 10px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.bulk-prev th{position:sticky;top:0;background:var(--surface-2);font-size:12px;color:var(--muted)}
+.bulk-prev tr.skip td{color:var(--muted);text-decoration:line-through}
+pre.fmt{margin:0;padding:10px 12px;border-radius:10px;background:var(--surface-2);font-family:var(--f-lat);font-size:14px;direction:ltr;text-align:left;overflow-x:auto;white-space:pre}
+
+/* ---------- settings ---------- */
+.set-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.set-grid .wide{grid-column:1/-1}
+.set-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.set-head h2{margin:0;font-size:17px;font-weight:800}
+.set-head p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+details.box{border:1px solid var(--line);border-radius:10px;padding:0 14px;background:var(--surface)}
+details.box>summary{cursor:pointer;padding:12px 0;font-weight:700;list-style-position:inside}
+details.box[open]>summary{border-bottom:1px solid var(--line);margin-bottom:12px}
+details.box>div{padding-bottom:14px}
+.guide ol{padding-inline-start:22px;margin:6px 0 14px}
+.guide li{margin-bottom:6px}
+.guide h4{margin:14px 0 4px;font-size:14.5px;color:var(--cobalt)}
+.guide code,.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:5px;direction:ltr;unicode-bidi:isolate}
+.qr-box{display:inline-block;background:#ffffff;padding:12px;border-radius:10px;line-height:0}
+.qr-box img,.qr-box canvas{max-width:100%}
+input[type=range]{width:100%;accent-color:var(--cobalt)}
+
+/* ---------- modal & toast ---------- */
+.modal-back{position:fixed;inset:0;background:rgba(8,12,25,.45);display:grid;place-items:center;padding:16px;z-index:50}
+.modal{background:var(--surface);border-radius:14px;padding:22px;max-width:440px;width:100%;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.modal h3{margin:0;font-size:17px}
+.modal .btn-row{justify-content:flex-end}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-size:14px;z-index:60;max-width:calc(100% - 32px);box-shadow:var(--shadow)}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .man-grid{grid-template-columns:minmax(0,1fr)}
+  .form-panel{position:static}
+}
+@media (max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .rail{position:fixed;inset:auto 0 0 0;top:auto;height:auto;flex-direction:row;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));border-inline-end:0;border-top:1px solid var(--line);z-index:30}
+  .rail .brand,.rail .rail-foot{display:none}
+  .nav{flex-direction:row;width:100%;gap:2px}
+  .nav button{flex:1;flex-direction:column;gap:2px;padding:6px 2px;font-size:11.5px;text-align:center;position:relative}
+  .nav .badge{position:absolute;top:2px;inset-inline-end:calc(50% - 26px);margin:0;font-size:10px;min-width:18px;line-height:16px;padding:0 5px}
+  .mhead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-block:12px;padding-inline:16px;border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+  .mhead .brand{padding:0}
+  .main{padding-block:20px 104px}
+  .today-grid,.set-grid{grid-template-columns:minmax(0,1fr)}
+  .due-panel{grid-row:auto}
+  .choice-grid{grid-template-columns:minmax(0,1fr)}
+  .kbd-hint{display:none}
+}
+@media (max-width:520px){
+  .set-head .sync-chip{display:none}
+  .filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .view-title{font-size:23px}
+  .due-num b{font-size:52px}
+  .grades{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opts{grid-template-columns:minmax(0,1fr)}
+  .two{grid-template-columns:minmax(0,1fr)}
+  .irow{grid-template-columns:minmax(0,1fr) auto}
+  .i-meta{grid-column:1/-1;grid-row:2;justify-content:flex-start;max-width:none}
+  .tile-frame{min-height:280px;padding-block:34px}
+}
+@media (pointer:coarse){ .kbd-hint, .grade kbd, #flipBtn kbd{display:none} }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="corner" viewBox="0 0 40 40">
+      <path d="M0 0H17A17 17 0 0 1 0 17Z" fill="currentColor" opacity=".85"/>
+      <path d="M0 27A27 27 0 0 0 27 0" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <circle cx="25" cy="6" r="2.1" fill="currentColor"/>
+      <circle cx="6" cy="25" r="2.1" fill="currentColor"/>
+      <circle cx="21" cy="21" r="2.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="mark" viewBox="0 0 26 26">
+      <rect x="3" y="3" width="20" height="20" rx="2" fill="none" stroke="#fff" stroke-width="1.6"/>
+      <path d="M3 3h5a5 5 0 0 1-5 5zM23 3h-5a5 5 0 0 0 5 5zM3 23h5a5 5 0 0 0-5-5zM23 23h-5a5 5 0 0 1 5-5z" fill="#fff"/>
+      <circle cx="13" cy="13" r="2.4" fill="#fff"/>
+      <path d="M13 6.5v3.2M13 16.3v3.2M6.5 13h3.2M16.3 13h3.2" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-speak" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+  </defs>
+</svg>
+
+<header class="mhead">
+  <div class="brand"><span class="brand-mark"><svg><use href="#mark"/></svg></span><span class="brand-name">واژه‌یار</span></div>
+  <button class="sync-chip" type="button" data-go="settings"><span class="dot"></span><span class="t">فقط این دستگاه</span></button>
+</header>
+
+<div class="app" dir="rtl">
+  <aside class="rail">
+    <div class="brand"><span class="brand-mark"><svg><use href="#mark"/></svg></span><span><span class="brand-name">واژه‌یار</span><span class="brand-sub">هلندی · انگلیسی</span></span></div>
+    <nav class="nav" aria-label="بخش‌ها">
+      <button type="button" data-go="today"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>امروز</span></button>
+      <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg><span>مرور</span><b class="badge" id="navDue" hidden></b></button>
+      <button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg><span>آزمون</span></button>
+      <button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg><span>مدیریت</span></button>
+      <button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><span>تنظیمات</span></button>
+    </nav>
+    <div class="rail-foot">
+      <button class="btn sm install-btn" type="button" hidden>نصب برنامه روی این دستگاه</button>
+      <button class="sync-chip" type="button" data-go="settings"><span class="dot"></span><span class="t">فقط این دستگاه</span></button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <!-- ============ TODAY ============ -->
+    <section class="view" id="v-today" hidden>
+      <div class="dateline"><span id="dateFa"></span><span class="lat" id="dateNl"></span><span class="lat" id="dateEn"></span></div>
+      <h1 class="view-title">مرور امروز</h1>
+      <p class="sub" id="todaySub"></p>
+      <div class="note-box info" id="previewNote" hidden style="margin-bottom:18px">این نسخهٔ پیش‌نمایش است و داده‌ها فقط در همین مرورگر ذخیره می‌شوند. برای نصب روی گوشی و لپ‌تاپ و همگام‌سازی، <a id="guideLink2" href="https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm" target="_blank" rel="noopener">راهنمای راه‌اندازی</a> را دنبال کنید.</div>
+      <div class="today-grid">
+        <div class="panel due-panel">
+          <div class="due-num"><b class="num" id="dueTotal">۰</b><span>کارت برای امروز</span></div>
+          <div class="due-split" id="dueSplit"></div>
+          <div class="btn-row">
+            <button class="btn primary lg" type="button" data-start="all">شروع مرور</button>
+            <button class="btn" type="button" data-start="nl">فقط هلندی</button>
+            <button class="btn" type="button" data-start="en">فقط انگلیسی</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="h2">چهار هفتهٔ اخیر</h2>
+          <div class="heat" id="heat" aria-label="تعداد مرور در ۲۸ روز اخیر"></div>
+          <div class="kv-row">
+            <div><b class="num" id="streak">۰</b><span>روز پیاپی</span></div>
+            <div><b class="num" id="todayCount">۰</b><span>مرور امروز</span></div>
+            <div><b class="num" id="matureCount">۰</b><span>تثبیت‌شده</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="h2">مجموعهٔ شما</h2>
+          <div id="collRows"></div>
+          <button class="btn" type="button" data-go="manage">افزودن واژه یا جمله</button>
+        </div>
+        <div class="panel tip-panel" style="grid-column:1/-1">
+          <h2 class="h2">نکتهٔ امروز</h2>
+          <p id="tip"></p>
+          <button class="link" type="button" id="nextTip">نکتهٔ بعدی</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEW ============ -->
+    <section class="view" id="v-review" hidden>
+      <div id="revIdle">
+        <h1 class="view-title">مرور</h1>
+        <p class="sub">کارت‌ها بر اساس تکرار فاصله‌دار زمان‌بندی می‌شوند: هر چه بهتر بدانید، دیرتر برمی‌گردند.</p>
+        <div class="panel stack" style="max-width:640px">
+          <div class="field"><span class="lbl">زبان</span><div class="seg" id="revLang"><button type="button" data-v="all" aria-pressed="true">همه</button><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button></div></div>
+          <div class="field"><span class="lbl">جهت کارت‌ها</span><div class="seg" id="revDir"><button type="button" data-v="fwd">زبان ← فارسی</button><button type="button" data-v="rev">فارسی ← زبان</button><button type="button" data-v="mix">ترکیبی</button></div></div>
+          <p class="hint" id="revIdleInfo" style="margin:0"></p>
+          <div class="btn-row"><button class="btn primary lg" type="button" id="revStart">شروع</button></div>
+        </div>
+      </div>
+      <div id="revSession" hidden>
+        <div class="rev-top">
+          <button class="btn ghost sm" type="button" id="revExit">پایان</button>
+          <div class="progress"><span id="revBar" style="width:0"></span></div>
+          <span class="rev-count num" id="revCount"></span>
+        </div>
+        <div class="tile" id="card">
+          <div class="tile-frame">
+            <svg class="corner tl"><use href="#corner"/></svg><svg class="corner tr"><use href="#corner"/></svg>
+            <svg class="corner bl"><use href="#corner"/></svg><svg class="corner br"><use href="#corner"/></svg>
+            <div id="cardBody" style="width:100%;display:flex;flex-direction:column;align-items:center;gap:10px"></div>
+          </div>
+        </div>
+        <div class="rev-actions">
+          <button class="btn primary lg" type="button" id="flipBtn">نمایش پاسخ <kbd>Space</kbd></button>
+          <div class="grades" id="grades" hidden>
+            <button class="grade" type="button" data-g="0">دوباره <small></small></button>
+            <button class="grade" type="button" data-g="1">سخت <small></small></button>
+            <button class="grade" type="button" data-g="2">خوب <small></small></button>
+            <button class="grade" type="button" data-g="3">آسان <small></small></button>
+          </div>
+          <p class="kbd-hint">میانبرها: <kbd>Space</kbd> نمایش پاسخ · <kbd>1</kbd> تا <kbd>4</kbd> امتیاز · <kbd>S</kbd> تلفظ</p>
+        </div>
+      </div>
+      <div id="revDone" hidden>
+        <div class="panel done-panel stack">
+          <div class="big num" id="doneNum"></div>
+          <div id="doneText"></div>
+          <div class="btn-row" style="justify-content:center"><button class="btn primary" type="button" data-go="today">بازگشت به امروز</button><button class="btn" type="button" data-go="quiz">یک آزمون کوتاه</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section class="view" id="v-quiz" hidden>
+      <div id="quizSetup">
+        <h1 class="view-title">آزمون</h1>
+        <p class="sub">آزمون روی زمان‌بندی مرورها اثری ندارد. در پایان می‌توانید اشتباه‌ها را به مرور امروز اضافه کنید.</p>
+        <div class="panel stack" style="max-width:760px">
+          <div class="field"><span class="lbl">نوع آزمون</span>
+            <div class="choice-grid" id="qType">
+              <button type="button" class="choice" data-v="meaning" aria-pressed="true"><b>معنی</b><span>از بین چهار گزینه معنی درست را انتخاب کنید.</span></button>
+              <button type="button" class="choice" data-v="article"><b><span class="lat">de</span> یا <span class="lat">het</span>؟</b><span>حرف تعریف اسم‌های هلندی را تمرین کنید.</span></button>
+              <button type="button" class="choice" data-v="spelling"><b>املا</b><span>معنی را می‌بینید، واژه را خودتان بنویسید.</span></button>
+            </div>
+          </div>
+          <div class="two">
+            <div class="field" id="qLangWrap"><span class="lbl">زبان</span><div class="seg" id="qLang"><button type="button" data-v="all" aria-pressed="true">همه</button><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button></div></div>
+            <div class="field" id="qDirWrap"><span class="lbl">جهت</span><div class="seg" id="qDir"><button type="button" data-v="fwd" aria-pressed="true">زبان ← فارسی</button><button type="button" data-v="rev">فارسی ← زبان</button><button type="button" data-v="mix">ترکیبی</button></div></div>
+          </div>
+          <div class="field"><span class="lbl">تعداد پرسش</span><div class="seg" id="qCount"><button type="button" data-v="10" aria-pressed="true">۱۰</button><button type="button" data-v="20">۲۰</button><button type="button" data-v="30">۳۰</button></div></div>
+          <p class="note-box bad" id="qErr" hidden style="margin:0"></p>
+          <div class="btn-row"><button class="btn primary lg" type="button" id="qStart">شروع آزمون</button></div>
+        </div>
+      </div>
+      <div id="quizRun" hidden class="quiz-wrap">
+        <div class="rev-top" style="max-width:none">
+          <button class="btn ghost sm" type="button" id="qExit">پایان</button>
+          <div class="progress"><span id="qBar" style="width:0"></span></div>
+          <span class="rev-count num" id="qCountTxt"></span>
+        </div>
+        <div class="panel quiz-q" id="quizQ"></div>
+      </div>
+      <div id="quizDone" hidden class="quiz-wrap">
+        <div class="panel done-panel" style="max-width:none">
+          <div class="big num" id="qScore"></div>
+          <p id="qScoreTxt"></p>
+          <div class="mist" id="qMist"></div>
+          <div class="btn-row" style="justify-content:center">
+            <button class="btn primary" type="button" id="qAddMist">افزودن اشتباه‌ها به مرور امروز</button>
+            <button class="btn" type="button" id="qAgain">آزمون دوباره</button>
+            <button class="btn ghost" type="button" id="qBack">تغییر تنظیمات آزمون</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MANAGE ============ -->
+    <section class="view" id="v-manage" hidden>
+      <div class="head-row">
+        <div><h1 class="view-title">مدیریت واژه‌ها</h1><p class="sub" id="manStats"></p></div>
+        <div class="seg" id="manTabs"><button type="button" data-v="one" aria-pressed="true">افزودن تکی</button><button type="button" data-v="bulk">افزودن گروهی</button></div>
+      </div>
+      <div class="man-grid">
+        <div class="panel form-panel" id="formPanel">
+          <form id="itemForm" autocomplete="off" novalidate>
+            <div class="form-title"><span id="formTitle">افزودن مورد تازه</span><button class="btn ghost sm" type="button" id="fCancel">پاک کردن فرم</button></div>
+            <div class="two">
+              <div class="field"><span class="lbl">زبان</span><div class="seg" id="fLang"><button type="button" data-v="nl" aria-pressed="true">هلندی</button><button type="button" data-v="en">انگلیسی</button></div></div>
+              <div class="field"><span class="lbl">نوع</span><div class="seg" id="fType"><button type="button" data-v="word" aria-pressed="true">واژه</button><button type="button" data-v="sentence">جمله</button></div></div>
+            </div>
+            <div class="field"><label class="lbl" for="fText">واژه یا جمله</label>
+              <div class="input-with-btn"><input type="text" id="fText" class="lat ltr" spellcheck="false" placeholder="huis"><button type="button" class="icon-btn" id="fSpeak" aria-label="پخش تلفظ"><svg class="i"><use href="#i-speak"/></svg></button></div>
+              <span class="dup" id="fDup" hidden></span>
+            </div>
+            <div class="two nl-noun">
+              <div class="field"><span class="lbl">حرف تعریف</span><div class="seg" id="fArt"><button type="button" data-v="" aria-pressed="true">ندارد</button><button type="button" data-v="de" class="lat">de</button><button type="button" data-v="het" class="lat">het</button></div></div>
+              <div class="field"><label class="lbl" for="fPlural">شکل جمع <em>(اختیاری)</em></label><input type="text" id="fPlural" class="lat ltr" spellcheck="false"></div>
+            </div>
+            <div class="field"><label class="lbl" for="fFa">معنی فارسی</label><input type="text" id="fFa"></div>
+            <div class="field nl-only"><label class="lbl" for="fEn">معنی انگلیسی <em>(اختیاری)</em></label><input type="text" id="fEn" class="lat ltr"></div>
+            <div class="field"><label class="lbl" for="fEx">جملهٔ نمونه <em>(اختیاری)</em></label><textarea id="fEx" rows="2" class="lat ltr" spellcheck="false"></textarea></div>
+            <div class="field"><label class="lbl" for="fExFa">ترجمهٔ جملهٔ نمونه <em>(اختیاری)</em></label><input type="text" id="fExFa"></div>
+            <div class="field"><label class="lbl" for="fNote">نکته <em>(مثلاً هشدار دوست دروغین)</em></label><textarea id="fNote" rows="2"></textarea></div>
+            <div class="field"><label class="lbl" for="fTags">برچسب‌ها <em>(با ویرگول جدا کنید)</em></label><input type="text" id="fTags" list="tagList" placeholder="خرید، اداری"></div>
+            <datalist id="tagList"></datalist>
+            <div class="btn-row">
+              <button type="submit" class="btn primary" id="fSave">افزودن</button>
+              <button type="button" class="btn danger" id="fDelete" hidden>حذف</button>
+              <span class="hint" style="margin-inline-start:auto"><kbd>Ctrl</kbd> + <kbd>Enter</kbd></span>
+            </div>
+          </form>
+          <div class="bulk" id="bulkBox" hidden>
+            <div class="form-title">افزودن گروهی</div>
+            <p class="hint" style="margin:0">هر خط یک مورد. بخش‌ها را با <span class="code">|</span> جدا کنید، یا ستون‌ها را مستقیم از Excel کپی کنید:</p>
+            <pre class="fmt">het huis | خانه | Ons huis is klein. | خانه
+werken | کار کردن
+Waar is het station? | ایستگاه کجاست؟</pre>
+            <p class="hint" style="margin:0">ترتیب: متن | معنی فارسی | جملهٔ نمونه | برچسب‌ها. فقط دو بخش اول لازم است. اگر اسم هلندی را با <span class="lat">de</span> یا <span class="lat">het</span> بنویسید، حرف تعریف خودکار جدا می‌شود.</p>
+            <div class="two">
+              <div class="field"><span class="lbl">زبان</span><div class="seg" id="bLang"><button type="button" data-v="nl" aria-pressed="true">هلندی</button><button type="button" data-v="en">انگلیسی</button></div></div>
+              <div class="field"><span class="lbl">نوع</span><div class="seg" id="bType"><button type="button" data-v="auto" aria-pressed="true">خودکار</button><button type="button" data-v="word">واژه</button><button type="button" data-v="sentence">جمله</button></div></div>
+            </div>
+            <div class="field"><label class="lbl" for="bTags">برچسب برای همه <em>(اختیاری)</em></label><input type="text" id="bTags" list="tagList"></div>
+            <div class="field"><label class="lbl" for="bText">فهرست</label><textarea id="bText" rows="8" class="lat ltr" spellcheck="false" placeholder="de trein | قطار"></textarea></div>
+            <div id="bPrev"></div>
+            <div class="btn-row"><button type="button" class="btn primary" id="bAdd" disabled>افزودن</button><button type="button" class="btn ghost" id="bClear">پاک کردن</button></div>
+          </div>
+        </div>
+        <div class="panel list-panel">
+          <div class="filters">
+            <input type="search" id="lSearch" class="search" placeholder="جست‌وجو در واژه‌ها و معنی‌ها" aria-label="جست‌وجو">
+            <select id="lLang" aria-label="زبان"><option value="all">همهٔ زبان‌ها</option><option value="nl">هلندی</option><option value="en">انگلیسی</option></select>
+            <select id="lType" aria-label="نوع"><option value="all">واژه و جمله</option><option value="word">واژه</option><option value="sentence">جمله</option></select>
+            <select id="lTag" aria-label="برچسب"><option value="all">همهٔ برچسب‌ها</option></select>
+            <select id="lStatus" aria-label="وضعیت"><option value="all">همهٔ وضعیت‌ها</option><option value="new">جدید</option><option value="due">برای امروز</option><option value="later">در حال یادگیری</option><option value="mature">تثبیت‌شده</option></select>
+          </div>
+          <div class="list-head"><span id="lCount"></span><button class="btn sm danger" type="button" id="delSamples" hidden>حذف موارد نمونه</button></div>
+          <div id="itemRows"></div>
+          <div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn" type="button" id="moreRows" hidden>نمایش بیشتر</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SETTINGS ============ -->
+    <section class="view" id="v-settings" hidden>
+      <h1 class="view-title">تنظیمات</h1>
+      <p class="sub">همگام‌سازی بین دستگاه‌ها، تلفظ، مرور و پشتیبان‌گیری.</p>
+      <div class="set-grid">
+        <div class="panel wide stack" id="syncPanel">
+          <div class="set-head"><div><h2>همگام‌سازی بین دستگاه‌ها</h2><p>واژه‌ها و پیشرفت شما در یک مخزن خصوصی در حساب GitHub خودتان نگهداری می‌شود.</p></div><button class="sync-chip" type="button"><span class="dot"></span><span class="t">فقط این دستگاه</span></button></div>
+          <div class="note-box info" id="syncPreview" hidden>همگام‌سازی در نسخهٔ پیش‌نمایش کار نمی‌کند، چون این صفحه اجازهٔ ارتباط با GitHub را ندارد. ابتدا برنامه را با راهنمای راه‌اندازی (دکمهٔ پایین) روی GitHub Pages بگذارید و همگام‌سازی را از همان‌جا روشن کنید. داده‌های این پیش‌نمایش را با «کپی متن پشتیبان» به نسخهٔ اصلی منتقل کنید.</div>
+          <div id="syncStatus" class="note-box" hidden></div>
+          <div class="two" id="ghFields">
+            <div class="field"><label class="lbl" for="ghOwner">نام کاربری GitHub</label><input type="text" id="ghOwner" class="ltr" spellcheck="false" autocapitalize="off" placeholder="your-username"></div>
+            <div class="field"><label class="lbl" for="ghRepo">نام مخزن داده</label><input type="text" id="ghRepo" class="ltr" spellcheck="false" autocapitalize="off" placeholder="vazheyar-data"></div>
+            <div class="field" style="grid-column:1/-1"><label class="lbl" for="ghToken">کلید دسترسی (token)</label><div class="input-with-btn"><input type="password" id="ghToken" class="ltr" spellcheck="false" autocapitalize="off" placeholder="github_pat_..."><button type="button" class="btn sm" id="ghShow">نمایش</button></div><span class="hint">کلید فقط روی همین دستگاه ذخیره می‌شود و هرگز داخل فایل داده قرار نمی‌گیرد.</span></div>
+          </div>
+          <label class="check"><input type="checkbox" id="ghAuto" checked><span>همگام‌سازی خودکار بعد از هر تغییر و هنگام باز کردن برنامه</span></label>
+          <div class="btn-row">
+            <button class="btn primary" type="button" id="ghConnect">اتصال و همگام‌سازی</button>
+            <button class="btn" type="button" id="ghSyncNow" hidden>همگام‌سازی الان</button>
+            <button class="btn ghost danger" type="button" id="ghDisconnect" hidden>قطع اتصال این دستگاه</button>
+          </div>
+          <details class="box" id="phoneBox">
+            <summary>اتصال گوشی یا دستگاه دیگر</summary>
+            <div class="stack">
+              <div id="phoneOut" hidden class="stack">
+                <p style="margin:0">با دوربین گوشی این کد را اسکن کنید. برنامه روی گوشی باز می‌شود و بعد از تأیید شما، همگام‌سازی روشن می‌شود.</p>
+                <p class="note-box" style="margin:0">این کد کلید دسترسی شما را در خود دارد. آن را برای کسی نفرستید و در شبکه‌های اجتماعی منتشر نکنید.</p>
+                <div><div class="qr-box" id="qrBox"></div></div>
+                <div class="btn-row"><button class="btn sm" type="button" id="copyCode">کپی کد اتصال</button><span class="hint">اگر اسکن ممکن نبود، کد را کپی و روی دستگاه دیگر در کادر پایین وارد کنید.</span></div>
+              </div>
+              <button class="btn" type="button" id="showQR">نمایش کد اتصال</button>
+              <p class="hint" id="phoneNeed" style="margin:0">اول همین دستگاه را وصل کنید تا کد اتصال ساخته شود.</p>
+              <div class="field"><label class="lbl" for="codeIn">وارد کردن کد اتصال از دستگاه دیگر</label><div class="input-with-btn"><input type="text" id="codeIn" class="ltr" spellcheck="false" autocapitalize="off" placeholder="VZY1...."><button class="btn" type="button" id="codeApply">اتصال</button></div></div>
+            </div>
+          </details>
+          <div class="note-box info" id="guideBox" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><span>هنوز راه‌اندازی نکرده‌اید؟ راهنمای تصویری گام‌به‌گام را باز کنید.</span><a class="btn primary sm" id="guideLink" href="guide.html" target="_blank" rel="noopener">باز کردن راهنمای راه‌اندازی</a></div>
+        </div>
+
+        <div class="panel stack">
+          <div class="set-head"><div><h2>تلفظ</h2><p>صدا از موتور گفتار خود دستگاه پخش می‌شود و رایگان است.</p></div></div>
+          <div class="field"><label class="lbl" for="vNl">صدای هلندی</label><div class="input-with-btn"><select id="vNl"></select><button class="icon-btn" type="button" id="tNl" aria-label="آزمایش صدای هلندی"><svg class="i"><use href="#i-speak"/></svg></button></div></div>
+          <div class="field"><label class="lbl" for="vEn">صدای انگلیسی</label><div class="input-with-btn"><select id="vEn"></select><button class="icon-btn" type="button" id="tEn" aria-label="آزمایش صدای انگلیسی"><svg class="i"><use href="#i-speak"/></svg></button></div></div>
+          <div class="field"><label class="lbl" for="vRate">سرعت گفتار: <span id="vRateTxt" class="num"></span></label><input type="range" id="vRate" min="0.5" max="1.3" step="0.05"></div>
+          <label class="check"><input type="checkbox" id="vAuto"><span>پخش خودکار تلفظ هنگام نمایش کارت</span></label>
+          <div class="note-box" id="voiceHelp" hidden></div>
+        </div>
+
+        <div class="stack">
+          <div class="panel stack">
+            <div class="set-head"><div><h2>مرور</h2><p>چند کارت تازه در روز به مرورها اضافه شود.</p></div></div>
+            <div class="two">
+              <div class="field"><label class="lbl" for="newPerDay">کارت تازه در روز</label><input type="number" id="newPerDay" min="0" max="200" class="num"></div>
+            </div>
+            <div class="field" id="themeWrap"><span class="lbl">ظاهر</span><div class="seg" id="themeSeg"><button type="button" data-v="system">مطابق دستگاه</button><button type="button" data-v="light">روشن</button><button type="button" data-v="dark">تیره</button></div></div>
+          </div>
+          <div class="panel stack">
+            <div class="set-head"><div><h2>پشتیبان‌گیری</h2><p>یک نسخه از همهٔ واژه‌ها و پیشرفتتان.</p></div></div>
+            <div class="btn-row"><button class="btn" type="button" id="bkDownload">دانلود فایل پشتیبان</button><button class="btn" type="button" id="bkCopy">کپی متن پشتیبان</button></div>
+            <div class="field"><label class="lbl" for="bkFile">بازگردانی از فایل</label><input type="file" id="bkFile" accept=".json,application/json"></div>
+            <div class="field"><label class="lbl" for="bkText">یا متن پشتیبان را اینجا بچسبانید</label><textarea id="bkText" rows="3" class="ltr" spellcheck="false"></textarea></div>
+            <div class="btn-row"><button class="btn" type="button" id="bkImport">بازگردانی از متن</button></div>
+            <p class="hint" style="margin:0">بازگردانی چیزی را پاک نمی‌کند؛ موارد پشتیبان با داده‌های فعلی ادغام می‌شوند.</p>
+          </div>
+        </div>
+
+        <div class="panel wide">
+          <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
+        </div>
+      </div>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار · نسخهٔ ۱.۰</p>
+    </section>
+  </main>
+</div>
+
+<div class="modal-back" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <h3 id="mTitle"></h3>
+    <div id="mBody"></div>
+    <div class="btn-row"><button class="btn" type="button" id="mCancel">انصراف</button><button class="btn primary" type="button" id="mOk">تأیید</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(function(){
+'use strict';
+document.documentElement.lang='fa';
+document.documentElement.dir='rtl';
+
+/* ================= helpers ================= */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const IS_PREVIEW=(()=>{let framed=true;try{framed=window.self!==window.top}catch(e){} return framed || /claude/i.test(location.hostname) || location.protocol==='file:';})();
+const DATA_KEY='vazheyar.data.v1', CFG_KEY='vazheyar.cfg.v1', FILE_PATH='vazheyar-data.json';
+const DAY=86400000, MIN=60000;
+const faNum=n=>Number(n).toLocaleString('fa-IR',{maximumFractionDigits:1});
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>(window.crypto&&crypto.randomUUID)?crypto.randomUUID():'id-'+Date.now().toString(36)+Math.random().toString(36).slice(2,10);
+const dayKey=(t=Date.now())=>{const d=new Date(t);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const endOfToday=()=>{const d=new Date();d.setHours(23,59,59,999);return d.getTime()};
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const norm=s=>String(s||'').toLowerCase().normalize('NFC').replace(/[.,!?;:"'“”‘’()¿¡]/g,'').replace(/\s+/g,' ').trim();
+function readLS(k){try{const s=localStorage.getItem(k);return s?JSON.parse(s):null}catch(e){return null}}
+let storageWarned=false;
+function writeLS(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){if(!storageWarned){storageWarned=true;toast('ذخیره‌سازی در این مرورگر ممکن نیست؛ تغییرات با بستن صفحه از بین می‌رود.',6000)}return false}}
+function b64enc(str){const bytes=new TextEncoder().encode(str);let bin='';for(let i=0;i<bytes.length;i+=0x8000)bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000));return btoa(bin)}
+function b64dec(b64){const bin=atob(String(b64).replace(/\s/g,''));const bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);return new TextDecoder().decode(bytes)}
+const b64url=s=>b64enc(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const unb64url=s=>{s=String(s).replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return b64dec(s)};
+function lev(a,b){if(a===b)return 0;const m=a.length,n=b.length;if(!m||!n)return m||n;let prev=Array.from({length:n+1},(_,i)=>i);for(let i=1;i<=m;i++){const cur=[i];for(let j=1;j<=n;j++)cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));prev=cur}return prev[n]}
+function relTime(t){if(!t)return'';const s=(Date.now()-t)/1000;if(s<60)return'همین حالا';if(s<3600)return faNum(Math.floor(s/60))+' دقیقه پیش';if(s<86400)return faNum(Math.floor(s/3600))+' ساعت پیش';return new Date(t).toLocaleDateString('fa-IR',{day:'numeric',month:'long'})}
+function ivlLabel(days){const m=days*DAY/MIN;if(m<60)return faNum(Math.max(1,Math.round(m)))+' دقیقه';const h=m/60;if(h<24)return faNum(Math.round(h))+' ساعت';if(days<31)return faNum(Math.round(days))+' روز';if(days<365)return faNum(Math.round(days/30*10)/10)+' ماه';return faNum(Math.round(days/365*10)/10)+' سال'}
+
+/* ================= toast & modal ================= */
+let toastTimer;
+function toast(msg,ms=2800){const t=$('#toast');t.textContent=msg;t.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.hidden=true,ms)}
+function ask({title,html,ok='تأیید',cancel='انصراف',danger=false}){
+  return new Promise(res=>{
+    const m=$('#modal');$('#mTitle').textContent=title;$('#mBody').innerHTML=html||'';
+    const okB=$('#mOk'),cB=$('#mCancel');okB.textContent=ok;cB.textContent=cancel;cB.hidden=!cancel;
+    okB.className='btn '+(danger?'danger solid':'primary');m.hidden=false;okB.focus();
+    const done=v=>{m.hidden=true;okB.onclick=cB.onclick=null;m.onclick=null;document.removeEventListener('keydown',kd,true);res(v)};
+    const kd=e=>{if(e.key==='Escape'){e.stopPropagation();done(false)}};
+    document.addEventListener('keydown',kd,true);
+    okB.onclick=()=>done(true);cB.onclick=()=>done(false);m.onclick=e=>{if(e.target===m)done(false)};
+  });
+}
+async function copyOrShow(text,okMsg){
+  try{await navigator.clipboard.writeText(text);toast(okMsg||'کپی شد');return true}catch(e){}
+  const p=ask({title:'کپی دستی',html:'<p class="hint" style="margin:0 0 8px">متن انتخاب شده است؛ با Ctrl+C (یا نگه‌داشتن انگشت روی گوشی) کپی کنید.</p><textarea id="manualCopy" rows="5" class="ltr" readonly></textarea>',ok:'بستن',cancel:''});
+  const ta=$('#manualCopy');ta.value=text;ta.focus();ta.select();
+  await p;return false;
+}
+
+/* ================= config & data ================= */
+const DEFAULT_CFG={deviceId:'',seeded:false,theme:'system',
+  gh:{enabled:false,owner:'',repo:'vazheyar-data',branch:'',token:'',auto:true,lastSync:0,lastError:''},
+  tts:{nl:'',en:'',rate:0.9,auto:true},
+  review:{newPerDay:15,dir:'fwd',lang:'all'}};
+function loadCfg(){const d=JSON.parse(JSON.stringify(DEFAULT_CFG));const s=readLS(CFG_KEY);if(s){Object.assign(d,s);d.gh=Object.assign({},DEFAULT_CFG.gh,s.gh||{});d.tts=Object.assign({},DEFAULT_CFG.tts,s.tts||{});d.review=Object.assign({},DEFAULT_CFG.review,s.review||{})}if(!d.deviceId)d.deviceId=uid().slice(0,8);return d}
+let cfg=loadCfg();
+const saveCfg=()=>writeLS(CFG_KEY,cfg);
+
+const BASE=Date.UTC(2026,9,11);
+function S(n,lang,type,text,fa,o={}){return{id:'sample-'+n,lang,type,text,fa,article:o.a||'',plural:o.pl||'',en:o.en||'',example:o.ex||'',exampleFa:o.exFa||'',note:o.note||'',tags:['نمونه'].concat(o.tags||[]),created:BASE+n,updated:BASE,srs:null}}
+function samples(){return[
+  S(1,'nl','word','huis','خانه',{a:'het',pl:'huizen',en:'house',ex:'Ons huis is klein maar gezellig.',exFa:'خانهٔ ما کوچک ولی دنج است.',tags:['خانه']}),
+  S(2,'nl','word','fiets','دوچرخه',{a:'de',pl:'fietsen',en:'bicycle',ex:'Ik ga met de fiets naar mijn werk.',exFa:'با دوچرخه سر کار می‌روم.',tags:['رفت‌وآمد']}),
+  S(3,'nl','word','meisje','دختر',{a:'het',pl:'meisjes',en:'girl',note:'اسم‌های تصغیری (با پسوند ‎-je) همیشه het می‌گیرند، حتی وقتی به یک دختر اشاره می‌کنند.'}),
+  S(4,'nl','word','afspraak','قرار ملاقات، وقت قبلی',{a:'de',pl:'afspraken',en:'appointment',ex:'Ik heb morgen een afspraak bij de huisarts.',exFa:'فردا پیش پزشک خانواده وقت دارم.',tags:['اداری']}),
+  S(5,'nl','word','huisarts','پزشک خانواده',{a:'de',pl:'huisartsen',en:'general practitioner (GP)',tags:['سلامت']}),
+  S(6,'nl','word','gemeente','شهرداری',{a:'de',pl:'gemeenten',en:'municipality',ex:'Je moet je inschrijven bij de gemeente.',exFa:'باید در شهرداری ثبت‌نام کنی.',tags:['اداری']}),
+  S(7,'nl','word','brood','نان',{a:'het',pl:'broden',en:'bread',tags:['خرید']}),
+  S(8,'nl','word','kaas','پنیر',{a:'de',pl:'kazen',en:'cheese',tags:['خرید']}),
+  S(9,'nl','word','werk','کار',{a:'het',en:'work'}),
+  S(10,'nl','word','trein','قطار',{a:'de',pl:'treinen',en:'train',tags:['رفت‌وآمد']}),
+  S(11,'nl','word','geld','پول',{a:'het',en:'money',tags:['خرید']}),
+  S(12,'nl','word','weer','هوا (وضع آب‌وهوا)',{a:'het',en:'weather',ex:'Het weer is vandaag slecht.',exFa:'امروز هوا بد است.'}),
+  S(13,'nl','word','deur','در',{a:'de',pl:'deuren',en:'door',note:'دوست دروغین: door در هلندی یعنی «توسط، از طریق». «در» می‌شود de deur.',tags:['دوست‌دروغین']}),
+  S(14,'nl','word','begrijpen','فهمیدن',{en:'to understand',ex:'Ik begrijp het niet.',exFa:'متوجه نمی‌شوم.',tags:['فعل']}),
+  S(15,'nl','word','wonen','زندگی کردن، ساکن بودن',{en:'to live (reside)',ex:'Ik woon in Nederland.',exFa:'در هلند زندگی می‌کنم.',tags:['فعل']}),
+  S(16,'nl','word','bellen','تلفن زدن',{en:'to call',ex:'Ik bel je straks.',exFa:'بعداً بهت زنگ می‌زنم.',tags:['فعل']}),
+  S(17,'nl','word','slim','باهوش',{en:'smart, clever',note:'دوست دروغین: slim در انگلیسی یعنی «لاغر»، ولی در هلندی یعنی «باهوش».',tags:['دوست‌دروغین']}),
+  S(18,'nl','word','braaf','مؤدب، حرف‌گوش‌کن',{en:'well-behaved',note:'دوست دروغین: شکل صرف‌شده‌اش brave است (een brave hond)، ولی ربطی به brave انگلیسی (شجاع) ندارد.',tags:['دوست‌دروغین']}),
+  S(19,'nl','word','eventueel','احتمالاً، در صورت لزوم',{en:'possibly, if necessary',note:'دوست دروغین: eventually در انگلیسی یعنی «سرانجام».',tags:['دوست‌دروغین']}),
+  S(20,'nl','word','gezellig','دنج، صمیمی و دلپذیر',{en:'cosy, convivial',note:'معادل دقیقی در فارسی و انگلیسی ندارد؛ برای جا، جمع یا لحظه‌ای که حال خوبی دارد به کار می‌رود.'}),
+  S(21,'nl','word','lekker','خوشمزه؛ دلچسب',{en:'tasty, nice'}),
+  S(22,'nl','sentence','Hoe gaat het met je?','حالت چطور است؟',{en:'How are you?',tags:['مکالمه']}),
+  S(23,'nl','sentence','Kunt u dat herhalen, alstublieft?','می‌شود لطفاً آن را تکرار کنید؟',{en:'Could you repeat that, please?',note:'u شکل مؤدبانهٔ «شما» است؛ با غریبه‌ها و در اداره‌ها از آن استفاده کنید.',tags:['مکالمه']}),
+  S(24,'nl','sentence','Mag ik pinnen?','می‌توانم با کارت پرداخت کنم؟',{en:'Can I pay by card?',note:'pinnen یعنی پرداخت با کارت بانکی.',tags:['خرید']}),
+  S(25,'nl','sentence','Ik spreek een beetje Nederlands.','کمی هلندی صحبت می‌کنم.',{en:'I speak a little Dutch.',tags:['مکالمه']}),
+  S(26,'nl','sentence','Waar is het station?','ایستگاه کجاست؟',{en:'Where is the station?',tags:['رفت‌وآمد']}),
+  S(27,'en','word','appointment','قرار ملاقات، وقت قبلی',{ex:'I have a dentist appointment on Monday.',exFa:'دوشنبه وقت دندانپزشکی دارم.'}),
+  S(28,'en','word','landlord','صاحبخانه',{ex:'I need to call my landlord about the heating.',exFa:'باید دربارهٔ شوفاژ به صاحبخانه‌ام زنگ بزنم.',tags:['خانه']}),
+  S(29,'en','word','commute','رفت‌وآمد روزانه به محل کار',{ex:'My commute takes forty minutes.',exFa:'رفت‌وآمدم چهل دقیقه طول می‌کشد.',tags:['رفت‌وآمد']}),
+  S(30,'en','word','eventually','سرانجام، در نهایت',{note:'با eventueel هلندی (= احتمالاً) اشتباه نشود.',tags:['دوست‌دروغین']}),
+  S(31,'en','word','actually','در واقع',{note:'با actueel هلندی (= به‌روز، جاری) اشتباه نشود.',tags:['دوست‌دروغین']}),
+  S(32,'en','word','reliable','قابل‌اعتماد',{ex:'The trains here are usually reliable.',exFa:'قطارهای اینجا معمولاً قابل‌اعتمادند.'}),
+  S(33,'en','word','available','در دسترس؛ آزاد، موجود',{ex:'Is this room available tomorrow?',exFa:'این اتاق فردا خالی است؟'}),
+  S(34,'en','word','deadline','مهلت، ضرب‌الاجل',{tags:['کار']}),
+  S(35,'en','word','apply for','درخواست دادن برای',{ex:'She applied for a job at the hospital.',exFa:'برای کاری در بیمارستان درخواست داد.',tags:['کار']}),
+  S(36,'en','sentence','Could you say that again, please?','می‌شود لطفاً دوباره بگویید؟',{tags:['مکالمه']}),
+  S(37,'en','sentence',"I'm looking forward to it.",'مشتاقانه منتظرش هستم.',{tags:['مکالمه']}),
+  S(38,'en','sentence','It depends on the situation.','بستگی به شرایط دارد.',{tags:['مکالمه']}),
+  S(39,'en','sentence',"Sorry, I didn't catch that.",'ببخشید، متوجه نشدم.',{note:'catch اینجا یعنی «شنیدن و فهمیدن»، نه «گرفتن».',tags:['مکالمه']}),
+  S(40,'en','sentence','How long does it take?','چقدر طول می‌کشد؟',{tags:['مکالمه']})
+]}
+
+function emptyData(){return{items:[],deleted:{},log:{}}}
+function normData(d){d=d||{};if(d.data&&d.data.items)d=d.data;return{items:Array.isArray(d.items)?d.items.filter(i=>i&&i.id&&i.text).map(cleanItem):[],deleted:(d.deleted&&typeof d.deleted==='object')?d.deleted:{},log:(d.log&&typeof d.log==='object')?d.log:{}}}
+function cleanItem(i){return{id:String(i.id),lang:i.lang==='en'?'en':'nl',type:i.type==='sentence'?'sentence':'word',text:String(i.text||''),article:(i.article==='de'||i.article==='het')?i.article:'',plural:i.plural||'',fa:i.fa||'',en:i.en||'',example:i.example||'',exampleFa:i.exampleFa||'',note:i.note||'',tags:Array.isArray(i.tags)?i.tags.filter(Boolean).map(String):[],created:+i.created||0,updated:+i.updated||0,srs:i.srs&&typeof i.srs==='object'?{ivl:+i.srs.ivl||0,ease:+i.srs.ease||2.5,reps:+i.srs.reps||0,lapses:+i.srs.lapses||0,due:+i.srs.due||0,last:+i.srs.last||0,first:i.srs.first||''}:null}}
+let db=normData(readLS(DATA_KEY));
+if(!db.items.length&&!cfg.seeded){db.items=samples();cfg.seeded=true;saveCfg();writeLS(DATA_KEY,db)}
+let dirty=false;
+function saveData(syncDelay){writeLS(DATA_KEY,db);dirty=true;refreshBadges();if(syncDelay!==false)scheduleSync(syncDelay||4000)}
+const getItem=id=>db.items.find(i=>i.id===id);
+const isNew=i=>!i.srs||!i.srs.last;
+const fullText=i=>(i.lang==='nl'&&i.article&&i.type==='word'?i.article+' ':'')+i.text;
+function removeItems(ids){const set=new Set(ids),now=Date.now();db.items=db.items.filter(i=>{if(set.has(i.id)){db.deleted[i.id]=now;return false}return true})}
+
+/* ================= spaced repetition ================= */
+function schedule(srs,g,now=Date.now()){
+  const s=srs?Object.assign({},srs):{ivl:0,ease:2.5,reps:0,lapses:0,due:0,last:0,first:''};
+  const learning=s.ivl<1;let ivl;
+  if(g===0){if(!learning){s.lapses++;s.ease=Math.max(1.3,s.ease-0.2)}ivl=10*MIN/DAY;s.reps=0}
+  else if(learning){ivl=g===1?0.5:g===2?1:4;if(g===3)s.ease=Math.min(3.2,s.ease+0.15);s.reps++}
+  else{
+    if(g===1){ivl=Math.max(s.ivl+1,s.ivl*1.2);s.ease=Math.max(1.3,s.ease-0.15)}
+    else if(g===2){ivl=Math.max(s.ivl+1,s.ivl*s.ease)}
+    else{ivl=Math.max(s.ivl+2,s.ivl*s.ease*1.3);s.ease=Math.min(3.2,s.ease+0.15)}
+    s.reps++;
+  }
+  if(ivl>=3)ivl=Math.round(ivl*(0.95+Math.random()*0.1));else if(ivl>=1)ivl=Math.round(ivl);
+  ivl=Math.min(ivl,3650);
+  s.ivl=ivl;s.due=now+ivl*DAY;s.last=now;if(!s.first)s.first=dayKey(now);
+  return s;
+}
+function previewIvl(srs,g){const s=srs?Object.assign({},srs):null;const r=schedule(s,g,Date.now());return r.ivl}
+const introducedToday=()=>{const k=dayKey();return db.items.filter(i=>i.srs&&i.srs.first===k).length};
+function logReview(){const k=dayKey();db.log[k]=db.log[k]||{};db.log[k][cfg.deviceId]=(db.log[k][cfg.deviceId]||0)+1}
+const dayCount=k=>{const o=db.log[k];if(!o)return 0;return Object.values(o).reduce((a,b)=>a+(+b||0),0)};
+function stats(lang){
+  const eod=endOfToday();let due=0,fresh=0,total=0,words=0,sent=0,mature=0;
+  for(const i of db.items){if(lang!=='all'&&i.lang!==lang)continue;total++;i.type==='sentence'?sent++:words++;
+    if(isNew(i))fresh++;else{if(i.srs.due<=eod)due++;if(i.srs.ivl>=21)mature++}}
+  const newLeft=Math.max(0,(+cfg.review.newPerDay||0)-introducedToday());
+  return{due,fresh,total,words,sent,mature,newToday:Math.min(fresh,newLeft)};
+}
+function buildQueue(lang){
+  const eod=endOfToday();const pool=db.items.filter(i=>lang==='all'||i.lang===lang);
+  const due=pool.filter(i=>!isNew(i)&&i.srs.due<=eod).sort((a,b)=>a.srs.due-b.srs.due);
+  const newLeft=Math.max(0,(+cfg.review.newPerDay||0)-introducedToday());
+  const fresh=pool.filter(isNew).sort((a,b)=>a.created-b.created).slice(0,newLeft);
+  const q=[];let di=0,ni=0;
+  while(di<due.length||ni<fresh.length){for(let k=0;k<3&&di<due.length;k++)q.push(due[di++].id);if(ni<fresh.length)q.push(fresh[ni++].id)}
+  return q;
+}
+
+/* ================= speech ================= */
+const hasTTS='speechSynthesis' in window;
+function voicesFor(prefix){if(!hasTTS)return[];return speechSynthesis.getVoices().filter(v=>(v.lang||'').toLowerCase().replace('_','-').startsWith(prefix))}
+function speak(text,lang){
+  if(!hasTTS){toast('این مرورگر از پخش صدا پشتیبانی نمی‌کند.');return}
+  try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang==='nl'?'nl-NL':'en-US';
+    const want=cfg.tts[lang];const vs=voicesFor(lang);const v=(want&&vs.find(x=>x.voiceURI===want))||vs.find(x=>x.localService)||vs[0];if(v){u.voice=v;u.lang=v.lang}
+    u.rate=+cfg.tts.rate||0.9;speechSynthesis.speak(u)}catch(e){}
+}
+const speakItem=it=>speak(fullText(it),it.lang);
+
+/* ================= GitHub sync ================= */
+const ghReady=()=>!IS_PREVIEW&&cfg.gh.enabled&&cfg.gh.token&&cfg.gh.owner&&cfg.gh.repo;
+let syncState=ghReady()?'ok':'off',syncing=false,syncQueued=false,syncTimer=null;
+function setSync(s,err){syncState=s;if(err!==undefined){cfg.gh.lastError=err;saveCfg()}updateChips();if(currentView==='settings')renderSyncStatus()}
+function updateChips(){
+  const off=!ghReady();const s=off?'off':(!navigator.onLine?'offline':syncState);
+  const txt={off:'فقط این دستگاه',ok:'همگام'+(cfg.gh.lastSync?' · '+relTime(cfg.gh.lastSync):''),busy:'در حال همگام‌سازی',error:'خطای همگام‌سازی',offline:'آفلاین'}[s]||'';
+  $$('.sync-chip').forEach(c=>{c.dataset.s=s;$('.t',c).textContent=txt;c.title=s==='error'?(cfg.gh.lastError||''):''});
+}
+function scheduleSync(delay){if(!ghReady()||!cfg.gh.auto)return;clearTimeout(syncTimer);syncTimer=setTimeout(()=>syncNow(),delay)}
+async function ghFetch(path,opts={}){
+  const headers=Object.assign({'Accept':'application/vnd.github+json','Authorization':'Bearer '+cfg.gh.token},opts.headers||{});
+  try{return await fetch('https://api.github.com'+path,Object.assign({},opts,{headers,cache:'no-store'}))}
+  catch(e){throw new Error('اتصال به GitHub برقرار نشد. اینترنت را بررسی کنید.')}
+}
+const repoPath=()=>'/repos/'+encodeURIComponent(cfg.gh.owner)+'/'+encodeURIComponent(cfg.gh.repo);
+function ghErr(status,where){
+  if(status===401)return'کلید دسترسی معتبر نیست یا منقضی شده است. یک کلید تازه بسازید و دوباره وصل شوید.';
+  if(status===403)return'کلید اجازهٔ نوشتن ندارد. در تنظیمات کلید، Contents را روی Read and write بگذارید.';
+  if(status===404)return'مخزن «'+cfg.gh.owner+'/'+cfg.gh.repo+'» پیدا نشد، یا کلید به آن دسترسی ندارد. نام کاربری و نام مخزن را بررسی کنید.';
+  return'GitHub هنگام '+where+' خطای '+status+' داد. کمی بعد دوباره امتحان کنید.';
+}
+async function pullRemote(){
+  const ref=cfg.gh.branch?'?ref='+encodeURIComponent(cfg.gh.branch):'';
+  const r=await ghFetch(repoPath()+'/contents/'+FILE_PATH+ref);
+  if(r.status===404)return{sha:null,data:emptyData()};
+  if(!r.ok)throw new Error(ghErr(r.status,'خواندن'));
+  const j=await r.json();let text;
+  if(j.content&&j.encoding==='base64')text=b64dec(j.content);
+  else{const r2=await ghFetch(repoPath()+'/contents/'+FILE_PATH+ref,{headers:{'Accept':'application/vnd.github.raw+json'}});if(!r2.ok)throw new Error(ghErr(r2.status,'خواندن'));text=await r2.text()}
+  let parsed;try{parsed=JSON.parse(text)}catch(e){throw new Error('فایل داده در GitHub خراب است. از پشتیبان بازگردانی کنید.')}
+  return{sha:j.sha,data:normData(parsed)};
+}
+async function pushRemote(data,sha){
+  const body={message:'Vazheyar sync '+new Date().toISOString().slice(0,16).replace('T',' '),content:b64enc(canon(data))};
+  if(sha)body.sha=sha;if(cfg.gh.branch)body.branch=cfg.gh.branch;
+  const r=await ghFetch(repoPath()+'/contents/'+FILE_PATH,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(r.status===409||r.status===422)return'conflict';
+  if(!r.ok)throw new Error(ghErr(r.status,'ذخیره'));
+  return'ok';
+}
+function canon(d){
+  const keys=['id','lang','type','text','article','plural','fa','en','example','exampleFa','note','tags','created','updated','srs'];
+  const items=d.items.map(cleanItem).sort((a,b)=>(a.created-b.created)||(a.id<b.id?-1:a.id>b.id?1:0)).map(i=>{const o={};keys.forEach(k=>o[k]=i[k]);return o});
+  const deleted={};Object.keys(d.deleted||{}).sort().forEach(k=>deleted[k]=d.deleted[k]);
+  const cutoff=dayKey(Date.now()-400*DAY);const log={};
+  Object.keys(d.log||{}).filter(k=>k>=cutoff).sort().forEach(k=>{log[k]={};Object.keys(d.log[k]).sort().forEach(dv=>log[k][dv]=d.log[k][dv])});
+  return JSON.stringify({app:'vazheyar',version:1,items,deleted,log});
+}
+function mergeData(a,b){
+  const out={items:[],deleted:Object.assign({},a.deleted||{}),log:{}};
+  for(const[id,t]of Object.entries(b.deleted||{}))out.deleted[id]=Math.max(out.deleted[id]||0,+t||0);
+  const map=new Map();
+  for(const it of a.items)map.set(it.id,it);
+  for(const it of b.items){const x=map.get(it.id);if(!x){map.set(it.id,it);continue}
+    const base=(it.updated||0)>(x.updated||0)?it:x;const sx=x.srs,si=it.srs;
+    const srs=!sx?si:!si?sx:((si.last||0)>(sx.last||0)?si:sx);
+    map.set(it.id,Object.assign({},base,{srs}))}
+  for(const[id,it]of map){const d=out.deleted[id];if(d&&d>=(it.updated||0))continue;out.items.push(it)}
+  for(const src of[a.log||{},b.log||{}])for(const[k,devs]of Object.entries(src)){out.log[k]=out.log[k]||{};for(const[dv,c]of Object.entries(devs||{}))out.log[k][dv]=Math.max(out.log[k][dv]||0,+c||0)}
+  return out;
+}
+async function syncNow(manual){
+  if(!ghReady())return false;
+  if(!navigator.onLine){setSync('offline');if(manual)toast('اینترنت وصل نیست؛ بعداً خودکار همگام می‌شود.');return false}
+  if(syncing){syncQueued=true;return false}
+  syncing=true;clearTimeout(syncTimer);setSync('busy');
+  try{
+    for(let attempt=0;attempt<3;attempt++){
+      const before=canon(db);
+      const remote=await pullRemote();
+      const merged=mergeData(db,remote.data);
+      const mergedC=canon(merged);
+      if(mergedC!==before){const keep=normData(JSON.parse(mergedC));db.items=keep.items;db.deleted=keep.deleted;db.log=keep.log;writeLS(DATA_KEY,db);refreshAfterSync()}
+      if(!remote.sha||canon(remote.data)!==mergedC){const r=await pushRemote(merged,remote.sha);if(r==='conflict')continue}
+      cfg.gh.lastSync=Date.now();cfg.gh.lastError='';saveCfg();dirty=false;setSync('ok');
+      if(manual)toast('همگام‌سازی انجام شد');
+      return true;
+    }
+    throw new Error('دستگاه دیگری هم‌زمان در حال ذخیره بود. چند ثانیه بعد دوباره امتحان کنید.');
+  }catch(e){setSync('error',e.message||String(e));if(manual)toast(e.message||'خطا در همگام‌سازی',5000);return false}
+  finally{syncing=false;if(syncQueued){syncQueued=false;scheduleSync(1500)}}
+}
+function refreshAfterSync(){refreshBadges();if(currentView==='today')renderToday();else if(currentView==='manage')renderList();else if(currentView==='review'&&!ses)renderReviewIdle()}
+
+/* ================= navigation ================= */
+let currentView='today';
+const VIEWS=['today','review','quiz','manage','settings'];
+function showView(v,noHash){
+  if(!VIEWS.includes(v))v='today';currentView=v;
+  VIEWS.forEach(x=>$('#v-'+x).hidden=x!==v);
+  $$('.nav button').forEach(b=>{if(b.dataset.go===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+  if(v==='today')renderToday();
+  if(v==='review'&&!ses)renderReviewIdle();
+  if(v==='manage')renderManage();
+  if(v==='settings')renderSettings();
+  if(v==='quiz'&&!qz)showQuizSetup();
+  if(!noHash){try{history.replaceState(null,'','#'+v)}catch(e){}}
+  window.scrollTo(0,0);
+}
+document.addEventListener('click',e=>{
+  const g=e.target.closest('[data-go]');if(g){e.preventDefault();showView(g.dataset.go);return}
+  const s=e.target.closest('[data-start]');if(s){startSession(s.dataset.start);return}
+});
+function bindSeg(el,onChange){el.addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b||!el.contains(b))return;setSeg(el,b.dataset.v);onChange&&onChange(b.dataset.v)})}
+function setSeg(el,v){$$('button[data-v]',el).forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===v)))}
+const segVal=el=>{const b=$('button[aria-pressed="true"]',el);return b?b.dataset.v:''};
+function refreshBadges(){const s=stats('all');const n=s.due+s.newToday;const b=$('#navDue');b.hidden=!n;b.textContent=faNum(n)}
+
+/* ================= TODAY ================= */
+const TIPS=[
+  'صدای g و ch هلندی را مثل «خ» یا «غ» فارسی بگویید: <span class="lat">goed</span>، <span class="lat">acht</span>، <span class="lat">Utrecht</span>. این یکی برای فارسی‌زبان‌ها آسان است.',
+  'اسم‌های تصغیری با ‎-je همیشه <span class="lat">het</span> می‌گیرند: <span class="lat">het huisje</span>، <span class="lat">het meisje</span>.',
+  'شکل جمع همهٔ اسم‌های هلندی <span class="lat">de</span> می‌گیرد: <span class="lat">het huis</span> ← <span class="lat">de huizen</span>.',
+  'در جملهٔ اصلی هلندی، فعل همیشه جایگاه دوم را دارد: <span class="lat">Morgen ga ik naar de markt.</span>',
+  'در جملهٔ وابسته، فعل هلندی به آخر جمله می‌رود، درست مثل فارسی: <span class="lat">…omdat ik moe ben.</span>',
+  'در انگلیسی ترتیب جمله ثابت‌تر است: فاعل، فعل، مفعول. عادت فارسی (فعل در آخر) را آنجا کنار بگذارید.',
+  'صدای <span class="lat">ui</span> در <span class="lat">huis</span> معادلی در فارسی و انگلیسی ندارد. چند بار با دکمهٔ تلفظ گوش دهید و بلند تکرار کنید.',
+  'هر روز کم ولی مرتب مرور کنید. ده دقیقه در روز از دو ساعت در آخر هفته مؤثرتر است.',
+  'واژه را همراه یک جملهٔ نمونه وارد کنید؛ واژه در جمله بهتر در ذهن می‌ماند.',
+  'هشدار دوست دروغین: <span class="lat">eventueel</span> هلندی یعنی «احتمالاً»، ولی <span class="lat">eventually</span> انگلیسی یعنی «سرانجام».',
+  'وقتی کارتی را نمی‌دانید، صادقانه «دوباره» بزنید. زمان‌بندی فقط وقتی خوب کار می‌کند که امتیازها واقعی باشند.'
+];
+let tipIdx=Math.floor(Date.now()/DAY)%TIPS.length;
+function renderToday(){
+  const now=new Date();
+  $('#dateFa').textContent=now.toLocaleDateString('fa-IR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  $('#dateNl').textContent=now.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
+  $('#dateEn').textContent=now.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+  $('#previewNote').hidden=!IS_PREVIEW;
+  const all=stats('all'),nl=stats('nl'),en=stats('en');
+  const total=all.due+all.newToday;
+  $('#dueTotal').textContent=faNum(total);
+  $('#todaySub').textContent=total?('از این تعداد، '+faNum(all.due)+' کارت مرور است و '+faNum(all.newToday)+' کارت تازه.'):(all.total?'برای امروز همهٔ کارت‌ها مرور شده‌اند. می‌توانید یک آزمون کوتاه بدهید یا واژهٔ تازه اضافه کنید.':'هنوز واژه‌ای وارد نکرده‌اید. از بخش مدیریت شروع کنید.');
+  const newLeft=Math.max(0,(+cfg.review.newPerDay||0)-introducedToday());
+  const cell=(name,code,s)=>`<div class="cell"><span><span class="lang-badge ${code}">${code.toUpperCase()}</span> ${name}</span><b class="num">${faNum(s.due+Math.min(s.fresh,newLeft))}</b><small>${faNum(s.due)} مرور · ${faNum(Math.min(s.fresh,newLeft))} تازه</small></div>`;
+  $('#dueSplit').innerHTML=cell('هلندی','nl',nl)+cell('انگلیسی','en',en);
+  $$('[data-start]',$('#v-today')).forEach(b=>{const l=b.dataset.start;const s=l==='all'?all:l==='nl'?nl:en;b.disabled=!(s.due+Math.min(s.fresh,newLeft))});
+  // heat
+  let h='';const todayK=dayKey();
+  for(let k=27;k>=0;k--){const t=Date.now()-k*DAY;const key=dayKey(t);const c=dayCount(key);const l=c===0?0:c<10?1:c<30?2:c<60?3:4;
+    h+=`<i data-l="${l}" class="${key===todayK?'today':''}" title="${esc(new Date(t).toLocaleDateString('fa-IR',{weekday:'short',day:'numeric',month:'short'}))}: ${faNum(c)} مرور"></i>`}
+  $('#heat').innerHTML=h;
+  let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY));if(c>0)streak++;else if(k===0)continue;else break}
+  $('#streak').textContent=faNum(streak);$('#todayCount').textContent=faNum(dayCount(todayK));$('#matureCount').textContent=faNum(all.mature);
+  const row=(code,name,s)=>`<div class="coll-row"><span><span class="lang-badge ${code}">${code.toUpperCase()}</span> ${name}</span><span class="hint num">${faNum(s.words)} واژه · ${faNum(s.sent)} جمله</span></div>`;
+  $('#collRows').innerHTML=row('nl','هلندی',nl)+row('en','انگلیسی',en);
+  $('#tip').innerHTML=TIPS[tipIdx];
+}
+$('#nextTip').addEventListener('click',()=>{tipIdx=(tipIdx+1)%TIPS.length;$('#tip').innerHTML=TIPS[tipIdx]});
+
+/* ================= REVIEW ================= */
+let ses=null;
+bindSeg($('#revLang'),v=>{cfg.review.lang=v;saveCfg();renderReviewIdle()});
+bindSeg($('#revDir'),v=>{cfg.review.dir=v;saveCfg()});
+function renderReviewIdle(){
+  $('#revIdle').hidden=false;$('#revSession').hidden=true;$('#revDone').hidden=true;
+  setSeg($('#revLang'),cfg.review.lang||'all');setSeg($('#revDir'),cfg.review.dir||'fwd');
+  const q=buildQueue(cfg.review.lang||'all');
+  $('#revIdleInfo').textContent=q.length?faNum(q.length)+' کارت آمادهٔ مرور است.':'برای این زبان کارتی برای امروز باقی نمانده است.';
+  $('#revStart').disabled=!q.length;
+}
+$('#revStart').addEventListener('click',()=>startSession(cfg.review.lang||'all'));
+function startSession(lang){
+  const q=buildQueue(lang);
+  if(!q.length){toast('کارتی برای مرور باقی نمانده است.');return}
+  ses={lang,queue:q,done:0,again:0,dir:cfg.review.dir||'fwd',flipped:false,cardDir:'fwd'};
+  showView('review');$('#revIdle').hidden=true;$('#revDone').hidden=true;$('#revSession').hidden=false;showCard();
+}
+function curItem(){while(ses&&ses.queue.length){const it=getItem(ses.queue[0]);if(it)return it;ses.queue.shift()}return null}
+function frontHTML(it,dir){
+  const badge=`<div class="card-meta"><span class="lang-badge ${it.lang}">${it.lang.toUpperCase()}</span><span>${it.type==='sentence'?'جمله':'واژه'}${dir==='rev'?(it.lang==='nl'?' · به هلندی؟':' · به انگلیسی؟'):''}</span></div>`;
+  if(dir==='rev')return badge+`<div class="card-q-fa">${esc(it.fa)}</div>`;
+  const art=(it.lang==='nl'&&it.type==='word'&&it.article)?'<span class="art-q">de/het?</span> ':'';
+  return badge+`<div class="card-word ${it.type==='sentence'?'sentence':''}">${art}${esc(it.text)}</div><button class="icon-btn" type="button" data-speak-card aria-label="پخش تلفظ"><svg class="i"><use href="#i-speak"/></svg></button>`;
+}
+function wordHTML(it){const art=(it.lang==='nl'&&it.type==='word'&&it.article)?`<span class="art ${it.article}">${it.article}</span> `:'';return `<div class="card-word ${it.type==='sentence'?'sentence':''}">${art}${esc(it.text)}</div>`}
+function backHTML(it,dir){
+  let h='<div class="card-back">';
+  if(dir==='rev')h+=wordHTML(it)+`<button class="icon-btn" type="button" data-speak-card aria-label="پخش تلفظ"><svg class="i"><use href="#i-speak"/></svg></button>`;
+  else{if(it.lang==='nl'&&it.article&&it.type==='word')h+=`<div class="card-plural"><span class="lat"><span class="art ${it.article}">${it.article}</span> ${esc(it.text)}</span></div>`;h+=`<div class="card-fa">${esc(it.fa)}</div>`}
+  if(it.plural)h+=`<div class="card-plural">جمع: <span class="lat">de ${esc(it.plural)}</span></div>`;
+  if(it.en)h+=`<div class="card-en lat">${esc(it.en)}</div>`;
+  if(it.example)h+=`<div class="card-ex"><p class="lat">${esc(it.example)}</p>${it.exampleFa?`<p>${esc(it.exampleFa)}</p>`:''}</div>`;
+  if(it.note)h+=`<div class="card-note">${esc(it.note)}</div>`;
+  return h+'</div>';
+}
+function showCard(){
+  const it=curItem();if(!it){endSession();return}
+  ses.flipped=false;ses.cardDir=ses.dir==='mix'?(Math.random()<.5?'fwd':'rev'):ses.dir;
+  $('#cardBody').innerHTML=frontHTML(it,ses.cardDir);
+  $('#flipBtn').hidden=false;$('#grades').hidden=true;
+  const rem=ses.queue.length;$('#revBar').style.width=(ses.done/(ses.done+rem)*100)+'%';
+  $('#revCount').textContent=faNum(rem)+' کارت مانده';
+  if(cfg.tts.auto&&ses.cardDir==='fwd')speakItem(it);
+}
+function flip(){
+  if(!ses||ses.flipped)return;const it=curItem();if(!it)return;ses.flipped=true;
+  $('#cardBody').insertAdjacentHTML('beforeend',backHTML(it,ses.cardDir));
+  $$('.grade',$('#grades')).forEach(b=>{$('small',b).textContent=ivlLabel(previewIvl(it.srs,+b.dataset.g))});
+  $('#flipBtn').hidden=true;$('#grades').hidden=false;
+  if(cfg.tts.auto&&ses.cardDir==='rev')speakItem(it);
+}
+function grade(g){
+  if(!ses||!ses.flipped)return;const it=curItem();if(!it)return;
+  it.srs=schedule(it.srs,g);logReview();ses.queue.shift();ses.done++;
+  if(g===0){ses.again++;ses.queue.splice(Math.min(3,ses.queue.length),0,it.id)}
+  saveData(30000);showCard();
+}
+function endSession(){
+  const done=ses?ses.done:0,again=ses?ses.again:0;ses=null;
+  $('#revSession').hidden=true;$('#revIdle').hidden=true;$('#revDone').hidden=false;
+  $('#doneNum').textContent=faNum(done);
+  $('#doneText').innerHTML=done?`<p style="margin:0">مرور تمام شد. ${faNum(done)} پاسخ ثبت شد${again?'، و '+faNum(again)+' کارت دوباره پرسیده شد':''}.</p>`:'<p style="margin:0">مرور متوقف شد.</p>';
+  if(dirty)syncNow();
+}
+$('#flipBtn').addEventListener('click',flip);
+$('#card').addEventListener('click',e=>{if(!ses)return;if(e.target.closest('[data-speak-card]')){const it=curItem();if(it)speakItem(it);return}if(!ses.flipped)flip()});
+$('#grades').addEventListener('click',e=>{const b=e.target.closest('.grade');if(b)grade(+b.dataset.g)});
+$('#revExit').addEventListener('click',endSession);
+
+/* ================= QUIZ ================= */
+let qz=null;
+bindSeg($('#qLang'));bindSeg($('#qDir'));bindSeg($('#qCount'));
+$('#qType').addEventListener('click',e=>{const b=e.target.closest('.choice');if(!b)return;$$('.choice',$('#qType')).forEach(x=>x.setAttribute('aria-pressed',String(x===b)));syncQuizOpts()});
+function syncQuizOpts(){const t=$('#qType [aria-pressed="true"]').dataset.v;$('#qLangWrap').hidden=t==='article';$('#qDirWrap').hidden=t!=='meaning';$('#qErr').hidden=true}
+function showQuizSetup(){qz=null;$('#quizSetup').hidden=false;$('#quizRun').hidden=true;$('#quizDone').hidden=true;syncQuizOpts()}
+function buildQuiz(){
+  const type=$('#qType [aria-pressed="true"]').dataset.v,lang=segVal($('#qLang')),dir=segVal($('#qDir')),count=+segVal($('#qCount'));
+  let pool,qs=[];
+  if(type==='article'){pool=db.items.filter(i=>i.lang==='nl'&&i.type==='word'&&i.article);if(!pool.length)return{err:'هنوز اسم هلندی با حرف تعریف (de یا het) وارد نکرده‌اید.'};
+    qs=shuffle(pool.slice()).slice(0,count).map(it=>({type,it}))}
+  else{
+    pool=db.items.filter(i=>lang==='all'||i.lang===lang);
+    if(type==='meaning'){
+      if(pool.length<4)return{err:'برای آزمون معنی دست‌کم ۴ مورد در این زبان لازم است.'};
+      qs=shuffle(pool.slice()).slice(0,count).map(it=>{const d=dir==='mix'?(Math.random()<.5?'fwd':'rev'):dir;
+        const ans=x=>d==='fwd'?x.fa:fullText(x);const right=ans(it);
+        const same=shuffle(pool.filter(x=>x.id!==it.id&&x.lang===it.lang&&x.type===it.type&&norm(ans(x))!==norm(right)));
+        const other=shuffle(pool.filter(x=>x.id!==it.id&&norm(ans(x))!==norm(right)&&!same.includes(x)));
+        const seen=new Set([norm(right)]);const opts=[right];
+        for(const x of same.concat(other)){const a=ans(x);if(seen.has(norm(a)))continue;seen.add(norm(a));opts.push(a);if(opts.length===4)break}
+        return{type,it,dir:d,opts:shuffle(opts),right}});
+    }else{if(!pool.length)return{err:'در این زبان هنوز موردی وارد نشده است.'};qs=shuffle(pool.slice()).slice(0,count).map(it=>({type,it}))}
+  }
+  return{qs};
+}
+$('#qStart').addEventListener('click',startQuiz);
+$('#qAgain').addEventListener('click',startQuiz);
+$('#qBack').addEventListener('click',showQuizSetup);
+$('#qExit').addEventListener('click',finishQuiz);
+function startQuiz(){
+  const r=buildQuiz();if(r.err){$('#quizSetup').hidden=false;$('#quizDone').hidden=true;$('#qErr').textContent=r.err;$('#qErr').hidden=false;return}
+  qz={qs:r.qs,i:0,score:0,wrong:[],answered:false};
+  $('#quizSetup').hidden=true;$('#quizDone').hidden=true;$('#quizRun').hidden=false;renderQ();
+}
+function renderQ(){
+  const q=qz.qs[qz.i];qz.answered=false;const it=q.it;
+  $('#qBar').style.width=(qz.i/qz.qs.length*100)+'%';$('#qCountTxt').textContent=faNum(qz.i+1)+' از '+faNum(qz.qs.length);
+  const speakBtn='<button class="icon-btn" type="button" data-qspeak aria-label="پخش تلفظ"><svg class="i"><use href="#i-speak"/></svg></button>';
+  let h='';
+  if(q.type==='meaning'){
+    h+=`<div class="card-meta" style="justify-content:center"><span class="lang-badge ${it.lang}">${it.lang.toUpperCase()}</span><span>${q.dir==='fwd'?'معنی درست کدام است؟':'کدام گزینه معادل این است؟'}</span></div>`;
+    h+=q.dir==='fwd'?`<div class="q-prompt">${wordHTML(it)}${speakBtn}</div>`:`<div class="q-prompt"><div class="card-q-fa">${esc(it.fa)}</div></div>`;
+    h+='<div class="opts">'+q.opts.map((o,k)=>`<button type="button" class="opt ${q.dir==='rev'?'lat':''}" data-o="${k}"><span class="k num">${faNum(k+1)}</span><span>${esc(o)}</span></button>`).join('')+'</div>';
+  }else if(q.type==='article'){
+    h+=`<div class="card-meta" style="justify-content:center"><span class="lang-badge nl">NL</span><span>حرف تعریف درست کدام است؟</span></div>`;
+    h+=`<div class="q-prompt"><div class="card-word">${esc(it.text)}</div></div><p class="hint" style="text-align:center;margin:-8px 0 0">${esc(it.fa)}</p>`;
+    h+=`<div class="opts"><button type="button" class="opt art-opt" data-a="de"><span class="art de">de</span></button><button type="button" class="opt art-opt" data-a="het"><span class="art het">het</span></button></div>`;
+  }else{
+    h+=`<div class="card-meta" style="justify-content:center"><span class="lang-badge ${it.lang}">${it.lang.toUpperCase()}</span><span>به ${it.lang==='nl'?'هلندی':'انگلیسی'} بنویسید</span></div>`;
+    h+=`<div class="q-prompt"><div class="card-q-fa">${esc(it.fa)}</div>${speakBtn}</div>`;
+    if(it.en&&it.lang==='nl')h+=`<p class="hint lat" style="text-align:center;margin:-8px 0 0">${esc(it.en)}</p>`;
+    h+=`<form id="spellForm" class="input-with-btn"><input type="text" id="spellIn" class="lat ltr" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="پاسخ"><button class="btn primary" type="submit">بررسی</button></form>`;
+  }
+  h+='<div id="qFb"></div>';
+  $('#quizQ').innerHTML=h;
+  if(q.type==='spelling')setTimeout(()=>{const i=$('#spellIn');if(i)i.focus()},30);
+}
+function answerQ(ok,fbHTML){
+  qz.answered=true;const q=qz.qs[qz.i];if(ok)qz.score++;else qz.wrong.push(q.it.id);
+  $('#qFb').innerHTML=`<div class="fb ${ok?'ok':'bad'}">${fbHTML}</div><div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn primary" type="button" id="qNext">${qz.i+1<qz.qs.length?'پرسش بعدی':'دیدن نتیجه'} <kbd>Enter</kbd></button></div>`;
+  $('#qNext').focus();
+  if(cfg.tts.auto&&q.type!=='meaning')speakItem(q.it);
+}
+function nextQ(){if(!qz||!qz.answered)return;qz.i++;if(qz.i>=qz.qs.length)finishQuiz();else renderQ()}
+$('#quizQ').addEventListener('click',e=>{
+  if(e.target.closest('#qNext')){nextQ();return}
+  if(e.target.closest('[data-qspeak]')){speakItem(qz.qs[qz.i].it);return}
+  if(qz.answered)return;const q=qz.qs[qz.i];
+  const o=e.target.closest('[data-o]');
+  if(o&&q.type==='meaning'){const pick=q.opts[+o.dataset.o];const ok=pick===q.right;
+    $$('[data-o]',$('#quizQ')).forEach(b=>{b.disabled=true;if(q.opts[+b.dataset.o]===q.right)b.classList.add('ok')});if(!ok)o.classList.add('no');
+    answerQ(ok,ok?'درست است.':`پاسخ درست: <b class="${q.dir==='rev'?'lat':''}">${esc(q.right)}</b>`+(q.it.note?`<div style="margin-top:6px">${esc(q.it.note)}</div>`:''));return}
+  const a=e.target.closest('[data-a]');
+  if(a&&q.type==='article'){const ok=a.dataset.a===q.it.article;$$('[data-a]',$('#quizQ')).forEach(b=>{b.disabled=true;if(b.dataset.a===q.it.article)b.classList.add('ok')});if(!ok)a.classList.add('no');
+    answerQ(ok,`<span class="lat"><span class="art ${q.it.article}">${q.it.article}</span> ${esc(q.it.text)}</span>`+(q.it.plural?` · جمع: <span class="lat">de ${esc(q.it.plural)}</span>`:'')+(q.it.note?`<div style="margin-top:6px">${esc(q.it.note)}</div>`:''))}
+});
+$('#quizQ').addEventListener('submit',e=>{
+  e.preventDefault();if(qz.answered)return;const q=qz.qs[qz.i];const inp=$('#spellIn');const v=norm(inp.value);if(!v){inp.focus();return}
+  const t=norm(q.it.text),full=norm(fullText(q.it));let ok=v===t||v===full;let msg;
+  if(ok){msg=(q.it.article&&v===t)?`درست است. با حرف تعریف: <b class="lat">${esc(fullText(q.it))}</b>`:'درست است.'}
+  else{const d=Math.min(lev(v,t),lev(v,full));msg=(d<=1&&t.length>3?'خیلی نزدیک بود! ':'')+`پاسخ درست: <b class="lat">${esc(fullText(q.it))}</b><br><span class="hint">شما نوشتید: <span class="lat">${esc(inp.value)}</span></span>`}
+  inp.disabled=true;answerQ(ok,msg);
+});
+function finishQuiz(){
+  if(!qz)return showQuizSetup();
+  const n=qz.answered?qz.i+1:qz.i;
+  $('#quizRun').hidden=true;$('#quizDone').hidden=false;
+  $('#qScore').textContent=faNum(qz.score)+' از '+faNum(n);
+  $('#qScoreTxt').textContent=!n?'آزمون بدون پاسخ تمام شد.':qz.score===n?'همه را درست جواب دادید.':faNum(qz.wrong.length)+' پاسخ نادرست:';
+  $('#qMist').innerHTML=qz.wrong.map(id=>{const it=getItem(id);return it?`<div><span class="lat">${it.article&&it.lang==='nl'&&it.type==='word'?`<span class="art ${it.article}">${it.article}</span> `:''}${esc(it.text)}</span><span>${esc(it.fa)}</span></div>`:''}).join('');
+  $('#qAddMist').hidden=!qz.wrong.length;$('#qAddMist').disabled=false;
+}
+$('#qAddMist').addEventListener('click',()=>{
+  if(!qz)return;let n=0;const now=Date.now();
+  qz.wrong.forEach(id=>{const it=getItem(id);if(it&&it.srs&&it.srs.last){it.srs=Object.assign({},it.srs,{due:now,last:Math.max(it.srs.last,now-1)});n++}});
+  saveData();$('#qAddMist').disabled=true;
+  toast(n?faNum(n)+' کارت برای امروز زمان‌بندی شد.':'این موارد هنوز جدیدند و خودشان در مرورهای بعدی می‌آیند.');
+});
+
+/* ================= MANAGE ================= */
+const man={q:'',lang:'all',type:'all',tag:'all',status:'all',limit:150,editing:null,tab:'one'};
+bindSeg($('#manTabs'),v=>{man.tab=v;$('#itemForm').hidden=v!=='one';$('#bulkBox').hidden=v!=='bulk'});
+bindSeg($('#fLang'),()=>{syncFormVis();checkDup()});
+bindSeg($('#fType'),()=>syncFormVis());
+bindSeg($('#fArt'));
+bindSeg($('#bLang'),()=>bulkPreview());bindSeg($('#bType'),()=>bulkPreview());
+function syncFormVis(){const nl=segVal($('#fLang'))==='nl',w=segVal($('#fType'))==='word';$$('.nl-noun',$('#itemForm')).forEach(e=>e.hidden=!(nl&&w));$$('.nl-only',$('#itemForm')).forEach(e=>e.hidden=!nl);$('#fText').placeholder=nl?(w?'huis':'Waar is het station?'):(w?'appointment':'How long does it take?')}
+function allTags(){const s=new Set();db.items.forEach(i=>i.tags.forEach(t=>s.add(t)));return Array.from(s).sort((a,b)=>a.localeCompare(b,'fa'))}
+const splitTags=s=>String(s||'').split(/[,،؛;]/).map(t=>t.trim()).filter(Boolean);
+function statusOf(i){if(isNew(i))return{k:'new',t:'جدید'};if(i.srs.due<=endOfToday())return{k:'due',t:'برای امروز'};const d=Math.max(1,Math.ceil((i.srs.due-Date.now())/DAY));return{k:i.srs.ivl>=21?'mature':'later',t:'در '+faNum(d)+' روز'}}
+function renderManage(){
+  const all=stats('all');$('#manStats').textContent=faNum(all.total)+' مورد · '+faNum(stats('nl').total)+' هلندی · '+faNum(stats('en').total)+' انگلیسی';
+  const tags=allTags();$('#tagList').innerHTML=tags.map(t=>`<option value="${esc(t)}">`).join('');
+  const sel=$('#lTag');const cur=sel.value;sel.innerHTML='<option value="all">همهٔ برچسب‌ها</option>'+tags.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('');sel.value=tags.includes(cur)?cur:'all';man.tag=sel.value;
+  syncFormVis();renderList();
+}
+function filtered(){
+  const q=norm(man.q);
+  return db.items.filter(i=>{
+    if(man.lang!=='all'&&i.lang!==man.lang)return false;if(man.type!=='all'&&i.type!==man.type)return false;
+    if(man.tag!=='all'&&!i.tags.includes(man.tag))return false;
+    if(man.status!=='all'){const s=statusOf(i).k;if(s!==man.status)return false}
+    if(q&&!(norm(i.text).includes(q)||norm(i.fa).includes(q)||norm(i.en).includes(q)||norm(i.example).includes(q)))return false;
+    return true}).sort((a,b)=>(b.created||0)-(a.created||0));
+}
+function renderList(){
+  const list=filtered();const shown=list.slice(0,man.limit);
+  $('#lCount').textContent=faNum(list.length)+' مورد'+(list.length!==db.items.length?' از '+faNum(db.items.length):'');
+  $('#delSamples').hidden=!db.items.some(i=>i.id.startsWith('sample-'));
+  if(!list.length){$('#itemRows').innerHTML=`<div class="empty">${db.items.length?'موردی با این فیلترها پیدا نشد.':'هنوز چیزی وارد نکرده‌اید. اولین واژه را از فرم کنار اضافه کنید.'}</div>`;$('#moreRows').hidden=true;return}
+  $('#itemRows').innerHTML=shown.map(i=>{const st=statusOf(i);const art=(i.lang==='nl'&&i.type==='word'&&i.article)?`<span class="art ${i.article}">${i.article}</span> `:'';
+    return `<div class="irow${man.editing===i.id?' editing':''}" data-id="${esc(i.id)}"><div class="i-main"><div class="i-text">${art}${esc(i.text)}</div><div class="i-fa">${esc(i.fa)}</div></div><div class="i-meta"><span class="lang-badge ${i.lang}">${i.lang.toUpperCase()}</span><span class="pill ${st.k}">${st.t}</span>${i.tags.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="i-act"><button class="icon-btn" type="button" data-rspeak aria-label="پخش تلفظ"><svg class="i"><use href="#i-speak"/></svg></button><button class="btn sm" type="button" data-redit>ویرایش</button></div></div>`}).join('');
+  $('#moreRows').hidden=list.length<=man.limit;
+}
+$('#moreRows').addEventListener('click',()=>{man.limit+=150;renderList()});
+$('#lSearch').addEventListener('input',e=>{man.q=e.target.value;man.limit=150;renderList()});
+[['#lLang','lang'],['#lType','type'],['#lTag','tag'],['#lStatus','status']].forEach(([s,k])=>$(s).addEventListener('change',e=>{man[k]=e.target.value;man.limit=150;renderList()}));
+$('#itemRows').addEventListener('click',e=>{const row=e.target.closest('.irow');if(!row)return;const it=getItem(row.dataset.id);if(!it)return;
+  if(e.target.closest('[data-rspeak]')){speakItem(it);return}
+  if(e.target.closest('[data-redit]')){editItem(it)}});
+function fillForm(it){
+  setSeg($('#fLang'),it?it.lang:segVal($('#fLang'))||'nl');setSeg($('#fType'),it?it.type:segVal($('#fType'))||'word');setSeg($('#fArt'),it?it.article:'');
+  $('#fText').value=it?it.text:'';$('#fPlural').value=it?it.plural:'';$('#fFa').value=it?it.fa:'';$('#fEn').value=it?it.en:'';
+  $('#fEx').value=it?it.example:'';$('#fExFa').value=it?it.exampleFa:'';$('#fNote').value=it?it.note:'';$('#fTags').value=it?it.tags.join('، '):'';
+  syncFormVis();$('#fDup').hidden=true;
+}
+function editItem(it){
+  if(man.tab!=='one'){setSeg($('#manTabs'),'one');man.tab='one';$('#itemForm').hidden=false;$('#bulkBox').hidden=true}
+  man.editing=it.id;fillForm(it);$('#formTitle').textContent='ویرایش مورد';$('#fSave').textContent='ذخیرهٔ تغییرات';$('#fDelete').hidden=false;$('#fCancel').textContent='انصراف';
+  renderList();
+  if(window.innerWidth<=980)$('#formPanel').scrollIntoView({behavior:'smooth',block:'start'});
+  $('#fText').focus();
+}
+function resetForm(keepLang){
+  const l=segVal($('#fLang')),t=segVal($('#fType'));man.editing=null;fillForm(null);
+  if(keepLang){setSeg($('#fLang'),l);setSeg($('#fType'),t);syncFormVis()}
+  $('#formTitle').textContent='افزودن مورد تازه';$('#fSave').textContent='افزودن';$('#fDelete').hidden=true;$('#fCancel').textContent='پاک کردن فرم';
+}
+$('#fCancel').addEventListener('click',()=>{resetForm(true);renderList()});
+$('#fSpeak').addEventListener('click',()=>{const t=$('#fText').value.trim();if(!t)return;const art=segVal($('#fArt'));speak((segVal($('#fLang'))==='nl'&&art&&segVal($('#fType'))==='word'?art+' ':'')+t,segVal($('#fLang')))});
+$('#fText').addEventListener('blur',()=>{
+  const v=$('#fText').value.trim();
+  if(segVal($('#fLang'))==='nl'){const m=v.match(/^(de|het)\s+(\S+)$/i);if(m&&segVal($('#fType'))==='word'){setSeg($('#fArt'),m[1].toLowerCase());$('#fText').value=m[2]}}
+  if(!man.editing&&v.split(/\s+/).length>=4){setSeg($('#fType'),'sentence');syncFormVis()}
+  checkDup();
+});
+$('#fText').addEventListener('input',()=>{$('#fDup').hidden=true});
+function findDup(lang,text,exceptId){const t=norm(text);return db.items.find(i=>i.lang===lang&&norm(i.text)===t&&i.id!==exceptId)}
+function checkDup(){const v=$('#fText').value.trim();const d=v&&findDup(segVal($('#fLang')),v,man.editing);const el=$('#fDup');
+  if(d){el.innerHTML=`این مورد قبلاً اضافه شده: «${esc(d.fa)}». <button class="link" type="button" data-editdup="${esc(d.id)}">ویرایش همان</button>`;el.hidden=false}else el.hidden=true}
+$('#fDup').addEventListener('click',e=>{const b=e.target.closest('[data-editdup]');if(b){const it=getItem(b.dataset.editdup);if(it)editItem(it)}});
+$('#itemForm').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();$('#itemForm').requestSubmit()}});
+$('#itemForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  let text=$('#fText').value.trim().replace(/\s+/g,' ');const fa=$('#fFa').value.trim();
+  if(!text){toast('واژه یا جمله را بنویسید.');$('#fText').focus();return}
+  if(!fa){toast('معنی فارسی را بنویسید.');$('#fFa').focus();return}
+  const lang=segVal($('#fLang')),type=segVal($('#fType'));let article=lang==='nl'&&type==='word'?segVal($('#fArt')):'';
+  if(lang==='nl'&&type==='word'){const m=text.match(/^(de|het)\s+(\S+)$/i);if(m){article=m[1].toLowerCase();text=m[2]}}
+  const fields={lang,type,text,article,plural:lang==='nl'&&type==='word'?$('#fPlural').value.trim():'',fa,en:lang==='nl'?$('#fEn').value.trim():'',example:$('#fEx').value.trim(),exampleFa:$('#fExFa').value.trim(),note:$('#fNote').value.trim(),tags:splitTags($('#fTags').value)};
+  const now=Date.now();
+  if(man.editing){const it=getItem(man.editing);if(it){Object.assign(it,fields,{updated:now});toast('تغییرات ذخیره شد')}resetForm(true)}
+  else{
+    if(findDup(lang,text)){toast('این مورد قبلاً اضافه شده است.');checkDup();return}
+    db.items.push(Object.assign({id:uid(),created:now,updated:now,srs:null},fields));toast('«'+text+'» اضافه شد');
+    const keepTags=$('#fTags').value;resetForm(true);$('#fTags').value=keepTags;
+  }
+  saveData();renderManage();$('#fText').focus();
+});
+$('#fDelete').addEventListener('click',async()=>{
+  const it=getItem(man.editing);if(!it)return;
+  if(!await ask({title:'حذف این مورد؟',html:`<p style="margin:0">«<span class="lat">${esc(it.text)}</span>» و سابقهٔ مرورش حذف می‌شود.</p>`,ok:'حذف',danger:true}))return;
+  removeItems([it.id]);resetForm(true);saveData();renderManage();toast('حذف شد');
+});
+$('#delSamples').addEventListener('click',async()=>{
+  const ids=db.items.filter(i=>i.id.startsWith('sample-')).map(i=>i.id);
+  if(!await ask({title:'حذف موارد نمونه؟',html:`<p style="margin:0">${faNum(ids.length)} مورد نمونه که برنامه برای شروع اضافه کرده بود حذف می‌شود. واژه‌های خودتان دست نمی‌خورند.</p>`,ok:'حذف نمونه‌ها',danger:true}))return;
+  removeItems(ids);saveData();renderManage();toast('موارد نمونه حذف شد');
+});
+// bulk
+let bulkRows=[];
+function parseBulk(){
+  const lang=segVal($('#bLang')),ft=segVal($('#bType')),extra=splitTags($('#bTags').value);
+  const lines=$('#bText').value.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);const seen=new Set();
+  return lines.map(line=>{
+    const parts=(line.includes('\t')?line.split('\t'):line.split('|')).map(p=>p.trim());
+    let[text,fa,ex,tags]=parts;text=(text||'').replace(/\s+/g,' ');
+    const r={text,fa:fa||'',example:ex||'',tags:Array.from(new Set(splitTags(tags).concat(extra))),lang,article:'',type:'word',skip:''};
+    if(!text||!r.fa){r.skip='معنی ندارد';return r}
+    const words=text.split(' ').length;
+    r.type=ft==='auto'?((words>=3||/[.?!]$/.test(text))?'sentence':'word'):ft;
+    if(lang==='nl'&&r.type==='word'){const m=text.match(/^(de|het)\s+(\S+)$/i);if(m){r.article=m[1].toLowerCase();r.text=m[2]}}
+    const key=norm(r.text);if(findDup(lang,r.text))r.skip='تکراری';else if(seen.has(key))r.skip='تکراری در فهرست';seen.add(key);
+    return r});
+}
+function bulkPreview(){
+  bulkRows=parseBulk();const ok=bulkRows.filter(r=>!r.skip).length;
+  if(!bulkRows.length){$('#bPrev').innerHTML='';$('#bAdd').disabled=true;$('#bAdd').textContent='افزودن';return}
+  $('#bPrev').innerHTML=`<div class="bulk-prev"><table><thead><tr><th>متن</th><th>معنی</th><th>نوع</th></tr></thead><tbody>${bulkRows.map(r=>`<tr class="${r.skip?'skip':''}"><td class="lat ltr">${r.article?`<span class="art ${r.article}">${r.article}</span> `:''}${esc(r.text)}</td><td>${esc(r.fa)}${r.skip?` <span class="pill due" style="text-decoration:none">${r.skip}</span>`:''}</td><td>${r.type==='word'?'واژه':'جمله'}</td></tr>`).join('')}</tbody></table></div>`;
+  $('#bAdd').disabled=!ok;$('#bAdd').textContent=ok?'افزودن '+faNum(ok)+' مورد':'موردی برای افزودن نیست';
+}
+let bTimer;$('#bText').addEventListener('input',()=>{clearTimeout(bTimer);bTimer=setTimeout(bulkPreview,250)});$('#bTags').addEventListener('input',()=>{clearTimeout(bTimer);bTimer=setTimeout(bulkPreview,250)});
+$('#bAdd').addEventListener('click',()=>{
+  const rows=parseBulk().filter(r=>!r.skip);if(!rows.length)return;let now=Date.now();
+  rows.forEach((r,k)=>db.items.push({id:uid(),lang:r.lang,type:r.type,text:r.text,article:r.article,plural:'',fa:r.fa,en:'',example:r.example,exampleFa:'',note:'',tags:r.tags,created:now+k,updated:now+k,srs:null}));
+  saveData();$('#bText').value='';bulkPreview();renderManage();toast(faNum(rows.length)+' مورد اضافه شد');
+});
+$('#bClear').addEventListener('click',()=>{$('#bText').value='';bulkPreview()});
+
+/* ================= SETTINGS ================= */
+function renderSyncStatus(){
+  const st=$('#syncStatus');const on=ghReady();
+  $('#syncPreview').hidden=!IS_PREVIEW;$$('#ghFields input,#ghAuto,#ghConnect,#codeIn,#codeApply').forEach(e=>e.disabled=IS_PREVIEW);
+  $('#ghSyncNow').hidden=!on;$('#ghDisconnect').hidden=!cfg.gh.enabled;$('#ghConnect').textContent=on?'ذخیرهٔ تنظیمات و اتصال دوباره':'اتصال و همگام‌سازی';
+  $('#phoneNeed').hidden=on;$('#showQR').hidden=!on||!$('#phoneOut').hidden;
+  if(IS_PREVIEW){st.hidden=true;return}
+  if(on&&syncState==='error'){st.className='note-box bad';st.textContent=cfg.gh.lastError||'خطا در همگام‌سازی';st.hidden=false}
+  else if(on){st.className='note-box good';st.textContent='وصل به '+cfg.gh.owner+'/'+cfg.gh.repo+(cfg.gh.lastSync?' · آخرین همگام‌سازی '+relTime(cfg.gh.lastSync):'');st.hidden=false}
+  else st.hidden=true;
+}
+function renderSettings(){
+  $('#ghOwner').value=cfg.gh.owner;$('#ghRepo').value=cfg.gh.repo;$('#ghToken').value=cfg.gh.token;$('#ghAuto').checked=!!cfg.gh.auto;
+  renderSyncStatus();fillVoices();
+  $('#vRate').value=cfg.tts.rate;$('#vRateTxt').textContent=faNum(cfg.tts.rate)+'×';$('#vAuto').checked=!!cfg.tts.auto;
+  $('#newPerDay').value=cfg.review.newPerDay;
+  $('#themeWrap').hidden=IS_PREVIEW;setSeg($('#themeSeg'),cfg.theme||'system');
+  $('#guideLink').href=IS_PREVIEW?'https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm':'guide.html';
+}
+$('#ghShow').addEventListener('click',()=>{const t=$('#ghToken');t.type=t.type==='password'?'text':'password';$('#ghShow').textContent=t.type==='password'?'نمایش':'پنهان'});
+$('#ghAuto').addEventListener('change',e=>{cfg.gh.auto=e.target.checked;saveCfg()});
+$('#ghConnect').addEventListener('click',async()=>{
+  const owner=$('#ghOwner').value.trim().replace(/^@/,'').replace(/^https?:\/\/github\.com\//,'').split('/')[0];
+  const repo=$('#ghRepo').value.trim().split('/').pop();const token=$('#ghToken').value.trim();
+  if(!owner||!repo||!token){toast('هر سه کادر را پر کنید.');return}
+  cfg.gh.owner=owner;cfg.gh.repo=repo;cfg.gh.token=token;cfg.gh.auto=$('#ghAuto').checked;
+  const btn=$('#ghConnect');btn.disabled=true;btn.textContent='در حال بررسی…';
+  try{
+    const r=await ghFetch(repoPath());
+    if(!r.ok)throw new Error(ghErr(r.status,'بررسی مخزن'));
+    const j=await r.json();cfg.gh.branch=j.default_branch||'main';
+    if(j.permissions&&j.permissions.push===false)throw new Error(ghErr(403));
+    cfg.gh.enabled=true;saveCfg();
+    if(!j.private)toast('هشدار: مخزن داده عمومی (Public) است و همه می‌توانند واژه‌هایتان را ببینند. بهتر است در تنظیمات مخزن آن را Private کنید.',7000);
+    const ok=await syncNow(true);if(ok)$('#phoneBox').open=true;
+  }catch(e){cfg.gh.enabled=false;saveCfg();setSync('off');const st=$('#syncStatus');st.className='note-box bad';st.textContent=e.message;st.hidden=false;btn.disabled=false;btn.textContent='اتصال و همگام‌سازی';return}
+  btn.disabled=false;renderSyncStatus();updateChips();
+});
+$('#ghSyncNow').addEventListener('click',()=>syncNow(true));
+$('#ghDisconnect').addEventListener('click',async()=>{
+  if(!await ask({title:'قطع اتصال این دستگاه؟',html:'<p style="margin:0">کلید از این دستگاه پاک می‌شود. واژه‌ها روی همین دستگاه و در GitHub باقی می‌مانند.</p>',ok:'قطع اتصال',danger:true}))return;
+  cfg.gh=Object.assign({},DEFAULT_CFG.gh,{owner:cfg.gh.owner,repo:cfg.gh.repo});saveCfg();setSync('off','');$('#phoneOut').hidden=true;$('#qrBox').innerHTML='';renderSettings();
+});
+const connCode=()=>'VZY1.'+b64url(JSON.stringify({o:cfg.gh.owner,r:cfg.gh.repo,b:cfg.gh.branch,t:cfg.gh.token}));
+function loadQR(){return new Promise((res,rej)=>{if(window.QRCode)return res();const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';s.onload=()=>res();s.onerror=rej;document.head.appendChild(s)})}
+$('#showQR').addEventListener('click',async()=>{
+  $('#phoneOut').hidden=false;$('#showQR').hidden=true;const box=$('#qrBox');box.innerHTML='';
+  const link=location.origin+location.pathname+'#setup='+connCode();
+  try{await loadQR();new window.QRCode(box,{text:link,width:220,height:220,colorDark:'#141c33',colorLight:'#ffffff',correctLevel:window.QRCode.CorrectLevel.M})}
+  catch(e){box.parentElement.innerHTML='<p class="hint">کد QR بارگذاری نشد (احتمالاً اینترنت قطع است). از «کپی کد اتصال» استفاده کنید.</p>'}
+});
+$('#copyCode').addEventListener('click',()=>copyOrShow(connCode(),'کد اتصال کپی شد'));
+async function applyCode(code){
+  try{
+    code=String(code||'').trim().replace(/^.*#setup=/,'');if(!code.startsWith('VZY1.'))throw 0;
+    const o=JSON.parse(unb64url(code.slice(5)));if(!o.o||!o.r||!o.t)throw 0;
+    if(!await ask({title:'اتصال این دستگاه به همگام‌سازی؟',html:`<p style="margin:0">این دستگاه به مخزن <b class="ltr">${esc(o.o+'/'+o.r)}</b> وصل می‌شود و واژه‌هایش با دستگاه‌های دیگر ادغام می‌شود.</p>`,ok:'اتصال'}))return;
+    cfg.gh=Object.assign({},cfg.gh,{enabled:true,owner:o.o,repo:o.r,branch:o.b||'',token:o.t,auto:true});saveCfg();
+    showView('settings');await syncNow(true);renderSettings();
+  }catch(e){toast('کد اتصال معتبر نیست.',4000)}
+}
+$('#codeApply').addEventListener('click',()=>applyCode($('#codeIn').value).then(()=>{$('#codeIn').value=''}));
+// voices
+function fillVoices(){
+  [['nl','#vNl'],['en','#vEn']].forEach(([l,s])=>{const vs=voicesFor(l);const sel=$(s);
+    sel.innerHTML='<option value="">خودکار</option>'+vs.map(v=>`<option value="${esc(v.voiceURI)}">${esc(v.name)} (${esc(v.lang)})</option>`).join('');
+    sel.value=vs.some(v=>v.voiceURI===cfg.tts[l])?cfg.tts[l]:''});
+  const help=$('#voiceHelp');
+  if(!hasTTS){help.textContent='این مرورگر از پخش صدا پشتیبانی نمی‌کند. Chrome، Edge یا Safari را امتحان کنید.';help.hidden=false}
+  else if(!voicesFor('nl').length&&speechSynthesis.getVoices().length){help.innerHTML='صدای هلندی روی این دستگاه نصب نیست. <b>ویندوز:</b> Settings ← Time &amp; language ← Speech ← Add voices ← Nederlands. <b>اندروید:</b> تنظیمات ← Google Text-to-speech ← نصب صدای Dutch. <b>آیفون و مک:</b> Settings ← Accessibility ← Spoken Content ← Voices ← Dutch.';help.hidden=false}
+  else help.hidden=true;
+}
+if(hasTTS)speechSynthesis.onvoiceschanged=()=>{if(currentView==='settings')fillVoices()};
+$('#vNl').addEventListener('change',e=>{cfg.tts.nl=e.target.value;saveCfg()});
+$('#vEn').addEventListener('change',e=>{cfg.tts.en=e.target.value;saveCfg()});
+$('#tNl').addEventListener('click',()=>speak('Goedemorgen! Hoe gaat het met je?','nl'));
+$('#tEn').addEventListener('click',()=>speak('Good morning! How are you today?','en'));
+$('#vRate').addEventListener('input',e=>{cfg.tts.rate=+e.target.value;$('#vRateTxt').textContent=faNum(cfg.tts.rate)+'×';saveCfg()});
+$('#vAuto').addEventListener('change',e=>{cfg.tts.auto=e.target.checked;saveCfg()});
+$('#newPerDay').addEventListener('change',e=>{let v=Math.round(+e.target.value);if(!(v>=0))v=15;v=Math.min(200,v);cfg.review.newPerDay=v;e.target.value=v;saveCfg();refreshBadges()});
+bindSeg($('#themeSeg'),v=>{cfg.theme=v;saveCfg();applyTheme()});
+function applyTheme(){if(IS_PREVIEW)return;const r=document.documentElement;if(cfg.theme==='light'||cfg.theme==='dark')r.setAttribute('data-theme',cfg.theme);else r.removeAttribute('data-theme')}
+// backup
+const backupText=()=>JSON.stringify({app:'vazheyar',version:1,exported:new Date().toISOString(),data:JSON.parse(canon(db))});
+$('#bkDownload').addEventListener('click',()=>{
+  if(IS_PREVIEW){toast('در نسخهٔ پیش‌نمایش دانلود فایل ممکن نیست؛ از «کپی متن پشتیبان» استفاده کنید.',5000);return}
+  const blob=new Blob([backupText()],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='vazheyar-backup-'+dayKey()+'.json';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
+});
+$('#bkCopy').addEventListener('click',()=>copyOrShow(backupText(),'متن پشتیبان کپی شد. آن را در نسخهٔ دیگر برنامه بچسبانید.'));
+function importBackup(text){
+  let d;try{d=JSON.parse(text)}catch(e){toast('متن پشتیبان معتبر نیست.',4000);return}
+  const inc=normData(d);if(!inc.items.length&&!Object.keys(inc.deleted).length){toast('در این پشتیبان موردی پیدا نشد.',4000);return}
+  const before=db.items.length;const m=mergeData(db,inc);db.items=m.items;db.deleted=m.deleted;db.log=m.log;saveData(1000);
+  toast('بازگردانی انجام شد: '+faNum(Math.max(0,db.items.length-before))+' مورد تازه اضافه شد.',4000);
+}
+$('#bkImport').addEventListener('click',()=>{const t=$('#bkText').value.trim();if(!t){toast('اول متن پشتیبان را بچسبانید.');return}importBackup(t);$('#bkText').value=''});
+$('#bkFile').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{importBackup(String(r.result));e.target.value=''};r.readAsText(f)});
+$('#wipeAll').addEventListener('click',async()=>{
+  if(!db.items.length){toast('موردی برای حذف نیست.');return}
+  if(!await ask({title:'حذف همهٔ واژه‌ها؟',html:`<p style="margin:0">${faNum(db.items.length)} مورد و سابقهٔ مرورشان حذف می‌شود${ghReady()?'، از جمله روی دستگاه‌های دیگر':''}. پیش از این کار بهتر است یک پشتیبان بگیرید.</p>`,ok:'حذف همه',danger:true}))return;
+  removeItems(db.items.map(i=>i.id));saveData(1000);toast('همهٔ موارد حذف شد');
+});
+
+/* ================= keyboard ================= */
+document.addEventListener('keydown',e=>{
+  if(!$('#modal').hidden)return;
+  const tag=(e.target.tagName||'').toLowerCase();const typing=tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable;
+  if(currentView==='review'&&ses&&!typing&&!e.ctrlKey&&!e.metaKey&&!e.altKey){
+    if(e.code==='Space'||e.key==='Enter'){if(!ses.flipped){e.preventDefault();flip()}else if(e.key==='Enter'){e.preventDefault();grade(2)}return}
+    if(ses.flipped&&/^[1-4]$/.test(e.key)){e.preventDefault();grade(+e.key-1);return}
+    if(ses.flipped&&/^[۱-۴]$/.test(e.key)){e.preventDefault();grade('۱۲۳۴'.indexOf(e.key));return}
+    if(e.key==='s'||e.key==='S'||e.key==='س'){const it=curItem();if(it)speakItem(it)}
+    return;
+  }
+  if(currentView==='quiz'&&qz&&!$('#quizRun').hidden){
+    if(e.key==='Enter'&&qz.answered){e.preventDefault();nextQ();return}
+    if(typing)return;const q=qz.qs[qz.i];if(qz.answered)return;
+    const n='1234'.indexOf(e.key)>-1?'1234'.indexOf(e.key):'۱۲۳۴'.indexOf(e.key);
+    if(q.type==='meaning'&&n>-1){const b=$(`[data-o="${n}"]`,$('#quizQ'));if(b)b.click()}
+    if(q.type==='article'){if(e.key==='d'||n===0)$('[data-a="de"]',$('#quizQ')).click();if(e.key==='h'||n===1)$('[data-a="het"]',$('#quizQ')).click()}
+  }
+});
+
+/* ================= lifecycle ================= */
+let deferredInstall=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;$$('.install-btn').forEach(b=>b.hidden=false)});
+$$('.install-btn').forEach(b=>b.addEventListener('click',async()=>{if(!deferredInstall)return;deferredInstall.prompt();try{await deferredInstall.userChoice}catch(e){}deferredInstall=null;$$('.install-btn').forEach(x=>x.hidden=true)}));
+window.addEventListener('online',()=>{updateChips();syncNow()});
+window.addEventListener('offline',updateChips);
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible'){if(Date.now()-(cfg.gh.lastSync||0)>30000)syncNow();if(currentView==='today')renderToday();refreshBadges()}
+  else if(dirty)syncNow();
+});
+window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(h.startsWith('setup='))return handleSetupHash();if(VIEWS.includes(h)&&h!==currentView)showView(h,true)});
+function handleSetupHash(){const h=location.hash;if(!h.startsWith('#setup='))return false;try{history.replaceState(null,'','#settings')}catch(e){}if(IS_PREVIEW)return true;applyCode(h);return true}
+if(!IS_PREVIEW&&'serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{});
+setInterval(()=>{updateChips();if(currentView==='today'&&!document.hidden)renderToday()},60000);
+
+applyTheme();
+const startHash=location.hash.slice(1);
+if(startHash.startsWith('setup=')){showView('settings',true);handleSetupHash()}
+else showView(VIEWS.includes(startHash)?startHash:'today',true);
+refreshBadges();updateChips();
+if(ghReady())syncNow();
+})();
+</script>
+</body>
+</html>
