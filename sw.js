@@ -1,6 +1,6 @@
 // Vazheyar service worker: keeps the app working offline.
-const CACHE = 'vazheyar-v1';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png'];
+const CACHE = 'vazheyar-v3-1';
+const SHELL = ['./', './index.html', './packs.js?v=3.1', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
