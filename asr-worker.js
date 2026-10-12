@@ -6,6 +6,7 @@ const LIB = {
   sri: 'sha384-sOua6i337lNLWtuIG44PBf5JXIvhoicFClCcI4XHDe/eHW3dwhQ3Y6t6wQjfRrkT'
 };
 let T = null, pipe = null, pipeKey = '';
+self.postMessage({ type: 'ver', v: 'tf3.8.1' });
 
 async function sha384(buf) {
   const h = new Uint8Array(await crypto.subtle.digest('SHA-384', buf));
