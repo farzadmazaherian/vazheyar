@@ -2,8 +2,8 @@
 // Runs Whisper (transformers.js) inside the browser: the audio never leaves this device.
 // The library is pinned to one version and checked against its SHA-384 hash before it runs.
 const LIB = {
-  url: 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0/dist/transformers.min.js',
-  sri: 'sha384-3TA7bWonh/FGdhkvnr9EMFCoFqikJ5aJQEV8RlUgOmBFIF9z3W+h67aRdQPRxN9d'
+  url: 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1/dist/transformers.min.js',
+  sri: 'sha384-sOua6i337lNLWtuIG44PBf5JXIvhoicFClCcI4XHDe/eHW3dwhQ3Y6t6wQjfRrkT'
 };
 let T = null, pipe = null, pipeKey = '';
 
@@ -22,28 +22,42 @@ async function lib() {
   T.env.allowLocalModels = false;
   return T;
 }
+// Engine settings, tried in order. Each is checked with a one-second test run before real work starts,
+// so a setting that loads but cannot run is skipped too.
+async function plans(model) {
+  let ad = null;
+  try { ad = self.navigator.gpu ? await self.navigator.gpu.requestAdapter() : null; } catch (e) {}
+  const f16 = !!(ad && ad.features && ad.features.has('shader-f16'));
+  const out = [];
+  if (ad && f16) out.push({ name: 'gpu-f16', device: 'webgpu', dtype: { encoder_model: 'fp16', decoder_model_merged: 'q4' } });
+  else if (ad && /base/.test(model)) out.push({ name: 'gpu-f32', device: 'webgpu', dtype: { encoder_model: 'fp32', decoder_model_merged: 'q4' } });
+  out.push({ name: 'cpu-q8', device: 'wasm', dtype: 'q8' });
+  out.push({ name: 'cpu-q8-basic', device: 'wasm', dtype: 'q8', session_options: { graphOptimizationLevel: 'basic' } });
+  return out;
+}
 async function getPipe(model, post) {
   if (pipe && pipeKey === model) return pipe;
   const t = await lib();
   const progress_callback = p => {
     if (p && p.status === 'progress') post({ type: 'load', file: p.file, loaded: p.loaded, total: p.total });
   };
-  // Graphics card (WebGPU) only when it supports half precision; otherwise the processor with 8-bit weights.
-  // small: ~410 MB on WebGPU, ~250 MB on the processor; base: ~165 MB / ~77 MB. Downloaded once, then cached.
-  let f16 = false;
-  try { const ad = self.navigator.gpu && await self.navigator.gpu.requestAdapter(); f16 = !!(ad && ad.features && ad.features.has('shader-f16')); } catch (e) {}
-  const tries = f16
-    ? [{ device: 'webgpu', dtype: { encoder_model: 'fp16', decoder_model_merged: 'q4' } }, { device: 'wasm', dtype: 'q8' }]
-    : [{ device: 'wasm', dtype: 'q8' }];
-  let last;
-  for (const o of tries) {
+  const errors = [];
+  for (const o of await plans(model)) {
     try {
-      pipe = await t.pipeline('automatic-speech-recognition', model, Object.assign({ progress_callback }, o));
-      pipeKey = model; post({ type: 'device', device: o.device });
+      const opts = { progress_callback, device: o.device, dtype: o.dtype };
+      if (o.session_options) opts.session_options = o.session_options;
+      const p = await t.pipeline('automatic-speech-recognition', model, opts);
+      await p(new Float32Array(16000), { language: 'dutch', task: 'transcribe' }); // test run
+      pipe = p; pipeKey = model; post({ type: 'device', device: o.device, plan: o.name });
       return pipe;
-    } catch (e) { last = e; }
+    } catch (e) {
+      const msg = String(e && e.message || e);
+      errors.push(o.name + ': ' + msg.slice(0, 160));
+      post({ type: 'note', msg: o.name + ' failed' });
+      if (/integrity|network: library|Could not locate file: "[^"]*config\.json/i.test(msg)) break; // retrying other settings will not help
+    }
   }
-  throw last;
+  throw new Error(errors.join(' | '));
 }
 self.onmessage = async e => {
   const m = e.data || {};
