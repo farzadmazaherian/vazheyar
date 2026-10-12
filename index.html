@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-UlShhy3Th61zwgFCowRZCHzMst4zgElZ9GGjD34K8jo=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob:; media-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-OJgETcFYbFXGQvuOlI+dpW7NV+BsVBvG7+lD2X12Q4I=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -146,7 +146,7 @@ kbd{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;padding:1px
 .field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .lbl{font-size:13px;font-weight:700;color:var(--muted)}
 .lbl em{font-style:normal;font-weight:400}
-input[type=text],input[type=password],input[type=search],input[type=number],select,textarea{width:100%;padding:10px 12px;border-radius:11px;border:1px solid var(--line);background:var(--surface);min-width:0}
+input[type=text],input[type=password],input[type=search],input[type=number],input[type=url],select,textarea{width:100%;padding:10px 12px;border-radius:11px;border:1px solid var(--line);background:var(--surface);min-width:0}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--cobalt-line);outline-offset:0;border-color:var(--cobalt)}
 textarea{resize:vertical}
 input.lat,textarea.lat{font-size:16px}
@@ -431,6 +431,35 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
 .bar{height:6px;border-radius:99px;background:var(--surface-2);overflow:hidden;margin-top:8px}
 .bar span{display:block;height:100%;width:0;background:var(--cobalt);border-radius:99px;transition:width .3s}
 .after-dlg{display:flex;flex-direction:column;gap:6px;padding:14px 16px;border-radius:var(--r);background:var(--acc-soft);margin-bottom:12px}
+.song-list{display:flex;flex-direction:column;gap:26px}
+.song-group{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.song-group>.src-gh{grid-column:1/-1;margin-bottom:0}
+.song{display:flex;flex-direction:column;gap:8px}
+.song.heard{border-color:var(--good)}
+.song-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.song-t{margin:0;font-size:19px;text-align:left}
+.song-by{margin:0;color:var(--muted);text-align:left}
+.song-why{margin:0}
+.song-focus{margin:0;font-size:14px;color:var(--muted)}
+.song .btn-row{margin-top:auto}
+.song-ly{border-top:1px solid var(--line);padding-top:8px}
+.song-ly summary{cursor:pointer;font-weight:700;color:var(--cobalt)}
+.ly-lines{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+.ly{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:6px 8px;border-radius:9px;background:var(--surface-2)}
+.ly-t .lat{margin:0;font-size:16px;text-align:left}
+.ly-t .tr{margin:0;font-size:13.5px;color:var(--muted)}
+.yt-add{margin-bottom:6px}
+.yt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:14px}
+.yt-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.yt-open{display:flex;flex-direction:column;color:var(--ink);text-decoration:none;flex:1}
+.yt-open:hover .yt-t{color:var(--cobalt)}
+.yt-thumb{position:relative;display:block;aspect-ratio:16/9;background:var(--surface-2)}
+.yt-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.yt-ph{display:grid;place-items:center;height:100%;font-size:34px;color:var(--muted)}
+.yt-play{position:absolute;inset-inline-start:10px;bottom:10px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:15px}
+.yt-c{display:flex;flex-direction:column;gap:4px;padding:12px 14px}
+.yt-t{overflow-wrap:anywhere;unicode-bidi:plaintext}
+.yt-acts{display:flex;justify-content:flex-end;gap:4px;padding:0 8px 8px}
 .say-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:6px}
 .src-grid{display:flex;flex-direction:column;gap:26px}
 .src-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
@@ -621,6 +650,11 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
         <button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg><span>واژه‌های من</span></button>
         <button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M10 17.5v-5l4.5-1v5"/><circle cx="9" cy="17.5" r="1.3"/><circle cx="13.5" cy="16.5" r="1.3"/></svg><span>منابع من</span></button>
       </div>
+      <div class="nav-group" style="margin-top:14px">
+        <div class="nav-label">گوش دادن و دیدن</div>
+        <button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg><span>آهنگ‌ها</span></button>
+        <button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg><span>یوتیوب من</span></button>
+      </div>
     </nav>
     <div class="rail-foot">
       <button class="btn accent" type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button>
@@ -659,7 +693,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
         <div class="stat"><b class="num" id="stTotal">۰</b><span>کل کارت‌های این زبان</span></div>
       </div>
       <div class="lower">
-        <div class="panel"><h2 class="h2">چهار هفتهٔ اخیر</h2><div class="heat" id="heat" aria-label="تعداد مرور در ۲۸ روز اخیر"></div><p class="hint" style="margin:10px 0 0">هر خانه یک روز است؛ پررنگ‌تر یعنی مرور بیشتر.</p></div>
+        <div class="panel"><h2 class="h2" id="heatTitle">چهار هفتهٔ اخیر</h2><div class="heat" id="heat" aria-label="تعداد مرور در ۲۸ روز اخیر"></div><p class="hint" style="margin:10px 0 0">هر خانه یک روز است؛ پررنگ‌تر یعنی مرور بیشتر.</p></div>
         <div class="panel tip-panel"><h2 class="h2">نکتهٔ امروز</h2><p id="tip"></p><button class="link" type="button" id="nextTip">نکتهٔ بعدی</button></div>
       </div>
     </section>
@@ -966,6 +1000,38 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
       </div>
     </section>
 
+    <!-- ============ SONGS ============ -->
+    <section class="view" id="v-songs" hidden>
+      <div class="page-head">
+        <div><h1 class="view-title" id="songTitle">آهنگ‌ها</h1><p class="sub" id="songSub"></p></div>
+        <div class="seg" id="songLevel" aria-label="سطح"><button type="button" data-v="all" aria-pressed="true">همهٔ سطح‌ها</button><button type="button" data-v="A1">A1</button><button type="button" data-v="A2">A2</button><button type="button" data-v="B1">B1</button></div>
+      </div>
+      <p class="note-box info" style="margin:0 0 18px">روش پیشنهادی: اول یک بار فقط گوش دهید، بعد با متن ترانه گوش دهید، و بار سوم همراه بخوانید. آهنگ‌های سطح A1 متن کامل و ترجمه دارند؛ برای بقیه، متن را از دکمهٔ «متن ترانه» باز کنید.</p>
+      <div id="songList" class="song-list"></div>
+    </section>
+
+    <!-- ============ MY YOUTUBE ============ -->
+    <section class="view" id="v-youtube" hidden>
+      <h1 class="view-title">یوتیوب من</h1>
+      <p class="sub">لینک ویدیوهای یوتیوب را اینجا نگه دارید. با زدن روی هر کدام، یوتیوب باز می‌شود. لینک‌ها با گوشی هم همگام می‌شوند.</p>
+      <div class="panel yt-add stack">
+        <div class="field"><label class="lbl" for="ytUrl">لینک یوتیوب</label><input type="url" id="ytUrl" class="ltr" placeholder="https://www.youtube.com/watch?v=…" spellcheck="false" autocapitalize="off"></div>
+        <div class="two">
+          <div class="field"><label class="lbl" for="ytTitle">عنوان <em>(اگر خالی بماند، از یوتیوب گرفته می‌شود)</em></label><input type="text" id="ytTitle"></div>
+          <div class="field"><label class="lbl" for="ytNote">یادداشت <em>(اختیاری)</em></label><input type="text" id="ytNote" placeholder="مثلاً: درس ۳ گرامر، برای تکرار"></div>
+        </div>
+        <div class="btn-row" style="justify-content:space-between">
+          <div class="seg" id="ytLang"><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button><button type="button" data-v="x">دیگر</button></div>
+          <button class="btn primary" type="button" id="ytAdd">افزودن لینک</button>
+        </div>
+      </div>
+      <div class="src-tools" id="ytTools">
+        <input type="search" id="ytQ" placeholder="جست‌وجو در عنوان و یادداشت" aria-label="جست‌وجو">
+        <div class="seg" id="ytFilter"><button type="button" data-v="all" aria-pressed="true">همه</button><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button><button type="button" data-v="x">دیگر</button></div>
+      </div>
+      <div id="ytList" class="yt-grid"></div>
+    </section>
+
     <!-- ============ SETTINGS ============ -->
     <section class="view" id="v-settings" hidden>
       <h1 class="view-title">تنظیمات</h1>
@@ -1046,7 +1112,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۰</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۱</p>
     </section>
 
 </main>
@@ -1077,7 +1143,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=10"></script>
+<script src="packs.js?v=11"></script>
 <script>
 (function(){
 'use strict';
@@ -1220,8 +1286,18 @@ function schedule(srs,g,now=Date.now()){
 }
 function previewIvl(srs,g){return schedule(srs?Object.assign({},srs):null,g,Date.now()).ivl}
 const introducedToday=lang=>{const k=dayKey();return db.items.filter(i=>(!lang||i.lang===lang)&&i.srs&&i.srs.first===k).length};
-function logReview(){const k=dayKey();db.log[k]=db.log[k]||{};db.log[k][cfg.deviceId]=(db.log[k][cfg.deviceId]||0)+1}
-const dayCount=k=>{const o=db.log[k];if(!o)return 0;return Object.values(o).reduce((a,b)=>a+(+b||0),0)};
+/* review log: db.log[day]["device@lang"] = count. Older entries ("device") have no language;
+   they are split by the share of each language's cards last reviewed that day. */
+const logKey=lang=>cfg.deviceId+'@'+(lang==='en'?'en':'nl');
+function logReview(lang){const k=dayKey();db.log[k]=db.log[k]||{};const lk=logKey(lang);db.log[k][lk]=(db.log[k][lk]||0)+1}
+let _legacyShare=null;
+function legacyShare(day,lang){
+  if(!_legacyShare){_legacyShare={};db.items.forEach(i=>{if(!i.srs||!i.srs.last)return;const d=dayKey(i.srs.last);const o=_legacyShare[d]||(_legacyShare[d]={nl:0,en:0});o[i.lang==='en'?'en':'nl']++})}
+  const o=_legacyShare[day];if(!o||!(o.nl+o.en))return 0.5;return o[lang]/(o.nl+o.en);
+}
+const dayCount=(k,lang)=>{const o=db.log[k];if(!o)return 0;let n=0,old=0;
+  for(const[key,v]of Object.entries(o)){const c=+v||0;const at=key.lastIndexOf('@');if(at<0){old+=c;continue}if(!lang||key.slice(at+1)===lang)n+=c}
+  if(old)n+=lang?Math.round(old*legacyShare(k,lang)):old;return n};
 function stats(lang){
   const eod=endOfToday();let due=0,fresh=0,total=0,words=0,sent=0,verbs=0,mature=0,susp=0;
   for(const i of db.items){
@@ -1647,11 +1723,11 @@ function qaSave(next){
 document.addEventListener('click',e=>{if(e.target.closest('[data-quickadd]')){e.preventDefault();quickAdd()}});
 /* phone "more" menu */
 document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return;
-  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M10 17.5v-5l4.5-1v5"/><circle cx="9" cy="17.5" r="1.3"/><circle cx="13.5" cy="16.5" r="1.3"/></svg>منابع من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
+  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M10 17.5v-5l4.5-1v5"/><circle cx="9" cy="17.5" r="1.3"/><circle cx="13.5" cy="16.5" r="1.3"/></svg>منابع من</button><button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>آهنگ‌ها</button><button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg>یوتیوب من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','review','dialogs','quiz','library','manage','sources','share','settings'];
+const VIEWS=['today','review','dialogs','quiz','library','manage','sources','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
@@ -1666,6 +1742,8 @@ function showView(v,noHash){
   if(v==='manage')renderManage();
   if(v==='settings')renderSettings();
   if(v==='sources')renderSources();
+  if(v==='songs')renderSongs();
+  if(v==='youtube')renderYoutube();
   if(v==='share')renderShare();
   if(v==='quiz'&&!qz)showQuizSetup();
   if(!noHash){try{history.replaceState(null,'','#'+v)}catch(e){}}
@@ -1747,11 +1825,12 @@ function renderToday(){
     $('#wod').innerHTML=`<div class="feature-top"><span class="feature-title">واژهٔ امروز</span>${speakBtn('data-wod-say',1)}</div><div class="wod-word">${artHTML(w)}${esc(w.text)}</div><div class="wod-fa">${meanInline(w)}</div>${ex?`<div class="wod-ex">${esc(ex.t)}</div>`:''}${ety?`<div class="etym-line">${ety}</div>`:''}<div class="btn-row"><button class="btn sm" type="button" data-wod-open>جزئیات</button>${own?'<span class="hint">در کارت‌های شماست</span>':'<button class="btn sm primary" type="button" data-wod-add>افزودن به کارت‌ها</button>'}</div>`;
     $('#wod').hidden=false;$('#wod').dataset.id=w.id}else $('#wod').hidden=true;
   let h='';const todayK=dayKey();
-  for(let k=27;k>=0;k--){const t=Date.now()-k*DAY;const key=dayKey(t);const c=dayCount(key);const l=c===0?0:c<10?1:c<30?2:c<60?3:4;
+  _legacyShare=null;$('#heatTitle').textContent='چهار هفتهٔ اخیر، '+(lang==='en'?'انگلیسی':'هلندی');
+  for(let k=27;k>=0;k--){const t=Date.now()-k*DAY;const key=dayKey(t);const c=dayCount(key,lang);const l=c===0?0:c<10?1:c<30?2:c<60?3:4;
     h+=`<i data-l="${l}" class="${key===todayK?'today':''}" title="${esc(new Date(t).toLocaleDateString('fa-IR',{weekday:'short',day:'numeric',month:'short'}))}: ${faNum(c)} مرور"></i>`}
   $('#heat').innerHTML=h;
-  let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY));if(c>0)streak++;else if(k===0)continue;else break}
-  $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
+  let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY),lang);if(c>0)streak++;else if(k===0)continue;else break}
+  $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK,lang));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
   const tips=TIPS[lang];$('#tip').innerHTML=tips[tipIdx%tips.length];
 }
 $('#nextTip').addEventListener('click',()=>{tipIdx++;const tips=TIPS[L()];$('#tip').innerHTML=tips[tipIdx%tips.length]});
@@ -1826,13 +1905,13 @@ function flip(){
 function grade(g){
   if(!ses||!ses.flipped)return;const it=curItem();if(!it)return;
   lastUndo={id:it.id,srs:it.srs?Object.assign({},it.srs):null,queue:ses.queue.slice(),done:ses.done,again:ses.again,day:dayKey()};
-  it.srs=schedule(it.srs,g);logReview();ses.queue.shift();ses.done++;
+  it.srs=schedule(it.srs,g);logReview(it.lang);ses.queue.shift();ses.done++;
   if(g===0){ses.again++;ses.queue.splice(Math.min(3,ses.queue.length),0,it.id)}
   saveData(30000);$('#revUndo').hidden=false;showCard();
 }
 function undoGrade(){
   if(!ses||!lastUndo)return;const it=getItem(lastUndo.id);if(!it)return;
-  it.srs=lastUndo.srs;const d=db.log[lastUndo.day];if(d&&d[cfg.deviceId])d[cfg.deviceId]--;
+  it.srs=lastUndo.srs;const d=db.log[lastUndo.day];const lk=logKey(it.lang);if(d&&d[lk])d[lk]--;else if(d&&d[cfg.deviceId])d[cfg.deviceId]--;
   ses.queue=lastUndo.queue;ses.done=lastUndo.done;ses.again=lastUndo.again;lastUndo=null;
   $('#revUndo').hidden=true;saveData(30000);showCard();toast('آخرین امتیاز برگردانده شد');
 }
@@ -2585,7 +2664,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=10',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=11',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -2608,7 +2687,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 10، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 11، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -2633,7 +2712,7 @@ function blobB64(blob){return new Promise((res,rej)=>{const fr=new FileReader();
 
 /* ---------- sync: one JSON file for all sources + one file per media item ---------- */
 let srcSyncing=false;
-const SRC_KEYS=['id','kind','title','cat','lang','created','updated','gone','text','segs','media','info','asr'];
+const SRC_KEYS=['id','kind','title','cat','lang','created','updated','gone','text','segs','media','info','asr','url','vid','list','note'];
 function srcCanon(list){return JSON.stringify({kind:'vazheyar-sources',v:1,sources:list.slice().sort((a,b)=>a.id<b.id?-1:1).map(r=>{const o={};SRC_KEYS.forEach(k=>{if(r[k]!==undefined&&r[k]!==null&&r[k]!=='')o[k]=r[k]});return o})})}
 async function syncSources(manual){
   if(!ghReady()||srcSyncing)return;srcSyncing=true;
@@ -2688,6 +2767,7 @@ async function syncSources(manual){
     }else if(ent)cfg.srcSha=ent.sha;
     cfg.srcDirty=false;saveCfg();
     if((changedLocal||mediaChanged)&&currentView==='sources'){if(openId)renderSourceOpen();else renderSources()}
+    if(changedLocal&&currentView==='youtube')renderYoutube();
   }catch(e){srcSyncNote('');if(manual)toast(e.message||'همگام‌سازی منابع ناموفق بود.',5000)}
   finally{srcSyncing=false}
 }
@@ -2740,7 +2820,7 @@ async function renderSources(){
   setSeg($('#srcLang'),L());setSeg($('#asrModel'),cfg.asr==='base'?'base':'small');setSeg($('#srcGroup'),cfg.srcGroup||'series');
   $('#srcHome').hidden=!!openId;$('#srcOpen').hidden=!openId;srcSyncNote(srcSyncMsg);
   if(openId)return renderSourceOpen();
-  let list=[];try{list=(await idbAll('src')).filter(r=>!r.gone)}catch(e){$('#srcNote').textContent=e.message;$('#srcNote').hidden=false;$('#srcGrid').innerHTML='';return}
+  let list=[];try{list=(await idbAll('src')).filter(r=>!r.gone&&r.kind!=='yt')}catch(e){$('#srcNote').textContent=e.message;$('#srcNote').hidden=false;$('#srcGrid').innerHTML='';return}
   srcCache=list;
   const note=$('#srcNote');
   if(IS_PREVIEW){note.textContent='در نسخهٔ پیش‌نمایش، منابع فقط برای امتحان است و همگام نمی‌شود.';note.hidden=false}
@@ -2868,18 +2948,18 @@ async function renderSrcMedia(r){
   }
   if(!blob){box.innerHTML=`<p class="note-box info">${r.media&&r.media.size>MEDIA_SYNC_MAX?'این فایل بیش از ۶۰۰ مگابایت است و فقط روی دستگاهی که واردش کرده‌اید هست. متنش اینجاست.':'فایل اصلی هنوز به GitHub نرسیده است. روی دستگاهی که فایل را وارد کرده‌اید برنامه را باز کنید تا فرستاده شود.'}</p>`;return}
   srcAudioUrl=URL.createObjectURL(blob);
-  if(r.kind==='image'){box.innerHTML=`<figure class="src-img"><img alt="" src="${srcAudioUrl}"></figure>`;return}
+  if(r.kind==='image'){box.innerHTML=`<figure class="src-img"><img alt=""></figure>`;$('img',box).src=srcAudioUrl;return}
   const pl=playlistFor(r.id),pi=pl?pl.ids.indexOf(r.id):-1;
   box.innerHTML=`<div class="player panel">
     ${pl&&playlist&&playlist.ids===pl.ids?`<div class="pl-bar"><span><b>پخش پیاپی:</b> ${esc(pl.name)}، فایل ${faNum(pi+1)} از ${faNum(pl.ids.length)}</span><span class="btn-row"><button class="btn sm" type="button" id="plPrevT" ${pi<=0?'disabled':''}>فایل قبلی</button><button class="btn sm" type="button" id="plNextT" ${pi>=pl.ids.length-1?'disabled':''}>فایل بعدی</button><button class="btn sm ghost" type="button" id="plStop">پایان پخش پیاپی</button></span></div>`:''}
-    <audio id="srcAudio" controls preload="metadata" src="${srcAudioUrl}"></audio>
+    <audio id="srcAudio" controls preload="metadata"></audio>
     <div class="player-row">
       <label class="check"><input type="checkbox" id="autoNext"><span>بعد از پایان، فایل بعدی همین دسته پخش شود</span></label>
       <div class="seg" id="spdSeg" aria-label="سرعت پخش"><button type="button" data-v="0.6">۰٫۶×</button><button type="button" data-v="0.75">۰٫۷۵×</button><button type="button" data-v="0.9">۰٫۹×</button><button type="button" data-v="1">۱×</button></div>
       ${(r.segs||[]).length?`<div class="btn-row"><button class="btn sm" type="button" id="segPrev">جملهٔ قبل</button><button class="btn sm" type="button" id="segRep">تکرار جمله</button><button class="btn sm" type="button" id="segNext">جملهٔ بعد</button></div>
       <label class="check"><input type="checkbox" id="segLoop"><span>هر جمله را تکرار کن</span></label>`:`<div class="btn-row"><button class="btn sm" type="button" id="segPrev">۵ ثانیه عقب</button><button class="btn sm" type="button" id="segRep">تکرار ۵ ثانیهٔ آخر</button><button class="btn sm" type="button" id="segNext">۵ ثانیه جلو</button></div>`}
     </div></div>`;
-  const a=$('#srcAudio');const sp=String(cfg.audioRate||1);setSeg($('#spdSeg'),sp);a.playbackRate=+sp;
+  const a=$('#srcAudio');a.src=srcAudioUrl;const sp=String(cfg.audioRate||1);setSeg($('#spdSeg'),sp);a.playbackRate=+sp;
   bindSeg($('#spdSeg'),v=>{cfg.audioRate=+v;saveCfg();a.playbackRate=+v});
   if($('#segLoop')){$('#segLoop').checked=!!cfg.segLoop;$('#segLoop').onchange=e=>{cfg.segLoop=e.target.checked;saveCfg()}}
   a.addEventListener('timeupdate',onAudioTime);
@@ -2950,7 +3030,7 @@ $('#srcActs').addEventListener('click',async e=>{
     else if(act==='edit')editSource(r);
     else if(act==='orig'){const blob=await mediaBlob(r);if(!blob){toast('فایل اصلی روی این دستگاه نیست.');return}const u=URL.createObjectURL(blob);window.open(u,'_blank','noopener');setTimeout(()=>URL.revokeObjectURL(u),60000)}
     else if(act==='rename'){
-      const all=(await idbAll('src')).filter(x=>!x.gone);const ser=seriesMap(all);const cats=Array.from(new Set(Array.from(ser.values()).filter(Boolean))).sort();
+      const all=(await idbAll('src')).filter(x=>!x.gone&&x.kind!=='yt');const ser=seriesMap(all);const cats=Array.from(new Set(Array.from(ser.values()).filter(Boolean))).sort();
       openSheet('نام و دسته',`<div class="field"><label class="lbl" for="rnT">نام</label><input type="text" id="rnT" data-autofocus value="${esc(r.title)}"></div><div class="field"><label class="lbl" for="rnC">دسته</label><input type="text" id="rnC" list="rnCats" value="${esc(r.cat||'')}" placeholder="${esc(ser.get(r.id)||'خودکار')}"><datalist id="rnCats">${cats.map(c=>`<option value="${esc(c)}">`).join('')}</datalist><span class="hint">خالی بگذارید تا برنامه خودش دسته را از روی نام فایل پیدا کند.</span></div>`,`<button class="btn primary" type="button" id="rnOk">ذخیره</button>`);
       $('#rnOk').onclick=async()=>{const t=$('#rnT').value.trim();if(!t)return;r.title=t;r.cat=$('#rnC').value.trim();await saveRec(r);closeSheet();renderSourceOpen()}}
     else if(act==='del'){
@@ -3047,6 +3127,105 @@ function harvest(r){
   $('#hvAll').onchange=e=>$$('[data-hv]').forEach(c=>c.checked=e.target.checked);
   $('#hvAdd').onclick=()=>{let n=0;$$('[data-hv]').forEach(c=>{if(!c.checked)return;const x=list[+c.dataset.hv];addFromSource(x.it,firstSent.get(x.it.id)||'');n++});closeSheet();refreshBadges();toast(faNum(n)+' واژه به کارت‌ها اضافه شد.',4000)};
 }
+
+/* ================= SONGS (per language, by level) ================= */
+const SONGS=Array.isArray(VZ.songs)?VZ.songs:[];
+let songLevel='all';
+const ytSearch=q=>'https://www.youtube.com/results?search_query='+encodeURIComponent(q);
+const lyricsSearch=(s)=>'https://www.google.com/search?q='+encodeURIComponent(s.t+' '+s.by+(s.lang==='nl'?' songtekst':' lyrics'));
+function renderSongs(){
+  const lang=L();const all=SONGS.filter(s=>s.lang===lang);
+  $('#songTitle').textContent=lang==='nl'?'آهنگ‌های هلندی':'آهنگ‌های انگلیسی';
+  const heard=all.filter(s=>db.done[s.id]).length;
+  $('#songSub').textContent=faNum(all.length)+' آهنگ، مرتب‌شده از ساده به سخت. '+(heard?faNum(heard)+' آهنگ را گوش داده‌اید.':'برای زبان دیگر، بالای صفحه زبان را عوض کنید.');
+  setSeg($('#songLevel'),songLevel);
+  const list=all.filter(s=>songLevel==='all'||s.level===songLevel);
+  const lv=['A1','A2','B1'].filter(l=>list.some(s=>s.level===l));
+  $('#songList').innerHTML=lv.map(l=>`<section class="song-group"><h2 class="src-gh"><span>سطح ${l}</span><span class="hint">${l==='A1'?'آهسته و ساده، با متن و ترجمه':l==='A2'?'آرام و واضح':'سریع‌تر و پیچیده‌تر'}</span></h2>${list.filter(s=>s.level===l).map(songHTML).join('')}</section>`).join('')||'<div class="empty panel">آهنگی در این سطح نیست.</div>';
+}
+function songHTML(s){
+  const done=!!db.done[s.id];
+  const ly=s.ly&&s.ly.length?`<details class="song-ly"><summary>متن و ترجمه</summary><div class="ly-lines">${s.ly.map((x,k)=>`<div class="ly"><div class="ly-t"><p class="lat">${esc(x.t)}</p>${trHTML(x,s.lang,'tr')}</div>${speakBtn('data-lysay="'+esc(s.id)+':'+k+'"',1)}</div>`).join('')}</div><div class="btn-row"><button class="btn sm" type="button" data-lyall="${esc(s.id)}">خواندن همهٔ متن</button></div>${s.n?`<p class="hint" style="margin:8px 0 0">${esc(s.n)}</p>`:''}</details>`:'';
+  return `<article class="panel song${done?' heard':''}" data-song="${esc(s.id)}">
+    <div class="song-top"><div><h3 class="lat song-t">${esc(s.t)}</h3><p class="song-by lat">${esc(s.by)}</p></div><span class="pill lvl">${esc(s.level)}</span></div>
+    <p class="song-why">${latWrap(s.why)}</p>
+    <p class="song-focus"><b>به این دقت کنید:</b> ${latWrap(s.focus)}</p>
+    ${ly}
+    <div class="btn-row">
+      <a class="btn sm primary" href="${ytSearch(s.q||(/^tradition|^jane taylor/i.test(s.by)?s.t+(s.lang==='nl'?' kinderliedje':' nursery rhyme'):s.t+' '+s.by))}" target="_blank" rel="noopener noreferrer">▶ در یوتیوب</a>
+      ${s.ly&&s.ly.length?'':`<a class="btn sm" href="${lyricsSearch(s)}" target="_blank" rel="noopener noreferrer">متن ترانه</a>`}
+      <button class="btn sm ${done?'ghost':''}" type="button" data-heard="${esc(s.id)}">${done?'✓ گوش داده‌ام':'گوش دادم'}</button>
+    </div></article>`;
+}
+bindSeg($('#songLevel'),v=>{songLevel=v;renderSongs()});
+$('#songList').addEventListener('click',e=>{
+  const h=e.target.closest('[data-heard]');if(h){const id=h.dataset.heard;if(db.done[id])delete db.done[id];else db.done[id]=Date.now();saveData();renderSongs();return}
+  const one=e.target.closest('[data-lysay]');if(one){const[id,k]=one.dataset.lysay.split(':');const s=SONGS.find(x=>x.id===id);if(s&&s.ly[+k])speak(s.ly[+k].t,s.lang,{rate:0.8});return}
+  const all=e.target.closest('[data-lyall]');if(all){const s=SONGS.find(x=>x.id===all.dataset.lyall);if(!s)return;let i=0;const tok=++speakTok;const next=()=>{if(tok!==speakTok||i>=s.ly.length)return;speak(s.ly[i++].t,s.lang,{keep:1,rate:0.8,onend:()=>setTimeout(next,300)})};next()}
+});
+
+/* ================= MY YOUTUBE LINKS (kept with the sources, so they sync) ================= */
+const YT_HOSTS=/^(www\.|m\.|music\.)?youtube\.com$|^youtu\.be$|^(www\.)?youtube-nocookie\.com$/i;
+function ytParse(raw){
+  let u;try{u=new URL(String(raw||'').trim())}catch(e){return null}
+  if(u.protocol!=='https:'&&u.protocol!=='http:')return null;
+  if(!YT_HOSTS.test(u.hostname))return null;
+  u.protocol='https:';
+  let id='';
+  if(/youtu\.be$/i.test(u.hostname))id=u.pathname.split('/')[1]||'';
+  else if(u.searchParams.get('v'))id=u.searchParams.get('v');
+  else{const m=u.pathname.match(/^\/(shorts|live|embed)\/([^/?#]+)/);if(m)id=m[2]}
+  if(id&&!/^[\w-]{6,20}$/.test(id))id='';
+  const list=u.searchParams.get('list')||'';
+  return{url:u.toString(),id,list};
+}
+async function ytTitle(url){
+  try{const r=await fetch('https://www.youtube.com/oembed?format=json&url='+encodeURIComponent(url),{credentials:'omit'});if(!r.ok)return'';const j=await r.json();return String(j.title||'').slice(0,160)}catch(e){return''}
+}
+let ytFilter='all',ytQuery='';
+async function renderYoutube(){
+  setSeg($('#ytLang'),segVal($('#ytLang'))||L());setSeg($('#ytFilter'),ytFilter);
+  let list=[];try{list=(await idbAll('src')).filter(r=>!r.gone&&r.kind==='yt')}catch(e){$('#ytList').innerHTML=`<p class="note-box bad">${esc(e.message)}</p>`;return}
+  $('#ytTools').hidden=list.length<2;
+  const q=norm(ytQuery);
+  list=list.filter(r=>(ytFilter==='all'||r.lang===ytFilter)&&(!q||norm(r.title).includes(q)||norm(r.note||'').includes(q))).sort((a,b)=>b.created-a.created);
+  $('#ytList').innerHTML=list.length?list.map(r=>`<div class="yt-card">
+      <a class="yt-open" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">
+        <span class="yt-thumb">${r.vid?`<img alt="" loading="lazy" src="https://i.ytimg.com/vi/${esc(r.vid)}/mqdefault.jpg">`:'<span class="yt-ph">▶</span>'}<span class="yt-play" aria-hidden="true">▶</span></span>
+        <span class="yt-c"><b class="yt-t">${esc(r.title)}</b>${r.note?`<span class="hint">${esc(r.note)}</span>`:''}<span class="src-tags"><span class="pill">${r.lang==='nl'?'هلندی':r.lang==='en'?'انگلیسی':'دیگر'}</span>${r.list&&!r.vid?'<span class="pill">فهرست پخش</span>':''}</span></span>
+      </a>
+      <div class="yt-acts"><button class="btn sm ghost" type="button" data-ytedit="${esc(r.id)}">ویرایش</button><button class="btn sm ghost danger" type="button" data-ytdel="${esc(r.id)}">حذف</button></div>
+    </div>`).join('')
+    :`<div class="empty panel">${ytQuery||ytFilter!=='all'?'چیزی پیدا نشد.':'هنوز لینکی اضافه نکرده‌اید. لینک یک ویدیوی یوتیوب را در کادر بالا بچسبانید.'}</div>`;
+}
+$('#ytAdd').addEventListener('click',async()=>{
+  const p=ytParse($('#ytUrl').value);
+  if(!p){toast('این لینک یوتیوب نیست. لینک را از دکمهٔ Share یوتیوب یا نوار آدرس کپی کنید.',5000);$('#ytUrl').focus();return}
+  const btn=$('#ytAdd');btn.disabled=true;
+  try{
+    let title=$('#ytTitle').value.trim();if(!title)title=await ytTitle(p.url);if(!title)title='ویدیوی یوتیوب';
+    const all=(await idbAll('src')).filter(r=>!r.gone&&r.kind==='yt');
+    if(all.some(r=>r.url===p.url)){toast('این لینک قبلاً اضافه شده است.');return}
+    const lang=segVal($('#ytLang'))||L();const r=newRec('yt',title,lang==='x'?'x':lang);
+    Object.assign(r,{url:p.url,vid:p.id,list:p.list,note:$('#ytNote').value.trim()});
+    await saveRec(r);['#ytUrl','#ytTitle','#ytNote'].forEach(s=>$(s).value='');toast('لینک اضافه شد.');renderYoutube();
+  }finally{btn.disabled=false}
+});
+$('#ytUrl').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('#ytAdd').click()}});
+bindSeg($('#ytLang'),()=>{});
+bindSeg($('#ytFilter'),v=>{ytFilter=v;renderYoutube()});
+let ytQT=null;$('#ytQ').addEventListener('input',e=>{clearTimeout(ytQT);ytQT=setTimeout(()=>{ytQuery=e.target.value;renderYoutube()},200)});
+$('#ytList').addEventListener('click',async e=>{
+  const d=e.target.closest('[data-ytdel]');
+  if(d){const r=await idbGet('src',d.dataset.ytdel);if(!r)return;
+    if(!await ask({title:'حذف این لینک؟',html:`<p style="margin:0">«${esc(r.title)}» از فهرست همهٔ دستگاه‌هایتان حذف می‌شود. خود ویدیو در یوتیوب می‌ماند.</p>`,ok:'حذف',danger:true}))return;
+    await idbPut('src',{id:r.id,gone:Date.now(),updated:Date.now(),media:null});cfg.srcDirty=true;saveCfg();scheduleSrcSync();renderYoutube();return}
+  const ed=e.target.closest('[data-ytedit]');
+  if(ed){const r=await idbGet('src',ed.dataset.ytedit);if(!r)return;
+    openSheet('ویرایش لینک',`<div class="field"><label class="lbl" for="yeT">عنوان</label><input type="text" id="yeT" data-autofocus value="${esc(r.title)}"></div><div class="field"><label class="lbl" for="yeN">یادداشت</label><input type="text" id="yeN" value="${esc(r.note||'')}"></div><div class="field"><span class="lbl">زبان</span><div class="seg" id="yeL"><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button><button type="button" data-v="x">دیگر</button></div></div>`,`<button class="btn primary" type="button" id="yeOk">ذخیره</button>`);
+    setSeg($('#yeL'),r.lang||'x');bindSeg($('#yeL'),()=>{});
+    $('#yeOk').onclick=async()=>{r.title=$('#yeT').value.trim()||r.title;r.note=$('#yeN').value.trim();r.lang=segVal($('#yeL'))||r.lang;await saveRec(r);closeSheet();renderYoutube()}}
+});
 
 /* ================= SHARE WITH OTHERS ================= */
 const appURL=()=>location.origin+location.pathname.replace(/index\.html$/,'');
