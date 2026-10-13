@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-OJgETcFYbFXGQvuOlI+dpW7NV+BsVBvG7+lD2X12Q4I=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-LiR/2nmqVWOYbjqTJDhBFnY0g0A8zj5m5HgEQeSfG94=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -499,6 +499,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
 .src-img img{max-width:100%;max-height:55vh;border-radius:var(--r);border:1px solid var(--line)}
 .src-body{padding:20px 22px}
 .rd{font-family:var(--f-lat);font-size:17.5px;line-height:1.85;text-align:left;margin:0 0 14px;max-width:72ch;cursor:text;overflow-wrap:anywhere}
+.rd.fa-ln{font-family:var(--f-fa);text-align:right;font-size:16px;color:var(--muted);cursor:default}
 .rd.ln{margin:0 0 4px}
 .rd.ln.gap{margin-top:14px}
 .rd.ln.gap:first-of-type,.pg-h+.rd.ln.gap{margin-top:0}
@@ -600,6 +601,49 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
 .mic-res{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
 .upd-bar{position:fixed;z-index:80;top:12px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--lift);border-radius:14px;padding:8px 10px 8px 14px;max-width:calc(100% - 24px)}
 
+/* learning path (v12) */
+.path{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;counter-reset:none}
+.path .step{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);min-width:0}
+.path .step-n{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--surface-2);color:var(--muted)}
+.path .step-n .i{width:16px;height:16px}
+.path .step-c{display:flex;flex-direction:column;min-width:0;flex:1}
+.path .step-c b{font-size:15px}
+.path .step-c .hint{font-size:12.5px;line-height:1.5}
+.path .step .btn{flex:none}
+.path .step.now{border-color:var(--cobalt-line);background:var(--cobalt-soft)}
+.path .step.now .step-n{background:var(--cobalt);color:#fff}
+.path .step.done .step-n{background:var(--good-soft);color:var(--good)}
+.path .step.locked{opacity:.62}
+.path .path-done{grid-column:1/-1;padding:10px 14px;border-radius:var(--r);background:var(--good-soft);color:var(--good);font-weight:700}
+@media (max-width:860px){.path{grid-template-columns:1fr}}
+.view.is-locked>:not(.lock-panel){display:none!important}
+.lock-panel{text-align:center;max-width:560px;margin:24px auto;display:flex;flex-direction:column;align-items:center;gap:8px}
+.lock-panel .lock-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);color:var(--muted)}
+.lock-panel .lock-ic .i{width:26px;height:26px}
+.lock-panel p{margin:0;line-height:1.9}
+.nav button.locked,.bottom-nav button.locked{opacity:.6}
+.nav button .lk{margin-inline-start:auto;display:inline-flex}
+.nav button .lk .i,.bottom-nav button .lk .i{width:14px;height:14px}
+.bottom-nav button .lk{position:absolute;top:3px;inset-inline-end:14%}
+/* found in a source (v12) */
+.found{margin:0 0 14px;display:flex;flex-direction:column;gap:8px}
+.found .h2{margin:0 0 2px}
+.fd-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 12px;border-radius:var(--r-sm);background:var(--surface-2);line-height:1.8}
+.fd-row.good{background:var(--good-soft)}
+.fd-row.warn{background:var(--warn-soft)}
+.fd-row>span:first-child{flex:1 1 260px;min-width:0}
+.import-done{border-color:var(--good)}
+.import-done .job-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+/* songs of my own + YouTube reader (v12) */
+.song-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:6px 0 12px}
+.song-head .h2{margin:0}
+#mySongs{margin:0 0 26px}
+.song.mine{border-color:var(--cobalt-line)}
+.yt-frame{position:relative;width:100%;max-width:880px;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000}
+.yt-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.howto{margin:6px 0;padding-inline-start:22px;line-height:2}
+.rd .fa-tr{font-family:var(--f-fa);color:var(--muted);font-size:15.5px;margin-inline-start:14px;cursor:default;unicode-bidi:isolate}
+
 </style>
 </head>
 <body>
@@ -669,6 +713,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
     <section class="view" id="v-today" hidden>
       <div class="dateline"><span id="dateFa"></span><span class="lat" id="dateNl"></span></div>
       <div class="page-head"><div><h1 class="view-title" id="todayTitle"></h1><p class="sub" id="todaySub"></p></div></div>
+      <ol class="path" id="path" aria-label="مسیر یادگیری امروز"></ol>
       <div class="note-box info" id="previewNote" hidden style="margin-bottom:18px">این نسخهٔ پیش‌نمایش است و داده‌ها فقط در همین مرورگر ذخیره می‌شوند. برای نصب روی گوشی و لپ‌تاپ و همگام‌سازی، <a href="https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm" target="_blank" rel="noopener">راهنمای راه‌اندازی</a> را دنبال کنید.</div>
       <div class="today-grid">
         <div class="tile hero">
@@ -955,6 +1000,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
         </div>
         <div id="srcMedia"></div>
         <div id="srcProg" class="stack" hidden></div>
+        <div id="srcFound"></div>
         <div class="panel src-body" id="srcBody"></div>
       </div>
     </section>
@@ -1004,16 +1050,18 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
     <section class="view" id="v-songs" hidden>
       <div class="page-head">
         <div><h1 class="view-title" id="songTitle">آهنگ‌ها</h1><p class="sub" id="songSub"></p></div>
-        <div class="seg" id="songLevel" aria-label="سطح"><button type="button" data-v="all" aria-pressed="true">همهٔ سطح‌ها</button><button type="button" data-v="A1">A1</button><button type="button" data-v="A2">A2</button><button type="button" data-v="B1">B1</button></div>
+        <div class="btn-row"><div class="seg" id="songLang" aria-label="زبان آهنگ‌ها"><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button></div><button class="btn primary" type="button" id="songAdd">افزودن آهنگ با فایل و متن</button></div>
       </div>
-      <p class="note-box info" style="margin:0 0 18px">روش پیشنهادی: اول یک بار فقط گوش دهید، بعد با متن ترانه گوش دهید، و بار سوم همراه بخوانید. آهنگ‌های سطح A1 متن کامل و ترجمه دارند؛ برای بقیه، متن را از دکمهٔ «متن ترانه» باز کنید.</p>
+      <section id="mySongs" class="song-group" hidden></section>
+      <div class="song-head"><h2 class="h2" id="songSugT">آهنگ‌های پیشنهادی</h2><div class="seg" id="songLevel" aria-label="سطح"><button type="button" data-v="all" aria-pressed="true">همهٔ سطح‌ها</button><button type="button" data-v="A1">A1</button><button type="button" data-v="A2">A2</button><button type="button" data-v="B1">B1</button></div></div>
+      <p class="note-box info" style="margin:0 0 18px">روش پیشنهادی: اول یک بار فقط گوش دهید، بعد با متن ترانه گوش دهید، و بار سوم همراه بخوانید. آهنگ‌های سطح A1 متن کامل و ترجمه دارند؛ برای بقیه، متن را از دکمهٔ «متن ترانه» باز کنید. فایل MP3 و متن آهنگ خودتان را هم با دکمهٔ بالا اضافه کنید.</p>
       <div id="songList" class="song-list"></div>
     </section>
 
     <!-- ============ MY YOUTUBE ============ -->
     <section class="view" id="v-youtube" hidden>
       <h1 class="view-title">یوتیوب من</h1>
-      <p class="sub">لینک ویدیوهای یوتیوب را اینجا نگه دارید. با زدن روی هر کدام، یوتیوب باز می‌شود. لینک‌ها با گوشی هم همگام می‌شوند.</p>
+      <p class="sub">لینک ویدیوهای یوتیوب را اینجا نگه دارید. با زدن روی هر کدام، یوتیوب باز می‌شود. با «متن و تمرین»، ویدیو را کنار متنش می‌بینید و واژه‌هایش را کارت می‌کنید. لینک‌ها و متن‌ها با گوشی هم همگام می‌شوند.</p>
       <div class="panel yt-add stack">
         <div class="field"><label class="lbl" for="ytUrl">لینک یوتیوب</label><input type="url" id="ytUrl" class="ltr" placeholder="https://www.youtube.com/watch?v=…" spellcheck="false" autocapitalize="off"></div>
         <div class="two">
@@ -1096,6 +1144,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
             </div>
             <div class="field" id="glossWrap"><span class="lbl">زبان توضیح برای هلندی</span><div class="seg" id="glossSeg"><button type="button" data-v="fa">فارسی</button><button type="button" data-v="both">فارسی و انگلیسی</button><button type="button" data-v="en" class="lat">English</button></div><span class="hint">معنی واژه‌ها و ترجمهٔ جمله‌های نمونه در کارت‌ها، فهرست‌ها و تمرین‌ها به این زبان نشان داده می‌شود. با «English» هلندی را از راه انگلیسی یاد می‌گیرید؛ فارسی همچنان در جزئیات هر واژه هست.</span></div>
             <div class="field" id="focusWrap"><span class="lbl">ترتیب کارت‌های تازه</span><div class="seg" id="focusSeg"><button type="button" data-v="series">اول درس‌های کتاب</button><button type="button" data-v="order">به ترتیب افزودن</button></div><span class="hint">با «اول درس‌های کتاب»، کارت‌های تازهٔ De Opmaat زودتر از بسته‌های دیگر وارد مرور می‌شوند.</span></div>
+            <div class="field"><span class="lbl">یادگیری مرحله‌به‌مرحله</span><div class="seg" id="pathSeg"><button type="button" data-v="on">روشن</button><button type="button" data-v="off">خاموش</button></div><span class="hint">با «روشن»، هر روز اول کارت‌ها مرور می‌شوند؛ بعد مکالمه باز می‌شود و بعد از مکالمه، تمرین. منابع، آهنگ‌ها و یوتیوب همیشه باز هستند.</span></div>
             <div class="field" id="themeWrap"><span class="lbl">ظاهر</span><div class="seg" id="themeSeg"><button type="button" data-v="system">مطابق دستگاه</button><button type="button" data-v="light">روشن</button><button type="button" data-v="dark">تیره</button></div></div>
           </div>
           <div class="panel stack">
@@ -1112,7 +1161,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۱</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۲</p>
     </section>
 
 </main>
@@ -1143,7 +1192,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=11"></script>
+<script src="packs.js?v=12"></script>
 <script>
 (function(){
 'use strict';
@@ -1497,6 +1546,7 @@ function verbHTML(it){
 
 /* ================= content from the library ================= */
 const VZ=window.VZ||{packs:[],dialogs:[]};
+cfg.path=Object.assign({on:true},cfg.path||{});
 const PRIV=readPriv();
 const PACKS=(Array.isArray(VZ.packs)?VZ.packs:[]).concat(PRIV?PRIV.packs.filter(p=>p&&p.id&&Array.isArray(p.items)):[]);
 const DIALOGS=(Array.isArray(VZ.dialogs)?VZ.dialogs:[]).concat(PRIV&&Array.isArray(PRIV.dialogs)?PRIV.dialogs.filter(d=>d&&d.id&&Array.isArray(d.lines)):[]);
@@ -1506,7 +1556,7 @@ const itemSeries=i=>i.pack?PACK_SERIES.get(i.pack)||'':'';
 const LAT_RUN=/[A-Za-zÀ-ÿ’'][A-Za-zÀ-ÿ0-9’'\-]*(?:[ ,\/()….!?:;]+[A-Za-zÀ-ÿ0-9’'(][A-Za-zÀ-ÿ0-9’'\-)]*)*(?:[?!.…)]| …)*/g;
 const latWrap=t=>{let out='',last=0;String(t).replace(LAT_RUN,(m,i)=>{out+=esc(t.slice(last,i))+'<bdi class="lat">'+esc(m)+'</bdi>';last=i+m.length;return m});return out+esc(t.slice(last))};
 const seriesList=(arr,lang)=>Array.from(new Set(arr.filter(x=>x.lang===lang&&x.series).map(x=>x.series)));
-function srcSeg(el,list,cur){if(!list.length){el.hidden=true;return}el.hidden=false;el.innerHTML=[['','بسته‌های واژه‌یار']].concat(list.map(x=>[x,x])).map(([v,t])=>`<button type="button" data-v="${esc(v)}" aria-pressed="${v===cur}"${v?' class="lat"':''}>${esc(t)}</button>`).join('')}
+function srcSeg(el,list,cur){if(!list.length){el.hidden=true;return}el.hidden=false;el.innerHTML=[['','بسته‌های واژه‌یار']].concat(list.map(x=>[x,x])).map(([v,t])=>`<button type="button" data-v="${esc(v)}" aria-pressed="${v===cur}"${v&&!/[\u0600-\u06FF]/.test(v)?' class="lat"':''}>${esc(t)}</button>`).join('')}
 const PK=new Map(),packCache=new Map();
 const slug=s=>norm(s).replace(/\s+/g,'-').slice(0,60);
 function packItems(p){
@@ -1735,9 +1785,10 @@ function showView(v,noHash){
   currentView=v;document.documentElement.dataset.view=v;if(sheetOpen())closeSheet();
   VIEWS.forEach(x=>$('#v-'+x).hidden=x!==v);
   $$('[data-go]').forEach(b=>{if(b.closest('.nav,.bottom-nav')){if(b.dataset.go===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')}});
+  const lk=(v==='dialogs'||(v==='quiz'&&!qz))?lockOf(v):null;applyLock(v,lk);
   if(v==='today')renderToday();
   if(v==='review'&&!ses)renderReviewIdle();
-  if(v==='dialogs')renderDialogs();
+  if(v==='dialogs'&&!lk)renderDialogs();
   if(v==='library')renderLibrary();
   if(v==='manage')renderManage();
   if(v==='settings')renderSettings();
@@ -1750,12 +1801,13 @@ function showView(v,noHash){
   window.scrollTo(0,0);
 }
 const rerender=()=>{refreshBadges();if(currentView==='today')renderToday();else if(currentView==='library')renderLibrary();else if(currentView==='manage')renderList();else if(currentView==='review'&&!ses)renderReviewIdle()};
-document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){e.preventDefault();showView(g.dataset.go)}});
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){e.preventDefault();if(g.dataset.go==='sources'&&curRec&&(curRec.song||curRec.kind==='yt'))openId=null;showView(g.dataset.go)}});
 function bindSeg(el,onChange){el.addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b||!el.contains(b))return;setSeg(el,b.dataset.v);onChange&&onChange(b.dataset.v)})}
 function setSeg(el,v){$$('button[data-v]',el).forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===v)))}
 const segVal=el=>{const b=$('button[aria-pressed="true"]',el);return b?b.dataset.v:''};
 function refreshBadges(){
   const s=stats(L());const n=s.due+s.newToday;$$('.nav-due').forEach(b=>{b.hidden=!n;b.textContent=faNum(n)});
+  refreshLocks();
   ['nl','en'].forEach(l=>{const x=stats(l);const el=$('#lt'+(l==='nl'?'Nl':'En'));if(el)el.textContent=x.total?faNum(x.due+x.newToday)+' کارت امروز':'بدون کارت'});
 }
 function setLang(l){
@@ -1832,11 +1884,12 @@ function renderToday(){
   let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY),lang);if(c>0)streak++;else if(k===0)continue;else break}
   $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK,lang));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
   const tips=TIPS[lang];$('#tip').innerHTML=tips[tipIdx%tips.length];
+  renderPath();
 }
 $('#nextTip').addEventListener('click',()=>{tipIdx++;const tips=TIPS[L()];$('#tip').innerHTML=tips[tipIdx%tips.length]});
 $('#startToday').addEventListener('click',e=>{if(e.currentTarget.dataset.lib){showView('library');return}startSession()});
 $('#v-today').addEventListener('click',e=>{
-  const d=e.target.closest('[data-dlg]');if(d){showView('dialogs',true);openDialog(d.dataset.dlg);return}
+  const d=e.target.closest('[data-dlg]');if(d){showView('dialogs',true);if(!lockOf('dialogs'))openDialog(d.dataset.dlg);return}
   const id=$('#wod').dataset.id;const it=id&&(getItem(id)||(PK.get(id)&&packItems(PK.get(id).p).find(x=>x.id===id)));if(!it)return;
   if(e.target.closest('[data-wod-say]'))speakItem(it);
   else if(e.target.closest('[data-wod-open]'))wordSheet(it);
@@ -2004,7 +2057,7 @@ function stopPlay(){play.on=false;play.token++;play.waiting=false;stopSpeech();$
 function markLine(i){$$('.line.playing').forEach(x=>x.classList.remove('playing'));const el=$(`.line[data-i="${i}"]`);if(el){el.classList.add('playing');el.scrollIntoView({block:'nearest',behavior:'smooth'})}}
 function playStep(){
   const d=curDlg;if(!play.on||!d)return;
-  if(play.idx>=d.lines.length){const wasRole=play.role!==null;stopPlay();if(wasRole){play.role=null;renderPlayer();toast('تمرین نقش تمام شد. آفرین!')}else renderPlayer();offerDialogPractice(d);return}
+  if(play.idx>=d.lines.length){const wasRole=play.role!==null;if(!db.done[d.id]||db.done[d.id]<sodTs()){db.done[d.id]=Date.now();saveData()}pathMark(d.lang,'dlg');stopPlay();if(wasRole){play.role=null;renderPlayer();toast('تمرین نقش تمام شد. آفرین!')}else renderPlayer();offerDialogPractice(d);return}
   const ln=d.lines[play.idx],ri=roleIdx(d,ln.s),tok=play.token;
   if(play.role===ri&&!play.revealed.has(play.idx)){play.waiting=true;renderPlayer();markLine(play.idx);return}
   markLine(play.idx);
@@ -2031,7 +2084,7 @@ $('#chat').addEventListener('click',e=>{
 });
 function addLines(d,idxs){let n=0;const now=Date.now();idxs.forEach((i,k)=>{const ln=d.lines[i];if(findDup(d.lang,ln.t))return;db.items.push(cleanItem({id:uid(),lang:d.lang,type:'sentence',text:ln.t,fa:ln.fa,en:ln.en||'',note:'از مکالمهٔ «'+d.titleFa+'»',tags:['مکالمه'],created:now+k,updated:now+k,srs:null}));n++});if(n)saveData();return n}
 $('#plAddAll').addEventListener('click',()=>{const d=curDlg;const n=addLines(d,d.lines.map((_,i)=>i));toast(n?faNum(n)+' جمله به کارت‌ها اضافه شد':'همهٔ جمله‌ها از قبل در کارت‌های شما بودند')});
-$('#plDone').addEventListener('click',()=>{db.done[curDlg.id]=Date.now();saveData();renderPlayer();toast('آفرین! این مکالمه تمرین شد.');offerDialogPractice(curDlg)});
+$('#plDone').addEventListener('click',()=>{db.done[curDlg.id]=Date.now();pathMark(curDlg.lang,'dlg');saveData();renderPlayer();toast('آفرین! این مکالمه تمرین شد.');offerDialogPractice(curDlg)});
 $('#plQuiz').addEventListener('click',()=>{if(curDlg)quizFromDialog(curDlg)});
 /* after a dialogue: exercises built automatically from its own lines */
 function offerDialogPractice(d){
@@ -2048,7 +2101,7 @@ function quizFromDialog(d){
   const lines=d.lines.map((ln,i)=>({t:ln.t,fa:ln.fa,en:ln.en||'',it:{id:'dlg:'+d.id+':'+i,lang:d.lang,type:'sentence',text:ln.t,fa:ln.fa,en:ln.en||'',article:'',verb:null,note:''}}));
   const usable=lines.filter(x=>{const n=wordsOf(x.t).length;return n>=3&&n<=14});
   if(usable.length<3){toast('این مکالمه برای تمرین خودکار خیلی کوتاه است.');return}
-  const types=['meaning','order','dictation'];if(!hasTTS)types.pop();
+  const types=['meaning','order','dictation'];if(!hasTTS)types.pop();if(lines.filter(x=>x.fa).length<lines.length/2)types.shift();if(!types.length)types.push('order');
   const qs=shuffle(usable.slice()).slice(0,10).map((x,k)=>{
     let type=types[k%types.length];if(type==='dictation'&&wordsOf(x.t).length>10)type='order';
     if(type==='meaning'){const others=shuffle(lines.filter(y=>norm(y.t)!==norm(x.t))).slice(0,3).map(y=>y.t);return{type,it:x.it,dir:'rev',opts:shuffle([x.t].concat(others)),right:x.t,sent:x}}
@@ -2249,6 +2302,7 @@ $('#quizQ').addEventListener('submit',e=>{
 });
 function finishQuiz(){
   if(!qz)return showQuizSetup();const n=qz.answered?qz.i+1:qz.i;
+  if(n>=5||(qz.dlg&&n>=3)){const was=pathState(L()).steps[2];pathMark(L(),'quiz');if(!was&&cfg.path.on!==false)toast('آفرین! هر سه مرحلهٔ امروز تمام شد.',4000)}
   $('#quizRun').hidden=true;$('#quizDone').hidden=false;$('#qScore').textContent=faNum(qz.score)+' از '+faNum(n);
   $('#qScoreTxt').textContent=!n?'آزمون بدون پاسخ تمام شد.':qz.score===n?'همه را درست جواب دادید.':faNum(qz.wrong.length)+' پاسخ نادرست:';
   $('#qMist').innerHTML=qz.wrong.map(id=>{const it=getItem(id);return it?`<div><span class="lat">${artHTML(it)}${esc(it.text)}</span><span>${meanInline(it)}</span></div>`:''}).join('');
@@ -2478,6 +2532,52 @@ $('#bAdd').addEventListener('click',()=>{
 $('#bClear').addEventListener('click',()=>{$('#bText').value='';bulkPreview()});
 
 
+/* ================= LEARNING PATH: cards first, then a dialogue, then practice ================= */
+function sodTs(){const d=new Date();d.setHours(0,0,0,0);return d.getTime()}
+function pathDay(lang){const k=dayKey();const p=(cfg.path.days||{})[lang];return p&&p.d===k?p:{d:k}}
+function pathMark(lang,what){const p=pathDay(lang);if(p[what])return;p[what]=Date.now();cfg.path.days=Object.assign({},cfg.path.days,{[lang]:p});saveCfg();refreshLocks()}
+const PATH_BACKLOG=100;   // with a very large backlog, 100 reviews in a day also opens the next step
+function pathState(lang){
+  const s=stats(lang),left=s.due+s.newToday,rev=dayCount(dayKey(),lang),sod=sodTs(),pd=pathDay(lang);
+  const r1=s.total>0&&(left===0||rev>=PATH_BACKLOG);
+  const r2=!!pd.dlg||DIALOGS.some(d=>d.lang===lang&&+db.done[d.id]>=sod);
+  const r3=!!pd.quiz;
+  return{s,left,rev,steps:[r1,r2,r3]};
+}
+function lockOf(view){
+  if(cfg.path.on===false)return null;const st=pathState(L());
+  if(view==='dialogs'&&!st.steps[0])return{need:0,st};
+  if(view==='quiz'&&!(st.steps[0]&&st.steps[1]))return{need:st.steps[0]?1:0,st};
+  return null;
+}
+const LOCK_SVG='<svg class="i" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></svg>';
+function applyLock(v,lk){
+  ['dialogs','quiz'].forEach(x=>{const sec=$('#v-'+x);const old=$('.lock-panel',sec);if(old)old.remove();sec.classList.toggle('is-locked',x===v&&!!lk)});
+  if(!lk)return;const sec=$('#v-'+v),st=lk.st;let msg,btn;
+  if(lk.need===0&&!st.s.total){msg='اول از کتابخانه یک بسته واژه اضافه کنید و کارت‌هایش را مرور کنید. بعد از مرور، مکالمه‌ها و بعد تمرین باز می‌شوند.';btn='<button class="btn primary" type="button" data-go="library">رفتن به کتابخانه</button>'}
+  else if(lk.need===0){msg=`اول کارت‌های امروز را مرور کنید؛ ${faNum(st.left)} کارت مانده است. بعد از مرور، ${v==='quiz'?'یک مکالمه و بعد تمرین باز می‌شود':'مکالمه‌ها باز می‌شوند'}.`;btn='<button class="btn primary" type="button" data-path-start>شروع مرور</button>'}
+  else{msg='کارت‌ها مرور شدند. حالا یک مکالمه را تا آخر گوش دهید یا «تمرین شد» را بزنید؛ بعد تمرین باز می‌شود.';btn='<button class="btn primary" type="button" data-go="dialogs">رفتن به مکالمه‌ها</button>'}
+  sec.insertAdjacentHTML('afterbegin',`<div class="panel lock-panel"><span class="lock-ic">${LOCK_SVG}</span><h1 class="view-title">${v==='quiz'?'تمرین':'مکالمه‌ها'} هنوز قفل است</h1><p>${msg}</p><div class="btn-row" style="justify-content:center">${btn}<button class="btn ghost" type="button" data-go="today">مسیر امروز</button></div><p class="hint">این ترتیب را می‌توانید در تنظیمات، بخش «مرور»، خاموش کنید.</p></div>`);
+}
+document.addEventListener('click',e=>{if(e.target.closest('[data-path-start]')){e.preventDefault();startSession()}});
+function refreshLocks(){
+  ['dialogs','quiz'].forEach(v=>{const lk=lockOf(v);$$(`.nav [data-go="${v}"],.bottom-nav [data-go="${v}"]`).forEach(b=>{b.classList.toggle('locked',!!lk);let i=$('.lk',b);if(lk&&!i)b.insertAdjacentHTML('beforeend','<span class="lk" aria-label="قفل">'+LOCK_SVG+'</span>');else if(!lk&&i)i.remove()})});
+}
+function renderPath(){
+  const el=$('#path');if(!el)return;
+  if(cfg.path.on===false){el.hidden=true;return}
+  const lang=L(),st=pathState(lang),[a,b,c]=st.steps;
+  const nd=nextDialog(lang);
+  const steps=[
+    {t:'مرور کارت‌ها',d:a?(st.left?'برای امروز کافی است ('+faNum(st.rev)+' مرور).':'همهٔ کارت‌های امروز مرور شد.'):!st.s.total?'اول از کتابخانه یک بسته اضافه کنید.':faNum(st.left)+' کارت مانده است.',done:a,btn:a?'':!st.s.total?'<button class="btn sm primary" type="button" data-go="library">کتابخانه</button>':'<button class="btn sm primary" type="button" data-path-start>شروع مرور</button>'},
+    {t:'یک مکالمه',d:b?'یک مکالمه گوش داده شد.':a?'یک مکالمه را تا آخر گوش دهید.':'بعد از مرور کارت‌ها باز می‌شود.',done:b,open:a,btn:a&&!b?(nd?`<button class="btn sm primary" type="button" data-dlg="${esc(nd.id)}">شروع مکالمه</button>`:'<button class="btn sm primary" type="button" data-go="dialogs">مکالمه‌ها</button>'):''},
+    {t:'تمرین',d:c?'تمرین امروز انجام شد.':a&&b?'یک آزمون کوتاه (دست‌کم ۵ پرسش).':'بعد از مکالمه باز می‌شود.',done:c,open:a&&b,btn:a&&b&&!c?'<button class="btn sm primary" type="button" data-go="quiz">شروع تمرین</button>':''}];
+  let cur=steps.findIndex(x=>!x.done);
+  el.hidden=false;
+  el.innerHTML=steps.map((x,i)=>`<li class="step${x.done?' done':i===cur?' now':(i>0&&!x.open)?' locked':''}"><span class="step-n">${x.done?'✓':(i>0&&!x.open)?LOCK_SVG:faNum(i+1)}</span><div class="step-c"><b>${x.t}</b><span class="hint">${x.d}</span></div>${x.btn}</li>`).join('')
+    +(cur<0?'<li class="path-done">هر سه مرحلهٔ امروز تمام شد. منابع، آهنگ‌ها و یوتیوب برای بیشتر گوش دادن همیشه باز هستند.</li>':'');
+}
+
 /* ================= SOURCES: PDF, images, audio and text ================= */
 /* Third-party code is pinned to exact versions and checked against a SHA-384 hash before it runs.
    Anything that fails the check is never executed. */
@@ -2525,7 +2625,7 @@ const idbAll=s=>idbDo(s,'readonly',st=>st.getAll());
 async function askPersist(){try{if(navigator.storage&&navigator.storage.persist&&!(await navigator.storage.persisted()))await navigator.storage.persist()}catch(e){}}
 
 /* ---------- small helpers ---------- */
-const SRC_KIND_FA={pdf:'PDF',image:'عکس',audio:'صوتی',text:'متن'};
+const SRC_KIND_FA={pdf:'PDF',image:'عکس',audio:'صوتی',text:'متن',yt:'یوتیوب'};
 const SRC_KIND_ICON={
   pdf:'<path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5M9.5 13h6M9.5 16.5h4"/>',
   image:'<rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-4.5 3.5 3 3-2.5 4.5 4"/>',
@@ -2539,9 +2639,12 @@ function kindOf(f){const t=(f.type||'').toLowerCase(),n=(f.name||'').toLowerCase
   if(t==='application/pdf'||n.endsWith('.pdf'))return'pdf';if(t.startsWith('image/'))return'image';
   if(t.startsWith('audio/')||/\.(mp3|m4a|wav|ogg|opus|aac|webm)$/.test(n))return'audio';if(t.startsWith('text/')||n.endsWith('.txt'))return'text';return''}
 const baseName=n=>String(n||'').replace(/\.[a-z0-9]{2,5}$/i,'').replace(/[_]+/g,' ').trim().slice(0,90)||'بدون نام';
-function srcText(r){return r.kind==='audio'?(r.segs||[]).map(s=>s.t).join('\n'):(r.text||'')}
+function srcText(r){if(r.song&&r.text)return songText(r);const sg=r.segs||[];if((r.kind==='audio'||r.kind==='yt')&&sg.length)return sg.map(s=>s.t).join('\n');return r.text||''}
+/* song lyrics with the Persian translation under each line (translation lines follow the lyric lines in order) */
+function songText(r){const tr=String((r.song&&r.song.tr)||'').split('\n').map(x=>x.trim()).filter(Boolean);if(!tr.length)return r.text||'';let j=0;
+  return String(r.text||'').split('\n').map(l=>l.trim()&&j<tr.length?l+'\n'+tr[j++]:l).join('\n')}
 function newRec(kind,title,lang){const now=Date.now();return{id:uid(),kind,title,lang,created:now,updated:now,text:'',segs:[],media:null,info:{}}}
-async function saveRec(r,touch){if(touch!==false)r.updated=Date.now();await idbPut('src',r);cfg.srcDirty=true;saveCfg();scheduleSrcSync()}
+async function saveRec(r,touch){if(touch!==false)r.updated=Date.now();await idbPut('src',r);cfg.srcDirty=true;saveCfg();scheduleSrcSync();queueSrcDialogs()}
 let srcSyncTimer=null;function scheduleSrcSync(){if(!ghReady()||!cfg.gh.auto)return;clearTimeout(srcSyncTimer);srcSyncTimer=setTimeout(()=>syncSources(false).catch(()=>{}),5000)}
 
 /* ---------- import ---------- */
@@ -2553,11 +2656,12 @@ async function importFiles(files){
     const kind=kindOf(f);if(!kind){toast('نوع فایل «'+f.name+'» پشتیبانی نمی‌شود.',4000);continue}
     const ui=jobUI(uid(),f.name);
     try{
-      if(kind==='pdf')await importPdf(f,lang,ui);
-      else if(kind==='image')await importImage(f,lang,ui);
-      else if(kind==='audio')await importAudio(f,lang,ui);
-      else{const r=newRec('text',baseName(f.name),lang);r.text=tidyText(await f.text());await saveRec(r)}
-      ui.done();
+      let r=null;
+      if(kind==='pdf')r=await importPdf(f,lang,ui);
+      else if(kind==='image')r=await importImage(f,lang,ui);
+      else if(kind==='audio')r=await importAudio(f,lang,ui);
+      else{r=newRec('text',baseName(f.name),lang);r.text=tidyText(await f.text());await saveRec(r)}
+      ui.done();await afterImport(r).catch(()=>{});
     }catch(e){ui.fail(e.message||'وارد کردن ناموفق بود.')}
     renderSources();
   }
@@ -2583,15 +2687,19 @@ async function importPdf(f,lang,ui){
   await saveRec(r);
   if(scanned.length===doc.numPages)toast('این PDF اسکن‌شده است. در صفحهٔ منبع، «خواندن متن از تصویر صفحه‌ها» را بزنید.',6000);
   else if(scanned.length)toast(faNum(scanned.length)+' صفحه متن نداشت (اسکن‌شده). می‌توانید آن‌ها را با «خواندن متن از تصویر» اضافه کنید.',6000);
+  return r;
 }
-async function ocrPdfPages(r){
+async function ocrPdfPages(r,all){
   const blob=await mediaBlob(r);if(!blob)throw new Error('فایل اصلی PDF روی این دستگاه نیست.');
-  const doc=await openPdf(await blob.arrayBuffer());const pages=srcText(r).split('\n\f\n');const list=(r.info&&r.info.scanned)||[];
+  const doc=await openPdf(await blob.arrayBuffer());const pages=srcText(r).split('\n\f\n');let list=(r.info&&r.info.scanned)||[];
+  if(all){list=[];for(let i=1;i<=doc.numPages;i++){const tc=await (await doc.getPage(i)).getTextContent();const t=tc.items.map(x=>x.str||'').join('');if(t.replace(/\s/g,'').length<25)list.push(i)}
+    if(!list.length)throw new Error('همهٔ صفحه‌های این PDF متن واقعی دارند و نیازی به خواندن از تصویر ندارند.')}
+  while(pages.length<doc.numPages)pages.push('');
   const pr=progBox('خواندن متن از تصویر صفحه‌ها');
   try{
     for(let k=0;k<list.length;k++){
       const i=list[k];pr.set('صفحهٔ '+faNum(i)+' ('+faNum(k+1)+' از '+faNum(list.length)+')',k/list.length);
-      const pg=await doc.getPage(i);const vp=pg.getViewport({scale:2});const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;
+      const pg=await doc.getPage(i);const v1=pg.getViewport({scale:1});const vp=pg.getViewport({scale:Math.min(4,OCR_W/v1.width)});const c=document.createElement('canvas');c.width=Math.round(vp.width);c.height=Math.round(vp.height);
       await pg.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;
       pages[i-1]=await ocr(c,r.lang,p=>pr.set('صفحهٔ '+faNum(i)+' ('+faNum(k+1)+' از '+faNum(list.length)+')',(k+p)/list.length));
     }
@@ -2602,13 +2710,63 @@ async function ocrPdfPages(r){
 /* OCR (Tesseract) for photos and scanned pages; runs in a worker, nothing is uploaded */
 let tessW=null,tessLang='',tessProg=null;
 async function getOcr(lang){
-  const code=lang==='en'?'eng':'nld+eng';if(tessW&&tessLang===code)return tessW;
+  const code=(lang==='en'?'eng':'nld+eng')+(cfg.ocrFa===false?'':'+fas');if(tessW&&tessLang===code)return tessW;
   if(tessW){try{await tessW.terminate()}catch(e){}tessW=null}
   await loadClassic(LIBS.tess,'Tesseract');const wp=await verifiedURL(LIBS.tessWorker);
   tessW=await window.Tesseract.createWorker(code.split('+'),1,{workerPath:wp,corePath:LIBS.tessCore,workerBlobURL:false,logger:m=>{if(tessProg&&m&&m.status==='recognizing text')tessProg(m.progress||0)}});
   tessLang=code;return tessW;
 }
-async function ocr(img,lang,onProg){const w=await getOcr(lang);tessProg=onProg||null;try{const {data}=await w.recognize(img);return tidyText(data&&data.text)}finally{tessProg=null}}
+/* OCR in three steps that made the biggest difference in tests:
+   1) enlarge the picture so letters are big enough (about 2800 px wide),
+   2) read Dutch/English and Persian together, keep only words the engine is confident about,
+   3) split lines at wide gaps and read cards/columns one after another instead of across the page. */
+const OCR_W=2800;
+function upscale(src){const w=src.width,h=src.height;const k=Math.max(1,Math.min(3,OCR_W/w));if(k===1)return src;const c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);const x=c.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(src,0,0,c.width,c.height);return c}
+const isFa=t=>/[\u0600-\u06FF]/.test(t);
+function ocrLayout(data,minConf){
+  const segs=[];
+  for(const bl of data.blocks||[])for(const pa of bl.paragraphs||[])for(const ln of pa.lines||[]){
+    const ws=(ln.words||[]).filter(w=>w.text&&w.text.trim());if(!ws.length)continue;
+    const h=Math.max(8,ln.bbox.y1-ln.bbox.y0);ws.sort((a,b)=>a.bbox.x0-b.bbox.x0);
+    let cur=[ws[0]];
+    const flush=()=>{
+      const good=cur.filter(w=>w.confidence>=minConf);const mean=cur.reduce((n,w)=>n+w.confidence,0)/cur.length;
+      if(!good.length||mean<minConf-5)return;
+      let words=good.map(w=>w.text);
+      if(words.filter(isFa).length>words.length/2)words.reverse();          // a Persian line: words come left-to-right on the page
+      else{const out=[];let run=[];words.forEach(t=>{if(isFa(t))run.push(t);else{out.push(...run.reverse(),t);run=[]}});out.push(...run.reverse());words=out}
+      line.push({x0:cur[0].bbox.x0,x1:cur[cur.length-1].bbox.x1,y:(ln.bbox.y0+ln.bbox.y1)/2,h,text:words.join(' ').replace(/[\u200e\u200f]/g,'')});
+    };
+    const line=[];
+    for(let i=1;i<ws.length;i++){if(ws[i].bbox.x0-ws[i-1].bbox.x1>Math.max(2.2*h,25)){flush();cur=[ws[i]]}else cur.push(ws[i])}
+    flush();
+    // a word list / table row: "de vader ........ پدر" stays one line, so the word and its meaning stay together
+    if(line.length===2&&isFaLine(line[0].text)!==isFaLine(line[1].text)){const[la,fa]=isFaLine(line[0].text)?[line[1],line[0]]:[line[0],line[1]];segs.push({x0:line[0].x0,x1:line[1].x1,y:line[0].y,text:la.text+' — '+fa.text})}
+    else segs.push(...line);
+  }
+  const cols=[];
+  segs.sort((a,b)=>a.x0-b.x0).forEach(sg=>{const w=sg.x1-sg.x0;let best=null,bo=0;
+    for(const c of cols){const ov=Math.min(c.x1,sg.x1)-Math.max(c.x0,sg.x0);if(ov>bo){bo=ov;best=c}}
+    if(best&&bo>=0.4*Math.min(w,best.x1-best.x0)){best.x0=Math.min(best.x0,sg.x0);best.x1=Math.max(best.x1,sg.x1);best.s.push(sg)}else cols.push({x0:sg.x0,x1:sg.x1,s:[sg]})});
+  cols.sort((a,b)=>a.x0-b.x0);
+  // a two-column word table (Dutch | Persian): join the rows, so each word stays next to its meaning
+  const faCol=c=>c.s.filter(x=>isFaLine(x.text)).length>c.s.length*0.6,laCol=c=>!c.s.some(x=>isFaLine(x.text));
+  for(let i=0;i<cols.length-1;i++){const A=cols[i],B=cols[i+1];
+    let la=null,fa=null;if(laCol(A)&&faCol(B)){la=A;fa=B}else if(faCol(A)&&laCol(B)){la=B;fa=A}if(!la)continue;
+    const used=new Set(),pairs=[];
+    la.s.forEach(x=>{let best=null,bd=1e9;fa.s.forEach((y,k)=>{if(used.has(k))return;const d=Math.abs(x.y-y.y);if(d<bd){bd=d;best=k}});if(best!==null&&bd<0.7*Math.max(x.h,fa.s[best].h)){used.add(best);pairs.push([x,fa.s[best]])}});
+    if(pairs.length<2||pairs.length<0.6*Math.min(la.s.length,fa.s.length))continue;
+    pairs.forEach(([x,y])=>{x.text=x.text+' — '+y.text});
+    const rest=fa.s.filter((_,k)=>!used.has(k));
+    la.x0=Math.min(A.x0,B.x0);la.x1=Math.max(A.x1,B.x1);la.s=la.s.concat(rest);cols.splice(cols.indexOf(fa),1);if(la!==A){cols[i]=la}i--;
+  }
+  return cols.map(c=>c.s.sort((a,b)=>a.y-b.y).map(x=>x.text).join('\n')).join('\n\n');
+}
+async function ocr(img,lang,onProg){
+  const w=await getOcr(lang);tessProg=onProg||null;
+  try{const {data}=await w.recognize(upscale(img),{},{blocks:true,text:true});return tidyText(ocrLayout(data,60))}
+  finally{tessProg=null}
+}
 async function imageCanvas(blob,max){const bmp=await createImageBitmap(blob);const k=Math.min(1,max/Math.max(bmp.width,bmp.height));const c=document.createElement('canvas');c.width=Math.round(bmp.width*k);c.height=Math.round(bmp.height*k);c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);bmp.close&&bmp.close();return c}
 async function importImage(f,lang,ui){
   ui.set('آماده‌سازی عکس…',0.02);
@@ -2619,6 +2777,7 @@ async function importImage(f,lang,ui){
   const r=newRec('image',baseName(f.name),lang);r.text=text;r.info={w:small.width,h:small.height};
   await storeMedia(r,jpg||f,f.name);await saveRec(r);
   if(!text)toast('متنی در این عکس پیدا نشد. عکس واضح‌تر و صاف‌تر بهتر خوانده می‌شود.',5000);
+  return r;
 }
 async function importAudio(f,lang,ui){
   ui.set('ذخیرهٔ فایل صوتی…',0.3);
@@ -2664,7 +2823,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=11',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=12',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -2687,7 +2846,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 11، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 12، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -2712,7 +2871,7 @@ function blobB64(blob){return new Promise((res,rej)=>{const fr=new FileReader();
 
 /* ---------- sync: one JSON file for all sources + one file per media item ---------- */
 let srcSyncing=false;
-const SRC_KEYS=['id','kind','title','cat','lang','created','updated','gone','text','segs','media','info','asr','url','vid','list','note'];
+const SRC_KEYS=['id','kind','title','cat','lang','created','updated','gone','text','segs','media','info','asr','url','vid','list','note','song','noDlg'];
 function srcCanon(list){return JSON.stringify({kind:'vazheyar-sources',v:1,sources:list.slice().sort((a,b)=>a.id<b.id?-1:1).map(r=>{const o={};SRC_KEYS.forEach(k=>{if(r[k]!==undefined&&r[k]!==null&&r[k]!=='')o[k]=r[k]});return o})})}
 async function syncSources(manual){
   if(!ghReady()||srcSyncing)return;srcSyncing=true;
@@ -2766,6 +2925,7 @@ async function syncSources(manual){
       const j=await pr.json();cfg.srcSha=j.content&&j.content.sha||'';
     }else if(ent)cfg.srcSha=ent.sha;
     cfg.srcDirty=false;saveCfg();
+    if(changedLocal)queueSrcDialogs();
     if((changedLocal||mediaChanged)&&currentView==='sources'){if(openId)renderSourceOpen();else renderSources()}
     if(changedLocal&&currentView==='youtube')renderYoutube();
   }catch(e){srcSyncNote('');if(manual)toast(e.message||'همگام‌سازی منابع ناموفق بود.',5000)}
@@ -2820,7 +2980,7 @@ async function renderSources(){
   setSeg($('#srcLang'),L());setSeg($('#asrModel'),cfg.asr==='base'?'base':'small');setSeg($('#srcGroup'),cfg.srcGroup||'series');
   $('#srcHome').hidden=!!openId;$('#srcOpen').hidden=!openId;srcSyncNote(srcSyncMsg);
   if(openId)return renderSourceOpen();
-  let list=[];try{list=(await idbAll('src')).filter(r=>!r.gone&&r.kind!=='yt')}catch(e){$('#srcNote').textContent=e.message;$('#srcNote').hidden=false;$('#srcGrid').innerHTML='';return}
+  let list=[];try{list=(await idbAll('src')).filter(r=>!r.gone&&r.kind!=='yt'&&!r.song)}catch(e){$('#srcNote').textContent=e.message;$('#srcNote').hidden=false;$('#srcGrid').innerHTML='';return}
   srcCache=list;
   const note=$('#srcNote');
   if(IS_PREVIEW){note.textContent='در نسخهٔ پیش‌نمایش، منابع فقط برای امتحان است و همگام نمی‌شود.';note.hidden=false}
@@ -2905,7 +3065,7 @@ bindSeg($('#asrModel'),v=>{cfg.asr=v;saveCfg();toast(v==='base'?'حالت سری
 $('#srcGrid').addEventListener('click',e=>{const b=e.target.closest('[data-src]');if(b){openId=b.dataset.src;renderSources();window.scrollTo(0,0)}});
 $('#srcPaste').addEventListener('click',()=>{
   openSheet('چسباندن متن',`<div class="field"><label class="lbl" for="ptTitle">عنوان</label><input type="text" id="ptTitle" data-autofocus placeholder="مثلاً نامهٔ شهرداری"></div><div class="field"><label class="lbl" for="ptText">متن</label><textarea id="ptText" rows="10" class="lat ltr" spellcheck="false"></textarea></div>`,`<button class="btn primary" type="button" id="ptSave">افزودن</button>`);
-  $('#ptSave').onclick=async()=>{const t=tidyText($('#ptText').value);if(!t){toast('متن خالی است.');return}const r=newRec('text',$('#ptTitle').value.trim()||t.split('\n')[0].slice(0,60),segVal($('#srcLang'))||L());r.text=t;await saveRec(r);closeSheet();renderSources()};
+  $('#ptSave').onclick=async()=>{const t=tidyText($('#ptText').value);if(!t){toast('متن خالی است.');return}const r=newRec('text',$('#ptTitle').value.trim()||t.split('\n')[0].slice(0,60),segVal($('#srcLang'))||L());r.text=t;await saveRec(r);closeSheet();await afterImport(r).catch(()=>{});renderSources()};
 });
 
 /* ---------- one source ---------- */
@@ -2920,25 +3080,32 @@ async function renderSourceOpen(){
   if(!r||r.gone){openId=null;return renderSources()}
   curRec=r;$('#srcHome').hidden=true;$('#srcOpen').hidden=false;
   $('#srcTitle').textContent=r.title;
-  const meta=[`<span class="pill">${SRC_KIND_FA[r.kind]}</span>`,`<span class="pill">${r.lang==='en'?'انگلیسی':'هلندی'}</span>`];
+  {const nv=r.song?'songs':r.kind==='yt'?'youtube':'sources';$$('.nav [data-go],.bottom-nav [data-go]').forEach(b=>{if(b.dataset.go===nv)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')})}
+  $('#srcBack').innerHTML='&larr; '+(r.song?'آهنگ‌ها':r.kind==='yt'?'یوتیوب من':'همهٔ منابع');
+  const meta=[`<span class="pill">${r.song?'آهنگ'+(r.song.by?': '+esc(r.song.by):''):SRC_KIND_FA[r.kind]}</span>`,`<span class="pill">${r.lang==='en'?'انگلیسی':'هلندی'}</span>`];
   if(r.info&&r.info.dur)meta.push(`<span class="pill num">${fmtTime(r.info.dur)}</span>`);
   if(r.media)meta.push(`<span class="pill">${fmtSize(r.media.size||0)}</span>`);
   const tp=topicOf(r);if(tp)meta.push(`<span class="pill new" title="موضوعی که برنامه از روی واژه‌های متن تشخیص داده">${esc(tp.name)}</span>`);
   if(ghReady()&&r.media)meta.push(`<span class="pill${r.media.up?' ok':''}">${r.media.up?'همگام با دستگاه‌های دیگر':r.media.size>MEDIA_SYNC_MAX?'فقط این دستگاه (بیش از ۶۰۰ مگابایت)':(r.media.sent?'در حال فرستادن به GitHub':'در صف همگام‌سازی')}</span>`);
   $('#srcMeta').innerHTML=meta.join('');
   const acts=[];
-  if(r.kind==='audio')acts.push(`<button class="btn ${(r.segs||[]).length?'':'primary'}" type="button" data-sa="asr">${(r.segs||[]).length?'ساختن دوبارهٔ متن':'ساختن متن از صدا'}</button>`);
+  if(r.kind==='audio'&&!(r.song&&r.text))acts.push(`<button class="btn ${(r.segs||[]).length?'':'primary'}" type="button" data-sa="asr">${(r.segs||[]).length?'ساختن دوبارهٔ متن':'ساختن متن از صدا'}</button>`);
+  if(r.kind==='audio')acts.push(`<button class="btn ${r.song?'':'ghost'}" type="button" data-sa="song">${r.song?'ویرایش آهنگ و متنش':'این فایل آهنگ است'}</button>`);
+  if(r.kind==='yt')acts.push(`<button class="btn ${srcText(r)?'ghost':'primary'}" type="button" data-sa="yttx">${srcText(r)?'جایگزینی متن ویدیو':'چسباندن متن ویدیو'}</button>`);
   if(r.kind==='pdf'&&r.info&&r.info.scanned&&r.info.scanned.length)acts.push(`<button class="btn primary" type="button" data-sa="ocr">خواندن متن از تصویر ${faNum(r.info.scanned.length)} صفحه</button>`);
+  else if(r.kind==='pdf'&&r.media)acts.push(`<button class="btn ghost" type="button" data-sa="reocr">خواندن دوبارهٔ صفحه‌های تصویری</button>`);
+  if(r.kind==='image'&&r.media)acts.push(`<button class="btn ghost" type="button" data-sa="reocr">خواندن دوبارهٔ متن عکس</button>`);
   if(srcText(r))acts.push(`<button class="btn" type="button" data-sa="harvest">واژه‌های آشنای این متن</button>`);
   acts.push(`<button class="btn ghost" type="button" data-sa="edit">ویرایش متن</button>`);
   if(r.media&&r.kind!=='audio')acts.push(`<button class="btn ghost" type="button" data-sa="orig">فایل اصلی</button>`);
-  acts.push(`<button class="btn ghost" type="button" data-sa="rename">نام و دسته</button><button class="btn ghost danger" type="button" data-sa="del">حذف</button>`);
+  acts.push(`<button class="btn ghost" type="button" data-sa="rename">نام، دسته و زبان</button><button class="btn ghost danger" type="button" data-sa="del">حذف</button>`);
   $('#srcActs').innerHTML=acts.join('');
-  await renderSrcMedia(r);renderSrcBody(r);
+  await renderSrcMedia(r);renderSrcBody(r);renderFound(r);
 }
 async function renderSrcMedia(r){
   const box=$('#srcMedia');
   if(srcAudioUrl){URL.revokeObjectURL(srcAudioUrl);srcAudioUrl=''}
+  if(r.kind==='yt'){box.innerHTML=ytPlayerHTML(r);return}
   if(r.kind!=='audio'&&r.kind!=='image'){box.innerHTML='';return}
   let blob=await localMedia(r);
   if(!blob&&r.media&&r.media.up&&ghReady()){
@@ -2983,7 +3150,7 @@ function mediaSession(r,a){
   const pl=playlistFor(r.id);set('previoustrack',pl?()=>gotoTrack(-1):null);set('nexttrack',pl?()=>gotoTrack(1):null);
 }
 let segIdx=-1,segStop=null,posSaved=0;
-function segsOf(){return curRec&&curRec.kind==='audio'?(curRec.segs||[]):[]}
+function segsOf(){return curRec&&(curRec.kind==='audio'||curRec.kind==='yt')&&!(curRec.song&&curRec.text)?(curRec.segs||[]):[]}
 function onAudioTime(){
   const a=$('#srcAudio');if(!a)return;const t=a.currentTime,sg=segsOf();
   if(segStop!=null&&t>=segStop){if(cfg.segLoop&&segIdx>=0){a.currentTime=sg[segIdx].s;return}a.pause();segStop=null}
@@ -2992,32 +3159,34 @@ function onAudioTime(){
   if(cfg.segLoop&&segStop==null&&segIdx>=0&&!a.paused)segStop=sg[segIdx].e;
   if(Math.abs(t-posSaved)>5&&curRec){posSaved=t;curRec.pos=Math.round(t);idbPut('src',curRec).catch(()=>{})}
 }
-function playSeg(k){const a=$('#srcAudio'),sg=segsOf();if(!a||!sg[k])return;segIdx=-1;a.currentTime=sg[k].s;segStop=sg[k].e;a.play().catch(()=>{})}
+function playSeg(k){if(curRec&&curRec.kind==='yt'){const s=segsOf()[k];if(s)ytSeek(s.s);return}const a=$('#srcAudio'),sg=segsOf();if(!a||!sg[k])return;segIdx=-1;a.currentTime=sg[k].s;segStop=sg[k].e;a.play().catch(()=>{})}
 function jumpSeg(d){
   const a=$('#srcAudio');if(!a)return;const sg=segsOf();
   if(!sg.length){segStop=null;a.currentTime=Math.max(0,Math.min((a.duration||1e9)-0.2,a.currentTime+(d===0?-5:d*5)));a.play().catch(()=>{});return}
   let k=segIdx<0?0:segIdx+d;k=Math.max(0,Math.min(sg.length-1,k));playSeg(k)}
 let srcShowAll=false;
+function isFaLine(t){const fa=(t.match(/[\u0600-\u06FF]/g)||[]).length,la=(t.match(/[A-Za-zÀ-ÿ]/g)||[]).length;return fa>la}
 function renderSrcBody(r){
   const body=$('#srcBody');
-  if(r.kind==='audio'){
+  if((r.kind==='audio'||r.kind==='yt')&&!(r.song&&r.text)){
     const sg=r.segs||[];
-    if(!sg.length){body.innerHTML=`<div class="empty">هنوز متنی برای این فایل ساخته نشده است. «ساختن متن از صدا» را بزنید؛ بهتر است روی لپ‌تاپ انجام شود و بعد خودکار به گوشی می‌رسد.</div>`;return}
-    body.innerHTML=`<p class="hint" style="margin:0 0 10px">روی هر واژه بزنید تا معنی‌اش را ببینید و کارتش کنید. روی زمان بزنید تا همان جمله پخش شود.</p>`+sg.map((s,k)=>`<div class="sg" data-k="${k}"><button type="button" class="ts num" data-play="${k}">${fmtTime(s.s)}</button><p class="lat rd" dir="ltr">${esc(s.t)}</p><button type="button" class="icon-btn mini" data-addsent="${k}" aria-label="افزودن این جمله به کارت‌ها"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div>`).join('');
-    return;
+    if(!sg.length&&!r.text){body.innerHTML=r.kind==='yt'?YT_TX_HELP:`<div class="empty">هنوز متنی برای این فایل ساخته نشده است. «ساختن متن از صدا» را بزنید؛ بهتر است روی لپ‌تاپ انجام شود و بعد خودکار به گوشی می‌رسد.${r.kind==='audio'?' اگر این فایل آهنگ است، «این فایل آهنگ است» را بزنید و متن آهنگ را بچسبانید.':''}</div>`;return}
+    if(sg.length){body.innerHTML=`<p class="hint" style="margin:0 0 10px">روی هر واژه بزنید تا معنی‌اش را ببینید و کارتش کنید. روی زمان بزنید تا ${r.kind==='yt'?'ویدیو از همان‌جا پخش شود':'همان جمله پخش شود'}.</p>`+sg.map((s,k)=>`<div class="sg" data-k="${k}"><button type="button" class="ts num" data-play="${k}">${fmtTime(s.s)}</button><p class="lat rd" dir="ltr">${esc(s.t)}</p><button type="button" class="icon-btn mini" data-addsent="${k}" aria-label="افزودن این جمله به کارت‌ها"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div>`).join('');
+    return}
   }
-  const text=r.text||'';
+  const text=srcText(r);
   if(!text){body.innerHTML=`<div class="empty">${r.kind==='pdf'?'این PDF متن قابل‌خواندن ندارد. «خواندن متن از تصویر» را بزنید.':'متنی پیدا نشد.'}</div>`;return}
   const pages=text.split('\n\f\n');let paras=[];
   // keep line breaks, but join a line that is clearly the continuation of a wrapped sentence
   pages.forEach((pg,i)=>{if(pages.length>1)paras.push({h:'صفحهٔ '+faNum(i+1)});pg.split(/\n{2,}/).forEach(block=>{
     const lines=block.split('\n').map(x=>x.trim()).filter(Boolean);let cur='',first=true;
     const push=()=>{if(cur){paras.push({t:cur,gap:first});first=false}};
-    lines.forEach(ln=>{if(cur&&!/[.!?:;]["'”’)]?$/.test(cur)&&/^[a-zà-ÿ(,]/.test(ln))cur+=' '+ln;else{push();cur=ln}});push()})});
+    lines.forEach(ln=>{if(cur&&!r.song&&cur.length>=40&&!/[.!?:;]["'”’)]?$/.test(cur)&&/^[a-zà-ÿ,]/.test(ln)&&!isFa(cur)&&!isFa(ln))cur+=' '+ln;else{push();cur=ln}});push()})});
   const LIM=600;const shown=srcShowAll?paras:paras.slice(0,LIM);
-  body.innerHTML=`<p class="hint" style="margin:0 0 10px">روی هر واژه بزنید تا معنی‌اش را ببینید و کارتش کنید. برای افزودن یک جمله یا عبارت، آن را انتخاب کنید.</p>`+shown.map(p=>p.h?`<h3 class="pg-h">${p.h}</h3>`:`<p class="lat rd ln${p.gap?' gap':''}" dir="ltr">${esc(p.t)}</p>`).join('')+(paras.length>LIM&&!srcShowAll?`<div class="btn-row" style="justify-content:center"><button class="btn" type="button" id="srcMore">نمایش بقیهٔ متن (${faNum(paras.length-LIM)} بند)</button></div>`:'');
+  body.innerHTML=`<p class="hint" style="margin:0 0 10px">روی هر واژه بزنید تا معنی‌اش را ببینید و کارتش کنید. برای افزودن یک جمله یا عبارت، آن را انتخاب کنید.</p>`+shown.map(p=>{const pr=!p.h&&nLa(p.t)&&nFa(p.t)?splitPair(p.t):null;return pr?`<p class="lat rd ln${p.gap?' gap':''}" dir="ltr">${esc(pr.t)}<span class="fa-tr" dir="rtl">${esc(pr.fa)}</span></p>`:p.h?`<h3 class="pg-h">${p.h}</h3>`:isFaLine(p.t)?`<p class="rd ln fa-ln${p.gap?' gap':''}" dir="rtl">${esc(p.t)}</p>`:`<p class="lat rd ln${p.gap?' gap':''}" dir="ltr">${esc(p.t)}</p>`}).join('')+(paras.length>LIM&&!srcShowAll?`<div class="btn-row" style="justify-content:center"><button class="btn" type="button" id="srcMore">نمایش بقیهٔ متن (${faNum(paras.length-LIM)} بند)</button></div>`:'');
 }
-$('#srcBack').addEventListener('click',()=>{stopAudio();openId=null;playlist=null;srcShowAll=false;renderSources()});
+$('#srcBack').addEventListener('click',()=>{stopAudio();const back=curRec&&curRec.song?'songs':curRec&&curRec.kind==='yt'?'youtube':'';openId=null;playlist=null;srcShowAll=false;if(back){curRec=null;showView(back)}else renderSources()});
+function openSrc(id){openId=id;srcShowAll=false;showView('sources');window.scrollTo(0,0)}
 function stopAudio(){const a=$('#srcAudio');if(a)a.pause()}
 $('#srcActs').addEventListener('click',async e=>{
   const b=e.target.closest('[data-sa]');if(!b||!curRec)return;const r=curRec,act=b.dataset.sa;
@@ -3026,36 +3195,48 @@ $('#srcActs').addEventListener('click',async e=>{
       if((r.segs||[]).length&&!await ask({title:'ساختن دوبارهٔ متن؟',html:'<p style="margin:0">متن فعلی (و ویرایش‌هایتان) با متن تازه جایگزین می‌شود.</p>',ok:'ادامه'}))return;
       await transcribe(r);renderSourceOpen()}
     else if(act==='ocr'){await ocrPdfPages(r);renderSourceOpen()}
+    else if(act==='reocr'){
+      if(!await ask({title:'خواندن دوبارهٔ متن؟',html:'<p style="margin:0">متن با روش تازه (با فارسی و تشخیص ستون‌ها) دوباره خوانده می‌شود و جای متن فعلی را می‌گیرد. اگر متن را دستی اصلاح کرده‌اید، آن اصلاح‌ها از بین می‌رود.</p>',ok:'خواندن دوباره'}))return;
+      if(r.kind==='pdf')await ocrPdfPages(r,true);
+      else{const blob=await mediaBlob(r);if(!blob)throw new Error('عکس اصلی روی این دستگاه نیست.');const pr=progBox('خواندن دوبارهٔ متن عکس');try{const c=await imageCanvas(blob,4000);r.text=await ocr(c,r.lang,p=>pr.set('در حال خواندن…',p));await saveRec(r);pr.done()}catch(e){pr.fail(e.message);throw e}}
+      renderSourceOpen();toast('متن دوباره خوانده شد.')}
     else if(act==='harvest')harvest(r);
+    else if(act==='song')songForm(r);
+    else if(act==='yttx')ytTranscriptSheet(r);
     else if(act==='edit')editSource(r);
     else if(act==='orig'){const blob=await mediaBlob(r);if(!blob){toast('فایل اصلی روی این دستگاه نیست.');return}const u=URL.createObjectURL(blob);window.open(u,'_blank','noopener');setTimeout(()=>URL.revokeObjectURL(u),60000)}
     else if(act==='rename'){
       const all=(await idbAll('src')).filter(x=>!x.gone&&x.kind!=='yt');const ser=seriesMap(all);const cats=Array.from(new Set(Array.from(ser.values()).filter(Boolean))).sort();
-      openSheet('نام و دسته',`<div class="field"><label class="lbl" for="rnT">نام</label><input type="text" id="rnT" data-autofocus value="${esc(r.title)}"></div><div class="field"><label class="lbl" for="rnC">دسته</label><input type="text" id="rnC" list="rnCats" value="${esc(r.cat||'')}" placeholder="${esc(ser.get(r.id)||'خودکار')}"><datalist id="rnCats">${cats.map(c=>`<option value="${esc(c)}">`).join('')}</datalist><span class="hint">خالی بگذارید تا برنامه خودش دسته را از روی نام فایل پیدا کند.</span></div>`,`<button class="btn primary" type="button" id="rnOk">ذخیره</button>`);
-      $('#rnOk').onclick=async()=>{const t=$('#rnT').value.trim();if(!t)return;r.title=t;r.cat=$('#rnC').value.trim();await saveRec(r);closeSheet();renderSourceOpen()}}
+      openSheet('نام و دسته',`<div class="field"><label class="lbl" for="rnT">نام</label><input type="text" id="rnT" data-autofocus value="${esc(r.title)}"></div><div class="field"><label class="lbl" for="rnC">دسته</label><input type="text" id="rnC" list="rnCats" value="${esc(r.cat||'')}" placeholder="${esc(ser.get(r.id)||'خودکار')}"><datalist id="rnCats">${cats.map(c=>`<option value="${esc(c)}">`).join('')}</datalist><span class="hint">خالی بگذارید تا برنامه خودش دسته را از روی نام فایل پیدا کند.</span></div><div class="field"><span class="lbl">زبان</span><div class="seg" id="rnL"><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button></div></div>`,`<button class="btn primary" type="button" id="rnOk">ذخیره</button>`);
+      setSeg($('#rnL'),r.lang==='en'?'en':'nl');bindSeg($('#rnL'),()=>{});
+      $('#rnOk').onclick=async()=>{const t=$('#rnT').value.trim();if(!t)return;r.title=t;r.cat=$('#rnC').value.trim();r.lang=segVal($('#rnL'))||r.lang;await saveRec(r);closeSheet();renderSourceOpen()}}
     else if(act==='del'){
       if(!await ask({title:'حذف این منبع؟',html:`<p style="margin:0">«${esc(r.title)}» و فایلش از همهٔ دستگاه‌هایتان حذف می‌شود. کارت‌هایی که از آن ساخته‌اید می‌مانند.</p>`,ok:'حذف',danger:true}))return;
-      stopAudio();if(r.media)await idbDel('media',r.media.id).catch(()=>{});
-      const g={id:r.id,gone:Date.now(),updated:Date.now(),media:r.media?Object.assign({},r.media):null};await idbPut('src',g);cfg.srcDirty=true;saveCfg();scheduleSrcSync();
-      openId=null;renderSources();toast('حذف شد');
+      stopAudio();await dropSrc(r);
+      openId=null;toast('حذف شد');if(r.song)showView('songs');else if(r.kind==='yt')showView('youtube');else renderSources();
     }
   }catch(err){toast(err.message||'خطا',6000)}
 });
+async function dropSrc(r){if(r.media)await idbDel('media',r.media.id).catch(()=>{});
+  const g={id:r.id,gone:Date.now(),updated:Date.now(),media:r.media?Object.assign({},r.media):null};await idbPut('src',g);cfg.srcDirty=true;saveCfg();scheduleSrcSync();queueSrcDialogs()}
 function editSource(r){
-  const val=r.kind==='audio'?(r.segs||[]).map(s=>fmtTime(s.s)+' | '+s.t).join('\n'):r.text||'';
-  openSheet('ویرایش متن',`<p class="hint" style="margin:0 0 8px">${r.kind==='audio'?'هر خط یک جمله است. زمان ابتدای خط را تغییر ندهید؛ فقط متن بعد از «|» را اصلاح کنید.':'غلط‌های خوانش را اصلاح کنید. بین بندها یک خط خالی بگذارید.'}</p><textarea id="edSrc" rows="16" class="lat ltr" spellcheck="true" lang="${r.lang==='en'?'en':'nl'}"></textarea>`,`<button class="btn primary" type="button" id="edOk">ذخیره</button>`);
+  if(r.song){songForm(r);return}
+  const timed=(r.kind==='audio'||r.kind==='yt')&&(r.segs||[]).length;
+  const val=timed?(r.segs||[]).map(s=>fmtTime(s.s)+' | '+s.t).join('\n'):r.text||'';
+  openSheet('ویرایش متن',`<p class="hint" style="margin:0 0 8px">${timed?'هر خط یک جمله است. زمان ابتدای خط را تغییر ندهید؛ فقط متن بعد از «|» را اصلاح کنید.':'غلط‌های خوانش را اصلاح کنید. بین بندها یک خط خالی بگذارید.'}</p><textarea id="edSrc" rows="16" class="lat ltr" spellcheck="true" lang="${r.lang==='en'?'en':'nl'}"></textarea>`,`<button class="btn primary" type="button" id="edOk">ذخیره</button>`);
   $('#edSrc').value=val;
   $('#edOk').onclick=async()=>{
     const v=$('#edSrc').value;
-    if(r.kind==='audio'){const lines=v.split('\n');const segs=r.segs||[];lines.forEach((ln,i)=>{if(!segs[i])return;const t=ln.includes('|')?ln.slice(ln.indexOf('|')+1).trim():ln.trim();segs[i].t=t});r.segs=segs.filter(s=>s.t)}
+    if(timed){const lines=v.split('\n');const segs=r.segs||[];lines.forEach((ln,i)=>{if(!segs[i])return;const t=ln.includes('|')?ln.slice(ln.indexOf('|')+1).trim():ln.trim();segs[i].t=t});r.segs=segs.filter(s=>s.t)}
     else r.text=tidyText(v);
-    await saveRec(r);closeSheet();renderSrcBody(r);toast('ذخیره شد');
+    await saveRec(r);closeSheet();renderSourceOpen();toast('ذخیره شد');
   };
 }
 $('#srcBody').addEventListener('click',e=>{
   const pl=e.target.closest('[data-play]');if(pl){playSeg(+pl.dataset.play);return}
   const as=e.target.closest('[data-addsent]');if(as){const s=segsOf()[+as.dataset.addsent];if(s)quickAdd({lang:curRec.lang,type:'sentence',text:s.t});return}
   if(e.target.id==='srcMore'){srcShowAll=true;renderSrcBody(curRec);return}
+  if(e.target.closest('.fa-tr'))return;
   const p=e.target.closest('.rd');if(!p||!curRec)return;
   const sel=window.getSelection();if(sel&&String(sel).trim().split(/\s+/).length>1)return;
   const hit=wordAt(e,p);if(hit)wordPop(hit.w,hit.sentence,curRec.lang);
@@ -3128,16 +3309,166 @@ function harvest(r){
   $('#hvAdd').onclick=()=>{let n=0;$$('[data-hv]').forEach(c=>{if(!c.checked)return;const x=list[+c.dataset.hv];addFromSource(x.it,firstSent.get(x.it.id)||'');n++});closeSheet();refreshBadges();toast(faNum(n)+' واژه به کارت‌ها اضافه شد.',4000)};
 }
 
+/* ================= WHAT IS INSIDE A SOURCE =================
+   Reads the text of a source and finds: its real language, word lists with Persian meanings,
+   sentences with a Persian translation, and dialogues ("Name: text"). Dialogues go straight to
+   the dialogues section (series «منابع من»); words and sentences become cards with one tap. */
+const STOPW={nl:new Set('de het een en van ik je jij is niet dat met voor op zijn naar wat wij we ze er maar ook bij hoe heb heeft hebben ben bent wordt worden kan kunt mijn uw u die deze dit als nog wel geen uit om te aan dan zij hij goed dag graag waar wanneer'.split(' ')),
+  en:new Set('the a an and of i you is not that with for on are to what we they there but also at how it have has be was were will can my your this these if then from by do does did hello please where when'.split(' '))};
+function guessLang(text){
+  let nl=0,en=0;(String(text||'').toLowerCase().match(/[a-zà-ÿ']+/g)||[]).slice(0,5000).forEach(w=>{if(STOPW.nl.has(w))nl++;if(STOPW.en.has(w))en++});
+  if(nl+en<6)return'';if(nl>en*1.6)return'nl';if(en>nl*1.6)return'en';return'';
+}
+const nFa=t=>(String(t).match(/[؀-ۿ]/g)||[]).length,nLa=t=>(String(t).match(/[A-Za-zÀ-ÿ]/g)||[]).length;
+const faName=t=>String(t).replace(/^[\u0600-\u06FF\u200c ]{1,16}[:：]\s*/,'');
+const cutEnds=t=>String(t).replace(/^[\s\-–—:=|•·*،,;>]+|[\s\-–—:=|•·*،,;<]+$/g,'').replace(/^\((.*)\)$/s,'$1').replace(/^\(([^)]*)$/,'$1').replace(/^([^(]*)\)$/,'$1').replace(/\s*\($/,'').trim();
+/* "de vader — پدر", "Ik heb een auto. (من یک ماشین دارم)", "پدر = de vader" */
+function splitPair(line){
+  const s=String(line).replace(/^\s*(\d{1,3}[.)]|[a-h][.)])\s+/,'');
+  if(!nFa(s)||!nLa(s))return null;
+  const iF=s.search(/[؀-ۿ]/),iL=s.search(/[A-Za-zÀ-ÿ]/);let la,fa;
+  if(iL<iF){la=s.slice(0,iF);fa=s.slice(iF);if(nLa(fa)>2)return null}
+  else{fa=s.slice(0,iL);la=s.slice(iL);if(nFa(la))return null}
+  la=cutEnds(la);fa=cutEnds(fa);
+  if(nLa(la)<2||nFa(fa)<2||la.length>180||fa.length>220)return null;
+  return{t:la.replace(/\s+/g,' '),fa:fa.replace(/\s+/g,' ')};
+}
+const SPEAKER=/^\s*([A-ZÀ-Ý][A-Za-zÀ-ÿ'’\-]{0,15}(?: [A-ZÀ-Ý][A-Za-zÀ-ÿ'’\-]{0,15})?|[A-F])\s*[:：]\s*(\S.*)$/;
+const NOT_SPEAKER=new Set('les thema opdracht oefening datum tijd tel telefoon naam adres email e-mail tip note example voorbeeld exercise lesson unit page pagina hoofdstuk chapter grammar grammatica woorden words vocabulary antwoord answer vraag question titel title onderwerp subject van aan to from cc re betreft website www http https info prijs price totaal total open uur let op kosten costs locatie location waar wanneer when where tekst text bron source niveau level'.split(' '));
+const isSpeaker=n=>!NOT_SPEAKER.has(n.toLowerCase())&&!/^(De|Het|Een|The|A|An)\s/.test(n);
+const endsSent=t=>/[.!?…]["'”’)]?$/.test(t);
+function analyzeText(text,lang){
+  const lines=String(text||'').replace(/\f/g,'').split('\n').map(x=>x.trim());
+  const used=new Set(),dlgs=[];
+  /* dialogues: "Name: text" lines (a Persian line right after a line is its translation) */
+  let cur=null;
+  const close=()=>{if(!cur)return;const sp=new Map();cur.lines.forEach(l=>sp.set(l.s,(sp.get(l.s)||0)+1));
+    const multi=Array.from(sp.values()).filter(n=>n>=2).length;
+    if(cur.lines.length>=4&&sp.size>=2&&sp.size<=6&&multi>=2){dlgs.push({roles:Array.from(sp.keys()),lines:cur.lines});cur.idx.forEach(i=>used.add(i))}
+    cur=null};
+  for(let i=0;i<lines.length;i++){
+    const ln=lines[i];if(!ln){continue}
+    const m=ln.match(SPEAKER);
+    if(m&&isSpeaker(m[1])&&nLa(m[2])>=2){
+      const p=splitPair(m[2]);const t=p?p.t:m[2].trim();if(nFa(t))continue;
+      if(!cur)cur={lines:[],idx:[]};cur.lines.push({s:m[1],t,fa:p?p.fa:''});cur.idx.push(i);continue}
+    if(cur&&nFa(ln)>nLa(ln)&&!cur.lines[cur.lines.length-1].fa){cur.lines[cur.lines.length-1].fa=faName(cutEnds(ln));cur.idx.push(i);continue}
+    close();
+  }
+  close();
+  /* dash dialogues: "– Hoe gaat het?" / "– Goed, dank je." */
+  let run=[];
+  const closeRun=()=>{if(run.length>=4){const ok=run.filter(x=>endsSent(x.t)).length>=run.length*0.6&&run.reduce((n,x)=>n+x.t.split(/\s+/).length,0)/run.length>=2.5;
+      if(ok){dlgs.push({roles:['A','B'],lines:run.map((x,k)=>({s:k%2?'B':'A',t:x.t,fa:x.fa}))});run.forEach(x=>x.idx.forEach(i=>used.add(i)))}}run=[]};
+  for(let i=0;i<lines.length;i++){
+    const ln=lines[i];if(used.has(i)||!ln)continue;
+    const m=ln.match(/^[-–—]\s+(.+)$/);
+    if(m&&nLa(m[1])>=2&&!splitPair(m[1])){run.push({t:m[1].trim(),fa:'',idx:[i]});continue}
+    if(run.length&&nFa(ln)>nLa(ln)&&!run[run.length-1].fa){run[run.length-1].fa=cutEnds(ln);run[run.length-1].idx.push(i);continue}
+    closeRun();
+  }
+  closeRun();
+  /* word / sentence pairs */
+  const words=[],sents=[],seen=new Set();
+  const add=(p)=>{const k=norm(p.t);if(seen.has(k))return;seen.add(k);
+    const n=p.t.split(/\s+/).length;
+    if(n<=3&&!endsSent(p.t)){let t=p.t,art='';const a=lang==='nl'&&t.match(/^(de|het)\s+(\S+)$/i);if(a){art=a[1].toLowerCase();t=a[2]}words.push({t,art,fa:p.fa})}
+    else if(n<=24)sents.push(p)};
+  for(let i=0;i<lines.length;i++){
+    if(used.has(i))continue;const ln=lines[i];if(!ln)continue;
+    const p=splitPair(ln);if(p){add(p);used.add(i);continue}
+    // a foreign line followed by a Persian-only line
+    const nx=lines[i+1];
+    if(nx&&!used.has(i+1)&&!nFa(ln)&&nLa(ln)>=2&&nFa(nx)>2*nLa(nx)&&!nLa(nx)&&ln.length<=180){add({t:ln.replace(/^\s*(\d{1,3}[.)])\s+/,''),fa:cutEnds(nx)});used.add(i);used.add(i+1);i++}
+  }
+  return{lang:guessLang(text),words,sents,dlgs};
+}
+const anaCache=new Map();
+function analyzeSrc(r){
+  const k=r.id+'|'+r.updated;const c=anaCache.get(r.id);if(c&&c.k===k)return c.v;
+  const v=analyzeText(srcText(r),r.lang);anaCache.set(r.id,{k,v});return v;
+}
+
+/* ---------- dialogues from sources → the dialogues section ---------- */
+const SRC_DLG_SERIES='منابع من';
+let srcDlgT=null;function queueSrcDialogs(){clearTimeout(srcDlgT);srcDlgT=setTimeout(()=>refreshSrcDialogs().catch(()=>{}),400)}
+async function refreshSrcDialogs(){
+  let all=[];try{all=(await idbAll('src')).filter(r=>!r.gone&&r.kind!=='yt'&&!r.song&&!r.noDlg)}catch(e){return}
+  all.sort((a,b)=>a.created-b.created);
+  for(let i=DIALOGS.length-1;i>=0;i--)if(DIALOGS[i].fromSrc)DIALOGS.splice(i,1);
+  let n=0;
+  all.forEach(r=>{const a=analyzeSrc(r);if(!a.dlgs.length)return;n++;
+    a.dlgs.forEach((d,k)=>{
+      const avg=d.lines.reduce((s,l)=>s+l.t.split(/\s+/).length,0)/d.lines.length;
+      DIALOGS.push({id:'src:'+r.id+':'+k,fromSrc:r.id,lang:r.lang,level:avg<=6?'A1':avg<=10?'A2':'B1',series:SRC_DLG_SERIES,
+        lesson:{n,orig:'',fa:r.title},title:d.roles.join(' & '),titleFa:a.dlgs.length>1?r.title+' ('+faNum(k+1)+')':r.title,
+        roles:d.roles.map((name,j)=>({name,g:j%2?'m':'v'})),lines:d.lines.map(l=>({s:l.s,t:l.t,fa:l.fa||'',en:''}))});
+    })});
+  if(currentView==='dialogs'&&!curDlg&&!$('#v-dialogs').classList.contains('is-locked'))renderDlgIndex();
+  if(currentView==='today')renderToday();
+}
+
+/* ---------- the "found in this source" panel ---------- */
+function foundHTML(r,a){
+  const rows=[];
+  if(a.lang&&a.lang!==r.lang)rows.push(`<div class="fd-row warn"><span>متن این منبع ${a.lang==='en'?'انگلیسی':'هلندی'} به نظر می‌رسد، ولی ${r.lang==='en'?'انگلیسی':'هلندی'} علامت خورده است.</span><button class="btn sm primary" type="button" data-fd="lang" data-v="${a.lang}">تبدیل به ${a.lang==='en'?'انگلیسی':'هلندی'}</button></div>`);
+  if(a.dlgs.length){const nl=a.dlgs.reduce((n,d)=>n+d.lines.length,0);
+    rows.push(r.noDlg?`<div class="fd-row"><span>${faNum(a.dlgs.length)} مکالمه (${faNum(nl)} جمله) در این منبع هست، ولی در بخش مکالمه‌ها نیست.</span><button class="btn sm" type="button" data-fd="dlgon">گذاشتن در مکالمه‌ها</button></div>`
+      :`<div class="fd-row good"><span><b>${faNum(a.dlgs.length)} مکالمه</b> (${faNum(nl)} جمله، ${a.dlgs.map(d=>esc(d.roles.join(' و '))).join('؛ ')}) در بخش مکالمه‌ها، «${SRC_DLG_SERIES}» گذاشته شد. آنجا پخش و تمرین نقش دارد.</span><span class="btn-row"><button class="btn sm primary" type="button" data-fd="dlgopen">باز کردن</button><button class="btn sm ghost" type="button" data-fd="dlgoff">برداشتن</button></span></div>`)}
+  const fw=a.words.filter(x=>!findDup(r.lang,x.t)),fs=a.sents.filter(x=>!findDup(r.lang,x.t));
+  if(a.words.length)rows.push(`<div class="fd-row"><span><b>${faNum(a.words.length)} واژه با معنی فارسی</b>${fw.length<a.words.length?`، ${faNum(a.words.length-fw.length)} تا از قبل در کارت‌های شماست`:''}.</span>${fw.length?`<button class="btn sm primary" type="button" data-fd="words">کارت کردن ${faNum(fw.length)} واژه</button>`:'<span class="pill ok">همه در کارت‌ها</span>'}</div>`);
+  if(a.sents.length)rows.push(`<div class="fd-row"><span><b>${faNum(a.sents.length)} جمله با ترجمهٔ فارسی</b>${fs.length<a.sents.length?`، ${faNum(a.sents.length-fs.length)} تا از قبل در کارت‌هاست`:''}.</span>${fs.length?`<button class="btn sm primary" type="button" data-fd="sents">کارت کردن ${faNum(fs.length)} جمله</button>`:'<span class="pill ok">همه در کارت‌ها</span>'}</div>`);
+  if(!rows.length)return'';
+  return`<div class="panel found"><h2 class="h2">برنامه در این منبع پیدا کرد</h2>${rows.join('')}</div>`;
+}
+function renderFound(r){const el=$('#srcFound');if(!el)return;if(r.kind==='yt'&&!srcText(r)){el.innerHTML='';return}el.innerHTML=foundHTML(r,analyzeSrc(r))}
+function pairSheet(r,kind){
+  const a=analyzeSrc(r);const list=(kind==='words'?a.words:a.sents).filter(x=>!findDup(r.lang,x.t));if(!list.length)return;
+  openSheet(kind==='words'?'کارت کردن واژه‌ها':'کارت کردن جمله‌ها',`<p class="hint" style="margin:0 0 10px">این‌ها با معنی‌ای که در خود منبع نوشته شده اضافه می‌شوند. اگر خوانش متن غلطی دارد، تیکش را بردارید یا بعداً کارت را ویرایش کنید.</p><label class="check" style="margin-bottom:8px"><input type="checkbox" id="pfAll" checked><span>انتخاب همه</span></label><div class="hv-list">${list.map((x,k)=>`<label class="hv-row"><input type="checkbox" data-pf="${k}" checked><span class="lat"><b>${artHTML({lang:r.lang,type:'word',article:x.art})}${esc(x.t)}</b></span><span class="hv-m">${esc(x.fa)}</span></label>`).join('')}</div>`,`<button class="btn primary" type="button" id="pfAdd">افزودن انتخاب‌شده‌ها</button>`);
+  $('#pfAll').onchange=e=>$$('[data-pf]').forEach(c=>c.checked=e.target.checked);
+  $('#pfAdd').onclick=()=>{let n=0;const now=Date.now();$$('[data-pf]').forEach(c=>{if(!c.checked)return;const x=list[+c.dataset.pf];if(findDup(r.lang,x.t))return;
+      db.items.push(cleanItem({id:uid(),lang:r.lang,type:kind==='words'?'word':'sentence',text:x.t,article:x.art||'',fa:x.fa,note:'از منبع «'+r.title+'»',tags:['منبع'],created:now+n,updated:now+n,srs:null}));n++});
+    if(n)saveData();closeSheet();refreshBadges();renderFound(r);toast(faNum(n)+(kind==='words'?' واژه':' جمله')+' به کارت‌ها اضافه شد.',4000)};
+}
+$('#srcFound').addEventListener('click',async e=>{
+  const b=e.target.closest('[data-fd]');if(!b||!curRec)return;const r=curRec,k=b.dataset.fd;
+  if(k==='words'||k==='sents')return pairSheet(r,k);
+  if(k==='lang'){r.lang=b.dataset.v;await saveRec(r);renderSourceOpen();toast('زبان منبع درست شد.');return}
+  if(k==='dlgoff'||k==='dlgon'){r.noDlg=k==='dlgoff';await saveRec(r);await refreshSrcDialogs();renderFound(r);toast(r.noDlg?'از بخش مکالمه‌ها برداشته شد.':'در بخش مکالمه‌ها گذاشته شد.');return}
+  if(k==='dlgopen'){await refreshSrcDialogs();const d=DIALOGS.find(x=>x.fromSrc===r.id);if(!d)return;
+    cfg.dlgSrc=Object.assign({},cfg.dlgSrc,{[r.lang]:SRC_DLG_SERIES});saveCfg();if(r.lang!==L())setLang(r.lang);
+    showView('dialogs');if(!lockOf('dialogs'))openDialog(d.id)}
+});
+
+/* ---------- right after an import: fix the language, file what was found, and say so ---------- */
+async function afterImport(r){
+  if(!r)return;const a0=analyzeText(srcText(r),r.lang);
+  if(a0.lang&&a0.lang!==r.lang&&r.kind!=='audio'){r.lang=a0.lang;await saveRec(r)}
+  const a=analyzeSrc(r);if(a.dlgs.length)await refreshSrcDialogs();
+  const bits=[];if(a.words.length)bits.push(faNum(a.words.length)+' واژه با معنی');if(a.sents.length)bits.push(faNum(a.sents.length)+' جمله با ترجمه');if(a.dlgs.length)bits.push(faNum(a.dlgs.length)+' مکالمه');
+  const tp=typeof topicOf==='function'?topicOf(r):null;
+  if(!bits.length&&!(a0.lang&&a0.lang!==segVal($('#srcLang'))))return;
+  const el=document.createElement('div');el.className='panel import-done';
+  el.innerHTML=`<div class="job-top"><b class="job-t"></b><button class="icon-btn mini" type="button" aria-label="بستن" data-x><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><p class="hint" style="margin:4px 0 8px">${[a0.lang&&a0.lang!==segVal($('#srcLang'))?'زبان متن '+(r.lang==='en'?'انگلیسی':'هلندی')+' تشخیص داده شد':'',bits.length?'پیدا شد: '+bits.join('، '):'',tp?'موضوع: '+esc(tp.name):''].filter(Boolean).join('؛ ')}${a.dlgs.length?'. مکالمه‌ها در بخش مکالمه‌ها، «'+SRC_DLG_SERIES+'» گذاشته شدند':''}.</p><div class="btn-row"><button class="btn sm primary" type="button" data-open-src>${a.words.length||a.sents.length?'دیدن و کارت کردن':'باز کردن منبع'}</button></div>`;
+  $('.job-t',el).textContent=r.title;
+  el.addEventListener('click',e=>{if(e.target.closest('[data-x]'))el.remove();else if(e.target.closest('[data-open-src]')){el.remove();openId=r.id;renderSources();window.scrollTo(0,0)}});
+  $('#srcJobs').append(el);
+}
+
 /* ================= SONGS (per language, by level) ================= */
 const SONGS=Array.isArray(VZ.songs)?VZ.songs:[];
-let songLevel='all';
+let songLevel='all',songLang='';
 const ytSearch=q=>'https://www.youtube.com/results?search_query='+encodeURIComponent(q);
 const lyricsSearch=(s)=>'https://www.google.com/search?q='+encodeURIComponent(s.t+' '+s.by+(s.lang==='nl'?' songtekst':' lyrics'));
-function renderSongs(){
-  const lang=L();const all=SONGS.filter(s=>s.lang===lang);
+async function renderSongs(){
+  const lang=songLang||L();setSeg($('#songLang'),lang);const all=SONGS.filter(s=>s.lang===lang);
   $('#songTitle').textContent=lang==='nl'?'آهنگ‌های هلندی':'آهنگ‌های انگلیسی';
-  const heard=all.filter(s=>db.done[s.id]).length;
-  $('#songSub').textContent=faNum(all.length)+' آهنگ، مرتب‌شده از ساده به سخت. '+(heard?faNum(heard)+' آهنگ را گوش داده‌اید.':'برای زبان دیگر، بالای صفحه زبان را عوض کنید.');
+  let mine=[];try{mine=(await idbAll('src')).filter(r=>!r.gone&&r.song&&r.lang===lang).sort((a,b)=>a.created-b.created)}catch(e){}
+  const heard=all.filter(s=>db.done[s.id]).length+mine.filter(r=>db.done[r.id]).length;
+  $('#songSub').textContent=(mine.length?faNum(mine.length)+' آهنگ از خودتان و ':'')+faNum(all.length)+' آهنگ پیشنهادی، از ساده به سخت. '+(heard?faNum(heard)+' آهنگ را گوش داده‌اید.':'');
+  const ms=$('#mySongs');ms.hidden=!mine.length;
+  ms.innerHTML=mine.length?`<h2 class="src-gh"><span>آهنگ‌های من</span><span class="btn-row">${mine.length>1?'<button class="btn sm" type="button" data-songall>▶ پخش همه به ترتیب</button>':''}</span></h2>${mine.map(mySongHTML).join('')}`:'';
+  $('#songSugT').textContent=mine.length?'آهنگ‌های پیشنهادی':'آهنگ‌های پیشنهادی برای شروع';
   setSeg($('#songLevel'),songLevel);
   const list=all.filter(s=>songLevel==='all'||s.level===songLevel);
   const lv=['A1','A2','B1'].filter(l=>list.some(s=>s.level===l));
@@ -3157,6 +3488,64 @@ function songHTML(s){
       <button class="btn sm ${done?'ghost':''}" type="button" data-heard="${esc(s.id)}">${done?'✓ گوش داده‌ام':'گوش دادم'}</button>
     </div></article>`;
 }
+function mySongHTML(r){
+  const done=!!db.done[r.id],s=r.song||{};const n=String(r.text||'').split('\n').filter(x=>x.trim()).length;
+  return `<article class="panel song mine${done?' heard':''}">
+    <div class="song-top"><div><h3 class="lat song-t">${esc(r.title)}</h3>${s.by?`<p class="song-by lat">${esc(s.by)}</p>`:''}</div>${s.level?`<span class="pill lvl">${esc(s.level)}</span>`:''}</div>
+    <p class="hint" style="margin:0">${[r.media?'فایل صوتی'+(r.info&&r.info.dur?' '+fmtTime(r.info.dur):''):'بدون فایل صوتی',n?faNum(n)+' خط متن'+(s.tr?' با ترجمه':''):'هنوز متن ندارد'].join('، ')}</p>
+    <div class="btn-row">
+      <button class="btn sm primary" type="button" data-mysong="${esc(r.id)}">▶ پخش با متن</button>
+      <button class="btn sm ${done?'ghost':''}" type="button" data-heard="${esc(r.id)}">${done?'✓ گوش داده‌ام':'گوش دادم'}</button>
+      <button class="btn sm ghost" type="button" data-songedit="${esc(r.id)}">ویرایش</button>
+    </div></article>`;
+}
+/* add or edit one of my songs: audio file + lyrics + optional Persian translation */
+async function songForm(r){
+  const isNew=!r,s=(r&&r.song)||{};const lang=(r&&r.lang)||songLang||L();
+  const lv=s.level||'';
+  openSheet(isNew?'افزودن آهنگ':'آهنگ و متنش',`<div class="stack" style="gap:12px">
+    ${isNew||!r.media?`<div class="field"><label class="lbl" for="sgFile">فایل صوتی آهنگ <em>(MP3، M4A، WAV)</em></label><input type="file" id="sgFile" accept="audio/*,.mp3,.m4a,.wav,.ogg,.opus,.aac"></div>`:`<p class="hint" style="margin:0">فایل صوتی: ${esc((r.media&&r.media.name)||r.title)}</p>`}
+    <div class="two"><div class="field"><label class="lbl" for="sgT">نام آهنگ</label><input type="text" id="sgT" class="lat ltr" value="${esc(r?r.title:'')}"></div>
+    <div class="field"><label class="lbl" for="sgBy">خواننده</label><input type="text" id="sgBy" class="lat ltr" value="${esc(s.by||'')}"></div></div>
+    <div class="two"><div class="field"><span class="lbl">زبان آهنگ</span><div class="seg" id="sgL"><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button></div></div>
+    <div class="field"><span class="lbl">سطح <em>(اختیاری)</em></span><div class="seg" id="sgLv"><button type="button" data-v="A1">A1</button><button type="button" data-v="A2">A2</button><button type="button" data-v="B1">B1</button><button type="button" data-v="">نمی‌دانم</button></div></div></div>
+    <div class="field"><label class="lbl" for="sgLy">متن آهنگ</label><textarea id="sgLy" rows="9" class="lat ltr" spellcheck="false" placeholder="متن را از سایت متن ترانه کپی کنید و اینجا بچسبانید. هر خط آهنگ در یک خط."></textarea></div>
+    <div class="field"><label class="lbl" for="sgTr">ترجمهٔ فارسی <em>(اختیاری؛ هر خط، ترجمهٔ همان خط متن)</em></label><textarea id="sgTr" rows="6" dir="rtl"></textarea><span class="hint">ترجمه زیر هر خط آهنگ نشان داده می‌شود و می‌توانید جمله‌ها را با ترجمه‌شان کارت کنید.</span></div>
+  </div>`,`<button class="btn primary" type="button" id="sgOk">${isNew?'افزودن آهنگ':'ذخیره'}</button>${!isNew?'<button class="btn ghost danger" type="button" id="sgDel">حذف آهنگ</button>':''}`);
+  setSeg($('#sgL'),lang==='en'?'en':'nl');bindSeg($('#sgL'),()=>{});setSeg($('#sgLv'),lv);bindSeg($('#sgLv'),()=>{});
+  $('#sgLy').value=r?(r.text||''):'';$('#sgTr').value=s.tr||'';
+  const fi=$('#sgFile');
+  if(fi)fi.onchange=()=>{const f=fi.files[0];if(!f)return;const nm=baseName(f.name);const m=nm.match(/^(.+?)\s+-\s+(.+)$/);
+    if(!$('#sgT').value.trim())$('#sgT').value=m?m[2]:nm;if(m&&!$('#sgBy').value.trim())$('#sgBy').value=m[1]};
+  $('#sgLy').addEventListener('blur',()=>{const g=guessLang($('#sgLy').value);if(g)setSeg($('#sgL'),g)});
+  if($('#sgDel'))$('#sgDel').onclick=async()=>{if(!await ask({title:'حذف این آهنگ؟',html:`<p style="margin:0">«${esc(r.title)}»، فایل و متنش از همهٔ دستگاه‌هایتان حذف می‌شود.</p>`,ok:'حذف',danger:true}))return;
+    closeSheet();stopAudio();await dropSrc(r);if(openId===r.id){openId=null;curRec=null}showView('songs');toast('آهنگ حذف شد.')};
+  $('#sgOk').onclick=async()=>{
+    const f=fi&&fi.files[0];const title=$('#sgT').value.trim()||(f?baseName(f.name):'');
+    if(isNew&&!f){toast('فایل صوتی آهنگ را انتخاب کنید.');return}
+    if(!title){toast('نام آهنگ را بنویسید.');$('#sgT').focus();return}
+    const btn=$('#sgOk');btn.disabled=true;
+    try{
+      const rec=r||newRec('audio',title,'nl');
+      rec.title=title;rec.lang=segVal($('#sgL'))||'nl';
+      rec.text=tidyText($('#sgLy').value);
+      rec.song={by:$('#sgBy').value.trim(),level:segVal($('#sgLv'))||'',tr:tidyText($('#sgTr').value)};
+      if(f){askPersist();if(rec.media)await idbDel('media',rec.media.id).catch(()=>{});await storeMedia(rec,f.type?f:new Blob([f],{type:'audio/mpeg'}),f.name);try{const d=await audioDuration(f);if(d)rec.info.dur=d}catch(e){}}
+      await saveRec(rec);closeSheet();songLang=rec.lang;
+      toast(isNew?'آهنگ اضافه شد.':'ذخیره شد.');
+      if(currentView==='sources'&&openId===rec.id)renderSourceOpen();else showView('songs');
+    }catch(e){toast(e.message||'ذخیره نشد.',5000)}finally{btn.disabled=false}
+  };
+}
+$('#songAdd').addEventListener('click',()=>songForm(null));
+bindSeg($('#songLang'),v=>{songLang=v;renderSongs()});
+$('#mySongs').addEventListener('click',async e=>{
+  const p=e.target.closest('[data-mysong]');if(p){openSrc(p.dataset.mysong);return}
+  const ed=e.target.closest('[data-songedit]');if(ed){const r=await idbGet('src',ed.dataset.songedit);if(r)songForm(r);return}
+  const h=e.target.closest('[data-heard]');if(h){const id=h.dataset.heard;if(db.done[id])delete db.done[id];else db.done[id]=Date.now();saveData();renderSongs();return}
+  if(e.target.closest('[data-songall]')){const lang=songLang||L();const ids=(await idbAll('src')).filter(r=>!r.gone&&r.song&&r.lang===lang&&r.media).sort((a,b)=>a.created-b.created).map(r=>r.id);
+    if(!ids.length)return;playlist={ids,name:'آهنگ‌های من'};autoplayNext=true;openSrc(ids[0])}
+});
 bindSeg($('#songLevel'),v=>{songLevel=v;renderSongs()});
 $('#songList').addEventListener('click',e=>{
   const h=e.target.closest('[data-heard]');if(h){const id=h.dataset.heard;if(db.done[id])delete db.done[id];else db.done[id]=Date.now();saveData();renderSongs();return}
@@ -3192,9 +3581,9 @@ async function renderYoutube(){
   $('#ytList').innerHTML=list.length?list.map(r=>`<div class="yt-card">
       <a class="yt-open" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">
         <span class="yt-thumb">${r.vid?`<img alt="" loading="lazy" src="https://i.ytimg.com/vi/${esc(r.vid)}/mqdefault.jpg">`:'<span class="yt-ph">▶</span>'}<span class="yt-play" aria-hidden="true">▶</span></span>
-        <span class="yt-c"><b class="yt-t">${esc(r.title)}</b>${r.note?`<span class="hint">${esc(r.note)}</span>`:''}<span class="src-tags"><span class="pill">${r.lang==='nl'?'هلندی':r.lang==='en'?'انگلیسی':'دیگر'}</span>${r.list&&!r.vid?'<span class="pill">فهرست پخش</span>':''}</span></span>
+        <span class="yt-c"><b class="yt-t">${esc(r.title)}</b>${r.note?`<span class="hint">${esc(r.note)}</span>`:''}<span class="src-tags"><span class="pill">${r.lang==='nl'?'هلندی':r.lang==='en'?'انگلیسی':'دیگر'}</span>${r.list&&!r.vid?'<span class="pill">فهرست پخش</span>':''}${srcText(r)?'<span class="pill ok">متن دارد</span>':''}</span></span>
       </a>
-      <div class="yt-acts"><button class="btn sm ghost" type="button" data-ytedit="${esc(r.id)}">ویرایش</button><button class="btn sm ghost danger" type="button" data-ytdel="${esc(r.id)}">حذف</button></div>
+      <div class="yt-acts"><button class="btn sm ${srcText(r)?'primary':''}" type="button" data-ytopen="${esc(r.id)}">${srcText(r)?'متن و تمرین':'افزودن متن'}</button><button class="btn sm ghost" type="button" data-ytedit="${esc(r.id)}">ویرایش</button><button class="btn sm ghost danger" type="button" data-ytdel="${esc(r.id)}">حذف</button></div>
     </div>`).join('')
     :`<div class="empty panel">${ytQuery||ytFilter!=='all'?'چیزی پیدا نشد.':'هنوز لینکی اضافه نکرده‌اید. لینک یک ویدیوی یوتیوب را در کادر بالا بچسبانید.'}</div>`;
 }
@@ -3216,6 +3605,7 @@ bindSeg($('#ytLang'),()=>{});
 bindSeg($('#ytFilter'),v=>{ytFilter=v;renderYoutube()});
 let ytQT=null;$('#ytQ').addEventListener('input',e=>{clearTimeout(ytQT);ytQT=setTimeout(()=>{ytQuery=e.target.value;renderYoutube()},200)});
 $('#ytList').addEventListener('click',async e=>{
+  const o=e.target.closest('[data-ytopen]');if(o){const r=await idbGet('src',o.dataset.ytopen);if(!r)return;openSrc(r.id);if(!srcText(r))setTimeout(()=>ytTranscriptSheet(r),300);return}
   const d=e.target.closest('[data-ytdel]');
   if(d){const r=await idbGet('src',d.dataset.ytdel);if(!r)return;
     if(!await ask({title:'حذف این لینک؟',html:`<p style="margin:0">«${esc(r.title)}» از فهرست همهٔ دستگاه‌هایتان حذف می‌شود. خود ویدیو در یوتیوب می‌ماند.</p>`,ok:'حذف',danger:true}))return;
@@ -3226,6 +3616,55 @@ $('#ytList').addEventListener('click',async e=>{
     setSeg($('#yeL'),r.lang||'x');bindSeg($('#yeL'),()=>{});
     $('#yeOk').onclick=async()=>{r.title=$('#yeT').value.trim()||r.title;r.note=$('#yeN').value.trim();r.lang=segVal($('#yeL'))||r.lang;await saveRec(r);closeSheet();renderYoutube()}}
 });
+
+/* ================= YouTube: watch beside the transcript ================= */
+const YT_TX_HELP=`<div class="note-box info" style="margin:0">
+  <b>متن این ویدیو هنوز اضافه نشده است.</b>
+  <p style="margin:8px 0">برنامه نمی‌تواند خودش زیرنویس را از یوتیوب بخواند؛ یوتیوب اجازه نمی‌دهد سایت‌های دیگر مستقیم زیرنویس را بگیرند (NotebookLM این کار را روی سرورهای گوگل انجام می‌دهد). ولی کپی کردن متن کمتر از یک دقیقه طول می‌کشد:</p>
+  <ol class="howto"><li>ویدیو را در مرورگر لپ‌تاپ در یوتیوب باز کنید.</li><li>زیر ویدیو، روی توضیحات (…more / …meer) بزنید و پایین آن <b class="lat">Show transcript</b> (<span class="lat">Transcript weergeven</span>) را بزنید.</li><li>در کادر متن، از اولین خط تا آخرین خط را با ماوس انتخاب و کپی کنید.</li><li>اینجا «چسباندن متن ویدیو» را بزنید و متن را بچسبانید. زمان‌ها خودکار شناخته می‌شوند.</li></ol>
+  <p class="hint" style="margin:6px 0 0">فایل زیرنویس <span class="lat">.srt</span> یا <span class="lat">.vtt</span> هم قبول است.</p></div>`;
+function ytPlayerHTML(r){
+  if(!r.vid)return`<div class="btn-row" style="margin:0 0 14px"><a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">▶ باز کردن در یوتیوب</a></div>`;
+  return`<div class="yt-frame"><iframe id="ytFrame" src="https://www.youtube-nocookie.com/embed/${esc(r.vid)}?rel=0&amp;playsinline=1" title="${esc(r.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><div class="btn-row" style="margin:8px 0 14px"><a class="btn sm ghost" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">باز کردن در خود یوتیوب</a></div>`;
+}
+function ytSeek(sec){const f=$('#ytFrame');if(!f||!curRec||!curRec.vid)return;f.src=`https://www.youtube-nocookie.com/embed/${encodeURIComponent(curRec.vid)}?rel=0&playsinline=1&autoplay=1&start=${Math.max(0,Math.floor(sec))}`;f.scrollIntoView({block:'nearest',behavior:'smooth'})}
+/* timed text: YouTube's transcript panel, SRT or VTT. Returns sentence-sized segments. */
+function parseTimed(raw){
+  const L=String(raw||'').replace(/\r/g,'').replace(/<[^>]+>/g,'').split('\n').map(x=>x.trim());
+  const sec=t=>t.replace(',','.').split(':').reduce((a,b)=>a*60+(+b||0),0);
+  const A11Y=/^(\d+\s+(seconds?|minutes?|hours?|seconden?|minuten|minuut|uur|uren|sec|min)\s*,?\s*)+$/i;
+  const cues=[];let cur=null;
+  for(let i=0;i<L.length;i++){const ln=L[i];if(!ln||ln==='WEBVTT'||/^(Kind|Language|NOTE)\b/.test(ln)||A11Y.test(ln))continue;
+    if(/^\d+$/.test(ln)&&/-->/.test(L[i+1]||''))continue;
+    let m=ln.match(/^((?:\d{1,2}:)?\d{1,2}:\d{2}(?:[.,]\d+)?)\s*-->\s*((?:\d{1,2}:)?\d{1,2}:\d{2}(?:[.,]\d+)?)/);
+    if(m){cur={s:sec(m[1]),e:sec(m[2]),t:''};cues.push(cur);continue}
+    m=ln.match(/^\[?((?:\d{1,2}:)?\d{1,2}:\d{2})\]?(?:\s+(.*))?$/);
+    if(m){cur={s:sec(m[1]),e:0,t:(m[2]||'').trim()};cues.push(cur);continue}
+    if(cur)cur.t=(cur.t?cur.t+' ':'')+ln;
+  }
+  const clean=cues.filter(c=>c.t&&!/^\[(music|muziek|applause|applaus)\]$/i.test(c.t)).filter((c,k,a)=>!k||norm(c.t)!==norm(a[k-1].t));
+  if(clean.length<2)return[];
+  clean.forEach((c,k)=>{if(!c.e)c.e=clean[k+1]?clean[k+1].s:c.s+4});
+  // join caption pieces into sentences, so each line reads as a whole thought
+  const out=[];let g=null;
+  clean.forEach(c=>{if(!g)g={s:c.s,e:c.e,t:c.t};else{g.t+=' '+c.t;g.e=c.e}
+    if(/[.!?…]["'”’)]?$/.test(g.t)||g.t.split(/\s+/).length>=18){out.push(g);g=null}});
+  if(g)out.push(g);
+  return out.map(x=>({s:Math.round(x.s*10)/10,e:Math.round(x.e*10)/10,t:x.t.replace(/\s+/g,' ').trim()}));
+}
+function ytTranscriptSheet(r){
+  openSheet('متن ویدیو',`<p class="hint" style="margin:0 0 8px">متن «Show transcript» یوتیوب، یا محتوای فایل <span class="lat">.srt</span>/<span class="lat">.vtt</span> را اینجا بچسبانید.</p><textarea id="ytTx" rows="14" class="lat ltr" spellcheck="false" placeholder="0:00&#10;Goedemorgen allemaal…&#10;0:04&#10;Vandaag gaan we…"></textarea><div class="field" style="margin-top:8px"><label class="lbl" for="ytTxF">یا فایل زیرنویس</label><input type="file" id="ytTxF" accept=".srt,.vtt,.txt,text/plain,text/vtt"></div>`,`<button class="btn primary" type="button" id="ytTxOk">ذخیره</button>`);
+  $('#ytTxF').onchange=async()=>{const f=$('#ytTxF').files[0];if(f)$('#ytTx').value=await f.text()};
+  $('#ytTxOk').onclick=async()=>{
+    const v=$('#ytTx').value;if(!v.trim()){toast('متنی چسبانده نشده است.');return}
+    const segs=parseTimed(v);
+    if(segs.length){r.segs=segs;r.text=''}else{r.segs=[];r.text=tidyText(v)}
+    const g=guessLang(srcText(r));if(g&&r.lang!==g)r.lang=g;
+    await saveRec(r);closeSheet();anaCache.delete(r.id);
+    if(currentView==='sources'&&openId===r.id)renderSourceOpen();else openSrc(r.id);
+    toast(segs.length?faNum(segs.length)+' جملهٔ زمان‌دار ذخیره شد. روی زمان هر جمله بزنید تا ویدیو از همان‌جا پخش شود.':'متن ذخیره شد (بدون زمان).',5000);
+  };
+}
 
 /* ================= SHARE WITH OTHERS ================= */
 const appURL=()=>location.origin+location.pathname.replace(/index\.html$/,'');
@@ -3334,7 +3773,7 @@ function renderSettings(){
   renderSyncStatus();fillVoices();
   $('#vRate').value=cfg.tts.rate;$('#vRateTxt').textContent=faNum(cfg.tts.rate)+'×';$('#vAuto').checked=!!cfg.tts.auto;
   $('#newPerDay').value=cfg.review.newPerDay;
-  setSeg($('#glossSeg'),cfg.gloss||'both');setSeg($('#focusSeg'),cfg.review.focus||'series');$('#focusWrap').hidden=!PACKS.some(x=>x.series);
+  setSeg($('#glossSeg'),cfg.gloss||'both');setSeg($('#focusSeg'),cfg.review.focus||'series');$('#focusWrap').hidden=!PACKS.some(x=>x.series);setSeg($('#pathSeg'),cfg.path.on===false?'off':'on');
   $('#themeWrap').hidden=IS_PREVIEW;setSeg($('#themeSeg'),cfg.theme||'system');
   $('#guideLink').href=IS_PREVIEW?'https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm':'guide.html';
   renderPriv();
@@ -3430,6 +3869,7 @@ $('#vRate').addEventListener('input',e=>{cfg.tts.rate=+e.target.value;$('#vRateT
 $('#vAuto').addEventListener('change',e=>{cfg.tts.auto=e.target.checked;saveCfg()});
 bindSeg($('#glossSeg'),v=>{cfg.gloss=v;saveCfg();toast(v==='en'?'Dutch meanings will now be shown in English.':v==='fa'?'معنی‌ها فقط به فارسی نشان داده می‌شود.':'معنی‌ها به فارسی و انگلیسی نشان داده می‌شود.')});
 bindSeg($('#focusSeg'),v=>{cfg.review.focus=v;saveCfg();refreshBadges()});
+bindSeg($('#pathSeg'),v=>{cfg.path.on=v==='on';saveCfg();refreshBadges()});
 $('#newPerDay').addEventListener('change',e=>{let v=Math.round(+e.target.value);if(!(v>=0))v=15;v=Math.min(200,v);cfg.review.newPerDay=v;e.target.value=v;saveCfg();refreshBadges()});
 bindSeg($('#themeSeg'),v=>{cfg.theme=v;saveCfg();applyTheme()});
 function applyTheme(){if(IS_PREVIEW)return;const r=document.documentElement;if(cfg.theme==='light'||cfg.theme==='dark')r.setAttribute('data-theme',cfg.theme);else r.removeAttribute('data-theme')}
@@ -3515,6 +3955,7 @@ const startHash=location.hash.slice(1);
 if(startHash.startsWith('setup=')){showView('settings',true);handleSetupHash()}
 else showView(VIEWS.includes(startHash)?startHash:'today',true);
 refreshBadges();updateChips();
+refreshSrcDialogs().catch(()=>{});
 if(ghReady())syncNow();
 })();
 
