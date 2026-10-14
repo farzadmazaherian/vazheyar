@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-GKqschyOn3+0lZ6keVXpEg7rOkxxPsEXywQekQwRlBc=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ZGJZwZMYolCPAsZTPX+iAcJRXbmyXktVKQAuC4EHbHQ=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -1039,7 +1039,7 @@ body.noscroll{overflow:hidden}
     <section class="view" id="v-course" hidden>
       <div id="cHome">
         <div class="page-head">
-          <div><h1 class="view-title">مسیر درسی</h1><p class="sub" id="cSub"></p></div>
+          <div><h1 class="view-title" id="cTitle">مسیر درسی</h1><p class="sub" id="cSub"></p></div>
         </div>
         <div id="cEmpty" class="panel c-empty" hidden>
           <h2 class="h2">بستهٔ مسیر درسی هنوز وارد نشده است</h2>
@@ -1267,7 +1267,7 @@ body.noscroll{overflow:hidden}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۴</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۵</p>
     </section>
 
 </main>
@@ -1304,7 +1304,7 @@ body.noscroll{overflow:hidden}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=14"></script>
+<script src="packs.js?v=15"></script>
 <script>
 (function(){
 'use strict';
@@ -1474,7 +1474,7 @@ function buildQueue(lang){
   const eod=endOfToday();const pool=db.items.filter(i=>i.lang===lang&&!i.susp);
   const due=pool.filter(i=>!isNew(i)&&i.srs.due<=eod).sort((a,b)=>a.srs.due-b.srs.due);
   const newLeft=Math.max(0,(+cfg.review.newPerDay||0)-introducedToday(lang));
-  const focus=cfg.review.focus||'series',cf=lang==='nl'&&typeof courseFocusPack==='function'?courseFocusPack():'';const pri=i=>cf&&i.pack===cf?-1:focus==='series'&&itemSeries(i)?0:1;
+  const focus=cfg.review.focus||'series',cf=typeof courseFocusPack==='function'&&lang===L()?courseFocusPack():'';const pri=i=>cf&&i.pack===cf?-1:focus==='series'&&itemSeries(i)?0:1;
   const fresh=pool.filter(isNew).sort((a,b)=>(pri(a)-pri(b))||(a.created-b.created)).slice(0,newLeft);
   const q=[];let di=0,ni=0;
   while(di<due.length||ni<fresh.length){for(let k=0;k<3&&di<due.length;k++)q.push(due[di++].id);if(ni<fresh.length)q.push(fresh[ni++].id)}
@@ -2947,7 +2947,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=14',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=15',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -2970,7 +2970,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 14، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 15، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -3794,9 +3794,11 @@ function ytTranscriptSheet(r){
    The course package (vazheyar-course.zip) holds course.json + slides, infographics and dialogue audio.
    Text goes into the private collection (PRIV.course, synced as the private file); media goes into
    IndexedDB ('media' store, ids 'c-<file>') and is mirrored to the private repo under media/course/. */
-const COURSE=PRIV&&PRIV.course&&Array.isArray(PRIV.course.units)?PRIV.course:null;
+const NLC=PRIV&&PRIV.course&&Array.isArray(PRIV.course.units)?PRIV.course:null;   // Dutch: private, with audio and slides
+const ENC=VZ.courses&&VZ.courses.en&&Array.isArray(VZ.courses.en.units)?Object.assign({media:{},audio:{}},VZ.courses.en):null; // English: public
+const CRS=()=>L()==='en'?ENC:NLC;
 const C_DIR=MEDIA_DIR+'/course';
-const cUnits=()=>COURSE?COURSE.units:[];
+const cUnits=()=>{const c=CRS();return c?c.units:[]};
 const cUnit=id=>cUnits().find(u=>u.id===id);
 const cPack=u=>PACKS.find(p=>p.id===u.pack)||null;
 const cDialogs=u=>u.dialogs.map(id=>DIALOGS.find(d=>d.id===id)).filter(Boolean);
@@ -3824,7 +3826,7 @@ function unitOpen(u){
 }
 function currentUnit(){const us=cUnits();return us.find(u=>!unitState(u).done)||us[us.length-1]||null}
 /* new cards of the current lesson come first in review */
-function courseFocusPack(){if(!COURSE||cfg.course&&cfg.course.focus===false)return'';const u=currentUnit();return u?u.pack:''}
+function courseFocusPack(){if(!CRS()||cfg.course&&cfg.course.focus===false)return'';const u=currentUnit();return u?u.pack:''}
 function checkUnitDone(u){
   if(!u||db.done['unit:'+u.id])return;const s=unitState(u);
   if(s.words&&s.dlg&&s.quiz){db.done['unit:'+u.id]=Date.now();saveData();
@@ -3837,14 +3839,15 @@ const STEP_SVG='<svg class="i" viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></
 function renderCourse(){
   if(cOpen&&cUnit(cOpen))return renderUnit(cUnit(cOpen));
   cOpen=null;$('#cHome').hidden=false;$('#cUnit').hidden=true;
-  if(!COURSE){$('#cEmpty').hidden=false;$('#cOverview').hidden=true;$('#cSub').textContent='درس‌های شما به ترتیب: اول واژه‌ها، بعد مکالمه، بعد تمرین؛ و بعد درس بعدی.';return}
+  const C=CRS();$('#cTitle').textContent=L()==='en'?'مسیر درسی انگلیسی':'مسیر درسی هلندی';
+  if(!C){$('#cEmpty').hidden=false;$('#cOverview').hidden=true;$('#cSub').textContent='درس‌های شما به ترتیب: اول واژه‌ها، بعد مکالمه، بعد تمرین؛ و بعد درس بعدی.';return}
   $('#cEmpty').hidden=true;$('#cOverview').hidden=false;
   const us=cUnits(),st=us.map(unitState),done=st.filter(s=>s.done).length,cur=currentUnit();
-  $('#cSub').textContent=faNum(us.length)+' درس در '+faNum(COURSE.stages.length)+' گام. هر درس بعد از تمام شدن درس قبلی باز می‌شود.';
+  $('#cSub').textContent=faNum(us.length)+' درس در '+faNum(C.stages.length)+' گام. هر درس بعد از تمام شدن درس قبلی باز می‌شود.';
   $('#cProgTxt').textContent=faNum(done)+' از '+faNum(us.length)+' درس تمام شده';
   $('#cProgSub').textContent=cur&&!st[us.indexOf(cur)].done?'درس فعلی: '+cur.title:'';
   $('#cProgBar').style.width=Math.round(done/us.length*100)+'%';
-  $('#cStages').innerHTML=COURSE.stages.map(sg=>{
+  $('#cStages').innerHTML=C.stages.map(sg=>{
     const su=us.filter(u=>u.stage===sg.id);if(!su.length)return'';
     const sd=su.filter(u=>st[us.indexOf(u)].done).length;
     return`<section class="c-stage"><header class="c-stage-h"><h2>${esc(sg.title)}</h2><span class="hint">${faNum(sd)} از ${faNum(su.length)}</span><p class="hint">${esc(sg.desc)}</p></header><ol class="c-list">${su.map(u=>{
@@ -3877,14 +3880,14 @@ function renderUnit(u){
   const st2=step(2,s.dlg,'مکالمه‌ها',s.dlg?`${faNum(s.dd)} مکالمه تمرین شد.`:`دست‌کم ${faNum(s.need)} مکالمه را تا آخر گوش دهید (${faNum(s.dd)} از ${faNum(s.need)}).`,'',s.words);
   const st3=step(3,s.quiz,'تمرین درس',s.quiz?'تمرین این درس را با موفقیت گذراندید.':'آزمون ۱۰ پرسشی از واژه‌ها و جمله‌های همین درس؛ با ۷ پاسخ درست قبول می‌شوید.',
     !s.quiz&&s.words&&s.dlg?`<button class="btn sm primary" type="button" data-cu="quiz">شروع تمرین</button>`:'',s.words&&s.dlg);
-  const files=u.files.map(f=>Object.assign({id:f},COURSE.media[f]||{})).filter(m=>m.file);
+  const files=u.files.map(f=>Object.assign({id:f},(CRS().media||{})[f]||{})).filter(m=>m.file);
   $('#cUnitBody').innerHTML=`
     <div class="page-head" style="margin-bottom:10px"><div><p class="c-kicker">درس ${faNum(u.n)} · <span class="lat">${esc(u.level)}</span></p><h1 class="view-title">${esc(u.title)}</h1><p class="sub lat" style="margin-bottom:4px">${esc(u.orig)}</p><p class="sub">${esc(u.desc)}</p></div></div>
     ${s.done?`<p class="note-box good" style="margin:0 0 14px">این درس تمام شده است. هر وقت خواستید دوباره مرورش کنید.</p>`:''}
     <ol class="path c-steps">${st1}${st2}${st3}</ol>
     ${gram.length?`<section class="panel c-sec"><h2 class="h2">نکته‌های گرامر این درس</h2><ul class="c-gram">${gram.map(g=>`<li>${gramHTML(g)}</li>`).join('')}</ul></section>`:''}
     <section class="panel c-sec"><div class="c-sec-h"><h2 class="h2">مکالمه‌های صوتی</h2><span class="hint">${faNum(s.dd)} از ${faNum(ds.length)}</span></div>
-      <div class="c-dlgs">${ds.map(d=>`<button type="button" class="c-dlg${db.done[d.id]?' done':''}" data-cdlg="${esc(d.id)}"${s.words?'':' aria-disabled="true"'}><span class="c-dlg-ic">${db.done[d.id]?'✓':'▶'}</span><span><b>${esc(d.titleFa||d.title)}</b><span class="lat hint">${esc(d.title)}</span></span><span class="hint num">${COURSE.audio[d.id]?fmtTime(COURSE.audio[d.id].dur):''}</span></button>`).join('')}</div>
+      <div class="c-dlgs">${ds.map(d=>`<button type="button" class="c-dlg${db.done[d.id]?' done':''}" data-cdlg="${esc(d.id)}"${s.words?'':' aria-disabled="true"'}><span class="c-dlg-ic">${db.done[d.id]?'✓':'▶'}</span><span><b>${esc(d.titleFa||d.title)}</b><span class="lat hint">${esc(d.title)}</span></span><span class="hint num">${NLC&&NLC.audio[d.id]?fmtTime(NLC.audio[d.id].dur):''}</span></button>`).join('')}</div>
       ${s.words?'':'<p class="hint" style="margin:10px 0 0">مکالمه‌ها بعد از مرور واژه‌ها باز می‌شوند.</p>'}</section>
     ${files.length?`<section class="panel c-sec"><div class="c-sec-h"><h2 class="h2">اسلایدها و اینفوگرافیک‌ها</h2><button class="btn sm ghost" type="button" data-cu="dlall">ذخیره برای استفادهٔ آفلاین</button></div>
       <div class="c-files">${files.map(m=>`<button type="button" class="c-file" data-cfile="${esc(m.id)}"><span class="c-file-ic">${m.kind==='deck'?'<svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>':'<svg class="i" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>'}</span><span class="c-file-t"><b class="lat">${esc(m.title||(m.kind==='deck'?'اسلایدها':'اینفوگرافیک'))}</b><span class="hint">${m.kind==='deck'?faNum(m.pages)+' اسلاید':'اینفوگرافیک'} · ${fmtSize(m.size)}</span></span></button>`).join('')}</div></section>`:''}
@@ -3896,12 +3899,12 @@ $('#cUnitBody').addEventListener('click',async e=>{
   const a=e.target.closest('[data-cu]');
   if(a){const k=a.dataset.cu;
     if(k==='add'){const r=installPacks([cPack(u)]);refreshBadges();toast(faNum(r.added)+' واژه به کارت‌ها اضافه شد. حالا مرورشان کنید.',4000);renderUnit(u);return}
-    if(k==='review'){if(L()!=='nl')setLang('nl');startSession();return}
+    if(k==='review'){startSession();return}
     if(k==='quiz'||k==='skip'){unitQuiz(u,k==='skip');return}
     if(k==='dlall'){a.disabled=true;try{await cDownloadUnit(u,(i,n)=>{a.textContent='در حال دریافت '+faNum(i)+' از '+faNum(n)+'…'});a.textContent='✓ روی این دستگاه ذخیره شد'}catch(err){a.disabled=false;a.textContent='ذخیره برای استفادهٔ آفلاین';toast(err.message,5000)}return}
   }
   const d=e.target.closest('[data-cdlg]');if(d){if(d.getAttribute('aria-disabled')){toast('اول واژه‌های این درس را مرور کنید.');return}
-    if(L()!=='nl')setLang('nl');showView('dialogs',true);if(!lockOf('dialogs'))openDialog(d.dataset.cdlg);return}
+    showView('dialogs',true);if(!lockOf('dialogs'))openDialog(d.dataset.cdlg);return}
   const f=e.target.closest('[data-cfile]');if(f)openViewer(f.dataset.cfile);
 });
 
@@ -3914,10 +3917,9 @@ function unitQuiz(u,skip){
     return{type:'meaning',it,dir,opts:shuffle(opts),right}};
   shuffle(items.slice()).slice(0,6).forEach((it,k)=>qs.push(mk(it,k%2?'rev':'fwd')));
   const arts=shuffle(items.filter(i=>i.type==='word'&&i.article&&!qs.some(q=>q.it===i))).slice(0,2);arts.forEach(it=>qs.push({type:'article',it}));
-  const lines=[];cDialogs(u).forEach(d=>d.lines.forEach((ln,i)=>{const n=wordsOf(ln.t).length;if(n>=3&&n<=10)lines.push({t:ln.t,fa:ln.fa,en:ln.en||'',it:{id:'dlg:'+d.id+':'+i,lang:'nl',type:'sentence',text:ln.t,fa:ln.fa,en:ln.en||'',article:'',verb:null,note:''}})}));
+  const lines=[];cDialogs(u).forEach(d=>d.lines.forEach((ln,i)=>{const n=wordsOf(ln.t).length;if(n>=3&&n<=10)lines.push({t:ln.t,fa:ln.fa,en:ln.en||'',it:{id:'dlg:'+d.id+':'+i,lang:d.lang,type:'sentence',text:ln.t,fa:ln.fa,en:ln.en||'',article:'',verb:null,note:''}})}));
   shuffle(lines).slice(0,10-qs.length).forEach(x=>qs.push({type:'order',it:x.it,sent:x}));
   while(qs.length<10){const it=items[Math.floor(Math.random()*items.length)];qs.push(mk(it,'fwd'))}
-  if(L()!=='nl')setLang('nl');
   qz={qs:shuffle(qs).slice(0,10),i:0,score:0,wrong:[],answered:false,unit:u.id,skip:!!skip};
   showView('quiz',true);$('#quizSetup').hidden=true;$('#quizDone').hidden=true;$('#quizRun').hidden=false;renderQ();
 }
@@ -3929,7 +3931,6 @@ function unitQuizDone(n){
 }
 
 /* ---------- course media: local first, then from the private repo ---------- */
-const cMediaInfo=f=>COURSE.media[f]?{file:COURSE.media[f].file,type:COURSE.media[f].type}:COURSE.audio[f]?{file:COURSE.audio[f].file,type:'audio/mpeg'}:null;
 async function cBlob(file,type){
   const loc=await idbGet('media','c-'+file).catch(()=>null);if(loc&&loc.blob)return loc.blob;
   if(!ghReady())return null;
@@ -3940,16 +3941,16 @@ async function cBlob(file,type){
   await idbPut('media',{id:'c-'+file,blob,type}).catch(()=>{});return blob;
 }
 async function cDownloadUnit(u,onProg){
-  const list=u.files.map(f=>COURSE.media[f]).filter(Boolean).map(m=>[m.file,m.type]).concat(u.dialogs.map(d=>COURSE.audio[d]).filter(Boolean).map(a=>[a.file,'audio/mpeg']));
+  const list=u.files.map(f=>NLC?NLC.media[f]:null).filter(Boolean).map(m=>[m.file,m.type]).concat(u.dialogs.map(d=>NLC?NLC.audio[d]:null).filter(Boolean).map(a=>[a.file,'audio/mpeg']));
   for(let i=0;i<list.length;i++){onProg&&onProg(i+1,list.length);const b=await cBlob(list[i][0],list[i][1]);if(!b)throw new Error(ghReady()?'بعضی فایل‌ها هنوز از لپ‌تاپ به GitHub فرستاده نشده‌اند. کمی بعد دوباره امتحان کنید.':'برای دریافت فایل‌ها، همگام‌سازی را در تنظیمات روشن کنید.')}
 }
 
 /* ---------- recorded dialogue audio ---------- */
 const dlgAudioCache=new Map();let dlgAudioEl=null,dlgSegEnd=null,dlgSegDone=null,dlgSegTimer=null;
-function dlgHasAudio(d){return!!(COURSE&&COURSE.audio[d.id])}
+function dlgHasAudio(d){return!!(NLC&&NLC.audio[d.id])}
 async function dlgAudioUrl(d){
   if(dlgAudioCache.has(d.id))return dlgAudioCache.get(d.id);
-  const a=COURSE.audio[d.id];const b=await cBlob(a.file,'audio/mpeg').catch(()=>null);if(!b)return null;
+  const a=NLC.audio[d.id];const b=await cBlob(a.file,'audio/mpeg').catch(()=>null);if(!b)return null;
   const u=URL.createObjectURL(b);dlgAudioCache.set(d.id,u);return u;
 }
 function stopDlgAudio(){clearTimeout(dlgSegTimer);dlgSegEnd=null;const cb=dlgSegDone;dlgSegDone=null;if(dlgAudioEl)dlgAudioEl.pause();return cb}
@@ -3957,7 +3958,7 @@ function stopDlgAudio(){clearTimeout(dlgSegTimer);dlgSegEnd=null;const cb=dlgSeg
 async function sayLine(d,i,opts){
   opts=opts||{};const ln=d.lines[i];
   if(dlgHasAudio(d)&&cfg.dlg.rec!==false){
-    const url=await dlgAudioUrl(d);const seg=COURSE.audio[d.id].t[i];
+    const url=await dlgAudioUrl(d);const seg=NLC.audio[d.id].t[i];
     if(url&&seg){
       stopSpeech();stopDlgAudio();
       if(!dlgAudioEl){dlgAudioEl=new Audio();dlgAudioEl.preload='auto';dlgAudioEl.addEventListener('timeupdate',()=>{if(dlgSegEnd!=null&&dlgAudioEl.currentTime>=dlgSegEnd)endSeg()})}
@@ -3977,7 +3978,7 @@ function endSeg(){clearTimeout(dlgSegTimer);if(dlgSegEnd==null)return;dlgSegEnd=
 /* ---------- slides and infographics viewer ---------- */
 let vw=null;
 async function openViewer(fid){
-  const m=COURSE.media[fid];if(!m)return;
+  const m=NLC&&NLC.media[fid];if(!m)return;
   const box=$('#viewer');box.hidden=false;document.body.classList.add('noscroll');
   $('#vwTitle').textContent=m.title||'';$('#vwImg').hidden=true;$('#vwMsg').hidden=false;$('#vwMsg').textContent='در حال آماده‌سازی…';$('#vwNav').hidden=true;
   vw={fid,m,i:0,urls:[],zoom:false};
@@ -4064,11 +4065,11 @@ $('#courseFile').addEventListener('change',e=>{const fs=Array.from(e.target.file
 /* ---------- mirror course files to the private repo (once), so other devices can fetch them ---------- */
 let cSyncing=false;
 async function syncCourse(){
-  if(!COURSE||!ghReady()||cSyncing)return;cSyncing=true;
+  if(!NLC||!ghReady()||cSyncing)return;cSyncing=true;
   try{
     const ref=cfg.gh.branch?'?ref='+encodeURIComponent(cfg.gh.branch):'';
-    const all=Object.values(COURSE.media).map(m=>m.file).concat(Object.values(COURSE.audio).map(a=>a.file));
-    if(cfg.course&&cfg.course.upAll===COURSE.updated)return;
+    const all=Object.values(NLC.media).map(m=>m.file).concat(Object.values(NLC.audio).map(a=>a.file));
+    if(cfg.course&&cfg.course.upAll===NLC.updated)return;
     const r=await ghFetch(repoPath()+'/contents/'+C_DIR+ref);
     const have=new Set(r.ok?(await r.json()).map(x=>x.name):[]);
     const todo=[];for(const f of all){if(have.has(f))continue;const loc=await idbGet('media','c-'+f).catch(()=>null);if(loc&&loc.blob)todo.push([f,loc.blob])}
@@ -4080,7 +4081,7 @@ async function syncCourse(){
       if(!pu.ok&&pu.status!==422)throw new Error(ghErr(pu.status,'فرستادن فایل‌های درس'));
       await new Promise(res=>setTimeout(res,cfg.course&&cfg.course.gap!=null?cfg.course.gap:800));
     }
-    if(have.size+todo.length>=all.length){cfg.course=Object.assign({},cfg.course,{upAll:COURSE.updated});saveCfg()}
+    if(have.size+todo.length>=all.length){cfg.course=Object.assign({},cfg.course,{upAll:NLC.updated});saveCfg()}
     cSyncNote('');
   }catch(e){cSyncNote('')}finally{cSyncing=false}
 }
@@ -4089,7 +4090,7 @@ let cSyncMsg='';function cSyncNote(t){cSyncMsg=t;const el=$('#courseSyncSt');if(
 /* ---------- today: the current lesson ---------- */
 function renderCourseNow(){
   const el=$('#courseNow');if(!el)return;
-  if(!COURSE||L()!=='nl'){el.hidden=true;return}
+  if(!CRS()){el.hidden=true;return}
   const u=currentUnit();if(!u){el.hidden=true;return}
   const s=unitState(u),us=cUnits(),done=us.filter(x=>unitState(x).done).length;
   el.hidden=false;
@@ -4212,7 +4213,7 @@ function renderSettings(){
 }
 function renderCoursePanel(){
   const st=$('#courseStatus');
-  if(COURSE){st.className='note-box good';st.textContent=`«${COURSE.name}» وارد شده است: ${faNum(COURSE.units.length)} درس، ${faNum(Object.keys(COURSE.audio).length)} مکالمهٔ صوتی، ${faNum(Object.keys(COURSE.media).length)} اسلاید و اینفوگرافیک.`}
+  if(NLC){st.className='note-box good';st.textContent=`«${NLC.name}» وارد شده است: ${faNum(NLC.units.length)} درس، ${faNum(Object.keys(NLC.audio).length)} مکالمهٔ صوتی، ${faNum(Object.keys(NLC.media).length)} اسلاید و اینفوگرافیک.`}
   else{st.className='note-box info';st.textContent='هنوز بسته‌ای وارد نشده است.'}
   setSeg($('#recSeg'),cfg.dlg.rec===false?'tts':'rec');cSyncNote(cSyncMsg);
 }
