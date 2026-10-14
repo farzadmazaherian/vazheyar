@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ZGJZwZMYolCPAsZTPX+iAcJRXbmyXktVKQAuC4EHbHQ=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-1eDtbMqIwbvzfNFxBRcVHk/PkuYmfmybIS99pPk0GNw=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -765,10 +765,12 @@ body.noscroll{overflow:hidden}
         <div class="nav-label">واژه‌ها</div>
         <button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg><span>کتابخانه</span></button>
         <button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg><span>واژه‌های من</span></button>
-        <button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M10 17.5v-5l4.5-1v5"/><circle cx="9" cy="17.5" r="1.3"/><circle cx="13.5" cy="16.5" r="1.3"/></svg><span>منابع من</span></button>
+        <button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M9.5 12.5h6M9.5 16h4"/></svg><span>متن‌ها و PDF</span></button>
       </div>
       <div class="nav-group" style="margin-top:14px">
         <div class="nav-label">گوش دادن و دیدن</div>
+        <button type="button" data-go="listen"><svg class="i" viewBox="0 0 24 24"><path d="M4.5 13.5a7.5 7.5 0 0 1 15 0"/><rect x="3" y="13" width="4" height="7" rx="1.5"/><rect x="17" y="13" width="4" height="7" rx="1.5"/></svg><span>فایل‌های صوتی</span></button>
+        <button type="button" data-go="watch"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/></svg><span>عکس و ویدیو</span></button>
         <button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg><span>آهنگ‌ها</span></button>
         <button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg><span>یوتیوب من</span></button>
       </div>
@@ -1063,29 +1065,30 @@ body.noscroll{overflow:hidden}
     <section class="view" id="v-sources" hidden>
       <div id="srcHome">
         <div class="page-head">
-          <div><h1 class="view-title">منابع من</h1><p class="sub">PDF، عکس، فایل صوتی یا متن خودتان را وارد کنید. متنش بیرون کشیده می‌شود؛ گوش می‌دهید، می‌خوانید و واژه‌هایش را کارت می‌کنید.</p></div>
+          <div><h1 class="view-title" id="srcSecTitle">متن‌ها و PDF</h1><p class="sub" id="srcSecSub"></p></div>
           <button class="btn" type="button" id="srcPaste">چسباندن متن</button>
         </div>
         <label class="drop" id="srcDrop" for="srcFile" tabindex="0">
           <svg class="i" viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5"/><path d="M4 14v4.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V14"/></svg>
-          <b>فایل‌ها را اینجا بکشید یا برای انتخاب بزنید</b>
-          <span class="hint">PDF، عکس (JPG و PNG) و فایل صوتی (MP3، M4A، WAV، OGG). می‌توانید چند فایل را با هم بدهید.</span>
+          <b id="srcDropT">فایل‌ها را اینجا بکشید یا برای انتخاب بزنید</b>
+          <span class="hint" id="srcDropH"></span>
         </label>
-        <input type="file" id="srcFile" multiple accept=".pdf,application/pdf,image/*,audio/*,.mp3,.m4a,.wav,.ogg,.opus,.txt,text/plain" hidden>
+        <input type="file" id="srcFile" multiple accept=".pdf,application/pdf,image/*,audio/*,video/*,.mp3,.m4a,.wav,.ogg,.opus,.mp4,.mov,.m4v,.webm,.txt,text/plain" hidden>
         <div class="src-opts">
           <div class="field"><span class="lbl">زبان منبع</span><div class="seg" id="srcLang"><button type="button" data-v="nl">هلندی</button><button type="button" data-v="en">انگلیسی</button></div></div>
-          <div class="field"><span class="lbl">دقت متن صوتی</span><div class="seg" id="asrModel"><button type="button" data-v="base">سریع</button><button type="button" data-v="small">دقیق</button></div></div>
+          <div class="field" id="asrModelWrap"><span class="lbl">دقت متن صوتی</span><div class="seg" id="asrModel"><button type="button" data-v="base">سریع</button><button type="button" data-v="small">دقیق</button></div></div>
         </div>
         <div id="srcJobs" class="stack" style="margin-top:14px"></div>
         <p class="hint sync-st" id="srcSyncSt" hidden></p>
         <div class="src-tools" id="srcTools" hidden>
           <input type="search" id="srcQ" placeholder="جست‌وجو در نام و متن منابع" aria-label="جست‌وجو در منابع">
-          <div class="seg" id="srcGroup" aria-label="دسته‌بندی"><button type="button" data-v="series">مجموعه</button><button type="button" data-v="topic">موضوع</button><button type="button" data-v="kind">نوع</button></div>
+          <div class="seg" id="srcGroup" aria-label="دسته‌بندی"><button type="button" data-v="auto">خودکار</button><button type="button" data-v="series">مجموعه</button><button type="button" data-v="topic">موضوع</button></div>
           <button class="btn" type="button" id="srcPlayAll" hidden>▶ پخش همهٔ فایل‌های صوتی به ترتیب</button>
           <button class="btn" type="button" id="srcPick" hidden>انتخاب فایل‌ها برای پخش</button>
           <button class="btn" type="button" id="srcMyList" hidden></button>
           <button class="btn" type="button" id="srcBatch" hidden></button>
         </div>
+        <p class="hint" id="srcOther" hidden></p>
         <p class="note-box info" id="srcNote" style="margin:16px 0" hidden></p>
         <div class="src-grid" id="srcGrid"></div>
         <div class="pick-bar" id="pickBar" hidden><span id="pickTxt"></span><span class="btn-row"><button class="btn primary" type="button" id="pickPlay">▶ پخش به همین ترتیب</button><button class="btn ghost" type="button" id="pickClear">پاک کردن انتخاب</button><button class="btn ghost" type="button" id="pickCancel">لغو</button></span></div>
@@ -1267,7 +1270,7 @@ body.noscroll{overflow:hidden}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۵</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۶</p>
     </section>
 
 </main>
@@ -1304,7 +1307,7 @@ body.noscroll{overflow:hidden}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=15"></script>
+<script src="packs.js?v=16"></script>
 <script>
 (function(){
 'use strict';
@@ -1892,17 +1895,17 @@ function qaSave(next){
 document.addEventListener('click',e=>{if(e.target.closest('[data-quickadd]')){e.preventDefault();quickAdd()}});
 /* phone "more" menu */
 document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return;
-  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg>مسیر درسی</button><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg>کتابخانه</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M10 17.5v-5l4.5-1v5"/><circle cx="9" cy="17.5" r="1.3"/><circle cx="13.5" cy="16.5" r="1.3"/></svg>منابع من</button><button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>آهنگ‌ها</button><button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg>یوتیوب من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
+  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg>مسیر درسی</button><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg>کتابخانه</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M9.5 12.5h6M9.5 16h4"/></svg>متن‌ها و PDF</button><button type="button" data-go="listen"><svg class="i" viewBox="0 0 24 24"><path d="M4.5 13.5a7.5 7.5 0 0 1 15 0"/><rect x="3" y="13" width="4" height="7" rx="1.5"/><rect x="17" y="13" width="4" height="7" rx="1.5"/></svg>فایل‌های صوتی</button><button type="button" data-go="watch"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/></svg>عکس و ویدیو</button><button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>آهنگ‌ها</button><button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg>یوتیوب من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','course','review','dialogs','quiz','library','manage','sources','songs','youtube','share','settings'];
+const VIEWS=['today','course','review','dialogs','quiz','library','manage','sources','listen','watch','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
-  if(currentView==='sources'&&v!=='sources'){const au=$('#srcAudio');if(au&&!(playlist&&!au.paused))au.pause();const sb=$('#selBar');if(sb)sb.hidden=true}
+  if(inSrcView()&&v!==currentView){const au=$('#srcAudio');if(au&&!(playlist&&!au.paused))au.pause();const sb=$('#selBar');if(sb)sb.hidden=true}
   currentView=v;document.documentElement.dataset.view=v;if(sheetOpen())closeSheet();
-  VIEWS.forEach(x=>$('#v-'+x).hidden=x!==v);
+  const sv=VIEW_SEC[v]?'sources':v;VIEWS.forEach(x=>{const el=$('#v-'+x);if(el)el.hidden=x!==sv});
   $$('[data-go]').forEach(b=>{if(b.closest('.nav,.bottom-nav')){if(b.dataset.go===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')}});
   const lk=(v==='dialogs'||(v==='quiz'&&!qz))?lockOf(v):null;applyLock(v,lk);
   if(v==='today')renderToday();
@@ -1912,7 +1915,7 @@ function showView(v,noHash){
   if(v==='library')renderLibrary();
   if(v==='manage')renderManage();
   if(v==='settings')renderSettings();
-  if(v==='sources')renderSources();
+  if(VIEW_SEC[v])renderSources();
   if(v==='songs')renderSongs();
   if(v==='youtube')renderYoutube();
   if(v==='share')renderShare();
@@ -1921,7 +1924,7 @@ function showView(v,noHash){
   window.scrollTo(0,0);
 }
 const rerender=()=>{refreshBadges();if(currentView==='today')renderToday();else if(currentView==='library')renderLibrary();else if(currentView==='manage')renderList();else if(currentView==='review'&&!ses)renderReviewIdle()};
-document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){e.preventDefault();if(g.dataset.go==='sources'&&curRec&&(curRec.song||curRec.kind==='yt'))openId=null;showView(g.dataset.go)}});
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){e.preventDefault();const go=g.dataset.go;if(VIEW_SEC[go]&&openId&&curRec&&curRec.id===openId&&(curRec.song||curRec.kind==='yt'||SEC_VIEW[SEC_OF[curRec.kind]]!==go)){openId=null;playlist=null}showView(g.dataset.go)}});
 function bindSeg(el,onChange){el.addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b||!el.contains(b))return;setSeg(el,b.dataset.v);onChange&&onChange(b.dataset.v)})}
 function setSeg(el,v){$$('button[data-v]',el).forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===v)))}
 const segVal=el=>{const b=$('button[aria-pressed="true"]',el);return b?b.dataset.v:''};
@@ -2749,21 +2752,30 @@ const idbAll=s=>idbDo(s,'readonly',st=>st.getAll());
 async function askPersist(){try{if(navigator.storage&&navigator.storage.persist&&!(await navigator.storage.persisted()))await navigator.storage.persist()}catch(e){}}
 
 /* ---------- small helpers ---------- */
-const SRC_KIND_FA={pdf:'PDF',image:'عکس',audio:'صوتی',text:'متن',yt:'یوتیوب'};
+const SRC_KIND_FA={pdf:'PDF',image:'عکس',audio:'صوتی',video:'ویدیو',text:'متن',yt:'یوتیوب'};
+const isAV=r=>!!r&&(r.kind==='audio'||r.kind==='video');
+/* three sections: texts (PDF, text), listening (audio), watching (photos, video) */
+const SEC_OF={pdf:'doc',text:'doc',audio:'audio',video:'visual',image:'visual'};
+const SEC_VIEW={doc:'sources',audio:'listen',visual:'watch'},VIEW_SEC={sources:'doc',listen:'audio',watch:'visual'};
+const SEC_NAME={doc:'متن‌ها و PDF',audio:'فایل‌های صوتی',visual:'عکس و ویدیو'};
+const inSrcView=()=>currentView==='sources'||currentView==='listen'||currentView==='watch';
+let srcSec='doc';
 const SRC_KIND_ICON={
   pdf:'<path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5M9.5 13h6M9.5 16.5h4"/>',
   image:'<rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-4.5 3.5 3 3-2.5 4.5 4"/>',
   audio:'<path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/>',
-  text:'<path d="M5 5.5h14M5 10h14M5 14.5h14M5 19h9"/>'};
+  text:'<path d="M5 5.5h14M5 10h14M5 14.5h14M5 19h9"/>',
+  video:'<rect x="3" y="5.5" width="13" height="13" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>'};
 const fmtSize=n=>n>=1048576?faNum(Math.round(n/104857.6)/10)+' مگابایت':faNum(Math.max(1,Math.round(n/1024)))+' کیلوبایت';
 const fmtTime=s=>{s=Math.max(0,Math.floor(s||0));const m=Math.floor(s/60),x=s%60;return m+':'+String(x).padStart(2,'0')};
 function tidyText(s){return String(s||'').replace(/\r/g,'').replace(/([A-Za-zÀ-ÿ])-\n([a-zà-ÿ])/g,'$1$2').replace(/[ \t ]+/g,' ').replace(/ *\n */g,'\n').replace(/\n{3,}/g,'\n\n').trim()}
-const extOf=t=>({'audio/mpeg':'mp3','audio/mp3':'mp3','audio/mp4':'m4a','audio/x-m4a':'m4a','audio/aac':'aac','audio/wav':'wav','audio/x-wav':'wav','audio/wave':'wav','audio/ogg':'ogg','audio/opus':'opus','audio/webm':'webm','image/jpeg':'jpg','image/png':'png','image/webp':'webp','application/pdf':'pdf'})[t]||'bin';
+const extOf=t=>({'audio/mpeg':'mp3','audio/mp3':'mp3','audio/mp4':'m4a','audio/x-m4a':'m4a','audio/aac':'aac','audio/wav':'wav','audio/x-wav':'wav','audio/wave':'wav','audio/ogg':'ogg','audio/opus':'opus','audio/webm':'webm','image/jpeg':'jpg','image/png':'png','image/webp':'webp','application/pdf':'pdf','video/mp4':'mp4','video/quicktime':'mov','video/webm':'webm','video/x-matroska':'mkv','video/3gpp':'3gp'})[t]||'bin';
 function kindOf(f){const t=(f.type||'').toLowerCase(),n=(f.name||'').toLowerCase();
   if(t==='application/pdf'||n.endsWith('.pdf'))return'pdf';if(t.startsWith('image/'))return'image';
+  if(t.startsWith('video/')||/\.(mp4|mov|m4v|mkv|3gp)$/.test(n))return'video';
   if(t.startsWith('audio/')||/\.(mp3|m4a|wav|ogg|opus|aac|webm)$/.test(n))return'audio';if(t.startsWith('text/')||n.endsWith('.txt'))return'text';return''}
 const baseName=n=>String(n||'').replace(/\.[a-z0-9]{2,5}$/i,'').replace(/[_]+/g,' ').trim().slice(0,90)||'بدون نام';
-function srcText(r){if(r.song&&r.text)return songText(r);const sg=r.segs||[];if((r.kind==='audio'||r.kind==='yt')&&sg.length)return sg.map(s=>s.t).join('\n');return r.text||''}
+function srcText(r){if(r.song&&r.text)return songText(r);const sg=r.segs||[];if((isAV(r)||r.kind==='yt')&&sg.length)return sg.map(s=>s.t).join('\n');return r.text||''}
 /* song lyrics with the Persian translation under each line (translation lines follow the lyric lines in order) */
 function songText(r){const tr=String((r.song&&r.song.tr)||'').split('\n').map(x=>x.trim()).filter(Boolean);if(!tr.length)return r.text||'';let j=0;
   return String(r.text||'').split('\n').map(l=>l.trim()&&j<tr.length?l+'\n'+tr[j++]:l).join('\n')}
@@ -2775,7 +2787,7 @@ let srcSyncTimer=null;function scheduleSrcSync(){if(!ghReady()||!cfg.gh.auto)ret
 const jobs=new Map();
 function jobUI(id,title){const el=document.createElement('div');el.className='job panel';el.id='job-'+id;el.innerHTML=`<div class="job-top"><b class="job-t"></b><span class="hint job-s"></span></div><div class="bar"><span></span></div>`;$('.job-t',el).textContent=title;$('#srcJobs').prepend(el);return{set(msg,p){$('.job-s',el).textContent=msg;if(p!=null)$('.bar span',el).style.width=Math.round(Math.max(0,Math.min(1,p))*100)+'%'},done(){el.remove()},fail(msg){el.classList.add('bad');$('.job-s',el).textContent=msg;$('.bar',el).remove();setTimeout(()=>el.remove(),9000)}}}
 async function importFiles(files){
-  const lang=segVal($('#srcLang'))||L();askPersist();
+  const lang=segVal($('#srcLang'))||L();askPersist();const moved={};
   for(const f of files){
     const kind=kindOf(f);if(!kind){toast('نوع فایل «'+f.name+'» پشتیبانی نمی‌شود.',4000);continue}
     const ui=jobUI(uid(),f.name);
@@ -2783,12 +2795,15 @@ async function importFiles(files){
       let r=null;
       if(kind==='pdf')r=await importPdf(f,lang,ui);
       else if(kind==='image')r=await importImage(f,lang,ui);
-      else if(kind==='audio')r=await importAudio(f,lang,ui);
+      else if(kind==='audio'||kind==='video')r=await importAudio(f,lang,ui,kind);
       else{r=newRec('text',baseName(f.name),lang);r.text=tidyText(await f.text());await saveRec(r)}
       ui.done();await afterImport(r).catch(()=>{});
+      if(r&&SEC_OF[r.kind]&&SEC_OF[r.kind]!==srcSec)moved[SEC_OF[r.kind]]=(moved[SEC_OF[r.kind]]||[]).concat(r.title);
     }catch(e){ui.fail(e.message||'وارد کردن ناموفق بود.')}
     renderSources();
   }
+  const mv=Object.entries(moved);
+  if(mv.length)toast(mv.map(([k,t])=>(t.length===1?'«'+t[0]+'»':faNum(t.length)+' فایل')+' در بخش «'+SEC_NAME[k]+'»').join(' و ')+' گذاشته شد.',6000);
 }
 async function storeMedia(r,blob,name){const id=uid();await idbPut('media',{id,blob,type:blob.type||'application/octet-stream'});r.media={id,type:blob.type||'',size:blob.size,name:name||'',up:0}}
 
@@ -2903,13 +2918,12 @@ async function importImage(f,lang,ui){
   if(!text)toast('متنی در این عکس پیدا نشد. عکس واضح‌تر و صاف‌تر بهتر خوانده می‌شود.',5000);
   return r;
 }
-async function importAudio(f,lang,ui){
-  ui.set('ذخیرهٔ فایل صوتی…',0.3);
-  const r=newRec('audio',baseName(f.name),lang);
-  await storeMedia(r,f.type?f:new Blob([f],{type:'audio/mpeg'}),f.name);
+async function importAudio(f,lang,ui,kind){
+  ui.set(kind==='video'?'ذخیرهٔ ویدیو…':'ذخیرهٔ فایل صوتی…',0.3);
+  const r=newRec(kind==='video'?'video':'audio',baseName(f.name),lang);
+  await storeMedia(r,f.type?f:new Blob([f],{type:kind==='video'?'video/mp4':'audio/mpeg'}),f.name);
   try{const d=await audioDuration(f);if(d)r.info.dur=d}catch(e){}
-  await saveRec(r);
-  if(f.size>MEDIA_SYNC_MAX)toast('این فایل بزرگ‌تر از ۶۰۰ مگابایت است و فقط روی همین دستگاه می‌ماند؛ متن آن همگام می‌شود.',6000);
+  await saveRec(r);setTimeout(()=>{if(f.size>MEDIA_SYNC_MAX)toast("این فایل بزرگ‌تر از ۶۰۰ مگابایت است و فقط روی همین دستگاه می‌ماند؛ متن آن همگام می‌شود.",6000)},0);return r;
 }
 function audioDuration(blob){return new Promise(res=>{const a=new Audio();const u=URL.createObjectURL(blob);a.preload='metadata';a.onloadedmetadata=()=>{res(isFinite(a.duration)?a.duration:0);URL.revokeObjectURL(u)};a.onerror=()=>{res(0);URL.revokeObjectURL(u)};a.src=u})}
 
@@ -2947,7 +2961,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=15',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=16',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -2955,7 +2969,7 @@ async function transcribe(r,ui){
         else if(m.type==='device')pr.note(m.device==='webgpu'?'با کارت گرافیک (سریع)':'با پردازنده')
         else if(m.type==='note')pr.note('روش دیگری امتحان می‌شود…')
         else if(m.type==='ver')asrVer=m.v
-        else if(m.type==='part'){r.segs=r.segs.concat(m.segs);pr.set('بخش '+faNum(m.i+1)+' از '+faNum(m.n),0.25+0.75*(m.i+1)/m.n);if(currentView==='sources'&&openId===r.id)renderSrcBody(r)}
+        else if(m.type==='part'){r.segs=r.segs.concat(m.segs);pr.set('بخش '+faNum(m.i+1)+' از '+faNum(m.n),0.25+0.75*(m.i+1)/m.n);if(inSrcView()&&openId===r.id)renderSrcBody(r)}
         else if(m.type==='done')res();
         else if(m.type==='error')rej(new Error(asrErr(m.msg)));
       };
@@ -2970,7 +2984,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 15، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 16، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -3050,7 +3064,7 @@ async function syncSources(manual){
     }else if(ent)cfg.srcSha=ent.sha;
     cfg.srcDirty=false;saveCfg();
     if(changedLocal)queueSrcDialogs();
-    if((changedLocal||mediaChanged)&&currentView==='sources'){if(openId)renderSourceOpen();else renderSources()}
+    if((changedLocal||mediaChanged)&&inSrcView()){if(openId)renderSourceOpen();else renderSources()}
     if(changedLocal&&currentView==='youtube')renderYoutube();
   }catch(e){srcSyncNote('');if(manual)toast(e.message||'همگام‌سازی منابع ناموفق بود.',5000)}
   finally{srcSyncing=false}
@@ -3078,21 +3092,27 @@ function seriesMap(list){
   return out;
 }
 let TOPIX=null;
-function topicIndex(){
-  if(TOPIX)return TOPIX;
-  const book=PACKS.filter(p=>p.lang==='nl'&&p.series&&p.num);
+/* topics come from the book themes (De Opmaat) when present, otherwise from the course lessons,
+   otherwise from the ordinary word packs — always in the language of the source */
+function topicIndex(lang){
+  lang=lang==='en'?'en':'nl';const key=lang+':'+PACKS.length;if(TOPIX&&TOPIX.key===key)return TOPIX;
+  let packs,label;
+  const book=PACKS.filter(p=>p.lang==='nl'&&p.series==='De Opmaat'&&p.num);
+  const course=PACKS.filter(p=>p.lang===lang&&/^ar-/.test(p.id));
   const skip=new Set(['nl-klein','nl-ww','nl-ww2','nl-getal','nl-bijv','nl-vals','nl-schrijven','nl-spreken','nl-praten','nl-groet']);
-  const packs=book.length?book:PACKS.filter(p=>p.lang==='nl'&&!skip.has(p.id)&&p.kind!=='phrase');
-  const topics=packs.map(p=>({id:p.id,name:p.num?'Thema '+p.num+' · '+p.title:p.title,num:p.num||0}));
+  if(lang==='nl'&&book.length){packs=book;label=p=>({name:'Thema '+p.num+': '+p.title,tag:'Thema '+p.num,num:p.num})}
+  else if(course.length){packs=course;label=(p,i)=>({name:p.title,tag:'درس '+faNum(i+1),num:i+1})}
+  else{packs=PACKS.filter(p=>p.lang===lang&&!skip.has(p.id)&&p.kind!=='phrase'&&!/^(op|ar|cu)-/.test(p.id));label=(p,i)=>({name:p.title,tag:p.title,num:0})}
+  const topics=packs.map((p,i)=>Object.assign({id:p.id},label(p,i)));
   const wmap=new Map();
   packs.forEach((p,ti)=>packItems(p).forEach(it=>{if(it.type!=='word')return;const forms=[it.text,it.plural];if(it.verb)['ik','hij','pastSg','part'].forEach(k=>forms.push(it.verb[k]));
     forms.forEach(f=>{f=norm(f||'');if(f.length<4||/\s/.test(f)||SMALL_W.has(f))return;const a=wmap.get(f)||new Set();a.add(ti);wmap.set(f,a)})}));
-  return TOPIX={topics,wmap};
+  return TOPIX={key,topics,wmap};
 }
 const _topicCache=new Map();
 function topicOf(r){
-  const key=r.id+':'+r.updated;if(_topicCache.has(key))return _topicCache.get(key);
-  const {topics,wmap}=topicIndex();const text=r.title+' '+srcText(r);const seen=new Set();const score=new Array(topics.length).fill(0);
+  const key=r.id+':'+r.updated+':'+PACKS.length;if(_topicCache.has(key))return _topicCache.get(key);
+  const {topics,wmap}=topicIndex(r.lang);const text=r.title+' '+srcText(r);const seen=new Set();const score=new Array(topics.length).fill(0);
   (norm(text).match(/[a-zà-ÿ'’-]{4,}/g)||[]).forEach(w=>{if(seen.has(w))return;seen.add(w);const t=wmap.get(w);if(!t||t.size>3)return;t.forEach(i=>score[i]+=1/t.size)});
   let best=-1,bs=0,second=0;score.forEach((v,i)=>{if(v>bs){second=bs;bs=v;best=i}else if(v>second)second=v});
   const enough=srcText(r).length>40?(bs>=2&&bs>=second*1.25):bs>=0.99;
@@ -3100,50 +3120,75 @@ function topicOf(r){
 }
 const GROUP_FA={series:'مجموعه',topic:'موضوع',kind:'نوع'};
 let srcQuery='';
+const SEC_TXT={
+  doc:{t:'متن‌ها و PDF',s:'PDF و متن‌های خودتان. متنش بیرون کشیده می‌شود؛ می‌خوانید و واژه‌هایش را کارت می‌کنید.',d:'PDF یا فایل متنی را اینجا بکشید یا برای انتخاب بزنید',h:'هر فایل دیگری هم بدهید، خودکار به بخش درستش می‌رود: صدا به «فایل‌های صوتی»، عکس و ویدیو به «عکس و ویدیو».',acc:'.pdf,application/pdf,.txt,text/plain'},
+  audio:{t:'فایل‌های صوتی',s:'گوش دادن به ترتیب، با متن جمله‌به‌جمله. فایل‌ها خودکار دسته‌بندی و به ترتیب شماره مرتب می‌شوند.',d:'فایل‌های صوتی را اینجا بکشید یا برای انتخاب بزنید',h:'MP3، M4A، WAV، OGG. چند فایل را با هم بدهید.',acc:'audio/*,.mp3,.m4a,.wav,.ogg,.opus,.aac'},
+  visual:{t:'عکس و ویدیو',s:'دیدن به ترتیب: ویدیوها پشت سر هم پخش می‌شوند و عکس‌های هر دسته به صورت نمایش پیاپی باز می‌شوند.',d:'عکس یا ویدیو را اینجا بکشید یا برای انتخاب بزنید',h:'JPG، PNG، MP4، MOV. متن عکس‌ها خودکار خوانده می‌شود و برای ویدیو می‌توانید متن گفتارش را بسازید.',acc:'image/*,video/*,.mp4,.mov,.m4v'}};
 async function renderSources(){
-  setSeg($('#srcLang'),L());setSeg($('#asrModel'),cfg.asr==='base'?'base':'small');setSeg($('#srcGroup'),cfg.srcGroup||'series');
+  if(VIEW_SEC[currentView])srcSec=VIEW_SEC[currentView];
+  const T=SEC_TXT[srcSec];$('#srcSecTitle').textContent=T.t;$('#srcSecSub').textContent=T.s;$('#srcDropT').textContent=T.d;$('#srcDropH').textContent=T.h;$('#srcFile').accept=T.acc+',.pdf,application/pdf,image/*,audio/*,video/*,.txt';
+  $('#asrModelWrap').hidden=srcSec==='doc';$('#srcPaste').hidden=srcSec!=='doc';
+  if(cfg.srcGroupV!==2){cfg.srcGroup='auto';cfg.srcGroupV=2;saveCfg()}
+  setSeg($('#srcLang'),L());setSeg($('#asrModel'),cfg.asr==='base'?'base':'small');setSeg($('#srcGroup'),cfg.srcGroup||'auto');
   $('#srcHome').hidden=!!openId;$('#srcOpen').hidden=!openId;srcSyncNote(srcSyncMsg);
   if(openId)return renderSourceOpen();
-  let list=[];try{list=(await idbAll('src')).filter(r=>!r.gone&&r.kind!=='yt'&&!r.song)}catch(e){$('#srcNote').textContent=e.message;$('#srcNote').hidden=false;$('#srcGrid').innerHTML='';return}
+  let all=[];try{all=(await idbAll('src')).filter(r=>!r.gone&&r.kind!=='yt'&&!r.song)}catch(e){$('#srcNote').textContent=e.message;$('#srcNote').hidden=false;$('#srcGrid').innerHTML='';return}
+  const inSec=all.filter(r=>SEC_OF[r.kind]===srcSec);let list=inSec.filter(r=>(r.lang==='en'?'en':'nl')===L());
+  const other=inSec.length-list.length;
   srcCache=list;
   const note=$('#srcNote');
   if(IS_PREVIEW){note.textContent='در نسخهٔ پیش‌نمایش، منابع فقط برای امتحان است و همگام نمی‌شود.';note.hidden=false}
   else if(!ghReady()&&list.length){note.textContent='منابع فقط روی همین دستگاه است. برای دیدنشان روی گوشی، همگام‌سازی را در تنظیمات روشن کنید.';note.hidden=false}
   else note.hidden=true;
   $('#srcTools').hidden=list.length<2;
-  const pending=list.filter(r=>r.kind==='audio'&&!(r.segs||[]).length);
-  const bt=$('#srcBatch');bt.hidden=!pending.length||!!batch;bt.textContent='ساختن متن برای همهٔ فایل‌های صوتی بی‌متن ('+faNum(pending.length)+')';
+  const pending=list.filter(r=>isAV(r)&&!(r.segs||[]).length);
+  const bt=$('#srcBatch');bt.hidden=!pending.length||!!batch;bt.textContent=(srcSec==='visual'?'ساختن متن گفتار برای همهٔ ویدیوهای بی‌متن (':'ساختن متن برای همهٔ فایل‌های صوتی بی‌متن (')+faNum(pending.length)+')';
   const q=norm(srcQuery);if(q)list=list.filter(r=>norm(r.title).includes(q)||norm(srcText(r)).includes(q));
-  if(!list.length){$('#srcGrid').innerHTML=srcCache.length?'<div class="empty panel">چیزی پیدا نشد.</div>':'<div class="empty panel">هنوز منبعی ندارید. یک PDF، عکس یا فایل صوتی بدهید تا شروع کنیم.</div>';return}
-  const mode=cfg.srcGroup||'series';const ser=seriesMap(srcCache);const groups=new Map();
+  const otherL=L()==='en'?'هلندی':'انگلیسی';
+  $('#srcOther').hidden=!other;$('#srcOther').textContent=other?faNum(other)+' مورد '+otherL+' هم در این بخش دارید؛ برای دیدنشان، بالای صفحه زبان را روی '+otherL+' بگذارید.':'';
+  if(!list.length){$('#srcGrid').innerHTML=srcCache.length?'<div class="empty panel">چیزی پیدا نشد.</div>':`<div class="empty panel">${srcSec==='doc'?'هنوز PDF یا متنی ندارید.':srcSec==='audio'?'هنوز فایل صوتی ندارید.':'هنوز عکس یا ویدیویی ندارید.'} فایل را در کادر بالا بکشید.</div>`;return}
+  const mode=['auto','series','topic'].includes(cfg.srcGroup)?cfg.srcGroup:'auto';const ser=seriesMap(srcCache);const groups=new Map();
   list.forEach(r=>{let g,ord=0;
-    if(mode==='topic'){const t=topicOf(r);g=t?t.name:'';ord=t?(t.num||1):9999}
-    else if(mode==='kind'){g={audio:'فایل‌های صوتی',pdf:'PDFها',image:'عکس‌ها',text:'متن‌ها'}[r.kind];ord={audio:1,pdf:2,image:3,text:4}[r.kind]}
-    else{g=ser.get(r.id)||'';ord=0}
-    if(!g){g=mode==='topic'?'موضوع نامشخص (اول متنش را بسازید)':'منابع دیگر';ord=99999}
+    const t=mode!=='series'?topicOf(r):null,s=mode!=='topic'?ser.get(r.id):'';
+    if(mode==='topic'){g=t?t.name:'';ord=t?(t.num||1):9999}
+    else if(mode==='series'){g=s||'';ord=0}
+    else if(s){g=s;ord=0}else if(t){g=t.name;ord=1000+(t.num||1)}
+    if(!g){g=mode==='topic'?'موضوع نامشخص'+(isAV(r)?' (اول متنش را بسازید)':''):'سایر';ord=99999}
     if(!groups.has(g))groups.set(g,{ord,items:[]});groups.get(g).items.push(r)});
   const byNum=(a,b)=>{const x=trackNum(a.title),y=trackNum(b.title);if(x!=null&&y!=null&&x!==y)return x-y;return a.title.localeCompare(b.title,'nl',{numeric:true})};
-  const gs=Array.from(groups.entries()).sort((a,b)=>a[1].ord-b[1].ord||(mode==='series'?b[1].items.length-a[1].items.length:0)||a[0].localeCompare(b[0],'nl',{numeric:true}));
+  const gs=Array.from(groups.entries()).sort((a,b)=>a[1].ord-b[1].ord||a[0].localeCompare(b[0],'nl',{numeric:true}));
   gs.forEach(([,g])=>g.items.sort(byNum));
-  srcGroups=gs.map(([name,g])=>({name,ids:g.items.filter(r=>r.kind==='audio').map(r=>r.id)}));
+  srcGroups=gs.map(([name,g])=>({name,ids:g.items.filter(isAV).map(r=>r.id),imgs:g.items.filter(r=>r.kind==='image').map(r=>r.id)}));
   const allAudio=srcGroups.reduce((n,g)=>n+g.ids.length,0);$('#srcPlayAll').hidden=allAudio<2||!!pick;$('#srcPick').hidden=allAudio<2||!!pick;
-  const my=(cfg.myList||[]).filter(id=>srcCache.some(r=>r.id===id&&r.kind==='audio'));$('#srcMyList').hidden=!my.length||!!pick;$('#srcMyList').textContent='▶ فهرست پخش من ('+faNum(my.length)+')';
+  $('#srcPlayAll').textContent=srcSec==='visual'?'▶ پخش همهٔ ویدیوها به ترتیب':'▶ پخش همهٔ فایل‌های صوتی به ترتیب';
+  const my=(cfg.myList||[]).filter(id=>srcCache.some(r=>r.id===id&&isAV(r)));$('#srcMyList').hidden=!my.length||!!pick;$('#srcMyList').textContent='▶ فهرست پخش من ('+faNum(my.length)+')';
   renderPickBar();
-  $('#srcGrid').innerHTML=gs.map(([name,g],gi)=>`<section class="src-group"><h2 class="src-gh"><span>${esc(name)}</span><span class="hint num">${faNum(g.items.length)}</span>${srcGroups[gi].ids.length>1?`<button class="btn sm ghost gh-play" type="button" data-plgroup="${gi}">▶ پخش پیاپی</button>`:''}</h2><div class="src-cards">${g.items.map(cardHTML).join('')}</div></section>`).join('');
+  $('#srcGrid').innerHTML=gs.map(([name,g],gi)=>`<section class="src-group"><h2 class="src-gh"><span>${esc(name)}</span><span class="hint num">${faNum(g.items.length)}</span>${srcGroups[gi].ids.length>1?`<button class="btn sm ghost gh-play" type="button" data-plgroup="${gi}">▶ پخش پیاپی</button>`:''}${srcGroups[gi].imgs.length>1?`<button class="btn sm ghost gh-play" type="button" data-slgroup="${gi}">▶ نمایش پیاپی</button>`:''}</h2><div class="src-cards">${g.items.map(cardHTML).join('')}</div></section>`).join('');
+  if(srcSec==='visual')srcThumbs();
 }
 function cardHTML(r){
   const pn=pick?pick.indexOf(r.id):-1;
-  if(pick)return cardInner(r).replace('<button type="button" class="src-card"',`<button type="button" class="src-card${r.kind==='audio'?' pickable':' dim'}${pn>=0?' picked':''}" aria-pressed="${pn>=0}"`).replace('<span class="src-ico',pn>=0?`<span class="pick-n num">${faNum(pn+1)}</span><span class="src-ico`:'<span class="src-ico');
+  if(pick)return cardInner(r).replace('<button type="button" class="src-card"',`<button type="button" class="src-card${isAV(r)?' pickable':' dim'}${pn>=0?' picked':''}" aria-pressed="${pn>=0}"`).replace('<span class="src-ico',pn>=0?`<span class="pick-n num">${faNum(pn+1)}</span><span class="src-ico`:'<span class="src-ico');
   return cardInner(r);
 }
 function cardInner(r){
   const words=wordsOf(srcText(r)).length;const local=r.media&&!r.media.up;
-  const status=r.kind==='audio'&&!(r.segs||[]).length?(batch&&batch.cur===r.id?'<span class="pill new">در حال ساختن متن…</span>':'<span class="pill warn">هنوز متن ندارد</span>'):'';
+  const status=isAV(r)&&!(r.segs||[]).length?(batch&&batch.cur===r.id?'<span class="pill new">در حال ساختن متن…</span>':'<span class="pill warn">هنوز متن ندارد</span>'):'';
   const tp=(cfg.srcGroup||'series')!=='topic'?topicOf(r):null;
-  const meta=[SRC_KIND_FA[r.kind],r.lang==='en'?'انگلیسی':'هلندی',r.kind==='audio'&&r.info&&r.info.dur?fmtTime(r.info.dur):'',r.kind==='pdf'&&r.info&&r.info.pages?faNum(r.info.pages)+' صفحه':'',words?faNum(words)+' واژه':''].filter(Boolean).join('، ');
-  return `<button type="button" class="src-card" data-src="${esc(r.id)}"><span class="src-ico k-${r.kind}"><svg class="i" viewBox="0 0 24 24">${SRC_KIND_ICON[r.kind]}</svg></span><span class="src-c"><b class="src-n">${esc(r.title)}</b><span class="hint">${esc(meta)}</span><span class="src-tags">${status}${tp?`<span class="pill">${esc(tp.num?'Thema '+tp.num:tp.name)}</span>`:''}${ghReady()&&local?'<span class="pill">هنوز در GitHub نیست</span>':''}</span></span></button>`;
+  const meta=[SRC_KIND_FA[r.kind],r.lang==='en'?'انگلیسی':'هلندی',isAV(r)&&r.info&&r.info.dur?fmtTime(r.info.dur):'',r.kind==='pdf'&&r.info&&r.info.pages?faNum(r.info.pages)+' صفحه':'',words?faNum(words)+' واژه':''].filter(Boolean).join('، ');
+  return `<button type="button" class="src-card" data-src="${esc(r.id)}"><span class="src-ico k-${r.kind}"><svg class="i" viewBox="0 0 24 24">${SRC_KIND_ICON[r.kind]}</svg></span><span class="src-c"><b class="src-n">${esc(r.title)}</b><span class="hint">${esc(meta)}</span><span class="src-tags">${status}${tp?`<span class="pill">${esc(tp.tag||tp.name)}</span>`:''}${ghReady()&&local?'<span class="pill">هنوز در GitHub نیست</span>':''}</span></span></button>`;
 }
 bindSeg($('#srcGroup'),v=>{cfg.srcGroup=v;saveCfg();renderSources()});
+/* small previews of photos (only those already on this device) */
+let thumbUrls=[];
+async function srcThumbs(){
+  thumbUrls.forEach(u=>URL.revokeObjectURL(u));thumbUrls=[];
+  for(const el of $$('#srcGrid .src-card')){const r=srcCache.find(x=>x.id===el.dataset.src);if(!r||r.kind!=='image'||!r.media)continue;
+    const b=await localMedia(r).catch(()=>null);if(!b)continue;const u=URL.createObjectURL(b);thumbUrls.push(u);
+    const ic=$('.src-ico',el);if(ic){ic.classList.add('thumb');ic.innerHTML='';ic.style.backgroundImage=`url("${u}")`}}
+}
+$('#srcGrid').addEventListener('click',async e=>{const b=e.target.closest('[data-slgroup]');if(!b)return;e.stopPropagation();const g=srcGroups[+b.dataset.slgroup];if(!g)return;
+  const recs=g.imgs.map(id=>srcCache.find(r=>r.id===id)).filter(Boolean);openGallery(g.name,recs)},true);
 /* ---------- playing files one after another ---------- */
 let srcGroups=[],playlist=null,autoplayNext=false;
 function startPlaylist(ids,name){if(!ids.length)return;playlist={ids:ids.slice(),name};autoplayNext=true;openId=ids[0];renderSources();window.scrollTo(0,0)}
@@ -3153,31 +3198,31 @@ $('#srcGrid').addEventListener('click',e=>{const b=e.target.closest('[data-plgro
 /* the listener picks files; they play in the order they were picked */
 let pick=null;
 function renderPickBar(){const bar=$('#pickBar');if(!bar)return;bar.hidden=!pick;if(!pick)return;$('#pickTxt').textContent=pick.length?faNum(pick.length)+' فایل انتخاب شد. به همان ترتیبی که زدید پخش می‌شوند.':'روی فایل‌های صوتی بزنید تا به ترتیب انتخاب شوند.';$('#pickPlay').disabled=!pick.length}
-$('#srcPick').addEventListener('click',()=>{pick=(cfg.myList||[]).filter(id=>srcCache.some(r=>r.id===id&&r.kind==='audio'));renderSources()});
+$('#srcPick').addEventListener('click',()=>{pick=(cfg.myList||[]).filter(id=>srcCache.some(r=>r.id===id&&isAV(r)));renderSources()});
 $('#pickCancel').addEventListener('click',()=>{pick=null;renderSources()});
 $('#pickClear').addEventListener('click',()=>{pick=[];renderSources()});
 $('#pickPlay').addEventListener('click',()=>{if(!pick||!pick.length)return;cfg.myList=pick.slice();saveCfg();const ids=pick.slice();pick=null;startPlaylist(ids,'فهرست پخش من')});
-$('#srcMyList').addEventListener('click',()=>{const ids=(cfg.myList||[]).filter(id=>srcCache.some(r=>r.id===id&&r.kind==='audio'));startPlaylist(ids,'فهرست پخش من')});
-$('#srcGrid').addEventListener('click',e=>{if(!pick)return;const c=e.target.closest('[data-src]');if(!c)return;e.stopPropagation();e.preventDefault();const r=srcCache.find(x=>x.id===c.dataset.src);if(!r||r.kind!=='audio')return;const i=pick.indexOf(r.id);if(i>=0)pick.splice(i,1);else pick.push(r.id);renderSources()},true);
-$('#srcPlayAll').addEventListener('click',()=>{const ids=srcGroups.flatMap(g=>g.ids);startPlaylist(ids,'همهٔ فایل‌های صوتی')});
+$('#srcMyList').addEventListener('click',()=>{const ids=(cfg.myList||[]).filter(id=>srcCache.some(r=>r.id===id&&isAV(r)));startPlaylist(ids,'فهرست پخش من')});
+$('#srcGrid').addEventListener('click',e=>{if(!pick)return;const c=e.target.closest('[data-src]');if(!c)return;e.stopPropagation();e.preventDefault();const r=srcCache.find(x=>x.id===c.dataset.src);if(!isAV(r))return;const i=pick.indexOf(r.id);if(i>=0)pick.splice(i,1);else pick.push(r.id);renderSources()},true);
+$('#srcPlayAll').addEventListener('click',()=>{const ids=srcGroups.flatMap(g=>g.ids);startPlaylist(ids,srcSec==='visual'?'همهٔ ویدیوها':'همهٔ فایل‌های صوتی')});
 let srcQT=null;$('#srcQ').addEventListener('input',e=>{clearTimeout(srcQT);srcQT=setTimeout(()=>{srcQuery=e.target.value;renderSources()},200)});
 /* transcribe every audio source that has no text yet, one after another */
 let batch=null;
 $('#srcBatch').addEventListener('click',async()=>{
   if(batch||asrBusy)return;
-  const list=(await idbAll('src')).filter(r=>!r.gone&&r.kind==='audio'&&!(r.segs||[]).length).sort((a,b)=>(trackNum(a.title)||0)-(trackNum(b.title)||0));
+  const list=(await idbAll('src')).filter(r=>!r.gone&&isAV(r)&&!r.song&&SEC_OF[r.kind]===srcSec&&(r.lang==='en'?'en':'nl')===L()&&!(r.segs||[]).length).sort((a,b)=>(trackNum(a.title)||0)-(trackNum(b.title)||0));
   if(!list.length)return;
   if(innerWidth<760&&!await ask({title:'ساختن متن روی گوشی؟',html:'<p style="margin:0">این کار روی گوشی کند است. بهتر است روی لپ‌تاپ انجام دهید؛ متن‌ها خودکار به گوشی می‌رسند.</p>',ok:'باز هم انجام بده'}))return;
   batch={stop:false,cur:null};renderSources();
   const head=jobUI('batch','ساختن متن برای '+faNum(list.length)+' فایل');const stopB=document.createElement('button');stopB.className='btn sm ghost';stopB.textContent='توقف';stopB.onclick=()=>{batch.stop=true;stopAsr();head.fail('متوقف شد.')};$('#job-batch .job-top').appendChild(stopB);
   let ok=0;
   for(let i=0;i<list.length&&!batch.stop;i++){
-    const r=list[i];batch.cur=r.id;head.set('فایل '+faNum(i+1)+' از '+faNum(list.length)+': '+r.title,i/list.length);if(currentView==='sources'&&!openId)renderSources();
+    const r=list[i];batch.cur=r.id;head.set('فایل '+faNum(i+1)+' از '+faNum(list.length)+': '+r.title,i/list.length);if(inSrcView()&&!openId)renderSources();
     const ui={set:(m,p)=>head.set('فایل '+faNum(i+1)+' از '+faNum(list.length)+' – '+m,(i+(p||0))/list.length),note:()=>{},done:()=>{},fail:()=>{}};
     try{await transcribe(r,ui);ok++}catch(e){if(batch.stop)break;head.fail(e.message);batch=null;renderSources();return}
   }
   const stopped=batch.stop;batch=null;if(!stopped){head.done();toast('متن '+faNum(ok)+' فایل صوتی ساخته شد.',4000)}
-  if(currentView==='sources'&&!openId)renderSources();
+  if(inSrcView()&&!openId)renderSources();
 });
 $('#srcFile').addEventListener('change',e=>{const fs=Array.from(e.target.files||[]);e.target.value='';if(fs.length)importFiles(fs)});
 $('#srcDrop').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#srcFile').click()}});
@@ -3204,8 +3249,8 @@ async function renderSourceOpen(){
   if(!r||r.gone){openId=null;return renderSources()}
   curRec=r;$('#srcHome').hidden=true;$('#srcOpen').hidden=false;
   $('#srcTitle').textContent=r.title;
-  {const nv=r.song?'songs':r.kind==='yt'?'youtube':'sources';$$('.nav [data-go],.bottom-nav [data-go]').forEach(b=>{if(b.dataset.go===nv)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')})}
-  $('#srcBack').innerHTML='&larr; '+(r.song?'آهنگ‌ها':r.kind==='yt'?'یوتیوب من':'همهٔ منابع');
+  {const nv=r.song?'songs':r.kind==='yt'?'youtube':SEC_VIEW[SEC_OF[r.kind]]||'sources';$$('.nav [data-go],.bottom-nav [data-go]').forEach(b=>{if(b.dataset.go===nv)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')})}
+  $('#srcBack').innerHTML='&larr; '+(r.song?'آهنگ‌ها':r.kind==='yt'?'یوتیوب من':SEC_NAME[SEC_OF[r.kind]]||'همهٔ منابع');
   const meta=[`<span class="pill">${r.song?'آهنگ'+(r.song.by?': '+esc(r.song.by):''):SRC_KIND_FA[r.kind]}</span>`,`<span class="pill">${r.lang==='en'?'انگلیسی':'هلندی'}</span>`];
   if(r.info&&r.info.dur)meta.push(`<span class="pill num">${fmtTime(r.info.dur)}</span>`);
   if(r.media)meta.push(`<span class="pill">${fmtSize(r.media.size||0)}</span>`);
@@ -3213,7 +3258,7 @@ async function renderSourceOpen(){
   if(ghReady()&&r.media)meta.push(`<span class="pill${r.media.up?' ok':''}">${r.media.up?'همگام با دستگاه‌های دیگر':r.media.size>MEDIA_SYNC_MAX?'فقط این دستگاه (بیش از ۶۰۰ مگابایت)':(r.media.sent?'در حال فرستادن به GitHub':'در صف همگام‌سازی')}</span>`);
   $('#srcMeta').innerHTML=meta.join('');
   const acts=[];
-  if(r.kind==='audio'&&!(r.song&&r.text))acts.push(`<button class="btn ${(r.segs||[]).length?'':'primary'}" type="button" data-sa="asr">${(r.segs||[]).length?'ساختن دوبارهٔ متن':'ساختن متن از صدا'}</button>`);
+  if(isAV(r)&&!(r.song&&r.text))acts.push(`<button class="btn ${(r.segs||[]).length?'':'primary'}" type="button" data-sa="asr">${(r.segs||[]).length?'ساختن دوبارهٔ متن':'ساختن متن از صدا'}</button>`);
   if(r.kind==='audio')acts.push(`<button class="btn ${r.song?'':'ghost'}" type="button" data-sa="song">${r.song?'ویرایش آهنگ و متنش':'این فایل آهنگ است'}</button>`);
   if(r.kind==='yt')acts.push(`<button class="btn ${srcText(r)?'ghost':'primary'}" type="button" data-sa="yttx">${srcText(r)?'جایگزینی متن ویدیو':'چسباندن متن ویدیو'}</button>`);
   if(r.kind==='pdf'&&r.info&&r.info.scanned&&r.info.scanned.length)acts.push(`<button class="btn primary" type="button" data-sa="ocr">خواندن متن از تصویر ${faNum(r.info.scanned.length)} صفحه</button>`);
@@ -3221,7 +3266,7 @@ async function renderSourceOpen(){
   if(r.kind==='image'&&r.media)acts.push(`<button class="btn ghost" type="button" data-sa="reocr">خواندن دوبارهٔ متن عکس</button>`);
   if(srcText(r))acts.push(`<button class="btn" type="button" data-sa="harvest">واژه‌های آشنای این متن</button>`);
   acts.push(`<button class="btn ghost" type="button" data-sa="edit">ویرایش متن</button>`);
-  if(r.media&&r.kind!=='audio')acts.push(`<button class="btn ghost" type="button" data-sa="orig">فایل اصلی</button>`);
+  if(r.media&&!isAV(r))acts.push(`<button class="btn ghost" type="button" data-sa="orig">فایل اصلی</button>`);
   acts.push(`<button class="btn ghost" type="button" data-sa="rename">نام، دسته و زبان</button><button class="btn ghost danger" type="button" data-sa="del">حذف</button>`);
   $('#srcActs').innerHTML=acts.join('');
   await renderSrcMedia(r);renderSrcBody(r);renderFound(r);
@@ -3230,7 +3275,7 @@ async function renderSrcMedia(r){
   const box=$('#srcMedia');
   if(srcAudioUrl){URL.revokeObjectURL(srcAudioUrl);srcAudioUrl=''}
   if(r.kind==='yt'){box.innerHTML=ytPlayerHTML(r);return}
-  if(r.kind!=='audio'&&r.kind!=='image'){box.innerHTML='';return}
+  if(!isAV(r)&&r.kind!=='image'){box.innerHTML='';return}
   let blob=await localMedia(r);
   if(!blob&&r.media&&r.media.up&&ghReady()){
     const get=async()=>{try{box.innerHTML='<p class="hint" id="dlSt">در حال دریافت فایل از GitHub…</p>';blob=await mediaBlob(r,(i,n)=>{const el=$('#dlSt');if(el&&n>1)el.textContent='در حال دریافت فایل از GitHub: بخش '+faNum(i+1)+' از '+faNum(n)+'…'});if(curRec&&curRec.id===r.id)renderSrcMedia(r)}catch(e){box.innerHTML=`<p class="note-box bad">${esc(e.message)}</p>`}};
@@ -3243,7 +3288,7 @@ async function renderSrcMedia(r){
   const pl=playlistFor(r.id),pi=pl?pl.ids.indexOf(r.id):-1;
   box.innerHTML=`<div class="player panel">
     ${pl&&playlist&&playlist.ids===pl.ids?`<div class="pl-bar"><span><b>پخش پیاپی:</b> ${esc(pl.name)}، فایل ${faNum(pi+1)} از ${faNum(pl.ids.length)}</span><span class="btn-row"><button class="btn sm" type="button" id="plPrevT" ${pi<=0?'disabled':''}>فایل قبلی</button><button class="btn sm" type="button" id="plNextT" ${pi>=pl.ids.length-1?'disabled':''}>فایل بعدی</button><button class="btn sm ghost" type="button" id="plStop">پایان پخش پیاپی</button></span></div>`:''}
-    <audio id="srcAudio" controls preload="metadata"></audio>
+    ${r.kind==='video'?'<video id="srcAudio" class="src-video" controls playsinline preload="metadata"></video>':'<audio id="srcAudio" controls preload="metadata"></audio>'}
     <div class="player-row">
       <label class="check"><input type="checkbox" id="autoNext"><span>بعد از پایان، فایل بعدی همین دسته پخش شود</span></label>
       <div class="seg" id="spdSeg" aria-label="سرعت پخش"><button type="button" data-v="0.6">۰٫۶×</button><button type="button" data-v="0.75">۰٫۷۵×</button><button type="button" data-v="0.9">۰٫۹×</button><button type="button" data-v="1">۱×</button></div>
@@ -3274,7 +3319,7 @@ function mediaSession(r,a){
   const pl=playlistFor(r.id);set('previoustrack',pl?()=>gotoTrack(-1):null);set('nexttrack',pl?()=>gotoTrack(1):null);
 }
 let segIdx=-1,segStop=null,posSaved=0;
-function segsOf(){return curRec&&(curRec.kind==='audio'||curRec.kind==='yt')&&!(curRec.song&&curRec.text)?(curRec.segs||[]):[]}
+function segsOf(){return curRec&&(isAV(curRec)||curRec.kind==='yt')&&!(curRec.song&&curRec.text)?(curRec.segs||[]):[]}
 function onAudioTime(){
   const a=$('#srcAudio');if(!a)return;const t=a.currentTime,sg=segsOf();
   if(segStop!=null&&t>=segStop){if(cfg.segLoop&&segIdx>=0){a.currentTime=sg[segIdx].s;return}a.pause();segStop=null}
@@ -3292,7 +3337,7 @@ let srcShowAll=false;
 function isFaLine(t){const fa=(t.match(/[\u0600-\u06FF]/g)||[]).length,la=(t.match(/[A-Za-zÀ-ÿ]/g)||[]).length;return fa>la}
 function renderSrcBody(r){
   const body=$('#srcBody');
-  if((r.kind==='audio'||r.kind==='yt')&&!(r.song&&r.text)){
+  if((isAV(r)||r.kind==='yt')&&!(r.song&&r.text)){
     const sg=r.segs||[];
     if(!sg.length&&!r.text){body.innerHTML=r.kind==='yt'?YT_TX_HELP:`<div class="empty">هنوز متنی برای این فایل ساخته نشده است. «ساختن متن از صدا» را بزنید؛ بهتر است روی لپ‌تاپ انجام شود و بعد خودکار به گوشی می‌رسد.${r.kind==='audio'?' اگر این فایل آهنگ است، «این فایل آهنگ است» را بزنید و متن آهنگ را بچسبانید.':''}</div>`;return}
     if(sg.length){body.innerHTML=`<p class="hint" style="margin:0 0 10px">روی هر واژه بزنید تا معنی‌اش را ببینید و کارتش کنید. روی زمان بزنید تا ${r.kind==='yt'?'ویدیو از همان‌جا پخش شود':'همان جمله پخش شود'}.</p>`+sg.map((s,k)=>`<div class="sg" data-k="${k}"><button type="button" class="ts num" data-play="${k}">${fmtTime(s.s)}</button><p class="lat rd" dir="ltr">${esc(s.t)}</p><button type="button" class="icon-btn mini" data-addsent="${k}" aria-label="افزودن این جمله به کارت‌ها"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div>`).join('');
@@ -3310,7 +3355,7 @@ function renderSrcBody(r){
   body.innerHTML=`<p class="hint" style="margin:0 0 10px">روی هر واژه بزنید تا معنی‌اش را ببینید و کارتش کنید. برای افزودن یک جمله یا عبارت، آن را انتخاب کنید.</p>`+shown.map(p=>{const pr=!p.h&&nLa(p.t)&&nFa(p.t)?splitPair(p.t):null;return pr?`<p class="lat rd ln${p.gap?' gap':''}" dir="ltr">${esc(pr.t)}<span class="fa-tr" dir="rtl">${esc(pr.fa)}</span></p>`:p.h?`<h3 class="pg-h">${p.h}</h3>`:isFaLine(p.t)?`<p class="rd ln fa-ln${p.gap?' gap':''}" dir="rtl">${esc(p.t)}</p>`:`<p class="lat rd ln${p.gap?' gap':''}" dir="ltr">${esc(p.t)}</p>`}).join('')+(paras.length>LIM&&!srcShowAll?`<div class="btn-row" style="justify-content:center"><button class="btn" type="button" id="srcMore">نمایش بقیهٔ متن (${faNum(paras.length-LIM)} بند)</button></div>`:'');
 }
 $('#srcBack').addEventListener('click',()=>{stopAudio();const back=curRec&&curRec.song?'songs':curRec&&curRec.kind==='yt'?'youtube':'';openId=null;playlist=null;srcShowAll=false;if(back){curRec=null;showView(back)}else renderSources()});
-function openSrc(id){openId=id;srcShowAll=false;showView('sources');window.scrollTo(0,0)}
+async function openSrc(id){openId=id;srcShowAll=false;const r=await idbGet('src',id).catch(()=>null);showView(r&&!r.song&&SEC_VIEW[SEC_OF[r.kind]]||'sources');window.scrollTo(0,0)}
 function stopAudio(){const a=$('#srcAudio');if(a)a.pause()}
 $('#srcActs').addEventListener('click',async e=>{
   const b=e.target.closest('[data-sa]');if(!b||!curRec)return;const r=curRec,act=b.dataset.sa;
@@ -3345,7 +3390,7 @@ async function dropSrc(r){if(r.media)await idbDel('media',r.media.id).catch(()=>
   const g={id:r.id,gone:Date.now(),updated:Date.now(),media:r.media?Object.assign({},r.media):null};await idbPut('src',g);cfg.srcDirty=true;saveCfg();scheduleSrcSync();queueSrcDialogs()}
 function editSource(r){
   if(r.song){songForm(r);return}
-  const timed=(r.kind==='audio'||r.kind==='yt')&&(r.segs||[]).length;
+  const timed=(isAV(r)||r.kind==='yt')&&(r.segs||[]).length;
   const val=timed?(r.segs||[]).map(s=>fmtTime(s.s)+' | '+s.t).join('\n'):r.text||'';
   openSheet('ویرایش متن',`<p class="hint" style="margin:0 0 8px">${timed?'هر خط یک جمله است. زمان ابتدای خط را تغییر ندهید؛ فقط متن بعد از «|» را اصلاح کنید.':'غلط‌های خوانش را اصلاح کنید. بین بندها یک خط خالی بگذارید.'}</p><textarea id="edSrc" rows="16" class="lat ltr" spellcheck="true" lang="${r.lang==='en'?'en':'nl'}"></textarea>`,`<button class="btn primary" type="button" id="edOk">ذخیره</button>`);
   $('#edSrc').value=val;
@@ -3567,7 +3612,7 @@ $('#srcFound').addEventListener('click',async e=>{
 /* ---------- right after an import: fix the language, file what was found, and say so ---------- */
 async function afterImport(r){
   if(!r)return;const a0=analyzeText(srcText(r),r.lang);
-  if(a0.lang&&a0.lang!==r.lang&&r.kind!=='audio'){r.lang=a0.lang;await saveRec(r)}
+  if(a0.lang&&a0.lang!==r.lang&&!isAV(r)){r.lang=a0.lang;await saveRec(r)}
   const a=analyzeSrc(r);if(a.dlgs.length)await refreshSrcDialogs();
   const bits=[];if(a.words.length)bits.push(faNum(a.words.length)+' واژه با معنی');if(a.sents.length)bits.push(faNum(a.sents.length)+' جمله با ترجمه');if(a.dlgs.length)bits.push(faNum(a.dlgs.length)+' مکالمه');
   const tp=typeof topicOf==='function'?topicOf(r):null;
@@ -3657,7 +3702,7 @@ async function songForm(r){
       if(f){askPersist();if(rec.media)await idbDel('media',rec.media.id).catch(()=>{});await storeMedia(rec,f.type?f:new Blob([f],{type:'audio/mpeg'}),f.name);try{const d=await audioDuration(f);if(d)rec.info.dur=d}catch(e){}}
       await saveRec(rec);closeSheet();songLang=rec.lang;
       toast(isNew?'آهنگ اضافه شد.':'ذخیره شد.');
-      if(currentView==='sources'&&openId===rec.id)renderSourceOpen();else showView('songs');
+      if(inSrcView()&&openId===rec.id)renderSourceOpen();else showView('songs');
     }catch(e){toast(e.message||'ذخیره نشد.',5000)}finally{btn.disabled=false}
   };
 }
@@ -3785,7 +3830,7 @@ function ytTranscriptSheet(r){
     if(segs.length){r.segs=segs;r.text=''}else{r.segs=[];r.text=tidyText(v)}
     const g=guessLang(srcText(r));if(g&&r.lang!==g)r.lang=g;
     await saveRec(r);closeSheet();anaCache.delete(r.id);
-    if(currentView==='sources'&&openId===r.id)renderSourceOpen();else openSrc(r.id);
+    if(inSrcView()&&openId===r.id)renderSourceOpen();else openSrc(r.id);
     toast(segs.length?faNum(segs.length)+' جملهٔ زمان‌دار ذخیره شد. روی زمان هر جمله بزنید تا ویدیو از همان‌جا پخش شود.':'متن ذخیره شد (بدون زمان).',5000);
   };
 }
@@ -3993,14 +4038,32 @@ async function openViewer(fid){
     showPage(0);
   }catch(err){$('#vwMsg').textContent=err.message||'باز کردن فایل ممکن نشد.'}
 }
+/* a slideshow of the user's own photos (one group of «عکس و ویدیو») */
+function openGallery(title,recs){
+  if(!recs.length)return;
+  $('#viewer').hidden=false;document.body.classList.add('noscroll');$('#vwImg').hidden=true;$('#vwMsg').hidden=false;$('#vwMsg').textContent='در حال آماده‌سازی…';
+  vw={g:title,recs,i:0,urls:new Array(recs.length).fill(null),ld:new Set(),zoom:false};
+  showPage(0);
+}
+async function galleryLoad(i){
+  const v=vw,r=v.recs[i];if(v.ld.has(i))return;v.ld.add(i);let b=null;
+  try{b=await localMedia(r)||await mediaBlob(r)}catch(e){}
+  if(vw!==v)return;
+  if(!b){if(v.i===i){$('#vwImg').hidden=true;$('#vwMsg').hidden=false;$('#vwMsg').textContent='این عکس روی این دستگاه نیست و هنوز از GitHub هم نرسیده است.'}return}
+  v.urls[i]=URL.createObjectURL(b);if(v.i===i)showPage(i);
+}
 function showPage(i){
   if(!vw||!vw.urls.length)return;vw.i=Math.max(0,Math.min(vw.urls.length-1,i));
-  const img=$('#vwImg');img.src=vw.urls[vw.i];img.hidden=false;$('#vwMsg').hidden=true;
+  if(vw.recs){$('#vwTitle').textContent=vw.g+' – '+vw.recs[vw.i].title;
+    if(!vw.urls[vw.i]){$('#vwImg').hidden=true;$('#vwMsg').hidden=false;$('#vwMsg').textContent='در حال باز کردن…';galleryLoad(vw.i)}
+    if(vw.i+1<vw.urls.length&&!vw.urls[vw.i+1])galleryLoad(vw.i+1)}
   const many=vw.urls.length>1;$('#vwNav').hidden=!many;$('#vwCount').textContent=faNum(vw.i+1)+' از '+faNum(vw.urls.length);
   $('#vwPrev').disabled=vw.i===0;$('#vwNext').disabled=vw.i===vw.urls.length-1;
+  if(!vw.urls[vw.i])return;
+  const img=$('#vwImg');img.src=vw.urls[vw.i];img.hidden=false;$('#vwMsg').hidden=true;
   $('#viewer').classList.toggle('zoom',vw.zoom);$('#vwStage').scrollTop=0;
 }
-function closeViewer(){if(!vw)return;vw.urls.forEach(u=>URL.revokeObjectURL(u));vw=null;$('#viewer').hidden=true;$('#vwImg').removeAttribute('src');document.body.classList.remove('noscroll')}
+function closeViewer(){if(!vw)return;vw.urls.forEach(u=>u&&URL.revokeObjectURL(u));vw=null;$('#viewer').hidden=true;$('#vwImg').removeAttribute('src');document.body.classList.remove('noscroll')}
 $('#vwClose').addEventListener('click',closeViewer);
 $('#vwPrev').addEventListener('click',()=>vw&&showPage(vw.i-1));
 $('#vwNext').addEventListener('click',()=>vw&&showPage(vw.i+1));
