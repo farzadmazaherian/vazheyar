@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-LiR/2nmqVWOYbjqTJDhBFnY0g0A8zj5m5HgEQeSfG94=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-46mFd7z2vPVkLijHJU2zf1GCbL/iIp9WlNXkd3HB9cU=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -644,6 +644,78 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
 .howto{margin:6px 0;padding-inline-start:22px;line-height:2}
 .rd .fa-tr{font-family:var(--f-fa);color:var(--muted);font-size:15.5px;margin-inline-start:14px;cursor:default;unicode-bidi:isolate}
 
+/* course path (v12) */
+.c-empty p{line-height:1.9;margin:6px 0 14px}
+.c-progress{margin:0 0 22px}
+.c-prog-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.c-stage{margin:0 0 26px}
+.c-stage-h{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:2px 12px;margin:0 0 10px}
+.c-stage-h h2{margin:0;font-size:18px}
+.c-stage-h p{grid-column:1/-1;margin:0}
+.c-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;position:relative}
+.c-row{width:100%;display:flex;align-items:center;gap:14px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);text-align:start;cursor:pointer;color:var(--ink);font:inherit}
+.c-row:hover{border-color:var(--cobalt-line)}
+.c-row:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.c-n{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--surface-2);color:var(--muted)}
+.c-n .i{width:18px;height:18px}
+.c-row.now{border-color:var(--cobalt);box-shadow:0 0 0 3px var(--cobalt-soft)}
+.c-row.now .c-n{background:var(--cobalt);color:#fff}
+.c-row.done .c-n{background:var(--good-soft);color:var(--good)}
+.c-row.locked{opacity:.58;cursor:not-allowed}
+.c-t{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.c-t b{font-size:15.5px}
+.c-t .lat{color:var(--muted);font-size:13.5px}
+.c-meta{display:flex;gap:6px 12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);align-items:center;margin-top:3px}
+.c-mini{flex:none;width:70px;height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.c-mini i{display:block;height:100%;background:var(--cobalt)}
+.c-kicker{margin:0 0 4px;font-size:13px;color:var(--cobalt);font-weight:700}
+.c-steps{margin-top:6px}
+.c-sec{margin:0 0 14px}
+.c-sec-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.c-sec-h .h2,.c-sec>.h2{margin:0}
+.c-gram{margin:8px 0 0;padding-inline-start:20px;display:flex;flex-direction:column;gap:8px;line-height:1.9}
+.c-dlgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.c-dlg{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);cursor:pointer;text-align:start;font:inherit;color:var(--ink)}
+.c-dlg>span:nth-child(2){display:flex;flex-direction:column;min-width:0;flex:1}
+.c-dlg .c-dlg-ic{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--cobalt-soft);color:var(--cobalt);font-size:13px}
+.c-dlg.done .c-dlg-ic{background:var(--good-soft);color:var(--good)}
+.c-dlg[aria-disabled]{opacity:.55;cursor:not-allowed}
+.c-files{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
+.c-file{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2);cursor:pointer;text-align:start;font:inherit;color:var(--ink)}
+.c-file-ic{flex:none;color:var(--cobalt)}
+.c-file-t{display:flex;flex-direction:column;min-width:0}
+.c-file-t b{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.c-words{display:flex;flex-direction:column;margin-top:10px}
+.c-w{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.c-sec details summary{cursor:pointer;list-style-position:inside}
+.c-skip{text-align:center;margin:18px 0 6px}
+.c-now{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center;margin:0 0 12px;border-color:var(--cobalt-line)}
+.c-now-l{display:flex;flex-direction:column;gap:2px;min-width:0}
+.c-now-l b{font-size:17px}
+.c-now-m{grid-column:1/-1;grid-row:2}
+.c-now .btn{grid-row:1;grid-column:2}
+@media (max-width:620px){.c-mini{display:none}.c-w{grid-template-columns:1fr 1fr}.c-w .pill{grid-column:1/-1;justify-self:start}}
+.viewer{position:fixed;inset:0;z-index:80;background:#0d1016;color:#fff;display:flex;flex-direction:column}
+.viewer .icon-btn{color:#fff}
+.vw-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;padding-top:max(10px,env(safe-area-inset-top))}
+.vw-head b{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vw-acts{display:flex;gap:6px;flex:none}
+.vw-stage{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:6px}
+.vw-stage img{max-width:100%;max-height:100%;object-fit:contain;display:block;border-radius:6px;background:#fff}
+.viewer.zoom .vw-stage{align-items:flex-start;justify-content:flex-start}
+.viewer.zoom .vw-stage img{max-width:none;max-height:none;width:200%}
+.vw-msg{color:#cfd6e4;max-width:420px;text-align:center;line-height:1.9}
+.vw-nav{display:flex;justify-content:center;align-items:center;gap:16px;padding:10px 14px;padding-bottom:max(10px,env(safe-area-inset-bottom))}
+.vw-nav .btn{background:#222a36;color:#fff;border-color:#3a4456}
+.vw-nav .btn:disabled{opacity:.4}
+body.noscroll{overflow:hidden}
+.c-busy{position:fixed;inset:0;z-index:90;background:rgba(10,14,22,.55);display:grid;place-items:center;padding:16px}
+.c-busy .panel{width:min(440px,100%);display:flex;flex-direction:column;gap:10px}
+.c-busy .bar{height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.c-busy .bar span{display:block;height:100%;width:0;background:var(--cobalt);transition:width .2s}
+.viewer .icon-btn{background:#222a36;border-color:#3a4456;color:#fff}
+.c-gram bdi.lat{font-size:.97em}
+
 </style>
 </head>
 <body>
@@ -684,6 +756,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
       <div class="nav-group">
         <div class="nav-label">یادگیری</div>
         <button type="button" data-go="today"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>امروز</span></button>
+        <button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg><span>مسیر درسی</span></button>
         <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg><span>مرور کارت‌ها</span><b class="badge nav-due" hidden></b></button>
         <button type="button" data-go="dialogs"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M18.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v6A1.5 1.5 0 0 1 20 18.5h-1v2.5l-3-2.5h-4"/></svg><span>مکالمه‌ها</span></button>
         <button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg><span>تمرین</span></button>
@@ -713,6 +786,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
     <section class="view" id="v-today" hidden>
       <div class="dateline"><span id="dateFa"></span><span class="lat" id="dateNl"></span></div>
       <div class="page-head"><div><h1 class="view-title" id="todayTitle"></h1><p class="sub" id="todaySub"></p></div></div>
+      <div class="panel c-now" id="courseNow" hidden></div>
       <ol class="path" id="path" aria-label="مسیر یادگیری امروز"></ol>
       <div class="note-box info" id="previewNote" hidden style="margin-bottom:18px">این نسخهٔ پیش‌نمایش است و داده‌ها فقط در همین مرورگر ذخیره می‌شوند. برای نصب روی گوشی و لپ‌تاپ و همگام‌سازی، <a href="https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm" target="_blank" rel="noopener">راهنمای راه‌اندازی</a> را دنبال کنید.</div>
       <div class="today-grid">
@@ -860,6 +934,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
           <div class="btn-row" style="justify-content:center">
             <button class="btn primary" type="button" id="qAddMist">افزودن اشتباه‌ها به مرور امروز</button>
             <button class="btn" type="button" id="qDlgBack" hidden>برگشت به مکالمه</button>
+            <button class="btn primary" type="button" id="qUnitBack" hidden>برگشت به درس</button>
             <button class="btn" type="button" id="qAgain">تمرین دوباره</button>
             <button class="btn ghost" type="button" id="qBack">انتخاب تمرین دیگر</button>
           </div>
@@ -957,6 +1032,30 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
           <div id="itemRows"></div>
           <div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn" type="button" id="moreRows" hidden>نمایش بیشتر</button></div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ COURSE PATH ============ -->
+    <section class="view" id="v-course" hidden>
+      <div id="cHome">
+        <div class="page-head">
+          <div><h1 class="view-title">مسیر درسی</h1><p class="sub" id="cSub"></p></div>
+        </div>
+        <div id="cEmpty" class="panel c-empty" hidden>
+          <h2 class="h2">بستهٔ مسیر درسی هنوز وارد نشده است</h2>
+          <p>بستهٔ مسیر درسی (فایل‌های <span class="lat">vazheyar-course-1.zip</span> تا <span class="lat">-4.zip</span>) همهٔ درس‌ها، مکالمه‌های صوتی، اسلایدها و اینفوگرافیک‌های شما را دارد. یک بار روی لپ‌تاپ واردش کنید؛ بعد خودکار به گوشی هم می‌رسد.</p>
+          <div class="btn-row"><label class="btn primary" for="courseFile" tabindex="0">وارد کردن بستهٔ مسیر درسی</label></div>
+          <p class="hint">هر چهار بخش را با هم انتخاب کنید (یا یکی‌یکی وارد کنید).</p>
+        </div>
+        <div id="cOverview" hidden>
+          <div class="panel c-progress"><div class="c-prog-top"><b id="cProgTxt"></b><span class="hint" id="cProgSub"></span></div><div class="meter"><span id="cProgBar" style="width:0"></span></div></div>
+          <div id="cStages"></div>
+        </div>
+      </div>
+      <input type="file" id="courseFile" accept=".zip,application/zip" multiple hidden>
+      <div id="cUnit" hidden>
+        <button class="link back" type="button" id="cBack">&larr; همهٔ درس‌ها</button>
+        <div id="cUnitBody"></div>
       </div>
     </section>
 
@@ -1117,6 +1216,13 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
           <div class="note-box info" id="guideBox" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><span>هنوز راه‌اندازی نکرده‌اید؟ راهنمای تصویری گام‌به‌گام را باز کنید.</span><a class="btn primary sm" id="guideLink" href="guide.html" target="_blank" rel="noopener">باز کردن راهنمای راه‌اندازی</a></div>
         </div>
 
+        <div class="panel wide stack" id="coursePanel">
+          <div class="set-head"><div><h2>مسیر درسی</h2><p>بستهٔ مسیر درسی (چهار فایل <span class="lat">vazheyar-course-1</span> تا <span class="lat">4.zip</span>؛ هر چهار را با هم انتخاب کنید): همهٔ درس‌ها به ترتیب، با مکالمه‌های صوتی، اسلایدها و اینفوگرافیک‌ها. یک بار روی لپ‌تاپ وارد کنید؛ فایل‌ها به مخزن خصوصی شما فرستاده می‌شوند و گوشی هر فایل را وقتی باز کنید دریافت می‌کند.</p></div></div>
+          <div class="note-box" id="courseStatus"></div>
+          <p class="hint sync-st" id="courseSyncSt" hidden></p>
+          <div class="btn-row"><label class="btn primary" for="courseFile" tabindex="0">وارد کردن بستهٔ مسیر درسی</label><button class="btn ghost" type="button" data-go="course">رفتن به مسیر درسی</button></div>
+          <div class="field"><span class="lbl">صدای مکالمه‌ها</span><div class="seg" id="recSeg"><button type="button" data-v="rec">صدای ضبط‌شده</button><button type="button" data-v="tts">صدای دستگاه</button></div><span class="hint">مکالمه‌های مسیر درسی صدای ضبط‌شده با دو گویندهٔ هلندی دارند. اگر صدای دستگاهتان را ترجیح می‌دهید، «صدای دستگاه» را بزنید.</span></div>
+        </div>
         <div class="panel wide stack" id="privPanel">
           <div class="set-head"><div><h2>درس‌های کتاب (خصوصی)</h2><p>فایل درس‌های کتاب درسی‌تان (مثلاً De Opmaat) را اینجا وارد کنید. این درس‌ها فقط روی دستگاه‌های شما و در مخزن خصوصی‌تان ذخیره می‌شوند و روی سایت عمومی برنامه نمی‌روند.</p></div></div>
           <div class="note-box" id="privStatus"></div>
@@ -1161,7 +1267,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۲</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۳</p>
     </section>
 
 </main>
@@ -1170,7 +1276,7 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
   <button type="button" data-go="today"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>امروز</button>
   <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg>مرور<b class="badge nav-due" hidden></b></button>
   <button type="button" data-go="dialogs"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M18.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v6A1.5 1.5 0 0 1 20 18.5h-1v2.5l-3-2.5h-4"/></svg>مکالمه</button>
-  <button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg>کتابخانه</button>
+  <button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg>مسیر</button>
   <button type="button" data-more><svg class="i" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/></svg>بیشتر</button>
 </nav>
 <button class="fab" type="button" data-quickadd aria-label="افزودن واژه یا جمله"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
@@ -1189,10 +1295,16 @@ input[type=range]{width:100%;accent-color:var(--cobalt)}
     <div class="btn-row"><button class="btn" type="button" id="mCancel">انصراف</button><button class="btn primary" type="button" id="mOk">تأیید</button></div>
   </div>
 </div>
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vwTitle">
+  <div class="vw-head"><b id="vwTitle" class="lat"></b><span class="vw-acts"><button class="icon-btn" type="button" id="vwZoom" aria-label="بزرگ‌نمایی"><svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></svg></button><button class="icon-btn" type="button" id="vwClose" aria-label="بستن"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span></div>
+  <div class="vw-stage" id="vwStage"><p class="vw-msg" id="vwMsg"></p><img id="vwImg" alt="" hidden></div>
+  <div class="vw-nav" id="vwNav" hidden><button class="btn" type="button" id="vwPrev">&rarr; قبلی</button><span id="vwCount" class="num"></span><button class="btn" type="button" id="vwNext">بعدی &larr;</button></div>
+</div>
+<div class="c-busy" id="cBusy" hidden role="alertdialog" aria-live="polite"><div class="panel"><b id="cBusyT"></b><p class="hint" id="cBusyS"></p><div class="bar"><span id="cBusyBar"></span></div><button class="btn" type="button" id="cBusyX" hidden>بستن</button></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=12"></script>
+<script src="packs.js?v=13"></script>
 <script>
 (function(){
 'use strict';
@@ -1362,7 +1474,7 @@ function buildQueue(lang){
   const eod=endOfToday();const pool=db.items.filter(i=>i.lang===lang&&!i.susp);
   const due=pool.filter(i=>!isNew(i)&&i.srs.due<=eod).sort((a,b)=>a.srs.due-b.srs.due);
   const newLeft=Math.max(0,(+cfg.review.newPerDay||0)-introducedToday(lang));
-  const focus=cfg.review.focus||'series';const pri=i=>focus==='series'&&itemSeries(i)?0:1;
+  const focus=cfg.review.focus||'series',cf=lang==='nl'&&typeof courseFocusPack==='function'?courseFocusPack():'';const pri=i=>cf&&i.pack===cf?-1:focus==='series'&&itemSeries(i)?0:1;
   const fresh=pool.filter(isNew).sort((a,b)=>(pri(a)-pri(b))||(a.created-b.created)).slice(0,newLeft);
   const q=[];let di=0,ni=0;
   while(di<due.length||ni<fresh.length){for(let k=0;k<3&&di<due.length;k++)q.push(due[di++].id);if(ni<fresh.length)q.push(fresh[ni++].id)}
@@ -1482,8 +1594,8 @@ async function syncNow(manual){
       if(!remote.sha||canon(remote.data)!==mergedC){const r=await pushRemote(merged,remote.sha);if(r==='conflict')continue}
       cfg.gh.lastSync=Date.now();cfg.gh.lastError='';saveCfg();dirty=false;setSync('ok');
       if(manual)toast('همگام‌سازی انجام شد');
-      if(!privChecked||manual||cfg.privDirty)syncPrivate(false).catch(()=>{}).then(()=>syncSources(manual));
-      else syncSources(manual).catch(()=>{});
+      if(!privChecked||manual||cfg.privDirty)syncPrivate(false).catch(()=>{}).then(()=>syncSources(manual)).then(()=>syncCourse()).catch(()=>{});
+      else syncSources(manual).catch(()=>{}).then(()=>syncCourse()).catch(()=>{});
       return true;
     }
     throw new Error('دستگاه دیگری هم‌زمان در حال ذخیره بود. چند ثانیه بعد دوباره امتحان کنید.');
@@ -1773,11 +1885,11 @@ function qaSave(next){
 document.addEventListener('click',e=>{if(e.target.closest('[data-quickadd]')){e.preventDefault();quickAdd()}});
 /* phone "more" menu */
 document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return;
-  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M10 17.5v-5l4.5-1v5"/><circle cx="9" cy="17.5" r="1.3"/><circle cx="13.5" cy="16.5" r="1.3"/></svg>منابع من</button><button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>آهنگ‌ها</button><button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg>یوتیوب من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
+  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg>مسیر درسی</button><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg>کتابخانه</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M10 17.5v-5l4.5-1v5"/><circle cx="9" cy="17.5" r="1.3"/><circle cx="13.5" cy="16.5" r="1.3"/></svg>منابع من</button><button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>آهنگ‌ها</button><button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg>یوتیوب من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','review','dialogs','quiz','library','manage','sources','songs','youtube','share','settings'];
+const VIEWS=['today','course','review','dialogs','quiz','library','manage','sources','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
@@ -1787,6 +1899,7 @@ function showView(v,noHash){
   $$('[data-go]').forEach(b=>{if(b.closest('.nav,.bottom-nav')){if(b.dataset.go===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')}});
   const lk=(v==='dialogs'||(v==='quiz'&&!qz))?lockOf(v):null;applyLock(v,lk);
   if(v==='today')renderToday();
+  if(v==='course')renderCourse();
   if(v==='review'&&!ses)renderReviewIdle();
   if(v==='dialogs'&&!lk)renderDialogs();
   if(v==='library')renderLibrary();
@@ -1884,7 +1997,7 @@ function renderToday(){
   let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY),lang);if(c>0)streak++;else if(k===0)continue;else break}
   $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK,lang));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
   const tips=TIPS[lang];$('#tip').innerHTML=tips[tipIdx%tips.length];
-  renderPath();
+  renderPath();renderCourseNow();
 }
 $('#nextTip').addEventListener('click',()=>{tipIdx++;const tips=TIPS[L()];$('#tip').innerHTML=tips[tipIdx%tips.length]});
 $('#startToday').addEventListener('click',e=>{if(e.currentTarget.dataset.lib){showView('library');return}startSession()});
@@ -2043,7 +2156,7 @@ function roleIdx(d,name){return Math.max(0,d.roles.findIndex(r=>r.name===name))}
 function renderPlayer(){
   const d=curDlg;$('#dlgIndex').hidden=true;$('#dlgPlayer').hidden=false;
   $('#plTitle').textContent=d.titleFa;$('#plOrig').textContent=d.title;
-  $('#plMeta').innerHTML=`<span class="pill lvl">${esc(d.level)}</span><span class="pill">درس ${faNum(d.lesson.n)}: ${esc(d.lesson.fa)}</span>`;
+  $('#plMeta').innerHTML=`<span class="pill lvl">${esc(d.level)}</span><span class="pill">درس ${faNum(d.lesson.n)}: ${esc(d.lesson.fa)}</span>${dlgHasAudio(d)&&cfg.dlg.rec!==false?'<span class="pill ok">صدای ضبط‌شده</span>':''}`;
   $('#plRoles').innerHTML=d.roles.map((r,i)=>`<button class="btn sm${play.role===i?' accent':''}" type="button" data-role="${i}">${esc(r.name)}</button>`).join('');
   $('#plPlay').textContent=play.on&&play.role===null?'■ توقف':'▶ پخش کل مکالمه';
   setPressed('#tgFa',cfg.dlg.fa);setPressed('#tgEn',cfg.dlg.en);setPressed('#tgSlow',cfg.dlg.slow);$('#tgEn').hidden=d.lang!=='nl';
@@ -2053,7 +2166,7 @@ function renderPlayer(){
   const ds=DIALOGS.filter(x=>x.lang===d.lang&&seriesOf(x)===seriesOf(d));$('#plNext').hidden=ds.indexOf(d)===ds.length-1;
 }
 const setPressed=(s,v)=>$(s).setAttribute('aria-pressed',String(!!v));
-function stopPlay(){play.on=false;play.token++;play.waiting=false;stopSpeech();$$('.line.playing').forEach(x=>x.classList.remove('playing'));if(curDlg&&!$('#dlgPlayer').hidden){$('#plPlay').textContent='▶ پخش کل مکالمه'}}
+function stopPlay(){play.on=false;play.token++;play.waiting=false;stopSpeech();if(typeof stopDlgAudio==='function')stopDlgAudio();$$('.line.playing').forEach(x=>x.classList.remove('playing'));if(curDlg&&!$('#dlgPlayer').hidden){$('#plPlay').textContent='▶ پخش کل مکالمه'}}
 function markLine(i){$$('.line.playing').forEach(x=>x.classList.remove('playing'));const el=$(`.line[data-i="${i}"]`);if(el){el.classList.add('playing');el.scrollIntoView({block:'nearest',behavior:'smooth'})}}
 function playStep(){
   const d=curDlg;if(!play.on||!d)return;
@@ -2061,7 +2174,7 @@ function playStep(){
   const ln=d.lines[play.idx],ri=roleIdx(d,ln.s),tok=play.token;
   if(play.role===ri&&!play.revealed.has(play.idx)){play.waiting=true;renderPlayer();markLine(play.idx);return}
   markLine(play.idx);
-  speak(ln.t,d.lang,{role:ri,rate:cfg.dlg.slow?0.7:undefined,onend:()=>{if(tok!==play.token)return;play.idx++;setTimeout(()=>{if(tok===play.token)playStep()},350)}});
+  sayLine(d,play.idx,{role:ri,rate:cfg.dlg.slow?0.7:undefined,onend:()=>{if(tok!==play.token)return;play.idx++;setTimeout(()=>{if(tok===play.token)playStep()},350)}});
 }
 $('#plPlay').addEventListener('click',()=>{if(play.on&&play.role===null){stopPlay();return}stopPlay();play.role=null;play.on=true;play.idx=0;play.token++;renderPlayer();playStep()});
 $('#plRoles').addEventListener('click',e=>{const b=e.target.closest('[data-role]');if(!b)return;const r=+b.dataset.role;
@@ -2078,8 +2191,8 @@ $('#chat').addEventListener('click',e=>{
       if(j.score>=0.8)setTimeout(()=>{const b=$(`[data-reveal="${i}"]`);if(b)b.click()},1600);
     });return}
   const rv=e.target.closest('[data-reveal]');if(rv){const i=+rv.dataset.reveal;play.revealed.add(i);play.waiting=false;renderPlayer();const ln=d.lines[i],tok=play.token;
-    speak(ln.t,d.lang,{role:roleIdx(d,ln.s),rate:cfg.dlg.slow?0.7:undefined,onend:()=>{if(tok!==play.token||!play.on)return;if(play.idx===i){play.idx++;setTimeout(()=>{if(tok===play.token)playStep()},350)}}});return}
-  const s=e.target.closest('[data-say]');if(s){stopPlay();const ln=d.lines[+s.dataset.say];speak(ln.t,d.lang,{role:roleIdx(d,ln.s),rate:cfg.dlg.slow?0.7:undefined});return}
+    sayLine(d,i,{role:roleIdx(d,ln.s),rate:cfg.dlg.slow?0.7:undefined,onend:()=>{if(tok!==play.token||!play.on)return;if(play.idx===i){play.idx++;setTimeout(()=>{if(tok===play.token)playStep()},350)}}});return}
+  const s=e.target.closest('[data-say]');if(s){stopPlay();const k=+s.dataset.say,ln=d.lines[k];sayLine(d,k,{role:roleIdx(d,ln.s),rate:cfg.dlg.slow?0.7:undefined});return}
   const a=e.target.closest('[data-addline]');if(a){const n=addLines(d,[+a.dataset.addline]);toast(n?'جمله به کارت‌ها اضافه شد':'این جمله از قبل در کارت‌های شماست');return}
 });
 function addLines(d,idxs){let n=0;const now=Date.now();idxs.forEach((i,k)=>{const ln=d.lines[i];if(findDup(d.lang,ln.t))return;db.items.push(cleanItem({id:uid(),lang:d.lang,type:'sentence',text:ln.t,fa:ln.fa,en:ln.en||'',note:'از مکالمهٔ «'+d.titleFa+'»',tags:['مکالمه'],created:now+k,updated:now+k,srs:null}));n++});if(n)saveData();return n}
@@ -2301,15 +2414,18 @@ $('#quizQ').addEventListener('submit',e=>{
   inp.disabled=true;answerQ(ok,msg);
 });
 function finishQuiz(){
-  if(!qz)return showQuizSetup();const n=qz.answered?qz.i+1:qz.i;
+  if(!qz)return showQuizSetup();const n=Math.min(qz.qs.length,qz.answered?qz.i+1:qz.i);
   if(n>=5||(qz.dlg&&n>=3)){const was=pathState(L()).steps[2];pathMark(L(),'quiz');if(!was&&cfg.path.on!==false)toast('آفرین! هر سه مرحلهٔ امروز تمام شد.',4000)}
   $('#quizRun').hidden=true;$('#quizDone').hidden=false;$('#qScore').textContent=faNum(qz.score)+' از '+faNum(n);
   $('#qScoreTxt').textContent=!n?'آزمون بدون پاسخ تمام شد.':qz.score===n?'همه را درست جواب دادید.':faNum(qz.wrong.length)+' پاسخ نادرست:';
   $('#qMist').innerHTML=qz.wrong.map(id=>{const it=getItem(id);return it?`<div><span class="lat">${artHTML(it)}${esc(it.text)}</span><span>${meanInline(it)}</span></div>`:''}).join('');
   qz.wrong=Array.from(new Set(qz.wrong));
-  $('#qAddMist').hidden=!qz.wrong.length||!!qz.dlg;$('#qAddMist').disabled=false;
+  $('#qAddMist').hidden=!qz.wrong.length||!!qz.dlg||!!qz.unit;$('#qAddMist').disabled=false;
+  if(qz.unit){const m=unitQuizDone(n);$('#qScoreTxt').textContent=m;$('#qMist').innerHTML=''}
+  $('#qUnitBack').hidden=!qz.unit;
   $('#qDlgBack').hidden=!qz.dlg;
 }
+$('#qUnitBack').addEventListener('click',()=>{const id=qz&&qz.unit;qz=null;cOpen=id;showView('course')});
 $('#qDlgBack').addEventListener('click',()=>{const id=qz&&qz.dlg;if(!id)return;qz=null;showView('dialogs');openDialog(id)});
 $('#qAddMist').addEventListener('click',()=>{
   if(!qz)return;let n=0;const now=Date.now();
@@ -2823,7 +2939,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=12',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=13',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -2846,7 +2962,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 12، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 13، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -3666,6 +3782,309 @@ function ytTranscriptSheet(r){
   };
 }
 
+/* ================= COURSE PATH: lessons in order, each one unlocks the next =================
+   The course package (vazheyar-course.zip) holds course.json + slides, infographics and dialogue audio.
+   Text goes into the private collection (PRIV.course, synced as the private file); media goes into
+   IndexedDB ('media' store, ids 'c-<file>') and is mirrored to the private repo under media/course/. */
+const COURSE=PRIV&&PRIV.course&&Array.isArray(PRIV.course.units)?PRIV.course:null;
+const C_DIR=MEDIA_DIR+'/course';
+const cUnits=()=>COURSE?COURSE.units:[];
+const cUnit=id=>cUnits().find(u=>u.id===id);
+const cPack=u=>PACKS.find(p=>p.id===u.pack)||null;
+const cDialogs=u=>u.dialogs.map(id=>DIALOGS.find(d=>d.id===id)).filter(Boolean);
+let cOpen=null;
+
+/* ---------- progress ---------- */
+function unitState(u){
+  const p=cPack(u),items=p?packItems(p):[];let inst=0,rev=0;
+  items.forEach(it=>{const own=installedFor(it);if(own){inst++;if(own.srs||own.susp)rev++}});
+  const ds=cDialogs(u),dd=ds.filter(d=>db.done[d.id]).length,need=Math.ceil(ds.length*0.6);
+  const s={total:items.length,inst,rev,dl:ds.length,dd,need,quiz:!!db.done['uq:'+u.id]};
+  s.words=s.total?rev>=Math.ceil(s.total*0.9):true;s.dlg=dd>=need;
+  s.done=!!db.done['unit:'+u.id]||(s.words&&s.dlg&&s.quiz);
+  return s;
+}
+function unitOpen(u){
+  if(cfg.path.on===false||db.done['unit:'+u.id])return true;
+  const i=cUnits().indexOf(u);if(i<=0)return true;
+  return unitState(cUnits()[i-1]).done;
+}
+function currentUnit(){const us=cUnits();return us.find(u=>!unitState(u).done)||us[us.length-1]||null}
+/* new cards of the current lesson come first in review */
+function courseFocusPack(){if(!COURSE||cfg.course&&cfg.course.focus===false)return'';const u=currentUnit();return u?u.pack:''}
+function checkUnitDone(u){
+  if(!u||db.done['unit:'+u.id])return;const s=unitState(u);
+  if(s.words&&s.dlg&&s.quiz){db.done['unit:'+u.id]=Date.now();saveData();
+    const nx=cUnits()[cUnits().indexOf(u)+1];
+    toast(nx?'آفرین! درس «'+u.title+'» تمام شد و درس بعد باز شد.':'آفرین! همهٔ مسیر درسی را تمام کردید.',5000)}
+}
+
+/* ---------- overview ---------- */
+const STEP_SVG='<svg class="i" viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg>';
+function renderCourse(){
+  if(cOpen&&cUnit(cOpen))return renderUnit(cUnit(cOpen));
+  cOpen=null;$('#cHome').hidden=false;$('#cUnit').hidden=true;
+  if(!COURSE){$('#cEmpty').hidden=false;$('#cOverview').hidden=true;$('#cSub').textContent='درس‌های شما به ترتیب: اول واژه‌ها، بعد مکالمه، بعد تمرین؛ و بعد درس بعدی.';return}
+  $('#cEmpty').hidden=true;$('#cOverview').hidden=false;
+  const us=cUnits(),st=us.map(unitState),done=st.filter(s=>s.done).length,cur=currentUnit();
+  $('#cSub').textContent=faNum(us.length)+' درس در '+faNum(COURSE.stages.length)+' گام. هر درس بعد از تمام شدن درس قبلی باز می‌شود.';
+  $('#cProgTxt').textContent=faNum(done)+' از '+faNum(us.length)+' درس تمام شده';
+  $('#cProgSub').textContent=cur&&!st[us.indexOf(cur)].done?'درس فعلی: '+cur.title:'';
+  $('#cProgBar').style.width=Math.round(done/us.length*100)+'%';
+  $('#cStages').innerHTML=COURSE.stages.map(sg=>{
+    const su=us.filter(u=>u.stage===sg.id);if(!su.length)return'';
+    const sd=su.filter(u=>st[us.indexOf(u)].done).length;
+    return`<section class="c-stage"><header class="c-stage-h"><h2>${esc(sg.title)}</h2><span class="hint">${faNum(sd)} از ${faNum(su.length)}</span><p class="hint">${esc(sg.desc)}</p></header><ol class="c-list">${su.map(u=>{
+      const s=st[us.indexOf(u)],open=unitOpen(u),isCur=u===cur&&!s.done;
+      const pct=s.total?Math.round(s.rev/s.total*100):0;
+      return`<li><button type="button" class="c-row${s.done?' done':isCur?' now':!open?' locked':''}" data-unit="${esc(u.id)}"${open?'':' aria-disabled="true"'}>
+        <span class="c-n">${s.done?STEP_SVG:!open?LOCK_SVG:faNum(u.n)}</span>
+        <span class="c-t"><b>${esc(u.title)}</b><span class="lat">${esc(u.orig)}</span>
+          <span class="c-meta"><span class="pill lvl">${esc(u.level)}</span><span>${faNum(s.total)} واژه</span><span>${faNum(s.dl)} مکالمهٔ صوتی</span>${u.files.length?`<span>${faNum(u.files.length)} اسلاید و اینفوگرافیک</span>`:''}</span></span>
+        ${open&&!s.done?`<span class="c-mini" aria-label="پیشرفت"><i style="width:${pct}%"></i></span>`:''}
+      </button></li>`}).join('')}</ol></section>`}).join('');
+}
+$('#cStages').addEventListener('click',e=>{const b=e.target.closest('[data-unit]');if(!b)return;const u=cUnit(b.dataset.unit);if(!u)return;
+  if(!unitOpen(u)){const i=cUnits().indexOf(u);toast('این درس بعد از تمام شدن درس «'+cUnits()[i-1].title+'» باز می‌شود.',4500);return}
+  cOpen=u.id;renderUnit(u);window.scrollTo(0,0)});
+$('#cBack').addEventListener('click',()=>{cOpen=null;renderCourse();window.scrollTo(0,0)});
+
+/* ---------- one lesson ---------- */
+/* Persian text with Dutch examples: each Dutch run is isolated, brackets stay in the Persian flow */
+const GRAM_RUN=/[A-Za-zÀ-ÿ0-9'’][A-Za-zÀ-ÿ0-9'’\-\/…]*(?:[ ,.:;!?\/+=←]+[A-Za-zÀ-ÿ0-9'’][A-Za-zÀ-ÿ0-9'’\-\/…]*)*[.?!…]?/g;
+function gramHTML(t){let out='',last=0;String(t).replace(GRAM_RUN,(m,i)=>{out+=esc(t.slice(last,i))+'<bdi class="lat" dir="ltr">'+esc(m)+'</bdi>';last=i+m.length;return m});return out+esc(t.slice(last))}
+function renderUnit(u){
+  $('#cHome').hidden=true;$('#cUnit').hidden=false;checkUnitDone(u);
+  const s=unitState(u),p=cPack(u),items=p?packItems(p):[],ds=cDialogs(u);
+  const gram=(p&&p.gram||'').split('\n').filter(Boolean);
+  const step=(n,ok,title,desc,btns,open)=>`<li class="step${ok?' done':open?' now':' locked'}"><span class="step-n">${ok?'✓':open?faNum(n):LOCK_SVG}</span><div class="step-c"><b>${title}</b><span class="hint">${desc}</span></div>${btns}</li>`;
+  const left=s.total-s.inst;
+  const st1=step(1,s.words,'واژه‌ها',s.words?'واژه‌های این درس مرور شده‌اند.':left?`${faNum(left)} واژه هنوز در کارت‌ها نیست. اول اضافه کنید، بعد مرور کنید.`:`${faNum(s.rev)} از ${faNum(s.total)} واژه دست‌کم یک بار مرور شده.`,
+    left?`<button class="btn sm primary" type="button" data-cu="add">افزودن ${faNum(left)} واژه</button>`:!s.words?`<button class="btn sm primary" type="button" data-cu="review">مرور</button>`:'',true);
+  const st2=step(2,s.dlg,'مکالمه‌ها',s.dlg?`${faNum(s.dd)} مکالمه تمرین شد.`:`دست‌کم ${faNum(s.need)} مکالمه را تا آخر گوش دهید (${faNum(s.dd)} از ${faNum(s.need)}).`,'',s.words);
+  const st3=step(3,s.quiz,'تمرین درس',s.quiz?'تمرین این درس را با موفقیت گذراندید.':'آزمون ۱۰ پرسشی از واژه‌ها و جمله‌های همین درس؛ با ۷ پاسخ درست قبول می‌شوید.',
+    !s.quiz&&s.words&&s.dlg?`<button class="btn sm primary" type="button" data-cu="quiz">شروع تمرین</button>`:'',s.words&&s.dlg);
+  const files=u.files.map(f=>Object.assign({id:f},COURSE.media[f]||{})).filter(m=>m.file);
+  $('#cUnitBody').innerHTML=`
+    <div class="page-head" style="margin-bottom:10px"><div><p class="c-kicker">درس ${faNum(u.n)} · <span class="lat">${esc(u.level)}</span></p><h1 class="view-title">${esc(u.title)}</h1><p class="sub lat" style="margin-bottom:4px">${esc(u.orig)}</p><p class="sub">${esc(u.desc)}</p></div></div>
+    ${s.done?`<p class="note-box good" style="margin:0 0 14px">این درس تمام شده است. هر وقت خواستید دوباره مرورش کنید.</p>`:''}
+    <ol class="path c-steps">${st1}${st2}${st3}</ol>
+    ${gram.length?`<section class="panel c-sec"><h2 class="h2">نکته‌های گرامر این درس</h2><ul class="c-gram">${gram.map(g=>`<li>${gramHTML(g)}</li>`).join('')}</ul></section>`:''}
+    <section class="panel c-sec"><div class="c-sec-h"><h2 class="h2">مکالمه‌های صوتی</h2><span class="hint">${faNum(s.dd)} از ${faNum(ds.length)}</span></div>
+      <div class="c-dlgs">${ds.map(d=>`<button type="button" class="c-dlg${db.done[d.id]?' done':''}" data-cdlg="${esc(d.id)}"${s.words?'':' aria-disabled="true"'}><span class="c-dlg-ic">${db.done[d.id]?'✓':'▶'}</span><span><b>${esc(d.titleFa||d.title)}</b><span class="lat hint">${esc(d.title)}</span></span><span class="hint num">${COURSE.audio[d.id]?fmtTime(COURSE.audio[d.id].dur):''}</span></button>`).join('')}</div>
+      ${s.words?'':'<p class="hint" style="margin:10px 0 0">مکالمه‌ها بعد از مرور واژه‌ها باز می‌شوند.</p>'}</section>
+    ${files.length?`<section class="panel c-sec"><div class="c-sec-h"><h2 class="h2">اسلایدها و اینفوگرافیک‌ها</h2><button class="btn sm ghost" type="button" data-cu="dlall">ذخیره برای استفادهٔ آفلاین</button></div>
+      <div class="c-files">${files.map(m=>`<button type="button" class="c-file" data-cfile="${esc(m.id)}"><span class="c-file-ic">${m.kind==='deck'?'<svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>':'<svg class="i" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>'}</span><span class="c-file-t"><b class="lat">${esc(m.title||(m.kind==='deck'?'اسلایدها':'اینفوگرافیک'))}</b><span class="hint">${m.kind==='deck'?faNum(m.pages)+' اسلاید':'اینفوگرافیک'} · ${fmtSize(m.size)}</span></span></button>`).join('')}</div></section>`:''}
+    <section class="panel c-sec"><details><summary class="h2">فهرست واژه‌ها و جمله‌های این درس (${faNum(items.length)})</summary><div class="c-words">${items.map(it=>{const own=installedFor(it);return`<div class="c-w"><span class="lat"><b>${artHTML(it)}${esc(it.text)}</b></span><span>${esc(it.fa)}</span><span class="pill ${own?(own.srs?'ok':'new'):''}">${own?(own.srs?'مرور شده':'در صف'):'اضافه نشده'}</span></div>`}).join('')}</div></details></section>
+    ${!s.done?`<p class="hint c-skip">این درس را از قبل بلدید؟ <button class="link" type="button" data-cu="skip">آزمون گذر از درس</button> (با ۸ پاسخ درست از ۱۰، درس تمام‌شده حساب می‌شود.)</p>`:''}`;
+}
+$('#cUnitBody').addEventListener('click',async e=>{
+  const u=cUnit(cOpen);if(!u)return;
+  const a=e.target.closest('[data-cu]');
+  if(a){const k=a.dataset.cu;
+    if(k==='add'){const r=installPacks([cPack(u)]);refreshBadges();toast(faNum(r.added)+' واژه به کارت‌ها اضافه شد. حالا مرورشان کنید.',4000);renderUnit(u);return}
+    if(k==='review'){if(L()!=='nl')setLang('nl');startSession();return}
+    if(k==='quiz'||k==='skip'){unitQuiz(u,k==='skip');return}
+    if(k==='dlall'){a.disabled=true;try{await cDownloadUnit(u,(i,n)=>{a.textContent='در حال دریافت '+faNum(i)+' از '+faNum(n)+'…'});a.textContent='✓ روی این دستگاه ذخیره شد'}catch(err){a.disabled=false;a.textContent='ذخیره برای استفادهٔ آفلاین';toast(err.message,5000)}return}
+  }
+  const d=e.target.closest('[data-cdlg]');if(d){if(d.getAttribute('aria-disabled')){toast('اول واژه‌های این درس را مرور کنید.');return}
+    if(L()!=='nl')setLang('nl');showView('dialogs',true);if(!lockOf('dialogs'))openDialog(d.dataset.cdlg);return}
+  const f=e.target.closest('[data-cfile]');if(f)openViewer(f.dataset.cfile);
+});
+
+/* ---------- lesson quiz: built from the lesson's own words and dialogue lines ---------- */
+function unitQuiz(u,skip){
+  const items=packItems(cPack(u)).filter(i=>i.fa);if(items.length<4){toast('این درس برای آزمون واژهٔ کافی ندارد.');return}
+  const qs=[];
+  const mk=(it,dir)=>{const ans=x=>dir==='fwd'?mean(x):fullText(x);const right=ans(it);const seen=new Set([norm(right)]);const opts=[right];
+    for(const x of shuffle(items.filter(x=>x!==it&&x.type===it.type)).concat(shuffle(items))){const a2=ans(x);if(seen.has(norm(a2)))continue;seen.add(norm(a2));opts.push(a2);if(opts.length===4)break}
+    return{type:'meaning',it,dir,opts:shuffle(opts),right}};
+  shuffle(items.slice()).slice(0,6).forEach((it,k)=>qs.push(mk(it,k%2?'rev':'fwd')));
+  const arts=shuffle(items.filter(i=>i.type==='word'&&i.article&&!qs.some(q=>q.it===i))).slice(0,2);arts.forEach(it=>qs.push({type:'article',it}));
+  const lines=[];cDialogs(u).forEach(d=>d.lines.forEach((ln,i)=>{const n=wordsOf(ln.t).length;if(n>=3&&n<=10)lines.push({t:ln.t,fa:ln.fa,en:ln.en||'',it:{id:'dlg:'+d.id+':'+i,lang:'nl',type:'sentence',text:ln.t,fa:ln.fa,en:ln.en||'',article:'',verb:null,note:''}})}));
+  shuffle(lines).slice(0,10-qs.length).forEach(x=>qs.push({type:'order',it:x.it,sent:x}));
+  while(qs.length<10){const it=items[Math.floor(Math.random()*items.length)];qs.push(mk(it,'fwd'))}
+  if(L()!=='nl')setLang('nl');
+  qz={qs:shuffle(qs).slice(0,10),i:0,score:0,wrong:[],answered:false,unit:u.id,skip:!!skip};
+  showView('quiz',true);$('#quizSetup').hidden=true;$('#quizDone').hidden=true;$('#quizRun').hidden=false;renderQ();
+}
+/* called from finishQuiz */
+function unitQuizDone(n){
+  const u=cUnit(qz.unit);if(!u||!n)return'';const need=qz.skip?8:7,ok=qz.score>=need&&n>=10;
+  if(ok){if(qz.skip)db.done['unit:'+u.id]=Date.now();db.done['uq:'+u.id]=Date.now();saveData();checkUnitDone(u)}
+  return ok?(qz.skip?'آزمون گذر را قبول شدید؛ این درس تمام‌شده حساب شد و درس بعد باز شد.':'تمرین این درس را قبول شدید!'):`برای قبولی دست‌کم ${faNum(need)} پاسخ درست لازم است. دوباره امتحان کنید.`;
+}
+
+/* ---------- course media: local first, then from the private repo ---------- */
+const cMediaInfo=f=>COURSE.media[f]?{file:COURSE.media[f].file,type:COURSE.media[f].type}:COURSE.audio[f]?{file:COURSE.audio[f].file,type:'audio/mpeg'}:null;
+async function cBlob(file,type){
+  const loc=await idbGet('media','c-'+file).catch(()=>null);if(loc&&loc.blob)return loc.blob;
+  if(!ghReady())return null;
+  const ref=cfg.gh.branch?'?ref='+encodeURIComponent(cfg.gh.branch):'';
+  const r=await ghFetch(repoPath()+'/contents/'+C_DIR+'/'+encodeURIComponent(file)+ref,{headers:{'Accept':'application/vnd.github.raw+json'}});
+  if(r.status===404)return null;if(!r.ok)throw new Error(ghErr(r.status,'دریافت فایل درس'));
+  const blob=new Blob([await r.arrayBuffer()],{type});
+  await idbPut('media',{id:'c-'+file,blob,type}).catch(()=>{});return blob;
+}
+async function cDownloadUnit(u,onProg){
+  const list=u.files.map(f=>COURSE.media[f]).filter(Boolean).map(m=>[m.file,m.type]).concat(u.dialogs.map(d=>COURSE.audio[d]).filter(Boolean).map(a=>[a.file,'audio/mpeg']));
+  for(let i=0;i<list.length;i++){onProg&&onProg(i+1,list.length);const b=await cBlob(list[i][0],list[i][1]);if(!b)throw new Error(ghReady()?'بعضی فایل‌ها هنوز از لپ‌تاپ به GitHub فرستاده نشده‌اند. کمی بعد دوباره امتحان کنید.':'برای دریافت فایل‌ها، همگام‌سازی را در تنظیمات روشن کنید.')}
+}
+
+/* ---------- recorded dialogue audio ---------- */
+const dlgAudioCache=new Map();let dlgAudioEl=null,dlgSegEnd=null,dlgSegDone=null,dlgSegTimer=null;
+function dlgHasAudio(d){return!!(COURSE&&COURSE.audio[d.id])}
+async function dlgAudioUrl(d){
+  if(dlgAudioCache.has(d.id))return dlgAudioCache.get(d.id);
+  const a=COURSE.audio[d.id];const b=await cBlob(a.file,'audio/mpeg').catch(()=>null);if(!b)return null;
+  const u=URL.createObjectURL(b);dlgAudioCache.set(d.id,u);return u;
+}
+function stopDlgAudio(){clearTimeout(dlgSegTimer);dlgSegEnd=null;const cb=dlgSegDone;dlgSegDone=null;if(dlgAudioEl)dlgAudioEl.pause();return cb}
+/* plays one recorded line; falls back to the device voice if the recording is not available */
+async function sayLine(d,i,opts){
+  opts=opts||{};const ln=d.lines[i];
+  if(dlgHasAudio(d)&&cfg.dlg.rec!==false){
+    const url=await dlgAudioUrl(d);const seg=COURSE.audio[d.id].t[i];
+    if(url&&seg){
+      stopSpeech();stopDlgAudio();
+      if(!dlgAudioEl){dlgAudioEl=new Audio();dlgAudioEl.preload='auto';dlgAudioEl.addEventListener('timeupdate',()=>{if(dlgSegEnd!=null&&dlgAudioEl.currentTime>=dlgSegEnd)endSeg()})}
+      if(dlgAudioEl.dataset.src!==url){dlgAudioEl.src=url;dlgAudioEl.dataset.src=url}
+      const rate=opts.rate&&opts.rate<1?0.75:1;
+      const go=()=>{try{dlgAudioEl.currentTime=seg[0]}catch(e){}dlgAudioEl.playbackRate=rate;dlgSegEnd=seg[1];dlgSegDone=opts.onend||null;
+        dlgAudioEl.play().catch(()=>{dlgSegEnd=null;speak(ln.t,d.lang,opts)});
+        dlgSegTimer=setTimeout(endSeg,((seg[1]-seg[0])/rate+1.5)*1000)};
+      if(dlgAudioEl.readyState>=1)go();else dlgAudioEl.addEventListener('loadedmetadata',go,{once:true});
+      return true;
+    }
+  }
+  speak(ln.t,d.lang,opts);return false;
+}
+function endSeg(){clearTimeout(dlgSegTimer);if(dlgSegEnd==null)return;dlgSegEnd=null;if(dlgAudioEl)dlgAudioEl.pause();const cb=dlgSegDone;dlgSegDone=null;if(cb)cb()}
+
+/* ---------- slides and infographics viewer ---------- */
+let vw=null;
+async function openViewer(fid){
+  const m=COURSE.media[fid];if(!m)return;
+  const box=$('#viewer');box.hidden=false;document.body.classList.add('noscroll');
+  $('#vwTitle').textContent=m.title||'';$('#vwImg').hidden=true;$('#vwMsg').hidden=false;$('#vwMsg').textContent='در حال آماده‌سازی…';$('#vwNav').hidden=true;
+  vw={fid,m,i:0,urls:[],zoom:false};
+  try{
+    const b=await cBlob(m.file,m.type);
+    if(!b){$('#vwMsg').textContent=ghReady()?'این فایل هنوز از لپ‌تاپ به GitHub نرسیده است. کمی بعد دوباره امتحان کنید.':'این فایل روی این دستگاه نیست. همگام‌سازی را روشن کنید یا بستهٔ مسیر درسی را اینجا هم وارد کنید.';return}
+    if(m.kind==='deck'){
+      const head=new DataView(await b.slice(0,8).arrayBuffer());const hl=head.getUint32(4,true);
+      const hdr=JSON.parse(await b.slice(8,8+hl).text());const base=8+hl;
+      vw.urls=hdr.pages.map(pg=>URL.createObjectURL(b.slice(base+pg.o,base+pg.o+pg.l,'image/webp')));
+    }else vw.urls=[URL.createObjectURL(b)];
+    showPage(0);
+  }catch(err){$('#vwMsg').textContent=err.message||'باز کردن فایل ممکن نشد.'}
+}
+function showPage(i){
+  if(!vw||!vw.urls.length)return;vw.i=Math.max(0,Math.min(vw.urls.length-1,i));
+  const img=$('#vwImg');img.src=vw.urls[vw.i];img.hidden=false;$('#vwMsg').hidden=true;
+  const many=vw.urls.length>1;$('#vwNav').hidden=!many;$('#vwCount').textContent=faNum(vw.i+1)+' از '+faNum(vw.urls.length);
+  $('#vwPrev').disabled=vw.i===0;$('#vwNext').disabled=vw.i===vw.urls.length-1;
+  $('#viewer').classList.toggle('zoom',vw.zoom);$('#vwStage').scrollTop=0;
+}
+function closeViewer(){if(!vw)return;vw.urls.forEach(u=>URL.revokeObjectURL(u));vw=null;$('#viewer').hidden=true;$('#vwImg').removeAttribute('src');document.body.classList.remove('noscroll')}
+$('#vwClose').addEventListener('click',closeViewer);
+$('#vwPrev').addEventListener('click',()=>vw&&showPage(vw.i-1));
+$('#vwNext').addEventListener('click',()=>vw&&showPage(vw.i+1));
+$('#vwZoom').addEventListener('click',()=>{if(!vw)return;vw.zoom=!vw.zoom;$('#viewer').classList.toggle('zoom',vw.zoom)});
+document.addEventListener('keydown',e=>{if(!vw)return;if(e.key==='Escape'){e.preventDefault();closeViewer()}else if(e.key==='ArrowLeft'){showPage(vw.i+1)}else if(e.key==='ArrowRight'){showPage(vw.i-1)}},true);
+{let sx=null;const st=$('#vwStage');st.addEventListener('touchstart',e=>{if(e.touches.length===1&&!vw.zoom)sx=e.touches[0].clientX},{passive:true});
+  st.addEventListener('touchend',e=>{if(sx==null||!vw)return;const dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>50)showPage(vw.i+(dx>0?1:-1))},{passive:true})}
+
+/* ---------- reading the course package (a plain zip, stored without compression) ---------- */
+async function readZip(file){
+  const tail=Math.min(file.size,66000);const tb=new DataView(await file.slice(file.size-tail).arrayBuffer());
+  let p=-1;for(let i=tail-22;i>=0;i--)if(tb.getUint32(i,true)===0x06054b50){p=i;break}
+  if(p<0)throw new Error('این فایل zip سالم نیست.');
+  const n=tb.getUint16(p+10,true),cdSize=tb.getUint32(p+12,true),cdOff=tb.getUint32(p+16,true);
+  const cd=new DataView(await file.slice(cdOff,cdOff+cdSize).arrayBuffer());const dec=new TextDecoder();const out=new Map();let o=0;
+  for(let k=0;k<n;k++){
+    if(cd.getUint32(o,true)!==0x02014b50)throw new Error('ساختار فایل zip درست نیست.');
+    const method=cd.getUint16(o+10,true),csize=cd.getUint32(o+20,true),nl=cd.getUint16(o+28,true),el=cd.getUint16(o+30,true),cl=cd.getUint16(o+32,true),lho=cd.getUint32(o+42,true);
+    const name=dec.decode(new Uint8Array(cd.buffer,cd.byteOffset+o+46,nl));out.set(name,{method,csize,lho});o+=46+nl+el+cl;
+  }
+  const entry=async name=>{const e=out.get(name);if(!e)return null;if(e.method!==0)throw new Error('فایل «'+name+'» فشرده است؛ این بسته را از نو بسازید.');
+    const lh=new DataView(await file.slice(e.lho,e.lho+30).arrayBuffer());const st=e.lho+30+lh.getUint16(26,true)+lh.getUint16(28,true);return file.slice(st,st+e.csize)};
+  return{names:Array.from(out.keys()),entry};
+}
+function busyBox(title){const el=$('#cBusy');el.hidden=false;$('#cBusyT').textContent=title;$('#cBusyS').textContent='';$('#cBusyBar').style.width='0';$('#cBusyX').hidden=true;
+  return{set(m,p){$('#cBusyS').textContent=m;if(p!=null)$('#cBusyBar').style.width=Math.round(p*100)+'%'},done(){el.hidden=true},fail(m){$('#cBusyS').textContent=m;$('#cBusyX').hidden=false}}}
+$('#cBusyX').addEventListener('click',()=>{$('#cBusy').hidden=true});
+async function importCourse(fileList){
+  const pr=busyBox('وارد کردن مسیر درسی');let c=null,stored=0;
+  try{
+    for(let fi=0;fi<fileList.length;fi++){
+      const file=fileList[fi],tag=fileList.length>1?'فایل '+faNum(fi+1)+' از '+faNum(fileList.length)+': ':'';
+      const z=await readZip(file);const cj=await z.entry('course.json');if(!cj)throw new Error('«'+file.name+'» بستهٔ مسیر درسی واژه‌یار نیست.');
+      const c1=JSON.parse(await cj.text());if(!c1||c1.kind!=='vazheyar-course'||!Array.isArray(c1.units))throw new Error('«'+file.name+'» بستهٔ مسیر درسی واژه‌یار نیست.');
+      if(!c||c1.updated>c.updated)c=c1;
+      askPersist();
+      const names=z.names.filter(n=>/^(media|audio)\//.test(n));
+      for(let i=0;i<names.length;i++){
+        const path=names[i],f=path.split('/')[1],type=path.startsWith('audio/')?'audio/mpeg':(c1.media[f.replace(/\.[a-z]+$/,'')]||{}).type||'application/octet-stream';
+        pr.set(tag+'ذخیرهٔ فایل‌ها روی این دستگاه: '+faNum(i+1)+' از '+faNum(names.length),(fi+i/names.length)/fileList.length);
+        const have=await idbGet('media','c-'+f).catch(()=>null);if(have&&have.blob){stored++;continue}
+        const b=await z.entry(path);if(!b)continue;
+        await idbPut('media',{id:'c-'+f,blob:new Blob([await b.arrayBuffer()],{type}),type});stored++;
+      }
+    }
+    const old=readPriv()||{kind:'vazheyar-private',name:'',packs:[],dialogs:[]};
+    const pids=new Set(c.packs.map(p=>p.id)),dids=new Set(c.dialogs.map(d=>d.id));
+    const obj={kind:'vazheyar-private',v:1,name:old.name||'De Opmaat',
+      packs:(old.packs||[]).filter(p=>!pids.has(p.id)).concat(c.packs),
+      dialogs:(old.dialogs||[]).filter(d=>!dids.has(d.id)).concat(c.dialogs),
+      course:{name:c.name,v:c.v,updated:c.updated,stages:c.stages,units:c.units,media:c.media,audio:c.audio},updated:Date.now()};
+    if(!savePriv(obj))throw new Error('فضای ذخیره‌سازی مرورگر کافی نیست.');
+    const total=Object.keys(c.media).length+Object.keys(c.audio).length;let have=0;
+    for(const f of Object.values(c.media).map(m=>m.file).concat(Object.values(c.audio).map(a=>a.file))){const h=await idbGet('media','c-'+f).catch(()=>null);if(h&&h.blob)have++}
+    pr.set(`${faNum(c.units.length)} درس وارد شد؛ ${faNum(have)} از ${faNum(total)} فایل صوتی، اسلاید و اینفوگرافیک روی این دستگاه است.${have<total?' بقیهٔ بخش‌های بسته را هم وارد کنید.':''} برنامه دوباره بارگذاری می‌شود…`,1);
+    if(ghReady()){try{await syncPrivate(true)}catch(e){}}
+    setTimeout(()=>{try{history.replaceState(null,'','#course')}catch(e){}location.reload()},have<total?4500:1800);
+  }catch(err){pr.fail(err.message||'وارد کردن ناموفق بود.')}
+}
+$('#courseFile').addEventListener('change',e=>{const fs=Array.from(e.target.files||[]);e.target.value='';if(fs.length)importCourse(fs)});
+
+/* ---------- mirror course files to the private repo (once), so other devices can fetch them ---------- */
+let cSyncing=false;
+async function syncCourse(){
+  if(!COURSE||!ghReady()||cSyncing)return;cSyncing=true;
+  try{
+    const ref=cfg.gh.branch?'?ref='+encodeURIComponent(cfg.gh.branch):'';
+    const all=Object.values(COURSE.media).map(m=>m.file).concat(Object.values(COURSE.audio).map(a=>a.file));
+    if(cfg.course&&cfg.course.upAll===COURSE.updated)return;
+    const r=await ghFetch(repoPath()+'/contents/'+C_DIR+ref);
+    const have=new Set(r.ok?(await r.json()).map(x=>x.name):[]);
+    const todo=[];for(const f of all){if(have.has(f))continue;const loc=await idbGet('media','c-'+f).catch(()=>null);if(loc&&loc.blob)todo.push([f,loc.blob])}
+    for(let i=0;i<todo.length;i++){
+      cSyncNote('فرستادن فایل‌های مسیر درسی به GitHub: '+faNum(i+1)+' از '+faNum(todo.length));
+      const body={message:'Vazheyar course file',content:await blobB64(todo[i][1])};if(cfg.gh.branch)body.branch=cfg.gh.branch;
+      const pu=await ghFetch(repoPath()+'/contents/'+C_DIR+'/'+encodeURIComponent(todo[i][0]),{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      if(pu.status===403||pu.status===429){await new Promise(res=>setTimeout(res,60000));i--;continue}
+      if(!pu.ok&&pu.status!==422)throw new Error(ghErr(pu.status,'فرستادن فایل‌های درس'));
+      await new Promise(res=>setTimeout(res,cfg.course&&cfg.course.gap!=null?cfg.course.gap:800));
+    }
+    if(have.size+todo.length>=all.length){cfg.course=Object.assign({},cfg.course,{upAll:COURSE.updated});saveCfg()}
+    cSyncNote('');
+  }catch(e){cSyncNote('')}finally{cSyncing=false}
+}
+let cSyncMsg='';function cSyncNote(t){cSyncMsg=t;const el=$('#courseSyncSt');if(el){el.textContent=t;el.hidden=!t}}
+
+/* ---------- today: the current lesson ---------- */
+function renderCourseNow(){
+  const el=$('#courseNow');if(!el)return;
+  if(!COURSE||L()!=='nl'){el.hidden=true;return}
+  const u=currentUnit();if(!u){el.hidden=true;return}
+  const s=unitState(u),us=cUnits(),done=us.filter(x=>unitState(x).done).length;
+  el.hidden=false;
+  el.innerHTML=`<div class="c-now-l"><span class="c-kicker">مسیر درسی · درس ${faNum(u.n)} از ${faNum(us.length)}</span><b>${esc(u.title)}</b><span class="hint">${s.done?'همهٔ درس‌ها تمام شده‌اند!':[s.words?'✓ واژه‌ها':'واژه‌ها: '+faNum(s.rev)+' از '+faNum(s.total),s.dlg?'✓ مکالمه‌ها':'مکالمه‌ها: '+faNum(s.dd)+' از '+faNum(s.need),s.quiz?'✓ تمرین':'تمرین'].join(' · ')}</span></div><div class="meter c-now-m"><span style="width:${Math.round(done/us.length*100)}%"></span></div><button class="btn primary" type="button" data-cnow="${esc(u.id)}">ادامهٔ درس</button>`;
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-cnow]');if(!b)return;cOpen=b.dataset.cnow;showView('course')});
+if(/[?&]debug/.test(location.search))window.__c={get qz(){return qz},cUnit,unitState,get audio(){return dlgAudioEl}};
+
 /* ================= SHARE WITH OTHERS ================= */
 const appURL=()=>location.origin+location.pathname.replace(/index\.html$/,'');
 async function qrSVG(text){
@@ -3778,7 +4197,14 @@ function renderSettings(){
   $('#guideLink').href=IS_PREVIEW?'https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm':'guide.html';
   renderPriv();
 }
-function renderPriv(){
+function renderCoursePanel(){
+  const st=$('#courseStatus');
+  if(COURSE){st.className='note-box good';st.textContent=`«${COURSE.name}» وارد شده است: ${faNum(COURSE.units.length)} درس، ${faNum(Object.keys(COURSE.audio).length)} مکالمهٔ صوتی، ${faNum(Object.keys(COURSE.media).length)} اسلاید و اینفوگرافیک.`}
+  else{st.className='note-box info';st.textContent='هنوز بسته‌ای وارد نشده است.'}
+  setSeg($('#recSeg'),cfg.dlg.rec===false?'tts':'rec');cSyncNote(cSyncMsg);
+}
+bindSeg($('#recSeg'),v=>{cfg.dlg.rec=v==='rec';saveCfg()});
+function renderPriv(){renderCoursePanel();
   const p=readPriv(),st=$('#privStatus');const has=p&&p.packs.length;
   if(has){const items=p.packs.reduce((n,x)=>n+(x.items||[]).length,0),dl=(p.dialogs||[]).length;
     st.className='note-box good';st.textContent=`«${p.name||'درس‌های کتاب'}» وارد شده است: ${faNum(p.packs.length)} درس، ${faNum(items)} واژه و جمله، ${faNum(dl)} مکالمه. در «کتابخانه» و «مکالمه‌ها» دکمهٔ ${p.name||''} را بزنید.`+(ghReady()?' با دستگاه‌های دیگر هم همگام می‌شود.':'')}
@@ -3798,14 +4224,17 @@ $('#privFile').addEventListener('change',async e=>{
   const f=e.target.files&&e.target.files[0];e.target.value='';if(!f)return;
   let obj;try{obj=JSON.parse(await f.text())}catch(err){toast('این فایل قابل خواندن نیست.');return}
   if(!obj||obj.kind!=='vazheyar-private'||!Array.isArray(obj.packs)){toast('این فایل درس‌های واژه‌یار نیست.');return}
-  obj.updated=Date.now();if(!savePriv(obj))return;
+  obj.updated=Date.now();
+  const old=readPriv();if(old&&old.course&&!obj.course){const pid=new Set(obj.packs.map(p=>p.id)),did=new Set((obj.dialogs||[]).map(d=>d.id));
+    obj.packs=obj.packs.concat(old.packs.filter(p=>p.id.startsWith('ar-')&&!pid.has(p.id)));obj.dialogs=(obj.dialogs||[]).concat((old.dialogs||[]).filter(d=>d.id.startsWith('cu-')&&!did.has(d.id)));obj.course=old.course}
+  if(!savePriv(obj))return;
   await afterPrivChange(`درس‌های «${obj.name||'کتاب'}» وارد شد. برنامه دوباره بارگذاری می‌شود…`);
 });
 $('#privFile').previousElementSibling.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#privFile').click()}});
 $('#privRemove').addEventListener('click',async()=>{
   const p=readPriv();
   if(!await ask({title:'حذف درس‌های کتاب؟',html:'<p style="margin:0">بسته‌ها و مکالمه‌های کتاب از کتابخانه برداشته می‌شوند. کارت‌هایی که قبلاً به مرورتان اضافه کرده‌اید سر جایشان می‌مانند.</p>',ok:'حذف',danger:true}))return;
-  if(!savePriv({kind:'vazheyar-private',name:p&&p.name||'',packs:[],dialogs:[],updated:Date.now()}))return;
+  if(!savePriv(Object.assign({kind:'vazheyar-private',name:p&&p.name||'',packs:[],dialogs:[],updated:Date.now()},p&&p.course?{packs:p.packs.filter(x=>x.id.startsWith('ar-')),dialogs:(p.dialogs||[]).filter(d=>d.id.startsWith('cu-')),course:p.course}:{})))return;
   await afterPrivChange('درس‌های کتاب حذف شد.');
 });
 $('#ghShow').addEventListener('click',()=>{const t=$('#ghToken');t.type=t.type==='password'?'text':'password';$('#ghShow').textContent=t.type==='password'?'نمایش':'پنهان'});
