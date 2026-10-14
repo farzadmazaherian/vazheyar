@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-46mFd7z2vPVkLijHJU2zf1GCbL/iIp9WlNXkd3HB9cU=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-GKqschyOn3+0lZ6keVXpEg7rOkxxPsEXywQekQwRlBc=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -1267,7 +1267,7 @@ body.noscroll{overflow:hidden}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۳</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۴</p>
     </section>
 
 </main>
@@ -1304,7 +1304,7 @@ body.noscroll{overflow:hidden}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=13"></script>
+<script src="packs.js?v=14"></script>
 <script>
 (function(){
 'use strict';
@@ -1420,12 +1420,12 @@ function cleanItem(i){return{id:String(i.id),lang:i.lang==='en'?'en':'nl',type:i
 let db=normData(readLS(DATA_KEY));
 if(!cfg.seeded){cfg.seeded=true;saveCfg()}
 let dirty=false;
-let _idx=null;const invalidate=()=>{_idx=null};
-function saveData(syncDelay){_idx=null;writeLS(DATA_KEY,db);dirty=true;refreshBadges();if(syncDelay!==false)scheduleSync(syncDelay||4000)}
+let _idx=null,_tIdx=null;const invalidate=()=>{_idx=null;_tIdx=null};
+function saveData(syncDelay){_idx=null;_tIdx=null;writeLS(DATA_KEY,db);dirty=true;refreshBadges();if(syncDelay!==false)scheduleSync(syncDelay||4000)}
 const getItem=id=>{if(!_idx)_idx=new Map(db.items.map(i=>[i.id,i]));return _idx.get(id)};
 const isNew=i=>!i.srs||!i.srs.last;
 const fullText=i=>(i.lang==='nl'&&i.article&&i.type==='word'?i.article+' ':'')+i.text;
-function removeItems(ids){_idx=null;const set=new Set(ids),now=Date.now();db.items=db.items.filter(i=>{if(set.has(i.id)){db.deleted[i.id]=now;return false}return true})}
+function removeItems(ids){_idx=null;_tIdx=null;const set=new Set(ids),now=Date.now();db.items=db.items.filter(i=>{if(set.has(i.id)){db.deleted[i.id]=now;return false}return true})}
 
 
 /* ================= spaced repetition ================= */
@@ -1817,7 +1817,14 @@ const sheetOpen=()=>!$('#sheet').hidden;
 
 /* ---------- word details ---------- */
 let wsItem=null;
-function installedFor(it){return getItem(it.id)||db.items.find(i=>i.lang===it.lang&&norm(i.text)===norm(it.text)&&(!!i.verb)===(!!it.verb)&&i.type===it.type)}
+/* lookup by text, built once per change of the card list (it used to scan every card for every word) */
+let _tIdxN=-1,_tIdxRef=null;const _nk=new WeakMap();
+const textKey=i=>{let k=_nk.get(i);if(k===undefined){k=i.lang+'|'+norm(i.text)+'|'+(i.verb?1:0)+'|'+i.type;if(typeof i==='object')_nk.set(i,k)}return k};
+function installedFor(it){
+  const own=getItem(it.id);if(own)return own;
+  if(!_tIdx||_tIdxN!==db.items.length||_tIdxRef!==db.items){_tIdx=new Map();for(const i of db.items){const k=i.lang+'|'+norm(i.text)+'|'+(i.verb?1:0)+'|'+i.type;if(!_tIdx.has(k))_tIdx.set(k,i)}_tIdxN=db.items.length;_tIdxRef=db.items}
+  return _tIdx.get(textKey(it));
+}
 function wordSheet(it){
   const own=installedFor(it);if(own)it=own;wsItem=it;
   const ex=exList(it);
@@ -1958,8 +1965,9 @@ const TIPS={nl:[
 let tipIdx=Math.floor(Date.now()/DAY);
 function nextDialog(lang){const src=dlgSrcFor(lang);const ds=DIALOGS.filter(d=>d.lang===lang&&seriesOf(d)===src);return ds.find(d=>!db.done[d.id])||DIALOGS.find(d=>d.lang===lang&&!db.done[d.id])||null}
 function dlgSrcFor(lang){const l=seriesList(DIALOGS,lang);const v=(cfg.dlgSrc||{})[lang]||'';return l.includes(v)?v:''}
+const _wodPool={};
 function wordOfDay(lang){
-  const pool=[];PACKS.forEach(p=>{if(p.lang===lang&&p.kind!=='phrase')packItems(p).forEach(i=>{if(i.type==='word'&&exList(i).length&&(etymManual(i)||i.verb))pool.push(i)})});
+  const pool=_wodPool[lang]||(_wodPool[lang]=[]);if(!pool.length&&!pool.done){pool.done=1;PACKS.forEach(p=>{if(p.lang===lang&&p.kind!=='phrase')packItems(p).forEach(i=>{if(i.type==='word'&&exList(i).length&&(etymManual(i)||i.verb))pool.push(i)})})}
   if(!pool.length)return null;return pool[Math.floor(Date.now()/DAY)%pool.length];
 }
 function renderToday(){
@@ -2939,7 +2947,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=13',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=14',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -2962,7 +2970,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 13، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 14، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -3795,7 +3803,12 @@ const cDialogs=u=>u.dialogs.map(id=>DIALOGS.find(d=>d.id===id)).filter(Boolean);
 let cOpen=null;
 
 /* ---------- progress ---------- */
+let _usMemo=null;
 function unitState(u){
+  if(!_usMemo){_usMemo=new Map();queueMicrotask(()=>{_usMemo=null})}
+  if(_usMemo.has(u.id))return _usMemo.get(u.id);const r=unitState0(u);_usMemo.set(u.id,r);return r;
+}
+function unitState0(u){
   const p=cPack(u),items=p?packItems(p):[];let inst=0,rev=0;
   items.forEach(it=>{const own=installedFor(it);if(own){inst++;if(own.srs||own.susp)rev++}});
   const ds=cDialogs(u),dd=ds.filter(d=>db.done[d.id]).length,need=Math.ceil(ds.length*0.6);
