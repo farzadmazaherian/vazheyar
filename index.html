@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-1eDtbMqIwbvzfNFxBRcVHk/PkuYmfmybIS99pPk0GNw=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-IogDa8FMy3IF+zx6cmYXxydCjPGZrjKUcIfnTJahThc=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -715,6 +715,126 @@ body.noscroll{overflow:hidden}
 .c-busy .bar span{display:block;height:100%;width:0;background:var(--cobalt);transition:width .2s}
 .viewer .icon-btn{background:#222a36;border-color:#3a4456;color:#fff}
 .c-gram bdi.lat{font-size:.97em}
+/* three source sections: video player and photo thumbnails */
+.src-video{display:block;width:100%;max-height:70vh;background:#000;border-radius:var(--r-sm)}
+.src-ico.k-video{background:var(--warn-soft,var(--acc-soft));color:var(--warn,var(--acc))}
+.src-ico.thumb{background-size:cover;background-position:center;background-color:var(--line);box-shadow:inset 0 0 0 1px var(--line)}
+
+/* ===== grammar lessons ===== */
+.g-levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 16px}
+.g-lv{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px}
+.g-lv b{font-size:18px;color:var(--cobalt)}
+.g-lv.full .meter span{background:var(--good)}
+.g-next{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 22px;border-inline-start:4px solid var(--acc)}
+.g-next-t{font-size:20px;font-weight:800;margin:0 0 4px}
+.g-next-s{margin:0;color:var(--muted);max-width:64ch;line-height:1.8}
+.g-group{margin:0 0 22px}
+.g-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px}
+.g-card{display:flex;gap:12px;align-items:flex-start;text-align:start;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;cursor:pointer;transition:border-color .15s}
+.g-card:hover{border-color:var(--cobalt)}
+.g-card:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.g-n{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:8px;border:1.5px solid var(--cobalt-line);box-shadow:inset 0 0 0 3px var(--surface),inset 0 0 0 4px var(--cobalt-line);color:var(--cobalt);font-weight:800;font-size:14px}
+.g-card.done .g-n{background:var(--good-soft);color:var(--good);border-color:var(--good);box-shadow:none}
+.g-c{display:flex;flex-direction:column;gap:2px;min-width:0}
+.g-c b{font-size:15.5px;line-height:1.5}
+.g-orig{font-size:13px}
+.g-sum{font-size:13.5px;color:var(--muted);line-height:1.7;margin-top:4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.g-head{margin:0 0 14px}
+.g-head .sub{margin-top:2px}
+.g-ok{color:var(--good)}
+.g-units{margin:8px 0 0}
+.g-sum-box{position:relative;border:1.5px solid var(--cobalt-line);outline:1.5px solid var(--cobalt-line);outline-offset:3px;border-radius:12px;background:var(--cobalt-soft);padding:14px 18px;margin:8px 4px 22px}
+.g-sum-box p{margin:4px 0 0;font-size:16.5px;line-height:1.9;font-weight:500}
+.g-sum-k{font-size:12.5px;font-weight:800;color:var(--cobalt)}
+.g-p{font-size:16px;line-height:2;max-width:70ch;margin:0 0 12px}
+.g-h{margin:22px 0 8px;font-size:17px}
+.g-tbl-wrap{overflow-x:auto;margin:6px 0 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.g-tbl{border-collapse:collapse;width:100%;font-size:14.5px}
+.g-tbl th,.g-tbl td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top;line-height:1.7}
+.g-tbl th{background:var(--surface-2);font-weight:800;font-size:13px;color:var(--muted)}
+.g-tbl tr:last-child td{border-bottom:0}
+.g-tbl td .lat,.g-tbl th .lat{font-size:15.5px}
+.g-fa{background:var(--acc-soft);border-radius:12px;padding:12px 16px;margin:8px 0 18px;max-width:76ch}
+.g-fa p{margin:4px 0 0;line-height:1.95}
+.g-fa-k{font-size:12.5px;font-weight:800;color:var(--acc)}
+.g-exs,.g-errs{margin:20px 0}
+.g-exs .h2 .hint{font-weight:500;font-size:13px}
+.g-x{display:flex;gap:12px;align-items:center;width:100%;text-align:start;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 8px;cursor:pointer}
+.g-x:hover{border-color:var(--acc)}
+.g-x>.i{flex:none;color:var(--acc)}
+.g-x-c{display:flex;flex-direction:column;gap:2px;min-width:0}
+.g-x-t{font-size:17.5px;text-align:left}
+.g-x-fa{font-size:14px;color:var(--muted)}
+.g-err{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 8px}
+.g-bad,.g-good{display:flex;gap:10px;align-items:baseline;line-height:1.8}
+.g-bad{color:var(--bad)}
+.g-bad .lat{text-decoration:line-through;text-decoration-thickness:1px}
+.g-good{color:var(--good);font-weight:600}
+.g-mk{flex:none;font-weight:800;width:18px;text-align:center}
+.g-err-n{margin:4px 28px 0 0;font-size:13.5px;color:var(--muted);line-height:1.8}
+.g-practice{margin:26px 0 18px;border:1.5px solid var(--cobalt-line)}
+.g-pr-start{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.g-q-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.g-q-p{font-size:17px;line-height:1.9;margin:16px 0 12px}
+.g-opts .opt{font-weight:600}
+.g-fill-line{font-size:19px;line-height:2.2;text-align:left}
+.g-fill-in{font:inherit;font-family:var(--f-lat);font-size:18px;width:9em;margin:0 6px;padding:2px 8px;border:0;border-bottom:2px solid var(--acc);background:var(--acc-soft);border-radius:6px 6px 0 0;color:var(--ink)}
+.g-fill-in:focus{outline:2px solid var(--acc);outline-offset:2px}
+.g-fix-bad{background:var(--bad-soft);border-radius:10px;padding:8px 12px;margin:0 0 10px;font-size:17px}
+.g-fix-in{width:100%;font-size:17px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.g-fb-ex{margin-top:6px;line-height:1.85}
+.g-fb-s{font-size:18px;margin:6px 0 2px}
+.g-result{text-align:center;padding:10px 0}
+.g-score{display:block;font-size:34px;color:var(--cobalt);margin-bottom:4px}
+.g-result.ok .g-score{color:var(--good)}
+.g-result p{margin:0 auto 12px;max-width:56ch;line-height:1.8}
+.g-pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 24px}
+.g-pager .btn{max-width:48%;white-space:normal;text-align:start}
+/* today: grammar point + expression of the day */
+.learn-today{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:20px 0 0}
+.g-t-title{font-size:18px;line-height:1.5}
+.g-t-sum{margin:0;color:var(--muted);line-height:1.85;font-size:14.5px}
+
+/* ===== everyday expressions ===== */
+.ph-search{display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--cobalt-line);border-radius:var(--r);padding:4px 14px;margin:0 0 14px}
+.ph-search .i{color:var(--muted);flex:none}
+.ph-search input{flex:1;min-width:0;border:0;background:none;font:inherit;font-size:16px;padding:10px 0;color:var(--ink)}
+.ph-search input:focus{outline:none}
+.ph-search:focus-within{border-color:var(--cobalt)}
+.ph-cats{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
+.ph-cat{font:inherit;font-size:14px;font-weight:700;padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.ph-cat .num{font-weight:500;opacity:.75;font-size:12px}
+.ph-cat[aria-selected="true"]{background:var(--cobalt);border-color:var(--cobalt);color:var(--cobalt-ink)}
+.ph-cat.star:not([aria-selected="true"]){border-color:var(--acc);color:var(--acc)}
+#phCatDesc{margin:4px 0 14px}
+.ph-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.ph-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.ph-say{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.ph-say .i{flex:none;color:var(--acc)}
+.ph-t{font-size:20px;font-weight:600;color:var(--ink)}
+.ph-t-big{font-size:22px}
+.ph-fa{font-size:15.5px;font-weight:700}
+.ph-tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.ph-eq{font-size:13px;color:var(--muted)}
+.ph-note{margin:0;font-size:14px;line-height:1.85;color:var(--muted)}
+.ph-ex{display:flex;flex-direction:column;gap:4px;background:var(--surface-2);border-radius:10px;padding:8px 10px}
+.ph-line{display:flex;flex-direction:column;align-items:stretch;gap:0;font:inherit;color:inherit;background:none;border:0;padding:3px 2px;cursor:pointer;text-align:start;border-radius:6px}
+.ph-line .lat{text-align:left;font-size:15px}
+.ph-line .hint{font-size:12.5px}
+.ph-line:hover{background:var(--surface)}
+.ph-foot{margin-top:auto;padding-top:4px}
+.ph-sit{font-size:19px;line-height:1.9;font-weight:700;text-align:center;margin:18px auto 18px;max-width:46ch}
+.ph-opts{display:grid;gap:10px}
+.ph-opts .opt{font-size:18px;font-weight:600;justify-content:center}
+@media (max-width:900px){.learn-today{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .g-cards,.ph-list{grid-template-columns:1fr}
+  .ph-cats{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding:0 16px 4px;scrollbar-width:none}
+  .ph-cat{flex:none}
+  .g-sum-box{margin-inline:4px}
+  .g-p{font-size:15.5px}
+  .g-pager .btn{max-width:100%;width:100%}
+}
 
 </style>
 </head>
@@ -757,6 +877,8 @@ body.noscroll{overflow:hidden}
         <div class="nav-label">یادگیری</div>
         <button type="button" data-go="today"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>امروز</span></button>
         <button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg><span>مسیر درسی</span></button>
+        <button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg><span>دستور زبان</span></button>
+        <button type="button" data-go="phrases"><svg class="i" viewBox="0 0 24 24"><path d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 19 16h-7l-4.5 3.5V16H5a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 5 5z"/><path d="M8.5 9.5h7M8.5 12h4.5"/></svg><span>اصطلاحات روزمره</span></button>
         <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg><span>مرور کارت‌ها</span><b class="badge nav-due" hidden></b></button>
         <button type="button" data-go="dialogs"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M18.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v6A1.5 1.5 0 0 1 20 18.5h-1v2.5l-3-2.5h-4"/></svg><span>مکالمه‌ها</span></button>
         <button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg><span>تمرین</span></button>
@@ -806,6 +928,10 @@ body.noscroll{overflow:hidden}
           <div class="panel feature" id="dlgNext"></div>
           <div class="panel feature" id="wod"></div>
         </div>
+      </div>
+      <div class="learn-today" id="learnToday" hidden>
+        <div class="panel feature" id="gToday" hidden></div>
+        <div class="panel feature" id="phToday" hidden></div>
       </div>
       <div class="stats">
         <div class="stat"><b class="num" id="stStreak">۰</b><span>روز پیاپی تمرین</span></div>
@@ -1061,6 +1187,38 @@ body.noscroll{overflow:hidden}
       </div>
     </section>
 
+    <!-- ============ GRAMMAR ============ -->
+    <section class="view" id="v-grammar" hidden>
+      <div id="gHome">
+        <div class="page-head"><div><h1 class="view-title" id="gTitle">دستور زبان</h1><p class="sub">درس‌های کوتاه با توضیح فارسی، مقایسه با فارسی، مثال صوتی و تمرین. هر درس حدود ده دقیقه طول می‌کشد. با ۷۰٪ پاسخ درست، درس تمام‌شده حساب می‌شود.</p></div></div>
+        <div class="g-levels" id="gLevels"></div>
+        <div id="gNext"></div>
+        <div id="gList"></div>
+      </div>
+      <div id="gLesson" hidden>
+        <button class="link back" type="button" id="gBack">&larr; همهٔ درس‌های دستور</button>
+        <article id="gBody"></article>
+        <section class="panel g-practice" id="gPractice"></section>
+        <nav class="g-pager" id="gPager"></nav>
+      </div>
+    </section>
+
+    <!-- ============ EVERYDAY EXPRESSIONS ============ -->
+    <section class="view" id="v-phrases" hidden>
+      <div id="phHome">
+        <div class="page-head"><div><h1 class="view-title" id="phTitle">اصطلاحات روزمره</h1><p class="sub" id="phSub"></p></div>
+          <button class="btn primary" type="button" id="phPractice">تمرین موقعیت‌ها</button></div>
+        <div class="ph-search"><svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg><input type="search" id="phQ" placeholder="به فارسی بنویسید، مثلاً: خسته نباشی" aria-label="جست‌وجوی اصطلاح"></div>
+        <div class="ph-cats" id="phCats" role="tablist" aria-label="موقعیت‌ها"></div>
+        <p class="hint" id="phCatDesc"></p>
+        <div class="ph-list" id="phList"></div>
+      </div>
+      <div id="phRun" hidden class="quiz-wrap">
+        <div class="rev-top" style="max-width:none"><button class="btn ghost sm" type="button" id="phRunBack">پایان</button><div class="progress"><span id="phRunBar" style="width:0"></span></div><span class="rev-count num" id="phRunCount"></span></div>
+        <div class="panel quiz-q" id="phRunQ"></div>
+      </div>
+    </section>
+
     <!-- ============ MY SOURCES ============ -->
     <section class="view" id="v-sources" hidden>
       <div id="srcHome">
@@ -1270,7 +1428,7 @@ body.noscroll{overflow:hidden}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۶</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۷</p>
     </section>
 
 </main>
@@ -1307,7 +1465,7 @@ body.noscroll{overflow:hidden}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=16"></script>
+<script src="packs.js?v=17"></script>
 <script>
 (function(){
 'use strict';
@@ -1448,6 +1606,10 @@ function schedule(srs,g,now=Date.now()){
   s.ivl=ivl;s.due=now+ivl*DAY;s.last=now;if(!s.first)s.first=dayKey(now);
   return s;
 }
+/* A card with a gap shorter than a day (learning cards: «سخت» = 12 hours, «دوباره» = 10 minutes)
+   is due at its exact time; cards with gaps of whole days are due for the whole of their day. */
+const isDue=(i,now,eod)=>!!i.srs&&(i.srs.ivl<1?i.srs.due<=now:i.srs.due<=eod);
+const laterToday=lang=>{const now=Date.now(),eod=endOfToday();return db.items.filter(i=>i.lang===lang&&!i.susp&&!isNew(i)&&i.srs.ivl<1&&i.srs.due>now&&i.srs.due<=eod).length};
 function previewIvl(srs,g){return schedule(srs?Object.assign({},srs):null,g,Date.now()).ivl}
 const introducedToday=lang=>{const k=dayKey();return db.items.filter(i=>(!lang||i.lang===lang)&&i.srs&&i.srs.first===k).length};
 /* review log: db.log[day]["device@lang"] = count. Older entries ("device") have no language;
@@ -1463,19 +1625,19 @@ const dayCount=(k,lang)=>{const o=db.log[k];if(!o)return 0;let n=0,old=0;
   for(const[key,v]of Object.entries(o)){const c=+v||0;const at=key.lastIndexOf('@');if(at<0){old+=c;continue}if(!lang||key.slice(at+1)===lang)n+=c}
   if(old)n+=lang?Math.round(old*legacyShare(k,lang)):old;return n};
 function stats(lang){
-  const eod=endOfToday();let due=0,fresh=0,total=0,words=0,sent=0,verbs=0,mature=0,susp=0;
+  const eod=endOfToday(),now=Date.now();let due=0,fresh=0,total=0,words=0,sent=0,verbs=0,mature=0,susp=0;
   for(const i of db.items){
     if(i.lang!==lang)continue;total++;
     if(i.susp){susp++;continue}
     if(isVerb(i))verbs++;else if(i.type==='sentence')sent++;else words++;
-    if(isNew(i))fresh++;else{if(i.srs.due<=eod)due++;if(i.srs.ivl>=21)mature++}
+    if(isNew(i))fresh++;else{if(isDue(i,now,eod))due++;if(i.srs.ivl>=21)mature++}
   }
   const newLeft=Math.max(0,(+cfg.review.newPerDay||0)-introducedToday(lang));
   return{due,fresh,total,words,sent,verbs,mature,susp,newLeft,newToday:Math.min(fresh,newLeft)};
 }
 function buildQueue(lang){
-  const eod=endOfToday();const pool=db.items.filter(i=>i.lang===lang&&!i.susp);
-  const due=pool.filter(i=>!isNew(i)&&i.srs.due<=eod).sort((a,b)=>a.srs.due-b.srs.due);
+  const eod=endOfToday(),now=Date.now();const pool=db.items.filter(i=>i.lang===lang&&!i.susp);
+  const due=pool.filter(i=>!isNew(i)&&isDue(i,now,eod)).sort((a,b)=>a.srs.due-b.srs.due);
   const newLeft=Math.max(0,(+cfg.review.newPerDay||0)-introducedToday(lang));
   const focus=cfg.review.focus||'series',cf=typeof courseFocusPack==='function'&&lang===L()?courseFocusPack():'';const pri=i=>cf&&i.pack===cf?-1:focus==='series'&&itemSeries(i)?0:1;
   const fresh=pool.filter(isNew).sort((a,b)=>(pri(a)-pri(b))||(a.created-b.created)).slice(0,newLeft);
@@ -1895,11 +2057,11 @@ function qaSave(next){
 document.addEventListener('click',e=>{if(e.target.closest('[data-quickadd]')){e.preventDefault();quickAdd()}});
 /* phone "more" menu */
 document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return;
-  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg>مسیر درسی</button><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg>کتابخانه</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M9.5 12.5h6M9.5 16h4"/></svg>متن‌ها و PDF</button><button type="button" data-go="listen"><svg class="i" viewBox="0 0 24 24"><path d="M4.5 13.5a7.5 7.5 0 0 1 15 0"/><rect x="3" y="13" width="4" height="7" rx="1.5"/><rect x="17" y="13" width="4" height="7" rx="1.5"/></svg>فایل‌های صوتی</button><button type="button" data-go="watch"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/></svg>عکس و ویدیو</button><button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>آهنگ‌ها</button><button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg>یوتیوب من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
+  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg>مسیر درسی</button><button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg>دستور زبان</button><button type="button" data-go="phrases"><svg class="i" viewBox="0 0 24 24"><path d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 19 16h-7l-4.5 3.5V16H5a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 5 5z"/><path d="M8.5 9.5h7M8.5 12h4.5"/></svg>اصطلاحات روزمره</button><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg>کتابخانه</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M9.5 12.5h6M9.5 16h4"/></svg>متن‌ها و PDF</button><button type="button" data-go="listen"><svg class="i" viewBox="0 0 24 24"><path d="M4.5 13.5a7.5 7.5 0 0 1 15 0"/><rect x="3" y="13" width="4" height="7" rx="1.5"/><rect x="17" y="13" width="4" height="7" rx="1.5"/></svg>فایل‌های صوتی</button><button type="button" data-go="watch"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/></svg>عکس و ویدیو</button><button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>آهنگ‌ها</button><button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg>یوتیوب من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','course','review','dialogs','quiz','library','manage','sources','listen','watch','songs','youtube','share','settings'];
+const VIEWS=['today','course','grammar','phrases','review','dialogs','quiz','library','manage','sources','listen','watch','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
@@ -1910,6 +2072,8 @@ function showView(v,noHash){
   const lk=(v==='dialogs'||(v==='quiz'&&!qz))?lockOf(v):null;applyLock(v,lk);
   if(v==='today')renderToday();
   if(v==='course')renderCourse();
+  if(v==='grammar')renderGrammar();
+  if(v==='phrases')openPhrases();
   if(v==='review'&&!ses)renderReviewIdle();
   if(v==='dialogs'&&!lk)renderDialogs();
   if(v==='library')renderLibrary();
@@ -2008,7 +2172,7 @@ function renderToday(){
   let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY),lang);if(c>0)streak++;else if(k===0)continue;else break}
   $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK,lang));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
   const tips=TIPS[lang];$('#tip').innerHTML=tips[tipIdx%tips.length];
-  renderPath();renderCourseNow();
+  renderPath();renderCourseNow();renderLearnToday();
 }
 $('#nextTip').addEventListener('click',()=>{tipIdx++;const tips=TIPS[L()];$('#tip').innerHTML=tips[tipIdx%tips.length]});
 $('#startToday').addEventListener('click',e=>{if(e.currentTarget.dataset.lib){showView('library');return}startSession()});
@@ -2029,7 +2193,7 @@ function renderReviewIdle(){
   const d=cfg.review.dir||'fwd';setSeg($('#revDir'),d);$('#revDirHint').textContent=DIR_HINT[d]||'';
   $('#revTitle').textContent='مرور کارت‌های '+LANG_FA[L()];
   const q=buildQueue(L());
-  $('#revIdleInfo').textContent=q.length?faNum(q.length)+' کارت آمادهٔ مرور است.':'برای امروز کارتی باقی نمانده است.';
+  const lt=laterToday(L());$('#revIdleInfo').textContent=(q.length?faNum(q.length)+' کارت آمادهٔ مرور است.':'برای الان کارتی باقی نمانده است.')+(lt?' '+faNum(lt)+' کارتی که «سخت» یا «دوباره» زده‌اید، سر وقت خودش (چند ساعت دیگر) برمی‌گردد.':'');
   $('#revStart').disabled=!q.length;
 }
 $('#revStart').addEventListener('click',()=>startSession());
@@ -2338,6 +2502,9 @@ function renderQ(){
     h+=meta(q.dir==='fwd'?'معنی درست کدام است؟':'کدام گزینه معادل این است؟');
     h+=q.dir==='fwd'?`<div class="q-prompt">${wordHTML(it)}${spk}</div>`:`<div class="q-prompt">${meanHTML(it,'card-q-fa')}</div>`;
     h+='<div class="opts">'+q.opts.map((o,k)=>`<button type="button" class="opt ${isLat(o)?'lat':''}" data-o="${k}"><span class="k num">${faNum(k+1)}</span><span>${esc(o)}</span></button>`).join('')+'</div>';
+  }else if(q.type==='gmc'){
+    h+=meta('دستور زبان: گزینهٔ درست کدام است؟')+`<div class="q-prompt"><div class="g-q-p" style="font-size:19px">${gramHTML(q.p)}</div></div>`;
+    h+='<div class="opts">'+q.opts.map((o,k)=>`<button type="button" class="opt" data-o="${k}"><span class="k num">${faNum(k+1)}</span><span>${gramHTML(o)}</span></button>`).join('')+'</div>';
   }else if(q.type==='article'){
     h+=meta('حرف تعریف درست کدام است؟')+`<div class="q-prompt"><div class="card-word">${esc(it.text)}</div></div><p class="hint" style="text-align:center;margin:-8px 0 0">${meanInline(it)}</p>`;
     h+=`<div class="opts"><button type="button" class="opt art-opt" data-a="de"><span class="art de">de</span></button><button type="button" class="opt art-opt" data-a="het"><span class="art het">het</span></button></div>`;
@@ -2372,7 +2539,7 @@ function answerQ(ok,fbHTML,sayText){
   qz.answered=true;const q=qz.qs[qz.i];if(ok)qz.score++;else qz.wrong.push(q.it.id);
   $('#qFb').innerHTML=`<div class="fb ${ok?'ok':'bad'}">${fbHTML}</div><div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn primary" type="button" id="qNext">${qz.i+1<qz.qs.length?'پرسش بعدی':'دیدن نتیجه'} <kbd>Enter</kbd></button></div>`;
   $('#qNext').focus();
-  if(cfg.tts.auto&&q.type!=='meaning'&&q.type!=='speak'){if(sayText)speak(sayText,q.it.lang);else speakItem(q.it)}
+  if(cfg.tts.auto&&q.type!=='meaning'&&q.type!=='speak'&&q.type!=='gmc'){if(sayText)speak(sayText,q.it.lang);else speakItem(q.it)}
 }
 function nextQ(){if(!qz||!qz.answered)return;qz.i++;if(qz.i>=qz.qs.length)finishQuiz();else renderQ()}
 $('#quizQ').addEventListener('click',e=>{
@@ -2402,6 +2569,9 @@ $('#quizQ').addEventListener('click',e=>{
       else $('#micOut').insertAdjacentHTML('beforeend',`<p class="hint" style="margin:4px 0 0">${faNum(pct)}٪ درست شنیده شد. واژه‌های قرمز را دوباره بگویید (تلاش ${faNum(q.tries)} از ۳).</p>`);
     });return}
   const o=e.target.closest('[data-o]');
+  if(o&&q.type==='gmc'){const ok=q.opts[+o.dataset.o]===q.right;
+    $$('[data-o]',$('#quizQ')).forEach(b=>{b.disabled=true;if(q.opts[+b.dataset.o]===q.right)b.classList.add('ok')});if(!ok)o.classList.add('no');
+    answerQ(ok,(ok?'درست است.':`پاسخ درست: <b>${gramHTML(q.right)}</b>`)+(q.ex?`<div style="margin-top:6px">${gramHTML(q.ex)}</div>`:''));return}
   if(o&&q.type==='meaning'){const ok=q.opts[+o.dataset.o]===q.right;
     $$('[data-o]',$('#quizQ')).forEach(b=>{b.disabled=true;if(q.opts[+b.dataset.o]===q.right)b.classList.add('ok')});if(!ok)o.classList.add('no');
     answerQ(ok,(ok?'درست است.':`پاسخ درست: <b class="${q.dir==='rev'?'lat':''}">${esc(q.right)}</b>`)+(q.it.lang==='nl'&&gl(q.it)!=='fa'?(enMain(q.it)?`<div style="margin-top:4px">${esc(q.it.fa)}</div>`:q.it.en?`<div class="lat" style="margin-top:4px">${esc(q.it.en)}</div>`:''):'')+(q.it.note?`<div style="margin-top:6px">${esc(q.it.note)}</div>`:''));return}
@@ -2520,7 +2690,7 @@ function syncFormVis(){
 }
 function allTags(){const s=new Set();db.items.forEach(i=>{if(i.lang===L())i.tags.forEach(t=>s.add(t))});return Array.from(s).sort((a,b)=>a.localeCompare(b,'fa'))}
 const splitTags=s=>String(s||'').split(/[,،؛;]/).map(t=>t.trim()).filter(Boolean);
-function statusOf(i){if(i.susp)return{k:'susp',t:'کنار گذاشته'};if(isNew(i))return{k:'new',t:'جدید'};if(i.srs.due<=endOfToday())return{k:'due',t:'برای امروز'};const d=Math.max(1,Math.ceil((i.srs.due-Date.now())/DAY));return{k:i.srs.ivl>=21?'mature':'later',t:'در '+faNum(d)+' روز'}}
+function statusOf(i){if(i.susp)return{k:'susp',t:'کنار گذاشته'};if(isNew(i))return{k:'new',t:'جدید'};if(isDue(i,Date.now(),endOfToday()))return{k:'due',t:'برای امروز'};if(i.srs.due<=endOfToday())return{k:'later',t:'چند ساعت دیگر'};const d=Math.max(1,Math.ceil((i.srs.due-Date.now())/DAY));return{k:i.srs.ivl>=21?'mature':'later',t:'در '+faNum(d)+' روز'}}
 function renderManage(){
   const s=stats(L());$('#manTitle').textContent='واژه‌های '+LANG_FA[L()]+' من';
   $('#manStats').textContent=`${faNum(s.total)} مورد: ${faNum(s.words)} واژه، ${faNum(s.verbs)} فعل، ${faNum(s.sent)} جمله. برای دیدن جزئیات و واژه‌شناسی، روی هر مورد بزنید.`;
@@ -2961,7 +3131,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=16',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=17',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -2984,7 +3154,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 16، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 17، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -3923,14 +4093,15 @@ function renderUnit(u){
   const st1=step(1,s.words,'واژه‌ها',s.words?'واژه‌های این درس مرور شده‌اند.':left?`${faNum(left)} واژه هنوز در کارت‌ها نیست. اول اضافه کنید، بعد مرور کنید.`:`${faNum(s.rev)} از ${faNum(s.total)} واژه دست‌کم یک بار مرور شده.`,
     left?`<button class="btn sm primary" type="button" data-cu="add">افزودن ${faNum(left)} واژه</button>`:!s.words?`<button class="btn sm primary" type="button" data-cu="review">مرور</button>`:'',true);
   const st2=step(2,s.dlg,'مکالمه‌ها',s.dlg?`${faNum(s.dd)} مکالمه تمرین شد.`:`دست‌کم ${faNum(s.need)} مکالمه را تا آخر گوش دهید (${faNum(s.dd)} از ${faNum(s.need)}).`,'',s.words);
-  const st3=step(3,s.quiz,'تمرین درس',s.quiz?'تمرین این درس را با موفقیت گذراندید.':'آزمون ۱۰ پرسشی از واژه‌ها و جمله‌های همین درس؛ با ۷ پاسخ درست قبول می‌شوید.',
+  const st3=step(3,s.quiz,'تمرین درس',s.quiz?'تمرین این درس را با موفقیت گذراندید.':(gForUnit(u).length?'آزمون ۱۰ پرسشی از واژه‌ها، جمله‌ها و دستور زبان همین درس؛ با ۷ پاسخ درست قبول می‌شوید.':'آزمون ۱۰ پرسشی از واژه‌ها و جمله‌های همین درس؛ با ۷ پاسخ درست قبول می‌شوید.'),
     !s.quiz&&s.words&&s.dlg?`<button class="btn sm primary" type="button" data-cu="quiz">شروع تمرین</button>`:'',s.words&&s.dlg);
   const files=u.files.map(f=>Object.assign({id:f},(CRS().media||{})[f]||{})).filter(m=>m.file);
   $('#cUnitBody').innerHTML=`
     <div class="page-head" style="margin-bottom:10px"><div><p class="c-kicker">درس ${faNum(u.n)} · <span class="lat">${esc(u.level)}</span></p><h1 class="view-title">${esc(u.title)}</h1><p class="sub lat" style="margin-bottom:4px">${esc(u.orig)}</p><p class="sub">${esc(u.desc)}</p></div></div>
     ${s.done?`<p class="note-box good" style="margin:0 0 14px">این درس تمام شده است. هر وقت خواستید دوباره مرورش کنید.</p>`:''}
     <ol class="path c-steps">${st1}${st2}${st3}</ol>
-    ${gram.length?`<section class="panel c-sec"><h2 class="h2">نکته‌های گرامر این درس</h2><ul class="c-gram">${gram.map(g=>`<li>${gramHTML(g)}</li>`).join('')}</ul></section>`:''}
+    ${gUnitHTML(u)}
+    ${gram.length?`<section class="panel c-sec"><h2 class="h2">خلاصهٔ نکته‌های گرامر این درس</h2><ul class="c-gram">${gram.map(g=>`<li>${gramHTML(g)}</li>`).join('')}</ul></section>`:''}
     <section class="panel c-sec"><div class="c-sec-h"><h2 class="h2">مکالمه‌های صوتی</h2><span class="hint">${faNum(s.dd)} از ${faNum(ds.length)}</span></div>
       <div class="c-dlgs">${ds.map(d=>`<button type="button" class="c-dlg${db.done[d.id]?' done':''}" data-cdlg="${esc(d.id)}"${s.words?'':' aria-disabled="true"'}><span class="c-dlg-ic">${db.done[d.id]?'✓':'▶'}</span><span><b>${esc(d.titleFa||d.title)}</b><span class="lat hint">${esc(d.title)}</span></span><span class="hint num">${NLC&&NLC.audio[d.id]?fmtTime(NLC.audio[d.id].dur):''}</span></button>`).join('')}</div>
       ${s.words?'':'<p class="hint" style="margin:10px 0 0">مکالمه‌ها بعد از مرور واژه‌ها باز می‌شوند.</p>'}</section>
@@ -3960,7 +4131,8 @@ function unitQuiz(u,skip){
   const mk=(it,dir)=>{const ans=x=>dir==='fwd'?mean(x):fullText(x);const right=ans(it);const seen=new Set([norm(right)]);const opts=[right];
     for(const x of shuffle(items.filter(x=>x!==it&&x.type===it.type)).concat(shuffle(items))){const a2=ans(x);if(seen.has(norm(a2)))continue;seen.add(norm(a2));opts.push(a2);if(opts.length===4)break}
     return{type:'meaning',it,dir,opts:shuffle(opts),right}};
-  shuffle(items.slice()).slice(0,6).forEach((it,k)=>qs.push(mk(it,k%2?'rev':'fwd')));
+  const gq=gramQuizFor(u,2);
+  shuffle(items.slice()).slice(0,6-gq.length).forEach((it,k)=>qs.push(mk(it,k%2?'rev':'fwd')));qs.push(...gq);
   const arts=shuffle(items.filter(i=>i.type==='word'&&i.article&&!qs.some(q=>q.it===i))).slice(0,2);arts.forEach(it=>qs.push({type:'article',it}));
   const lines=[];cDialogs(u).forEach(d=>d.lines.forEach((ln,i)=>{const n=wordsOf(ln.t).length;if(n>=3&&n<=10)lines.push({t:ln.t,fa:ln.fa,en:ln.en||'',it:{id:'dlg:'+d.id+':'+i,lang:d.lang,type:'sentence',text:ln.t,fa:ln.fa,en:ln.en||'',article:'',verb:null,note:''}})}));
   shuffle(lines).slice(0,10-qs.length).forEach(x=>qs.push({type:'order',it:x.it,sent:x}));
@@ -4161,6 +4333,277 @@ function renderCourseNow(){
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-cnow]');if(!b)return;cOpen=b.dataset.cnow;showView('course')});
 if(/[?&]debug/.test(location.search))window.__c={get qz(){return qz},cUnit,unitState,get audio(){return dlgAudioEl}};
+
+/* ================= GRAMMAR LESSONS ================= */
+/* Each lesson: short explanation, comparison with Persian, examples with audio, typical mistakes,
+   then a short practice (choose / build the sentence / fill in / correct the mistake).
+   70% right marks the lesson as done (db.done['g:'+id], synced like dialogues). */
+const GRAMMAR={nl:(VZ.grammar&&VZ.grammar.nl)||[],en:(VZ.grammar&&VZ.grammar.en)||[]};
+const PHRASES={nl:(VZ.phrases&&VZ.phrases.nl)||{cats:[],items:[]},en:(VZ.phrases&&VZ.phrases.en)||{cats:[],items:[]}};
+const G_PASS=0.7;
+const LV_FA={A1:'سطح A1 · پایه',A2:'سطح A2 · پیش‌متوسط',B1:'سطح B1 · متوسط (سطح امتحان اینبورخرینگ)',B2:'سطح B2'};
+const gDone=id=>!!db.done['g:'+id];
+const gById=id=>GRAMMAR.nl.find(g=>g.id===id)||GRAMMAR.en.find(g=>g.id===id)||null;
+const gNextLesson=lang=>(GRAMMAR[lang]||[]).find(g=>!gDone(g.id))||null;
+const unitLang=u=>/^e\d/.test(u.id)?'en':'nl';
+const gForUnit=u=>(GRAMMAR[unitLang(u)]||[]).filter(g=>g.units.includes(u.id));
+const gNum=g=>GRAMMAR[g.lang].indexOf(g)+1;
+let gOpen=null,gx=null;
+
+function renderGrammar(){
+  const lang=L(),list=GRAMMAR[lang];
+  if(gOpen){const g=gById(gOpen);if(g&&g.lang===lang)return renderGLesson(g);gOpen=null}
+  $('#gHome').hidden=false;$('#gLesson').hidden=true;
+  $('#gTitle').textContent='دستور زبان '+LANG_FA[lang];
+  if(!list.length){$('#gLevels').innerHTML='';$('#gNext').innerHTML='';$('#gList').innerHTML='<div class="empty panel">برای این زبان هنوز درس دستوری نیست.</div>';return}
+  const lv=['A1','A2','B1','B2'].filter(l=>list.some(g=>g.level===l));
+  $('#gLevels').innerHTML=lv.map(l=>{const ls=list.filter(g=>g.level===l),d=ls.filter(g=>gDone(g.id)).length;
+    return`<div class="g-lv${d===ls.length?' full':''}"><b class="lat">${l}</b><div class="meter"><span style="width:${Math.round(d/ls.length*100)}%"></span></div><span class="hint num">${faNum(d)} از ${faNum(ls.length)}</span></div>`}).join('');
+  const nx=gNextLesson(lang);
+  $('#gNext').innerHTML=nx?`<div class="panel g-next"><div><p class="c-kicker">درس پیشنهادی بعدی · درس ${faNum(gNum(nx))} · <span class="lat">${nx.level}</span></p><h2 class="g-next-t">${gramHTML(nx.title)}</h2><p class="g-next-s">${gramHTML(nx.sum)}</p></div><button class="btn primary" type="button" data-gopen="${esc(nx.id)}">شروع درس</button></div>`
+    :`<p class="note-box good" style="margin:0 0 16px">همهٔ درس‌های دستور ${LANG_FA[lang]} را گذرانده‌اید. هر وقت خواستید یکی را دوباره تمرین کنید.</p>`;
+  $('#gList').innerHTML=lv.map(l=>`<section class="g-group"><h2 class="h2">${LV_FA[l]}</h2><div class="g-cards">${list.filter(g=>g.level===l).map(gCard).join('')}</div></section>`).join('');
+}
+function gCard(g){
+  const done=gDone(g.id);
+  return`<button type="button" class="g-card${done?' done':''}" data-gopen="${esc(g.id)}"><span class="g-n num" aria-hidden="true">${done?'✓':faNum(gNum(g))}</span><span class="g-c"><b>${gramHTML(g.title)}</b><span class="lat hint g-orig">${esc(g.orig)}</span><span class="g-sum">${gramHTML(g.sum)}</span></span></button>`;
+}
+/* the explanation: consecutive examples and mistakes are shown as one group */
+function gBlocksHTML(g){
+  const out=[];let i=0;const B=g.blocks;
+  while(i<B.length){const b=B[i];
+    if(b.k==='x'){const xs=[];while(i<B.length&&B[i].k==='x')xs.push(B[i++]);
+      out.push(`<section class="g-exs"><h2 class="h2">مثال‌ها <span class="hint">(برای شنیدن بزنید)</span></h2>${xs.map(x=>`<button type="button" class="g-x" data-gsay="${esc(x.t)}"><svg class="i"><use href="#i-speak"/></svg><span class="g-x-c"><span class="lat g-x-t">${esc(x.t)}</span><span class="g-x-fa">${esc(x.fa)}</span></span></button>`).join('')}</section>`);continue}
+    if(b.k==='err'){const es=[];while(i<B.length&&B[i].k==='err')es.push(B[i++]);
+      out.push(`<section class="g-errs"><h2 class="h2">اشتباه رایج فارسی‌زبان‌ها</h2>${es.map(e=>`<div class="g-err"><div class="g-bad"><span class="g-mk" aria-label="غلط">✗</span><span>${gramHTML(e.bad)}</span></div><div class="g-good"><span class="g-mk" aria-label="درست">✓</span><span>${gramHTML(e.good)}</span></div><p class="g-err-n">${gramHTML(e.note)}</p></div>`).join('')}</section>`);continue}
+    i++;
+    if(b.k==='p')out.push(`<p class="g-p">${gramHTML(b.t)}</p>`);
+    else if(b.k==='h')out.push(`<h2 class="h2 g-h">${gramHTML(b.t)}</h2>`);
+    else if(b.k==='fa')out.push(`<aside class="g-fa"><span class="g-fa-k">فارسی و ${LANG_FA[g.lang]}</span><p>${gramHTML(b.t)}</p></aside>`);
+    else if(b.k==='t'){const [hd,...rows]=b.rows;
+      out.push(`<div class="g-tbl-wrap"><table class="g-tbl"><thead><tr>${hd.map(c=>`<th>${gramHTML(c)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${gramHTML(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`)}
+  }
+  return out.join('');
+}
+function gUnitsLine(g){
+  const C=typeof CRS==='function'&&unitLangOK(g)?CRS():null;if(!C)return'';
+  const us=C.units.filter(u=>g.units.includes(u.id));if(!us.length)return'';
+  return`<p class="hint g-units">مربوط به مسیر درسی: ${us.map(u=>`<button class="link" type="button" data-gunit="${esc(u.id)}">درس ${faNum(u.n)}: ${esc(u.title)}</button>`).join('، ')}</p>`;
+}
+const unitLangOK=g=>g.lang===L();
+function renderGLesson(g){
+  gOpen=g.id;$('#gHome').hidden=true;$('#gLesson').hidden=false;
+  const list=GRAMMAR[g.lang],n=list.indexOf(g);
+  $('#gBody').innerHTML=`<header class="g-head"><p class="c-kicker">درس ${faNum(n+1)} از ${faNum(list.length)} · <span class="lat">${esc(g.level)}</span>${gDone(g.id)?' · <span class="g-ok">✓ گذرانده‌اید</span>':''}</p><h1 class="view-title">${gramHTML(g.title)}</h1><p class="sub lat g-orig">${esc(g.orig)}</p>${gUnitsLine(g)}</header>
+    <div class="g-sum-box"><span class="g-sum-k">در یک جمله</span><p>${gramHTML(g.sum)}</p></div>${gBlocksHTML(g)}`;
+  if(!gx||gx.id!==g.id)gx={id:g.id,i:-1,score:0,wrong:[]};
+  renderGPractice(g);
+  const prev=list[n-1],next=list[n+1];
+  $('#gPager').innerHTML=`${prev?`<button class="btn ghost" type="button" data-gopen="${esc(prev.id)}">&rarr; ${gramHTML(prev.title)}</button>`:'<span></span>'}${next?`<button class="btn ghost" type="button" data-gopen="${esc(next.id)}">${gramHTML(next.title)} &larr;</button>`:''}`;
+}
+/* ---------- practice ---------- */
+const gNorm=s=>norm(String(s||'').replace(/[‘’`´]/g,"'"));
+function gFull(q){return q.k==='fill'?q.p.replace(/\s*\([^)]*\)\s*$/,'').replace('___',q.ans[0]):q.k==='fix'?q.ans[0]:q.k==='order'?q.s:''}
+function renderGPractice(g){
+  const box=$('#gPractice'),n=g.qs.length;
+  if(gx.i<0){box.innerHTML=`<div class="g-pr-start"><div><h2 class="h2">تمرین این درس</h2><p class="hint" style="margin:0">${faNum(n)} پرسش کوتاه. با ${faNum(Math.ceil(n*G_PASS))} پاسخ درست، درس تمام‌شده حساب می‌شود.${gDone(g.id)?' این درس را قبلاً گذرانده‌اید؛ تمرین دوباره ضرری ندارد!':''}</p></div><button class="btn primary" type="button" data-gx="start">شروع تمرین</button></div>`;return}
+  if(gx.i>=n)return renderGResult(g);
+  const q=g.qs[gx.i];gx.ans=false;
+  let h=`<div class="g-q-top"><b>تمرین</b><span class="hint num">${faNum(gx.i+1)} از ${faNum(n)}</span></div><div class="progress"><span style="width:${gx.i/n*100}%"></span></div>`;
+  if(q.k==='mc'){
+    if(!q._o||gx.fresh)q._o=shuffle(q.opts.map((o,k)=>k));
+    h+=`<p class="g-q-p">${gramHTML(q.p)}</p><div class="opts g-opts">${q._o.map(k=>`<button type="button" class="opt" data-gopt="${k}">${gramHTML(q.opts[k])}</button>`).join('')}</div>`;
+  }else if(q.k==='order'){
+    const {toks,end}=orderTokens(q.s,g.lang);gx.toks=toks;gx.end=end;gx.pick=[];gx.bank=shuffle(toks.map((w,k)=>({w,k})));
+    if(gx.bank.length>2&&gx.bank.every((t,k)=>t.k===k))gx.bank.reverse();
+    h+=`<p class="g-q-p">این جمله را با کلمه‌ها بسازید: <b>${esc(q.fa)}</b></p><div class="ord-line lat" id="gOrdLine" aria-live="polite"></div><div class="ord-bank lat" id="gOrdBank">${gx.bank.map((t,i)=>`<button type="button" class="tok" data-gtok="${i}">${esc(t.w)}</button>`).join('')}</div><div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn ghost sm" type="button" data-gx="ordreset">از نو</button><button class="btn primary" type="button" data-gx="ordcheck" id="gOrdCheck" disabled>بررسی</button></div>`;
+  }else if(q.k==='fill'){
+    const [a,b]=q.p.split('___');
+    h+=`<p class="g-q-p">جای خالی را پر کنید:</p><form id="gForm" class="g-fill"><div class="g-fill-line lat" dir="ltr">${esc(a)}<input type="text" id="gIn" class="g-fill-in" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="جای خالی">${esc(b||'')}</div><p class="hint">راهنما: ${gramHTML(q.hint)}</p><div class="btn-row"><button class="btn primary" type="submit">بررسی</button></div></form>`;
+  }else if(q.k==='fix'){
+    h+=`<p class="g-q-p">این جمله یک اشتباه دارد. درستش را بنویسید:</p><div class="g-bad g-fix-bad"><span class="g-mk">✗</span><span class="lat">${esc(q.bad)}</span></div><form id="gForm"><input type="text" id="gIn" class="lat ltr g-fix-in" value="${esc(q.bad)}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="جملهٔ درست"><div class="btn-row" style="margin-top:10px"><button class="btn primary" type="submit">بررسی</button></div></form>`;
+  }
+  h+='<div id="gFb"></div>';box.innerHTML=h;
+  if(q.k==='fill'||q.k==='fix')setTimeout(()=>{const i=$('#gIn');if(i){i.focus();if(q.k==='fix')i.setSelectionRange(i.value.length,i.value.length)}},30);
+}
+function gAnswer(ok,html,sayText){
+  const g=gById(gx.id),q=g.qs[gx.i];gx.ans=true;if(ok)gx.score++;else gx.wrong.push(gx.i);
+  $('#gFb').innerHTML=`<div class="fb ${ok?'ok':'bad'}">${html}${q.ex?`<div class="g-fb-ex">${gramHTML(q.ex)}</div>`:''}</div><div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn primary" type="button" data-gx="next">${gx.i+1<g.qs.length?'پرسش بعدی':'دیدن نتیجه'}</button></div>`;
+  const nb=$('#gFb [data-gx="next"]');if(nb)nb.focus({preventScroll:true});
+  if(sayText&&cfg.tts&&cfg.tts.auto)speak(sayText,g.lang);
+}
+function renderGResult(g){
+  const n=g.qs.length,pass=gx.score>=Math.ceil(n*G_PASS),was=gDone(g.id);
+  if(pass&&!was){db.done['g:'+g.id]=Date.now();saveData()}
+  const next=GRAMMAR[g.lang][gNum(g)];const xs=g.blocks.filter(b=>b.k==='x');const notIn=xs.filter(x=>!installedFor({lang:g.lang,text:x.t,type:'sentence'})).length;
+  $('#gPractice').innerHTML=`<div class="g-result ${pass?'ok':'bad'}"><b class="num g-score">${faNum(gx.score)} از ${faNum(n)}</b><p>${pass?(was?'باز هم قبول! این درس را خوب بلدید.':'آفرین! این درس را گذراندید.'):`برای قبولی ${faNum(Math.ceil(n*G_PASS))} پاسخ درست لازم است. یک بار دیگر توضیح بالا و مثال‌ها را بخوانید و دوباره امتحان کنید.`}</p>
+    <div class="btn-row" style="justify-content:center">${pass&&next?`<button class="btn primary" type="button" data-gopen="${esc(next.id)}">درس بعدی: ${gramHTML(next.title)}</button>`:''}<button class="btn${pass?'':' primary'}" type="button" data-gx="again">تمرین دوباره</button>${notIn?`<button class="btn" type="button" data-gx="cards">افزودن ${faNum(notIn)} مثال به کارت‌ها</button>`:''}</div></div>`;
+  if(pass&&!was){toast('درس دستور «'+g.title+'» گذرانده شد.',3500);if(currentView==='today')renderToday()}
+}
+function gAddExamples(g){
+  const now=Date.now();let k=0;
+  g.blocks.filter(b=>b.k==='x').forEach((x,i)=>{const src=cleanItem({id:'gx:'+g.id+':'+i,lang:g.lang,type:'sentence',text:x.t,fa:x.fa,en:'',article:'',plural:'',example:'',exampleFa:'',note:'دستور: '+g.title,verb:null,tags:['دستور']});
+    if(installedFor(src))return;db.items.push(Object.assign(src,{id:uid(),created:now+k,updated:now+k,srs:null}));k++});
+  if(k){invalidate();saveData();refreshBadges()}toast(k?faNum(k)+' جملهٔ نمونه به کارت‌ها اضافه شد.':'این مثال‌ها از قبل در کارت‌های شما هستند.',3500);
+}
+$('#v-grammar').addEventListener('click',e=>{
+  const o=e.target.closest('[data-gopen]');if(o){gOpen=o.dataset.gopen;gx=null;renderGrammar();window.scrollTo(0,0);return}
+  const un=e.target.closest('[data-gunit]');if(un){cOpen=un.dataset.gunit;showView('course');return}
+  const s=e.target.closest('[data-gsay]');if(s){speak(s.dataset.gsay,(gById(gOpen)||{}).lang||L());return}
+  const g=gById(gOpen);if(!g)return;
+  const a=e.target.closest('[data-gx]');
+  if(a){const k=a.dataset.gx;
+    if(k==='start'||k==='again'){gx={id:g.id,i:0,score:0,wrong:[],fresh:true};g.qs.forEach(q=>delete q._o);renderGPractice(g);gx.fresh=false;$('#gPractice').scrollIntoView({block:'start',behavior:'smooth'});return}
+    if(k==='next'){if(!gx.ans)return;gx.i++;renderGPractice(g);return}
+    if(k==='cards'){gAddExamples(g);renderGResult(g);return}
+    if(k==='ordreset'&&!gx.ans){gx.pick=[];$$('[data-gtok]',$('#gPractice')).forEach(b=>b.disabled=false);gOrdRender();return}
+    if(k==='ordcheck'&&!gx.ans){const q=g.qs[gx.i];const built=gx.pick.map(i=>gx.bank[i].w);const ok=gNorm(built.join(' '))===gNorm(gx.toks.join(' '));
+      $$('[data-gtok],[data-gx="ordreset"],[data-gx="ordcheck"]',$('#gPractice')).forEach(b=>b.disabled=true);
+      gAnswer(ok,(ok?'درست است!':'ترتیب درست:')+`<div class="lat g-fb-s">${esc(q.s)}</div>`+(ok?'':`<div class="hint">شما چیدید: <span class="lat">${esc(built.join(' '))}</span></div>`),q.s);return}
+    return}
+  if(gx&&!gx.ans&&gx.i>=0){
+    const q=g.qs[gx.i];
+    const op=e.target.closest('[data-gopt]');
+    if(op&&q.k==='mc'){const k=+op.dataset.gopt,ok=k===q.a;$$('[data-gopt]',$('#gPractice')).forEach(b=>{b.disabled=true;if(+b.dataset.gopt===q.a)b.classList.add('ok')});if(!ok)op.classList.add('no');
+      gAnswer(ok,ok?'درست است!':`پاسخ درست: <b>${gramHTML(q.opts[q.a])}</b>`);return}
+    const tb=e.target.closest('[data-gtok]');if(tb&&!tb.disabled&&q.k==='order'){gx.pick.push(+tb.dataset.gtok);tb.disabled=true;gOrdRender();return}
+    const pb=e.target.closest('[data-gpick]');if(pb&&q.k==='order'){const idx=gx.pick.splice(+pb.dataset.gpick,1)[0];const b=$(`[data-gtok="${idx}"]`,$('#gPractice'));if(b)b.disabled=false;gOrdRender();return}
+  }
+});
+function gOrdRender(){
+  $('#gOrdLine').innerHTML=gx.pick.map((i,k)=>`<button type="button" class="tok placed" data-gpick="${k}">${esc(gx.bank[i].w)}</button>`).join('')+(gx.pick.length===gx.toks.length?`<span class="ord-end">${esc(gx.end)}</span>`:'');
+  $('#gOrdCheck').disabled=gx.pick.length!==gx.toks.length;
+}
+$('#v-grammar').addEventListener('submit',e=>{
+  e.preventDefault();const g=gById(gOpen);if(!g||!gx||gx.ans)return;const q=g.qs[gx.i];const inp=$('#gIn');if(!inp)return;
+  const v=gNorm(inp.value);if(!v||(q.k==='fix'&&v===gNorm(q.bad))){inp.focus();if(q.k==='fix'&&v===gNorm(q.bad))toast('جمله هنوز همان جملهٔ غلط است. اشتباه را پیدا و درست کنید.');return}
+  const ok=q.ans.some(a=>gNorm(a)===v);inp.disabled=true;
+  const full=gFull(q);
+  gAnswer(ok,(ok?'درست است!':`پاسخ درست: <b class="lat">${esc(q.k==='fill'?q.ans[0]:q.ans[0])}</b><div class="hint">شما نوشتید: <span class="lat">${esc(inp.value)}</span></div>`)+(full&&q.k==='fill'?`<div class="lat g-fb-s">${esc(full)}</div>`:''),full);
+});
+$('#gBack').addEventListener('click',()=>{gOpen=null;gx=null;renderGrammar();window.scrollTo(0,0)});
+
+/* grammar inside a course lesson: the linked lessons, and two grammar questions in the lesson quiz */
+function gUnitHTML(u){
+  const gs=gForUnit(u);if(!gs.length)return'';
+  return`<section class="panel c-sec"><div class="c-sec-h"><h2 class="h2">دستور زبان این درس</h2><span class="hint">${faNum(gs.filter(g=>gDone(g.id)).length)} از ${faNum(gs.length)} گذرانده شده</span></div><div class="g-cards">${gs.map(gCard).join('')}</div></section>`;
+}
+function gramQuizFor(u,max){
+  const gs=gForUnit(u);const pool=[];
+  gs.forEach(g=>g.qs.forEach((q,k)=>{if(q.k==='mc')pool.push({g,q,k})}));
+  return shuffle(pool).slice(0,max).map(({g,q,k})=>({type:'gmc',p:q.p,opts:shuffle(q.opts.slice()),right:q.opts[q.a],ex:q.ex,
+    it:{id:'gq:'+g.id+':'+k,lang:g.lang,type:'sentence',text:'',fa:'',en:'',article:'',verb:null,note:''}}));
+}
+$('#cUnitBody').addEventListener('click',e=>{const o=e.target.closest('[data-gopen]');if(!o)return;e.stopPropagation();gOpen=o.dataset.gopen;gx=null;showView('grammar')},true);
+
+/* ================= EVERYDAY EXPRESSIONS ================= */
+let phCat='',phQuery='',phRun=null;
+const phById=id=>PHRASES.nl.items.find(p=>p.id===id)||PHRASES.en.items.find(p=>p.id===id)||null;
+const pNorm=s=>norm(s).replace(/[‌‏\s]+/g,'').replace(/[يى]/g,'ی').replace(/ك/g,'ک').replace(/[إأآ]/g,'ا');
+const phItem=p=>cleanItem({id:'ph:'+p.id,lang:p.lang,type:'sentence',text:p.t.replace(/\s*\/.*$/,''),fa:p.fa,en:'',article:'',plural:'',example:p.ex[0]?p.ex[0][0]:'',exampleFa:p.ex[0]?p.ex[0][1]:'',note:p.note,verb:null,tags:['اصطلاح']});
+const phOwn=p=>installedFor(phItem(p));
+function phSay(p){speak(p.t.replace(/\s*\/.*$/,''),p.lang)}
+function openPhrases(){phRun=null;renderPhrases()}
+function renderPhrases(){
+  const lang=L(),P=PHRASES[lang];if(phRun&&phRun.lang!==lang)phRun=null;
+  $('#phHome').hidden=!!phRun;$('#phRun').hidden=!phRun;if(phRun)return renderPhRun();
+  $('#phTitle').textContent='اصطلاحات روزمره '+LANG_FA[lang];
+  const sitN=P.items.filter(p=>p.sit).length;
+  $('#phSub').textContent=`${faNum(P.items.length)} جملهٔ کوتاه که هر روز لازم دارید، بر اساس موقعیت. هر کدام را بزنید تا بشنوید. بالای صفحه می‌توانید به فارسی جست‌وجو کنید: «${lang==='nl'?'خسته نباشی':'دستت درد نکنه'}» را بنویسید و ببینید ${lang==='nl'?'هلندی‌ها':'انگلیسی‌زبان‌ها'} در آن موقعیت چه می‌گویند.`;
+  $('#phPractice').hidden=sitN<4;
+  if(!P.cats.some(c=>c.id===phCat))phCat=P.cats[0]?P.cats[0].id:'';
+  $('#phCats').innerHTML=P.cats.map(c=>{const n=P.items.filter(p=>p.cat===c.id).length;return`<button type="button" role="tab" class="ph-cat${c.id==='taarof'?' star':''}" data-phcat="${esc(c.id)}" aria-selected="${!phQuery&&c.id===phCat}">${esc(c.title)} <span class="num">${faNum(n)}</span></button>`}).join('');
+  let list,desc='';
+  const q=pNorm(phQuery);
+  if(q){list=P.items.filter(p=>pNorm([p.t,p.fa,p.eq.join(' '),p.note].join(' ')).includes(q));
+    desc=list.length?faNum(list.length)+' نتیجه برای «'+esc(phQuery)+'»':'چیزی پیدا نشد. واژهٔ کوتاه‌تری بنویسید، مثلاً فقط «'+esc(phQuery.split(/\s+/)[0])+'».'}
+  else{const c=P.cats.find(c=>c.id===phCat);list=P.items.filter(p=>p.cat===phCat);desc=c?esc(c.desc):''}
+  const notIn=list.filter(p=>!phOwn(p)).length;
+  $('#phCatDesc').innerHTML=desc+(list.length&&notIn?` <button class="link" type="button" data-phaddall>افزودن ${faNum(notIn)} مورد به کارت‌ها</button>`:'');
+  $('#phList').innerHTML=list.map(phCard).join('');
+}
+function phCard(p){
+  const own=phOwn(p);const eq=p.eq.filter(x=>pNorm(x)!==pNorm(p.fa)).slice(0,4);
+  return`<article class="ph-card" data-ph="${esc(p.id)}">
+    <button type="button" class="ph-say" data-phsay="${esc(p.id)}" aria-label="پخش"><span class="ph-t lat">${esc(p.t)}</span><svg class="i"><use href="#i-speak"/></svg></button>
+    <div class="ph-fa">${esc(p.fa)}</div>
+    ${eq.length||p.reg?`<div class="ph-tags">${p.reg?`<span class="pill${p.reg==='رسمی'?' new':p.reg==='خودمانی'?' due':''}">${esc(p.reg)}</span>`:''}${eq.length?`<span class="ph-eq">در فارسی: ${eq.map(esc).join('، ')}</span>`:''}</div>`:''}
+    ${p.note?`<p class="ph-note">${gramHTML(p.note)}</p>`:''}
+    ${p.ex.length?`<div class="ph-ex">${p.ex.map(([t,fa],i)=>`<button type="button" class="ph-line" data-phline="${i}"><span class="lat">${esc(t)}</span><span class="hint">${esc(fa)}</span></button>`).join('')}</div>`:''}
+    <div class="ph-foot">${own?'<span class="pill ok">✓ در کارت‌های شماست</span>':`<button class="btn sm ghost" type="button" data-phadd="${esc(p.id)}">+ افزودن به کارت‌ها</button>`}</div>
+  </article>`;
+}
+function phAdd(ps){
+  const now=Date.now();let k=0;
+  ps.forEach(p=>{const src=phItem(p);if(installedFor(src))return;db.items.push(Object.assign(src,{id:uid(),created:now+k,updated:now+k,srs:null}));k++});
+  if(k){invalidate();saveData();refreshBadges()}return k;
+}
+let phQT=null;$('#phQ').addEventListener('input',e=>{clearTimeout(phQT);phQT=setTimeout(()=>{phQuery=e.target.value.trim();renderPhrases()},150)});
+$('#v-phrases').addEventListener('click',e=>{
+  const c=e.target.closest('[data-phcat]');if(c){phCat=c.dataset.phcat;phQuery='';$('#phQ').value='';renderPhrases();return}
+  const s=e.target.closest('[data-phsay]');if(s){const p=phById(s.dataset.phsay);if(p)phSay(p);return}
+  const ln=e.target.closest('[data-phline]');if(ln){const p=phById(ln.closest('[data-ph]').dataset.ph);if(p)speak(p.ex[+ln.dataset.phline][0].replace(/^[AB]:\s*/,''),p.lang);return}
+  const a=e.target.closest('[data-phadd]');if(a){const p=phById(a.dataset.phadd);if(p&&phAdd([p]))toast('به کارت‌های شما اضافه شد');if(phRun)renderPhRun(true);else renderPhrases();return}
+  if(e.target.closest('[data-phaddall]')){const P=PHRASES[L()];const q=pNorm(phQuery);const list=q?P.items.filter(p=>pNorm([p.t,p.fa,p.eq.join(' '),p.note].join(' ')).includes(q)):P.items.filter(p=>p.cat===phCat);const k=phAdd(list);toast(faNum(k)+' اصطلاح به کارت‌ها اضافه شد. هر روز چند تا از آن‌ها در مرور می‌آید.',4000);renderPhrases();return}
+  /* practice */
+  if(!phRun)return;
+  const o=e.target.closest('[data-phopt]');
+  if(o&&!phRun.ans){const q=phRun.qs[phRun.i],k=+o.dataset.phopt,ok=q.opts[k].id===q.p.id;phRun.ans=true;if(ok){phRun.score++;db.done['ph:'+q.p.id]=Date.now();saveData()}else phRun.wrong.push(q.p.id);
+    $$('[data-phopt]',$('#phRunQ')).forEach(b=>{b.disabled=true;if(q.opts[+b.dataset.phopt].id===q.p.id)b.classList.add('ok')});if(!ok)o.classList.add('no');
+    phSay(q.p);
+    $('#phFb').innerHTML=`<div class="fb ${ok?'ok':'bad'}">${ok?'درست است!':`در این موقعیت می‌گویند: <b class="lat">${esc(q.p.t)}</b>`}<div style="margin-top:4px">${esc(q.p.fa)}</div>${q.p.note?`<div class="g-fb-ex">${gramHTML(q.p.note)}</div>`:''}</div><div class="btn-row" style="justify-content:center;margin-top:12px">${!ok&&!phOwn(q.p)?`<button class="btn" type="button" data-phadd="${esc(q.p.id)}">افزودن به کارت‌ها</button>`:''}<button class="btn primary" type="button" data-phnext>${phRun.i+1<phRun.qs.length?'موقعیت بعدی':'دیدن نتیجه'}</button></div>`;
+    $('#phFb [data-phnext]').focus({preventScroll:true});return}
+  if(e.target.closest('[data-phnext]')){phRun.i++;phRun.ans=false;renderPhRun();return}
+  if(e.target.closest('[data-phagain]')){startPhRun();return}
+});
+$('#phPractice').addEventListener('click',startPhRun);
+$('#phRunBack').addEventListener('click',()=>{phRun=null;renderPhrases();window.scrollTo(0,0)});
+function startPhRun(){
+  const P=PHRASES[L()];const pool=P.items.filter(p=>p.sit);if(pool.length<4)return;
+  const fresh=shuffle(pool.filter(p=>!db.done['ph:'+p.id])),seen=shuffle(pool.filter(p=>db.done['ph:'+p.id]));
+  const pick=fresh.concat(seen).slice(0,10);
+  phRun={lang:L(),i:0,score:0,wrong:[],ans:false,qs:pick.map(p=>{
+    const others=shuffle(pool.filter(x=>x.id!==p.id&&pNorm(x.t)!==pNorm(p.t)));
+    const far=others.filter(x=>x.cat!==p.cat),near=others.filter(x=>x.cat===p.cat);
+    const d=[near[0],far[0]].filter(Boolean);while(d.length<2&&others[d.length+1])d.push(others[d.length+1]);
+    return{p,opts:shuffle([p].concat(d.slice(0,2)))}})};
+  $('#phHome').hidden=true;$('#phRun').hidden=false;renderPhRun();window.scrollTo(0,0);
+}
+function renderPhRun(keepFb){
+  const r=phRun,n=r.qs.length;$('#phRunBar').style.width=(r.i/n*100)+'%';$('#phRunCount').textContent=faNum(Math.min(r.i+1,n))+' از '+faNum(n);
+  if(keepFb){const b=$('#phFb [data-phadd]');if(b)b.remove();return}
+  if(r.i>=n){
+    $('#phRunQ').innerHTML=`<div class="g-result ${r.score>=n*G_PASS?'ok':'bad'}"><b class="num g-score">${faNum(r.score)} از ${faNum(n)}</b><p>${r.score===n?'همه را درست جواب دادید. آفرین!':r.score>=n*G_PASS?'خیلی خوب! اصطلاح‌هایی را که اشتباه کردید به کارت‌ها اضافه کنید تا یادتان بماند.':'این‌ها با تکرار جا می‌افتند. اصطلاح‌های پایین را به کارت‌ها اضافه کنید و چند روز دیگر دوباره تمرین کنید.'}</p>
+      ${r.wrong.length?`<div class="ph-list" style="text-align:start;margin-top:12px">${r.wrong.map(id=>phCard(phById(id))).join('')}</div>`:''}
+      <div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn primary" type="button" data-phagain>ده موقعیت دیگر</button></div></div>`;return}
+  const q=r.qs[r.i];
+  $('#phRunQ').innerHTML=`<div class="card-meta" style="justify-content:center"><span class="lang-badge ${L()}">${L().toUpperCase()}</span><span>در این موقعیت چه می‌گویید؟</span></div><p class="ph-sit">${esc(q.p.sit)}</p><div class="ph-opts">${q.opts.map((o,k)=>`<button type="button" class="opt lat" data-phopt="${k}">${esc(o.t)}</button>`).join('')}</div><div id="phFb"></div>`;
+}
+
+/* ================= TODAY: grammar point and expression of the day ================= */
+function phraseOfDay(lang){
+  const P=PHRASES[lang].items;if(!P.length)return null;const k=dayKey();let h=0;for(const ch of k+lang)h=(h*31+ch.charCodeAt(0))>>>0;
+  const pref=P.filter(p=>!phOwn(p));const pool=pref.length?pref:P;return pool[h%pool.length];
+}
+function renderLearnToday(){
+  const lang=L(),box=$('#learnToday');if(!box)return;
+  const g=gNextLesson(lang),p=phraseOfDay(lang);
+  if(!g&&!p){box.hidden=true;return}box.hidden=false;
+  const done=(GRAMMAR[lang]||[]).filter(x=>gDone(x.id)).length;
+  $('#gToday').innerHTML=g?`<div class="feature-top"><span class="feature-title">نکتهٔ دستوری بعدی</span><span class="pill lvl">${esc(g.level)}</span></div><b class="g-t-title">${gramHTML(g.title)}</b><p class="g-t-sum">${gramHTML(g.sum)}</p><p class="hint" style="margin:0">درس ${faNum(gNum(g))} از ${faNum(GRAMMAR[lang].length)} · حدود ده دقیقه با تمرین</p><div class="btn-row"><button class="btn primary sm" type="button" data-gopen-today="${esc(g.id)}">خواندن و تمرین</button><button class="btn sm ghost" type="button" data-go="grammar">همهٔ درس‌ها</button></div>`
+    :`<span class="feature-title">دستور زبان</span><p style="margin:0">همهٔ ${faNum(done)} درس دستوری را گذرانده‌اید. آفرین!</p><div class="btn-row"><button class="btn sm" type="button" data-go="grammar">مرور درس‌ها</button></div>`;
+  $('#gToday').hidden=false;
+  if(p){const own=phOwn(p);
+    $('#phToday').innerHTML=`<div class="feature-top"><span class="feature-title">اصطلاح امروز</span>${speakBtn('data-phsay-today',1)}</div><div class="ph-t lat ph-t-big">${esc(p.t)}</div><div class="ph-fa">${esc(p.fa)}</div>${p.note?`<p class="ph-note">${gramHTML(p.note)}</p>`:''}<div class="btn-row">${own?'<span class="hint">در کارت‌های شماست</span>':'<button class="btn sm primary" type="button" data-phadd-today>افزودن به کارت‌ها</button>'}<button class="btn sm ghost" type="button" data-go="phrases">همهٔ اصطلاحات</button></div>`;
+    $('#phToday').dataset.id=p.id;$('#phToday').hidden=false}else $('#phToday').hidden=true;
+}
+$('#v-today').addEventListener('click',e=>{
+  const g=e.target.closest('[data-gopen-today]');if(g){e.stopPropagation();gOpen=g.dataset.gopenToday;gx=null;showView('grammar');return}
+  const p=phById($('#phToday').dataset.id||'');if(!p)return;
+  if(e.target.closest('[data-phsay-today]')){e.stopPropagation();phSay(p);return}
+  if(e.target.closest('[data-phadd-today]')){e.stopPropagation();phAdd([p]);toast('به کارت‌های شما اضافه شد');renderLearnToday()}
+},true);
+if(/[?&]debug/.test(location.search))window.__l={buildQueue,stats,laterToday,GRAMMAR,PHRASES,get db(){return db}};
 
 /* ================= SHARE WITH OTHERS ================= */
 const appURL=()=>location.origin+location.pathname.replace(/index\.html$/,'');
