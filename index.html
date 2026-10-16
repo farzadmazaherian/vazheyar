@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-IogDa8FMy3IF+zx6cmYXxydCjPGZrjKUcIfnTJahThc=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-CNaja+RaTORb9tg6ENnX5W4WyuV8QydRaScEMXVffE4=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -836,6 +836,78 @@ body.noscroll{overflow:hidden}
   .g-pager .btn{max-width:100%;width:100%}
 }
 
+/* ===== learning plan: navigation layers, today, lesson next step, placement, last stage, sources hub ===== */
+.nav button.nav-sub{padding:6px 12px 6px 12px;padding-inline-start:26px;font-size:13.5px}
+.nav button.nav-sub .i{width:17px;height:17px}
+.more-g{display:flex;flex-direction:column;gap:6px;margin:0 0 10px}
+.more-h{font-size:12.5px;font-weight:800;color:var(--muted);margin:6px 2px 0}
+#path .step{align-items:flex-start;flex-wrap:wrap}
+#path .step>.btn-row{width:100%;padding-inline-start:40px;gap:6px}
+#path .step-c .hint{font-size:13px;line-height:1.7}
+.map-card{margin:0 0 16px;border-inline-start:4px solid var(--cobalt)}
+.map-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.map-h b{font-size:16px}
+.map-l{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:m}
+.map-l li{counter-increment:m;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.8;color:var(--muted)}
+.map-l li b{color:var(--ink);font-size:14.5px}
+.map-l li b::before{content:counter(m,persian) ". ";color:var(--cobalt)}
+.ct-title{font-size:17px;line-height:1.5}
+.u-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.u-chips li{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--surface-2);color:var(--muted)}
+.u-chips li.ok{background:var(--good-soft);color:var(--good)}
+.u-chips li.now{background:var(--cobalt);color:var(--cobalt-ink)}
+.u-next{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 14px;border:1.5px solid var(--cobalt-line);background:var(--cobalt-soft)}
+.u-next b{display:block;font-size:16px;line-height:1.7;margin-top:2px}
+.u-src{display:flex;flex-wrap:wrap;gap:8px}
+.u-src .btn{gap:8px}
+.c-prog-foot{margin:8px 0 0}
+.c-place{margin:0 0 20px;border:1.5px solid var(--cobalt-line)}
+.c-place-l{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.c-place-b{display:flex;flex-direction:column;gap:4px;text-align:start;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;line-height:1.7}
+.c-place-b:hover{border-color:var(--cobalt)}
+.c-beyond{background:var(--surface);border:1.5px dashed var(--cobalt-line);border-radius:var(--r-lg);padding:18px}
+.goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.goal{display:flex;flex-direction:column;gap:6px;background:var(--surface-2);border-radius:12px;padding:12px 14px}
+.goal-t{display:flex;align-items:baseline;gap:6px}
+.goal-t b{font-size:24px;color:var(--cobalt)}
+.goal.ok .goal-t b{color:var(--good)}
+.goal.ok .meter span{background:var(--good)}
+.goal-l{font-size:13px;font-weight:700}
+.pill.lv-easy{background:var(--good-soft);color:var(--good)}
+.pill.lv-fit{background:var(--cobalt);color:var(--cobalt-ink)}
+.pill.lv-hard{background:var(--warn-soft);color:var(--warn)}
+.pill.lv-vhard{background:var(--bad-soft);color:var(--bad)}
+.hub-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.hub-t{position:relative;display:flex;flex-direction:column;gap:2px;text-align:start;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;cursor:pointer}
+.hub-t:hover{border-color:var(--cobalt)}
+.hub-t b{font-size:15.5px}
+.hub-n{position:absolute;inset-inline-end:14px;top:12px;font-size:20px;font-weight:800;color:var(--cobalt)}
+.hub-sug{display:flex;flex-direction:column;gap:8px}
+.hub-s{display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:start;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.hub-s:hover{border-color:var(--cobalt)}
+.hub-s-t{display:flex;flex-direction:column;min-width:0}
+.hub-how{margin:22px 0 0}
+.src-flow{margin:0 0 14px}
+.src-flow summary{display:flex;align-items:center;gap:8px;flex-wrap:wrap;cursor:pointer;list-style:none}
+.src-flow summary::-webkit-details-marker{display:none}
+.src-flow summary b::after{content:" ▾";color:var(--muted);font-weight:500}
+.sf-steps{margin:10px 0;padding-inline-start:22px;line-height:1.9;font-size:14.5px}
+.sf-steps li{margin:2px 0}
+.sf-unk .lat{font-size:14.5px}
+@media (max-width:900px){.map-l{grid-template-columns:1fr}}
+
+.c-steps{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+details.c-stage>summary{list-style:none;cursor:pointer;padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:12px}
+details.c-stage>summary::-webkit-details-marker{display:none}
+details.c-stage>summary h2::before{content:"▸ ";color:var(--muted)}
+details.c-stage[open]>summary h2::before{content:"▾ "}
+.pill.rel-past{background:var(--het-soft);color:var(--het)}
+.pill.rel-cur{background:var(--acc-soft);color:var(--acc)}
+.pill.rel-next{background:var(--surface-2);color:var(--muted)}
+.lis-rev{border-top:1px solid var(--line);padding-top:8px;font-size:14px;line-height:1.8}
+.sf-rel{margin:10px 0 0;font-size:14px;line-height:1.85;background:var(--surface-2);border-radius:10px;padding:8px 12px}
+.hub-s .ph-tags{flex:none;justify-content:flex-end}
+
 </style>
 </head>
 <body>
@@ -874,27 +946,28 @@ body.noscroll{overflow:hidden}
     </div>
     <nav class="nav" aria-label="بخش‌ها">
       <div class="nav-group">
-        <div class="nav-label">یادگیری</div>
+        <div class="nav-label">مسیر من</div>
         <button type="button" data-go="today"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>امروز</span></button>
         <button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg><span>مسیر درسی</span></button>
+        <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg><span>مرور کارت‌ها</span><b class="badge nav-due" hidden></b></button>
+      </div>
+      <div class="nav-group" style="margin-top:14px">
+        <div class="nav-label">جعبه‌ابزار</div>
         <button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg><span>دستور زبان</span></button>
         <button type="button" data-go="phrases"><svg class="i" viewBox="0 0 24 24"><path d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 19 16h-7l-4.5 3.5V16H5a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 5 5z"/><path d="M8.5 9.5h7M8.5 12h4.5"/></svg><span>اصطلاحات روزمره</span></button>
-        <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg><span>مرور کارت‌ها</span><b class="badge nav-due" hidden></b></button>
         <button type="button" data-go="dialogs"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M18.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v6A1.5 1.5 0 0 1 20 18.5h-1v2.5l-3-2.5h-4"/></svg><span>مکالمه‌ها</span></button>
-        <button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg><span>تمرین</span></button>
-      </div>
-      <div class="nav-group" style="margin-top:14px">
-        <div class="nav-label">واژه‌ها</div>
-        <button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg><span>کتابخانه</span></button>
+        <button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg><span>آزمون آزاد</span></button>
+        <button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg><span>کتابخانهٔ واژه</span></button>
         <button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg><span>واژه‌های من</span></button>
-        <button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M9.5 12.5h6M9.5 16h4"/></svg><span>متن‌ها و PDF</span></button>
       </div>
       <div class="nav-group" style="margin-top:14px">
-        <div class="nav-label">گوش دادن و دیدن</div>
-        <button type="button" data-go="listen"><svg class="i" viewBox="0 0 24 24"><path d="M4.5 13.5a7.5 7.5 0 0 1 15 0"/><rect x="3" y="13" width="4" height="7" rx="1.5"/><rect x="17" y="13" width="4" height="7" rx="1.5"/></svg><span>فایل‌های صوتی</span></button>
-        <button type="button" data-go="watch"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/></svg><span>عکس و ویدیو</span></button>
-        <button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg><span>آهنگ‌ها</span></button>
-        <button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg><span>یوتیوب من</span></button>
+        <div class="nav-label">منابع من</div>
+        <button type="button" data-go="mine"><svg class="i" viewBox="0 0 24 24"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M12 11v5M9.5 13.5h5"/></svg><span>همهٔ منابع من</span></button>
+        <button type="button" class="nav-sub" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M9.5 12.5h6M9.5 16h4"/></svg><span>متن‌ها و PDF</span></button>
+        <button type="button" class="nav-sub" data-go="listen"><svg class="i" viewBox="0 0 24 24"><path d="M4.5 13.5a7.5 7.5 0 0 1 15 0"/><rect x="3" y="13" width="4" height="7" rx="1.5"/><rect x="17" y="13" width="4" height="7" rx="1.5"/></svg><span>فایل‌های صوتی</span></button>
+        <button type="button" class="nav-sub" data-go="watch"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/></svg><span>عکس و ویدیو</span></button>
+        <button type="button" class="nav-sub" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg><span>آهنگ‌ها</span></button>
+        <button type="button" class="nav-sub" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg><span>یوتیوب من</span></button>
       </div>
     </nav>
     <div class="rail-foot">
@@ -910,7 +983,7 @@ body.noscroll{overflow:hidden}
     <section class="view" id="v-today" hidden>
       <div class="dateline"><span id="dateFa"></span><span class="lat" id="dateNl"></span></div>
       <div class="page-head"><div><h1 class="view-title" id="todayTitle"></h1><p class="sub" id="todaySub"></p></div></div>
-      <div class="panel c-now" id="courseNow" hidden></div>
+      <div class="panel map-card" id="mapCard" hidden></div>
       <ol class="path" id="path" aria-label="مسیر یادگیری امروز"></ol>
       <div class="note-box info" id="previewNote" hidden style="margin-bottom:18px">این نسخهٔ پیش‌نمایش است و داده‌ها فقط در همین مرورگر ذخیره می‌شوند. برای نصب روی گوشی و لپ‌تاپ و همگام‌سازی، <a href="https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm" target="_blank" rel="noopener">راهنمای راه‌اندازی</a> را دنبال کنید.</div>
       <div class="today-grid">
@@ -921,16 +994,16 @@ body.noscroll{overflow:hidden}
             <div class="hero-count"><b class="num" id="dueTotal">۰</b><span>کارت برای امروز</span></div>
             <div class="hero-split" id="heroSplit"></div>
             <div><div class="meter"><span id="dayMeter" style="width:0"></span></div><p class="hint" id="dayMeterTxt" style="margin:6px 0 0"></p></div>
-            <div class="btn-row"><button class="btn primary lg" type="button" id="startToday">شروع مرور</button><button class="btn lg" type="button" data-go="dialogs">تمرین مکالمه</button></div>
+            <div class="btn-row"><button class="btn primary lg" type="button" id="startToday">شروع مرور</button><button class="btn lg" type="button" data-go="course">مسیر درسی</button></div>
           </div>
         </div>
         <div class="side-stack">
-          <div class="panel feature" id="dlgNext"></div>
+          <div class="panel feature" id="cToday"></div>
           <div class="panel feature" id="wod"></div>
         </div>
       </div>
       <div class="learn-today" id="learnToday" hidden>
-        <div class="panel feature" id="gToday" hidden></div>
+        <div class="panel feature" id="lisToday"></div>
         <div class="panel feature" id="phToday" hidden></div>
       </div>
       <div class="stats">
@@ -1176,8 +1249,11 @@ body.noscroll{overflow:hidden}
           <p class="hint">هر چهار بخش را با هم انتخاب کنید (یا یکی‌یکی وارد کنید).</p>
         </div>
         <div id="cOverview" hidden>
-          <div class="panel c-progress"><div class="c-prog-top"><b id="cProgTxt"></b><span class="hint" id="cProgSub"></span></div><div class="meter"><span id="cProgBar" style="width:0"></span></div></div>
+          <div class="panel c-progress"><div class="c-prog-top"><b id="cProgTxt"></b><span class="hint" id="cProgSub"></span></div><div class="meter"><span id="cProgBar" style="width:0"></span></div>
+            <p class="hint c-prog-foot"><button class="link" type="button" data-cplace>تغییر نقطهٔ شروع</button><span id="cImportNote" hidden> · بستهٔ خصوصی مسیر درسی (با صدای ضبط‌شده و اسلاید) دارید؟ <label class="link" for="courseFile" tabindex="0">واردش کنید</label></span></p></div>
+          <div id="cPlace"></div>
           <div id="cStages"></div>
+          <div id="cBeyond"></div>
         </div>
       </div>
       <input type="file" id="courseFile" accept=".zip,application/zip" multiple hidden>
@@ -1219,6 +1295,25 @@ body.noscroll{overflow:hidden}
       </div>
     </section>
 
+    <!-- ============ MY SOURCES: one door ============ -->
+    <section class="view" id="v-mine" hidden>
+      <div class="page-head"><div><h1 class="view-title" id="hubTitle">منابع من</h1><p class="sub">هر چیزی که خودتان برای یادگیری دارید: فایل صوتی کلاس، پادکست، PDF، عکس متن، ویدیو، آهنگ، یوتیوب. فایل را اینجا بیندازید؛ برنامه خودش نوعش را تشخیص می‌دهد و در بخش درست می‌گذارد، متنش را بیرون می‌کشد، موضوعش را به درس مسیر وصل می‌کند و می‌سنجد چقدر از واژه‌هایش را بلدید.</p></div></div>
+      <label class="drop hub-drop" id="hubDrop" for="hubFile" tabindex="0">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5"/><path d="M4 14v4.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V14"/></svg>
+        <b>هر نوع فایلی را اینجا بکشید یا برای انتخاب بزنید</b>
+        <span class="hint">صدا، ویدیو، عکس، PDF و متن، با هم یا جدا. هر کدام خودکار به بخش خودش می‌رود.</span>
+      </label>
+      <input type="file" id="hubFile" multiple accept=".pdf,application/pdf,image/*,audio/*,video/*,.mp3,.m4a,.wav,.ogg,.opus,.mp4,.mov,.m4v,.webm,.txt,text/plain" hidden>
+      <div class="btn-row" style="margin:10px 0 0"><button class="btn" type="button" id="hubPaste">چسباندن متن</button><button class="btn" type="button" data-go="youtube">افزودن ویدیوی یوتیوب</button></div>
+      <div id="hubJobs" class="stack" style="margin-top:14px"></div>
+      <p class="hint" id="hubStat" style="margin:16px 0 8px"></p>
+      <div class="hub-tiles" id="hubTiles"></div>
+      <div id="hubSug" style="margin-top:22px"></div>
+      <section class="panel hub-how"><h2 class="h2">با هر منبع چطور کار کنم؟</h2>
+        <ol class="sf-steps"><li>منبعی را انتخاب کنید که «مناسب سطح شما» باشد: بیشتر واژه‌هایش را بلدید و چند واژهٔ تازه دارد.</li><li>یک بار کامل گوش دهید یا بخوانید، فقط برای فهم کلی.</li><li>با متن کار کنید: روی واژه‌های ناآشنا بزنید و کارتشان کنید؛ جمله‌ها را تکرار کنید.</li><li>«کامل کار کردم» را بزنید. واژه‌های تازه در مرور روزانه برمی‌گردند و منبع بعدی پیشنهاد می‌شود.</li></ol>
+      </section>
+    </section>
+
     <!-- ============ MY SOURCES ============ -->
     <section class="view" id="v-sources" hidden>
       <div id="srcHome">
@@ -1258,6 +1353,7 @@ body.noscroll{overflow:hidden}
           <div style="min-width:0"><h1 class="view-title src-title" id="srcTitle"></h1><div class="src-meta" id="srcMeta"></div></div>
           <div class="btn-row" id="srcActs"></div>
         </div>
+        <div id="srcFlow"></div>
         <div id="srcMedia"></div>
         <div id="srcProg" class="stack" hidden></div>
         <div id="srcFound"></div>
@@ -1428,16 +1524,16 @@ body.noscroll{overflow:hidden}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۷</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۱۹</p>
     </section>
 
 </main>
 </div>
 <nav class="bottom-nav" aria-label="بخش‌ها">
   <button type="button" data-go="today"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>امروز</button>
-  <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg>مرور<b class="badge nav-due" hidden></b></button>
-  <button type="button" data-go="dialogs"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M18.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v6A1.5 1.5 0 0 1 20 18.5h-1v2.5l-3-2.5h-4"/></svg>مکالمه</button>
   <button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg>مسیر</button>
+  <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg>مرور<b class="badge nav-due" hidden></b></button>
+  <button type="button" data-go="mine"><svg class="i" viewBox="0 0 24 24"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M12 11v5M9.5 13.5h5"/></svg>منابع</button>
   <button type="button" data-more><svg class="i" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/></svg>بیشتر</button>
 </nav>
 <button class="fab" type="button" data-quickadd aria-label="افزودن واژه یا جمله"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
@@ -1465,7 +1561,7 @@ body.noscroll{overflow:hidden}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=17"></script>
+<script src="packs.js?v=19"></script>
 <script>
 (function(){
 'use strict';
@@ -2057,11 +2153,16 @@ function qaSave(next){
 document.addEventListener('click',e=>{if(e.target.closest('[data-quickadd]')){e.preventDefault();quickAdd()}});
 /* phone "more" menu */
 document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return;
-  openSheet('بخش‌های دیگر',`<div class="more-list"><button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg>مسیر درسی</button><button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg>دستور زبان</button><button type="button" data-go="phrases"><svg class="i" viewBox="0 0 24 24"><path d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 19 16h-7l-4.5 3.5V16H5a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 5 5z"/><path d="M8.5 9.5h7M8.5 12h4.5"/></svg>اصطلاحات روزمره</button><button type="button" data-go="quiz"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>آزمون</button><button type="button" data-go="library"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h3.2v15H5zM10.4 4.5h3.2v15h-3.2z"/><path d="M15.8 5.6l3-.8 3.4 14.5-3 .8z"/></svg>کتابخانه</button><button type="button" data-go="manage"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M15.5 18.5l4.8-4.8a1.4 1.4 0 0 0-2-2l-4.8 4.8-.6 2.6z"/></svg>واژه‌های من</button><button type="button" data-go="sources"><svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M9.5 12.5h6M9.5 16h4"/></svg>متن‌ها و PDF</button><button type="button" data-go="listen"><svg class="i" viewBox="0 0 24 24"><path d="M4.5 13.5a7.5 7.5 0 0 1 15 0"/><rect x="3" y="13" width="4" height="7" rx="1.5"/><rect x="17" y="13" width="4" height="7" rx="1.5"/></svg>فایل‌های صوتی</button><button type="button" data-go="watch"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/></svg>عکس و ویدیو</button><button type="button" data-go="songs"><svg class="i" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>آهنگ‌ها</button><button type="button" data-go="youtube"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg>یوتیوب من</button><button type="button" data-go="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>تنظیمات و همگام‌سازی</button><button type="button" data-go="share"><svg class="i" viewBox="0 0 24 24"><circle cx="17.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="12" r="2.3"/><circle cx="17.5" cy="18.5" r="2.3"/><path d="M8.6 10.8l6.8-4M8.6 13.2l6.8 4"/></svg>اشتراک‌گذاری با دیگران</button><button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div>`,'')});
+  /* the same groups as the side rail, minus what the bottom bar already shows */
+  const skip=new Set(['today','course','review','mine']);
+  const groups=$$('.rail .nav-group').map(g=>{const lab=$('.nav-label',g);const bs=$$('button[data-go]',g).filter(b=>!skip.has(b.dataset.go));
+    return bs.length?`<div class="more-g">${lab?`<div class="more-h">${esc(lab.textContent)}</div>`:''}${bs.map(b=>`<button type="button" data-go="${b.dataset.go}">${$('svg',b).outerHTML}${esc(b.textContent.trim())}</button>`).join('')}</div>`:''}).join('');
+  const foot=$$('.rail-foot .nav button[data-go]').map(b=>`<button type="button" data-go="${b.dataset.go}">${$('svg',b).outerHTML}${esc(b.textContent.trim())}</button>`).join('');
+  openSheet('بخش‌های دیگر',`<div class="more-list">${groups}<div class="more-g"><div class="more-h">بیشتر</div>${foot}<button type="button" data-quickadd><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>افزودن واژه یا جمله</button></div></div>`,'')});
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','course','grammar','phrases','review','dialogs','quiz','library','manage','sources','listen','watch','songs','youtube','share','settings'];
+const VIEWS=['today','course','grammar','phrases','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
@@ -2074,6 +2175,7 @@ function showView(v,noHash){
   if(v==='course')renderCourse();
   if(v==='grammar')renderGrammar();
   if(v==='phrases')openPhrases();
+  if(v==='mine')renderMine();
   if(v==='review'&&!ses)renderReviewIdle();
   if(v==='dialogs'&&!lk)renderDialogs();
   if(v==='library')renderLibrary();
@@ -2145,9 +2247,9 @@ function renderToday(){
   const s=stats(lang),total=s.due+s.newToday;
   $('#todayTitle').textContent='امروز با '+LANG_FA[lang];
   let sub;
-  if(!s.total)sub=`هنوز کارت ${LANG_FA[lang]} ندارید. از کتابخانه بسته‌های آماده را اضافه کنید یا با دکمهٔ «افزودن» واژهٔ خودتان را بنویسید.`;
-  else if(total)sub='کارت‌ها را مرور کنید، بعد یک مکالمهٔ کوتاه تمرین کنید.';
-  else sub='مرور امروز تمام شد. حالا وقت خوبی برای مکالمه یا آزمون است.';
+  if(!s.total)sub=`از درس ۱ مسیر درسی شروع کنید. واژه‌های هر درس خودکار کارت می‌شوند و هر روز همین سه قدم پایین را انجام می‌دهید.`;
+  else if(total)sub='اول کارت‌ها را مرور کنید، بعد قدم بعدی درس، بعد کمی گوش دادن.';
+  else sub='مرور امروز تمام شد. حالا قدم بعدی درس را بردارید.';
   $('#todaySub').textContent=sub;
   $('#dueTotal').textContent=faNum(total);
   $('#heroSplit').innerHTML=`<span><b class="num">${faNum(s.due)}</b> مرور</span><span><b class="num">${faNum(s.newToday)}</b> کارت تازه</span><span><b class="num">${faNum(s.fresh)}</b> کارت دیده‌نشده در صف</span>`;
@@ -2156,10 +2258,7 @@ function renderToday(){
   $('#dayMeter').style.width=pct+'%';
   $('#dayMeterTxt').textContent=doneToday||total?`${faNum(doneToday)} کارت امروز مرور شده، ${faNum(pct)}٪ از برنامهٔ امروز`:'برای شروع، از کتابخانه یک بسته اضافه کنید.';
   $('#startToday').disabled=!total;
-  if(!s.total){$('#startToday').textContent='رفتن به کتابخانه';$('#startToday').disabled=false;$('#startToday').dataset.lib='1'}else{$('#startToday').textContent='شروع مرور';delete $('#startToday').dataset.lib}
-  const nd=nextDialog(lang),dn=DIALOGS.filter(d=>d.lang===lang),dd=dn.filter(d=>db.done[d.id]).length;
-  $('#dlgNext').innerHTML=nd?`<div class="feature-top"><span class="feature-title">مکالمهٔ بعدی</span><span class="pill lvl">${esc(nd.level)}</span></div><div class="dlg-next"><b>${esc(nd.titleFa)}</b><div class="lat hint" style="font-style:italic">${esc(nd.title)}</div></div><p class="hint" style="margin:0">درس ${faNum(nd.lesson.n)}: ${esc(nd.lesson.fa)}، ${faNum(nd.lines.length)} جمله، ${faNum(dd)} از ${faNum(dn.length)} مکالمه تمرین شده</p><div class="btn-row"><button class="btn accent" type="button" data-dlg="${esc(nd.id)}">شروع مکالمه</button></div>`
-    :`<span class="feature-title">مکالمه‌ها</span><p style="margin:0">همهٔ ${faNum(dn.length)} مکالمه را تمرین کرده‌اید. آفرین!</p><div class="btn-row"><button class="btn" type="button" data-go="dialogs">مرور دوباره</button></div>`;
+  if(!s.total){$('#startToday').textContent=CRS()?'شروع درس ۱':'رفتن به کتابخانه';$('#startToday').disabled=false;$('#startToday').dataset.lib='1'}else{$('#startToday').textContent='شروع مرور';delete $('#startToday').dataset.lib}
   const w=wordOfDay(lang);
   if(w){const ex=exList(w)[0];const own=installedFor(w);const ety=etymShort(w);
     $('#wod').innerHTML=`<div class="feature-top"><span class="feature-title">واژهٔ امروز</span>${speakBtn('data-wod-say',1)}</div><div class="wod-word">${artHTML(w)}${esc(w.text)}</div><div class="wod-fa">${meanInline(w)}</div>${ex?`<div class="wod-ex">${esc(ex.t)}</div>`:''}${ety?`<div class="etym-line">${ety}</div>`:''}<div class="btn-row"><button class="btn sm" type="button" data-wod-open>جزئیات</button>${own?'<span class="hint">در کارت‌های شماست</span>':'<button class="btn sm primary" type="button" data-wod-add>افزودن به کارت‌ها</button>'}</div>`;
@@ -2172,10 +2271,10 @@ function renderToday(){
   let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY),lang);if(c>0)streak++;else if(k===0)continue;else break}
   $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK,lang));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
   const tips=TIPS[lang];$('#tip').innerHTML=tips[tipIdx%tips.length];
-  renderPath();renderCourseNow();renderLearnToday();
+  renderMapCard();renderPath();renderCourseToday();renderLearnToday();renderLisToday();
 }
 $('#nextTip').addEventListener('click',()=>{tipIdx++;const tips=TIPS[L()];$('#tip').innerHTML=tips[tipIdx%tips.length]});
-$('#startToday').addEventListener('click',e=>{if(e.currentTarget.dataset.lib){showView('library');return}startSession()});
+$('#startToday').addEventListener('click',e=>{if(e.currentTarget.dataset.lib){const u=CRS()&&currentUnit();if(u){cOpen=u.id;showView('course')}else showView('library');return}startSession()});
 $('#v-today').addEventListener('click',e=>{
   const d=e.target.closest('[data-dlg]');if(d){showView('dialogs',true);if(!lockOf('dialogs'))openDialog(d.dataset.dlg);return}
   const id=$('#wod').dataset.id;const it=id&&(getItem(id)||(PK.get(id)&&packItems(PK.get(id).p).find(x=>x.id===id)));if(!it)return;
@@ -2834,13 +2933,6 @@ function sodTs(){const d=new Date();d.setHours(0,0,0,0);return d.getTime()}
 function pathDay(lang){const k=dayKey();const p=(cfg.path.days||{})[lang];return p&&p.d===k?p:{d:k}}
 function pathMark(lang,what){const p=pathDay(lang);if(p[what])return;p[what]=Date.now();cfg.path.days=Object.assign({},cfg.path.days,{[lang]:p});saveCfg();refreshLocks()}
 const PATH_BACKLOG=100;   // with a very large backlog, 100 reviews in a day also opens the next step
-function pathState(lang){
-  const s=stats(lang),left=s.due+s.newToday,rev=dayCount(dayKey(),lang),sod=sodTs(),pd=pathDay(lang);
-  const r1=s.total>0&&(left===0||rev>=PATH_BACKLOG);
-  const r2=!!pd.dlg||DIALOGS.some(d=>d.lang===lang&&+db.done[d.id]>=sod);
-  const r3=!!pd.quiz;
-  return{s,left,rev,steps:[r1,r2,r3]};
-}
 function lockOf(view){
   if(cfg.path.on===false)return null;const st=pathState(L());
   if(view==='dialogs'&&!st.steps[0])return{need:0,st};
@@ -2859,20 +2951,6 @@ function applyLock(v,lk){
 document.addEventListener('click',e=>{if(e.target.closest('[data-path-start]')){e.preventDefault();startSession()}});
 function refreshLocks(){
   ['dialogs','quiz'].forEach(v=>{const lk=lockOf(v);$$(`.nav [data-go="${v}"],.bottom-nav [data-go="${v}"]`).forEach(b=>{b.classList.toggle('locked',!!lk);let i=$('.lk',b);if(lk&&!i)b.insertAdjacentHTML('beforeend','<span class="lk" aria-label="قفل">'+LOCK_SVG+'</span>');else if(!lk&&i)i.remove()})});
-}
-function renderPath(){
-  const el=$('#path');if(!el)return;
-  if(cfg.path.on===false){el.hidden=true;return}
-  const lang=L(),st=pathState(lang),[a,b,c]=st.steps;
-  const nd=nextDialog(lang);
-  const steps=[
-    {t:'مرور کارت‌ها',d:a?(st.left?'برای امروز کافی است ('+faNum(st.rev)+' مرور).':'همهٔ کارت‌های امروز مرور شد.'):!st.s.total?'اول از کتابخانه یک بسته اضافه کنید.':faNum(st.left)+' کارت مانده است.',done:a,btn:a?'':!st.s.total?'<button class="btn sm primary" type="button" data-go="library">کتابخانه</button>':'<button class="btn sm primary" type="button" data-path-start>شروع مرور</button>'},
-    {t:'یک مکالمه',d:b?'یک مکالمه گوش داده شد.':a?'یک مکالمه را تا آخر گوش دهید.':'بعد از مرور کارت‌ها باز می‌شود.',done:b,open:a,btn:a&&!b?(nd?`<button class="btn sm primary" type="button" data-dlg="${esc(nd.id)}">شروع مکالمه</button>`:'<button class="btn sm primary" type="button" data-go="dialogs">مکالمه‌ها</button>'):''},
-    {t:'تمرین',d:c?'تمرین امروز انجام شد.':a&&b?'یک آزمون کوتاه (دست‌کم ۵ پرسش).':'بعد از مکالمه باز می‌شود.',done:c,open:a&&b,btn:a&&b&&!c?'<button class="btn sm primary" type="button" data-go="quiz">شروع تمرین</button>':''}];
-  let cur=steps.findIndex(x=>!x.done);
-  el.hidden=false;
-  el.innerHTML=steps.map((x,i)=>`<li class="step${x.done?' done':i===cur?' now':(i>0&&!x.open)?' locked':''}"><span class="step-n">${x.done?'✓':(i>0&&!x.open)?LOCK_SVG:faNum(i+1)}</span><div class="step-c"><b>${x.t}</b><span class="hint">${x.d}</span></div>${x.btn}</li>`).join('')
-    +(cur<0?'<li class="path-done">هر سه مرحلهٔ امروز تمام شد. منابع، آهنگ‌ها و یوتیوب برای بیشتر گوش دادن همیشه باز هستند.</li>':'');
 }
 
 /* ================= SOURCES: PDF, images, audio and text ================= */
@@ -2955,7 +3033,7 @@ let srcSyncTimer=null;function scheduleSrcSync(){if(!ghReady()||!cfg.gh.auto)ret
 
 /* ---------- import ---------- */
 const jobs=new Map();
-function jobUI(id,title){const el=document.createElement('div');el.className='job panel';el.id='job-'+id;el.innerHTML=`<div class="job-top"><b class="job-t"></b><span class="hint job-s"></span></div><div class="bar"><span></span></div>`;$('.job-t',el).textContent=title;$('#srcJobs').prepend(el);return{set(msg,p){$('.job-s',el).textContent=msg;if(p!=null)$('.bar span',el).style.width=Math.round(Math.max(0,Math.min(1,p))*100)+'%'},done(){el.remove()},fail(msg){el.classList.add('bad');$('.job-s',el).textContent=msg;$('.bar',el).remove();setTimeout(()=>el.remove(),9000)}}}
+function jobUI(id,title){const el=document.createElement('div');el.className='job panel';el.id='job-'+id;el.innerHTML=`<div class="job-top"><b class="job-t"></b><span class="hint job-s"></span></div><div class="bar"><span></span></div>`;$('.job-t',el).textContent=title;$(currentView==='mine'?'#hubJobs':'#srcJobs').prepend(el);return{set(msg,p){$('.job-s',el).textContent=msg;if(p!=null)$('.bar span',el).style.width=Math.round(Math.max(0,Math.min(1,p))*100)+'%'},done(){el.remove()},fail(msg){el.classList.add('bad');$('.job-s',el).textContent=msg;$('.bar',el).remove();setTimeout(()=>el.remove(),9000)}}}
 async function importFiles(files){
   const lang=segVal($('#srcLang'))||L();askPersist();const moved={};
   for(const f of files){
@@ -3131,7 +3209,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=17',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=19',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -3154,7 +3232,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 17، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 19، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -3262,26 +3340,30 @@ function seriesMap(list){
   return out;
 }
 let TOPIX=null;
-/* topics come from the book themes (De Opmaat) when present, otherwise from the course lessons,
-   otherwise from the ordinary word packs — always in the language of the source */
+/* topics are the lessons of the course path (so a source finds its lesson, past, current or later);
+   lessons built around general packs (small words, verb tables, numbers…) are not topics.
+   Without a course: the book themes, otherwise the ordinary word packs. Always in the source's language. */
+const TOPIC_SKIP=new Set(['nl-klein','nl-ww','nl-ww2','nl-getal','nl-bijv','nl-vals','nl-schrijven','nl-spreken','nl-praten','nl-groet','en-irreg','en-phrasal','en-mistake','en-link','en-colloc','en-idioms','en-adj']);
 function topicIndex(lang){
-  lang=lang==='en'?'en':'nl';const key=lang+':'+PACKS.length;if(TOPIX&&TOPIX.key===key)return TOPIX;
-  let packs,label;
-  const book=PACKS.filter(p=>p.lang==='nl'&&p.series==='De Opmaat'&&p.num);
-  const course=PACKS.filter(p=>p.lang===lang&&/^ar-/.test(p.id));
-  const skip=new Set(['nl-klein','nl-ww','nl-ww2','nl-getal','nl-bijv','nl-vals','nl-schrijven','nl-spreken','nl-praten','nl-groet']);
-  if(lang==='nl'&&book.length){packs=book;label=p=>({name:'Thema '+p.num+': '+p.title,tag:'Thema '+p.num,num:p.num})}
-  else if(course.length){packs=course;label=(p,i)=>({name:p.title,tag:'درس '+faNum(i+1),num:i+1})}
-  else{packs=PACKS.filter(p=>p.lang===lang&&!skip.has(p.id)&&p.kind!=='phrase'&&!/^(op|ar|cu)-/.test(p.id));label=(p,i)=>({name:p.title,tag:p.title,num:0})}
-  const topics=packs.map((p,i)=>Object.assign({id:p.id},label(p,i)));
+  lang=lang==='en'?'en':'nl';const C=typeof courseFor==='function'?courseFor(lang):null;
+  const key=lang+':'+PACKS.length+':'+(C?C.units.length:0);if(TOPIX&&TOPIX.key===key)return TOPIX;
+  let topics,sets;
+  if(C){const us=C.units.filter(u=>!TOPIC_SKIP.has(u.pack)&&PACKS.some(p=>p.id===u.pack));
+    topics=us.map(u=>({id:u.pack,unit:u.id,name:'درس '+faNum(u.n)+': '+u.title,tag:'درس '+faNum(u.n),num:u.n}));
+    sets=us.map(u=>{const p=PACKS.find(x=>x.id===u.pack);const f=[];packItems(p).forEach(it=>{if(it.type!=='word')return;f.push(it.text,it.plural);if(it.verb)['ik','hij','pastSg','part'].forEach(k=>f.push(it.verb[k]))});
+      (u.dialogs||[]).forEach(id=>{const d=DIALOGS.find(x=>x.id===id);if(d)d.lines.forEach(l=>(l.t.match(/[A-Za-zÀ-ÿ'’]{5,}/g)||[]).forEach(w=>f.push(w)))});return f})}
+  else{
+    const book=PACKS.filter(p=>p.lang==='nl'&&p.series==='De Opmaat'&&p.num);
+    const packs=lang==='nl'&&book.length?book:PACKS.filter(p=>p.lang===lang&&!TOPIC_SKIP.has(p.id)&&p.kind!=='phrase'&&!/^(op|ar|cu)-/.test(p.id));
+    topics=packs.map(p=>({id:p.id,name:p.num?'Thema '+p.num+': '+p.title:p.title,tag:p.num?'Thema '+p.num:p.title,num:p.num||0}));
+    sets=packs.map(p=>{const f=[];packItems(p).forEach(it=>{if(it.type!=='word')return;f.push(it.text,it.plural);if(it.verb)['ik','hij','pastSg','part'].forEach(k=>f.push(it.verb[k]))});return f})}
   const wmap=new Map();
-  packs.forEach((p,ti)=>packItems(p).forEach(it=>{if(it.type!=='word')return;const forms=[it.text,it.plural];if(it.verb)['ik','hij','pastSg','part'].forEach(k=>forms.push(it.verb[k]));
-    forms.forEach(f=>{f=norm(f||'');if(f.length<4||/\s/.test(f)||SMALL_W.has(f))return;const a=wmap.get(f)||new Set();a.add(ti);wmap.set(f,a)})}));
+  sets.forEach((forms,ti)=>forms.forEach(f=>{f=norm(f||'');if(f.length<4||/\s/.test(f)||SMALL_W.has(f))return;const a=wmap.get(f)||new Set();a.add(ti);wmap.set(f,a)}));
   return TOPIX={key,topics,wmap};
 }
 const _topicCache=new Map();
 function topicOf(r){
-  const key=r.id+':'+r.updated+':'+PACKS.length;if(_topicCache.has(key))return _topicCache.get(key);
+  const key=r.id+':'+r.updated+':'+PACKS.length+':'+topicIndex(r.lang).key;if(_topicCache.has(key))return _topicCache.get(key);
   const {topics,wmap}=topicIndex(r.lang);const text=r.title+' '+srcText(r);const seen=new Set();const score=new Array(topics.length).fill(0);
   (norm(text).match(/[a-zà-ÿ'’-]{4,}/g)||[]).forEach(w=>{if(seen.has(w))return;seen.add(w);const t=wmap.get(w);if(!t||t.size>3)return;t.forEach(i=>score[i]+=1/t.size)});
   let best=-1,bs=0,second=0;score.forEach((v,i)=>{if(v>bs){second=bs;bs=v;best=i}else if(v>second)second=v});
@@ -3295,6 +3377,7 @@ const SEC_TXT={
   audio:{t:'فایل‌های صوتی',s:'گوش دادن به ترتیب، با متن جمله‌به‌جمله. فایل‌ها خودکار دسته‌بندی و به ترتیب شماره مرتب می‌شوند.',d:'فایل‌های صوتی را اینجا بکشید یا برای انتخاب بزنید',h:'MP3، M4A، WAV، OGG. چند فایل را با هم بدهید.',acc:'audio/*,.mp3,.m4a,.wav,.ogg,.opus,.aac'},
   visual:{t:'عکس و ویدیو',s:'دیدن به ترتیب: ویدیوها پشت سر هم پخش می‌شوند و عکس‌های هر دسته به صورت نمایش پیاپی باز می‌شوند.',d:'عکس یا ویدیو را اینجا بکشید یا برای انتخاب بزنید',h:'JPG، PNG، MP4، MOV. متن عکس‌ها خودکار خوانده می‌شود و برای ویدیو می‌توانید متن گفتارش را بسازید.',acc:'image/*,video/*,.mp4,.mov,.m4v'}};
 async function renderSources(){
+  if(!inSrcView())return;
   if(VIEW_SEC[currentView])srcSec=VIEW_SEC[currentView];
   const T=SEC_TXT[srcSec];$('#srcSecTitle').textContent=T.t;$('#srcSecSub').textContent=T.s;$('#srcDropT').textContent=T.d;$('#srcDropH').textContent=T.h;$('#srcFile').accept=T.acc+',.pdf,application/pdf,image/*,audio/*,video/*,.txt';
   $('#asrModelWrap').hidden=srcSec==='doc';$('#srcPaste').hidden=srcSec!=='doc';
@@ -3346,7 +3429,7 @@ function cardInner(r){
   const status=isAV(r)&&!(r.segs||[]).length?(batch&&batch.cur===r.id?'<span class="pill new">در حال ساختن متن…</span>':'<span class="pill warn">هنوز متن ندارد</span>'):'';
   const tp=(cfg.srcGroup||'series')!=='topic'?topicOf(r):null;
   const meta=[SRC_KIND_FA[r.kind],r.lang==='en'?'انگلیسی':'هلندی',isAV(r)&&r.info&&r.info.dur?fmtTime(r.info.dur):'',r.kind==='pdf'&&r.info&&r.info.pages?faNum(r.info.pages)+' صفحه':'',words?faNum(words)+' واژه':''].filter(Boolean).join('، ');
-  return `<button type="button" class="src-card" data-src="${esc(r.id)}"><span class="src-ico k-${r.kind}"><svg class="i" viewBox="0 0 24 24">${SRC_KIND_ICON[r.kind]}</svg></span><span class="src-c"><b class="src-n">${esc(r.title)}</b><span class="hint">${esc(meta)}</span><span class="src-tags">${status}${tp?`<span class="pill">${esc(tp.tag||tp.name)}</span>`:''}${ghReady()&&local?'<span class="pill">هنوز در GitHub نیست</span>':''}</span></span></button>`;
+  return `<button type="button" class="src-card" data-src="${esc(r.id)}"><span class="src-ico k-${r.kind}"><svg class="i" viewBox="0 0 24 24">${SRC_KIND_ICON[r.kind]}</svg></span><span class="src-c"><b class="src-n">${esc(r.title)}</b><span class="hint">${esc(meta)}</span><span class="src-tags">${status}${relPill(srcRel(r))}${levelPill(srcLevel(r))}${db.done[srcDoneKey(r)]?'<span class="pill ok">✓ کامل کار شده</span>':''}${tp&&!tp.unit?`<span class="pill">${esc(tp.tag||tp.name)}</span>`:''}${ghReady()&&local?'<span class="pill">هنوز در GitHub نیست</span>':''}</span></span></button>`;
 }
 bindSeg($('#srcGroup'),v=>{cfg.srcGroup=v;saveCfg();renderSources()});
 /* small previews of photos (only those already on this device) */
@@ -3439,7 +3522,7 @@ async function renderSourceOpen(){
   if(r.media&&!isAV(r))acts.push(`<button class="btn ghost" type="button" data-sa="orig">فایل اصلی</button>`);
   acts.push(`<button class="btn ghost" type="button" data-sa="rename">نام، دسته و زبان</button><button class="btn ghost danger" type="button" data-sa="del">حذف</button>`);
   $('#srcActs').innerHTML=acts.join('');
-  await renderSrcMedia(r);renderSrcBody(r);renderFound(r);
+  renderSrcFlow(r);await renderSrcMedia(r);renderSrcBody(r);renderFound(r);
 }
 async function renderSrcMedia(r){
   const box=$('#srcMedia');
@@ -3468,7 +3551,7 @@ async function renderSrcMedia(r){
   const a=$('#srcAudio');a.src=srcAudioUrl;const sp=String(cfg.audioRate||1);setSeg($('#spdSeg'),sp);a.playbackRate=+sp;
   bindSeg($('#spdSeg'),v=>{cfg.audioRate=+v;saveCfg();a.playbackRate=+v});
   if($('#segLoop')){$('#segLoop').checked=!!cfg.segLoop;$('#segLoop').onchange=e=>{cfg.segLoop=e.target.checked;saveCfg()}}
-  a.addEventListener('timeupdate',onAudioTime);
+  a.addEventListener('timeupdate',onAudioTime);a.addEventListener('timeupdate',lisTick);a.addEventListener('pause',()=>{lisLast=null;lisFlush()});
   a.addEventListener('ratechange',()=>{});
   $('#segPrev').onclick=()=>jumpSeg(-1);$('#segNext').onclick=()=>jumpSeg(1);$('#segRep').onclick=()=>jumpSeg(0);
   $('#autoNext').checked=!!cfg.autoNext||!!(playlist&&playlist.ids.includes(r.id));
@@ -3791,7 +3874,7 @@ async function afterImport(r){
   el.innerHTML=`<div class="job-top"><b class="job-t"></b><button class="icon-btn mini" type="button" aria-label="بستن" data-x><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><p class="hint" style="margin:4px 0 8px">${[a0.lang&&a0.lang!==segVal($('#srcLang'))?'زبان متن '+(r.lang==='en'?'انگلیسی':'هلندی')+' تشخیص داده شد':'',bits.length?'پیدا شد: '+bits.join('، '):'',tp?'موضوع: '+esc(tp.name):''].filter(Boolean).join('؛ ')}${a.dlgs.length?'. مکالمه‌ها در بخش مکالمه‌ها، «'+SRC_DLG_SERIES+'» گذاشته شدند':''}.</p><div class="btn-row"><button class="btn sm primary" type="button" data-open-src>${a.words.length||a.sents.length?'دیدن و کارت کردن':'باز کردن منبع'}</button></div>`;
   $('.job-t',el).textContent=r.title;
   el.addEventListener('click',e=>{if(e.target.closest('[data-x]'))el.remove();else if(e.target.closest('[data-open-src]')){el.remove();openId=r.id;renderSources();window.scrollTo(0,0)}});
-  $('#srcJobs').append(el);
+  $(currentView==='mine'?'#hubJobs':'#srcJobs').append(el);
 }
 
 /* ================= SONGS (per language, by level) ================= */
@@ -4011,7 +4094,17 @@ function ytTranscriptSheet(r){
    IndexedDB ('media' store, ids 'c-<file>') and is mirrored to the private repo under media/course/. */
 const NLC=PRIV&&PRIV.course&&Array.isArray(PRIV.course.units)?PRIV.course:null;   // Dutch: private, with audio and slides
 const ENC=VZ.courses&&VZ.courses.en&&Array.isArray(VZ.courses.en.units)?Object.assign({media:{},audio:{}},VZ.courses.en):null; // English: public
-const CRS=()=>L()==='en'?ENC:NLC;
+/* Dutch path: the private course when it is imported (with recorded audio and slides) plus the exam stage
+   (KNM, writing, speaking) of the public path; otherwise the public path of Vazheyar alone. */
+const NLP=VZ.courses&&VZ.courses.nl&&Array.isArray(VZ.courses.nl.units)?VZ.courses.nl:null;
+const NLX=(()=>{
+  if(NLC){const app=NLP?NLP.stages.filter(sg=>sg.append):[];const au=NLP?NLP.units.filter(u=>app.some(sg=>sg.id===u.stage)):[];
+    return Object.assign({},NLC,{stages:NLC.stages.concat(app.map((sg,i)=>Object.assign({},sg,{title:sg.title.replace(/^گام [۰-۹]+/,'گام '+faNum(NLC.stages.length+i+1))}))),
+      units:NLC.units.concat(au.map((u,i)=>Object.assign({},u,{n:NLC.units.length+i+1})))})}
+  return NLP?Object.assign({media:{},audio:{}},NLP):null;
+})();
+const CRS=()=>L()==='en'?ENC:NLX;
+const courseFor=lang=>lang==='en'?ENC:NLX;
 const C_DIR=MEDIA_DIR+'/course';
 const cUnits=()=>{const c=CRS();return c?c.units:[]};
 const cUnit=id=>cUnits().find(u=>u.id===id);
@@ -4029,22 +4122,35 @@ function unitState0(u){
   const p=cPack(u),items=p?packItems(p):[];let inst=0,rev=0;
   items.forEach(it=>{const own=installedFor(it);if(own){inst++;if(own.srs||own.susp)rev++}});
   const ds=cDialogs(u),dd=ds.filter(d=>db.done[d.id]).length,need=Math.ceil(ds.length*0.6);
-  const s={total:items.length,inst,rev,dl:ds.length,dd,need,quiz:!!db.done['uq:'+u.id]};
-  s.words=s.total?rev>=Math.ceil(s.total*0.9):true;s.dlg=dd>=need;
+  const gs=gForUnit(u),gd=gs.filter(g=>gDone(g.id)).length;
+  const s={total:items.length,inst,rev,dl:ds.length,dd,need,quiz:!!db.done['uq:'+u.id],gl:gs.length,gd};
+  s.words=s.total?rev>=Math.ceil(s.total*0.9):true;s.dlg=dd>=need;s.gram=gd>=gs.length;
+  s.dlgOpen=s.words||!s.total||rev>=Math.ceil(s.total*0.4);s.quizOpen=s.words&&s.dlg&&s.gram;
   s.done=!!db.done['unit:'+u.id]||(s.words&&s.dlg&&s.quiz);
   return s;
 }
+/* where the learner chose to start (placement); lessons before it stay open but optional */
+const cStartIdx=()=>{const id=((cfg.course||{}).start||{})[L()];const i=id?cUnits().findIndex(u=>u.id===id):-1;return i<0?0:i};
 function unitOpen(u){
   if(cfg.path.on===false||db.done['unit:'+u.id])return true;
-  const i=cUnits().indexOf(u);if(i<=0)return true;
+  const i=cUnits().indexOf(u);if(i<=cStartIdx())return true;
   return unitState(cUnits()[i-1]).done;
 }
-function currentUnit(){const us=cUnits();return us.find(u=>!unitState(u).done)||us[us.length-1]||null}
+function currentUnit(){const us=cUnits(),st=cStartIdx();return us.find((u,i)=>i>=st&&!unitState(u).done)||us.find(u=>!unitState(u).done)||us[us.length-1]||null}
+/* the one next thing to do in a lesson: words, then dialogues, then grammar, then finish the words, then the lesson quiz */
+function unitNext(u){
+  const s=unitState(u);if(s.done)return{k:'done',s};
+  if(!s.dlgOpen)return{k:'words',s,t:s.total-s.inst?'واژه‌های درس را اضافه و مرور کنید':'واژه‌های درس را مرور کنید'};
+  if(!s.dlg){const d=cDialogs(u).find(x=>!db.done[x.id]);return{k:'dlg',s,d,t:d?'مکالمهٔ «'+(d.titleFa||d.title)+'» را گوش دهید':'مکالمه‌های درس'}}
+  if(!s.gram){const g=gForUnit(u).find(x=>!gDone(x.id));return{k:'gram',s,g,t:'درس دستور «'+g.title+'» را بخوانید و تمرین کنید'}}
+  if(!s.words)return{k:'words',s,t:'مرور واژه‌های درس را تمام کنید ('+faNum(s.rev)+' از '+faNum(s.total)+')'};
+  return{k:'quiz',s,t:'آزمون پایانی درس را بدهید'};
+}
 /* new cards of the current lesson come first in review */
 function courseFocusPack(){if(!CRS()||cfg.course&&cfg.course.focus===false)return'';const u=currentUnit();return u?u.pack:''}
 function checkUnitDone(u){
   if(!u||db.done['unit:'+u.id])return;const s=unitState(u);
-  if(s.words&&s.dlg&&s.quiz){db.done['unit:'+u.id]=Date.now();saveData();
+  if(s.words&&s.dlg&&s.quiz){db.done['unit:'+u.id]=Date.now();saveData();pathMark(L(),'dlg');
     const nx=cUnits()[cUnits().indexOf(u)+1];
     toast(nx?'آفرین! درس «'+u.title+'» تمام شد و درس بعد باز شد.':'آفرین! همهٔ مسیر درسی را تمام کردید.',5000)}
 }
@@ -4058,22 +4164,25 @@ function renderCourse(){
   if(!C){$('#cEmpty').hidden=false;$('#cOverview').hidden=true;$('#cSub').textContent='درس‌های شما به ترتیب: اول واژه‌ها، بعد مکالمه، بعد تمرین؛ و بعد درس بعدی.';return}
   $('#cEmpty').hidden=true;$('#cOverview').hidden=false;
   const us=cUnits(),st=us.map(unitState),done=st.filter(s=>s.done).length,cur=currentUnit();
-  $('#cSub').textContent=faNum(us.length)+' درس در '+faNum(C.stages.length)+' گام. هر درس بعد از تمام شدن درس قبلی باز می‌شود.';
+  $('#cSub').textContent=faNum(us.length)+' درس در '+faNum(C.stages.length)+' گام، از صفر تا B1؛ و بعد گام آخر با منابع واقعی. هر درس چهار قدم دارد: واژه‌ها، مکالمه‌ها، دستور، آزمون. درس بعد وقتی باز می‌شود که درس قبل تمام شده باشد.';
+  $('#cImportNote').hidden=!(L()==='nl'&&!NLC);
   $('#cProgTxt').textContent=faNum(done)+' از '+faNum(us.length)+' درس تمام شده';
   $('#cProgSub').textContent=cur&&!st[us.indexOf(cur)].done?'درس فعلی: '+cur.title:'';
   $('#cProgBar').style.width=Math.round(done/us.length*100)+'%';
   $('#cStages').innerHTML=C.stages.map(sg=>{
     const su=us.filter(u=>u.stage===sg.id);if(!su.length)return'';
     const sd=su.filter(u=>st[us.indexOf(u)].done).length;
-    return`<section class="c-stage"><header class="c-stage-h"><h2>${esc(sg.title)}</h2><span class="hint">${faNum(sd)} از ${faNum(su.length)}</span><p class="hint">${esc(sg.desc)}</p></header><ol class="c-list">${su.map(u=>{
-      const s=st[us.indexOf(u)],open=unitOpen(u),isCur=u===cur&&!s.done;
+    const openSg=cur?cur.stage===sg.id:sg===C.stages[0];
+    return`<details class="c-stage"${openSg?' open':''}><summary class="c-stage-h"><h2>${esc(sg.title)}</h2><span class="hint">${sd===su.length?'✓ ':''}${faNum(sd)} از ${faNum(su.length)} درس</span><p class="hint">${esc(sg.desc)}</p></summary><ol class="c-list">${su.map(u=>{
+      const s=st[us.indexOf(u)],open=unitOpen(u),isCur=u===cur&&!s.done,skipped=!s.done&&us.indexOf(u)<cStartIdx();
       const pct=s.total?Math.round(s.rev/s.total*100):0;
       return`<li><button type="button" class="c-row${s.done?' done':isCur?' now':!open?' locked':''}" data-unit="${esc(u.id)}"${open?'':' aria-disabled="true"'}>
         <span class="c-n">${s.done?STEP_SVG:!open?LOCK_SVG:faNum(u.n)}</span>
         <span class="c-t"><b>${esc(u.title)}</b><span class="lat">${esc(u.orig)}</span>
-          <span class="c-meta"><span class="pill lvl">${esc(u.level)}</span><span>${faNum(s.total)} واژه</span><span>${faNum(s.dl)} مکالمهٔ صوتی</span>${u.files.length?`<span>${faNum(u.files.length)} اسلاید و اینفوگرافیک</span>`:''}</span></span>
+          <span class="c-meta"><span class="pill lvl">${esc(u.level)}</span><span>${faNum(s.total)} واژه</span>${s.dl?`<span>${faNum(s.dl)} مکالمه</span>`:''}${s.gl?`<span>${faNum(s.gl)} درس دستور</span>`:''}${skipped?'<span>قبل از نقطهٔ شروع شما (اختیاری)</span>':''}${u.files.length?`<span>${faNum(u.files.length)} اسلاید و اینفوگرافیک</span>`:''}</span></span>
         ${open&&!s.done?`<span class="c-mini" aria-label="پیشرفت"><i style="width:${pct}%"></i></span>`:''}
-      </button></li>`}).join('')}</ol></section>`}).join('');
+      </button></li>`}).join('')}</ol></details>`}).join('');
+  renderCourseExtras();
 }
 $('#cStages').addEventListener('click',e=>{const b=e.target.closest('[data-unit]');if(!b)return;const u=cUnit(b.dataset.unit);if(!u)return;
   if(!unitOpen(u)){const i=cUnits().indexOf(u);toast('این درس بعد از تمام شدن درس «'+cUnits()[i-1].title+'» باز می‌شود.',4500);return}
@@ -4092,19 +4201,24 @@ function renderUnit(u){
   const left=s.total-s.inst;
   const st1=step(1,s.words,'واژه‌ها',s.words?'واژه‌های این درس مرور شده‌اند.':left?`${faNum(left)} واژه هنوز در کارت‌ها نیست. اول اضافه کنید، بعد مرور کنید.`:`${faNum(s.rev)} از ${faNum(s.total)} واژه دست‌کم یک بار مرور شده.`,
     left?`<button class="btn sm primary" type="button" data-cu="add">افزودن ${faNum(left)} واژه</button>`:!s.words?`<button class="btn sm primary" type="button" data-cu="review">مرور</button>`:'',true);
-  const st2=step(2,s.dlg,'مکالمه‌ها',s.dlg?`${faNum(s.dd)} مکالمه تمرین شد.`:`دست‌کم ${faNum(s.need)} مکالمه را تا آخر گوش دهید (${faNum(s.dd)} از ${faNum(s.need)}).`,'',s.words);
-  const st3=step(3,s.quiz,'تمرین درس',s.quiz?'تمرین این درس را با موفقیت گذراندید.':(gForUnit(u).length?'آزمون ۱۰ پرسشی از واژه‌ها، جمله‌ها و دستور زبان همین درس؛ با ۷ پاسخ درست قبول می‌شوید.':'آزمون ۱۰ پرسشی از واژه‌ها و جمله‌های همین درس؛ با ۷ پاسخ درست قبول می‌شوید.'),
-    !s.quiz&&s.words&&s.dlg?`<button class="btn sm primary" type="button" data-cu="quiz">شروع تمرین</button>`:'',s.words&&s.dlg);
+  const st2=step(2,s.dlg,'مکالمه‌ها',s.dlg?`${faNum(s.dd)} مکالمه تمرین شد.`:s.dlgOpen?`دست‌کم ${faNum(s.need)} مکالمه را تا آخر گوش دهید (${faNum(s.dd)} از ${faNum(s.need)}).`:'وقتی دست‌کم ۴۰٪ واژه‌ها را مرور کردید باز می‌شود.','',s.dlgOpen);
+  const gs=gForUnit(u),gn=gs.find(g=>!gDone(g.id));
+  const st3=gs.length?step(3,s.gram,'دستور زبان',s.gram?'درس‌های دستور این درس را گذرانده‌اید.':`${faNum(gs.length)} درس کوتاه دستور با تمرین (${faNum(s.gd)} از ${faNum(gs.length)}).`,
+    gn?`<button class="btn sm${s.dlgOpen?' primary':''}" type="button" data-gopen="${esc(gn.id)}">${s.gd?'درس بعدی':'شروع'}</button>`:'',true):'';
+  const st4=step(gs.length?4:3,s.quiz,'آزمون پایانی درس',s.quiz?'آزمون این درس را با موفقیت گذراندید.':(gs.length?'۱۰ پرسش از واژه‌ها، جمله‌ها و دستور همین درس؛ با ۷ پاسخ درست قبول می‌شوید.':'۱۰ پرسش از واژه‌ها و جمله‌های همین درس؛ با ۷ پاسخ درست قبول می‌شوید.')+(s.quizOpen||s.quiz?'':' بعد از مرحله‌های قبل باز می‌شود.'),
+    !s.quiz&&s.quizOpen?`<button class="btn sm primary" type="button" data-cu="quiz">شروع آزمون</button>`:'',s.quizOpen);
   const files=u.files.map(f=>Object.assign({id:f},(CRS().media||{})[f]||{})).filter(m=>m.file);
   $('#cUnitBody').innerHTML=`
     <div class="page-head" style="margin-bottom:10px"><div><p class="c-kicker">درس ${faNum(u.n)} · <span class="lat">${esc(u.level)}</span></p><h1 class="view-title">${esc(u.title)}</h1><p class="sub lat" style="margin-bottom:4px">${esc(u.orig)}</p><p class="sub">${esc(u.desc)}</p></div></div>
     ${s.done?`<p class="note-box good" style="margin:0 0 14px">این درس تمام شده است. هر وقت خواستید دوباره مرورش کنید.</p>`:''}
-    <ol class="path c-steps">${st1}${st2}${st3}</ol>
+    <ol class="path c-steps">${st1}${st2}${st3}${st4}</ol>
+    ${unitNextHTML(u)}
     ${gUnitHTML(u)}
     ${gram.length?`<section class="panel c-sec"><h2 class="h2">خلاصهٔ نکته‌های گرامر این درس</h2><ul class="c-gram">${gram.map(g=>`<li>${gramHTML(g)}</li>`).join('')}</ul></section>`:''}
     <section class="panel c-sec"><div class="c-sec-h"><h2 class="h2">مکالمه‌های صوتی</h2><span class="hint">${faNum(s.dd)} از ${faNum(ds.length)}</span></div>
-      <div class="c-dlgs">${ds.map(d=>`<button type="button" class="c-dlg${db.done[d.id]?' done':''}" data-cdlg="${esc(d.id)}"${s.words?'':' aria-disabled="true"'}><span class="c-dlg-ic">${db.done[d.id]?'✓':'▶'}</span><span><b>${esc(d.titleFa||d.title)}</b><span class="lat hint">${esc(d.title)}</span></span><span class="hint num">${NLC&&NLC.audio[d.id]?fmtTime(NLC.audio[d.id].dur):''}</span></button>`).join('')}</div>
-      ${s.words?'':'<p class="hint" style="margin:10px 0 0">مکالمه‌ها بعد از مرور واژه‌ها باز می‌شوند.</p>'}</section>
+      <div class="c-dlgs">${ds.map(d=>`<button type="button" class="c-dlg${db.done[d.id]?' done':''}" data-cdlg="${esc(d.id)}"${s.dlgOpen?'':' aria-disabled="true"'}><span class="c-dlg-ic">${db.done[d.id]?'✓':'▶'}</span><span><b>${esc(d.titleFa||d.title)}</b><span class="lat hint">${esc(d.title)}</span></span><span class="hint num">${NLC&&NLC.audio[d.id]?fmtTime(NLC.audio[d.id].dur):''}</span></button>`).join('')}</div>
+      ${s.dlgOpen?'':'<p class="hint" style="margin:10px 0 0">مکالمه‌ها وقتی باز می‌شوند که دست‌کم ۴۰٪ واژه‌های درس را مرور کرده باشید.</p>'}</section>
+    ${uExtrasHTML(u)}
     ${files.length?`<section class="panel c-sec"><div class="c-sec-h"><h2 class="h2">اسلایدها و اینفوگرافیک‌ها</h2><button class="btn sm ghost" type="button" data-cu="dlall">ذخیره برای استفادهٔ آفلاین</button></div>
       <div class="c-files">${files.map(m=>`<button type="button" class="c-file" data-cfile="${esc(m.id)}"><span class="c-file-ic">${m.kind==='deck'?'<svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>':'<svg class="i" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>'}</span><span class="c-file-t"><b class="lat">${esc(m.title||(m.kind==='deck'?'اسلایدها':'اینفوگرافیک'))}</b><span class="hint">${m.kind==='deck'?faNum(m.pages)+' اسلاید':'اینفوگرافیک'} · ${fmtSize(m.size)}</span></span></button>`).join('')}</div></section>`:''}
     <section class="panel c-sec"><details><summary class="h2">فهرست واژه‌ها و جمله‌های این درس (${faNum(items.length)})</summary><div class="c-words">${items.map(it=>{const own=installedFor(it);return`<div class="c-w"><span class="lat"><b>${artHTML(it)}${esc(it.text)}</b></span><span>${esc(it.fa)}</span><span class="pill ${own?(own.srs?'ok':'new'):''}">${own?(own.srs?'مرور شده':'در صف'):'اضافه نشده'}</span></div>`}).join('')}</div></details></section>
@@ -4119,7 +4233,7 @@ $('#cUnitBody').addEventListener('click',async e=>{
     if(k==='quiz'||k==='skip'){unitQuiz(u,k==='skip');return}
     if(k==='dlall'){a.disabled=true;try{await cDownloadUnit(u,(i,n)=>{a.textContent='در حال دریافت '+faNum(i)+' از '+faNum(n)+'…'});a.textContent='✓ روی این دستگاه ذخیره شد'}catch(err){a.disabled=false;a.textContent='ذخیره برای استفادهٔ آفلاین';toast(err.message,5000)}return}
   }
-  const d=e.target.closest('[data-cdlg]');if(d){if(d.getAttribute('aria-disabled')){toast('اول واژه‌های این درس را مرور کنید.');return}
+  const d=e.target.closest('[data-cdlg]');if(d){if(d.getAttribute('aria-disabled')){toast('اول دست‌کم ۴۰٪ واژه‌های این درس را مرور کنید.');return}
     showView('dialogs',true);if(!lockOf('dialogs'))openDialog(d.dataset.cdlg);return}
   const f=e.target.closest('[data-cfile]');if(f)openViewer(f.dataset.cfile);
 });
@@ -4143,7 +4257,7 @@ function unitQuiz(u,skip){
 /* called from finishQuiz */
 function unitQuizDone(n){
   const u=cUnit(qz.unit);if(!u||!n)return'';const need=qz.skip?8:7,ok=qz.score>=need&&n>=10;
-  if(ok){if(qz.skip)db.done['unit:'+u.id]=Date.now();db.done['uq:'+u.id]=Date.now();saveData();checkUnitDone(u)}
+  if(ok){if(qz.skip)db.done['unit:'+u.id]=Date.now();db.done['uq:'+u.id]=Date.now();saveData();pathMark(L(),'dlg');checkUnitDone(u)}
   return ok?(qz.skip?'آزمون گذر را قبول شدید؛ این درس تمام‌شده حساب شد و درس بعد باز شد.':'تمرین این درس را قبول شدید!'):`برای قبولی دست‌کم ${faNum(need)} پاسخ درست لازم است. دوباره امتحان کنید.`;
 }
 
@@ -4346,7 +4460,7 @@ const gDone=id=>!!db.done['g:'+id];
 const gById=id=>GRAMMAR.nl.find(g=>g.id===id)||GRAMMAR.en.find(g=>g.id===id)||null;
 const gNextLesson=lang=>(GRAMMAR[lang]||[]).find(g=>!gDone(g.id))||null;
 const unitLang=u=>/^e\d/.test(u.id)?'en':'nl';
-const gForUnit=u=>(GRAMMAR[unitLang(u)]||[]).filter(g=>g.units.includes(u.id));
+const gForUnit=u=>Array.isArray(u.grammar)&&u.grammar.length?u.grammar.map(gById).filter(Boolean):(GRAMMAR[unitLang(u)]||[]).filter(g=>g.units.includes(u.id));
 const gNum=g=>GRAMMAR[g.lang].indexOf(g)+1;
 let gOpen=null,gx=null;
 
@@ -4435,6 +4549,7 @@ function gAnswer(ok,html,sayText){
 function renderGResult(g){
   const n=g.qs.length,pass=gx.score>=Math.ceil(n*G_PASS),was=gDone(g.id);
   if(pass&&!was){db.done['g:'+g.id]=Date.now();saveData()}
+  if(pass)pathMark(g.lang,'dlg');
   const next=GRAMMAR[g.lang][gNum(g)];const xs=g.blocks.filter(b=>b.k==='x');const notIn=xs.filter(x=>!installedFor({lang:g.lang,text:x.t,type:'sentence'})).length;
   $('#gPractice').innerHTML=`<div class="g-result ${pass?'ok':'bad'}"><b class="num g-score">${faNum(gx.score)} از ${faNum(n)}</b><p>${pass?(was?'باز هم قبول! این درس را خوب بلدید.':'آفرین! این درس را گذراندید.'):`برای قبولی ${faNum(Math.ceil(n*G_PASS))} پاسخ درست لازم است. یک بار دیگر توضیح بالا و مثال‌ها را بخوانید و دوباره امتحان کنید.`}</p>
     <div class="btn-row" style="justify-content:center">${pass&&next?`<button class="btn primary" type="button" data-gopen="${esc(next.id)}">درس بعدی: ${gramHTML(next.title)}</button>`:''}<button class="btn${pass?'':' primary'}" type="button" data-gx="again">تمرین دوباره</button>${notIn?`<button class="btn" type="button" data-gx="cards">افزودن ${faNum(notIn)} مثال به کارت‌ها</button>`:''}</div></div>`;
@@ -4572,7 +4687,7 @@ function startPhRun(){
 function renderPhRun(keepFb){
   const r=phRun,n=r.qs.length;$('#phRunBar').style.width=(r.i/n*100)+'%';$('#phRunCount').textContent=faNum(Math.min(r.i+1,n))+' از '+faNum(n);
   if(keepFb){const b=$('#phFb [data-phadd]');if(b)b.remove();return}
-  if(r.i>=n){
+  if(r.i>=n){if(n>=5)pathMark(r.lang||L(),'ph');
     $('#phRunQ').innerHTML=`<div class="g-result ${r.score>=n*G_PASS?'ok':'bad'}"><b class="num g-score">${faNum(r.score)} از ${faNum(n)}</b><p>${r.score===n?'همه را درست جواب دادید. آفرین!':r.score>=n*G_PASS?'خیلی خوب! اصطلاح‌هایی را که اشتباه کردید به کارت‌ها اضافه کنید تا یادتان بماند.':'این‌ها با تکرار جا می‌افتند. اصطلاح‌های پایین را به کارت‌ها اضافه کنید و چند روز دیگر دوباره تمرین کنید.'}</p>
       ${r.wrong.length?`<div class="ph-list" style="text-align:start;margin-top:12px">${r.wrong.map(id=>phCard(phById(id))).join('')}</div>`:''}
       <div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn primary" type="button" data-phagain>ده موقعیت دیگر</button></div></div>`;return}
@@ -4586,16 +4701,10 @@ function phraseOfDay(lang){
   const pref=P.filter(p=>!phOwn(p));const pool=pref.length?pref:P;return pool[h%pool.length];
 }
 function renderLearnToday(){
-  const lang=L(),box=$('#learnToday');if(!box)return;
-  const g=gNextLesson(lang),p=phraseOfDay(lang);
-  if(!g&&!p){box.hidden=true;return}box.hidden=false;
-  const done=(GRAMMAR[lang]||[]).filter(x=>gDone(x.id)).length;
-  $('#gToday').innerHTML=g?`<div class="feature-top"><span class="feature-title">نکتهٔ دستوری بعدی</span><span class="pill lvl">${esc(g.level)}</span></div><b class="g-t-title">${gramHTML(g.title)}</b><p class="g-t-sum">${gramHTML(g.sum)}</p><p class="hint" style="margin:0">درس ${faNum(gNum(g))} از ${faNum(GRAMMAR[lang].length)} · حدود ده دقیقه با تمرین</p><div class="btn-row"><button class="btn primary sm" type="button" data-gopen-today="${esc(g.id)}">خواندن و تمرین</button><button class="btn sm ghost" type="button" data-go="grammar">همهٔ درس‌ها</button></div>`
-    :`<span class="feature-title">دستور زبان</span><p style="margin:0">همهٔ ${faNum(done)} درس دستوری را گذرانده‌اید. آفرین!</p><div class="btn-row"><button class="btn sm" type="button" data-go="grammar">مرور درس‌ها</button></div>`;
-  $('#gToday').hidden=false;
+  const lang=L(),p=phraseOfDay(lang);const el=$('#phToday');if(!el)return;$('#learnToday').hidden=false;
   if(p){const own=phOwn(p);
-    $('#phToday').innerHTML=`<div class="feature-top"><span class="feature-title">اصطلاح امروز</span>${speakBtn('data-phsay-today',1)}</div><div class="ph-t lat ph-t-big">${esc(p.t)}</div><div class="ph-fa">${esc(p.fa)}</div>${p.note?`<p class="ph-note">${gramHTML(p.note)}</p>`:''}<div class="btn-row">${own?'<span class="hint">در کارت‌های شماست</span>':'<button class="btn sm primary" type="button" data-phadd-today>افزودن به کارت‌ها</button>'}<button class="btn sm ghost" type="button" data-go="phrases">همهٔ اصطلاحات</button></div>`;
-    $('#phToday').dataset.id=p.id;$('#phToday').hidden=false}else $('#phToday').hidden=true;
+    el.innerHTML=`<div class="feature-top"><span class="feature-title">اصطلاح امروز</span>${speakBtn('data-phsay-today',1)}</div><div class="ph-t lat ph-t-big">${esc(p.t)}</div><div class="ph-fa">${esc(p.fa)}</div>${p.note?`<p class="ph-note">${gramHTML(p.note)}</p>`:''}<div class="btn-row">${own?'<span class="hint">در کارت‌های شماست</span>':'<button class="btn sm primary" type="button" data-phadd-today>افزودن به کارت‌ها</button>'}<button class="btn sm ghost" type="button" data-go="phrases">همهٔ اصطلاحات</button></div>`;
+    el.dataset.id=p.id;el.hidden=false}else el.hidden=true;
 }
 $('#v-today').addEventListener('click',e=>{
   const g=e.target.closest('[data-gopen-today]');if(g){e.stopPropagation();gOpen=g.dataset.gopenToday;gx=null;showView('grammar');return}
@@ -4604,6 +4713,286 @@ $('#v-today').addEventListener('click',e=>{
   if(e.target.closest('[data-phadd-today]')){e.stopPropagation();phAdd([p]);toast('به کارت‌های شما اضافه شد');renderLearnToday()}
 },true);
 if(/[?&]debug/.test(location.search))window.__l={buildQueue,stats,laterToday,GRAMMAR,PHRASES,get db(){return db}};
+
+/* ================= THE LEARNING PLAN =================
+   One spine: the course path (stages → lessons; each lesson = words → dialogues → grammar → quiz).
+   «امروز» always shows three steps built from that spine: ① review cards ② the next step of the current
+   lesson ③ free listening or practice. Everything else is a toolbox the lessons link into, and «منابع من»
+   is the learner's own material, measured against what they already know so the right one is suggested. */
+
+/* ---------- what the learner knows: every form of every reviewed card, and the words of reviewed sentences ---------- */
+const WORD_RE=/[A-Za-zÀ-ÿ'’]+/g;
+const ART_RE=/^(de|het|een|to|the|a|an)\s+/i;
+let _kn=null;
+function knownSet(lang){
+  const key=lang+'|'+db.items.length+'|'+dayCount(dayKey(),lang);
+  if(_kn&&_kn.key===key)return _kn.set;
+  const set=new Set(),add=w=>{w=norm(w);if(w)set.add(w)};
+  for(const i of db.items){
+    if(i.lang!==lang||!(i.srs||i.susp))continue;
+    if(i.type==='sentence'){(i.text.match(WORD_RE)||[]).forEach(add);continue}
+    const t=i.text.replace(ART_RE,'');add(t);const ws=t.split(/\s+/);if(ws.length<=3)ws.forEach(add);
+    if(i.plural)add(i.plural);
+    if(i.verb)Object.values(i.verb).forEach(v=>{if(typeof v==='string')v.split(/[\s\/,]+/).forEach(add)});
+  }
+  _kn={key,set};return set;
+}
+const SUFS=['en','e','s','t','d','te','de','ten','den','er','st','ed','ing','es','ly'];
+function knownWord(set,w){
+  if(set.has(w))return true;
+  for(const s of SUFS)if(w.length>s.length+2&&w.endsWith(s)&&set.has(w.slice(0,-s.length)))return true;
+  if(w.startsWith('ge')&&w.length>5){const r=w.slice(2).replace(/[td]$/,'');if(set.has(r)||set.has(r+'en'))return true}
+  return false;
+}
+const BANDS=[[95,'easy','آسان'],[85,'fit','مناسب سطح شما'],[70,'hard','چالشی'],[0,'vhard','فعلاً سخت']];
+const _lvCache=new Map();
+/* share of the running words of a source that the learner already knows; names are skipped */
+function srcLevel(r){
+  const text=srcText(r);if(!text||text.length<40)return null;
+  const set=knownSet(r.lang==='en'?'en':'nl');const key=r.id+'|'+(r.updated||0)+'|'+(_kn&&_kn.key);
+  if(_lvCache.has(key))return _lvCache.get(key);
+  let total=0,known=0;const unk=new Map();let m;WORD_RE.lastIndex=0;
+  while((m=WORD_RE.exec(text))){
+    const raw=m[0];if(raw.length<2&&!/^[aiu]$/i.test(raw))continue;
+    const before=text.slice(Math.max(0,m.index-3),m.index);
+    if(/^[A-ZÀ-Þ]/.test(raw)&&m.index>0&&!/[.!?:\n"“]\s*$/.test(before))continue;   // a name in the middle of a sentence
+    const w=norm(raw);if(!w)continue;total++;
+    if(knownWord(set,w))known++;else unk.set(w,(unk.get(w)||0)+1);
+  }
+  if(total<15){_lvCache.set(key,null);return null}
+  const pct=Math.round(known/total*100);const b=BANDS.find(x=>pct>=x[0]);
+  const out={pct,band:b[1],lab:b[2],total,unknown:[...unk.entries()].sort((a,b)=>b[1]-a[1]).slice(0,8).map(x=>x[0])};
+  _lvCache.set(key,out);return out;
+}
+const levelPill=lv=>lv?`<span class="pill lv-${lv.band}" title="سهم واژه‌هایی از این منبع که در کارت‌هایتان مرور کرده‌اید">${faNum(lv.pct)}٪ آشنا · ${lv.lab}</span>`:'';
+const srcDoneKey=r=>'src:'+(r.lang==='en'?'en':'nl')+':'+r.id;
+/* the best sources for today: in the right range of difficulty, on the topic of the current lesson, not finished */
+/* which lesson of the path a source belongs to, and where that lesson is for the learner:
+   past (already done: good for review), cur (the lesson of now) or next (still ahead) */
+function srcRel(r){
+  const tp=typeof topicOf==='function'?topicOf(r):null;if(!tp||!tp.unit)return null;
+  const lang=r.lang==='en'?'en':'nl';if(lang!==L()||!CRS())return null;
+  const us=cUnits(),u=us.find(x=>x.id===tp.unit);if(!u)return null;
+  const cur=currentUnit(),i=us.indexOf(u),ci=us.indexOf(cur),done=unitState(u).done;
+  return{u,done,at:+db.done['unit:'+u.id]||0,k:done||i<ci?'past':i===ci?'cur':'next'};
+}
+const relPill=rel=>rel?`<span class="pill rel-${rel.k}">${rel.k==='past'?'مرور درس '+faNum(rel.u.n):rel.k==='cur'?'درس فعلی':'درس '+faNum(rel.u.n)+' · جلوتر'}</span>`:'';
+/* the best sources for today: in the right range of difficulty, on the topic of the current lesson
+   (or of a lesson finished a few days ago, for review), not finished; later lessons wait their turn */
+function suggestSources(list,n){
+  const rank={fit:0,easy:1,hard:2,vhard:3};
+  return list.filter(r=>!r.gone&&!r.song&&!db.done[srcDoneKey(r)]).map(r=>{const lv=srcLevel(r),rel=srcRel(r);
+    let sc=lv?rank[lv.band]*10:32;   // without text the program cannot tell the level or the lesson
+    if(rel&&rel.k==='cur')sc-=6;
+    else if(rel&&rel.k==='past')sc-=(!rel.at||Date.now()-rel.at>=2*DAY)?3:0;
+    else if(rel&&rel.k==='next'&&!(lv&&lv.band==='easy'))sc+=4;
+    if(r.pos>0)sc-=3;if(isAV(r)||r.kind==='yt')sc-=1;return{r,lv,rel,sc}})
+    .sort((a,b)=>a.sc-b.sc||(b.r.updated||0)-(a.r.updated||0)).slice(0,n);
+}
+/* sources of lessons already finished, oldest lesson first: spaced review of whole lessons */
+function reviewSources(list,n,skip){
+  return list.filter(r=>!r.gone&&!r.song&&!db.done[srcDoneKey(r)]&&!(skip&&skip.has(r.id))).map(r=>({r,lv:srcLevel(r),rel:srcRel(r)}))
+    .filter(x=>x.rel&&x.rel.k==='past').sort((a,b)=>a.rel.u.n-b.rel.u.n).slice(0,n);
+}
+
+/* ---------- listening time (per device and day, so devices add up) ---------- */
+const lisKey=lang=>'lis:'+lang+':'+dayKey()+':'+cfg.deviceId;
+function lisSecs(lang,days){let t=0;for(const[k,v]of Object.entries(db.done)){if(!k.startsWith('lis:'+lang+':'))continue;if(days.includes(k.split(':')[2]))t+=+v||0}return t}
+const lastDays=n=>Array.from({length:n},(_,k)=>dayKey(Date.now()-k*DAY));
+let lisLast=null,lisAcc=0,lisFlushAt=0;
+function lisTick(e){
+  const a=e.target;if(!curRec||a.paused||a.seeking){lisLast=null;return}
+  const t=a.currentTime;if(lisLast!=null){const d=t-lisLast;if(d>0&&d<1.5)lisAcc+=d/(a.playbackRate||1)}lisLast=t;
+  if(lisAcc>=30||(lisAcc>=5&&Date.now()-lisFlushAt>60000))lisFlush();
+}
+function lisFlush(){
+  if(lisAcc<1||!curRec)return;const lang=curRec.lang==='en'?'en':'nl',k=lisKey(lang);
+  db.done[k]=Math.round((+db.done[k]||0)+lisAcc);lisAcc=0;lisFlushAt=Date.now();saveData();
+  if(lisSecs(lang,[dayKey()])>=300)pathMark(lang,'lis');
+}
+
+/* ---------- the three steps of today ---------- */
+function pathState(lang){
+  const s=stats(lang),left=s.due+s.newToday,rev=dayCount(dayKey(),lang),sod=sodTs(),pd=pathDay(lang);
+  const r1=s.total>0&&(left===0||rev>=PATH_BACKLOG);
+  let r2=!!pd.dlg||DIALOGS.some(d=>d.lang===lang&&+db.done[d.id]>=sod)||(GRAMMAR[lang]||[]).some(g=>+db.done['g:'+g.id]>=sod);
+  if(!r2&&r1&&lang===L()&&CRS()){const u=currentUnit();if(u&&unitNext(u).k==='words')r2=true}
+  const r3=!!pd.quiz||!!pd.lis||!!pd.ph;
+  return{s,left,rev,steps:[r1,r2,r3]};
+}
+function renderPath(){
+  const el=$('#path');if(!el)return;
+  if(cfg.path.on===false){el.hidden=true;return}
+  const lang=L(),st=pathState(lang),[a,b,c]=st.steps;
+  const u=CRS()?currentUnit():null,nx=u?unitNext(u):null;
+  const s1={t:'مرور کارت‌ها',done:a,
+    d:a?(st.left?'برای امروز کافی است ('+faNum(st.rev)+' مرور).':'همهٔ کارت‌های امروز مرور شد.'):!st.s.total?'هنوز کارتی ندارید. با درس اول شروع کنید؛ واژه‌هایش کارت می‌شوند.':faNum(st.left)+' کارت مانده است. واژه‌های درس فعلی اول می‌آیند.',
+    btn:a?'':!st.s.total?(u?`<button class="btn sm primary" type="button" data-cnow="${esc(u.id)}">شروع درس ${faNum(u.n)}</button>`:'<button class="btn sm primary" type="button" data-go="library">کتابخانه</button>'):'<button class="btn sm primary" type="button" data-path-start>شروع مرور</button>'};
+  let s2;
+  if(nx){const lbl='درس '+faNum(u.n)+': '+u.title;
+    const act=nx.k==='dlg'&&nx.d?`<button class="btn sm primary" type="button" data-dlg="${esc(nx.d.id)}">شروع مکالمه</button>`
+      :nx.k==='gram'?`<button class="btn sm primary" type="button" data-gopen-today="${esc(nx.g.id)}">خواندن و تمرین</button>`
+      :nx.k==='quiz'?`<button class="btn sm primary" type="button" data-cquiz="${esc(u.id)}">شروع آزمون</button>`
+      :nx.k==='done'?'<button class="btn sm primary" type="button" data-go="course">گام آخر</button>'
+      :`<button class="btn sm primary" type="button" data-cnow="${esc(u.id)}">رفتن به درس</button>`;
+    s2={t:'درس امروز',done:b,open:a,d:nx.k==='done'?'همهٔ درس‌های مسیر تمام شده است. حالا گام «فراتر از B1» را دنبال کنید.':(b?'برای امروز انجام شد. قدم بعد: ':'')+lbl+'. '+nx.t+'.',btn:a&&!b?act:''}}
+  else{const nd=nextDialog(lang);s2={t:'یک مکالمه',done:b,open:a,d:b?'یک مکالمه گوش داده شد.':'یک مکالمه را تا آخر گوش دهید.',btn:a&&!b&&nd?`<button class="btn sm primary" type="button" data-dlg="${esc(nd.id)}">شروع مکالمه</button>`:''}}
+  const s3={t:'گوش دادن یا تمرین آزاد',done:c,open:a&&b,
+    d:c?'انجام شد. هر چه بیشتر گوش دهید، بهتر.':'دست‌کم ۵ دقیقه به یکی از منابع خودتان گوش دهید، یا یک آزمون کوتاه، یا تمرین موقعیت‌ها.',
+    btn:a&&b&&!c?'<button class="btn sm primary" type="button" data-go="mine">گوش دادن</button><button class="btn sm" type="button" data-go="quiz">آزمون</button>':''};
+  const steps=[s1,s2,s3];const cur=steps.findIndex(x=>!x.done);
+  el.hidden=false;
+  el.innerHTML=steps.map((x,i)=>`<li class="step${x.done?' done':i===cur?' now':(i>0&&!x.open)?' locked':''}"><span class="step-n">${x.done?'✓':(i>0&&!x.open)?LOCK_SVG:faNum(i+1)}</span><div class="step-c"><b>${x.t}</b><span class="hint">${esc(x.d)}</span></div>${x.btn?`<span class="btn-row">${x.btn}</span>`:''}</li>`).join('')
+    +(cur<0?'<li class="path-done">هر سه قدم امروز تمام شد. آفرین! اگر وقت دارید، به یکی از منابع خودتان گوش دهید یا درس دستوری بعدی را بخوانید.</li>':'');
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-cquiz]');if(!b)return;const u=cUnit(b.dataset.cquiz);if(u){cOpen=u.id;unitQuiz(u,false)}});
+
+/* ---------- today: course card, listening suggestion, the map of the app ---------- */
+function renderCourseToday(){
+  const el=$('#cToday');if(!el)return;const C=CRS();
+  if(!C){el.innerHTML='<span class="feature-title">مسیر درسی</span><p style="margin:0">برای این زبان هنوز مسیری نیست.</p>';return}
+  const u=currentUnit();if(!u){el.hidden=true;return}el.hidden=false;
+  const s=unitState(u),us=cUnits(),done=us.filter(x=>unitState(x).done).length,sg=C.stages.find(x=>x.id===u.stage);
+  const su=us.filter(x=>x.stage===u.stage),sd=su.filter(x=>unitState(x).done).length,nx=unitNext(u);
+  const chip=(ok,now,t)=>`<li class="${ok?'ok':now?'now':''}">${ok?'✓ ':''}${t}</li>`;
+  el.innerHTML=`<div class="feature-top"><span class="feature-title">مسیر درسی</span><span class="pill lvl">${esc(u.level)}</span></div>
+    <div><b class="ct-title">درس ${faNum(u.n)}: ${esc(u.title)}</b><div class="lat hint">${esc(u.orig)}</div></div>
+    <ul class="u-chips">${chip(s.words,nx.k==='words','واژه‌ها '+faNum(s.rev)+'/'+faNum(s.total))}${s.dl?chip(s.dlg,nx.k==='dlg','مکالمه '+faNum(s.dd)+'/'+faNum(s.need)):''}${s.gl?chip(s.gram,nx.k==='gram','دستور '+faNum(s.gd)+'/'+faNum(s.gl)):''}${chip(s.quiz,nx.k==='quiz','آزمون')}</ul>
+    <div class="meter"><span style="width:${Math.round(done/us.length*100)}%"></span></div>
+    <p class="hint" style="margin:0">${sg?esc(sg.title)+' · '+faNum(sd)+' از '+faNum(su.length)+' درس':''} · کل مسیر ${faNum(Math.round(done/us.length*100))}٪</p>
+    <div class="btn-row"><button class="btn sm primary" type="button" data-cnow="${esc(u.id)}">ادامهٔ درس</button><button class="btn sm ghost" type="button" data-go="course">نقشهٔ مسیر</button></div>`;
+}
+async function renderLisToday(){
+  const box=$('#lisToday');if(!box)return;const lang=L();
+  let all=[];try{all=(await idbAll('src')).filter(r=>!r.gone&&(r.lang==='en'?'en':'nl')===lang)}catch(e){}
+  if(L()!==lang)return;
+  const wk=Math.round(lisSecs(lang,lastDays(7))/60),today=Math.round(lisSecs(lang,[dayKey()])/60);
+  const head=`<div class="feature-top"><span class="feature-title">برای گوش دادن و خواندن</span><span class="hint num">امروز ${faNum(today)} دقیقه · این هفته ${faNum(wk)}</span></div>`;
+  const sug=suggestSources(all,1)[0];
+  if(!sug){box.innerHTML=head+`<p style="margin:0;line-height:1.8">${all.length?'همهٔ منابعتان را کامل کار کرده‌اید! یک منبع تازه اضافه کنید.':'هنوز منبعی ندارید. فایل صوتی کلاس، پادکست، ویدیو، عکس متن یا لینک یوتیوب اضافه کنید. برنامه خودش دسته‌بندی‌اش می‌کند و می‌سنجد چقدر از واژه‌هایش را بلدید، و مناسب‌ترین را اینجا پیشنهاد می‌دهد.'}</p><div class="btn-row"><button class="btn sm primary" type="button" data-go="mine">افزودن منبع</button></div>`;return}
+  const r=sug.r,rv=reviewSources(all,1,new Set([r.id]))[0];
+  box.innerHTML=head+`<div><b class="ct-title">${esc(r.title)}</b><div class="hint">${esc(r.song?'آهنگ':SRC_KIND_FA[r.kind]||'')}${r.info&&r.info.dur?' · '+fmtTime(r.info.dur):''}</div></div>
+    <div class="ph-tags">${relPill(sug.rel)}${sug.lv?levelPill(sug.lv):'<span class="pill">هنوز متن ندارد؛ اول متنش را بسازید</span>'}</div>
+    <p class="hint" style="margin:0">${!sug.lv?'متن ندارد؛ اول متنش را بسازید (روی لپ‌تاپ سریع‌تر است) تا برنامه سطح و درسش را بداند.':sug.lv.band==='fit'?'بیشتر واژه‌هایش را بلدید و چند واژهٔ تازه دارد؛ بهترین سطح برای یاد گرفتن.':sug.lv&&sug.lv.band==='easy'?'راحت است؛ برای روان شدن و شنیدن پشت سر هم عالی است.':'کمی سخت است. جمله‌به‌جمله و با سرعت آهسته‌تر گوش دهید.'}</p>
+    <div class="btn-row"><button class="btn sm primary" type="button" data-srcopen="${esc(r.id)}">باز کردن</button><button class="btn sm ghost" type="button" data-go="mine">همهٔ منابع</button></div>
+    ${rv?`<div class="lis-rev"><span class="hint">برای مرور درس ${faNum(rv.rel.u.n)} (${esc(rv.rel.u.title)}):</span> <button class="link" type="button" data-srcopen="${esc(rv.r.id)}">${esc(rv.r.title)}</button></div>`:''}`;
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-srcopen]');if(b){e.preventDefault();openSrc(b.dataset.srcopen)}});
+function renderMapCard(){
+  const el=$('#mapCard');if(!el)return;el.hidden=!!cfg.mapSeen;if(cfg.mapSeen)return;
+  el.innerHTML=`<div class="map-h"><b>واژه‌یار چطور کار می‌کند؟</b><button class="link" type="button" data-mapseen>فهمیدم، دیگر نشان نده</button></div>
+    <ol class="map-l">
+      <li><b>مسیر من</b><span>هر روز فقط همین سه قدم بالای صفحه را انجام دهید: مرور کارت‌ها، قدم بعدی درس، کمی گوش دادن. مسیر درسی شما را از صفر تا B1 قدم‌به‌قدم می‌برد و بعد با منابع واقعی ادامه می‌دهد.</span></li>
+      <li><b>جعبه‌ابزار</b><span>دستور زبان، اصطلاحات، مکالمه‌ها، آزمون و کتابخانه. درس‌ها خودشان شما را به بخش لازم می‌برند؛ هر وقت هم خواستید آزادانه سر بزنید.</span></li>
+      <li><b>منابع من</b><span>فایل‌ها، عکس‌ها، ویدیوها و یوتیوب خودتان. هر چه اضافه کنید، خودکار دسته‌بندی می‌شود، سطحش سنجیده می‌شود و در قدم سوم پیشنهاد می‌شود.</span></li>
+    </ol>`;
+}
+document.addEventListener('click',e=>{if(e.target.closest('[data-mapseen]')){cfg.mapSeen=true;saveCfg();renderMapCard()}});
+
+/* ---------- inside a lesson: the next step, and optional extras ---------- */
+function unitNextHTML(u){
+  const nx=unitNext(u);if(nx.k==='done')return'';
+  const act=nx.k==='dlg'&&nx.d?`<button class="btn primary" type="button" data-cdlg="${esc(nx.d.id)}">شروع مکالمه</button>`
+    :nx.k==='gram'?`<button class="btn primary" type="button" data-gopen="${esc(nx.g.id)}">خواندن و تمرین</button>`
+    :nx.k==='quiz'?'<button class="btn primary" type="button" data-cu="quiz">شروع آزمون</button>'
+    :nx.s.total-nx.s.inst?`<button class="btn primary" type="button" data-cu="add">افزودن ${faNum(nx.s.total-nx.s.inst)} واژه</button>`:'<button class="btn primary" type="button" data-cu="review">مرور کارت‌ها</button>';
+  return`<div class="panel u-next"><div><span class="c-kicker">قدم بعدی</span><b>${gramHTML(nx.t)}</b></div>${act}</div>`;
+}
+function uExtrasHTML(u){
+  const cats=(u.phrases||[]).map(id=>PHRASES[unitLang(u)].cats.find(c=>c.id===id)).filter(Boolean);
+  setTimeout(()=>fillUnitSources(u),0);
+  return`<section class="panel c-sec" id="uExtras"><div class="c-sec-h"><h2 class="h2">برای تمرین بیشتر (اختیاری)</h2></div>
+    ${cats.length?`<p class="hint" style="margin:0 0 8px">اصطلاحات روزمرهٔ مرتبط با این درس:</p><div class="btn-row">${cats.map(c=>`<button class="btn sm" type="button" data-phcat-go="${esc(c.id)}">${esc(c.title)}</button>`).join('')}</div>`:''}
+    <div id="uSrc"></div></section>`;
+}
+async function fillUnitSources(u){
+  const box=$('#uSrc');if(!box)return;let all=[];try{all=(await idbAll('src')).filter(r=>!r.gone&&!r.song&&(r.lang==='en'?'en':'nl')===unitLang(u))}catch(e){}
+  const hit=all.filter(r=>{const t=topicOf(r);return t&&(t.unit?t.unit===u.id:t.id===u.pack)});
+  if(!$('#uSrc'))return;
+  box.innerHTML=hit.length?`<p class="hint" style="margin:12px 0 8px">${unitState(u).done?'منابع خودتان برای مرور همین درس (چند روز بعد از تمام شدن درس، یکی را گوش دهید):':'منابع خودتان دربارهٔ همین موضوع:'}</p><div class="u-src">${hit.slice(0,6).map(r=>`<button type="button" class="btn sm ghost" data-srcopen="${esc(r.id)}">${esc(r.title)} ${levelPill(srcLevel(r))}</button>`).join('')}</div>`
+    :`<p class="hint" style="margin:12px 0 0">اگر فایل صوتی، متن یا ویدیویی دربارهٔ این موضوع دارید، در «منابع من» اضافه کنید؛ برنامه خودش آن را به این درس وصل می‌کند.</p>`;
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-phcat-go]');if(!b)return;phCat=b.dataset.phcatGo;phQuery='';const q=$('#phQ');if(q)q.value='';showView('phrases')});
+
+/* ---------- course overview: where to start, and the open-ended last stage ---------- */
+let cPlaceShow=false;
+function renderCourseExtras(){
+  const C=CRS(),pl=$('#cPlace'),by=$('#cBeyond');if(!pl||!by)return;
+  if(!C){pl.innerHTML='';by.innerHTML='';return}
+  const us=cUnits(),anyDone=us.some(u=>unitState(u).done),placed=((cfg.course||{}).placed||{})[L()];
+  if(cPlaceShow||(!anyDone&&!placed)){
+    pl.innerHTML=`<div class="panel c-place"><h2 class="h2">از کجا شروع کنم؟</h2><p class="hint" style="margin:0 0 10px">اگر از صفر شروع می‌کنید، از گام ۱. اگر کمی بلدید، از گامی که فکر می‌کنید شروع کنید؛ درس‌های قبلش باز می‌مانند. در هر درس هم «آزمون گذر» هست تا درسی را که بلدید سریع رد کنید.</p>
+      <div class="c-place-l">${C.stages.map(sg=>{const f=us.find(u=>u.stage===sg.id);return f?`<button type="button" class="c-place-b" data-cstart="${esc(f.id)}"><b>${esc(sg.title)}</b><span class="hint">${esc(sg.desc)}</span></button>`:''}).join('')}</div></div>`;
+  }else pl.innerHTML='';
+  const days=lastDays(7),wk=Date.now()-7*DAY,lang=L();
+  const lis=Math.round(lisSecs(lang,days)/60);
+  const own=db.items.filter(i=>i.lang===lang&&!i.pack&&i.created>=wk&&!(i.tags||[]).some(t=>t==='دستور'||t==='اصطلاح')).length;
+  const fin=Object.entries(db.done).filter(([k,v])=>k.startsWith('src:'+lang+':')&&+v>=wk).length;
+  const rd=days.filter(d=>dayCount(d,lang)>0).length;
+  const goal=(v,g,t,u)=>`<div class="goal${v>=g?' ok':''}"><div class="goal-t"><b class="num">${faNum(Math.min(v,999))}</b><span class="hint">از ${faNum(g)} ${u}</span></div><div class="meter"><span style="width:${Math.min(100,Math.round(v/g*100))}%"></span></div><span class="goal-l">${t}</span></div>`;
+  const allDone=us.length&&us.every(u=>unitState(u).done);
+  by.innerHTML=`<section class="c-stage c-beyond"><header class="c-stage-h"><h2>گام آخر · فراتر از B1: یادگیری با منابع واقعی</h2><span class="hint">هدف‌های هر هفته</span>
+      <p class="hint">بعد از مسیر، پیشرفت به سطح بالا از راه حجم زیاد شنیدن و خواندن مطالب واقعی می‌آید: پادکست، خبر، یوتیوب، کتاب و متن‌های کاری. برنامه سطح هر منبع را می‌سنجد و مناسب‌ترین را پیشنهاد می‌دهد. ${allDone?'':'از همین حالا هم می‌توانید شروع کنید، ولی تمرکز اصلی بعد از گام‌های بالاست.'}</p></header>
+    <div class="goals">${goal(lis,90,'گوش دادن به منابع خودتان','دقیقه')}${goal(own,40,'واژه و جملهٔ تازه از منابع خودتان','کارت')}${goal(fin,3,'منبعی که کامل کار کرده‌اید','منبع')}${goal(rd,6,'روزهای مرور در هفته','روز')}</div>
+    <div class="btn-row" style="margin-top:12px"><button class="btn primary" type="button" data-go="mine">رفتن به منابع من</button><button class="btn" type="button" data-go="youtube">یوتیوب من</button></div></section>`;
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-cstart]');if(b){cfg.course=Object.assign({},cfg.course);cfg.course.start=Object.assign({},cfg.course.start,{[L()]:b.dataset.cstart});cfg.course.placed=Object.assign({},cfg.course.placed,{[L()]:true});saveCfg();cPlaceShow=false;renderCourse();toast('مسیر از «'+cUnit(b.dataset.cstart).title+'» شروع می‌شود.',3500);return}
+  if(e.target.closest('[data-cplace]')){cPlaceShow=!cPlaceShow;renderCourse()}
+});
+
+/* ---------- «منابع من»: one door for everything the learner brings ---------- */
+const HUB_TILES=[
+  {go:'sources',t:'متن‌ها و PDF',d:'نامه، متن کلاس، PDF',f:r=>SEC_OF[r.kind]==='doc'&&!r.song},
+  {go:'listen',t:'فایل‌های صوتی',d:'فایل کلاس، پادکست، ضبط',f:r=>r.kind==='audio'&&!r.song},
+  {go:'watch',t:'عکس و ویدیو',d:'عکس متن، اسلاید، ویدیو',f:r=>SEC_OF[r.kind]==='visual'},
+  {go:'songs',t:'آهنگ‌ها',d:'آهنگ با متن',f:r=>!!r.song},
+  {go:'youtube',t:'یوتیوب من',d:'ویدیو با متن گفتار',f:r=>r.kind==='yt'}];
+async function renderMine(){
+  const lang=L();let all=[];try{all=(await idbAll('src')).filter(r=>!r.gone&&(r.lang==='en'?'en':'nl')===lang)}catch(e){}
+  if(currentView!=='mine')return;
+  $('#hubTitle').textContent='منابع من · '+LANG_FA[lang];
+  $('#hubTiles').innerHTML=HUB_TILES.map(t=>{const n=all.filter(t.f).length;return`<button type="button" class="hub-t" data-go="${t.go}"><b>${t.t}</b><span class="hint">${t.d}</span><span class="hub-n num">${faNum(n)}</span></button>`}).join('');
+  const sug=suggestSources(all,5);
+  $('#hubSug').innerHTML=sug.length?`<h2 class="h2">پیشنهاد برای سطح شما</h2><div class="hub-sug">${sug.map(({r,lv,rel})=>`<button type="button" class="hub-s" data-srcopen="${esc(r.id)}"><span class="hub-s-t"><b>${esc(r.title)}</b><span class="hint">${esc(r.song?'آهنگ':SRC_KIND_FA[r.kind]||'')}${r.pos>0?' · نیمه‌کاره':''}${rel?' · درس '+faNum(rel.u.n)+': '+esc(rel.u.title):''}</span></span><span class="ph-tags">${relPill(rel)}${lv?levelPill(lv):'<span class="pill">بدون متن</span>'}</span></button>`).join('')}</div>`
+    :all.length?'<p class="note-box good">همهٔ منابع این زبان را کامل کار کرده‌اید. منبع تازه اضافه کنید.</p>':'';
+  const shown=new Set(sug.map(x=>x.r.id)),rvs=reviewSources(all,4,shown);
+  const noTx=all.filter(r=>(isAV(r)||r.kind==='yt')&&!r.song&&!srcText(r));
+  $('#hubSug').insertAdjacentHTML('beforeend',(rvs.length?`<h2 class="h2" style="margin-top:20px">برای مرور درس‌های گذشته</h2><p class="hint" style="margin:-6px 0 10px">این منابع به درس‌هایی مربوط‌اند که گذرانده‌اید. گوش دادن دوباره به موضوع یک درس، چند روز بعد، آن را در حافظه تثبیت می‌کند.</p><div class="hub-sug">${rvs.map(({r,lv,rel})=>`<button type="button" class="hub-s" data-srcopen="${esc(r.id)}"><span class="hub-s-t"><b>${esc(r.title)}</b><span class="hint">درس ${faNum(rel.u.n)}: ${esc(rel.u.title)}</span></span><span class="ph-tags">${relPill(rel)}${levelPill(lv)}</span></button>`).join('')}</div>`:'')
+    +(noTx.length?`<p class="note-box info" style="margin-top:16px">${faNum(noTx.length)} فایل صوتی یا ویدیویی هنوز متن ندارد؛ تا متنش ساخته نشود، برنامه موضوع و سطحش را نمی‌داند. ${noTx.some(r=>r.kind==='audio')?'<button class="link" type="button" data-go="listen">ساختن متن فایل‌های صوتی</button>':''}${noTx.some(r=>r.kind==='video')?' <button class="link" type="button" data-go="watch">ساختن متن ویدیوها</button>':''}${noTx.some(r=>r.kind==='yt')?' <button class="link" type="button" data-go="youtube">چسباندن متن ویدیوهای یوتیوب</button>':''}</p>`:''));
+  const fin=all.filter(r=>db.done[srcDoneKey(r)]).length;
+  $('#hubStat').textContent=all.length?faNum(all.length)+' منبع · '+faNum(fin)+' منبع کامل کار شده · این هفته '+faNum(Math.round(lisSecs(lang,lastDays(7))/60))+' دقیقه گوش دادن':'';
+}
+$('#hubFile').addEventListener('change',e=>{const fs=Array.from(e.target.files||[]);e.target.value='';if(fs.length){srcSec='';importFiles(fs).then(()=>{if(currentView==='mine')renderMine()})}});
+$('#hubDrop').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#hubFile').click()}});
+['dragover','dragenter'].forEach(t=>$('#hubDrop').addEventListener(t,e=>{e.preventDefault();$('#hubDrop').classList.add('over')}));
+['dragleave','drop'].forEach(t=>$('#hubDrop').addEventListener(t,e=>{e.preventDefault();$('#hubDrop').classList.remove('over')}));
+$('#hubDrop').addEventListener('drop',e=>{const fs=Array.from(e.dataTransfer.files||[]);if(fs.length){srcSec='';importFiles(fs).then(()=>{if(currentView==='mine')renderMine()})}});
+$('#hubPaste').addEventListener('click',()=>{showView('sources');setTimeout(()=>$('#srcPaste').click(),50)});
+
+/* ---------- one source: a clear way of working with it ---------- */
+function renderSrcFlow(r){
+  const box=$('#srcFlow');if(!box)return;
+  if(r.song){box.innerHTML='';return}
+  const lv=srcLevel(r),fin=db.done[srcDoneKey(r)],av=isAV(r)||r.kind==='yt',has=!!srcText(r);
+  const steps=av?['یک بار کامل گوش دهید، بدون نگاه به متن. فقط بفهمید موضوع چیست.',
+      has?'متن را بخوانید؛ روی هر واژهٔ ناآشنا بزنید و کارتش کنید.':(r.kind==='yt'?'متن ویدیو را بچسبانید (دکمهٔ بالا)، بعد واژه‌های تازه را کارت کنید.':'متنش را بسازید (دکمهٔ «ساختن متن از صدا»)، بعد واژه‌های تازه را کارت کنید.'),
+      'جمله‌به‌جمله گوش دهید و بلند تکرار کنید. اگر سریع است، سرعت را ۰٫۷۵ کنید.','یک بار دیگر بدون متن گوش دهید. حالا خیلی بیشتر می‌فهمید!']
+    :['یک بار بخوانید و معنی کلی را حدس بزنید؛ روی واژه‌ها نزنید.','دوباره بخوانید؛ روی واژه‌های ناآشنا بزنید و کارتشان کنید.','جمله‌ها را بشنوید (روی هر جمله بزنید) و بلند بخوانید.','چند روز بعد دوباره بخوانید و ببینید چقدر راحت‌تر شده.'];
+  const rel=srcRel(r);
+  const relTxt=!rel?'':rel.k==='past'?`این منبع به درس ${faNum(rel.u.n)} «${esc(rel.u.title)}» مربوط است که آن را گذرانده‌اید؛ برای مرور و تثبیت همان درس عالی است.`
+    :rel.k==='cur'?`این منبع به درس فعلی شما (درس ${faNum(rel.u.n)} «${esc(rel.u.title)}») مربوط است؛ کنار همین درس کارش کنید.`
+    :`این منبع به درس ${faNum(rel.u.n)} «${esc(rel.u.title)}» مربوط است که هنوز به آن نرسیده‌اید. الان هم می‌توانید گوش دهید، ولی بعد از آن درس خیلی راحت‌تر است؛ برنامه آن موقع دوباره پیشنهادش می‌کند.`;
+  box.innerHTML=`<details class="panel src-flow"${fin?'':' open'}><summary><b>روش کار با این منبع</b>${relPill(rel)}${levelPill(lv)}${fin?'<span class="pill ok">✓ کامل کار شده</span>':''}</summary>
+    ${relTxt?`<p class="sf-rel">${relTxt} <button class="link" type="button" data-cnow="${esc(rel.u.id)}">باز کردن درس</button></p>`:''}
+    <ol class="sf-steps">${steps.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>
+    ${lv&&lv.unknown.length?`<p class="hint sf-unk">پرتکرارترین واژه‌هایی که هنوز در کارت‌هایتان نیست: <span class="lat">${lv.unknown.map(esc).join(' · ')}</span></p>`:''}
+    <div class="btn-row">${has?'<button class="btn sm" type="button" data-sflow="harvest">واژه‌های تازه را نشانم بده</button>':''}<button class="btn sm${fin?' ghost':' primary'}" type="button" data-sflow="done">${fin?'دوباره کامل کار کردم':'این منبع را کامل کار کردم'}</button></div></details>`;
+}
+$('#srcFlow').addEventListener('click',e=>{const b=e.target.closest('[data-sflow]');if(!b||!curRec)return;
+  if(b.dataset.sflow==='harvest'){const h=$('#srcActs [data-sa="harvest"]');if(h)h.click();return}
+  db.done[srcDoneKey(curRec)]=Date.now();lisFlush();saveData();pathMark(curRec.lang==='en'?'en':'nl','lis');toast('آفرین! این منبع کامل کار شد.',3000);renderSrcFlow(curRec)});
+if(/[?&]debug/.test(location.search))window.__p={srcRel,reviewSources,srcLevel,knownSet,suggestSources,unitNext,currentUnit,lisSecs,get cfg(){return cfg}};
 
 /* ================= SHARE WITH OTHERS ================= */
 const appURL=()=>location.origin+location.pathname.replace(/index\.html$/,'');
