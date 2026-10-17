@@ -1,6 +1,6 @@
 // Vazheyar service worker: keeps the app working offline.
-const CACHE = 'vazheyar-v19';
-const SHELL = ['./', './index.html', './packs.js?v=19', './asr-worker.js?v=19', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png'];
+const CACHE = 'vazheyar-v23';
+const SHELL = ['./', './index.html', './packs.js?v=23', './asr-worker.js?v=23', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
@@ -19,6 +19,7 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.hostname === 'api.github.com') return; // sync data is never cached
+  if (url.origin === location.origin && url.pathname.includes('/audio/')) return; // voice files: the app keeps them in its own lasting cache
 
   // Pages: try the network first so updates arrive, fall back to the cached copy offline.
   if (req.mode === 'navigate') {

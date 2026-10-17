@@ -1,0 +1,19 @@
+Vazheyar – natural Dutch audio
+================================
+
+The .mp3 files in this folder are plain concatenated MP3 clips of the app's own
+Dutch words, sentences and dialogues, synthesised offline with Piper voices
+(https://github.com/OHF-Voice/piper1-gpl) through sherpa-onnx.
+
+Voices used
+- nl_NL "dii" (high) and nl_NL "miro" (high) by OpenVoiceOS / Jarbas
+  https://huggingface.co/OpenVoiceOS/pipertts_nl-NL_dii
+  https://huggingface.co/OpenVoiceOS/pipertts_nl-NL_miro
+  Licence: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+  (CC BY-NC-SA 4.0) – https://creativecommons.org/licenses/by-nc-sa/4.0/
+- nl_NL "pim", nl_NL "ronnie" (medium) – datasets CC0 (https://github.com/OHF-Voice/voice-datasets)
+- nl_BE "nathalie" (medium) – dataset CC0 (https://github.com/rhasspy/dataset-voice-nathalie)
+
+Because part of the audio comes from CC BY-NC-SA 4.0 voices, the audio in this
+folder is shared under the same licence: free to use, share and adapt for
+non-commercial purposes, with attribution, under the same terms.
