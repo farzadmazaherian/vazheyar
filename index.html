@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bKr1FCW6QqRSN9Bfu1yjndDhmtwVhAB79fvz+dzP+hg=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-9FOP2EOiepqxmArMyjLHODbNdoL76TdFwMhYg+2DsRY=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -1254,6 +1254,44 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 .hn-chips{display:flex;flex-wrap:wrap;gap:6px}
 .ws-seen{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--muted);background:var(--surface-2);border-radius:11px;padding:8px 12px;margin-top:8px}
 
+/* v27 letter reader */
+.lr-start{margin-bottom:16px;border-color:var(--acc)}
+.lr-pages{display:flex;gap:10px;flex-wrap:wrap}
+.lr-pg{position:relative;margin:0;width:84px}
+.lr-pg img{width:84px;height:112px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}
+.lr-pg figcaption{position:absolute;bottom:4px;inset-inline-start:4px;background:var(--surface);border-radius:99px;padding:0 7px;font-size:12px;font-weight:700}
+.lr-pg .icon-btn{position:absolute;top:2px;inset-inline-end:2px;background:var(--surface)}
+.lr-acts{margin:0 0 14px}
+.lr-sum{border-color:var(--acc);margin-bottom:16px}
+.lr-kind{margin:0 0 4px;font-size:17px}
+.lr-tip{margin:0 0 10px;line-height:1.9}
+.lr-row{display:flex;gap:12px;align-items:baseline;padding:7px 0;border-top:1px solid var(--line)}
+.lr-k{flex:none;width:96px;color:var(--muted);font-size:14px;font-weight:700}
+.lr-v{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.lr-v .tag small{color:var(--muted);margin-inline-start:4px}
+.tag.lr-due{background:var(--het-soft);font-weight:700}
+.tag.lr-eur{font-weight:700}
+.lr-h3{font-size:15px;margin:14px 0 6px}
+.lr-sents{display:flex;flex-direction:column}
+.lr-s{padding:8px 0;border-top:1px solid var(--line)}
+.lr-s:first-child{border-top:0}
+.lr-s p{margin:0 0 4px;line-height:1.7;cursor:pointer;text-align:left}
+.lr-sb{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.lr-gl{display:flex;flex-wrap:wrap;gap:4px 10px;direction:ltr;margin-top:6px;padding:8px;background:var(--surface-2);border-radius:9px}
+.lr-g{display:flex;flex-direction:column;align-items:center;font-size:13px}
+.lr-g span{color:var(--muted);direction:rtl;font-size:12px}
+.lr-list{display:flex;flex-direction:column}
+.lr-it{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line);cursor:pointer}
+.lr-it>span:first-of-type{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.lr-it small{color:var(--muted);font-size:12px;text-align:left}
+.lr-it input{margin-top:5px}
+.lr-w{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));column-gap:16px}
+.lr-add[hidden]{display:none}
+.lr-add{position:sticky;bottom:12px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 16px;box-shadow:var(--lift)}
+.lr-pre{max-height:220px;overflow:auto;white-space:pre-wrap;background:var(--surface-2);padding:10px;border-radius:9px;font-size:13px;margin:0}
+.lr-fig img{max-width:100%;height:auto}
+@media (max-width:620px){.lr-row{flex-direction:column;gap:4px}.lr-k{width:auto}.lr-add{bottom:72px;padding-inline-end:72px}}
+
 </style>
 </head>
 <body>
@@ -1695,8 +1733,17 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 
     <!-- ============ WORD HUNT ============ -->
     <section class="view" id="v-hunt" hidden>
-      <div class="page-head"><div><h1 class="view-title">شکار واژه</h1><p class="sub">واژه‌ای که روی تابلو، در نامه، در فروشگاه یا در حرف همکار می‌بینید و می‌شنوید، همان‌جا ثبتش کنید. واژه‌ای که در زندگی خودتان پیدا کرده‌اید خیلی بهتر از واژهٔ کتاب در ذهن می‌ماند.</p></div></div>
+      <div class="page-head"><div><h1 class="view-title">شکار واژه</h1><p class="sub">واژه‌ای که روی تابلو، در نامه، در فروشگاه یا در حرف همکار می‌بینید و می‌شنوید، همان‌جا ثبتش کنید؛ یا عکس کل نامه را بگیرید تا برنامه برایتان بخواندش. واژه‌ای که در زندگی خودتان پیدا کرده‌اید خیلی بهتر از واژهٔ کتاب در ذهن می‌ماند.</p></div></div>
+      <div id="hnHome">
       <p class="hint" id="hnStat" style="margin:0 0 12px"></p>
+      <section class="panel stack lr-start" id="lrStart">
+        <h2 class="h2" style="margin:0">نامه یا تابلو را با دوربین بخوانید</h2>
+        <p class="hint" style="margin:0">از هر صفحهٔ نامه یک عکس بگیرید (برای نامهٔ چندصفحه‌ای، صفحه‌ها را پشت سر هم اضافه کنید) یا PDF نامه را انتخاب کنید. متن روی همین دستگاه خوانده می‌شود و جایی فرستاده نمی‌شود. بعد برنامه می‌گوید نامه دربارهٔ چیست، مبلغ و تاریخ و مهلت و کارهایی را که از شما خواسته شده جدا می‌کند، و اصطلاحات و واژه‌هایش را با معنی نشان می‌دهد تا با یک لمس کارت شوند.</p>
+        <div class="lr-pages" id="lrPages" hidden></div>
+        <div class="btn-row"><label class="btn primary" for="lrCam" tabindex="0" id="lrCamL">📷 عکس از نامه یا تابلو</label><input type="file" id="lrCam" accept="image/*" capture="environment" hidden><label class="btn" for="lrPick" tabindex="0">انتخاب عکس‌ها یا PDF</label><input type="file" id="lrPick" accept="image/*,application/pdf" multiple hidden><button class="btn primary" type="button" id="lrGo" hidden>خواندن متن عکس</button></div>
+        <div id="lrProg" hidden></div>
+      </section>
+      <section class="panel" id="lrList" hidden style="margin-bottom:16px"></section>
       <div class="hn-grid">
         <section class="panel stack" id="hnForm">
           <h2 class="h2" style="margin:0">یک واژه دیدید یا شنیدید؟</h2>
@@ -1705,12 +1752,17 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
           <div class="field" id="hnFaWrap"><label class="lbl" for="hnFa">معنی فارسی</label><input type="text" id="hnFa" autocomplete="off"><span class="hint" id="hnFaHint">اگر معنی را نمی‌دانید، از واژه‌نامه‌های زیر پیدا کنید.</span><div class="dict" id="hnDict"></div></div>
           <div class="field"><label class="lbl" for="hnSent">جمله یا متنی که دیدید <em>(اختیاری)</em></label><input type="text" id="hnSent" class="lat ltr" dir="ltr" spellcheck="false" autocomplete="off" placeholder="Vandaag 50% korting op alle jassen"></div>
           <div class="field"><span class="lbl">کجا؟</span><div class="seg" id="hnWhere"></div></div>
-          <div class="field"><span class="lbl">عکس <em>(اختیاری)</em></span><div class="hn-photo"><label class="btn sm" for="hnPic" tabindex="0" id="hnPicBtn">📷 عکس از تابلو یا نامه</label><input type="file" id="hnPic" accept="image/*" capture="environment" hidden><div id="hnPrev" hidden></div></div><span class="hint">عکس روی کارت مرور هم نشان داده می‌شود. برای نامه‌های شخصی، فقط همان تکه‌ای را بگیرید که واژه در آن است.</span></div>
+          <div class="field"><span class="lbl">عکس برای همین واژه <em>(اختیاری)</em></span><div class="hn-photo"><label class="btn sm" for="hnPic" tabindex="0" id="hnPicBtn">📷 عکس کوچک برای کارت</label><input type="file" id="hnPic" accept="image/*" capture="environment" hidden><div id="hnPrev" hidden></div></div><span class="hint">این عکس فقط کنار همین یک واژه روی کارت مرور می‌نشیند. برای خواندن کل یک نامه یا تابلو، از بخش بالای صفحه استفاده کنید.</span></div>
           <div class="btn-row"><button class="btn primary" type="button" id="hnSave">ثبت شکار</button></div>
         </section>
         <section class="panel stack" id="hnWeek"></section>
       </div>
       <section class="panel" id="hnLog" style="margin-top:16px"></section>
+      </div>
+      <div id="lrOne" hidden>
+        <button class="link back" type="button" id="lrBack">&larr; شکار واژه</button>
+        <div id="lrBody"></div>
+      </div>
     </section>
 
     <!-- ============ GRAMMAR ============ -->
@@ -1991,7 +2043,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۶</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۷</p>
     </section>
 
 </main>
@@ -2028,7 +2080,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=26"></script>
+<script src="packs.js?v=27"></script>
 <script>
 (function(){
 'use strict';
@@ -2773,7 +2825,7 @@ function showView(v,noHash){
   if(v==='today')renderToday();
   if(v==='course')renderCourse();
   if(v==='exam')renderExam();else if(typeof exLeave==='function')exLeave();
-  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt')renderHunt();if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
+  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt'){if(!$('#lrOne').hidden&&!lrRec){$('#lrOne').hidden=true;$('#hnHome').hidden=false}renderHunt()}if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
   if(v==='grammar')renderGrammar();
   if(v==='phrases')openPhrases();
   if(v==='core')renderCore();
@@ -3924,7 +3976,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=26',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=27',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -3947,7 +3999,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 26، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 27، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -4232,6 +4284,7 @@ async function renderSourceOpen(){
   if(r.kind==='pdf'&&r.info&&r.info.scanned&&r.info.scanned.length)acts.push(`<button class="btn primary" type="button" data-sa="ocr">خواندن متن از تصویر ${faNum(r.info.scanned.length)} صفحه</button>`);
   else if(r.kind==='pdf'&&r.media)acts.push(`<button class="btn ghost" type="button" data-sa="reocr">خواندن دوبارهٔ صفحه‌های تصویری</button>`);
   if(r.kind==='image'&&r.media)acts.push(`<button class="btn ghost" type="button" data-sa="reocr">خواندن دوبارهٔ متن عکس</button>`);
+  if(srcText(r)&&r.lang!=='en'&&!isAV(r)&&r.kind!=='yt')acts.push(`<button class="btn${r.info&&r.info.letter?' primary':''}" type="button" data-sa="letter">توضیح نامه</button>`);
   if(srcText(r))acts.push(`<button class="btn" type="button" data-sa="harvest">واژه‌های آشنای این متن</button>`);
   acts.push(`<button class="btn ghost" type="button" data-sa="edit">ویرایش متن</button>`);
   if(r.media&&!isAV(r))acts.push(`<button class="btn ghost" type="button" data-sa="orig">فایل اصلی</button>`);
@@ -4338,6 +4391,7 @@ $('#srcActs').addEventListener('click',async e=>{
       else{const blob=await mediaBlob(r);if(!blob)throw new Error('عکس اصلی روی این دستگاه نیست.');const pr=progBox('خواندن دوبارهٔ متن عکس');try{const c=await imageCanvas(blob,4000);r.text=await ocr(c,r.lang,p=>pr.set('در حال خواندن…',p));await saveRec(r);pr.done()}catch(e){pr.fail(e.message);throw e}}
       renderSourceOpen();toast('متن دوباره خوانده شد.')}
     else if(act==='harvest')harvest(r);
+    else if(act==='letter'){if(!r.info||!r.info.letter){r.info=Object.assign(r.info||{},{letter:1});await saveRec(r,false)}lrOpen(r.id)}
     else if(act==='song')songForm(r);
     else if(act==='yttx')ytTranscriptSheet(r);
     else if(act==='edit')editSource(r);
@@ -6052,7 +6106,7 @@ if(/[?&]debug/.test(location.search))window.__t={TALK,TQ,get tk(){return tk},ope
 const HN_WHERE=[['street','تابلو و خیابان'],['mail','نامه و ایمیل'],['shop','فروشگاه'],['work','سر کار'],['school','مدرسه و کلاس'],['media','تلویزیون و رادیو'],['talk','گفت‌وگو'],['other','جای دیگر']];
 const HN_HEAR=new Set(['media','talk']);
 const hnWhereFa=w=>(HN_WHERE.find(x=>x[0]===w)||HN_WHERE[HN_WHERE.length-1])[1];
-let hnHitsList=[],hnBlob=null,hnTimer=0;
+let hnHitsList=[],hnBlob=null,hnFile=null,hnTimer=0;
 function hnWeekStart(t=Date.now()){const d=new Date(t);d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d.getTime()}
 function hnWhen(t){const a=new Date();a.setHours(0,0,0,0);const n=Math.round((a.getTime()-new Date(t).setHours(0,0,0,0))/DAY);
   return n<=0?'امروز':n===1?'دیروز':n<7?faNum(n)+' روز پیش':n<60?faNum(Math.round(n/7))+' هفته پیش':faNum(Math.round(n/30))+' ماه پیش'}
@@ -6083,7 +6137,7 @@ function renderHunt(){
   const wk=hnWeekStart(),mine=db.items.filter(i=>i.lang==='nl'&&(i.seen||[]).length);
   const thisWeek=mine.filter(i=>hnSeenIn(i,wk).length).length;
   $('#hnStat').textContent=mine.length?`تا حالا ${faNum(mine.length)} واژه را در دنیای واقعی پیدا کرده‌اید؛ ${faNum(thisWeek)} تا در این هفته.`:'';
-  renderHuntWeek();renderHuntLog(mine);hnLookup();
+  renderHuntWeek();renderHuntLog(mine);hnLookup();renderLetterList();
 }
 function hnRow(it,wk){
   const f=hnSeenIn(it,wk).slice(-1)[0];
@@ -6120,9 +6174,11 @@ function hnLookup(){
 }
 function hnSel(){const r=$('input[name="hnHit"]:checked');const k=r?+r.value:-1;return k>=0?hnHitsList[k]:null}
 function hnVis(){$('#hnFaWrap').hidden=!!hnSel()}
-function hnReset(){['#hnWord','#hnFa','#hnSent'].forEach(s=>$(s).value='');hnBlob=null;$('#hnPrev').hidden=true;$('#hnPrev').innerHTML='';$('#hnPic').value='';hnLookup()}
+function hnReset(){['#hnWord','#hnFa','#hnSent'].forEach(s=>$(s).value='');hnBlob=null;hnFile=null;$('#hnPrev').hidden=true;$('#hnPrev').innerHTML='';$('#hnPic').value='';hnLookup()}
 async function hnSave(){
-  const raw=$('#hnWord').value.trim().replace(/\s+/g,' ');if(!raw){toast('واژه را بنویسید.');$('#hnWord').focus();return}
+  const raw=$('#hnWord').value.trim().replace(/\s+/g,' ');
+  if(!raw&&hnFile){lrAddFiles([hnFile]);hnReset();$('#lrStart').scrollIntoView({behavior:'smooth',block:'start'});toast('عکس به بخش «نامه یا تابلو را بخوانید» رفت. «خواندن متن عکس» را بزنید تا متنش خوانده شود.',5000);return}
+  if(!raw){toast('واژه را بنویسید.');$('#hnWord').focus();return}
   const where=segVal($('#hnWhere'))||'other',sent=$('#hnSent').value.trim().replace(/\s+/g,' '),now=Date.now();
   let it=null;const sel=hnSel();
   if(sel)it=installedFor(sel)||addFromSource(sel);
@@ -6141,7 +6197,7 @@ $('#hnHits').addEventListener('change',hnVis);
 $('#hnSave').addEventListener('click',hnSave);
 $('#hnForm').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'&&e.target.type==='text'){e.preventDefault();hnSave()}});
 $('#hnPic').addEventListener('change',async e=>{const f=e.target.files&&e.target.files[0];if(!f)return;
-  try{hnBlob=await shrinkImage(f,560);const im=new Image();im.alt='پیش‌نمایش عکس';im.src=URL.createObjectURL(hnBlob);$('#hnPrev').innerHTML='<button class="btn sm ghost" type="button" id="hnPicDel">حذف عکس</button>';$('#hnPrev').prepend(im);$('#hnPrev').hidden=false}
+  try{hnFile=f;hnBlob=await shrinkImage(f,560);const im=new Image();im.alt='پیش‌نمایش عکس';im.src=URL.createObjectURL(hnBlob);$('#hnPrev').innerHTML='<button class="btn sm ghost" type="button" id="hnPicDel">حذف عکس</button>';$('#hnPrev').prepend(im);$('#hnPrev').hidden=false}
   catch(err){hnBlob=null;toast('این عکس خوانده نشد. یک عکس JPG یا PNG امتحان کنید.',4000)}});
 $('#v-hunt').addEventListener('click',e=>{
   if(e.target.closest('#hnPicDel')){hnBlob=null;$('#hnPrev').hidden=true;$('#hnPrev').innerHTML='';$('#hnPic').value='';return}
@@ -6162,6 +6218,270 @@ function renderHuntToday(){const el=$('#huntToday');if(!el)return;
     <div class="btn-row"><button class="btn sm" type="button" data-go="hunt">ثبت واژه یا تیک زدن</button></div>`;
 }
 if(/[?&]debug/.test(location.search))window.__h={hnWeek,huntSeen,renderHunt,hnSave,hnWeekStart,renderHuntToday,cleanItem,saveData,startSession,get ses(){return ses},get db(){return db},get cfg(){return cfg}};
+
+/* ================= LETTER READER (v27) =================
+   Photos of a letter or a sign (one or many pages) or a PDF are read on this device (Tesseract, nothing is uploaded),
+   saved as one source («نامه‌ها»), and explained: what kind of letter it is, who sent it, amounts, dates and deadlines,
+   what you are asked to do, official phrases with their Persian meaning, and every word, with cards one tap away.
+   A full translation is only a link to Google Translate, with personal numbers and the address hidden first. */
+const LR_MON=['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+const LR_MON_FA=['ژانویه','فوریه','مارس','آوریل','مه','ژوئن','ژوئیه','اوت','سپتامبر','اکتبر','نوامبر','دسامبر'];
+const LR_NUM={een:1,twee:2,drie:3,vier:4,vijf:5,zes:6,zeven:7,acht:8,negen:9,tien:10,twaalf:12,veertien:14,twintig:20,dertig:30};
+/* what kind of letter: [key, test, Persian name, what to do] */
+const LR_TYPES=[
+ ['pay',/aanmaning|betalingsherinnering|herinnering|openstaand|achterstand|incassobureau|incassokosten|deurwaarder|nog niet (van u )?ontvangen/i,'یادآوری یا اخطار پرداخت','مبلغ، کد پرداخت و مهلت را پیدا کنید. اگر پرداخت کرده‌اید رسیدش را نگه دارید. اگر نمی‌توانید یک‌جا بپردازید، همین حالا تماس بگیرید و پرداخت قسطی (betalingsregeling) بخواهید؛ صبر کردن هزینه را بیشتر می‌کند.'],
+ ['tax',/belastingdienst|aanslag|inkomstenbelasting|aangifte|gemeentelijke belasting|waterschapsbelasting|afvalstoffenheffing|rioolheffing|ozb/i,'مالیات یا عوارض','مبلغ، شمارهٔ برگه (aanslagnummer) و تاریخ پرداخت را ببینید. پرداخت قسطی معمولاً ممکن است. با درآمد کم برای عوارض شهرداری می‌شود بخشودگی (kwijtschelding) خواست. اعتراض معمولاً تا شش هفته ممکن است.'],
+ ['toeslag',/toeslag|kindgebonden budget|voorschot/i,'کمک‌هزینه (toeslag)','مبلغ ماهانه و درآمدی را که بر اساسش حساب شده بررسی کنید. اگر درآمد یا خانوارتان عوض شده، در Mijn toeslagen تغییر را اعلام کنید تا بعداً بدهکار نشوید.'],
+ ['duo',/\bDUO\b|studiefinanciering|inburgering|inburgeringsplicht|lening|examen/i,'DUO، تحصیل یا اینبورخرینگ','مهلت‌ها و آزمون‌ها را یادداشت کنید. با DigiD در Mijn DUO جزئیات را ببینید.'],
+ ['ind',/\bIND\b|Immigratie|verblijfsvergunning|naturalisatie|verblijfsdocument|biometrische gegevens/,'اقامت (IND)','تاریخ‌ها و مدارک خواسته‌شده را دقیق ببینید. نامه‌های IND مهلت سخت دارند؛ اگر چیزی روشن نیست، از IND یا وکیل یا VluchtelingenWerk بپرسید.'],
+ ['uwv',/\bUWV\b|uitkering|werkloos|WW-|ziektewet|re-integratie|sollicitatieplicht/i,'UWV و مستمری','کارهایی که از شما خواسته شده (فرم، فهرست درخواست کار، قرار ملاقات) و مهلتشان را ببینید. انجام ندادن ممکن است مستمری را کم کند.'],
+ ['fine',/\bCJIB\b|boete|beschikking|verkeersboete|snelheidsovertreding|parkeerboete|naheffingsaanslag/i,'جریمه','مبلغ و مهلت پرداخت را ببینید. اگر به‌موقع نپردازید جریمه بالاتر می‌رود. اگر قبول ندارید، اعتراض (bezwaar/beroep) در مهلت ممکن است.'],
+ ['gem',/gemeente|burgerzaken|paspoort|identiteitskaart|verhuizing|inschrijving|\bBRP\b|stadsdeel|wijkteam/i,'شهرداری','ببینید چه مدرکی یا چه وقت ملاقاتی خواسته شده. برای وقت ملاقات معمولاً مدرک شناسایی لازم است.'],
+ ['zorg',/huisarts|ziekenhuis|polikliniek|tandarts|zorgverzeker|eigen risico|verwijzing|vaccinatie|bevolkingsonderzoek|apotheek|GGD|zorgpolis/i,'درمان و بیمه','تاریخ و ساعت وقت، محل و چیزهایی که باید همراه بیاورید (کارت بیمه، مدرک شناسایی) را پیدا کنید. اگر نمی‌توانید بیایید، ۲۴ ساعت قبل لغو کنید.'],
+ ['huis',/verhuurder|huurverhoging|woningcorporatie|huurcontract|huurder|woningstichting|servicekosten|onderhoud aan/i,'خانه و اجاره','مبلغ تازه و تاریخ شروع را ببینید. با افزایش اجاره می‌شود در مهلت مخالفت کرد؛ Huurcommissie یا Juridisch Loket کمک رایگان می‌دهند.'],
+ ['energie',/energie|stroom|\bgas\b|jaarafrekening|termijnbedrag|meterstand|netbeheerder|drinkwater/i,'برق، گاز یا آب','قسط ماهانهٔ تازه و صورت‌حساب سالانه را بررسی کنید. اگر قسط خیلی کم است، بالاتر بگذارید تا آخر سال بدهکار نشوید.'],
+ ['school',/school|leerling|ouderavond|leerkracht|kinderopvang|mentor|rapport|leerplicht|schoolreis|ouderbijdrage/i,'مدرسه یا مهد','تاریخ جلسه یا رویداد، مبلغ (مثلاً هزینهٔ اردو) و اینکه باید فرمی را امضا کنید یا نه را ببینید. ouderbijdrage اختیاری است.'],
+ ['werk',/werkgever|salaris|loonstrook|arbeidsovereenkomst|sollicitatie|vacature|ziekmelding|proeftijd|vakantiegeld/i,'کار','تاریخ‌ها، شرایط و مبلغ‌ها را بررسی کنید. پیش از امضای قرارداد، اگر چیزی روشن نیست بپرسید.'],
+ ['bank',/\bING\b|rabobank|abn amro|bankrekening|pinpas|betaalpas|\bbunq\b|\bSNS\b/i,'بانک','مراقب کلاه‌برداری باشید: بانک هیچ‌وقت کد یا رمز شما را نمی‌خواهد. اگر شک دارید، خودتان با شمارهٔ پشت کارت بانک تماس بگیرید.'],
+ ['vote',/stempas|verkiezing|stembureau/i,'انتخابات','کارت رأی (stempas) و مدرک شناسایی را روز انتخابات همراه ببرید.'],
+ ['post',/bestelling|pakket|bezorging|factuur|retourneren|track ?& ?trace/i,'خرید، صورت‌حساب یا بسته','مبلغ و تاریخ پرداخت یا مهلت بازگرداندن را ببینید.']];
+const LR_ORGS=[/Belastingdienst(\/Toeslagen)?/,/Dienst Toeslagen/,/\bDUO\b/,/\bIND\b/,/\bUWV\b/,/\bCJIB\b/,/\bSVB\b/,/\bRDW\b/,/\bGGD\b[\w ]{0,20}/,/Gemeente [A-Z][a-zë\-]+( [A-Z][a-z]+)?/,/Waterschap [A-Z][\w\- ]{2,20}/,/Zilveren Kruis|\bCZ\b|\bVGZ\b|Menzis|\bDSW\b|\bONVZ\b|Zorg en Zekerheid|Interpolis|\bFBTO\b|a\.s\.r\./,/Eneco|Vattenfall|Essent|Greenchoice|Budget Energie|Vitens|Evides|Dunea|Brabant Water|PWN|Waternet/,/Politie|Openbaar Ministerie|Rechtbank [A-Z][a-z]+/,/\bING\b|Rabobank|ABN AMRO|\bbunq\b|\bSNS\b/,/PostNL|\bDHL\b|Bol\.com|Coolblue/,/Juridisch Loket|Huurcommissie|Nibud/];
+/* official phrases: [test, Dutch, Persian] */
+const LR_PHR=[
+ [/hierbij ontvangt u/i,'hierbij ontvangt u','با این نامه … را دریافت می‌کنید'],[/naar aanleiding van/i,'naar aanleiding van','در پی، با اشاره به'],
+ [/in verband met/i,'in verband met','به دلیل، در رابطه با'],[/met betrekking tot/i,'met betrekking tot','دربارهٔ'],[/onder vermelding van/i,'onder vermelding van','با ذکر (مثلاً شمارهٔ پرونده یا کد پرداخت)'],
+ [/betalingskenmerk/i,'het betalingskenmerk','کد پرداخت؛ هنگام واریز حتماً بنویسید'],[/\b(ons|uw)? ?kenmerk\b/i,'het kenmerk','شمارهٔ پرونده یا مرجع نامه'],
+ [/dagtekening/i,'de dagtekening','تاریخ صدور نامه'],[/vervaldatum/i,'de vervaldatum','تاریخ سررسید پرداخت'],[/\buiterlijk\b/i,'uiterlijk','حداکثر تا (مهلت)'],
+ [/bezwaar (te )?maken|bezwaar indienen/i,'bezwaar maken','اعتراض کردن به تصمیم اداره'],[/bezwaarschrift/i,'het bezwaarschrift','نامهٔ اعتراض'],[/in beroep gaan|beroep instellen/i,'in beroep gaan','شکایت به دادگاه'],
+ [/\bbeschikking\b/i,'de beschikking','تصمیم یا حکم رسمی اداره'],[/\baanslag\b/i,'de aanslag','برگهٔ مالیات'],[/\baanmaning\b/i,'de aanmaning','اخطار پرداخت (معمولاً با هزینهٔ اضافه)'],
+ [/betalingsherinnering/i,'de betalingsherinnering','یادآوری پرداخت'],[/openstaand(e)? bedrag/i,'het openstaande bedrag','مبلغ پرداخت‌نشده'],[/verschuldigd/i,'verschuldigd','بدهکار، قابل پرداخت'],
+ [/incassokosten/i,'de incassokosten','هزینهٔ وصول طلب'],[/deurwaarder/i,'de deurwaarder','مأمور اجرا (وصول بدهی با حکم)'],[/betalingsregeling/i,'de betalingsregeling','پرداخت قسطی'],
+ [/in termijnen/i,'in termijnen','قسطی، در چند قسط'],[/automatische incasso/i,'de automatische incasso','برداشت خودکار از حساب'],[/machtiging/i,'de machtiging','اجازهٔ برداشت؛ وکالت'],
+ [/\bovermaken\b|maak(t)? .{0,40} over\b/i,'overmaken','واریز کردن'],[/terugbetalen|terug te betalen/i,'terugbetalen','پول را پس دادن'],[/\bvoorschot\b/i,'het voorschot','پیش‌پرداخت (بعداً حساب نهایی می‌شود)'],
+ [/recht (hebt|heeft|hebben) op|recht op/i,'recht hebben op','حق داشتن به'],[/in aanmerking (komen|komt) voor/i,'in aanmerking komen voor','واجد شرایط بودن برای'],
+ [/aanvraag/i,'de aanvraag','درخواست (فرم یا تقاضا)'],[/\baanvragen\b/i,'aanvragen','درخواست کردن'],[/\bbijlage\b/i,'de bijlage','پیوست'],[/bijgevoegd/i,'bijgevoegd','به پیوست'],
+ [/\bgegevens\b/i,'de gegevens','اطلاعات (شخصی)'],[/wijziging(en)? doorgeven|geef .{0,30} door/i,'wijzigingen doorgeven','تغییرات را اعلام کردن'],[/\bDigiD\b/,'inloggen met DigiD','با DigiD وارد سایت شدن'],
+ [/neem(t)? (dan )?contact (met ons )?op/i,'neem contact met ons op','با ما تماس بگیرید'],[/wij verzoeken u/i,'wij verzoeken u','از شما درخواست می‌کنیم'],[/wij vragen u/i,'wij vragen u','از شما می‌خواهیم'],
+ [/bent u verplicht|u bent verplicht|verplicht/i,'verplicht','اجباری؛ باید انجام شود'],[/op tijd/i,'op tijd','به‌موقع'],[/\bboete\b/i,'de boete','جریمه'],
+ [/\bafspraak\b/i,'de afspraak','وقت ملاقات، قرار'],[/\bverzetten\b/i,'verzetten','جابه‌جا کردن وقت'],[/\bafzeggen\b|\bannuleren\b/i,'afzeggen','لغو کردن وقت'],
+ [/legitimatiebewijs|identiteitsbewijs|geldig legitimatie/i,'het legitimatiebewijs','مدرک شناسایی (پاسپورت یا کارت شناسایی)'],[/\bgeldig\b/i,'geldig','معتبر'],
+ [/uitnodiging/i,'de uitnodiging','دعوت‌نامه'],[/\boproep\b/i,'de oproep','احضار، دعوت رسمی'],[/\bverschijnen\b/i,'verschijnen','حاضر شدن (در جلسه یا اداره)'],
+ [/\bverklaring\b/i,'de verklaring','اظهارنامه، گواهی'],[/ondertekenen|onderteken/i,'ondertekenen','امضا کردن'],[/handtekening/i,'de handtekening','امضا'],
+ [/terugsturen|retour sturen|stuur .{0,30} terug/i,'terugsturen','پس فرستادن'],[/antwoordenvelop/i,'de antwoordenvelop','پاکت جواب (معمولاً بدون تمبر)'],[/postzegel/i,'de postzegel','تمبر'],
+ [/jaarafrekening/i,'de jaarafrekening','صورت‌حساب سالانه'],[/termijnbedrag/i,'het termijnbedrag','مبلغ قسط ماهانه'],[/huurverhoging/i,'de huurverhoging','افزایش اجاره'],
+ [/opzegtermijn/i,'de opzegtermijn','مهلت فسخ قرارداد'],[/\bopzeggen\b|opzegging/i,'opzeggen','فسخ کردن (قرارداد یا اشتراک)'],[/met ingang van/i,'met ingang van','از تاریخِ'],
+ [/burgerservicenummer|\bBSN\b/,'het burgerservicenummer (BSN)','شمارهٔ خدمات شهروندی'],[/eigen risico/i,'het eigen risico','فرانشیز بیمهٔ درمان (سهم خودتان)'],[/\bpolis\b/i,'de polis','بیمه‌نامه'],
+ [/\bpremie\b/i,'de premie','حق بیمه'],[/\buitkering\b/i,'de uitkering','مستمری (بیکاری، بیماری و…)'],[/kwijtschelding/i,'de kwijtschelding','بخشودگی بدهی یا عوارض'],
+ [/met vriendelijke groet/i,'met vriendelijke groet','با احترام (پایان نامه)'],[/geachte (heer|mevrouw|heer\/mevrouw)/i,'geachte heer/mevrouw','آقای / خانم محترم'],
+ [/bij voorbaat dank/i,'bij voorbaat dank','پیشاپیش سپاسگزارم'],[/\bindien\b/i,'indien','اگر (رسمی)'],[/\balsnog\b/i,'alsnog','با تأخیر، حالا که هنوز انجام نشده'],
+ [/\binmiddels\b/i,'inmiddels','در این فاصله، تا حالا'],[/desgewenst/i,'desgewenst','در صورت تمایل'],[/\bconform\b/i,'conform','مطابق با'],[/na ontvangst van/i,'na ontvangst van','پس از دریافتِ'],
+ [/tot en met|\bt\/m\b/i,'tot en met (t/m)','تا پایانِ (همان روز هم حساب است)'],[/als niet verzonden beschouwen/i,'als niet verzonden beschouwen','نادیده گرفتن نامه (اگر قبلاً پرداخت کرده‌اید)'],
+ [/in rekening (te )?brengen/i,'in rekening brengen','هزینه حساب کردن'],[/de wachttijd/i,'de wachttijd','زمان انتظار'],[/spreekuur/i,'het spreekuur','ساعت مراجعه'],[/\bstempas\b/i,'de stempas','کارت رأی']];
+const LR_DO=/\b(u moet|moet u|moeten wij|wilt u|wij verzoeken u|wij vragen u|vragen wij u|graag|stuur|neem .{0,20}contact|betaal|maak .{0,40} over|vul .{0,40} in|log .{0,10}in|meld u|kom .{0,20}naar|breng|neem .{0,30} mee|bel (ons|met)|geef .{0,30} door|regel|zorg (er )?voor|bent u verplicht|u bent verplicht)\b/i;
+const LR_DUE=/\b(vóór|voor|uiterlijk|binnen|uiterste|deadline|vervaldatum|termijn|tot en met|t\/m)\b/i;
+const LR_REF=/\b(betalingskenmerk|kenmerk|aanslagnummer|klantnummer|dossiernummer|referentie(nummer)?|polisnummer|zaaknummer|factuurnummer|relatienummer|CJIB-nummer|beschikkingsnummer|vorderingsnummer|contractnummer)\b\s*:?\s*([A-Z0-9][A-Z0-9 .\-\/]{3,30})/gi;
+const LR_DATE_NUM=/\b(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{2,4})\b/g;
+const LR_DATE_TXT=new RegExp('\\b(\\d{1,2})\\s+('+LR_MON.join('|')+')(\\s+(\\d{4}))?\\b','gi');
+const LR_DATE_TXT1=new RegExp(LR_DATE_TXT.source,'i');
+const LR_DUR=/\bbinnen\s+(\d+|een|twee|drie|vier|vijf|zes|zeven|acht|tien|twaalf|veertien|twintig|dertig)\s+(werk)?(dagen|dag|weken|week|maanden|maand)\b/gi;
+const LR_EUR=/€\s?-?\d{1,3}(?:\.\d{3})*(?:,(?:\d{2}|-))?|\b\d{1,3}(?:\.\d{3})*(?:,\d{2})?\s?euro\b/gi;
+const LR_PHONE=/(?:\+31|0031|\b0)(?:[\s\-]?\d){9}\b|\b0[89]00[\s\-]?\d{4}(?:[\s\-]?\d{3})?\b/g;
+const LR_WEB=/\b(?:https?:\/\/)?(?:www\.)?[a-z0-9\-]+\.(?:nl|com|org|eu)(?:\/[\w\-\/]*)?/gi;
+const LR_TOK=/[A-Za-zÀ-ÖØ-öø-ÿ'’\-]+/g;
+const LR_STOP=new Set('de het een en of maar dat die dit deze dan als om op in aan van voor met bij naar uit over tot door te er is zijn was waren wordt worden heeft hebben had kan kunt kunnen zal zullen wil wilt moet moeten mag ik je jij u hij zij ze we wij jullie hun hen ons onze uw mijn zijn haar niet geen wel ook nog al zo heel meer dan wat wie waar hoe als'.split(' '));
+const lrFaDig=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+const lrFaDate=(d,m,y)=>lrFaDig(d)+' '+LR_MON_FA[m]+(y?' '+lrFaDig(y):'');
+const lrShort=t=>String(t||'').split(/[،,;؛]/)[0].trim();
+function lrDays(d,m,y){const t=new Date(y,m,d).getTime(),a=new Date();a.setHours(0,0,0,0);return Math.round((t-a.getTime())/DAY)}
+/* sentences: lines of the letter, long lines split at sentence ends; page breaks kept */
+function lrSentences(text){const out=[];String(text||'').split('\n\f\n').forEach((pg,pi)=>{
+  const ls=[];pg.split('\n').map(l=>l.trim()).filter(Boolean).forEach(l=>{const p=ls[ls.length-1];if(p&&!/[.!?:;]$/.test(p)&&/^[a-zà-ÿ]/.test(l)&&p.length>25)ls[ls.length-1]=p+' '+l;else ls.push(l)});
+  ls.forEach(l=>l.split(/(?<=[a-zà-ÿ0-9)]{3}[.!?]|[!?])\s+(?=[A-Z0-9“"(])/).forEach(s=>{s=s.trim();if(s)out.push({t:s,p:pi})}))});return out}
+function lrDates(text){const out=[],seen=new Set();let m;
+  const add=(d,mo,y,i)=>{if(d<1||d>31||mo<0||mo>11)return;if(y&&y<100)y+=2000;if(y&&(y<2000||y>2100))return;const k=d+'-'+mo+'-'+(y||'');if(seen.has(k))return;seen.add(k);
+    const yy=y||new Date().getFullYear();const ctx=text.slice(Math.max(0,i-60),i).toLowerCase();out.push({d,m:mo,y,days:lrDays(d,mo,yy),due:/vóór|voor|uiterlijk|uiterste|vervaldatum|t\/m|tot en met|betalen|deadline/.test(ctx.slice(-40))})};
+  LR_DATE_NUM.lastIndex=0;while((m=LR_DATE_NUM.exec(text)))add(+m[1],+m[2]-1,+m[3],m.index);
+  LR_DATE_TXT.lastIndex=0;while((m=LR_DATE_TXT.exec(text)))add(+m[1],LR_MON.indexOf(m[2].toLowerCase()),m[4]?+m[4]:0,m.index);
+  return out}
+function lrAnalyze(text){
+  const t=String(text||''),sents=lrSentences(t);
+  const types=LR_TYPES.map(([k,re,fa,tip])=>({k,fa,tip,n:(t.match(new RegExp(re.source,re.flags.includes('g')?re.flags:re.flags+'g'))||[]).length})).filter(x=>x.n).sort((a,b)=>b.n-a.n).slice(0,2);
+  const orgs=[];LR_ORGS.forEach(re=>{const m=t.match(re);if(m&&!orgs.includes(m[0].trim()))orgs.push(m[0].trim())});
+  const eur=[...new Set((t.match(LR_EUR)||[]).map(x=>x.replace(/\s+/g,' ').trim()))].slice(0,8);
+  const dates=lrDates(t).slice(0,10);
+  const durs=[];let m;LR_DUR.lastIndex=0;while((m=LR_DUR.exec(t))){const n=/^\d+$/.test(m[1])?+m[1]:LR_NUM[m[1].toLowerCase()];const u=m[3].startsWith('dag')?(m[2]?'روز کاری':'روز'):m[3].startsWith('we')?'هفته':'ماه';const s='ظرف '+faNum(n)+' '+u;if(!durs.includes(s))durs.push(s)}
+  const refs=[];LR_REF.lastIndex=0;while((m=LR_REF.exec(t))){const v=m[3].trim().replace(/[.\-\/ ]+$/,'');if(/\d{3}/.test(v)&&!refs.some(r=>r.v===v))refs.push({k:m[1],v})}
+  const t2=t.replace(/\bNL\s?\d{2}\s?[A-Z]{4}(?:\s?\d){10}\b/g,' ');const phones=[...new Set((t2.match(LR_PHONE)||[]).map(x=>x.trim()))].slice(0,4),webs=[...new Set((t.match(LR_WEB)||[]).map(x=>x.toLowerCase()).filter(x=>!/^\d/.test(x)))].slice(0,4);
+  const iban=[...new Set(t.match(/\bNL\s?\d{2}\s?[A-Z]{4}(?:\s?\d){10}\b/g)||[])];
+  const todo=sents.filter(s=>LR_DO.test(s.t)&&s.t.length>12).slice(0,8),due=sents.filter(s=>LR_DUE.test(s.t)&&(LR_DATE_TXT1.test(s.t)||/\d{1,2}[-\/.]\d{1,2}[-\/.]\d{2,4}|binnen\s+\w+\s+(werk)?(dagen|weken|maanden)/i.test(s.t))).slice(0,6);
+  const phr=LR_PHR.filter(([re])=>re.test(t)).map(([re,nl,fa])=>{const s=sents.find(x=>re.test(x.t));return{nl,fa,s:s?s.t:''}});
+  /* words: dictionary hits (new for you / already a card) and unknown words */
+  const seen=new Map(),unk=new Map();
+  const noUrl=s=>s.replace(/[\w.+\-]+@[\w\-]+\.[\w.]+/g,' ').replace(LR_WEB,' ');
+  sents.forEach(s=>{(noUrl(s.t).match(LR_TOK)||[]).forEach((w0,i)=>{const w=w0.replace(/^['’\-]+|['’\-]+$/g,'');if(w.length<2)return;const k=norm(w);if(seen.has(k)||unk.has(k))return;
+    const hits=lookupWord(w,'nl');if(hits.length){if(!LR_STOP.has(k))seen.set(k,{w,it:hits[0],s:s.t})}
+    else if(w.length>=4&&/^[a-zà-ÿ]/.test(w)&&!LR_ONE.has(k)&&!LR_PHR.some(p=>p[1].includes(k))&&!/^[a-z]+\.[a-z]/.test(w))unk.set(k,{w,s:s.t})})});
+  const words=[...seen.values()].map(x=>({...x,own:installedFor(x.it)}));
+  return{sents,types,orgs,eur,dates,durs,refs,phones,webs,iban,todo,due,phr,words,unk:[...unk.values()].slice(0,40)};
+}
+/* hide what should not leave the device before text goes to Google Translate */
+function lrMask(text){
+  const lines=String(text||'').replace(/\n\f\n/g,'\n\n').split('\n');const pc=/\b\d{4}\s?[A-Z]{2}\b/;
+  lines.forEach((l,i)=>{if(pc.test(l)){for(let k=Math.max(0,i-2);k<=i;k++)if(lines[k].trim()&&lines[k].length<60)lines[k]='[…]'}});
+  return lines.join('\n').replace(/\bNL\s?\d{2}\s?[A-Z]{4}(?:\s?\d){10}\b/g,'NL[IBAN]').replace(/[\w.+\-]+@[\w\-]+\.[\w.]+/g,'[e-mail]')
+    .replace(/(geachte\s+(?:heer|mevrouw|heer\/mevrouw)\s+)[^\n,]+/gi,'$1…').replace(/(beste\s+)[A-Z][^\n,]+/g,'$1…')
+    .replace(/\b\d(?:[ .\-\/]?\d){5,}\b/g,m=>/^\d{1,2}[-\/.]\d{1,2}[-\/.]\d{2,4}$/.test(m)||/^\d{1,3}(\.\d{3})+$/.test(m)?m:m.replace(/\d/g,'#'));
+}
+function lrChunks(text,max=1500){const out=[];let cur='';text.split(/\n{2,}/).forEach(p=>{if((cur+'\n\n'+p).length>max&&cur){out.push(cur);cur=p}else cur=cur?cur+'\n\n'+p:p;while(cur.length>max){out.push(cur.slice(0,max));cur=cur.slice(max)}});if(cur.trim())out.push(cur);return out}
+const lrGT=t=>'https://translate.google.com/?sl=nl&tl=fa&op=translate&text='+encodeURIComponent(t);
+/* ---------- capturing pages ---------- */
+let lrFiles=[],lrBusy=false,lrRec=null,lrA=null;
+function lrPagesRender(){
+  const n=lrFiles.length;$('#lrPages').innerHTML=lrFiles.map((f,i)=>`<figure class="lr-pg"><img alt="صفحهٔ ${faNum(i+1)}" data-lrpg="${i}"><figcaption>${faNum(i+1)}</figcaption><button class="icon-btn mini" type="button" data-lrdel="${i}" aria-label="حذف صفحهٔ ${faNum(i+1)}"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></figure>`).join('');
+  $$('#lrPages img').forEach(im=>{const f=lrFiles[+im.dataset.lrpg];if(!f._u)f._u=URL.createObjectURL(f);im.src=f._u});
+  $('#lrCamL').textContent=n?'📷 عکس صفحهٔ '+faNum(n+1):'📷 عکس از نامه یا تابلو';
+  $('#lrGo').hidden=!n;$('#lrGo').textContent=n>1?'خواندن نامه ('+faNum(n)+' صفحه)':'خواندن متن عکس';
+  $('#lrPages').hidden=!n;
+}
+function lrAddFiles(fs){for(const f of fs){if(!f)continue;if((f.type||'').includes('pdf')||/\.pdf$/i.test(f.name||'')){lrPdf(f);return}if(!(f.type||'').startsWith('image/'))continue;if(lrFiles.length>=12){toast('حداکثر ۱۲ صفحه در یک نامه.');break}lrFiles.push(f)}lrPagesRender()}
+function lrProg(){const el=$('#lrProg');el.hidden=false;el.innerHTML='<div class="job"><div class="job-top"><b>خواندن نامه</b><span class="hint job-s"></span></div><div class="bar"><span></span></div></div>';
+  return{set(msg,p){$('.job-s',el).textContent=msg;if(p!=null)$('.bar span',el).style.width=Math.round(Math.max(0,Math.min(1,p))*100)+'%'},done(){el.hidden=true;el.innerHTML=''},fail(msg){el.innerHTML=`<p class="note-box bad" style="margin:0">${esc(msg)}</p>`}}}
+async function lrStitch(cs){const W=1100;let sc=cs.map(c=>Math.min(1,W/c.width));let H=cs.reduce((a,c,i)=>a+Math.round(c.height*sc[i]),0);
+  const k=H>15000?15000/H:1;const out=document.createElement('canvas');out.width=Math.round(W*k);out.height=Math.round(H*k);const x=out.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,out.width,out.height);
+  let y=0;cs.forEach((c,i)=>{const w=Math.round(c.width*sc[i]*k),h=Math.round(c.height*sc[i]*k);x.drawImage(c,0,y,w,h);y+=h;if(i<cs.length-1){x.fillStyle='#c9ced8';x.fillRect(0,y-2,out.width,3)}});
+  return await new Promise(res=>out.toBlob(res,'image/jpeg',0.8))}
+function lrTitle(text,n){const a=lrAnalyze(text);const org=a.orgs[0],tp=a.types[0];const d=new Date();
+  return (tp?tp.fa:'نامه')+(org?' از '+org:'')+'، '+faNum(d.getDate())+' '+LR_MON_FA[d.getMonth()]}
+async function lrRead(){
+  if(lrBusy||!lrFiles.length)return;lrBusy=true;const pr=lrProg();$('#lrGo').disabled=true;askPersist();
+  try{const texts=[],small=[];
+    for(let i=0;i<lrFiles.length;i++){const f=lrFiles[i];const base=i/lrFiles.length,step=1/lrFiles.length;
+      pr.set(i?'صفحهٔ '+faNum(i+1)+' از '+faNum(lrFiles.length):'آماده‌سازی ابزار خواندن متن (بار اول کمی طول می‌کشد)…',base);
+      const big=await imageCanvas(f,2400);texts.push(await ocr(big,'nl',p=>pr.set('خواندن صفحهٔ '+faNum(i+1)+' از '+faNum(lrFiles.length)+'…',base+p*step*0.95)));
+      small.push(await imageCanvas(f,1400))}
+    const text=texts.join('\n\f\n');
+    if(text.replace(/[\s\f]/g,'').length<15){pr.fail('متنی خوانده نشد. عکس را صاف از بالا، با نور کافی و بدون سایه بگیرید و نامه کل قاب را پر کند.');return}
+    pr.set('ذخیرهٔ نامه…',0.97);
+    const jpg=await lrStitch(small);const r=newRec('image',lrTitle(text,lrFiles.length),'nl');r.text=text;r.cat='نامه‌ها';r.info={letter:1,pages:lrFiles.length,w:1100,h:0};
+    await storeMedia(r,jpg,'letter.jpg');await saveRec(r);pr.done();
+    lrFiles.forEach(f=>f._u&&URL.revokeObjectURL(f._u));lrFiles=[];lrPagesRender();
+    await lrOpen(r.id,true);
+  }catch(e){pr.fail((e&&e.message)||'خواندن نامه ناموفق بود.')}
+  finally{lrBusy=false;$('#lrGo').disabled=false}
+}
+async function lrPdf(f){
+  if(lrBusy)return;lrBusy=true;const pr=lrProg();
+  try{const r=await importPdf(f,'nl',pr);r.cat='نامه‌ها';r.info=Object.assign(r.info||{},{letter:1});
+    const sc=(r.info.scanned||[]).slice();
+    if(sc.length){const doc=await openPdf(await f.arrayBuffer());const pages=srcText(r).split('\n\f\n');
+      for(let k=0;k<sc.length;k++){const i=sc[k];const pg=await doc.getPage(i);const v1=pg.getViewport({scale:1});const vp=pg.getViewport({scale:Math.min(4,OCR_W/v1.width)});const c=document.createElement('canvas');c.width=Math.round(vp.width);c.height=Math.round(vp.height);
+        await pg.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;pages[i-1]=await ocr(c,'nl',p=>pr.set('خواندن صفحهٔ '+faNum(i)+'…',(k+p)/sc.length))}
+      r.text=pages.join('\n\f\n');r.info.scanned=[]}
+    r.title=lrTitle(r.text,r.info.pages||1);await saveRec(r);pr.done();await lrOpen(r.id,true);
+  }catch(e){pr.fail((e&&e.message)||'این PDF خوانده نشد.')}
+  finally{lrBusy=false}
+}
+/* ---------- the explained letter ---------- */
+async function lrOpen(id,fresh){
+  const r=await idbGet('src',id).catch(()=>null);if(!r||r.gone){toast('این نامه پیدا نشد.');return}
+  lrRec=r;lrA=lrAnalyze(srcText(r));
+  if(currentView!=='hunt')showView('hunt');
+  $('#hnHome').hidden=true;$('#lrOne').hidden=false;window.scrollTo(0,0);
+  /* words that are already your cards were «seen» in real life: count them once per letter */
+  let met=0;if(!r.info||!r.info.hunted){lrA.words.forEach(x=>{if(x.own&&x.own.srs&&x.own.srs.last&&huntSeen(x.own,'mail','s'))met++});r.info=Object.assign(r.info||{},{hunted:1,met});await saveRec(r,false);if(met)saveData()}
+  lrRender(fresh);
+}
+function lrSentHTML(s,k){return`<div class="lr-s"><p class="lat" dir="ltr" data-lrtext="${k}">${esc(s.t)}</p><div class="lr-sb">${speakBtn('data-lrsay="'+k+'"',1)}<button class="btn sm ghost" type="button" data-lrgl="${k}">واژه‌به‌واژه</button><a class="btn sm ghost" href="${esc(lrGT(lrMask(s.t)))}" target="_blank" rel="noopener">ترجمه</a></div><div class="lr-gl" hidden></div></div>`}
+function lrRender(fresh){
+  const r=lrRec,a=lrA;const d=new Date(r.created);const pages=(r.info&&r.info.pages)||1;
+  let h=`<div class="page-head"><div><h1 class="view-title">${esc(r.title)}</h1><p class="sub">${faNum(pages)} صفحه، خوانده‌شده در ${lrFaDate(d.getDate(),d.getMonth(),d.getFullYear())}. متن روی همین دستگاه از عکس خوانده شده؛ ممکن است چند حرف اشتباه خوانده شده باشد.</p></div></div>
+  <div class="btn-row lr-acts"><button class="btn" type="button" data-lrimg>${r.kind==='pdf'?'فایل اصلی':'عکس نامه'}</button><button class="btn" type="button" data-lrtr>ترجمهٔ کامل (Google)</button><button class="btn ghost" type="button" data-lredit>اصلاح متن</button><button class="btn ghost" type="button" data-lrsrc>باز کردن در منابع</button></div><div id="lrImg" hidden></div>`;
+  /* summary */
+  const tp=a.types[0];
+  h+=`<section class="panel lr-sum"><h2 class="h2" style="margin-top:0">این نامه دربارهٔ چیست؟</h2>`;
+  h+=tp?`<p class="lr-kind"><b>${esc(tp.fa)}</b>${a.types[1]?`<span class="hint"> (شاید هم: ${esc(a.types[1].fa)})</span>`:''}</p><p class="lr-tip">${esc(tp.tip)}</p>`:'<p class="hint">نوع نامه از روی واژه‌هایش روشن نشد. بخش‌های زیر را ببینید.</p>';
+  const row=(t,v)=>v?`<div class="lr-row"><span class="lr-k">${t}</span><div class="lr-v">${v}</div></div>`:'';
+  h+=row('فرستنده',a.orgs.map(o=>`<span class="tag lat">${esc(o)}</span>`).join(' '));
+  h+=row('مبلغ',a.eur.map(e=>`<span class="tag lat lr-eur">${esc(e)}</span>`).join(' '));
+  h+=row('تاریخ‌ها',a.dates.map(x=>{const y=x.y||'';const fut=x.days>=0;return`<span class="tag${x.due&&fut?' lr-due':''}">${lrFaDate(x.d,x.m,y)}${x.y||x.days>-200?`<small> ${x.days===0?'امروز':fut?faNum(x.days)+' روز دیگر':faNum(-x.days)+' روز پیش'}</small>`:''}</span>`}).join(' '));
+  h+=row('مهلت',a.durs.map(x=>`<span class="tag lr-due">${x}</span>`).join(' '));
+  h+=row('شماره‌های مهم',a.refs.map(x=>`<span class="tag lat">${esc(x.k)}: <b>${esc(x.v)}</b></span>`).concat(a.iban.map(x=>`<span class="tag lat">IBAN: <b>${esc(x)}</b></span>`)).join(' '));
+  h+=row('تماس',a.phones.map(x=>`<span class="tag lat">${esc(x)}</span>`).concat(a.webs.map(x=>`<span class="tag lat">${esc(x)}</span>`)).join(' '));
+  if(a.todo.length||a.due.length){const list=[...a.due,...a.todo.filter(s=>!a.due.includes(s))].slice(0,8);
+    h+=`<h3 class="lr-h3">کارهایی که از شما خواسته شده و مهلت‌ها</h3><div class="lr-sents">${list.map(s=>lrSentHTML(s,a.sents.indexOf(s))).join('')}</div>`}
+  if(r.info&&r.info.met)h+=`<p class="hint" style="margin:10px 0 0">✓ ${faNum(r.info.met)} واژه از کارت‌هایتان در این نامه بود و در «شکار واژه» ثبت شد.</p>`;
+  h+=`<p class="hint" style="margin:10px 0 0">این خلاصه از روی واژه‌های نامه حدس زده می‌شود، نه با فهم کامل متن. برای تصمیم مهم (پول، اقامت، اعتراض) جمله‌های اصلی را ترجمه کنید یا از Juridisch Loket (رایگان) بپرسید.</p></section>`;
+  /* phrases */
+  if(a.phr.length)h+=`<section class="panel"><h2 class="h2" style="margin-top:0">اصطلاحات نامه‌های رسمی در این متن</h2><div class="lr-list">${a.phr.map((p,i)=>{const own=findDup('nl',p.nl.replace(/^(de|het)\s+/,''))||findDup('nl',p.nl);return`<label class="lr-it"><input type="checkbox" data-lrp="${i}"${own?' disabled':''}><span><b class="lat">${esc(p.nl)}</b><span>${esc(p.fa)}</span>${p.s?`<small class="lat" dir="ltr">${esc(p.s.length>110?p.s.slice(0,108)+'…':p.s)}</small>`:''}</span>${own?'<span class="pill ok">در کارت‌ها</span>':''}</label>`}).join('')}</div></section>`;
+  /* words */
+  const nw=a.words.filter(x=>!x.own),ow=a.words.filter(x=>x.own);
+  h+=`<section class="panel"><h2 class="h2" style="margin-top:0">واژه‌های این نامه</h2>`;
+  if(nw.length)h+=`<p class="hint" style="margin:0 0 6px">${faNum(nw.length)} واژه در واژه‌نامهٔ برنامه هست و هنوز کارت شما نیست. هر کدام را بخواهید، با همین جملهٔ نامه به‌عنوان نمونه کارت می‌شود.</p><label class="check" style="margin-bottom:4px"><input type="checkbox" id="lrAllW"><span>انتخاب همه</span></label><div class="lr-list lr-w">${nw.map((x,i)=>`<label class="lr-it"><input type="checkbox" data-lrw="${a.words.indexOf(x)}"><span><b class="lat">${artHTML(x.it)}${esc(x.it.text)}</b><span>${meanInline(x.it)}</span></span></label>`).join('')}</div>`;
+  if(ow.length)h+=`<p class="hint" style="margin:12px 0 6px">در کارت‌های شما (${faNum(ow.length)}):</p><div class="hn-chips">${ow.slice(0,80).map(x=>`<button class="tag lat" type="button" data-hnopen="${esc(x.own.id)}">${esc(x.own.text)}</button>`).join('')}</div>`;
+  if(a.unk.length)h+=`<p class="hint" style="margin:12px 0 6px">در واژه‌نامهٔ برنامه نیست (ممکن است نام، واژهٔ ترکیبی یا اشتباه خواندن عکس باشد). بزنید تا واژه‌نامه‌ها باز شود:</p><div class="hn-chips">${a.unk.map(x=>`<button class="tag lat" type="button" data-lrunk="${esc(x.w)}">${esc(x.w)}</button>`).join('')}</div>`;
+  h+=`</section>`;
+  h+=`<div class="lr-add panel" hidden><span id="lrSel">چیزی انتخاب نشده</span><button class="btn primary" type="button" id="lrAdd" disabled>افزودن به کارت‌ها</button></div>`;
+  /* full text */
+  let lastP=-1;h+=`<section class="panel"><h2 class="h2" style="margin-top:0">متن نامه، جمله به جمله</h2><p class="hint" style="margin:0 0 8px">روی هر واژه بزنید تا معنی‌اش را ببینید. «واژه‌به‌واژه» معنی تک‌تک واژه‌ها را زیر جمله می‌آورد؛ «ترجمه» همان جمله را در Google Translate باز می‌کند.</p><div class="lr-sents">${a.sents.map((s,k)=>{let x='';if(pages>1&&s.p!==lastP){lastP=s.p;x=`<h3 class="lr-h3">صفحهٔ ${faNum(s.p+1)}</h3>`}return x+lrSentHTML(s,k)}).join('')}</div></section>`;
+  $('#lrBody').innerHTML=h;lrSelCount();
+  if(fresh)toast(tp?'نامه خوانده شد: '+tp.fa:'متن نامه خوانده شد.',3500);
+}
+function lrSelCount(){const n=$$('#lrBody [data-lrw]:checked,#lrBody [data-lrp]:checked').length;const s=$('#lrSel');if(!s)return;s.textContent=n?faNum(n)+' مورد انتخاب شده':'واژه‌ها یا اصطلاح‌هایی را که می‌خواهید یاد بگیرید علامت بزنید.';$('#lrAdd').disabled=!n;$('#lrBody .lr-add').hidden=!n}
+const LR_ONE=new Map(LR_PHR.map(p=>[p[1].replace(/^(de|het)\s+/,''),p[2]]).filter(([k])=>!/\s/.test(k)));
+function lrGloss(s){return(s.match(LR_TOK)||[]).map(w=>{const k=norm(w),o=LR_ONE.get(k),h=o?null:lookupWord(w,'nl')[0];return`<span class="lr-g"><b class="lat">${esc(w)}</b><span>${o?esc(lrShort(o)):h?esc(lrShort(enMain(h)?h.en:h.fa)):'…'}</span></span>`}).join('')}
+async function lrTranslateAll(){
+  const masked=lrMask(srcText(lrRec)),parts=lrChunks(masked);
+  const ok=await ask({title:'ترجمهٔ کامل با Google Translate',html:`<p style="margin:0 0 8px">متن نامه برای ترجمه به Google فرستاده می‌شود. نام، نشانی، کد پستی، IBAN، ایمیل و شماره‌های طولانی (مثل BSN) پیش از فرستادن پنهان شده‌اند. اگر چیز شخصی دیگری مانده، اول با «اصلاح متن» پاکش کنید.</p><pre class="lr-pre lat" dir="ltr">${esc(masked.slice(0,1400))}${masked.length>1400?'\n…':''}</pre>${parts.length>1?`<p class="hint" style="margin:8px 0 0">نامه طولانی است و در ${faNum(parts.length)} بخش باز می‌شود.</p>`:''}<p class="hint" style="margin:8px 0 0">ترجمهٔ ماشینی برای فهم کلی خوب است؛ برای تصمیم مهم به آن تکیه نکنید.</p>`,ok:parts.length>1?'باز کردن بخش ۱':'باز کردن ترجمه'});
+  if(!ok)return;window.open(lrGT(parts[0]),'_blank','noopener');
+  if(parts.length>1)openSheet('ترجمهٔ بخش‌های دیگر',`<div class="btn-row">${parts.slice(1).map((p,i)=>`<a class="btn" href="${esc(lrGT(p))}" target="_blank" rel="noopener">بخش ${faNum(i+2)}</a>`).join('')}</div>`,'');
+}
+async function lrAddSel(){
+  const now=Date.now();let n=0;
+  $$('#lrBody [data-lrw]:checked').forEach(c=>{const x=lrA.words[+c.dataset.lrw];if(!x)return;const own=addFromSource(x.it,x.s.length<=200?x.s:'');huntSeen(own,'mail','s');n++});
+  $$('#lrBody [data-lrp]:checked').forEach(c=>{const p=lrA.phr[+c.dataset.lrp];if(!p)return;let text=p.nl,article='';const m=text.match(/^(de|het)\s+(\S+)$/);if(m){article=m[1];text=m[2]}
+    if(findDup('nl',text))return;const it=cleanItem({id:uid(),lang:'nl',type:'word',text,article,fa:p.fa,tags:['نامه'],note:'از نامهٔ «'+lrRec.title+'»',created:now+n,updated:now+n,srs:null});
+    if(p.s&&p.s.length<=200)it.exs=[{t:p.s,fa:'',en:'',u:1}];db.items.push(it);huntSeen(it,'mail','s');n++});
+  if(!n)return;clozeCache.clear();saveData();refreshBadges();toast(faNum(n)+' واژه و اصطلاح به کارت‌ها رفت؛ از فردا در مرور می‌آیند.',4000);lrRender();
+}
+async function lrEdit(){
+  const r=lrRec;openSheet('اصلاح متن نامه',`<p class="hint" style="margin:0 0 8px">حرف‌هایی را که اشتباه خوانده شده درست کنید یا چیزهای شخصی را پاک کنید. صفحه‌ها با یک خط خالی و علامت ⸻ از هم جدا شده‌اند.</p><textarea id="lrTx" class="lat" dir="ltr" rows="16" style="width:100%">${esc(srcText(r).replace(/\n\f\n/g,'\n\n⸻\n\n'))}</textarea>`,`<button class="btn primary" type="button" id="lrTxOk">ذخیره</button>`);
+  $('#lrTxOk').onclick=async()=>{r.text=tidyText($('#lrTx').value.replace(/\n*⸻\n*/g,'')).replace(//g,'\n\f\n');await saveRec(r);closeSheet();lrA=lrAnalyze(r.text);lrRender();toast('متن ذخیره شد.')};
+}
+async function lrShowImg(){
+  const box=$('#lrImg');if(!box.hidden){box.hidden=true;box.innerHTML='';return}
+  const b=await localMedia(lrRec).catch(()=>null)||await mediaBlob(lrRec).catch(()=>null);if(!b){toast('فایل اصلی روی این دستگاه نیست.');return}
+  const u=URL.createObjectURL(b);if(lrRec.kind==='pdf'){window.open(u,'_blank','noopener');return}
+  box.hidden=false;box.innerHTML='<figure class="src-img lr-fig"></figure>';const im=new Image();im.alt='عکس نامه';im.src=u;$('figure',box).append(im);
+}
+async function renderLetterList(){
+  const el=$('#lrList');if(!el)return;let all=[];try{all=(await idbAll('src')).filter(r=>!r.gone&&r.info&&r.info.letter)}catch(e){}
+  if(!all.length){el.hidden=true;return}
+  all.sort((a,b)=>b.created-a.created);el.hidden=false;
+  el.innerHTML=`<h2 class="h2" style="margin-top:0">نامه‌ها و تابلوهای خوانده‌شده</h2><div class="hn-log">${all.slice(0,30).map(r=>{const a=lrDates(srcText(r)).filter(x=>x.due&&x.days>=0).sort((x,y)=>x.days-y.days)[0];const d=new Date(r.created);
+    return`<button type="button" class="hn-l" data-lropen="${esc(r.id)}"><span class="hn-th" aria-hidden="true">✉️</span><span class="hn-lt"><b>${esc(r.title)}</b><small>${faNum((r.info&&r.info.pages)||1)} صفحه، ${hnWhen(r.created)}${a?'، مهلت: '+faNum(a.days)+' روز دیگر':''}</small></span></button>`}).join('')}</div>`;
+}
+/* ---------- events ---------- */
+$('#lrCam').addEventListener('change',e=>{lrAddFiles([...(e.target.files||[])]);e.target.value=''});
+$('#lrPick').addEventListener('change',e=>{lrAddFiles([...(e.target.files||[])]);e.target.value=''});
+$('#lrGo').addEventListener('click',lrRead);
+$('#lrPages').addEventListener('click',e=>{const d=e.target.closest('[data-lrdel]');if(d){const f=lrFiles.splice(+d.dataset.lrdel,1)[0];if(f&&f._u)URL.revokeObjectURL(f._u);lrPagesRender()}});
+$('#lrBack').addEventListener('click',()=>{$('#lrOne').hidden=true;$('#hnHome').hidden=false;lrRec=null;renderHunt()});
+$('#lrBody').addEventListener('change',e=>{if(e.target.id==='lrAllW'){$$('#lrBody [data-lrw]').forEach(c=>c.checked=e.target.checked)}lrSelCount()});
+$('#lrBody').addEventListener('click',e=>{
+  if(!lrA)return;
+  const sy=e.target.closest('[data-lrsay]');if(sy){const s=lrA.sents[+sy.dataset.lrsay];if(s)speak(s.t,'nl');return}
+  const gl=e.target.closest('[data-lrgl]');if(gl){const k=+gl.dataset.lrgl,box=gl.closest('.lr-s').querySelector('.lr-gl');if(!box)return;
+    if(box.hidden){box.innerHTML=lrGloss(lrA.sents[k].t);box.hidden=false}else box.hidden=true;return}
+  const un=e.target.closest('[data-lrunk]');if(un){wordPop(un.dataset.lrunk,(lrA.unk.find(x=>x.w===un.dataset.lrunk)||{}).s||'','nl');return}
+  if(e.target.closest('[data-lrtr]')){lrTranslateAll();return}
+  if(e.target.closest('[data-lredit]')){lrEdit();return}
+  if(e.target.closest('[data-lrimg]')){lrShowImg();return}
+  if(e.target.closest('[data-lrsrc]')){openId=lrRec.id;showView(SEC_VIEW[SEC_OF[lrRec.kind]]||'sources');return}
+  if(e.target.closest('#lrAdd')){lrAddSel();return}
+  const p=e.target.closest('[data-lrtext]');if(p&&!e.target.closest('a,button')){const hit=wordAt(e,p);if(hit)wordPop(hit.w,lrA.sents[+p.dataset.lrtext].t,'nl')}
+});
+document.addEventListener('click',e=>{const o=e.target.closest('[data-lropen]');if(o){e.preventDefault();lrOpen(o.dataset.lropen)}});
+if(/[?&]debug/.test(location.search))window.__lr={lrAnalyze,lrMask,lrChunks,lrOpen,lrAddFiles,lrRead,get files(){return lrFiles},get a(){return lrA},get rec(){return lrRec},maskRec:()=>lrMask(srcText(lrRec)),srcAll:()=>idbAll('src'),setOpen:id=>{openId=id},get view(){return currentView}};
 
 /* ================= THE LEARNING PLAN =================
    One spine: the course path (stages → lessons; each lesson = words → dialogues → grammar → quiz).
