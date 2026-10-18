@@ -202,7 +202,7 @@ const win=(url,inner,cls='')=>`<div class="screen ${cls}"><div class="chrome"><i
 const copyBox=t=>`<div class="copy"><code>${esc(t)}</code><button class="btn sm" type="button" data-copy="${esc(t)}">کپی</button></div>`;
 const openBtn=(url,label)=>`<div class="open-link"><a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${label}</a></div>`;
 const userField=()=>`<div class="field"><input type="text" id="userIn" placeholder="your-username" spellcheck="false" autocapitalize="off" value="${esc(st.user)}" aria-label="نام کاربری GitHub"><button class="btn sm" type="button" id="userSave">ذخیره</button></div>`;
-const FILES=['index.html','packs.js','asr-worker.js','guide.html','sw.js','manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png','README.md','audio/…'];
+const FILES=['index.html','packs.js','asr-worker.js','guide.html','sw.js','manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png','README.md'];
 const N_FILES=FILES.length;
 
 function repoForm(name,vis){
@@ -266,11 +266,11 @@ const STEPS=[
 {p:2,t:'فایل‌ها را بکشید و رها کنید',
  do:[
   `پوشه‌ای را که در گام ${fa(1)} باز کردید پیدا کنید و واردش شوید.`,
-  `همهٔ فایل‌های داخل آن را انتخاب کنید: کلیدهای ${k('Ctrl + A')} در ویندوز یا ${k('Cmd + A')} در مک.`,
+  'بالای فهرست چند پوشه به اسم audio-part می‌بینید و زیرشان حدود ۱۱ فایل. فعلاً فقط فایل‌ها را انتخاب کنید، نه پوشه‌ها: روی اولین فایل بزنید و با نگه داشتن Shift روی آخرین فایل بزنید.',
   'فایل‌ها را با موس بکشید و داخل کادر خط‌چین صفحهٔ GitHub رها کنید.',
-  'صبر کنید تا نام همهٔ فایل‌ها، از جمله فایل‌های پوشهٔ audio (صداهای هلندی)، زیر کادر نمایش داده شود.'],
+  'صبر کنید تا نام همهٔ فایل‌ها زیر کادر نمایش داده شود.'],
  numsMap:[0,0,1,2],
- warn:'خود پوشهٔ اصلی را نکشید؛ محتوای داخلش را بکشید: همهٔ فایل‌ها به‌همراه پوشهٔ audio. فایل index.html باید مستقیم در مخزن باشد، نه داخل یک پوشه.',
+ warn:'خود پوشهٔ اصلی را نکشید؛ فایل‌های داخلش را بکشید. فایل index.html باید مستقیم در مخزن باشد، نه داخل یک پوشه. صداها را در گام بعد، بخش به بخش آپلود می‌کنید، چون GitHub آپلود بزرگ‌تر از حدود ۲۵ مگابایت را یک‌جا قبول نمی‌کند.',
  screen:()=>win('github.com/'+U()+'/vazheyar/upload/main',`
    ${hl(1,'<div class="s-drop"><b style="color:var(--scr-ink)">Drag files here to add them to your repository</b><br>Or <span style="color:var(--scr-link)">choose your files</span></div>','div')}
    ${hl(2,`<div class="s-files">${FILES.map(f=>`<span>${f}</span>`).join('')}</div>`,'div')}`)},
@@ -287,6 +287,18 @@ const STEPS=[
    <div class="s-row"><span class="s-in" style="flex:1">Add files via upload</span></div>
    ${hl(1,'<div class="s-radio"><span class="on">Commit directly to the <b>main</b> branch.</span><span>Create a new branch for this commit and start a pull request.</span></div>','div')}
    <div class="s-row" style="margin:16px 0 0">${hl(2,'<span class="s-btn green">Commit changes</span>')}<span class="s-btn">Cancel</span></div>`)},
+
+{p:2,t:'صداها را بخش به بخش آپلود کنید',
+ do:[
+  `دوباره ${k('Add file')} و بعد ${k('Upload files')} را بزنید.`,
+  'در پوشهٔ بازشده، وارد پوشهٔ audio-part-01 شوید. داخلش یک پوشه به اسم audio هست.',
+  'خود همین پوشهٔ audio را بکشید و در کادر GitHub رها کنید، و بعد Commit changes را بزنید.',
+  'همین کار را برای audio-part-02 و بقیهٔ بخش‌ها تکرار کنید. هر بار پوشهٔ audio داخل آن بخش را بکشید.'],
+ numsMap:[0,0,1,1],
+ tip:'در به‌روزرسانی‌های بعدی لازم نیست همهٔ بخش‌ها را دوباره آپلود کنید: فقط بخش‌هایی که آخر اسمشان شمارهٔ نسخهٔ تازه است (مثلاً -v25) تغییر کرده‌اند.',
+ screen:()=>win('github.com/'+U()+'/vazheyar/upload/main',`
+   ${hl(1,'<div class="s-drop"><b style="color:var(--scr-ink)">Drag files here to add them to your repository</b><br>Or <span style="color:var(--scr-link)">choose your files</span></div>','div')}
+   <div class="s-files"><span>audio/LICENSE.txt</span><span>audio/nl-c1.mp3</span><span>audio/nl-c2.mp3</span><span>audio/nl-c3.mp3</span><span>…</span></div>`)},
 
 {p:3,t:'تنظیمات مخزن را باز کنید',
  do:[`در بالای صفحهٔ مخزن، در ردیف زبانه‌ها، روی ${k('Settings')} بزنید.`],

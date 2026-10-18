@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-vlbqO/ymSU2jdqWKKCAfyPZDmEUZc0XYiz7Q8oDbfeE=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bKr1FCW6QqRSN9Bfu1yjndDhmtwVhAB79fvz+dzP+hg=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -1194,6 +1194,66 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 .pg-kan .lat{direction:ltr;text-align:left}
 @media (max-width:560px){.lf-gl-r{grid-template-columns:1fr auto}.lf-gl-r>span:nth-child(2){grid-column:1}.lt-paper{padding:22px 14px}.st-s{font-size:17px}}
 
+/* ---------- «حرف بزنیم» conversation topics ---------- */
+#tkTab{margin:4px 0 10px}
+#tkLv{margin-top:6px}
+.tk-qs{display:flex;flex-direction:column;gap:8px}
+.tk-qr{display:flex;flex-direction:column;gap:4px}
+.tk-qr .tk-a{margin-inline-start:22px;background:var(--good-soft)}
+.tk-qr .link{align-self:flex-start;font-size:13px}
+.tk-run{max-width:760px}
+.tk-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.tk-top .check{margin-inline-start:auto}
+.tk-q{display:flex;gap:14px;align-items:center;padding:16px;border-radius:var(--r);background:var(--acc-soft);margin-bottom:10px}
+.tk-q p{margin:0}
+.tk-qt{font-size:21px;line-height:1.4;direction:ltr;text-align:left}
+.btn.icon-lg{width:52px;height:52px;padding:0;border-radius:50%;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.icon-lg .i{width:24px;height:24px}
+.tk-model{margin:10px 0 4px}
+.tk-model .lf-line{background:var(--good-soft)}
+.tk-nav{margin-top:14px}
+#talkToday .lf-line{margin-top:6px}
+.tk-day summary{cursor:pointer;color:var(--cobalt);font-size:14px;margin:4px 0}
+.tk-day[open] summary{margin-bottom:6px}
+@media (max-width:560px){.tk-qt{font-size:18px}.tk-q{padding:12px}.tk-top .check{margin-inline-start:0}}
+
+/* v26 new-word introduction */
+.card-note.hook{background:var(--acc-soft)}
+.intro-make{max-width:500px;width:100%;text-align:start}
+.intro-make .lbl{margin:0}
+.intro-go{justify-content:center;margin-top:4px}
+
+/* v26 word hunt */
+.hn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:860px){.hn-grid{grid-template-columns:minmax(0,1fr)}}
+.hn-hits{display:flex;flex-direction:column;gap:4px}
+.hn-hit{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.hn-hit:has(input:checked){border-color:var(--acc);background:var(--acc-soft)}
+.hn-hit span:first-of-type{flex:1;min-width:0}
+.hn-photo{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+#hnPrev{display:flex;gap:10px;align-items:center}
+#hnPrev img{width:96px;height:96px;object-fit:cover;border-radius:10px}
+.hn-bar{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.hn-bar span{display:block;height:100%;background:var(--good);border-radius:99px;transition:width .4s}
+.hn-list{display:flex;flex-direction:column}
+.hn-t{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.hn-t:first-child{border-top:0}
+.hn-w{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.hn-w .link{padding:0;text-align:start;align-self:flex-start}
+.hn-w>span{font-size:14px;color:var(--muted)}
+.hn-t.hn-ok .hn-w b{color:var(--good)}
+.hn-btns{flex-wrap:nowrap}
+.hn-log{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.hn-l{display:flex;gap:10px;align-items:center;text-align:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;cursor:pointer;color:inherit;font:inherit}
+.hn-l:hover{border-color:var(--acc)}
+.hn-th{flex:none;width:52px;height:52px;border-radius:9px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden}
+.hn-th img{width:100%;height:100%;object-fit:cover}
+.hn-lt{display:flex;flex-direction:column;min-width:0}
+.hn-lt>span{font-size:14px}
+.hn-lt small{color:var(--muted);font-size:12px}
+.hn-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ws-seen{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--muted);background:var(--surface-2);border-radius:11px;padding:8px 12px;margin-top:8px}
+
 </style>
 </head>
 <body>
@@ -1242,6 +1302,8 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
       <div class="nav-group" style="margin-top:14px">
         <div class="nav-label">جعبه‌ابزار</div>
         <button type="button" data-go="life"><svg class="i" viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg><span>موقعیت‌های روزمره</span></button>
+        <button type="button" data-go="talk"><svg class="i" viewBox="0 0 24 24"><path d="M12 3.5a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v3.5M8.5 20.5h7"/></svg><span>حرف بزنیم</span></button>
+        <button type="button" data-go="hunt"><svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 7.5v6M7.5 10.5h6"/></svg><span>شکار واژه</span></button>
         <button type="button" data-go="stories"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg><span>داستان‌های فرید</span></button>
         <button type="button" data-go="drills"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg><span>عدد، ساعت و قیمت</span></button>
         <button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg><span>دستور زبان</span></button>
@@ -1299,6 +1361,8 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
         <div class="panel feature" id="lisToday"></div>
         <div class="panel feature" id="phToday" hidden></div>
         <div class="panel feature" id="lifeToday" hidden></div>
+        <div class="panel feature" id="talkToday" hidden></div>
+        <div class="panel feature" id="huntToday" hidden></div>
       </div>
       <div class="stats">
         <div class="stat"><b class="num" id="stStreak">۰</b><span>روز پیاپی تمرین</span></div>
@@ -1616,6 +1680,39 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
       <div id="pgBody"></div>
     </section>
 
+    <!-- ============ CONVERSATION TOPICS ============ -->
+    <section class="view" id="v-talk" hidden>
+      <div id="tkHome">
+        <div class="page-head"><div><h1 class="view-title">حرف بزنیم</h1><p class="sub">۶۰ موضوع گفت‌وگو، از معرفی خودتان تا نظر دادن دربارهٔ اخبار. هر موضوع واژه‌های کلیدی، جمله‌های آماده و ۸ سؤال رایج با پاسخ نمونه دارد. سؤال را بشنوید، بلند جواب بدهید و بعد پاسخ نمونه را ببینید.</p></div></div>
+        <div class="seg" id="tkTab"><button type="button" data-v="topics">موضوع‌ها</button><button type="button" data-v="mix">سؤال‌های تصادفی</button></div>
+        <div id="tkList"></div>
+      </div>
+      <div id="tkOne" hidden>
+        <button class="link back" type="button" id="tkBack">&larr; همهٔ موضوع‌ها</button>
+        <article id="tkBody"></article>
+      </div>
+    </section>
+
+    <!-- ============ WORD HUNT ============ -->
+    <section class="view" id="v-hunt" hidden>
+      <div class="page-head"><div><h1 class="view-title">شکار واژه</h1><p class="sub">واژه‌ای که روی تابلو، در نامه، در فروشگاه یا در حرف همکار می‌بینید و می‌شنوید، همان‌جا ثبتش کنید. واژه‌ای که در زندگی خودتان پیدا کرده‌اید خیلی بهتر از واژهٔ کتاب در ذهن می‌ماند.</p></div></div>
+      <p class="hint" id="hnStat" style="margin:0 0 12px"></p>
+      <div class="hn-grid">
+        <section class="panel stack" id="hnForm">
+          <h2 class="h2" style="margin:0">یک واژه دیدید یا شنیدید؟</h2>
+          <div class="field"><label class="lbl" for="hnWord">واژه یا عبارت هلندی</label><input type="text" id="hnWord" class="lat ltr" dir="ltr" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="مثلاً: uitverkoop"></div>
+          <div id="hnHits"></div>
+          <div class="field" id="hnFaWrap"><label class="lbl" for="hnFa">معنی فارسی</label><input type="text" id="hnFa" autocomplete="off"><span class="hint" id="hnFaHint">اگر معنی را نمی‌دانید، از واژه‌نامه‌های زیر پیدا کنید.</span><div class="dict" id="hnDict"></div></div>
+          <div class="field"><label class="lbl" for="hnSent">جمله یا متنی که دیدید <em>(اختیاری)</em></label><input type="text" id="hnSent" class="lat ltr" dir="ltr" spellcheck="false" autocomplete="off" placeholder="Vandaag 50% korting op alle jassen"></div>
+          <div class="field"><span class="lbl">کجا؟</span><div class="seg" id="hnWhere"></div></div>
+          <div class="field"><span class="lbl">عکس <em>(اختیاری)</em></span><div class="hn-photo"><label class="btn sm" for="hnPic" tabindex="0" id="hnPicBtn">📷 عکس از تابلو یا نامه</label><input type="file" id="hnPic" accept="image/*" capture="environment" hidden><div id="hnPrev" hidden></div></div><span class="hint">عکس روی کارت مرور هم نشان داده می‌شود. برای نامه‌های شخصی، فقط همان تکه‌ای را بگیرید که واژه در آن است.</span></div>
+          <div class="btn-row"><button class="btn primary" type="button" id="hnSave">ثبت شکار</button></div>
+        </section>
+        <section class="panel stack" id="hnWeek"></section>
+      </div>
+      <section class="panel" id="hnLog" style="margin-top:16px"></section>
+    </section>
+
     <!-- ============ GRAMMAR ============ -->
     <section class="view" id="v-grammar" hidden>
       <div id="gHome">
@@ -1874,6 +1971,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
             <div class="two">
               <div class="field"><label class="lbl" for="newPerDay">حداکثر کارت تازه در روز</label><input type="number" id="newPerDay" min="0" max="200" class="num"><span class="hint">وقتی مرورهای هفته زیاد است، برنامه خودش کارت تازهٔ کمتری می‌آورد.</span></div>
             </div>
+            <div class="field"><span class="lbl">معرفی واژهٔ تازه</span><div class="seg" id="introSeg"><button type="button" data-v="on">روشن</button><button type="button" data-v="off">خاموش</button></div><span class="hint">با «روشن»، هر واژهٔ تازه اول با تصویر، تلفظ و نمونه معرفی می‌شود و می‌توانید جملهٔ خودتان و یک ترفند یادآوری برایش بنویسید. چند کارت بعد، همان واژه پرسیده می‌شود.</span></div>
             <div class="field" id="glossWrap"><span class="lbl">زبان توضیح برای هلندی</span><div class="seg" id="glossSeg"><button type="button" data-v="fa">فارسی</button><button type="button" data-v="both">فارسی و انگلیسی</button><button type="button" data-v="en" class="lat">English</button></div><span class="hint">معنی واژه‌ها و ترجمهٔ جمله‌های نمونه در کارت‌ها، فهرست‌ها و تمرین‌ها به این زبان نشان داده می‌شود. با «English» هلندی را از راه انگلیسی یاد می‌گیرید؛ فارسی همچنان در جزئیات هر واژه هست.</span></div>
             <div class="field" id="focusWrap"><span class="lbl">ترتیب کارت‌های تازه</span><div class="seg" id="focusSeg"><button type="button" data-v="series">اول درس‌های کتاب</button><button type="button" data-v="order">به ترتیب افزودن</button></div><span class="hint">با «اول درس‌های کتاب»، کارت‌های تازهٔ De Opmaat زودتر از بسته‌های دیگر وارد مرور می‌شوند.</span></div>
             <div class="field"><span class="lbl">یادگیری مرحله‌به‌مرحله</span><div class="seg" id="pathSeg"><button type="button" data-v="on">روشن</button><button type="button" data-v="off">خاموش</button></div><span class="hint">با «روشن»، هر روز اول هدف روزانهٔ مرور انجام می‌شود؛ بعد مکالمه باز می‌شود و بعد از مکالمه، تمرین. منابع، آهنگ‌ها و یوتیوب همیشه باز هستند.</span></div>
@@ -1893,7 +1991,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۴</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۶</p>
     </section>
 
 </main>
@@ -1930,7 +2028,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=24"></script>
+<script src="packs.js?v=26"></script>
 <script>
 (function(){
 'use strict';
@@ -1988,7 +2086,7 @@ async function copyOrShow(text,okMsg){
 const DEFAULT_CFG={deviceId:'',seeded:false,theme:'system',lang:'nl',gloss:'both',
   gh:{enabled:false,owner:'',repo:'vazheyar-data',branch:'',token:'',auto:true,lastSync:0,lastError:''},
   tts:{nl:'',en:'',rate:0.9,auto:true},
-  review:{newPerDay:15,dir:'auto',budget:50}};
+  review:{newPerDay:15,dir:'auto',budget:50,intro:true}};
 function loadCfg(){const d=JSON.parse(JSON.stringify(DEFAULT_CFG));const s=readLS(CFG_KEY);if(s){Object.assign(d,s);d.gh=Object.assign({},DEFAULT_CFG.gh,s.gh||{});d.tts=Object.assign({},DEFAULT_CFG.tts,s.tts||{});d.review=Object.assign({},DEFAULT_CFG.review,s.review||{})}if(!d.deviceId)d.deviceId=uid().slice(0,8);return d}
 let cfg=loadCfg();
 const saveCfg=()=>writeLS(CFG_KEY,cfg);
@@ -2044,7 +2142,7 @@ function cleanVerb(v){if(!v||typeof v!=='object')return null;const o={};['ik','j
 function isVerb(i){return!!i.verb}
 function emptyData(){return{items:[],deleted:{},log:{},done:{}}}
 function normData(d){d=d||{};if(d.data&&d.data.items)d=d.data;return{items:Array.isArray(d.items)?d.items.filter(i=>i&&i.id&&i.text).map(cleanItem):[],deleted:(d.deleted&&typeof d.deleted==='object')?d.deleted:{},log:(d.log&&typeof d.log==='object')?d.log:{},done:(d.done&&typeof d.done==='object')?d.done:{},own:(d.own&&typeof d.own==='object')?d.own:{}}}
-function cleanItem(i){return{id:String(i.id),lang:i.lang==='en'?'en':'nl',type:i.type==='sentence'?'sentence':'word',text:String(i.text||''),article:(i.article==='de'||i.article==='het')?i.article:'',plural:i.plural||'',fa:i.fa||'',en:i.en||'',example:i.example||'',exampleFa:i.exampleFa||'',note:i.note||'',tags:Array.isArray(i.tags)?i.tags.filter(Boolean).map(String):[],verb:cleanVerb(i.verb),exs:Array.isArray(i.exs)?i.exs.filter(e=>e&&e.t).map(e=>({t:String(e.t),fa:String(e.fa||''),en:String(e.en||''),u:e.u?1:0})):[],etym:i.etym?String(i.etym):'',pack:i.pack?String(i.pack):'',img:typeof i.img==='string'&&i.img.length<=16?i.img:'',pic:i.pic&&typeof i.pic==='object'&&i.pic.id?{id:String(i.pic.id),up:i.pic.up?1:0}:null,susp:!!i.susp,created:+i.created||0,updated:+i.updated||0,srs:i.srs&&typeof i.srs==='object'?{ivl:+i.srs.ivl||0,ease:+i.srs.ease||2.5,reps:+i.srs.reps||0,lapses:+i.srs.lapses||0,due:+i.srs.due||0,last:+i.srs.last||0,first:i.srs.first||''}:null}}
+function cleanItem(i){return{id:String(i.id),lang:i.lang==='en'?'en':'nl',type:i.type==='sentence'?'sentence':'word',text:String(i.text||''),article:(i.article==='de'||i.article==='het')?i.article:'',plural:i.plural||'',fa:i.fa||'',en:i.en||'',example:i.example||'',exampleFa:i.exampleFa||'',note:i.note||'',tags:Array.isArray(i.tags)?i.tags.filter(Boolean).map(String):[],verb:cleanVerb(i.verb),exs:Array.isArray(i.exs)?i.exs.filter(e=>e&&e.t).map(e=>({t:String(e.t),fa:String(e.fa||''),en:String(e.en||''),u:e.u?1:0})):[],etym:i.etym?String(i.etym):'',pack:i.pack?String(i.pack):'',img:typeof i.img==='string'&&i.img.length<=16?i.img:'',pic:i.pic&&typeof i.pic==='object'&&i.pic.id?{id:String(i.pic.id),up:i.pic.up?1:0}:null,susp:!!i.susp,hook:i.hook?String(i.hook).slice(0,300):'',introAt:+i.introAt||0,seen:Array.isArray(i.seen)?i.seen.filter(x=>x&&+x.t).slice(-30).map(x=>({t:+x.t,w:String(x.w||'other').slice(0,12),h:x.h==='h'?'h':'s'})):[],created:+i.created||0,updated:+i.updated||0,srs:i.srs&&typeof i.srs==='object'?{ivl:+i.srs.ivl||0,ease:+i.srs.ease||2.5,reps:+i.srs.reps||0,lapses:+i.srs.lapses||0,due:+i.srs.due||0,last:+i.srs.last||0,first:i.srs.first||''}:null}}
 let db=normData(readLS(DATA_KEY));
 if(!cfg.seeded){cfg.seeded=true;saveCfg()}
 let dirty=false;
@@ -2588,6 +2686,7 @@ function wordSheet(it){
   b+=`<div>${enMain(it)?`<p class="ws-fa lat gl-en">${esc(it.en)}</p><p class="ws-sub">${esc(it.fa)}</p>`:`<p class="ws-fa">${esc(it.fa)}</p>${it.en&&gl(it)!=='fa'?`<p class="ws-en">${esc(it.en)}</p>`:''}`}${it.plural?`<p class="hint" style="margin:4px 0 0">جمع: <span class="lat">de ${esc(it.plural)}</span></p>`:''}</div>`;
   if(it.type==='word')b+=chunkHTML(it);
   if(own){const st=statusOf(own);b+=`<div class="btn-row"><span class="pill ${st.k}">${st.t}</span>${own.pack?'':'<span class="tag">افزودهٔ شما</span>'}</div>`}
+  if(own&&own.lang==='nl'){const sn=own.seen||[],ls=sn.slice().sort((a,b)=>b.t-a.t)[0];b+=`<div class="ws-seen"><span>${sn.length?`در دنیای واقعی ${faNum(sn.length)} بار؛ آخرین بار ${hnWhen(ls.t)}، ${hnWhereFa(ls.w)}`:'این واژه را بیرون دیدید یا شنیدید؟'}</span><span class="btn-row"><button class="btn sm ghost" type="button" data-ws-seen="s">امروز دیدمش</button><button class="btn sm ghost" type="button" data-ws-seen="h">شنیدمش</button></span></div>`}
   if(it.type!=='sentence'||ex.length){
   b+=`<div class="ws-sec"><h3>جمله‌های نمونه</h3><div class="ex-list">${ex.length?ex.map((e,k)=>`<div class="ex${e.u?' mine':''}"><div class="ex-body"><p class="lat">${esc(e.t)}</p>${trHTML(e,it.lang)}${e.u?'<p class="hint" style="margin:0">جملهٔ شما</p>':''}</div>${speakBtn('data-ws-ex="'+k+'"',1)}</div>`).join(''):'<p class="hint" style="margin:0">هنوز جملهٔ نمونه‌ای ندارد.</p>'}</div>`;
   if(own)b+=`<div class="add-ex"><b style="font-size:14px">جملهٔ خودتان را اضافه کنید</b><input type="text" id="wsExT" class="lat ltr" placeholder="${it.lang==='nl'?'Ik ga morgen naar …':'I usually …'}" spellcheck="false"><input type="text" id="wsExFa" placeholder="ترجمهٔ فارسی (اختیاری)"><div class="btn-row"><button class="btn sm primary" type="button" id="wsExAdd">افزودن جمله</button></div></div>`;
@@ -2596,6 +2695,7 @@ function wordSheet(it){
   if(it.type!=='sentence')b+=`<div class="ws-sec"><h3>واژه‌شناسی: ریشه و ساختار</h3>${etymHTML(it)}</div>`;
   if(it.verb)b+=`<div class="ws-sec"><h3>صرف فعل</h3>${verbHTML(it)}</div>`;
   if(it.note)b+=`<div class="ws-sec"><h3>نکته</h3><div class="card-note">${esc(it.note)}</div></div>`;
+  if(own&&own.hook)b+=`<div class="ws-sec"><h3>ترفند یادآوری شما</h3><div class="card-note hook">${esc(own.hook)}</div></div>`;
   b+=`<div class="ws-sec"><div class="dict">${dictLinks(it.text,it.lang)}</div></div>`;
   const foot=own?`<button class="btn" type="button" data-ws-edit>ویرایش</button><button class="btn ghost" type="button" data-ws-susp>${own.susp?'برگرداندن به مرور':'کنار گذاشتن'}</button>`
     :`<button class="btn primary" type="button" data-ws-add>افزودن به کارت‌های من</button>`;
@@ -2607,6 +2707,7 @@ $('#sheet').addEventListener('click',e=>{
   const exb=e.target.closest('[data-ws-ex]');if(exb){const ex=exList(it)[+exb.dataset.wsEx];if(ex)speak(ex.t,it.lang);return}
   if(e.target.closest('#wsExAdd')){const t=$('#wsExT').value.trim(),fa=$('#wsExFa').value.trim();if(!t){$('#wsExT').focus();return}
     it.exs=(it.exs||[]).concat([{t,fa,en:'',u:1}]);it.updated=Date.now();clozeCache.clear();saveData();toast('جمله اضافه شد');wordSheet(it);return}
+  const wsn=e.target.closest('[data-ws-seen]');if(wsn){const h=wsn.dataset.wsSeen;if(huntSeen(it,h==='h'?'talk':'other',h)){saveData();toast('ثبت شد؛ کارت کمی محکم‌تر شد.');wordSheet(it);if(currentView==='hunt')renderHunt()}return}
   if(e.target.closest('[data-ws-edit]')){closeSheet();showView('manage');editItem(it);return}
   if(e.target.closest('[data-ws-susp]')){it.susp=!it.susp;it.updated=Date.now();saveData();toast(it.susp?'کارت کنار گذاشته شد':'کارت به مرور برگشت');wordSheet(it);if(currentView==='manage')renderList();return}
   if(e.target.closest('[data-ws-add]')){addPackItem(it);wordSheet(it);rerender();return}
@@ -2658,11 +2759,12 @@ document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','course','exam','progress','life','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
+const VIEWS=['today','course','exam','progress','life','talk','hunt','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
   if((currentView==='stories'||currentView==='life'||currentView==='drills')&&v!==currentView){stopSpeech();if(stCur){stCur.tok++;stCur.on=false}lfPlay.tok++}
+  if(currentView==='talk'&&v!=='talk'&&typeof tkStop==='function')tkStop();
   if(inSrcView()&&v!==currentView){const au=$('#srcAudio');if(au&&!(playlist&&!au.paused))au.pause();const sb=$('#selBar');if(sb)sb.hidden=true}
   currentView=v;document.documentElement.dataset.view=v;if(sheetOpen())closeSheet();
   const sv=VIEW_SEC[v]?'sources':v;VIEWS.forEach(x=>{const el=$('#v-'+x);if(el)el.hidden=x!==sv});
@@ -2671,7 +2773,7 @@ function showView(v,noHash){
   if(v==='today')renderToday();
   if(v==='course')renderCourse();
   if(v==='exam')renderExam();else if(typeof exLeave==='function')exLeave();
-  if(v==='life')renderLife();if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
+  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt')renderHunt();if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
   if(v==='grammar')renderGrammar();
   if(v==='phrases')openPhrases();
   if(v==='core')renderCore();
@@ -2773,7 +2875,7 @@ function renderToday(){
   let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY),lang);if(c>0)streak++;else if(k===0)continue;else break}
   $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK,lang));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
   const tips=TIPS[lang];$('#tip').innerHTML=tips[tipIdx%tips.length];
-  renderMapCard();renderPath();renderCourseToday();renderLearnToday();renderLisToday();renderCoreLine();renderLifeToday();
+  renderMapCard();renderPath();renderCourseToday();renderLearnToday();renderLisToday();renderCoreLine();renderLifeToday();renderTalkToday();renderHuntToday();
 }
 $('#nextTip').addEventListener('click',()=>{tipIdx++;const tips=TIPS[L()];$('#tip').innerHTML=tips[tipIdx%tips.length]});
 $('#startToday').addEventListener('click',e=>{if(e.currentTarget.dataset.lib){const u=CRS()&&currentUnit();if(u){cOpen=u.id;showView('course')}else showView('library');return}startSession()});
@@ -2848,10 +2950,51 @@ function backHTML(it,dir){
   const shown=dir==='cloze'?ex.slice(1,3):ex.slice(0,2);if(shown.length)h+=exBlock(shown,it.lang);
   const ety=it.type!=='sentence'?etymShort(it):'';if(ety)h+=`<div class="card-note" style="background:var(--acc-soft)">${ety}</div>`;
   if(it.note)h+=`<div class="card-note">${esc(it.note)}</div>`;
+  if(it.hook)h+=`<div class="card-note hook"><b>ترفند شما:</b> ${esc(it.hook)}</div>`;
   return h+'</div>';
+}
+/* v26: a new word is first introduced (picture, sound, chunk, examples, the learner's own sentence and memory hook),
+   and is asked a few cards later. «از قبل بلدم» skips straight to a 4-day interval. */
+const needsIntro=it=>cfg.review.intro!==false&&isNew(it)&&!it.introAt;
+function introHTML(it){
+  const ex=exList(it).slice(0,2),ety=it.type!=='sentence'?etymShort(it):'',nl=it.lang==='nl';
+  let h=`<div class="card-meta"><span class="lang-badge ${it.lang}">${it.lang.toUpperCase()}</span><span>${typeFa(it)} تازه، اول آشنا شوید</span></div>`;
+  h+=picHTML(it)+wordHTML(it)+sayRow()+meanHTML(it,'card-fa');
+  if(it.plural)h+=`<div class="card-plural">جمع: <span class="lat">de ${esc(it.plural)}</span></div>`;
+  h+=verbHTML(it)+(it.type==='word'?chunkHTML(it):'');
+  if(ex.length)h+=exBlock(ex,it.lang);
+  if(ety)h+=`<div class="card-note" style="background:var(--acc-soft)">${ety}</div>`;
+  if(it.note)h+=`<div class="card-note">${esc(it.note)}</div>`;
+  h+=`<div class="add-ex intro-make"><b style="font-size:14px">این ${it.type==='sentence'?'جمله':'واژه'} را مال خودتان کنید</b>
+<label class="lbl" for="inSent">${it.type==='sentence'?'جمله را کمی عوض کنید تا دربارهٔ زندگی خودتان شود':'یک جملهٔ کوتاه دربارهٔ زندگی خودتان، با همین واژه'}</label>
+<input type="text" id="inSent" class="lat ltr" dir="ltr" spellcheck="false" autocomplete="off" placeholder="${nl?'Ik … / Mijn … / Bij ons …':'I … / My …'}">
+<label class="lbl" for="inHook">ترفند یادآوری</label>
+<input type="text" id="inHook" autocomplete="off" placeholder="یک تصویر ذهنی، شباهت صدا یا جایی که این واژه را دیده‌اید" value="${esc(it.hook||'')}">
+<span class="hint">هر دو اختیاری است. جمله‌تان با برچسب «جملهٔ شما» روی کارت می‌ماند و ترفند پشت کارت دیده می‌شود.</span></div>`;
+  h+=`<div class="btn-row intro-go"><button class="btn primary" type="button" data-intro-ok>آشنا شدم، چند کارت بعد بپرس</button><button class="btn ghost" type="button" data-intro-know>از قبل بلدم</button></div>`;
+  return h;
+}
+function introSave(it){
+  const s=($('#inSent')||{}).value,hk=($('#inHook')||{}).value;const t=String(s||'').trim().replace(/\s+/g,' ');
+  if(t&&norm(t)!==norm(it.text)){it.exs=it.exs||[];if(!it.exs.some(e=>norm(e.t)===norm(t)))it.exs.push({t,fa:'',en:'',u:1})}
+  const k=String(hk||'').trim().slice(0,300);if(k)it.hook=k;
+  it.introAt=Date.now();it.updated=Date.now();db.done.introN=(+db.done.introN||0)+1;
+}
+function introDone(know){
+  if(!ses||!ses.intro)return;const it=curItem();if(!it)return;
+  introSave(it);ses.intro=false;ses.queue.shift();
+  if(know){lastUndo=null;$('#revUndo').hidden=true;it.srs=schedule(it.srs,3,Date.now(),it.lang);logReview(it.lang);ses.done++;toast('«'+it.text+'» برای چند روز بعد گذاشته شد.')}
+  else ses.queue.splice(Math.min(3,ses.queue.length),0,it.id);
+  saveData(30000);showCard();
 }
 function showCard(){
   const it=curItem();if(!it){endSession();return}
+  if(needsIntro(it)){
+    ses.intro=true;ses.flipped=false;ses.cardDir='intro';ses.typed=null;ses.sugg=null;ses.t0=Date.now();
+    $('#cardBody').innerHTML=introHTML(it);$('#flipBtn').hidden=true;$('#grades').hidden=true;
+    const rem=ses.queue.length;$('#revBar').style.width=(ses.done/(ses.done+rem)*100)+'%';$('#revCount').textContent=faNum(rem)+' کارت مانده';
+    if(cfg.tts.auto)speakItem(it);return}
+  ses.intro=false;
   ses.flipped=false;ses.cardDir=pickDir(it);ses.typed=null;ses.sugg=null;ses.t0=Date.now();
   $('#cardBody').innerHTML=frontHTML(it,ses.cardDir);
   $('#flipBtn').hidden=false;$('#grades').hidden=true;
@@ -2878,7 +3021,7 @@ function typedHTML(it,t){
   return`<div class="typed ${t.k}"><b>${esc(m)}</b>${t.v&&t.k!=='ok'?`<span>پاسخ شما: <span class="lat" dir="ltr">${esc(t.v)}</span></span>`:''}</div>`;
 }
 function flip(){
-  if(!ses||ses.flipped)return;const it=curItem();if(!it)return;ses.flipped=true;
+  if(!ses||ses.flipped||ses.intro)return;const it=curItem();if(!it)return;ses.flipped=true;
   if(ses.cardDir==='type'&&!ses.typed){const i=$('#typeIn'),v=i?i.value:'';ses.typed=Object.assign({v},checkTyped(it,v));ses.sugg=ses.typed.g;if(i)i.disabled=true}
   $('#cardBody').insertAdjacentHTML('beforeend',backHTML(it,ses.cardDir));
   $$('.grade',$('#grades')).forEach(b=>{$('small',b).textContent=ivlLabel(previewIvl(it.srs,+b.dataset.g));b.classList.toggle('sugg',ses.sugg!=null&&+b.dataset.g===ses.sugg)});
@@ -2919,9 +3062,11 @@ $('#card').addEventListener('click',e=>{
   if(e.target.closest('[data-speak-3]')){if(it)speakTimes(fullText(it),it.lang,3);return}
   if(e.target.closest('[data-speak-cloze]')){const c=exList(it)[0];if(c)speak(c.t,it.lang);return}
   if(e.target.closest('[data-listen-play]')){if(it)speak(it.text,it.lang);return}
+  if(ses.intro){if(e.target.closest('[data-intro-ok]'))introDone();else if(e.target.closest('[data-intro-know]'))introDone(true);return}
   if(e.target.closest('#typeForm,.typed'))return;
   if(!ses.flipped)flip();
 });
+$('#card').addEventListener('keydown',e=>{if(ses&&ses.intro&&e.key==='Enter'&&e.target.closest('.intro-make')){e.preventDefault();introDone()}});
 $('#card').addEventListener('submit',e=>{if(e.target.id!=='typeForm')return;e.preventDefault();if(ses&&!ses.flipped)flip()});
 document.addEventListener('click',e=>{if(e.target.closest('#revMore'))startSession(true)});
 $('#grades').addEventListener('click',e=>{const b=e.target.closest('.grade');if(b)grade(+b.dataset.g)});
@@ -2936,19 +3081,19 @@ $('#revSusp').addEventListener('click',async()=>{
 });
 $('#revEdit').addEventListener('click',async()=>{
   const it=curItem();if(!it)return;
-  if(await editModal(it)){saveData();clozeCache.clear();if(ses.cardDir==='cloze'&&!clozeOf(it))ses.cardDir='fwd';const f=ses.flipped;$('#cardBody').innerHTML=frontHTML(it,ses.cardDir);ses.flipped=false;if(f)flip();toast('کارت ذخیره شد')}
+  if(await editModal(it)){saveData();clozeCache.clear();if(ses.cardDir==='cloze'&&!clozeOf(it))ses.cardDir='fwd';if(ses.intro){$('#cardBody').innerHTML=introHTML(it);toast('کارت ذخیره شد');return}const f=ses.flipped;$('#cardBody').innerHTML=frontHTML(it,ses.cardDir);ses.flipped=false;if(f)flip();toast('کارت ذخیره شد')}
 });
 async function editModal(it){
   const nl=it.lang==='nl',noun=nl&&it.type==='word'&&!isVerb(it);
   const f=(id,label,val,cls)=>`<div class="field"><label class="lbl" for="${id}">${label}</label><input type="text" id="${id}" class="${cls||''}" value="${esc(val)}"></div>`;
-  const html=`<div class="stack" style="gap:10px">${f('eText','واژه یا جمله',it.text,'lat ltr')}${noun?`<div class="field"><span class="lbl">حرف تعریف</span><div class="seg" id="eArt"><button type="button" data-v="">ندارد</button><button type="button" data-v="de" class="lat">de</button><button type="button" data-v="het" class="lat">het</button></div></div>`:''}${f('eFa','معنی فارسی',it.fa)}${nl?f('eEn','معنی انگلیسی',it.en,'lat ltr'):''}${f('eEx','جملهٔ نمونه',it.example,'lat ltr')}${f('eExFa','ترجمهٔ جملهٔ نمونه',it.exampleFa)}${f('eEtym','واژه‌شناسی',etymManual(it))}${f('eNote','نکته',it.note)}</div>`;
+  const html=`<div class="stack" style="gap:10px">${f('eText','واژه یا جمله',it.text,'lat ltr')}${noun?`<div class="field"><span class="lbl">حرف تعریف</span><div class="seg" id="eArt"><button type="button" data-v="">ندارد</button><button type="button" data-v="de" class="lat">de</button><button type="button" data-v="het" class="lat">het</button></div></div>`:''}${f('eFa','معنی فارسی',it.fa)}${nl?f('eEn','معنی انگلیسی',it.en,'lat ltr'):''}${f('eEx','جملهٔ نمونه',it.example,'lat ltr')}${f('eExFa','ترجمهٔ جملهٔ نمونه',it.exampleFa)}${f('eEtym','واژه‌شناسی',etymManual(it))}${f('eNote','نکته',it.note)}${f('eHook','ترفند یادآوری',it.hook||'')}</div>`;
   const p=ask({title:'ویرایش کارت',html,ok:'ذخیره'});
   if(noun){const s=$('#eArt');setSeg(s,it.article||'');bindSeg(s)}
   const ok=await p;if(!ok)return false;
   const v=id=>{const e=$('#'+id);return e?e.value.trim():''};
   if(!v('eText')||!v('eFa')){toast('واژه و معنی فارسی نمی‌توانند خالی باشند.');return false}
   const et=v('eEtym');
-  Object.assign(it,{text:v('eText'),fa:v('eFa'),example:v('eEx'),exampleFa:v('eExFa'),note:v('eNote'),updated:Date.now()});
+  Object.assign(it,{text:v('eText'),fa:v('eFa'),example:v('eEx'),exampleFa:v('eExFa'),note:v('eNote'),hook:v('eHook').slice(0,300),updated:Date.now()});
   it.etym=(et&&et!==((PK.get(it.id)||{}).src||{}).et)?et:'';
   if(nl)it.en=v('eEn');if(noun)it.article=segVal($('#eArt'));
   return true;
@@ -2964,12 +3109,12 @@ function renderDlgIndex(){
   $('#dlgIndex').hidden=false;$('#dlgPlayer').hidden=true;
   const lang=L(),src=dlgSrcFor(lang),ds=DIALOGS.filter(d=>d.lang===lang&&seriesOf(d)===src);
   srcSeg($('#dlgSrc'),seriesList(DIALOGS,lang),src);
-  $('#dlgTitle').textContent=src?'مکالمه‌های '+src:'مکالمه‌های '+LANG_FA[lang];
+  $('#dlgTitle').textContent=src?(src.startsWith('گفت‌وگو')?src:'مکالمه‌های '+src):'مکالمه‌های '+LANG_FA[lang];
   const lv=LEVELS.filter(l=>ds.some(d=>d.level===l));
   if(!dlgLevel||!lv.includes(dlgLevel))dlgLevel=lv.find(l=>ds.some(d=>d.level===l&&!db.done[d.id]))||lv[0];
   $('#dlgLevel').innerHTML=lv.map(l=>`<button type="button" data-v="${l}" aria-pressed="${l===dlgLevel}">${l}</button>`).join('');
   const done=ds.filter(d=>db.done[d.id]).length;
-  $('#dlgSub').textContent=ds.length?`${faNum(ds.length)} مکالمهٔ کاربردی در ${faNum(new Set(ds.map(d=>d.level+d.lesson.n)).size)} درس، ${faNum(done)} مکالمه تمرین شده`:'برای این زبان هنوز مکالمه‌ای نداریم.';
+  const byTopic=src.startsWith('گفت‌وگو');$('#dlgSub').textContent=ds.length?`${faNum(ds.length)} مکالمهٔ کاربردی در ${faNum(new Set(ds.map(d=>byTopic?d.lesson.n:d.level+d.lesson.n)).size)} ${byTopic?'موضوع':'درس'}، ${faNum(done)} مکالمه تمرین شده`:'برای این زبان هنوز مکالمه‌ای نداریم.';
   const byLesson=new Map();ds.filter(d=>d.level===dlgLevel).forEach(d=>{if(!byLesson.has(d.lesson.n))byLesson.set(d.lesson.n,{l:d.lesson,ds:[]});byLesson.get(d.lesson.n).ds.push(d)});
   $('#lessonList').innerHTML=Array.from(byLesson.values()).map(({l,ds})=>`<div class="panel lesson"><div class="lesson-num num">${faNum(l.n)}</div><div><p class="lesson-title">${esc(l.fa)}</p><p class="lesson-orig">${esc(l.orig)}</p><div class="dlg-chips">${ds.map(d=>`<button type="button" class="dlg-chip${db.done[d.id]?' done':''}" data-open="${esc(d.id)}">${db.done[d.id]?'<span class="ok">✓</span>':''}${esc(d.titleFa)} <span class="hint">${faNum(d.lines.length)} جمله</span>${cycDots(d)}</button>`).join('')}</div></div></div>`).join('')||'<div class="empty panel">مکالمه‌ای در این سطح نیست.</div>';
 }
@@ -3779,7 +3924,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=24',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=26',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -3802,7 +3947,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 24، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 26، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -5776,13 +5921,13 @@ function skillScores(){
   const letters=LIFE.letters.filter(l=>db.done['let:'+l.id]).length,sits=LIFE.sits.filter(s=>db.done['sit:'+s.id]).length;
   const spGood=Object.keys(db.done).filter(k=>k.startsWith('exsp:')&&exGet(k)===3).length;
   const wrDone=Object.keys(db.own||{}).filter(k=>k.startsWith('wr:')).length,ownV=Object.keys(db.own||{}).filter(k=>!k.startsWith('wr:')).length;
-  const gram=(GRAMMAR.nl||[]).filter(g=>gDone(g.id)).length,gramN=(GRAMMAR.nl||[]).length||1,mis=Object.keys(MISSIONS).filter(misDone).length;
+  const talkQ=+db.done.talkq||0;const gram=(GRAMMAR.nl||[]).filter(g=>gDone(g.id)).length,gramN=(GRAMMAR.nl||[]).length||1,mis=Object.keys(MISSIONS).filter(misDone).length;
   const c=(x,max)=>Math.min(1,x/max);
   return[
     {k:'woorden',t:'واژه',v:Math.round(100*c(known,2500)),d:`${faNum(known)} واژه و جمله را دست‌کم یک بار مرور کرده‌اید.`,go:'review',gt:'مرور کارت‌ها'},
     {k:'luisteren',t:'شنیدن',v:Math.round(100*(0.4*c(dlgW,120)+0.3*c(lisMin,600)+0.15*c(stories,39)+0.15*drAvg/100)),d:`${faNum(dl.filter(d=>db.done[d.id]).length)} مکالمه، ${faNum(Math.round(lisMin))} دقیقه گوش دادن به منابع، تمرین عدد ${faNum(Math.round(drAvg))}٪.`,go:'dialogs',gt:'مکالمه‌ها'},
     {k:'lezen',t:'خواندن',v:Math.round(100*(0.5*c(stories,39)+0.3*c(srcDone,20)+0.2*c(letters,6))),d:`${faNum(Object.keys(STORIES).filter(u=>storyReads(u)).length)} داستان، ${faNum(srcDone)} منبع، ${faNum(letters)} نامهٔ رسمی.`,go:'stories',gt:'داستان‌ها'},
-    {k:'spreken',t:'گفتار',v:Math.round(100*(0.4*c(roleW,40)+0.3*c(spGood,32)+0.3*c(mis+sits/2,39))),d:`نقش‌آفرینی در مکالمه‌ها، ${faNum(spGood)} پرسش گفتاری «خوب»، ${faNum(mis)} مأموریت واقعی.`,go:'life',gt:'موقعیت‌های روزمره'},
+    {k:'spreken',t:'گفتار',v:Math.round(100*(0.3*c(roleW,40)+0.25*c(spGood,32)+0.25*c(mis+sits/2,39)+0.2*c(talkQ,200))),d:`نقش‌آفرینی در مکالمه‌ها، ${faNum(talkQ)} پاسخ گفتاری به سؤال‌های «حرف بزنیم»، ${faNum(spGood)} پرسش امتحانی «خوب»، ${faNum(mis)} مأموریت واقعی.`,go:'talk',gt:'حرف بزنیم'},
     {k:'schrijven',t:'نوشتار',v:Math.round(100*(0.4*c(wrDone,24)+0.3*c(ownV,20)+0.3*gram/gramN)),d:`${faNum(wrDone)} تکلیف نوشتاری، ${faNum(ownV)} نسخهٔ خودتان از مکالمه‌ها، ${faNum(gram)} درس دستور.`,go:'exam',gt:'تمرین نوشتار'}];
 }
 const lvlOf=v=>v<15?'شروع':v<40?'A1':v<70?'A2':v<90?'نزدیک B1':'B1';
@@ -5790,7 +5935,7 @@ function weekActivity(){const wk=weekAgo(),day=dayKey(Date.now()-6*DAY);
   let rev=0;for(const[k,o]of Object.entries(db.log||{}))if(k>=day)for(const[dv,c]of Object.entries(o))if(dv.endsWith('@nl')||!dv.includes('@'))rev+=+c||0;
   const lisMin=Math.round(Object.entries(db.done).filter(([k])=>{if(!k.startsWith('lis:nl:'))return false;return k.split(':')[2]>=day}).reduce((a,[,v])=>a+(+v||0),0)/60);
   const n=p=>Object.entries(db.done).filter(([k,v])=>p(k)&&+v>=wk).length;
-  return[['مرور کارت',rev],['دقیقه گوش دادن',lisMin],['مکالمه',n(k=>/^(nl|th|op|cu)-/.test(k))],['داستان',n(k=>k.startsWith('storyt:'))],['موقعیت',n(k=>k.startsWith('sit:'))],['مأموریت',n(k=>k.startsWith('mis:'))],['نوشته',Object.values(db.own||{}).filter(o=>(+o.u||0)>=wk).length]];
+  return[['مرور کارت',rev],['دقیقه گوش دادن',lisMin],['مکالمه',n(k=>/^(nl|th|op|cu|gs)-/.test(k))],['داستان',n(k=>k.startsWith('storyt:'))],['موقعیت',n(k=>k.startsWith('sit:'))],['موضوع گفت‌وگو',n(k=>k.startsWith('talkt:'))],['واژهٔ شکارشده',db.items.reduce((a,i)=>a+(i.seen||[]).filter(s=>s.t>=wk).length,0)],['مأموریت',n(k=>k.startsWith('mis:'))],['نوشته',Object.values(db.own||{}).filter(o=>(+o.u||0)>=wk).length]];
 }
 function renderProgress(){const sk=skillScores(),weak=sk.slice().sort((a,b)=>a.v-b.v)[0],act=weekActivity();
   const kan=(VZ.courses&&VZ.courses.nl?VZ.courses.nl.units:[]).filter(u=>MISSIONS[u.id]);
@@ -5803,6 +5948,220 @@ function renderProgress(){const sk=skillScores(),weak=sk.slice().sort((a,b)=>a.v
       <ul class="pg-kan">${kan.map(u=>{const m=MISSIONS[u.id],d=misDone(u.id);return`<li class="${d?'done':''}"><span class="pg-ck">${d?'✓':''}</span><span><span class="lat">${esc(m.kan[0])}</span><span class="hint">${esc(m.kan[1])}</span></span>${d?'':`<button class="btn sm ghost" type="button" data-cnow="${esc(u.id)}">مأموریت</button>`}</li>`}).join('')}</ul></section>`;
 }
 if(/[?&]debug/.test(location.search))window.__f={get dr(){return dr},LIFE,STORIES,MISSIONS,CHUNKS,DRILLS,drOk,skillScores,weekActivity,chunkOf,openSit,openLetter,openStory};
+
+/* ================= CONVERSATION TOPICS («حرف بزنیم») ================= */
+const TALK=VZ.talk||{groups:[],topics:[]};
+const TQ=TALK.topics.flatMap(t=>t.q.map((q,i)=>({t,i,q})));
+let tkTab='topics',tkCur=null,tk=null;const tkLv={v:'all'};
+const tkRec={rec:null,chunks:[],url:null,on:false};
+const talkN=id=>+db.done['talk:'+id]||0;
+bindSeg($('#tkTab'),v=>{tkTab=v;tkStop();tk=null;renderTalk()});
+function tkStop(){stopSpeech();try{if(tkRec.rec&&tkRec.rec.state==='recording')tkRec.rec.stop()}catch(e){}tkRec.on=false}
+function tkClearRec(){if(tkRec.url)URL.revokeObjectURL(tkRec.url);tkRec.url=null}
+function renderTalk(){
+  if(tkCur&&!tk){return}
+  $('#tkHome').hidden=false;$('#tkOne').hidden=true;setSeg($('#tkTab'),tkTab);const box=$('#tkList');
+  if(tkTab==='topics'){
+    const all=TALK.topics.length,done=TALK.topics.filter(t=>talkN(t.id)>=t.q.length).length;
+    box.innerHTML=`<p class="hint">${faNum(all)} موضوع، ${faNum(TQ.length)} سؤال با پاسخ نمونه. ${done?`${faNum(done)} موضوع را کامل تمرین کرده‌اید.`:'از «معرفی خودم» شروع کنید؛ در هر امتحان و هر آشنایی تازه به کارتان می‌آید.'}</p>`+
+      TALK.groups.map(g=>{const ts=TALK.topics.filter(t=>t.g===g.id);return ts.length?`<section class="lf-g"><h2 class="h2">${esc(g.fa)}</h2><div class="lf-cards">${ts.map(t=>{const n=talkN(t.id),full=n>=t.q.length;return`<button type="button" class="lf-card${full?' done':''}" data-tk="${t.id}"><b>${esc(t.fa)}</b><span class="lat">${esc(t.nl)}</span><span class="hint">${esc(t.lv)} · ${faNum(t.q.length)} سؤال</span>${n?`<span class="ok">${full?'✓ کامل تمرین شده':faNum(n)+' سؤال تمرین شده'}</span>`:''}</button>`}).join('')}</div></section>`:''}).join('');
+  }else if(tk&&tk.mix){box.innerHTML=tkRunHTML()}
+  else{const tot=+db.done.talkq||0;
+    box.innerHTML=`<div class="panel"><p style="margin-top:0">ده سؤال تصادفی از همهٔ موضوع‌ها، درست مثل یک گفت‌وگوی واقعی یا بخش گفتار امتحان: سؤال را می‌شنوید و بدون آمادگی جواب می‌دهید.</p>
+      <div class="seg" id="tkLv"><button type="button" data-v="all">همه</button><button type="button" data-v="A2">A2</button><button type="button" data-v="B1">B1</button></div>
+      <div class="btn-row" style="margin-top:12px"><button class="btn primary" type="button" data-tkmix>شروع ۱۰ سؤال</button></div>
+      ${tot?`<p class="hint" style="margin-bottom:0">تا امروز به ${faNum(tot)} سؤال جواب داده‌اید.</p>`:''}</div>`;
+    setSeg($('#tkLv'),tkLv.v);bindSeg($('#tkLv'),v=>{tkLv.v=v});
+  }
+}
+$('#tkList').addEventListener('click',e=>{
+  const c=e.target.closest('[data-tk]');if(c){openTalk(c.dataset.tk);return}
+  if(e.target.closest('[data-tkmix]')){const pool=TQ.filter(x=>tkLv.v==='all'||x.t.lv===tkLv.v);const qs=pool.slice().sort(()=>Math.random()-0.5).slice(0,10);tkStart(qs,true);return}
+  tkRunClick(e);
+});
+$('#tkBack').addEventListener('click',()=>{tkStop();tk=null;tkCur=null;renderTalk();window.scrollTo(0,0)});
+function openTalk(id){const t=TALK.topics.find(x=>x.id===id);if(!t)return;tkStop();tk=null;tkCur=t;if(currentView!=='talk')showView('talk');
+  $('#tkHome').hidden=true;$('#tkOne').hidden=false;const n=talkN(t.id);
+  $('#tkBody').innerHTML=`<div class="lf-head"><h1 class="view-title">${esc(t.fa)}</h1><p class="lat sub">${esc(t.nl)} <span class="pill lvl">${esc(t.lv)}</span></p></div>
+    <p class="lf-ctx">${esc(t.intro)}</p>
+    <div class="btn-row"><button class="btn primary" type="button" data-tkgo>▶ تمرین گفتار: ${faNum(t.q.length)} سؤال</button>${n?`<span class="hint">${n>=t.q.length?'✓ کامل تمرین شده':faNum(n)+' از '+faNum(t.q.length)+' سؤال تمرین شده'}</span>`:''}</div>
+    <section class="panel lf-sec" data-lnote="${esc('موضوع: '+t.fa)}"><h2 class="h2">واژه‌های کلیدی</h2><div class="lf-words">${t.w.map(w=>`<span class="lf-w">${sayB(w[0],1)}<span class="lat">${esc(w[0])}</span><span class="hint">${esc(w[1])}</span>${addB(w[0],w[1],'w')}</span>`).join('')}</div></section>
+    <section class="panel lf-sec" data-lnote="${esc('موضوع: '+t.fa)}"><h2 class="h2">جمله‌های آماده</h2><p class="hint" style="margin:0 0 8px">قالب‌هایی که جای خالی‌شان را با حرف خودتان پر می‌کنید.</p><div class="lf-lines">${t.x.map(x=>`<div class="lf-line">${sayB(x[0].replace(/\s*…\s*/g,' '))}<div class="lf-tx"><span class="lat nl">${esc(x[0])}</span><span class="fa">${esc(x[1])}</span></div>${addB(x[0],x[1])}</div>`).join('')}</div></section>
+    <section class="panel lf-sec" data-lnote="${esc('موضوع: '+t.fa)}"><h2 class="h2">سؤال‌ها و پاسخ نمونه</h2><p class="hint" style="margin:0 0 8px">پاسخ‌ها نمونه‌اند، نه جواب درست. اسم‌ها و جزئیات را با زندگی خودتان عوض کنید.</p>
+      <div class="tk-qs">${t.q.map((q,i)=>`<div class="tk-qr" data-i="${i}"><div class="lf-line">${sayB(q[0])}<div class="lf-tx"><span class="lat nl"><b>${esc(q[0])}</b></span><span class="fa">${esc(q[1])}</span><button class="link" type="button" data-tkans>پاسخ نمونه</button></div>${addB(q[0],q[1])}</div>
+        <div class="lf-line tk-a" hidden>${sayB(q[2])}<div class="lf-tx"><span class="lat nl">${esc(q[2])}</span><span class="fa">${esc(q[3])}</span></div>${addB(q[2],q[3])}</div></div>`).join('')}</div>
+      <div class="btn-row" style="margin-top:10px"><button class="btn sm" type="button" data-tkaddw>افزودن واژه‌ها و سؤال‌ها به کارت‌ها</button></div></section>`;
+  window.scrollTo(0,0);
+}
+$('#tkBody').addEventListener('click',e=>{if(!tkCur)return;const t=tkCur;
+  if(e.target.closest('[data-tkans]')){const r=e.target.closest('.tk-qr');const a=$('.tk-a',r);a.hidden=!a.hidden;return}
+  if(e.target.closest('[data-tkgo]')){tkStart(t.q.map((q,i)=>({t,i,q})),false);return}
+  if(e.target.closest('[data-tkaddw]')){let n=0;t.w.forEach(w=>{if(lifeCard(w[0],w[1],'w','موضوع: '+t.fa))n++});t.q.forEach(q=>{if(lifeCard(q[0],q[1],'s','موضوع: '+t.fa))n++});if(n)saveData();toast(n?faNum(n)+' مورد به کارت‌ها اضافه شد':'همه از قبل در کارت‌های شما بودند');return}
+  tkRunClick(e);
+});
+/* ---------- speaking practice: hear the question, answer aloud, compare with the model ---------- */
+function tkStart(qs,mix){tkStop();tkClearRec();tk={qs,mix,i:0,shown:false,done:0};cfg.talk=Object.assign({hide:false},cfg.talk||{});
+  if(mix){$('#tkList').innerHTML=tkRunHTML()}else{$('#tkBody').innerHTML=tkRunHTML()}window.scrollTo(0,0);setTimeout(()=>tkSay(),250)}
+function tkRunHTML(){const x=tk.qs[tk.i],q=x.q,hide=cfg.talk&&cfg.talk.hide&&!tk.shown;
+  return`<div class="panel tk-run"><div class="tk-top"><span class="pill">سؤال ${faNum(tk.i+1)} از ${faNum(tk.qs.length)}</span><span class="hint">${esc(x.t.fa)}</span>
+    <label class="check sm"><input type="checkbox" data-tkhide${cfg.talk&&cfg.talk.hide?' checked':''}><span>متن سؤال را نشان نده</span></label></div>
+    <div class="tk-q">${`<button class="btn icon-lg" type="button" data-tksay aria-label="دوباره بشنوید"><svg class="i"><use href="#i-speak"/></svg></button>`}<div>${hide?'<p class="hint">فقط گوش بدهید…</p>':`<p class="lat nl tk-qt">${esc(q[0])}</p><p class="fa hint">${esc(q[1])}</p>`}</div></div>
+    <p class="hint">بلند جواب بدهید: دست‌کم دو جمله، با یک دلیل (want، omdat) یا یک مثال. اشکالی ندارد اگر کامل نیست.</p>
+    <div class="btn-row"><button class="btn${tkRec.on?' accent':''}" type="button" data-tkrec>${tkRec.on?'■ پایان ضبط':'🎙 ضبط پاسخ من'}</button>${tkRec.url&&!tkRec.on?'<button class="btn" type="button" data-tkplay>▶ پاسخ من</button>':''}${tk.shown?'':'<button class="btn" type="button" data-tkshow>پاسخ نمونه</button>'}</div>
+    ${tk.shown?`<div class="tk-model"><div class="lf-line">${sayB(q[2])}<div class="lf-tx"><span class="lat nl">${esc(q[2])}</span><span class="fa">${esc(q[3])}</span></div>${addB(q[2],q[3])}</div><p class="hint" style="margin:6px 0 0">جملهٔ خوبی در پاسخ نمونه دیدید؟ با + به کارت‌ها اضافه‌اش کنید و دوباره، این بار با جزئیات زندگی خودتان، جواب بدهید.</p></div>`:''}
+    <div class="btn-row tk-nav"><button class="btn primary" type="button" data-tknext>${tk.i+1<tk.qs.length?'سؤال بعدی':'پایان'}</button><button class="btn ghost" type="button" data-tkquit>خروج</button></div></div>`}
+function tkPaint(){const html=tkRunHTML();if(tk.mix)$('#tkList').innerHTML=html;else $('#tkBody').innerHTML=html}
+function tkSay(){if(tk)speak(tk.qs[tk.i].q[0],'nl')}
+async function tkRecToggle(){
+  if(tkRec.on){try{tkRec.rec.stop()}catch(e){}return}
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||!window.MediaRecorder){toast('ضبط صدا در این مرورگر ممکن نیست. بدون ضبط هم بلند جواب بدهید.',4000);return}
+  let st;try{st=await navigator.mediaDevices.getUserMedia({audio:true})}catch(e){toast('برنامه اجازهٔ میکروفون ندارد. روی نماد قفل کنار نشانی سایت بزنید و میکروفون را مجاز کنید.',5000);return}
+  stopSpeech();tkClearRec();tkRec.chunks=[];tkRec.rec=new MediaRecorder(st);tkRec.on=true;
+  tkRec.rec.ondataavailable=e=>{if(e.data&&e.data.size)tkRec.chunks.push(e.data)};
+  tkRec.rec.onstop=()=>{st.getTracks().forEach(t=>t.stop());tkRec.on=false;tkRec.url=URL.createObjectURL(new Blob(tkRec.chunks,{type:tkRec.rec.mimeType||'audio/webm'}));if(tk)tkPaint()};
+  tkRec.rec.start();tkPaint();
+}
+function tkRunClick(e){if(!tk)return false;
+  const h=e.target.closest('[data-tkhide]');if(h){cfg.talk=Object.assign({},cfg.talk,{hide:h.checked});saveCfg();tkPaint();return true}
+  if(e.target.closest('[data-tksay]')){tkSay();return true}
+  if(e.target.closest('[data-tkrec]')){tkRecToggle();return true}
+  if(e.target.closest('[data-tkplay]')){if(tkRec.url){stopSpeech();new Audio(tkRec.url).play().catch(()=>{})}return true}
+  if(e.target.closest('[data-tkshow]')){tk.shown=true;tkPaint();speak(tk.qs[tk.i].q[2],'nl');return true}
+  if(e.target.closest('[data-tknext]')){tkCount();tk.i++;tk.shown=false;tkStop();tkClearRec();if(tk.i>=tk.qs.length){tkEnd();return true}tkPaint();window.scrollTo(0,0);setTimeout(tkSay,200);return true}
+  if(e.target.closest('[data-tkquit]')){tkStop();tkClearRec();const t=tkCur,mix=tk.mix;tk=null;if(!mix&&t)openTalk(t.id);else renderTalk();return true}
+  return false}
+function tkCount(){const x=tk.qs[tk.i];tk.done++;db.done.talkq=(+db.done.talkq||0)+1;
+  if(!tk.mix){const n=Math.max(talkN(x.t.id),tk.i+1);db.done['talk:'+x.t.id]=n}db.done['talkt:'+x.t.id]=Date.now();saveData()}
+function tkEnd(){const n=tk.done,mix=tk.mix,t=tkCur;tk=null;pathMark('nl','talk');
+  toast(`آفرین! به ${faNum(n)} سؤال بلند جواب دادید.`,4000);if(!mix&&t)openTalk(t.id);else renderTalk()}
+/* ---------- question of the day on Today ---------- */
+function renderTalkToday(){const el=$('#talkToday');if(!el)return;if(L()!=='nl'||!TQ.length){el.hidden=true;return}
+  const d=Math.floor((Date.now()-new Date().getTimezoneOffset()*60000)/DAY),x=TQ[(d*7919)%TQ.length];
+  el.hidden=false;el.innerHTML=`<div class="feature-top"><span class="feature-title">سؤال گفت‌وگوی امروز</span><button class="link" type="button" data-tkopen="${esc(x.t.id)}">${esc(x.t.fa)}</button></div>
+    <div class="lf-line">${sayB(x.q[0])}<div class="lf-tx"><span class="lat nl"><b>${esc(x.q[0])}</b></span><span class="fa">${esc(x.q[1])}</span></div></div>
+    <p class="hint" style="margin:6px 0">امروز یک بار بلند جوابش را بدهید، مثلاً در راه کار. بعد پاسخ نمونه را ببینید.</p>
+    <details class="tk-day"><summary>پاسخ نمونه</summary><div class="lf-line">${sayB(x.q[2])}<div class="lf-tx"><span class="lat nl">${esc(x.q[2])}</span><span class="fa">${esc(x.q[3])}</span></div>${addB(x.q[2],x.q[3])}</div></details>`;
+}
+document.addEventListener('click',e=>{const o=e.target.closest('[data-tkopen]');if(o){openTalk(o.dataset.tkopen)}});
+if(/[?&]debug/.test(location.search))window.__t={TALK,TQ,get tk(){return tk},openTalk,tkStart,renderTalkToday,talkN};
+
+/* ================= WORD HUNT (v26) =================
+   A word seen or heard outside becomes a card on the spot (with the sentence, the place and an optional photo).
+   Every week ten recently learned words are put on a hunt list; a «دیدم/شنیدم» tick records where the word was met
+   and strengthens the card a little (ease +0.05, once a day). The record lives on the item as it.seen=[{t,w,h}]. */
+const HN_WHERE=[['street','تابلو و خیابان'],['mail','نامه و ایمیل'],['shop','فروشگاه'],['work','سر کار'],['school','مدرسه و کلاس'],['media','تلویزیون و رادیو'],['talk','گفت‌وگو'],['other','جای دیگر']];
+const HN_HEAR=new Set(['media','talk']);
+const hnWhereFa=w=>(HN_WHERE.find(x=>x[0]===w)||HN_WHERE[HN_WHERE.length-1])[1];
+let hnHitsList=[],hnBlob=null,hnTimer=0;
+function hnWeekStart(t=Date.now()){const d=new Date(t);d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d.getTime()}
+function hnWhen(t){const a=new Date();a.setHours(0,0,0,0);const n=Math.round((a.getTime()-new Date(t).setHours(0,0,0,0))/DAY);
+  return n<=0?'امروز':n===1?'دیروز':n<7?faNum(n)+' روز پیش':n<60?faNum(Math.round(n/7))+' هفته پیش':faNum(Math.round(n/30))+' ماه پیش'}
+const hnSeenIn=(it,from)=>(it.seen||[]).filter(s=>s.t>=from);
+function hnHash(s){let x=2166136261;for(const c of s){x^=c.charCodeAt(0);x=Math.imul(x,16777619)>>>0}x^=x>>>15;x=Math.imul(x,0x2c1b3c6d)>>>0;x^=x>>>12;return x>>>0}
+/* the weekly list: words met in the last six weeks first (nouns and verbs, which are the ones you can actually spot), then older ones */
+function hnWeek(){
+  const wk=hnWeekStart();cfg.hunt=cfg.hunt||{};
+  const ok=i=>i&&i.lang==='nl'&&i.type==='word'&&!i.susp&&i.srs&&i.srs.last&&i.text.length>=3;
+  if(cfg.hunt.wk===wk&&Array.isArray(cfg.hunt.ids)&&cfg.hunt.ids.length){const l=cfg.hunt.ids.map(getItem).filter(ok);if(l.length)return l}
+  const salt=String(wk)+':'+(cfg.hunt.salt||0),since=dayKey(Date.now()-42*DAY);
+  const all=db.items.filter(ok).map(i=>({i,h:hnHash(i.id+'|'+salt),r:(i.srs.first||'')>=since?0:1,c:(i.article||i.verb||isVerb(i))?0:1}));
+  all.sort((a,b)=>a.r-b.r||a.c-b.c||a.h-b.h);
+  const ids=all.slice(0,10).map(x=>x.i.id);cfg.hunt.wk=wk;cfg.hunt.ids=ids;saveCfg();return ids.map(getItem);
+}
+function huntSeen(it,w,h){
+  if(!it)return false;const now=Date.now(),today=dayKey(now);it.seen=Array.isArray(it.seen)?it.seen:[];
+  if(it.seen.some(s=>dayKey(s.t)===today&&s.h===h)){toast('این را امروز ثبت کرده‌اید.');return false}
+  const credit=!it.seen.some(s=>dayKey(s.t)===today);
+  it.seen.push({t:now,w:w||'other',h:h==='h'?'h':'s'});if(it.seen.length>30)it.seen=it.seen.slice(-30);
+  if(!(it.tags||[]).includes('شکار'))it.tags=(it.tags||[]).concat(['شکار']);
+  if(credit&&it.srs&&it.srs.last)it.srs.ease=Math.min(3,Math.round(((+it.srs.ease||2.5)+0.05)*100)/100);
+  it.updated=now;return true;
+}
+function renderHunt(){
+  if(!$('#v-hunt'))return;
+  const seg=$('#hnWhere');if(!seg.childElementCount){seg.innerHTML=HN_WHERE.map(([k,t])=>`<button type="button" data-v="${k}">${t}</button>`).join('');bindSeg(seg);setSeg(seg,'street')}
+  const wk=hnWeekStart(),mine=db.items.filter(i=>i.lang==='nl'&&(i.seen||[]).length);
+  const thisWeek=mine.filter(i=>hnSeenIn(i,wk).length).length;
+  $('#hnStat').textContent=mine.length?`تا حالا ${faNum(mine.length)} واژه را در دنیای واقعی پیدا کرده‌اید؛ ${faNum(thisWeek)} تا در این هفته.`:'';
+  renderHuntWeek();renderHuntLog(mine);hnLookup();
+}
+function hnRow(it,wk){
+  const f=hnSeenIn(it,wk).slice(-1)[0];
+  return`<div class="hn-t${f?' hn-ok':''}"><div class="hn-w"><button class="link lat" type="button" data-hnopen="${esc(it.id)}"><b>${artHTML(it)}${esc(it.text)}</b></button><span>${meanInline(it)}</span></div>
+    ${speakBtn('data-hnsay="'+esc(it.id)+'"',1)}${f?`<span class="pill ok">✓ ${f.h==='h'?'شنیدید':'دیدید'}، ${hnWhen(f.t)}</span>`:`<span class="btn-row hn-btns"><button class="btn sm" type="button" data-hnseen="${esc(it.id)}" data-h="s">دیدم</button><button class="btn sm ghost" type="button" data-hnseen="${esc(it.id)}" data-h="h">شنیدم</button></span>`}</div>`;
+}
+function renderHuntWeek(){
+  const el=$('#hnWeek'),list=hnWeek(),wk=hnWeekStart();
+  if(list.length<3){el.innerHTML=`<h2 class="h2" style="margin:0">فهرست شکار این هفته</h2><p class="hint" style="margin:0">وقتی چند روز کارت‌های هلندی را مرور کنید، هر هفته ده واژهٔ تازه‌یادگرفته اینجا می‌آید تا در خیابان، فروشگاه و نامه‌ها دنبالشان بگردید.</p><div class="btn-row"><button class="btn sm primary" type="button" data-go="review">مرور کارت‌ها</button></div>`;return}
+  const found=list.filter(i=>hnSeenIn(i,wk).length).length;
+  el.innerHTML=`<div class="feature-top"><h2 class="h2" style="margin:0">فهرست شکار این هفته</h2><span class="pill${found===list.length?' ok':''}">${faNum(found)} از ${faNum(list.length)}</span></div>
+    <p class="hint" style="margin:0">این واژه‌ها را تازه یاد گرفته‌اید. این هفته بیرون دنبالشان بگردید؛ هر کدام را دیدید یا شنیدید تیک بزنید. هر تیک کارت را کمی محکم‌تر می‌کند و دیرتر به مرور برمی‌گردد.</p>
+    <div class="hn-bar" aria-hidden="true"><span style="width:${Math.round(found/list.length*100)}%"></span></div>
+    <div class="hn-list">${list.map(i=>hnRow(i,wk)).join('')}</div>
+    <div class="btn-row"><button class="btn sm ghost" type="button" id="hnNew">فهرست دیگری بده</button></div>`;
+}
+function renderHuntLog(mine){
+  const el=$('#hnLog');
+  if(!mine.length){el.innerHTML=`<h2 class="h2" style="margin-top:0">شکارهای شما</h2><p class="empty" style="padding:16px 8px">هنوز واژه‌ای ثبت نکرده‌اید. اولین واژه را امروز پیدا کنید: تابلوی یک فروشگاه، برچسب قیمت، اعلان ایستگاه یا نامهٔ شهرداری.</p>`;return}
+  const last=it=>(it.seen||[]).reduce((m,s)=>Math.max(m,s.t),0);
+  const rows=mine.slice().sort((a,b)=>last(b)-last(a)).slice(0,40);
+  el.innerHTML=`<h2 class="h2" style="margin-top:0">شکارهای شما</h2><div class="hn-log">${rows.map(it=>{const s=it.seen.slice().sort((a,b)=>b.t-a.t)[0],e=imgOf(it);
+    return`<button type="button" class="hn-l" data-hnopen="${esc(it.id)}">${it.pic?`<span class="hn-th"><img alt="" data-picid="${esc(it.pic.id)}"></span>`:`<span class="hn-th" aria-hidden="true">${e||'🔎'}</span>`}
+      <span class="hn-lt"><b class="lat">${artHTML(it)}${esc(it.text)}</b><span>${esc(it.fa)}</span><small>${hnWhereFa(s.w)}، ${hnWhen(s.t)}${it.seen.length>1?'، '+faNum(it.seen.length)+' بار':''}</small></span></button>`}).join('')}</div>`;
+  if(rows.some(r=>r.pic))setTimeout(fillPics,0);
+}
+/* quick capture */
+function hnLookup(){
+  const raw=$('#hnWord').value.trim().replace(/\s+/g,' '),w=raw.replace(/^(de|het)\s+/i,'');
+  hnHitsList=w?lookupWord(w,'nl').slice(0,4):[];
+  $('#hnDict').innerHTML=w?dictLinks(w,'nl'):'';
+  $('#hnHits').innerHTML=hnHitsList.length?`<div class="hn-hits"><span class="lbl">در واژه‌نامهٔ برنامه پیدا شد؛ کدام است؟</span>${hnHitsList.map((it,k)=>`<label class="hn-hit"><input type="radio" name="hnHit" value="${k}"${k?'':' checked'}><span><b class="lat">${artHTML(it)}${esc(it.text)}</b> ${meanInline(it)}</span>${installedFor(it)?'<span class="pill ok">در کارت‌های شما</span>':''}</label>`).join('')}<label class="hn-hit"><input type="radio" name="hnHit" value="-1"><span>هیچ‌کدام؛ معنی را خودم می‌نویسم</span></label></div>`:'';
+  hnVis();
+}
+function hnSel(){const r=$('input[name="hnHit"]:checked');const k=r?+r.value:-1;return k>=0?hnHitsList[k]:null}
+function hnVis(){$('#hnFaWrap').hidden=!!hnSel()}
+function hnReset(){['#hnWord','#hnFa','#hnSent'].forEach(s=>$(s).value='');hnBlob=null;$('#hnPrev').hidden=true;$('#hnPrev').innerHTML='';$('#hnPic').value='';hnLookup()}
+async function hnSave(){
+  const raw=$('#hnWord').value.trim().replace(/\s+/g,' ');if(!raw){toast('واژه را بنویسید.');$('#hnWord').focus();return}
+  const where=segVal($('#hnWhere'))||'other',sent=$('#hnSent').value.trim().replace(/\s+/g,' '),now=Date.now();
+  let it=null;const sel=hnSel();
+  if(sel)it=installedFor(sel)||addFromSource(sel);
+  else{let text=raw,article='';const m=raw.match(/^(de|het)\s+(\S+)$/i);if(m){article=m[1].toLowerCase();text=m[2]}
+    it=findDup('nl',text);
+    if(!it){const fa=$('#hnFa').value.trim();if(!fa){toast('معنی فارسی را بنویسید؛ از واژه‌نامه‌های زیر کمک بگیرید.',4000);$('#hnFa').focus();return}
+      it=cleanItem({id:uid(),lang:'nl',type:/\s/.test(text)&&!article?'sentence':'word',text,article,fa,tags:['شکار'],created:now,updated:now,srs:null});db.items.push(it)}}
+  if(sent&&norm(sent)!==norm(it.text)&&norm(sent)!==norm(it.example||'')&&!(it.exs||[]).some(x=>norm(x.t)===norm(sent))){it.exs=(it.exs||[]).concat([{t:sent,fa:'',en:'',u:1}]);clozeCache.clear()}
+  if(hnBlob){try{const id='pic-'+uid();await idbPut('media',{id,blob:hnBlob,type:hnBlob.type});it.pic={id,up:0};syncPics().catch(()=>{})}catch(e){toast('عکس ذخیره نشد؛ واژه بدون عکس ثبت شد.',4000)}}
+  const fresh=huntSeen(it,where,HN_HEAR.has(where)?'h':'s');if(!fresh)it.updated=now;
+  saveData();toast('«'+it.text+'» ثبت شد'+(it.srs&&it.srs.last?' و کارتش کمی محکم‌تر شد.':' و به کارت‌های تازه رفت.'),3500);
+  hnReset();renderHunt();
+}
+$('#hnWord').addEventListener('input',()=>{clearTimeout(hnTimer);hnTimer=setTimeout(hnLookup,220)});
+$('#hnHits').addEventListener('change',hnVis);
+$('#hnSave').addEventListener('click',hnSave);
+$('#hnForm').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'&&e.target.type==='text'){e.preventDefault();hnSave()}});
+$('#hnPic').addEventListener('change',async e=>{const f=e.target.files&&e.target.files[0];if(!f)return;
+  try{hnBlob=await shrinkImage(f,560);const im=new Image();im.alt='پیش‌نمایش عکس';im.src=URL.createObjectURL(hnBlob);$('#hnPrev').innerHTML='<button class="btn sm ghost" type="button" id="hnPicDel">حذف عکس</button>';$('#hnPrev').prepend(im);$('#hnPrev').hidden=false}
+  catch(err){hnBlob=null;toast('این عکس خوانده نشد. یک عکس JPG یا PNG امتحان کنید.',4000)}});
+$('#v-hunt').addEventListener('click',e=>{
+  if(e.target.closest('#hnPicDel')){hnBlob=null;$('#hnPrev').hidden=true;$('#hnPrev').innerHTML='';$('#hnPic').value='';return}
+  if(e.target.closest('#hnNew')){cfg.hunt=cfg.hunt||{};cfg.hunt.salt=(cfg.hunt.salt||0)+1;cfg.hunt.ids=[];saveCfg();renderHuntWeek();return}
+});
+document.addEventListener('click',e=>{
+  const sv=e.target.closest('[data-hnsay]');if(sv){const it=getItem(sv.dataset.hnsay);if(it)speakItem(it);return}
+  const op=e.target.closest('[data-hnopen]');if(op){const it=getItem(op.dataset.hnopen);if(it)wordSheet(it);return}
+  const sn=e.target.closest('[data-hnseen]');if(sn){const it=getItem(sn.dataset.hnseen);const h=sn.dataset.h==='h'?'h':'s';
+    if(it&&huntSeen(it,h==='h'?'talk':'street',h)){saveData();toast('آفرین! «'+it.text+'» '+(h==='h'?'شنیده':'دیده')+' شد.');if(currentView==='hunt')renderHunt();else renderHuntToday()}return}
+});
+function renderHuntToday(){const el=$('#huntToday');if(!el)return;
+  if(L()!=='nl'){el.hidden=true;return}
+  const list=hnWeek(),wk=hnWeekStart();if(list.length<3){el.hidden=true;return}
+  const left=list.filter(i=>!hnSeenIn(i,wk).length),found=list.length-left.length;
+  el.hidden=false;el.innerHTML=`<div class="feature-top"><span class="feature-title">شکار واژهٔ این هفته</span><span class="pill${left.length?'':' ok'}">${faNum(found)} از ${faNum(list.length)}</span></div>
+    ${left.length?`<p class="hint" style="margin:0">امروز بیرون دنبال این‌ها بگردید:</p><div class="hn-chips">${left.slice(0,4).map(i=>`<span class="tag lat">${artHTML(i)}${esc(i.text)}</span>`).join('')}</div>`:'<p class="hint" style="margin:0">همهٔ واژه‌های این هفته را پیدا کردید. دوشنبه فهرست تازه می‌آید.</p>'}
+    <div class="btn-row"><button class="btn sm" type="button" data-go="hunt">ثبت واژه یا تیک زدن</button></div>`;
+}
+if(/[?&]debug/.test(location.search))window.__h={hnWeek,huntSeen,renderHunt,hnSave,hnWeekStart,renderHuntToday,cleanItem,saveData,startSession,get ses(){return ses},get db(){return db},get cfg(){return cfg}};
 
 /* ================= THE LEARNING PLAN =================
    One spine: the course path (stages → lessons; each lesson = words → dialogues → grammar → quiz).
@@ -5907,7 +6266,7 @@ function pathState(lang){
   const r1=s.total>0&&left===0;
   let r2=!!pd.dlg||DIALOGS.some(d=>d.lang===lang&&+db.done[d.id]>=sod)||(GRAMMAR[lang]||[]).some(g=>+db.done['g:'+g.id]>=sod);
   if(!r2&&r1&&lang===L()&&CRS()){const u=currentUnit();if(u&&unitNext(u).k==='words')r2=true}
-  const r3=!!pd.quiz||!!pd.lis||!!pd.ph||!!pd.story||!!pd.drill||!!pd.sit;
+  const r3=!!pd.quiz||!!pd.lis||!!pd.ph||!!pd.story||!!pd.drill||!!pd.sit||!!pd.talk;
   return{s,left,rev,steps:[r1,r2,r3]};
 }
 function renderPath(){
@@ -5928,8 +6287,8 @@ function renderPath(){
     s2={t:'درس امروز',done:b,open:a,d:nx.k==='done'?'همهٔ درس‌های مسیر تمام شده است. حالا گام «فراتر از B1» را دنبال کنید.':(b?'برای امروز انجام شد. قدم بعد: ':'')+lbl+'. '+nx.t+'.',btn:a&&!b?act:''}}
   else{const nd=nextDialog(lang);s2={t:'یک مکالمه',done:b,open:a,d:b?'یک مکالمه گوش داده شد.':'یک مکالمه را تا آخر گوش دهید.',btn:a&&!b&&nd?`<button class="btn sm primary" type="button" data-dlg="${esc(nd.id)}">شروع مکالمه</button>`:''}}
   const s3={t:'گوش دادن یا تمرین آزاد',done:c,open:a&&b,
-    d:c?'انجام شد. هر چه بیشتر گوش دهید، بهتر.':'یکی را انتخاب کنید: داستان همین درس، یک موقعیت روزمره، تمرین عدد و ساعت، یا ۵ دقیقه گوش دادن به منابع خودتان.',
-    btn:a&&b&&!c?(u&&lang==='nl'&&STORIES[u.id]?`<button class="btn sm primary" type="button" data-openstory="${esc(u.id)}">داستان درس</button>`:'<button class="btn sm primary" type="button" data-go="mine">گوش دادن</button>')+(lang==='nl'?'<button class="btn sm" type="button" data-go="life">موقعیت‌ها</button><button class="btn sm" type="button" data-go="drills">عدد و ساعت</button>':'<button class="btn sm" type="button" data-go="quiz">آزمون</button>'):''};
+    d:c?'انجام شد. هر چه بیشتر گوش دهید، بهتر.':'یکی را انتخاب کنید: داستان همین درس، چند سؤال «حرف بزنیم»، یک موقعیت روزمره، تمرین عدد و ساعت، یا ۵ دقیقه گوش دادن به منابع خودتان.',
+    btn:a&&b&&!c?(u&&lang==='nl'&&STORIES[u.id]?`<button class="btn sm primary" type="button" data-openstory="${esc(u.id)}">داستان درس</button>`:'<button class="btn sm primary" type="button" data-go="mine">گوش دادن</button>')+(lang==='nl'?'<button class="btn sm" type="button" data-go="talk">حرف بزنیم</button><button class="btn sm" type="button" data-go="life">موقعیت‌ها</button><button class="btn sm" type="button" data-go="drills">عدد و ساعت</button>':'<button class="btn sm" type="button" data-go="quiz">آزمون</button>'):''};
   const steps=[s1,s2,s3];const cur=steps.findIndex(x=>!x.done);
   el.hidden=false;
   el.innerHTML=steps.map((x,i)=>`<li class="step${x.done?' done':i===cur?' now':(i>0&&!x.open)?' locked':''}"><span class="step-n">${x.done?'✓':(i>0&&!x.open)?LOCK_SVG:faNum(i+1)}</span><div class="step-c"><b>${x.t}</b><span class="hint">${esc(x.d)}</span></div>${x.btn?`<span class="btn-row">${x.btn}</span>`:''}</li>`).join('')
@@ -6301,7 +6660,7 @@ function renderSettings(){
   $('#ghOwner').value=cfg.gh.owner;$('#ghRepo').value=cfg.gh.repo;$('#ghToken').value=cfg.gh.token;$('#ghAuto').checked=!!cfg.gh.auto;
   renderSyncStatus();fillVoices();renderNat();
   $('#vRate').value=cfg.tts.rate;$('#vRateTxt').textContent=faNum(cfg.tts.rate)+'×';$('#vAuto').checked=!!cfg.tts.auto;
-  $('#newPerDay').value=cfg.review.newPerDay;renderBudget();
+  $('#newPerDay').value=cfg.review.newPerDay;setSeg($('#introSeg'),cfg.review.intro===false?'off':'on');renderBudget();
   setSeg($('#glossSeg'),cfg.gloss||'both');setSeg($('#focusSeg'),cfg.review.focus||'series');$('#focusWrap').hidden=!PACKS.some(x=>x.series);setSeg($('#pathSeg'),cfg.path.on===false?'off':'on');
   $('#themeWrap').hidden=IS_PREVIEW;setSeg($('#themeSeg'),cfg.theme||'system');
   $('#guideLink').href=IS_PREVIEW?'https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm':'guide.html';
@@ -6426,6 +6785,7 @@ function renderBudget(){$('#budgetSeg').innerHTML=BUDGETS.map(b=>`<button type="
 bindSeg($('#budgetSeg'),v=>{cfg.review.budget=+v;saveCfg();planDirty();renderBudget();refreshBadges()});
 bindSeg($('#focusSeg'),v=>{cfg.review.focus=v;saveCfg();refreshBadges()});
 bindSeg($('#pathSeg'),v=>{cfg.path.on=v==='on';saveCfg();refreshBadges()});
+bindSeg($('#introSeg'),v=>{cfg.review.intro=v==='on';saveCfg()});
 $('#newPerDay').addEventListener('change',e=>{let v=Math.round(+e.target.value);if(!(v>=0))v=15;v=Math.min(200,v);cfg.review.newPerDay=v;e.target.value=v;saveCfg();refreshBadges()});
 bindSeg($('#themeSeg'),v=>{cfg.theme=v;saveCfg();applyTheme()});
 function applyTheme(){if(IS_PREVIEW)return;const r=document.documentElement;if(cfg.theme==='light'||cfg.theme==='dark')r.setAttribute('data-theme',cfg.theme);else r.removeAttribute('data-theme')}
@@ -6459,6 +6819,7 @@ document.addEventListener('keydown',e=>{
   const tag=(e.target.tagName||'').toLowerCase();const typing=tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable;
   if(!typing&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&(e.key==='n'||e.key==='N')&&currentView!=='review'){e.preventDefault();quickAdd();return}
   if(currentView==='review'&&ses&&!typing&&!e.ctrlKey&&!e.metaKey&&!e.altKey){
+    if(ses.intro&&(e.code==='Space'||e.key==='Enter')){if(tag==='a'||tag==='button')return;e.preventDefault();introDone();return}
     if(e.code==='Space'||e.key==='Enter'){if(tag==='a')return;if(!ses.flipped){e.preventDefault();flip()}else if(e.key==='Enter'){e.preventDefault();grade(ses.sugg!=null?ses.sugg:2)}return}
     if(ses.flipped&&/^[1-4]$/.test(e.key)){e.preventDefault();grade(+e.key-1);return}
     if(ses.flipped&&/^[۱-۴]$/.test(e.key)){e.preventDefault();grade('۱۲۳۴'.indexOf(e.key));return}
