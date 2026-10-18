@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ujQpcxBaIXS/xofVIY4E0bTJX/W/X1cOAI9Wsr0x6zE=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-vlbqO/ymSU2jdqWKKCAfyPZDmEUZc0XYiz7Q8oDbfeE=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -1077,6 +1077,123 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 .knm-bad{color:var(--bad)}.knm-good{color:var(--good);font-weight:700}
 @media (max-width:560px){.sp-q{font-size:17px}.ex-parts{grid-template-columns:1fr}}
 
+/* everyday life: situations, letters */
+.lf-g{margin:14px 0}
+.lf-g .h2{margin:0 0 8px}
+.lf-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.lf-card{display:flex;flex-direction:column;gap:3px;text-align:start;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.lf-card:hover{border-color:var(--cobalt)}
+.lf-card .lat{font-size:13.5px;color:var(--muted)}
+.lf-card.done{border-color:transparent;background:var(--good-soft)}
+.lf-card .ok{font-size:12.5px;color:var(--good);font-weight:700}
+#lfTab{margin:4px 0 10px}
+.lf-head .sub{margin:2px 0 0}
+.lf-ctx{font-size:15px;line-height:1.85;max-width:72ch;margin:8px 0 10px}
+.lf-sec{margin-top:12px}
+.lf-sec .h2{margin:0 0 8px}
+.lf-sec-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.lf-sec-h .h2{margin:0}
+.check.sm{font-size:13px}
+.lf-lines{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
+.lf-line{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:12px;background:var(--surface-2)}
+.lf-line.playing{outline:2px solid var(--acc)}
+.lf-tx{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.lf-tx .nl{font-size:16.5px;direction:ltr;text-align:left}
+.lf-tx .fa{font-size:14px;color:var(--ink)}
+.lf-tx .tip{font-size:12.5px;color:var(--muted)}
+.lf-line .reveal{display:none;align-self:flex-start;font-size:13px}
+.blind .lf-line:not(.shown) .nl,.blind .lf-line:not(.shown) .fa,.blind .lf-line:not(.shown) .tip{display:none}
+.blind .lf-line:not(.shown) .reveal{display:inline}
+.icon-btn.added{background:var(--good-soft);color:var(--good)}
+.lf-chat.role .line.r1:not(.shown) .bubble .t,.lf-chat.role .line.r1:not(.shown) .bubble .tr{filter:blur(7px)}
+.lf-chat .your-turn{margin-top:6px}
+.lf-words{display:flex;flex-wrap:wrap;gap:6px}
+.lf-w{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:99px;background:var(--surface-2);font-size:14px}
+.lf-foot{margin:16px 0}
+.lf-gl{display:flex;flex-direction:column}
+.lf-gl-r{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) auto;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.lf-gl-r:first-child{border-top:0}
+.lf-gl-r .lat{direction:ltr;text-align:left}
+.lf-act{display:flex;gap:4px}
+.lt-legend{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 8px;font-size:12.5px}
+.lt-legend span{padding:2px 8px;border-radius:6px}
+.lt-paper{background:#fffdf8;color:#1d2433;border:1px solid #e5dfcf;border-radius:4px;padding:28px 26px;box-shadow:0 8px 24px rgba(19,32,63,.10);max-width:720px;position:relative;font-size:15px;line-height:1.6}
+.lt-stamp{position:absolute;top:10px;right:12px;font-size:10.5px;letter-spacing:.06em;color:#a33;border:1px solid #d99;border-radius:4px;padding:1px 6px;transform:rotate(3deg)}
+.lt-line{padding:4px 6px;border-radius:6px;cursor:pointer}
+.lt-line:hover{background:rgba(31,63,158,.06)}
+.lt-line p{margin:0}
+.lt-fa{display:none;font-family:inherit;font-size:13.5px;color:#334;background:#eef2fb;border-radius:6px;padding:6px 8px;margin-top:4px!important;text-align:right}
+.lt-line.open .lt-fa,.lt-paper.all .lt-fa{display:block}
+.lt-key,.lt-line.lt-key>p:first-child{background:rgba(255,214,10,.28)}
+.lt-date,.lt-line.lt-date>p:first-child{background:rgba(220,60,60,.14);text-decoration:underline;text-decoration-color:#c33}
+.lt-do,.lt-line.lt-do>p:first-child{background:rgba(27,117,71,.13)}
+.lt-todo{background:var(--good-soft)}
+.lt-todo p{margin:0;line-height:1.8}
+/* stories */
+.st-list{display:flex;flex-direction:column;gap:6px;max-width:760px}
+.st-card{display:flex;align-items:center;gap:12px;text-align:start;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;cursor:pointer}
+.st-card:hover{border-color:var(--cobalt)}
+.st-card.now{border-color:var(--cobalt);background:var(--cobalt-soft)}
+.st-card.done .st-n{background:var(--good-soft);color:var(--good)}
+.st-n{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--surface-2);font-weight:800;font-size:13px;flex:none}
+.st-t{display:flex;flex-direction:column;flex:1;min-width:0}
+.st-t .lat{font-size:13px;color:var(--muted)}
+.st-r{display:flex;gap:6px;align-items:center}
+.st-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 12px}
+.st-text{max-width:720px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.st-s{margin:0 0 10px;font-size:18px;line-height:1.75;cursor:pointer}
+.st-s.playing{background:var(--acc-soft);border-radius:8px;margin-inline:-6px;padding-inline:6px}
+.st-s .icon-btn{vertical-align:middle}
+.st-fa{display:none;font-family:inherit;font-size:14.5px;color:var(--muted);text-align:right;margin-top:2px}
+.st-s.show .st-fa,.st-text.tr .st-fa{display:block}
+.sw{cursor:pointer;border-radius:3px}
+.sw:hover{background:var(--cobalt-soft)}
+/* numbers drill */
+.dr-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:12px}
+.dr-cat{display:flex;flex-direction:column;gap:4px;text-align:start;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.dr-cat:hover{border-color:var(--cobalt)}
+.dr-cat.ok{background:var(--good-soft);border-color:transparent}
+.dr-best{font-size:12.5px;color:var(--good);font-weight:700}
+.dr-card{display:flex;flex-direction:column;gap:10px;align-items:stretch;max-width:520px}
+/* chunks, missions */
+.card-chunk{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;justify-content:center;background:var(--cobalt-soft);border-radius:12px;padding:8px 12px;margin:8px auto;max-width:440px}
+.cc-lab{font-size:12px;font-weight:700;color:var(--cobalt)}
+.cc-t{font-size:17px;direction:ltr}
+.cc-fa{font-size:13.5px;color:var(--muted);flex-basis:100%;text-align:center}
+.mis .mis-do{margin:0 0 8px;line-height:1.8}
+.mis-say{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;background:var(--surface-2);border-radius:10px;padding:8px 10px}
+.mis-say .lat{direction:ltr}
+.mis-kan{display:flex;flex-direction:column;margin:8px 0;font-weight:700}
+.mis.done{background:var(--good-soft)}
+.mis.done .mis-kan{color:var(--good)}
+.st-unit{background:var(--acc-soft)}
+#lifeToday .lt-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+#lifeToday .lt-row>div{display:flex;flex-direction:column;gap:2px;min-width:0}
+/* progress */
+.pg-sk{display:flex;flex-direction:column;gap:14px}
+.pg-row p{margin:4px 0 0}
+.pg-l{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.pg-l b{font-size:16px}
+.pg-lv{font-weight:800;color:var(--cobalt)}
+.pg-bar{position:relative;height:12px;border-radius:99px;background:var(--surface-2);overflow:hidden;direction:ltr}
+.pg-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--cobalt),var(--acc));border-radius:99px}
+.pg-bar i{position:absolute;top:0;bottom:0;width:2px;background:var(--surface)}
+.pg-scale{display:flex;direction:ltr;font-size:11.5px;color:var(--muted);position:relative;height:14px}
+.pg-scale span{position:absolute;transform:translateX(-50%)}
+.pg-scale span:nth-child(1){left:40%}.pg-scale span:nth-child(2){left:70%}.pg-scale span:nth-child(3){left:90%}
+.pg-next{background:var(--cobalt-soft)}
+.pg-week{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.pg-week div{display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--surface-2);border-radius:12px;padding:10px 6px;font-size:13px;text-align:center}
+.pg-week b{font-size:22px}
+.pg-kan{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.pg-kan li{display:flex;align-items:center;gap:10px;padding:6px 8px;border-radius:10px}
+.pg-kan li>span:nth-child(2){display:flex;flex-direction:column;flex:1;min-width:0}
+.pg-kan li.done{background:var(--good-soft)}
+.pg-ck{display:grid;place-items:center;width:24px;height:24px;border-radius:7px;border:2px solid var(--line);flex:none;font-weight:800;color:var(--good)}
+.pg-kan li.done .pg-ck{border-color:var(--good)}
+.pg-kan .lat{direction:ltr;text-align:left}
+@media (max-width:560px){.lf-gl-r{grid-template-columns:1fr auto}.lf-gl-r>span:nth-child(2){grid-column:1}.lt-paper{padding:22px 14px}.st-s{font-size:17px}}
+
 </style>
 </head>
 <body>
@@ -1120,9 +1237,13 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
         <button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg><span>مسیر درسی</span></button>
         <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg><span>مرور کارت‌ها</span><b class="badge nav-due" hidden></b></button>
         <button type="button" data-go="exam"><svg class="i" viewBox="0 0 24 24"><path d="M8 4.5h8l2.5 2.5v12.5a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-14a1 1 0 0 1 1-1z"/><path d="M9 11l2 2 4-4.5M9 16.5h6"/></svg><span>آمادگی آزمون</span></button>
+        <button type="button" data-go="progress"><svg class="i" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>پیشرفت من</span></button>
       </div>
       <div class="nav-group" style="margin-top:14px">
         <div class="nav-label">جعبه‌ابزار</div>
+        <button type="button" data-go="life"><svg class="i" viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg><span>موقعیت‌های روزمره</span></button>
+        <button type="button" data-go="stories"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg><span>داستان‌های فرید</span></button>
+        <button type="button" data-go="drills"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg><span>عدد، ساعت و قیمت</span></button>
         <button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg><span>دستور زبان</span></button>
         <button type="button" data-go="phrases"><svg class="i" viewBox="0 0 24 24"><path d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 19 16h-7l-4.5 3.5V16H5a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 5 5z"/><path d="M8.5 9.5h7M8.5 12h4.5"/></svg><span>اصطلاحات روزمره</span></button>
         <button type="button" data-go="core"><svg class="i" viewBox="0 0 24 24"><path d="M4 19V9M9 19V5M14 19v-7M19 19V3"/></svg><span>۲۰۰۰ واژهٔ پرکاربرد</span></button>
@@ -1177,6 +1298,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
       <div class="learn-today" id="learnToday" hidden>
         <div class="panel feature" id="lisToday"></div>
         <div class="panel feature" id="phToday" hidden></div>
+        <div class="panel feature" id="lifeToday" hidden></div>
       </div>
       <div class="stats">
         <div class="stat"><b class="num" id="stStreak">۰</b><span>روز پیاپی تمرین</span></div>
@@ -1457,6 +1579,43 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
       </div>
     </section>
 
+    <!-- ============ EVERYDAY LIFE: situations, official letters ============ -->
+    <section class="view" id="v-life" hidden>
+      <div id="lfHome">
+        <div class="page-head"><div><h1 class="view-title">موقعیت‌های روزمره</h1><p class="sub">برای ۳۱ موقعیت رایج در هلند: آنچه شما می‌گویید، آنچه طرف مقابل به شما می‌گوید (همان بخشی که معمولاً غافلگیرمان می‌کند)، یک مکالمهٔ نمونه با صدا و لینک اطلاعات رسمی. نامه‌های رسمی هم خط به خط توضیح داده شده‌اند.</p></div></div>
+        <div class="seg" id="lfTab"><button type="button" data-v="sit">موقعیت‌ها</button><button type="button" data-v="letter">نامه‌های رسمی</button><button type="button" data-v="gloss">واژه‌های اداری</button></div>
+        <div id="lfList"></div>
+      </div>
+      <div id="lfOne" hidden>
+        <button class="link back" type="button" id="lfBack">&larr; همهٔ موقعیت‌ها</button>
+        <article id="lfBody"></article>
+      </div>
+    </section>
+
+    <!-- ============ STORIES ============ -->
+    <section class="view" id="v-stories" hidden>
+      <div id="stHome">
+        <div class="page-head"><div><h1 class="view-title">داستان‌های فرید</h1><p class="sub">یک داستان کوتاه برای هر درس مسیر، دربارهٔ فرید، سارا و یاسمین در آیندهوون. هر داستان با واژه‌های همان درس نوشته شده تا واژه‌ها را در بافت واقعی ببینید و بشنوید. هر داستان را در طول هفته سه بار بخوانید و گوش دهید.</p></div></div>
+        <div id="stList"></div>
+      </div>
+      <div id="stOne" hidden>
+        <button class="link back" type="button" id="stBack">&larr; همهٔ داستان‌ها</button>
+        <article id="stBody"></article>
+      </div>
+    </section>
+
+    <!-- ============ NUMBERS, PRICES, TIMES ============ -->
+    <section class="view" id="v-drills" hidden>
+      <div class="page-head"><div><h1 class="view-title">عدد، قیمت و ساعت</h1><p class="sub">پشت تلفن، پای صندوق و در اعلان ایستگاه، عدد و ساعت تند گفته می‌شود. بشنوید و بنویسید؛ هر دور ۱۰ مورد و حدود دو دقیقه.</p></div></div>
+      <div id="drBody"></div>
+    </section>
+
+    <!-- ============ PROGRESS ============ -->
+    <section class="view" id="v-progress" hidden>
+      <div class="page-head"><div><h1 class="view-title">پیشرفت من</h1><p class="sub">سطح تخمینی شما در پنج مهارت، از روی کارهایی که واقعاً انجام داده‌اید، و کارهایی که در زندگی واقعی از پسشان برآمده‌اید.</p></div></div>
+      <div id="pgBody"></div>
+    </section>
+
     <!-- ============ GRAMMAR ============ -->
     <section class="view" id="v-grammar" hidden>
       <div id="gHome">
@@ -1734,7 +1893,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۳</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۴</p>
     </section>
 
 </main>
@@ -1771,7 +1930,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=23"></script>
+<script src="packs.js?v=24"></script>
 <script>
 (function(){
 'use strict';
@@ -2427,6 +2586,7 @@ function wordSheet(it){
   const ex=exList(it);
   let b=`<div class="ws-word"><div class="card-word lat ${it.type==='sentence'?'sentence':''}">${artHTML(it)}${esc(it.text)}</div>${speakBtn('data-ws-say')}</div>`+wsPicHTML(it,own);
   b+=`<div>${enMain(it)?`<p class="ws-fa lat gl-en">${esc(it.en)}</p><p class="ws-sub">${esc(it.fa)}</p>`:`<p class="ws-fa">${esc(it.fa)}</p>${it.en&&gl(it)!=='fa'?`<p class="ws-en">${esc(it.en)}</p>`:''}`}${it.plural?`<p class="hint" style="margin:4px 0 0">جمع: <span class="lat">de ${esc(it.plural)}</span></p>`:''}</div>`;
+  if(it.type==='word')b+=chunkHTML(it);
   if(own){const st=statusOf(own);b+=`<div class="btn-row"><span class="pill ${st.k}">${st.t}</span>${own.pack?'':'<span class="tag">افزودهٔ شما</span>'}</div>`}
   if(it.type!=='sentence'||ex.length){
   b+=`<div class="ws-sec"><h3>جمله‌های نمونه</h3><div class="ex-list">${ex.length?ex.map((e,k)=>`<div class="ex${e.u?' mine':''}"><div class="ex-body"><p class="lat">${esc(e.t)}</p>${trHTML(e,it.lang)}${e.u?'<p class="hint" style="margin:0">جملهٔ شما</p>':''}</div>${speakBtn('data-ws-ex="'+k+'"',1)}</div>`).join(''):'<p class="hint" style="margin:0">هنوز جملهٔ نمونه‌ای ندارد.</p>'}</div>`;
@@ -2498,10 +2658,11 @@ document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','course','exam','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
+const VIEWS=['today','course','exam','progress','life','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
+  if((currentView==='stories'||currentView==='life'||currentView==='drills')&&v!==currentView){stopSpeech();if(stCur){stCur.tok++;stCur.on=false}lfPlay.tok++}
   if(inSrcView()&&v!==currentView){const au=$('#srcAudio');if(au&&!(playlist&&!au.paused))au.pause();const sb=$('#selBar');if(sb)sb.hidden=true}
   currentView=v;document.documentElement.dataset.view=v;if(sheetOpen())closeSheet();
   const sv=VIEW_SEC[v]?'sources':v;VIEWS.forEach(x=>{const el=$('#v-'+x);if(el)el.hidden=x!==sv});
@@ -2510,6 +2671,7 @@ function showView(v,noHash){
   if(v==='today')renderToday();
   if(v==='course')renderCourse();
   if(v==='exam')renderExam();else if(typeof exLeave==='function')exLeave();
+  if(v==='life')renderLife();if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
   if(v==='grammar')renderGrammar();
   if(v==='phrases')openPhrases();
   if(v==='core')renderCore();
@@ -2611,7 +2773,7 @@ function renderToday(){
   let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY),lang);if(c>0)streak++;else if(k===0)continue;else break}
   $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK,lang));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
   const tips=TIPS[lang];$('#tip').innerHTML=tips[tipIdx%tips.length];
-  renderMapCard();renderPath();renderCourseToday();renderLearnToday();renderLisToday();renderCoreLine();
+  renderMapCard();renderPath();renderCourseToday();renderLearnToday();renderLisToday();renderCoreLine();renderLifeToday();
 }
 $('#nextTip').addEventListener('click',()=>{tipIdx++;const tips=TIPS[L()];$('#tip').innerHTML=tips[tipIdx%tips.length]});
 $('#startToday').addEventListener('click',e=>{if(e.currentTarget.dataset.lib){const u=CRS()&&currentUnit();if(u){cOpen=u.id;showView('course')}else showView('library');return}startSession()});
@@ -2682,7 +2844,7 @@ function backHTML(it,dir){
   else if(it.lang==='nl'&&it.article&&it.type==='word')h+=`<div class="card-plural lat">${artHTML(it)}${esc(it.text)}</div>`;
   if(dir!=='rev'&&dir!=='type')h+=meanHTML(it,'card-fa');
   if(it.plural)h+=`<div class="card-plural">جمع: <span class="lat">de ${esc(it.plural)}</span></div>`;
-  h+=verbHTML(it);
+  h+=verbHTML(it)+(it.type==='word'?chunkHTML(it):'');
   const shown=dir==='cloze'?ex.slice(1,3):ex.slice(0,2);if(shown.length)h+=exBlock(shown,it.lang);
   const ety=it.type!=='sentence'?etymShort(it):'';if(ety)h+=`<div class="card-note" style="background:var(--acc-soft)">${ety}</div>`;
   if(it.note)h+=`<div class="card-note">${esc(it.note)}</div>`;
@@ -3617,7 +3779,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=23',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=24',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -3640,7 +3802,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 23، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 24، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -5422,6 +5584,226 @@ function knmEnd(){clearInterval(ex.tick);ex.live=false;
 }
 if(/[?&]debug/.test(location.search))window.__x={get ex(){return ex},EX,exGet,wrChecks,knmStart};
 
+/* ================= EVERYDAY LIFE: situations, letters, stories, number drills, missions, progress ================= */
+const LIFE=VZ.life||{groups:[],sits:[],letters:[],glossary:[]};
+const STORIES=VZ.stories||{},MISSIONS=VZ.missions||{},CHUNKS=VZ.chunks||{},DRILLS=VZ.drills||{};
+const sayB=(t,mini)=>`<button class="icon-btn${mini?' mini':''}" type="button" data-lsay="${esc(t)}" aria-label="پخش"><svg class="i"><use href="#i-speak"/></svg></button>`;
+const addB=(t,fa,kind)=>`<button class="icon-btn mini" type="button" data-ladd="${esc(t)}" data-lfa="${esc(fa)}" data-lkind="${kind||'s'}" aria-label="افزودن به کارت‌ها" title="افزودن به کارت‌ها"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>`;
+/* a sentence or word from these pages becomes a card */
+function lifeCard(text,fa,kind,note){
+  text=text.replace(/\s*…\s*/g,' … ').trim();if(findDup('nl',text))return false;const now=Date.now();
+  let art='',t=text;if(kind==='w'){const m=t.match(/^(de|het)\s+(.+)$/i);if(m){art=m[1].toLowerCase();t=m[2]}}
+  db.items.push(cleanItem({id:uid(),lang:'nl',type:kind==='w'?'word':'sentence',text:t,article:art,fa,en:'',note:note||'',tags:['زندگی روزمره'],created:now,updated:now,srs:null}));return true;
+}
+document.addEventListener('click',e=>{
+  const s=e.target.closest('[data-lsay]');if(s){e.stopPropagation();speak(s.dataset.lsay,'nl');return}
+  const a=e.target.closest('[data-ladd]');if(a){e.stopPropagation();const ok=lifeCard(a.dataset.ladd,a.dataset.lfa,a.dataset.lkind,a.closest('[data-lnote]')?a.closest('[data-lnote]').dataset.lnote:'');if(ok){saveData();a.classList.add('added');toast('به کارت‌ها اضافه شد')}else toast('این مورد از قبل در کارت‌های شماست');return}
+});
+
+/* ---------- situations and letters ---------- */
+let lfTab='sit',lfCur=null;
+bindSeg($('#lfTab'),v=>{lfTab=v;renderLife()});
+function renderLife(){
+  if(lfCur){return}
+  $('#lfHome').hidden=false;$('#lfOne').hidden=true;setSeg($('#lfTab'),lfTab);const box=$('#lfList');
+  if(lfTab==='sit'){box.innerHTML=LIFE.groups.map(g=>{const ss=LIFE.sits.filter(s=>s.g===g.id);return`<section class="lf-g"><h2 class="h2">${esc(g.fa)} <span class="lat hint">${esc(g.nl)}</span></h2><div class="lf-cards">${ss.map(s=>`<button type="button" class="lf-card${db.done['sit:'+s.id]?' done':''}" data-sit="${s.id}"><b>${esc(s.fa)}</b><span class="lat">${esc(s.nl)}</span>${db.done['sit:'+s.id]?'<span class="ok">✓ تمرین شده</span>':''}</button>`).join('')}</div></section>`}).join('')}
+  else if(lfTab==='letter'){box.innerHTML=`<p class="hint">نامه‌های نمونهٔ آموزشی با نام و شمارهٔ ساختگی. روی هر خط بزنید تا توضیح فارسی‌اش را ببینید.</p><div class="lf-cards">${LIFE.letters.map(l=>`<button type="button" class="lf-card${db.done['let:'+l.id]?' done':''}" data-letter="${l.id}"><b>${esc(l.fa)}</b><span class="lat">${esc(l.nl)}</span><span class="hint">از طرف: ${esc(l.from)}</span></button>`).join('')}</div>`}
+  else box.innerHTML=`<div class="panel"><p class="hint" style="margin-top:0">واژه‌هایی که تقریباً در همهٔ نامه‌های اداری می‌آیند. با + هر کدام را به کارت‌ها اضافه کنید.</p><div class="lf-gl">${LIFE.glossary.map(([n,f])=>`<div class="lf-gl-r"><span class="lat"><b>${esc(n)}</b></span><span>${esc(f)}</span><span class="lf-act">${sayB(n,1)}${addB(n,f,'w')}</span></div>`).join('')}</div><div class="btn-row" style="margin-top:12px"><button class="btn" type="button" data-glall>افزودن همه به کارت‌ها</button></div></div>`;
+}
+$('#lfList').addEventListener('click',e=>{const s=e.target.closest('[data-sit]');if(s){openSit(s.dataset.sit);return}const l=e.target.closest('[data-letter]');if(l){openLetter(l.dataset.letter);return}
+  if(e.target.closest('[data-glall]')){let n=0;LIFE.glossary.forEach(([t,f])=>{if(lifeCard(t,f,'w','واژهٔ اداری'))n++});if(n)saveData();toast(n?faNum(n)+' واژه به کارت‌ها اضافه شد':'همه از قبل در کارت‌های شما بودند')}});
+$('#lfBack').addEventListener('click',()=>{stopSpeech();lfPlay.on=false;lfCur=null;renderLife();window.scrollTo(0,0)});
+const lfPlay={on:false,tok:0,role:false};
+function lfShow(html){$('#lfHome').hidden=true;$('#lfOne').hidden=false;$('#lfBody').innerHTML=html;window.scrollTo(0,0)}
+function openSit(id){const s=LIFE.sits.find(x=>x.id===id);if(!s)return;lfCur={t:'sit',s};lfPlay.on=false;lfPlay.role=false;
+  if(currentView!=='life')showView('life');
+  lfShow(`<div class="lf-head"><h1 class="view-title">${esc(s.fa)}</h1><p class="lat sub">${esc(s.nl)}</p></div>
+    <p class="lf-ctx">${esc(s.ctx)}</p>${s.link?`<a class="btn sm" href="${esc(s.link[0])}" target="_blank" rel="noopener noreferrer">${esc(s.link[1])} ↗</a>`:''}
+    <section class="panel lf-sec" data-lnote="${esc('موقعیت: '+s.fa)}"><div class="lf-sec-h"><h2 class="h2">آنچه می‌شنوید</h2><label class="check sm"><input type="checkbox" id="lfBlind"><span>تمرین: اول فقط گوش بدهم</span></label></div>
+      <p class="hint" style="margin:0 0 8px">این‌ها جمله‌هایی است که کارمند، پزشک یا فروشنده به شما می‌گوید. اگر این‌ها را بشناسید، نصف گفت‌وگو را برده‌اید.</p>
+      <div class="lf-lines" id="lfHear">${s.hear.map((h,i)=>`<div class="lf-line hear" data-i="${i}">${sayB(h[0])}<div class="lf-tx"><span class="lat nl">${esc(h[0])}</span><span class="fa">${esc(h[1])}</span>${h[2]?`<span class="tip">${esc(h[2])}</span>`:''}<button class="link reveal" type="button" data-reveal>نشان بده</button></div>${addB(h[0],h[1])}</div>`).join('')}</div>
+      <div class="btn-row"><button class="btn sm" type="button" data-lfhearall>▶ پخش همه</button></div></section>
+    <section class="panel lf-sec" data-lnote="${esc('موقعیت: '+s.fa)}"><h2 class="h2">آنچه شما می‌گویید</h2><div class="lf-lines">${s.say.map(x=>`<div class="lf-line">${sayB(x[0])}<div class="lf-tx"><span class="lat nl">${esc(x[0])}</span><span class="fa">${esc(x[1])}</span></div>${addB(x[0],x[1])}</div>`).join('')}</div></section>
+    <section class="panel lf-sec"><div class="lf-sec-h"><h2 class="h2">مکالمهٔ نمونه</h2><div class="btn-row"><button class="btn sm primary" type="button" data-lfdlg>▶ پخش مکالمه</button><button class="btn sm" type="button" data-lfrole>نقش «شما» را خودم بگویم</button></div></div>
+      <div class="chat lf-chat" id="lfChat">${s.dlg.map((d,i)=>{const me=d[0]==='Jij';return`<div class="line ${me?'r1':'r0'}" data-i="${i}"><div class="who">${me?'شما':esc(d[0])}</div><div class="bubble"><div class="t">${esc(d[1])}</div><div class="tr">${esc(d[2])}</div></div></div>`}).join('')}</div></section>
+    <section class="panel lf-sec" data-lnote="${esc('موقعیت: '+s.fa)}"><h2 class="h2">واژه‌های کلیدی</h2><div class="lf-words">${s.words.map(w=>`<span class="lf-w">${sayB(w[0],1)}<span class="lat">${esc(w[0])}</span><span class="hint">${esc(w[1])}</span>${addB(w[0],w[1],'w')}</span>`).join('')}</div>
+      <div class="btn-row" style="margin-top:10px"><button class="btn sm" type="button" data-lfaddall>افزودن جمله‌های «می‌شنوید» و واژه‌ها به کارت‌ها</button></div></section>
+    <div class="btn-row lf-foot"><button class="btn primary" type="button" data-lfdone>${db.done['sit:'+s.id]?'✓ تمرین شده':'این موقعیت را تمرین کردم'}</button></div>`);
+  $('#lfBlind').onchange=e=>$('#lfHear').classList.toggle('blind',e.target.checked);
+}
+function lfSeq(items,el,onLine){const tok=++lfPlay.tok;lfPlay.on=true;let i=0;
+  const next=()=>{if(tok!==lfPlay.tok)return;$$('.playing',el).forEach(x=>x.classList.remove('playing'));if(i>=items.length){lfPlay.on=false;return}
+    const k=i++,row=$(`[data-i="${k}"]`,el);if(row){row.classList.add('playing');row.scrollIntoView({block:'nearest',behavior:'smooth'})}
+    if(onLine&&onLine(k,next))return;speak(items[k],'nl',{onend:()=>setTimeout(next,450)})};next()}
+$('#lfBody').addEventListener('click',e=>{if(!lfCur)return;
+  if(e.target.closest('[data-reveal]')){e.target.closest('.lf-line').classList.add('shown');return}
+  if(lfCur.t==='sit'){const s=lfCur.s;
+    if(e.target.closest('[data-lfhearall]')){lfSeq(s.hear.map(h=>h[0]),$('#lfHear'));return}
+    if(e.target.closest('[data-lfdlg]')){lfPlay.role=false;$('#lfChat').classList.remove('role');lfSeq(s.dlg.map(d=>d[1]),$('#lfChat'));return}
+    if(e.target.closest('[data-lfrole]')){lfPlay.role=true;$('#lfChat').classList.add('role');
+      lfSeq(s.dlg.map(d=>d[1]),$('#lfChat'),(k,next)=>{if(s.dlg[k][0]!=='Jij')return false;const row=$(`#lfChat [data-i="${k}"]`);
+        row.insertAdjacentHTML('beforeend','<div class="your-turn">نوبت شماست: جمله را بلند بگویید <button class="btn sm accent" type="button" data-lfgo>نمایش و ادامه</button></div>');
+        $('[data-lfgo]',row).onclick=ev=>{ev.stopPropagation();row.classList.add('shown');$('.your-turn',row).remove();speak(s.dlg[k][1],'nl',{onend:()=>setTimeout(next,450)})};return true});return}
+    if(e.target.closest('[data-lfaddall]')){let n=0;s.hear.forEach(h=>{if(lifeCard(h[0],h[1],'s','موقعیت: '+s.fa))n++});s.words.forEach(w=>{if(lifeCard(w[0],w[1],'w','موقعیت: '+s.fa))n++});if(n)saveData();toast(n?faNum(n)+' مورد به کارت‌ها اضافه شد':'همه از قبل در کارت‌های شما بودند');return}
+    if(e.target.closest('[data-lfdone]')){db.done['sit:'+s.id]=Date.now();saveData();pathMark('nl','sit');e.target.closest('[data-lfdone]').textContent='✓ تمرین شده';toast('آفرین! حالا وقتی واقعاً پیش آمد، آماده‌اید.');return}
+  }
+  if(lfCur.t==='letter'){const ln=e.target.closest('.lt-line');if(ln&&!e.target.closest('button')){ln.classList.toggle('open');return}
+    if(e.target.closest('[data-ltall]')){const open=!$('#lfBody .lt-paper').classList.contains('all');$('#lfBody .lt-paper').classList.toggle('all',open);e.target.closest('[data-ltall]').textContent=open?'بستن همهٔ توضیح‌ها':'نمایش همهٔ توضیح‌ها';return}
+    if(e.target.closest('[data-ltdone]')){db.done['let:'+lfCur.l.id]=Date.now();saveData();e.target.closest('[data-ltdone]').textContent='✓ خوانده شد';return}}
+});
+const LT_MARK={key:['مهم','lt-key'],date:['مهلت','lt-date'],do:['کار شما','lt-do']};
+function openLetter(id){const l=LIFE.letters.find(x=>x.id===id);if(!l)return;lfCur={t:'letter',l};if(currentView!=='life')showView('life');
+  lfShow(`<div class="lf-head"><h1 class="view-title">${esc(l.fa)}</h1><p class="lat sub">${esc(l.nl)} · ${esc(l.from)}</p></div><p class="lf-ctx">${esc(l.intro)}</p>
+    <div class="lt-legend"><span class="lt-key">مهم</span><span class="lt-date">مهلت</span><span class="lt-do">کار شما</span><button class="link" type="button" data-ltall>نمایش همهٔ توضیح‌ها</button></div>
+    <div class="lt-paper" dir="ltr"><div class="lt-stamp">VOORBEELD · نمونهٔ آموزشی</div>${l.lines.map(x=>{const m=LT_MARK[x[2]];return`<div class="lt-line${m?' '+m[1]:''}"><p class="lat">${esc(x[0])}</p><p class="lt-fa" dir="rtl">${m?`<b>${m[0]}: </b>`:''}${esc(x[1])}</p></div>`}).join('')}</div>
+    <section class="panel lf-sec lt-todo"><h2 class="h2">چه کار کنید؟</h2><p>${esc(l.do)}</p></section>
+    <section class="panel lf-sec" data-lnote="${esc('نامهٔ اداری')}"><h2 class="h2">واژه‌های این نامه</h2><div class="lf-words">${l.words.map(w=>`<span class="lf-w">${sayB(w[0],1)}<span class="lat">${esc(w[0])}</span><span class="hint">${esc(w[1])}</span>${addB(w[0],w[1],'w')}</span>`).join('')}</div></section>
+    <div class="btn-row lf-foot"><button class="btn primary" type="button" data-ltdone>${db.done['let:'+l.id]?'✓ خوانده شد':'این نامه را فهمیدم'}</button></div>`);
+}
+
+/* ---------- stories ---------- */
+let stCur=null;
+const swWrap=t=>String(t).split(/([A-Za-zÀ-ÿ’'\-]{2,})/).map((p,i)=>i%2?`<span class="sw">${esc(p)}</span>`:esc(p)).join('');
+const storyReads=u=>+db.done['story:'+u]||0;
+function renderStories(){if(stCur)return;$('#stHome').hidden=false;$('#stOne').hidden=true;
+  const units=(VZ.courses&&VZ.courses.nl?VZ.courses.nl.units:[]).filter(u=>STORIES[u.id]);const cu=CRS()&&L()==='nl'?currentUnit():null;
+  $('#stList').innerHTML=`<div class="st-list">${units.map((u,i)=>{const s=STORIES[u.id],r=storyReads(u.id);return`<button type="button" class="st-card${r>=3?' done':''}${cu&&cu.id===u.id?' now':''}" data-story="${u.id}"><span class="st-n num">${faNum(i+1)}</span><span class="st-t"><b>${esc(s.fa)}</b><span class="lat">${esc(s.nl)}</span></span><span class="st-r">${cu&&cu.id===u.id?'<span class="pill">درس فعلی</span>':''}${r?`<span class="hint">${faNum(r)} بار</span>`:''}</span></button>`}).join('')}</div>`;
+}
+$('#stList').addEventListener('click',e=>{const b=e.target.closest('[data-story]');if(b)openStory(b.dataset.story)});
+$('#stBack').addEventListener('click',()=>{stopSpeech();stCur=null;renderStories();window.scrollTo(0,0)});
+function openStory(u){const s=STORIES[u];if(!s)return;stCur={u,s,tok:0,on:false,tr:false};if(currentView!=='stories')showView('stories');
+  $('#stHome').hidden=true;$('#stOne').hidden=false;const r=storyReads(u);
+  $('#stBody').innerHTML=`<div class="lf-head"><h1 class="view-title">${esc(s.fa)}</h1><p class="lat sub">${esc(s.nl)}</p></div>
+    <div class="st-bar"><button class="btn primary" type="button" data-stplay>▶ پخش داستان</button><button class="toggle" type="button" data-sttr aria-pressed="false">ترجمهٔ فارسی</button><button class="toggle" type="button" data-stslow aria-pressed="false">آهسته</button><span class="hint">${r?`${faNum(r)} بار خوانده‌اید`:'روی هر واژه بزنید تا معنی‌اش را ببینید'}</span></div>
+    <div class="st-text" dir="ltr">${s.s.map((x,i)=>`<p class="st-s" data-i="${i}"><span class="lat">${swWrap(x[0])}</span> <button class="icon-btn mini" type="button" data-stsay="${i}" aria-label="پخش"><svg class="i"><use href="#i-speak"/></svg></button><span class="st-fa" dir="rtl">${esc(x[1])}</span></p>`).join('')}</div>
+    <div class="btn-row lf-foot"><button class="btn primary" type="button" data-stdone>خواندم و گوش دادم</button></div>`;
+}
+function storyDone(){const u=stCur.u,n=storyReads(u)+1;db.done['story:'+u]=n;db.done['storyt:'+u]=Date.now();saveData();pathMark('nl','story');
+  toast(n>=3?'آفرین! این داستان را '+faNum(n)+' بار خوانده‌اید. واژه‌هایش حالا جا افتاده‌اند.':'ثبت شد. یکی دو روز دیگر دوباره بخوانید؛ سه بار در هفته بهترین است.',4500);
+  const h=$('#stBody .st-bar .hint');if(h)h.textContent=faNum(n)+' بار خوانده‌اید'}
+$('#stBody').addEventListener('click',e=>{if(!stCur)return;const S=stCur;
+  const w=e.target.closest('.sw');if(w){const p=w.closest('.st-s');wordPop(w.textContent,S.s.s[+p.dataset.i][0],'nl');return}
+  const one=e.target.closest('[data-stsay]');if(one){S.tok++;S.on=false;speak(S.s.s[+one.dataset.stsay][0],'nl',{rate:S.slow?0.7:undefined});return}
+  if(e.target.closest('[data-sttr]')){S.tr=!S.tr;$('#stBody .st-text').classList.toggle('tr',S.tr);e.target.closest('[data-sttr]').setAttribute('aria-pressed',String(S.tr));return}
+  if(e.target.closest('[data-stslow]')){S.slow=!S.slow;e.target.closest('[data-stslow]').setAttribute('aria-pressed',String(!!S.slow));return}
+  const p=e.target.closest('.st-s');if(p&&!e.target.closest('button')){p.classList.toggle('show');return}
+  if(e.target.closest('[data-stdone]')){storyDone();return}
+  if(e.target.closest('[data-stplay]')){if(S.on){S.on=false;S.tok++;stopSpeech();e.target.closest('[data-stplay]').textContent='▶ پخش داستان';return}
+    const btn=e.target.closest('[data-stplay]');btn.textContent='■ توقف';S.on=true;const tok=++S.tok;let i=0;
+    const next=()=>{if(tok!==S.tok)return;$$('#stBody .st-s.playing').forEach(x=>x.classList.remove('playing'));
+      if(i>=S.s.s.length){S.on=false;btn.textContent='▶ پخش داستان';storyDone();return}
+      const k=i++;const el=$(`#stBody .st-s[data-i="${k}"]`);if(el){el.classList.add('playing');el.scrollIntoView({block:'nearest',behavior:'smooth'})}
+      speak(S.s.s[k][0],'nl',{rate:S.slow?0.7:undefined,onend:()=>setTimeout(next,500)})};next()}
+});
+
+/* ---------- numbers, prices, times ---------- */
+const DR_CAT=[['getal','عددها','مثلاً 47 یا 1350'],['prijs','قیمت‌ها','مثلاً 3,49'],['tijd','ساعت به روش هلندی','مثلاً 3:30 (ساعت ۱ تا ۱۲)'],['datum','تاریخ‌ها','مثلاً 14 maart یا 14-3'],['tel','شمارهٔ تلفن','فقط رقم‌ها: 0612345678'],['post','کد پستی','مثلاً 5622 AB'],['mix','ترکیبی','همه با هم']];
+let dr=null;
+function renderDrills(){if(dr&&dr.q)return drQ();
+  $('#drBody').innerHTML=`<div class="dr-cats">${DR_CAT.map(([k,t,h])=>{const b=+db.done['dr:'+k]||0;return`<button type="button" class="dr-cat${b>=80?' ok':''}" data-dr="${k}"><b>${t}</b><span class="hint">${h}</span>${b?`<span class="dr-best">بهترین: ${faNum(b)}٪</span>`:''}</button>`}).join('')}</div>
+    <div class="panel lf-sec"><h2 class="h2">ساعت در هلندی</h2><p class="hint" style="margin:0">هلندی‌ها «نیم» را به ساعت <b>بعد</b> وصل می‌کنند: <span class="lat">half vier</span> یعنی ۳:۳۰، نه ۴:۳۰. <span class="lat">tien voor half vier</span> یعنی ۳:۲۰ و <span class="lat">vijf over half vier</span> یعنی ۳:۳۵. <span class="lat">kwart over</span> = ربع بعد از، <span class="lat">kwart voor</span> = ربع مانده به.</p></div>`;
+}
+$('#drBody').addEventListener('click',e=>{const c=e.target.closest('[data-dr]');if(c){drStart(c.dataset.dr);return}
+  if(e.target.closest('[data-drplay]')){drSay();return}if(e.target.closest('[data-drslow]')){drSay(0.7);return}
+  if(e.target.closest('[data-drnext]')){drNext();return}if(e.target.closest('[data-drhome]')){dr=null;renderDrills();return}
+  if(e.target.closest('[data-dragain]')){drStart(dr.cat);return}});
+$('#drBody').addEventListener('submit',e=>{e.preventDefault();if(!dr||!dr.q)return;if(dr.ans!=null){drNext();return}drCheck()});
+function drStart(cat){const pool=cat==='mix'?Object.entries(DRILLS).flatMap(([k,v])=>v.map(x=>Object.assign({c:k},x))):(DRILLS[cat]||[]).map(x=>Object.assign({c:cat},x));
+  dr={cat,qs:shuffle(pool.slice()).slice(0,10),i:0,right:0,ans:null};dr.q=dr.qs[0];drQ();setTimeout(drSay,250)}
+function drSay(rate){if(dr&&dr.q)speak(dr.q.s,'nl',{rate})}
+function drQ(){const q=dr.q,cat=DR_CAT.find(c=>c[0]===q.c)||DR_CAT[0];
+  $('#drBody').innerHTML=`<div class="sp-top"><span class="pill">${cat[1]}</span><span>${faNum(dr.i+1)} از ${faNum(dr.qs.length)}</span><span class="hint">درست: ${faNum(dr.right)}</span></div>
+    <div class="panel dr-card"><div class="btn-row" style="justify-content:center"><button class="listen-big" type="button" data-drplay aria-label="پخش دوباره"><svg class="i"><use href="#i-speak"/></svg></button></div>
+    <div class="btn-row" style="justify-content:center"><button class="btn sm ghost" type="button" data-drslow>آهسته</button></div>
+    <form class="type-box" id="drForm" autocomplete="off"><input id="drIn" class="lat" dir="ltr" inputmode="${q.c==='datum'||q.c==='post'?'text':'decimal'}" autocomplete="off" placeholder="${esc(cat[2])}" aria-label="پاسخ"><button class="btn primary" type="submit">بررسی</button></form>
+    <div id="drFb"></div></div>`;
+  setTimeout(()=>{const i=$('#drIn');if(i)try{i.focus({preventScroll:true})}catch(e){}},60);
+}
+const MONTHS_NL=['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+function drOk(q,v){v=String(v||'').trim().toLowerCase();if(!v)return false;
+  const digits=s=>s.replace(/\D/g,'');
+  if(q.c==='getal'||q.c==='tel')return digits(v)===digits(q.a)&&digits(v).length>0;
+  if(q.c==='post')return v.replace(/\s/g,'').toUpperCase()===q.a.replace(/\s/g,'');
+  if(q.c==='prijs'){const n=parseFloat(v.replace(/[€\s]/g,'').replace(',','.'));const a=parseFloat(q.a.replace(',','.'));return Math.abs(n-a)<0.001||(a<1&&Math.abs(n-a*100)<0.001)}
+  if(q.c==='tijd'){const m=v.match(/^(\d{1,2})\s*[:.h ]\s*(\d{2})$/)||v.match(/^(\d{1,2})$/);if(!m)return false;const[h,mm]=q.a.split(':').map(Number);return(+m[1])%12===h%12&&(+(m[2]||0))===mm}
+  if(q.c==='datum'){const[d,mon]=q.a.split(' ');const mi=MONTHS_NL.indexOf(mon)+1;const m=v.match(/^(\d{1,2})\s*[-\/ .]\s*([a-z]+|\d{1,2})$/);if(!m)return false;const AB={mrt:'maart',okt:'oktober'};return +m[1]===+d&&(m[2]===mon||+m[2]===mi||AB[m[2]]===mon||mon.startsWith(m[2])&&m[2].length>=3)}
+  return v===q.a.toLowerCase();
+}
+function drCheck(){const v=$('#drIn').value,q=dr.q,ok=drOk(q,v);dr.ans=v;if(ok)dr.right++;$('#drIn').disabled=true;
+  $('#drFb').innerHTML=`<div class="typed ${ok?'ok':'no'}"><b>${ok?'✓ درست است!':'✗ جواب درست: '+esc(q.a)}</b><span class="lat" dir="ltr">${esc(q.s)}</span></div><div class="btn-row" style="justify-content:center"><button class="btn primary" type="button" data-drnext>${dr.i+1<dr.qs.length?'بعدی':'نتیجه'}</button></div>`;
+  if(!ok)drSay(0.8);const b=$('[data-drnext]');if(b)b.focus()}
+function drNext(){dr.i++;dr.ans=null;if(dr.i>=dr.qs.length){drEnd();return}dr.q=dr.qs[dr.i];drQ();setTimeout(drSay,200)}
+function drEnd(){const pct=Math.round(dr.right*100/dr.qs.length),k='dr:'+dr.cat;if(pct>(+db.done[k]||0))db.done[k]=pct;saveData();pathMark('nl','drill');dr.q=null;
+  $('#drBody').innerHTML=`<div class="panel done-panel stack"><div class="big num">${faNum(dr.right)} / ${faNum(dr.qs.length)}</div><p style="margin:0">${pct>=80?'عالی! گوشتان به عددهای هلندی عادت کرده.':pct>=50?'خوب است؛ یک دور دیگر بزنید.':'عددهای هلندی اول سخت‌اند؛ با «آهسته» شروع کنید و چند دور تمرین کنید.'}</p><div class="btn-row" style="justify-content:center"><button class="btn primary" type="button" data-dragain>یک دور دیگر</button><button class="btn" type="button" data-drhome>دسته‌های دیگر</button></div></div>`}
+
+/* ---------- chunks on cards ---------- */
+function chunkOf(it){if(!it||it.lang!=='nl')return null;return CHUNKS[norm(fullText(it))]||CHUNKS[fullText(it)]||CHUNKS[it.text]||null}
+function chunkHTML(it){const c=chunkOf(it);return c?`<div class="card-chunk"><span class="cc-lab">ترکیب رایج</span><span class="lat cc-t">${esc(c[0])}</span><button class="icon-btn mini" type="button" data-lsay="${esc(c[0].replace(/\s*…\s*/g,' '))}" aria-label="پخش"><svg class="i"><use href="#i-speak"/></svg></button><span class="cc-fa">${esc(c[1])}</span></div>`:''}
+
+/* ---------- missions in a lesson and on Today ---------- */
+const misDone=u=>+db.done['mis:'+u]||0;
+function missionHTML(u){const m=MISSIONS[u.id];if(!m)return'';const done=misDone(u.id);
+  return`<section class="panel c-sec mis${done?' done':''}"><div class="c-sec-h"><h2 class="h2">مأموریت واقعی این درس</h2>${done?'<span class="pill ok">انجام شد</span>':''}</div>
+    <p class="mis-do">${esc(m.do)}</p><div class="mis-say">${sayB(m.say[0].replace(/\s*…\s*/g,' '),1)}<span class="lat">${esc(m.say[0])}</span><span class="hint">${esc(m.say[1])}</span></div>
+    <div class="mis-kan"><span class="lat">${done?'✓ ':''}${esc(m.kan[0])}</span><span class="hint">${esc(m.kan[1])}</span></div>
+    ${done?'':`<div class="btn-row"><button class="btn primary" type="button" data-misdone="${esc(u.id)}">انجام دادم</button></div>`}</section>`}
+function storyUnitHTML(u){const s=STORIES[u.id];if(!s)return'';const r=storyReads(u.id);
+  return`<section class="panel c-sec st-unit"><div class="c-sec-h"><h2 class="h2">داستان این درس</h2>${r?`<span class="hint">${faNum(r)} بار خوانده‌اید</span>`:''}</div><p style="margin:0"><b>${esc(s.fa)}</b> <span class="lat hint">${esc(s.nl)}</span></p><p class="hint" style="margin:4px 0 8px">با واژه‌های همین درس؛ در طول هفته سه بار گوش دهید و بخوانید.</p><div class="btn-row"><button class="btn sm primary" type="button" data-openstory="${esc(u.id)}">${r?'دوباره بخوانید':'خواندن و شنیدن'}</button></div></section>`}
+document.addEventListener('click',e=>{
+  const m=e.target.closest('[data-misdone]');if(m){const u=m.dataset.misdone;db.done['mis:'+u]=Date.now();saveData();const k=MISSIONS[u];toast('آفرین! «'+(k?k.kan[0]:'')+'» 🎉',4500);if(currentView==='course')renderCourse();else if(currentView==='today')renderToday();return}
+  const s=e.target.closest('[data-openstory]');if(s){openStory(s.dataset.openstory);return}
+});
+function renderLifeToday(){const el=$('#lifeToday');if(!el)return;
+  const u=L()==='nl'&&CRS()?currentUnit():null;if(!u){el.hidden=true;return}
+  const s=STORIES[u.id],m=MISSIONS[u.id],r=s?storyReads(u.id):0,last=+db.done['storyt:'+u.id]||0,readToday=last>=sodTs();
+  const parts=[];
+  if(s&&r<3&&!readToday)parts.push(`<div class="lt-row"><div><b>داستان درس: ${esc(s.fa)}</b><span class="hint">${r?`${faNum(r)} از ۳ بار این هفته`:'۳ دقیقه شنیدن و خواندن با واژه‌های همین درس'}</span></div><button class="btn sm" type="button" data-openstory="${esc(u.id)}">بخوانید</button></div>`);
+  if(m&&!misDone(u.id))parts.push(`<div class="lt-row"><div><b>مأموریت واقعی این هفته</b><span class="hint">${esc(m.do)}</span></div><button class="btn sm" type="button" data-cnow="${esc(u.id)}">جزئیات</button></div>`);
+  el.hidden=!parts.length;el.innerHTML=parts.length?`<div class="feature-top"><span class="feature-title">برای همین درس</span></div>${parts.join('')}`:'';
+}
+
+/* ---------- five skills ---------- */
+const weekAgo=()=>Date.now()-7*DAY;
+function skillScores(){
+  const nl=db.items.filter(i=>i.lang==='nl'),known=nl.filter(i=>i.srs&&i.srs.last).length;
+  const dl=DIALOGS.filter(d=>d.lang==='nl'),wt={A1:1,A2:2,B1:3,B2:3};
+  const dlgW=dl.filter(d=>db.done[d.id]).reduce((a,d)=>a+(wt[d.level]||1),0);
+  const roleW=dl.reduce((a,d)=>a+(+db.done['cyc:'+d.id+':4L']||0)*(wt[d.level]||1)/3,0);
+  const lisMin=Object.entries(db.done).filter(([k])=>k.startsWith('lis:nl:')).reduce((a,[,v])=>a+(+v||0),0)/60;
+  const stories=Object.keys(STORIES).reduce((a,u)=>a+Math.min(3,storyReads(u)),0)/3;
+  const drAvg=['getal','prijs','tijd','datum','tel','post'].reduce((a,k)=>a+(+db.done['dr:'+k]||0),0)/6;
+  const srcDone=Object.keys(db.done).filter(k=>k.startsWith('src:nl:')).length;
+  const letters=LIFE.letters.filter(l=>db.done['let:'+l.id]).length,sits=LIFE.sits.filter(s=>db.done['sit:'+s.id]).length;
+  const spGood=Object.keys(db.done).filter(k=>k.startsWith('exsp:')&&exGet(k)===3).length;
+  const wrDone=Object.keys(db.own||{}).filter(k=>k.startsWith('wr:')).length,ownV=Object.keys(db.own||{}).filter(k=>!k.startsWith('wr:')).length;
+  const gram=(GRAMMAR.nl||[]).filter(g=>gDone(g.id)).length,gramN=(GRAMMAR.nl||[]).length||1,mis=Object.keys(MISSIONS).filter(misDone).length;
+  const c=(x,max)=>Math.min(1,x/max);
+  return[
+    {k:'woorden',t:'واژه',v:Math.round(100*c(known,2500)),d:`${faNum(known)} واژه و جمله را دست‌کم یک بار مرور کرده‌اید.`,go:'review',gt:'مرور کارت‌ها'},
+    {k:'luisteren',t:'شنیدن',v:Math.round(100*(0.4*c(dlgW,120)+0.3*c(lisMin,600)+0.15*c(stories,39)+0.15*drAvg/100)),d:`${faNum(dl.filter(d=>db.done[d.id]).length)} مکالمه، ${faNum(Math.round(lisMin))} دقیقه گوش دادن به منابع، تمرین عدد ${faNum(Math.round(drAvg))}٪.`,go:'dialogs',gt:'مکالمه‌ها'},
+    {k:'lezen',t:'خواندن',v:Math.round(100*(0.5*c(stories,39)+0.3*c(srcDone,20)+0.2*c(letters,6))),d:`${faNum(Object.keys(STORIES).filter(u=>storyReads(u)).length)} داستان، ${faNum(srcDone)} منبع، ${faNum(letters)} نامهٔ رسمی.`,go:'stories',gt:'داستان‌ها'},
+    {k:'spreken',t:'گفتار',v:Math.round(100*(0.4*c(roleW,40)+0.3*c(spGood,32)+0.3*c(mis+sits/2,39))),d:`نقش‌آفرینی در مکالمه‌ها، ${faNum(spGood)} پرسش گفتاری «خوب»، ${faNum(mis)} مأموریت واقعی.`,go:'life',gt:'موقعیت‌های روزمره'},
+    {k:'schrijven',t:'نوشتار',v:Math.round(100*(0.4*c(wrDone,24)+0.3*c(ownV,20)+0.3*gram/gramN)),d:`${faNum(wrDone)} تکلیف نوشتاری، ${faNum(ownV)} نسخهٔ خودتان از مکالمه‌ها، ${faNum(gram)} درس دستور.`,go:'exam',gt:'تمرین نوشتار'}];
+}
+const lvlOf=v=>v<15?'شروع':v<40?'A1':v<70?'A2':v<90?'نزدیک B1':'B1';
+function weekActivity(){const wk=weekAgo(),day=dayKey(Date.now()-6*DAY);
+  let rev=0;for(const[k,o]of Object.entries(db.log||{}))if(k>=day)for(const[dv,c]of Object.entries(o))if(dv.endsWith('@nl')||!dv.includes('@'))rev+=+c||0;
+  const lisMin=Math.round(Object.entries(db.done).filter(([k])=>{if(!k.startsWith('lis:nl:'))return false;return k.split(':')[2]>=day}).reduce((a,[,v])=>a+(+v||0),0)/60);
+  const n=p=>Object.entries(db.done).filter(([k,v])=>p(k)&&+v>=wk).length;
+  return[['مرور کارت',rev],['دقیقه گوش دادن',lisMin],['مکالمه',n(k=>/^(nl|th|op|cu)-/.test(k))],['داستان',n(k=>k.startsWith('storyt:'))],['موقعیت',n(k=>k.startsWith('sit:'))],['مأموریت',n(k=>k.startsWith('mis:'))],['نوشته',Object.values(db.own||{}).filter(o=>(+o.u||0)>=wk).length]];
+}
+function renderProgress(){const sk=skillScores(),weak=sk.slice().sort((a,b)=>a.v-b.v)[0],act=weekActivity();
+  const kan=(VZ.courses&&VZ.courses.nl?VZ.courses.nl.units:[]).filter(u=>MISSIONS[u.id]);
+  $('#pgBody').innerHTML=`<section class="panel pg-sk">${sk.map(s=>`<div class="pg-row"><div class="pg-l"><b>${s.t}</b><span class="pg-lv">${lvlOf(s.v)}</span></div><div class="pg-bar"><span style="width:${Math.max(3,s.v)}%"></span><i style="left:40%"></i><i style="left:70%"></i><i style="left:90%"></i></div><p class="hint">${s.d}</p></div>`).join('')}
+    <div class="pg-scale"><span>A1</span><span>A2</span><span>B1</span></div>
+    <p class="hint" style="margin:8px 0 0">این تخمین از کارهای خودتان در برنامه است، نه نمرهٔ رسمی. ملاک واقعی آزمون است.</p></section>
+    <section class="panel pg-next"><b>پیشنهاد این هفته: ${weak.t}</b><p class="hint" style="margin:4px 0 8px">ضعیف‌ترین مهارت شما الان «${weak.t}» است. کمی بیشتر رویش کار کنید تا مهارت‌ها هم‌سطح شوند.</p><button class="btn sm primary" type="button" data-go="${weak.go}">${weak.gt}</button></section>
+    <section class="panel"><h2 class="h2">هفت روز گذشته</h2><div class="pg-week">${act.map(([t,n])=>`<div><b class="num">${faNum(n)}</b><span>${t}</span></div>`).join('')}</div></section>
+    <section class="panel"><h2 class="h2">در زندگی واقعی از پسش برمی‌آیم</h2><p class="hint" style="margin-top:0">هر درس مسیر یک مأموریت واقعی دارد. وقتی انجامش دادید، اینجا تیک می‌خورد.</p>
+      <ul class="pg-kan">${kan.map(u=>{const m=MISSIONS[u.id],d=misDone(u.id);return`<li class="${d?'done':''}"><span class="pg-ck">${d?'✓':''}</span><span><span class="lat">${esc(m.kan[0])}</span><span class="hint">${esc(m.kan[1])}</span></span>${d?'':`<button class="btn sm ghost" type="button" data-cnow="${esc(u.id)}">مأموریت</button>`}</li>`}).join('')}</ul></section>`;
+}
+if(/[?&]debug/.test(location.search))window.__f={get dr(){return dr},LIFE,STORIES,MISSIONS,CHUNKS,DRILLS,drOk,skillScores,weekActivity,chunkOf,openSit,openLetter,openStory};
+
 /* ================= THE LEARNING PLAN =================
    One spine: the course path (stages → lessons; each lesson = words → dialogues → grammar → quiz).
    «امروز» always shows three steps built from that spine: ① review cards ② the next step of the current
@@ -5525,7 +5907,7 @@ function pathState(lang){
   const r1=s.total>0&&left===0;
   let r2=!!pd.dlg||DIALOGS.some(d=>d.lang===lang&&+db.done[d.id]>=sod)||(GRAMMAR[lang]||[]).some(g=>+db.done['g:'+g.id]>=sod);
   if(!r2&&r1&&lang===L()&&CRS()){const u=currentUnit();if(u&&unitNext(u).k==='words')r2=true}
-  const r3=!!pd.quiz||!!pd.lis||!!pd.ph;
+  const r3=!!pd.quiz||!!pd.lis||!!pd.ph||!!pd.story||!!pd.drill||!!pd.sit;
   return{s,left,rev,steps:[r1,r2,r3]};
 }
 function renderPath(){
@@ -5546,8 +5928,8 @@ function renderPath(){
     s2={t:'درس امروز',done:b,open:a,d:nx.k==='done'?'همهٔ درس‌های مسیر تمام شده است. حالا گام «فراتر از B1» را دنبال کنید.':(b?'برای امروز انجام شد. قدم بعد: ':'')+lbl+'. '+nx.t+'.',btn:a&&!b?act:''}}
   else{const nd=nextDialog(lang);s2={t:'یک مکالمه',done:b,open:a,d:b?'یک مکالمه گوش داده شد.':'یک مکالمه را تا آخر گوش دهید.',btn:a&&!b&&nd?`<button class="btn sm primary" type="button" data-dlg="${esc(nd.id)}">شروع مکالمه</button>`:''}}
   const s3={t:'گوش دادن یا تمرین آزاد',done:c,open:a&&b,
-    d:c?'انجام شد. هر چه بیشتر گوش دهید، بهتر.':'دست‌کم ۵ دقیقه به یکی از منابع خودتان گوش دهید، یا یک آزمون کوتاه، یا تمرین موقعیت‌ها.',
-    btn:a&&b&&!c?'<button class="btn sm primary" type="button" data-go="mine">گوش دادن</button><button class="btn sm" type="button" data-go="quiz">آزمون</button>':''};
+    d:c?'انجام شد. هر چه بیشتر گوش دهید، بهتر.':'یکی را انتخاب کنید: داستان همین درس، یک موقعیت روزمره، تمرین عدد و ساعت، یا ۵ دقیقه گوش دادن به منابع خودتان.',
+    btn:a&&b&&!c?(u&&lang==='nl'&&STORIES[u.id]?`<button class="btn sm primary" type="button" data-openstory="${esc(u.id)}">داستان درس</button>`:'<button class="btn sm primary" type="button" data-go="mine">گوش دادن</button>')+(lang==='nl'?'<button class="btn sm" type="button" data-go="life">موقعیت‌ها</button><button class="btn sm" type="button" data-go="drills">عدد و ساعت</button>':'<button class="btn sm" type="button" data-go="quiz">آزمون</button>'):''};
   const steps=[s1,s2,s3];const cur=steps.findIndex(x=>!x.done);
   el.hidden=false;
   el.innerHTML=steps.map((x,i)=>`<li class="step${x.done?' done':i===cur?' now':(i>0&&!x.open)?' locked':''}"><span class="step-n">${x.done?'✓':(i>0&&!x.open)?LOCK_SVG:faNum(i+1)}</span><div class="step-c"><b>${x.t}</b><span class="hint">${esc(x.d)}</span></div>${x.btn?`<span class="btn-row">${x.btn}</span>`:''}</li>`).join('')
@@ -5607,6 +5989,9 @@ function unitNextHTML(u){
   return`<div class="panel u-next"><div><span class="c-kicker">قدم بعدی</span><b>${gramHTML(nx.t)}</b></div>${act}</div>`;
 }
 function uExtrasHTML(u){
+  return (unitLang(u)==='nl'?storyUnitHTML(u)+missionHTML(u):'')+uExtrasHTML0(u);
+}
+function uExtrasHTML0(u){
   const cats=(u.phrases||[]).map(id=>PHRASES[unitLang(u)].cats.find(c=>c.id===id)).filter(Boolean);
   setTimeout(()=>fillUnitSources(u),0);
   return`<section class="panel c-sec" id="uExtras"><div class="c-sec-h"><h2 class="h2">برای تمرین بیشتر (اختیاری)</h2></div>
