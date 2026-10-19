@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-9FOP2EOiepqxmArMyjLHODbNdoL76TdFwMhYg+2DsRY=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-xq6xLyM48xWRbdh9l5TtruLIuZfQ+x3pm/79cGyoed4=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -1292,6 +1292,64 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 .lr-fig img{max-width:100%;height:auto}
 @media (max-width:620px){.lr-row{flex-direction:column;gap:4px}.lr-k{width:auto}.lr-add{bottom:72px;padding-inline-end:72px}}
 
+/* v28 separable verbs on cards: both halves get the same colour and a solid underline */
+mark.sv{background:none;color:inherit;font-weight:700;border-bottom:3px solid var(--sv,var(--nl));padding:0 1px;border-radius:2px}
+mark.sv.sv0{--sv:var(--nl)}mark.sv.sv1{--sv:var(--en)}mark.sv.sv2{--sv:var(--het)}
+.sv-chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px;justify-content:center}
+.ex-body .sv-chips{justify-content:flex-start}
+.sv-chip{font-size:13px;background:var(--surface-2);border-radius:99px;padding:3px 11px;border-inline-start:3px solid var(--sv,var(--nl));line-height:1.6}
+.sv-chip.sv0{--sv:var(--nl)}.sv-chip.sv1{--sv:var(--en)}.sv-chip.sv2{--sv:var(--het)}
+.sv-l{color:var(--muted);font-size:12px}
+.sv-en{color:var(--muted);font-size:12px}
+.sv-note{background:var(--nl-soft)}
+/* v28 kit sections */
+.kit .kit-tab{margin:0 0 14px}
+.kit-tools{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;position:sticky;top:0;z-index:4;background:var(--paper);padding:6px 0}
+.kit-q{width:100%;max-width:520px}
+.kit-gs{display:flex;flex-wrap:wrap;gap:6px}
+.kit-gs .tag{cursor:pointer;border:1px solid transparent}
+.kit-gs .tag.on{background:var(--acc-soft);border-color:var(--acc);color:var(--ink);font-weight:700}
+.kit-rule{margin-bottom:16px}
+.kit-rule ul{margin:6px 0 0;padding-inline-start:20px;line-height:2}
+.kit-g{margin-bottom:22px}
+.kit-gh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.kit-gh .h2{margin:0}
+.kit-g>.hint{margin:4px 0 10px}
+.kit-list{display:flex;flex-direction:column;gap:6px}
+.kit-it{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.kit-it[open]{border-color:var(--acc)}
+.kit-it summary{display:flex;gap:12px;align-items:center;padding:10px 14px;cursor:pointer;list-style:none}
+.kit-it summary::-webkit-details-marker{display:none}
+.kit-it.done summary .kit-h b{color:var(--good)}
+.kit-h{flex:1 1 45%;min-width:0;display:flex;flex-direction:column;align-items:flex-start;text-align:left;direction:ltr}
+.kit-h small{color:var(--muted);font-size:12.5px}
+.kit-m{flex:1 1 45%;min-width:0;display:flex;flex-direction:column;gap:1px}
+.kit-m small{color:var(--muted);font-size:12.5px;direction:ltr;text-align:right}
+.kit-b{padding:2px 14px 12px;display:flex;flex-direction:column;gap:8px}
+.kit-ex{display:flex;gap:10px;align-items:flex-start;padding-top:8px;border-top:1px solid var(--line)}
+.kit-ex p{margin:0}
+.kit-ex .lat{text-align:left;line-height:1.7}
+.kit-ex .fa{color:var(--muted);font-size:14px}
+.kit-ex>div{flex:1;min-width:0}
+mark.kp,mark.kc{background:var(--acc-soft);color:inherit;font-weight:700;border-radius:4px;padding:0 3px}
+.kit-ph,.kit-qz,.kit-end{max-width:640px}
+.kit-qtop{display:flex;justify-content:space-between;align-items:center}
+.kit-qq{font-weight:700;margin:10px 0 4px}
+.kit-qs{font-size:22px;line-height:1.7;margin:6px 0;text-align:left}
+.kit-qs .blank{color:var(--acc);font-weight:700}
+.kit-fill{font-weight:700;border-radius:4px;padding:0 4px}
+.kit-fill.ok{background:var(--good-soft);color:var(--good)}
+.kit-fill.no{background:var(--bad-soft);color:var(--bad)}
+.kit-ch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
+.kit-ch .btn{justify-content:center;min-height:46px;white-space:normal}
+.kit-ch .btn.ok{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.kit-ch .btn.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.kit-fb{border-radius:11px;padding:10px 14px;margin-bottom:10px;background:var(--surface-2)}
+.kit-fb.ok{border-inline-start:4px solid var(--good)}.kit-fb.no{border-inline-start:4px solid var(--bad)}
+@media (max-width:620px){.kit-tools{position:static}.kit-it summary{flex-direction:column;align-items:stretch;gap:4px}.kit-h{align-items:flex-end}.kit-qs{font-size:19px}}
+
+.kit-ch .btn[disabled]{opacity:.5}.kit-ch .btn.ok[disabled],.kit-ch .btn.no[disabled]{opacity:1}
+
 </style>
 </head>
 <body>
@@ -1345,6 +1403,9 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
         <button type="button" data-go="stories"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg><span>داستان‌های فرید</span></button>
         <button type="button" data-go="drills"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg><span>عدد، ساعت و قیمت</span></button>
         <button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg><span>دستور زبان</span></button>
+        <button type="button" data-go="sep"><svg class="i" viewBox="0 0 24 24"><path d="M4 8h7M13 16h7"/><path d="M11 5.5v5M13 13.5v5"/></svg><span>فعل‌های جداشدنی</span></button>
+        <button type="button" data-go="prep"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h9"/><path d="M11 8l4 4-4 4"/><circle cx="18.5" cy="12" r="2"/></svg><span>حرف اضافه‌های ثابت</span></button>
+        <button type="button" data-go="chunk"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="8" width="6" height="8" rx="1.5"/><rect x="9.5" y="8" width="5" height="8" rx="1.5"/><rect x="14.5" y="8" width="6" height="8" rx="1.5"/></svg><span>چانک‌های روزمره</span></button>
         <button type="button" data-go="phrases"><svg class="i" viewBox="0 0 24 24"><path d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 19 16h-7l-4.5 3.5V16H5a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 5 5z"/><path d="M8.5 9.5h7M8.5 12h4.5"/></svg><span>اصطلاحات روزمره</span></button>
         <button type="button" data-go="core"><svg class="i" viewBox="0 0 24 24"><path d="M4 19V9M9 19V5M14 19v-7M19 19V3"/></svg><span>۲۰۰۰ واژهٔ پرکاربرد</span></button>
         <button type="button" data-go="dialogs"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M18.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v6A1.5 1.5 0 0 1 20 18.5h-1v2.5l-3-2.5h-4"/></svg><span>مکالمه‌ها</span></button>
@@ -1765,6 +1826,20 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
       </div>
     </section>
 
+    <!-- ============ LANGUAGE KIT: separable verbs, prepositions, chunks ============ -->
+    <section class="view" id="v-sep" hidden><div class="kit" id="kit-sep">
+      <div class="page-head"><div><h1 class="view-title">فعل‌های جداشدنی</h1><p class="sub">فعل‌هایی مثل <bdi class="lat">aanzetten</bdi> که در جمله دو تکه می‌شوند: <bdi class="lat">Ik zet de tv aan.</bdi> هر فعل با شکل‌های حال، گذشته و ماضی نقلی، دو مثال صوتی و معنی فارسی و انگلیسی. در کارت‌های مرور هم این فعل‌ها در مثال‌ها رنگی علامت زده می‌شوند.</p><p class="hint kit-stat"></p></div></div>
+      <div class="seg kit-tab"><button type="button" data-v="list">فهرست</button><button type="button" data-v="practice">تمرین</button></div>
+      <div class="kit-body"></div></div></section>
+    <section class="view" id="v-prep" hidden><div class="kit" id="kit-prep">
+      <div class="page-head"><div><h1 class="view-title">حرف اضافه‌های ثابت</h1><p class="sub">حرف اضافه‌ای که همیشه با یک فعل، صفت یا اسم می‌آید: <bdi class="lat">wachten op</bdi>، <bdi class="lat">trots op</bdi>، <bdi class="lat">de kans op</bdi>. با ترجمهٔ فارسی جور درنمی‌آید، پس باید همراه واژه حفظ شود؛ به‌اضافهٔ حرف اضافه‌های زمان و مکان.</p><p class="hint kit-stat"></p></div></div>
+      <div class="seg kit-tab"><button type="button" data-v="list">فهرست</button><button type="button" data-v="practice">تمرین</button></div>
+      <div class="kit-body"></div></div></section>
+    <section class="view" id="v-chunk" hidden><div class="kit" id="kit-chunk">
+      <div class="page-head"><div><h1 class="view-title">چانک‌های روزمره</h1><p class="sub">تکه‌های آماده‌ای که هلندی‌ها در هر جمله به کار می‌برند: <bdi class="lat">een afspraak maken</bdi>، <bdi class="lat">zin hebben in</bdi>، <bdi class="lat">het valt mee</bdi>. به‌جای واژهٔ تک، این تکه‌ها را یک‌جا حفظ کنید تا روان‌تر و طبیعی‌تر حرف بزنید.</p><p class="hint kit-stat"></p></div></div>
+      <div class="seg kit-tab"><button type="button" data-v="list">فهرست</button><button type="button" data-v="practice">تمرین</button></div>
+      <div class="kit-body"></div></div></section>
+
     <!-- ============ GRAMMAR ============ -->
     <section class="view" id="v-grammar" hidden>
       <div id="gHome">
@@ -2043,7 +2118,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۷</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۸</p>
     </section>
 
 </main>
@@ -2080,7 +2155,7 @@ details.c-stage[open]>summary h2::before{content:"▾ "}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=27"></script>
+<script src="packs.js?v=28"></script>
 <script>
 (function(){
 'use strict';
@@ -2740,7 +2815,7 @@ function wordSheet(it){
   if(own){const st=statusOf(own);b+=`<div class="btn-row"><span class="pill ${st.k}">${st.t}</span>${own.pack?'':'<span class="tag">افزودهٔ شما</span>'}</div>`}
   if(own&&own.lang==='nl'){const sn=own.seen||[],ls=sn.slice().sort((a,b)=>b.t-a.t)[0];b+=`<div class="ws-seen"><span>${sn.length?`در دنیای واقعی ${faNum(sn.length)} بار؛ آخرین بار ${hnWhen(ls.t)}، ${hnWhereFa(ls.w)}`:'این واژه را بیرون دیدید یا شنیدید؟'}</span><span class="btn-row"><button class="btn sm ghost" type="button" data-ws-seen="s">امروز دیدمش</button><button class="btn sm ghost" type="button" data-ws-seen="h">شنیدمش</button></span></div>`}
   if(it.type!=='sentence'||ex.length){
-  b+=`<div class="ws-sec"><h3>جمله‌های نمونه</h3><div class="ex-list">${ex.length?ex.map((e,k)=>`<div class="ex${e.u?' mine':''}"><div class="ex-body"><p class="lat">${esc(e.t)}</p>${trHTML(e,it.lang)}${e.u?'<p class="hint" style="margin:0">جملهٔ شما</p>':''}</div>${speakBtn('data-ws-ex="'+k+'"',1)}</div>`).join(''):'<p class="hint" style="margin:0">هنوز جملهٔ نمونه‌ای ندارد.</p>'}</div>`;
+  b+=`<div class="ws-sec"><h3>جمله‌های نمونه</h3><div class="ex-list">${ex.length?ex.map((e,k)=>`<div class="ex${e.u?' mine':''}"><div class="ex-body"><p class="lat">${svText(e.t,it.lang)}</p>${trHTML(e,it.lang)}${svBlock(e.t,it.lang)}${e.u?'<p class="hint" style="margin:0">جملهٔ شما</p>':''}</div>${speakBtn('data-ws-ex="'+k+'"',1)}</div>`).join(''):'<p class="hint" style="margin:0">هنوز جملهٔ نمونه‌ای ندارد.</p>'}</div>`;
   if(own)b+=`<div class="add-ex"><b style="font-size:14px">جملهٔ خودتان را اضافه کنید</b><input type="text" id="wsExT" class="lat ltr" placeholder="${it.lang==='nl'?'Ik ga morgen naar …':'I usually …'}" spellcheck="false"><input type="text" id="wsExFa" placeholder="ترجمهٔ فارسی (اختیاری)"><div class="btn-row"><button class="btn sm primary" type="button" id="wsExAdd">افزودن جمله</button></div></div>`;
   b+='</div>';
   }
@@ -2811,7 +2886,7 @@ document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','course','exam','progress','life','talk','hunt','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
+const VIEWS=['today','course','exam','progress','life','talk','hunt','sep','prep','chunk','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
@@ -2825,7 +2900,7 @@ function showView(v,noHash){
   if(v==='today')renderToday();
   if(v==='course')renderCourse();
   if(v==='exam')renderExam();else if(typeof exLeave==='function')exLeave();
-  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt'){if(!$('#lrOne').hidden&&!lrRec){$('#lrOne').hidden=true;$('#hnHome').hidden=false}renderHunt()}if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
+  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt'){if(!$('#lrOne').hidden&&!lrRec){$('#lrOne').hidden=true;$('#hnHome').hidden=false}renderHunt()}if(v==='sep'||v==='prep'||v==='chunk')renderKit(v);if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
   if(v==='grammar')renderGrammar();
   if(v==='phrases')openPhrases();
   if(v==='core')renderCore();
@@ -2979,26 +3054,27 @@ function autoDir(it){
 }
 function pickDir(it){let d=ses.dir;if(d==='auto')d=autoDir(it);if(d==='mix'){const o=['fwd','rev'];if(clozeOf(it))o.push('cloze','cloze');d=o[Math.floor(Math.random()*o.length)]}if(d==='cloze'&&!clozeOf(it))d='fwd';return d}
 const typeFa=it=>isVerb(it)?'فعل':it.type==='sentence'?'جمله':'واژه';
-function wordHTML(it,small){return `<div class="card-word ${it.type==='sentence'?'sentence':''}${small?' small':''}">${artHTML(it)}${esc(it.text)}</div>`}
+function wordHTML(it,small){return `<div class="card-word ${it.type==='sentence'?'sentence':''}${small?' small':''}">${artHTML(it)}${it.type==='sentence'?svText(it.text,it.lang):esc(it.text)}</div>`}
 function frontHTML(it,dir){
   const meta=x=>`<div class="card-meta"><span class="lang-badge ${it.lang}">${it.lang.toUpperCase()}</span><span>${typeFa(it)}${x||''}</span></div>`;
   if(dir==='rev')return meta('، به '+LANG_FA[it.lang]+'؟')+picHTML(it)+meanHTML(it,'card-q-fa');
   if(dir==='type'){const noun=it.lang==='nl'&&it.type==='word'&&it.article;return meta('، به '+LANG_FA[it.lang]+' بنویسید')+picHTML(it)+meanHTML(it,'card-q-fa')+`<form class="type-box" id="typeForm" autocomplete="off"><input id="typeIn" class="lat" dir="ltr" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="${noun?'de یا het + واژه':'پاسخ را بنویسید'}" aria-label="پاسخ"><button class="btn primary" type="submit">بررسی</button></form><p class="hint" style="margin:0">نمی‌دانید؟ خالی بگذارید و «بررسی» را بزنید.</p>`}
   if(dir==='listen')return meta('، از روی صدا')+`<button class="listen-big" type="button" data-listen-play aria-label="پخش دوباره"><svg class="i"><use href="#i-speak"/></svg></button><p class="hint" style="margin:0;text-align:center">گوش دهید و معنی جمله را به یاد بیاورید. هر چند بار لازم است دوباره بزنید.</p>`;
-  if(dir==='cloze'){const c=clozeOf(it);return meta('، جای خالی را پر کنید')+`<div class="card-cloze">${esc(c.before)}<span class="blank">${'_'.repeat(Math.max(4,Math.min(10,c.ans.length)))}</span>${esc(c.after)}</div>`+(sentMean(c,it.lang)?`<div class="card-en${enMain(it)&&c.en?' lat':''}">${esc(sentMean(c,it.lang))}</div>`:'')+`<div class="hint">معنی واژه: ${meanInline(it)}</div>`}
+  if(dir==='cloze'){const c=clozeOf(it);return meta('، جای خالی را پر کنید')+`<div class="card-cloze">${svCloze(c,it.lang,0)}</div>`+svClozeChips(c,it.lang,0)+(sentMean(c,it.lang)?`<div class="card-en${enMain(it)&&c.en?' lat':''}">${esc(sentMean(c,it.lang))}</div>`:'')+`<div class="hint">معنی واژه: ${meanInline(it)}</div>`}
   const art=(it.lang==='nl'&&it.type==='word'&&it.article)?'<span class="art-q">de/het?</span> ':'';
-  return meta()+`<div class="card-word ${it.type==='sentence'?'sentence':''}">${art}${esc(it.text)}</div>`+sayRow();
+  return meta()+`<div class="card-word ${it.type==='sentence'?'sentence':''}">${art}${it.type==='sentence'?svText(it.text,it.lang):esc(it.text)}</div>`+sayRow();
 }
-function exBlock(list,lang){return `<div class="ex-list">${list.map((e,k)=>`<div class="ex${e.u?' mine':''}"><div class="ex-body"><p class="lat">${esc(e.t)}</p>${trHTML(e,lang)}</div>${speakBtn('data-speak-ex="'+k+'"',1)}</div>`).join('')}</div>`}
+function exBlock(list,lang){return `<div class="ex-list">${list.map((e,k)=>`<div class="ex${e.u?' mine':''}"><div class="ex-body"><p class="lat">${svText(e.t,lang)}</p>${trHTML(e,lang)}${svBlock(e.t,lang)}</div>${speakBtn('data-speak-ex="'+k+'"',1)}</div>`).join('')}</div>`}
 function backHTML(it,dir){
   let h='<div class="card-back">'+(dir!=='rev'&&dir!=='type'?picHTML(it):'');const ex=exList(it);
   if(dir==='type'&&ses&&ses.typed)h+=typedHTML(it,ses.typed);
-  if(dir==='cloze'){const c=clozeOf(it);h+=`<div class="card-cloze">${esc(c.before)}<mark>${esc(c.ans)}</mark>${esc(c.after)}</div>`+speakBtn('data-speak-cloze aria-label="پخش جمله"')+wordHTML(it,1)}
-  else if(dir==='rev'||dir==='type'||dir==='listen')h+=wordHTML(it)+sayRow();
+  if(dir==='cloze'){const c=clozeOf(it);h+=`<div class="card-cloze">${svCloze(c,it.lang,1)}</div>`+svClozeChips(c,it.lang,1)+speakBtn('data-speak-cloze aria-label="پخش جمله"')+wordHTML(it,1)}
+  else if(dir==='rev'||dir==='type'||dir==='listen')h+=wordHTML(it)+sayRow()+(it.type==='sentence'?svBlock(it.text,it.lang):'');
+  else if(it.type==='sentence')h+=svBlock(it.text,it.lang);
   else if(it.lang==='nl'&&it.article&&it.type==='word')h+=`<div class="card-plural lat">${artHTML(it)}${esc(it.text)}</div>`;
   if(dir!=='rev'&&dir!=='type')h+=meanHTML(it,'card-fa');
   if(it.plural)h+=`<div class="card-plural">جمع: <span class="lat">de ${esc(it.plural)}</span></div>`;
-  h+=verbHTML(it)+(it.type==='word'?chunkHTML(it):'');
+  h+=verbHTML(it)+(it.type==='word'?chunkHTML(it)+(it.verb?'':svForms(it)):'');
   const shown=dir==='cloze'?ex.slice(1,3):ex.slice(0,2);if(shown.length)h+=exBlock(shown,it.lang);
   const ety=it.type!=='sentence'?etymShort(it):'';if(ety)h+=`<div class="card-note" style="background:var(--acc-soft)">${ety}</div>`;
   if(it.note)h+=`<div class="card-note">${esc(it.note)}</div>`;
@@ -3013,7 +3089,7 @@ function introHTML(it){
   let h=`<div class="card-meta"><span class="lang-badge ${it.lang}">${it.lang.toUpperCase()}</span><span>${typeFa(it)} تازه، اول آشنا شوید</span></div>`;
   h+=picHTML(it)+wordHTML(it)+sayRow()+meanHTML(it,'card-fa');
   if(it.plural)h+=`<div class="card-plural">جمع: <span class="lat">de ${esc(it.plural)}</span></div>`;
-  h+=verbHTML(it)+(it.type==='word'?chunkHTML(it):'');
+  h+=verbHTML(it)+(it.type==='word'?chunkHTML(it)+(it.verb?'':svForms(it)):'');
   if(ex.length)h+=exBlock(ex,it.lang);
   if(ety)h+=`<div class="card-note" style="background:var(--acc-soft)">${ety}</div>`;
   if(it.note)h+=`<div class="card-note">${esc(it.note)}</div>`;
@@ -3976,7 +4052,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=27',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=28',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -3999,7 +4075,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 27، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 28، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -6482,6 +6558,188 @@ $('#lrBody').addEventListener('click',e=>{
 });
 document.addEventListener('click',e=>{const o=e.target.closest('[data-lropen]');if(o){e.preventDefault();lrOpen(o.dataset.lropen)}});
 if(/[?&]debug/.test(location.search))window.__lr={lrAnalyze,lrMask,lrChunks,lrOpen,lrAddFiles,lrRead,get files(){return lrFiles},get a(){return lrA},get rec(){return lrRec},maskRec:()=>lrMask(srcText(lrRec)),srcAll:()=>idbAll('src'),setOpen:id=>{openId=id},get view(){return currentView}};
+
+/* ================= LANGUAGE KIT (v28): separable verbs, fixed prepositions, everyday chunks =================
+   1. A separable-verb finder marks both halves of a split verb (zet … aan) in every Dutch example on the cards,
+      with the infinitive and its meaning under the sentence.
+   2. Three sections (views sep / prep / chunk): lists with forms, examples, audio, «add to cards» and a practice round. */
+const KIT=VZ.kit||{sep:[],prep:[],chunk:[]};
+const SV_PARTS=['aan','af','op','uit','in','mee','terug','door','over','toe','weg','bij','na','voor','om','samen','schoon','klaar','kapot','thuis','langs','tegen','deel','kennis','plaats','open','dicht','teleur','achter','stil','vast','los','neer','binnen','buiten','rond','vrij','goed','tekort','bekend','vandaan','heen','langs'];
+const SV_PREP=new Set(['aan','op','voor','van','met','naar','over','in','om','tegen','bij','uit','tot','door','na','zonder','tijdens','onder','achter','tussen','vanaf','sinds','als','om']);
+const SV_CONJ=new Set(['en','want','omdat','dat','als','die','terwijl','zodat','of','toen','wanneer','voordat','nadat','dus','hoe','waarom','waar']);
+const SV_SUB=new Set(['omdat','dat','als','die','terwijl','zodat','of','toen','wanneer','voordat','nadat','hoe','wat','waarom','welke','wie','waar']);
+const SV_AMB=new Set(['voorkomen','overkomen','doorlopen']);
+const SV_NOT=new Set(['overleggen','overtuigen','overwegen','overnachten','overhandigen','overschrijden','overlijden','overvallen','overleven','overdrijven','overzien','overheersen','voorspellen','voorzien','omarmen','omringen','doorzoeken','aanbidden','achtervolgen','ondertekenen','onderzoeken','ondernemen','uitbetalen0']);
+let SVX=null;
+function svFin(stem,base,ps,pp){const f=new Set();const add=x=>{x=String(x||'').trim().toLowerCase();if(x)f.add(x)};
+  add(stem);if(/[^aeiou]a$/.test(stem))add(stem+'at');else if(!/t$/.test(stem))add(stem+'t');if(/ud$/.test(stem)){add(stem.slice(0,-1));add(stem.slice(0,-1)+'dt')}add(base);
+  String(ps||'').split(',').forEach(add);String(pp||'').split(',').forEach(add);return f}
+function svLex(){
+  if(SVX&&SVX.n===PACKS.length+db.items.length)return SVX;
+  const verbs=[],bases=new Map(),byInf=new Map();
+  const push=v=>{if(!v.inf||byInf.has(v.inf)||SV_NOT.has(v.inf))return;byInf.set(v.inf,v);verbs.push(v)};
+  KIT.sep.forEach(g=>g.items.forEach(x=>{const inf=x.t.replace(/^zich /,'').split(' ')[0],base=inf.slice(x.p.length),stem=x.ik.split(' ')[0],partc=x.pf.split(' ').pop();
+    const fin=svFin(stem,base,x.ps,x.pp);bases.set(base,{fin,pb:partc.slice(x.p.length)});push({inf,p:x.p,base,fin,partc,fa:x.fa,en:x.en,kit:x})}));
+  const words=[];
+  PACKS.forEach(p=>{if(p.lang!=='nl')return;packItems(p).forEach(it=>{if(it.type!=='word')return;const v=it.verb;
+    if(v&&v.ik){const sp=v.ik.split(' ');if(sp.length>1){const part=sp.pop(),inf=it.text.toLowerCase();if(inf.startsWith(part)){const base=inf.slice(part.length);
+        const fin=svFin(sp[0],base,(v.pastSg||'').split(' ')[0],(v.pastPl||'').split(' ')[0]);if(v.hij)fin.add(v.hij.split(' ')[0].toLowerCase());
+        if(!bases.has(base))bases.set(base,{fin,pb:(v.part||'').slice(part.length)});push({inf,p:part,base,fin,partc:(v.part||'').toLowerCase(),fa:it.fa,en:it.en})}}
+      else if(!bases.has(it.text.toLowerCase())){const fin=svFin(v.ik,it.text.toLowerCase(),(v.pastSg||'').split('/')[0],(v.pastPl||'').split('/')[0]);if(v.hij)fin.add(v.hij.toLowerCase());bases.set(it.text.toLowerCase(),{fin,pb:(v.part||'').toLowerCase()})}}
+    else if(!it.article&&/^[a-z]+en$/.test(it.text))words.push(it)})});
+  db.items.forEach(it=>{if(it.lang==='nl'&&it.type==='word'&&!it.article&&/^[a-z]+en$/.test(it.text))words.push(it)});
+  /* pack words like «doorvragen» get their forms from the base verb (vragen) */
+  words.forEach(it=>{const w=it.text.toLowerCase();if(byInf.has(w))return;for(const p of SV_PARTS){if(w.length>p.length+3&&w.startsWith(p)){const b=bases.get(w.slice(p.length));if(b){push({inf:w,p,base:w.slice(p.length),fin:b.fin,partc:b.pb?p+b.pb:'',fa:it.fa,en:it.en});break}}}});
+  const byFin=new Map(),joined=new Map();
+  verbs.forEach(v=>{v.fin.forEach(f=>{const k=f+'|'+v.p;if(!byFin.has(k))byFin.set(k,v);if(!joined.has(v.p+f))joined.set(v.p+f,v)});joined.set(v.inf,v);if(v.partc)joined.set(v.partc,v)});
+  const prepSet=new Set();KIT.prep.forEach(g=>g.items.forEach(x=>{if(x.k)prepSet.add(x.t.replace(/^zich /,'').split(' ')[0]+'|'+x.k)}));
+  return SVX={n:PACKS.length+db.items.length,verbs,byFin,joined,prepSet,byInf};
+}
+/* hits: [{v, r:[[s,e],…], split}] in character ranges of the sentence */
+function svFind(text){
+  const L=svLex(),s=String(text||''),out=[];const toks=[];let m;const re=/[A-Za-zÀ-ÖØ-öø-ÿ'’]+|[,;:.!?()"“”]/g;
+  while((m=re.exec(s)))toks.push({t:m[0],l:m[0].toLowerCase(),s:m.index,e:m.index+m[0].length,p:/^[,;:.!?()"“”]$/.test(m[0])});
+  /* clauses */
+  const cl=[];let cur=[];toks.forEach((t,i)=>{if(t.p){if(cur.length)cl.push(cur);cur=[];return}if(SV_CONJ.has(t.l)&&(cur.length||!cl.length)){if(cur.length)cl.push(cur);cur=[]}cur.push(t)});if(cur.length)cl.push(cur);
+  const sub=new Map();cl.forEach(c=>{const last=c[c.length-1];if(SV_SUB.has(c[0].l)&&c.length>1)sub.set(last.s,1)});
+  const used=new Set();
+  cl.forEach(c=>{
+    const rp=c.some(t=>/^(waar|daar|er|hier)$/.test(t.l));
+    for(let j=c.length-1;j>0;j--){const pt=c[j];if(!SV_PARTS.includes(pt.l))continue;
+      const nx=c[j+1];if(nx&&!SV_PREP.has(nx.l)&&!SV_SUB.has(nx.l))continue;const pv=c[j-1];if(pv&&/^(naar|van)$/.test(pv.l)&&/^(binnen|buiten|huis|thuis)$/.test(pt.l))continue;
+      let hit=null;for(let i=0;i<j;i++){const v=L.byFin.get(c[i].l+'|'+pt.l);if(v){if(rp&&L.prepSet.has(v.base+'|'+pt.l))continue;hit={v,i};break}}
+      if(hit){out.push({v:hit.v,r:[[c[hit.i].s,c[hit.i].e],[pt.s,pt.e]],split:1,f:c[hit.i].t+' … '+pt.t});used.add(c[hit.i].s);used.add(pt.s);break}}
+  });
+  toks.forEach((t,i)=>{if(t.p||used.has(t.s))return;const v=L.joined.get(t.l);if(v&&(!SV_AMB.has(v.inf)||t.l===v.partc)&&t.l.length>v.p.length+2&&(t.l===v.inf||t.l===v.partc||sub.has(t.s))){out.push({v,r:[[t.s,t.e]],split:0,f:t.t});return}
+    const n1=toks[i+1],n2=toks[i+2];if(SV_PARTS.includes(t.l)&&n1&&n1.l==='te'&&n2){const v2=L.byInf.get(t.l+n2.l);if(v2){out.push({v:v2,r:[[t.s,t.e],[n2.s,n2.e]],split:1,f:t.t+' te '+n2.t});used.add(n2.s)}}});
+  return out;
+}
+/* HTML for a sentence with the separable verbs marked; slot=[start,end,html] replaces a range (cloze blank) */
+function svMark(text,hits,slot){
+  const s=String(text||'');const marks=[];(hits||[]).forEach((h,k)=>h.r.forEach(r=>marks.push({s:r[0],e:r[1],k})));marks.sort((a,b)=>a.s-b.s);
+  let h='',i=0;const emit=(a,b)=>{let p=a;marks.forEach(m=>{if(m.e<=p||m.s>=b)return;const ms=Math.max(m.s,p),me=Math.min(m.e,b);if(ms>p)h+=esc(s.slice(p,ms));h+=`<mark class="sv sv${m.k%3}">${esc(s.slice(ms,me))}</mark>`;p=me});if(p<b)h+=esc(s.slice(p,b))};
+  if(slot){emit(0,slot[0]);h+=slot[2];emit(slot[1],s.length)}else emit(0,s.length);return h}
+function svChips(hits){if(!hits||!hits.length)return'';const seen=new Set();
+  return`<div class="sv-chips">${hits.filter(x=>!seen.has(x.v.inf)&&seen.add(x.v.inf)).map((x,k)=>`<span class="sv-chip sv${k%3}"><span class="sv-l">${x.split?'فعل جداشدنی':'فعل جداشدنی (چسبیده)'}</span> <b class="lat" dir="ltr">${esc(x.f)}</b> ← <b class="lat" dir="ltr">${esc(x.v.inf)}</b>${x.v.fa?`: ${esc(String(x.v.fa).split(/[،;؛]/)[0])}`:''}${x.v.en&&gl({lang:'nl',en:x.v.en})!=='fa'?` <span class="lat sv-en">${esc(x.v.en)}</span>`:''}</span>`).join('')}</div>`}
+/* convenience: a Dutch sentence → marked HTML + chips */
+function svText(t,lang){if(lang&&lang!=='nl')return esc(t);return svMark(t,svFind(t))}
+function svBlock(t,lang){if(lang&&lang!=='nl')return'';return svChips(svFind(t))}
+/* cloze cards: the blank never gives the verb away on the front */
+function svCloze(c,lang,back){const t=c.before+c.ans+c.after,a=c.before.length,b=a+c.ans.length;const sl=back?`<mark>${esc(c.ans)}</mark>`:`<span class="blank">${'_'.repeat(Math.max(4,Math.min(10,c.ans.length)))}</span>`;if(lang!=='nl')return esc(c.before)+sl+esc(c.after);
+  const hits=svFind(t).filter(h=>back||h.r.every(r=>r[1]<=a||r[0]>=b));return svMark(t,hits,[a,b,sl])}
+function svClozeChips(c,lang,back){if(lang!=='nl')return'';const t=c.before+c.ans+c.after,a=c.before.length,b=a+c.ans.length;const out=h=>h.r.every(r=>r[1]<=a||r[0]>=b);return svChips(svFind(t).filter(h=>back?!out(h):out(h)))}
+/* card note for a separable verb itself */
+function svForms(it){if(!it||it.lang!=='nl'||it.type!=='word')return'';const L=svLex();const v=L.byInf.get(it.text.replace(/^zich /,'').toLowerCase());if(!v)return'';
+  const k=v.kit;const stem=k?k.ik.split(' ')[0]:[...v.fin][0];const ps=k?k.ps.split(',')[0]:'';const pf=k?k.pf:(v.partc?'… '+v.partc:'');
+  return`<div class="card-note sv-note"><b>فعل جداشدنی</b> <span class="lat" dir="ltr">ik ${esc(stem)} … ${esc(v.p)}${ps?' · ik '+esc(ps)+' … '+esc(v.p):''}${pf?' · '+esc(pf):''}</span><br><span class="hint">در جملهٔ اصلی، <b class="lat">${esc(v.p)}</b> جدا می‌شود و به آخر جمله می‌رود.</span></div>`}
+
+/* ================= the three sections ================= */
+const KIT_META={
+  sep:{view:'sep',title:'فعل‌های جداشدنی',sub:'فعل‌هایی مثل aanzetten که در جمله دو تکه می‌شوند: Ik zet de tv aan. هر فعل با شکل‌های حال، گذشته و ماضی نقلی، دو مثال صوتی و معنی فارسی و انگلیسی. در کارت‌های مرور هم این فعل‌ها در مثال‌ها رنگی علامت زده می‌شوند.',tag:'جداشدنی'},
+  prep:{view:'prep',title:'حرف اضافه‌های ثابت',sub:'حرف اضافه‌ای که همیشه با یک فعل، صفت یا اسم می‌آید: wachten op، trots op، de kans op. با ترجمهٔ فارسی جور درنمی‌آید، پس باید همراه واژه حفظ شود. به‌اضافهٔ حرف اضافه‌های زمان و مکان.',tag:'حرف اضافه'},
+  chunk:{view:'chunk',title:'چانک‌های روزمره',sub:'تکه‌های آماده‌ای که هلندی‌ها در هر جمله به کار می‌برند: een afspraak maken، zin hebben in، het valt mee. با هر تکه یک مثال صوتی و معنی؛ به‌جای واژه‌های تک، این تکه‌ها را حفظ کنید تا روان‌تر حرف بزنید.',tag:'چانک'}};
+const kitSt={sep:{tab:'list',g:'',q:''},prep:{tab:'list',g:'',q:''},chunk:{tab:'list',g:'',q:''}};
+let kitRun=null;
+const kitAll=k=>KIT[k].flatMap(g=>g.items.map(x=>Object.assign(x,{_g:g})));
+const kitKey=(k,x)=>'kit:'+k+':'+x.id;
+/* Persian text with Dutch inside: keep each Dutch run left-to-right */
+const kitBidi=t=>String(t||'').split(/([A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'’ ,.?!\/…\-]*[A-Za-zÀ-ÖØ-öø-ÿ.?!…]|[A-Za-zÀ-ÖØ-öø-ÿ])/).map((m,i)=>i%2?`<bdi class="lat">${esc(m)}</bdi>`:esc(m)).join('');
+function kitSepForms(x){const st=x.ik.split(' ');return`ik ${st[0]}${st[1]?' '+st[1]:''} … ${x.p} · ik ${x.ps.split(',')[0]} … ${x.p} · ${x.pf}`}
+/* highlight the fixed preposition or the chunk words in an example */
+function kitExHTML(k,x,t){
+  if(k==='sep')return svText(t,'nl');
+  if(k==='prep'){if(!x.k)return esc(t);const re=new RegExp('(^|[^A-Za-zÀ-ÿ])('+x.k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')(?=[^A-Za-zÀ-ÿ]|$)','i');const m=re.exec(t);if(!m)return esc(t);const s=m.index+m[1].length;return esc(t.slice(0,s))+`<mark class="kp">${esc(m[2])}</mark>`+esc(t.slice(s+m[2].length))}
+  const ws=x.t.replace(/[…?!.,]/g,' ').split(/\s+/).filter(w=>w.length>1&&!/^(…|iets|iemand|je|me|zich)$/.test(w)).map(w=>w.toLowerCase());
+  return t.split(/([A-Za-zÀ-ÖØ-öø-ÿ'’]+)/).map(p=>ws.includes(p.toLowerCase())?`<mark class="kc">${esc(p)}</mark>`:esc(p)).join('');
+}
+function kitItemHTML(k,x){
+  const own=findDup('nl',x.t),done=db.done[kitKey(k,x)];
+  return`<details class="kit-it${done?' done':''}" data-kid="${esc(x.id)}"><summary><span class="kit-h"><b class="lat" dir="ltr">${esc(x.t)}</b>${k==='sep'?`<small class="lat" dir="ltr">${esc(kitSepForms(x))}</small>`:''}</span><span class="kit-m">${esc(x.fa)}<small class="lat">${esc(x.en)}</small></span>${done?'<span class="pill ok">✓</span>':''}</summary>
+    <div class="kit-b">${x.ex.map((e,i)=>`<div class="kit-ex"><button class="icon-btn mini" type="button" data-ksay="${esc(x.id)}" data-i="${i}" aria-label="پخش"><svg class="i"><use href="#i-speak"/></svg></button><div><p class="lat" dir="ltr">${kitExHTML(k,x,e[0])}</p><p class="fa">${esc(e[1])}</p></div></div>`).join('')}
+    ${x.n?`<div class="card-note">${kitBidi(x.n)}</div>`:''}
+    <div class="btn-row"><button class="btn sm ghost" type="button" data-ksay="${esc(x.id)}" data-i="-1">تلفظ</button>${own?'<span class="pill ok">در کارت‌های شما</span>':`<button class="btn sm" type="button" data-kadd="${esc(x.id)}">افزودن به کارت‌ها</button>`}</div></div></details>`;
+}
+function renderKit(k){
+  const el=$('#kit-'+k);if(!el)return;const M=KIT_META[k],st=kitSt[k],all=kitAll(k);
+  const done=all.filter(x=>db.done[kitKey(k,x)]).length;
+  el.querySelector('.kit-stat').textContent=`${faNum(all.length)} مورد در ${faNum(KIT[k].length)} گروه؛ ${faNum(done)} مورد را در تمرین درست جواب داده‌اید.`;
+  setSeg(el.querySelector('.kit-tab'),st.tab);
+  const body=el.querySelector('.kit-body');
+  if(st.tab==='practice'){if(!kitRun||kitRun.k!==k)kitPracticeHome(k);else kitPaint();return}
+  const q=norm(st.q);
+  const groups=KIT[k].filter(g=>!st.g||g.id===st.g).map(g=>({g,items:g.items.filter(x=>!q||norm(x.t+' '+x.fa+' '+x.en+' '+x.ex.map(e=>e[0]+' '+e[1]).join(' ')).includes(q))})).filter(x=>x.items.length);
+  body.innerHTML=`<div class="kit-tools"><input type="search" class="kit-q" placeholder="جست‌وجو به هلندی، فارسی یا انگلیسی" value="${esc(st.q)}" aria-label="جست‌وجو"><div class="kit-gs"><button type="button" class="tag${st.g?'':' on'}" data-kg="">همه</button>${KIT[k].map(g=>`<button type="button" class="tag${st.g===g.id?' on':''}" data-kg="${esc(g.id)}">${kitBidi(g.fa)}</button>`).join('')}</div></div>`+
+    (groups.length?groups.map(({g,items})=>`<section class="kit-g"><div class="kit-gh"><h2 class="h2">${kitBidi(g.fa)}</h2><button class="btn sm ghost" type="button" data-kaddg="${esc(g.id)}">همهٔ این گروه به کارت‌ها</button></div><p class="hint">${kitBidi(g.d)}</p><div class="kit-list">${items.map(x=>kitItemHTML(k,x)).join('')}</div></section>`).join(''):'<p class="empty">چیزی پیدا نشد.</p>');
+  if(k==='sep'&&!st.q&&!st.g)body.insertAdjacentHTML('afterbegin',`<div class="panel kit-rule"><b>قاعده در یک نگاه</b><ul><li>جملهٔ اصلی: فعل سر جای دوم، پیشوند آخر جمله: <span class="lat" dir="ltr">Ik <mark class="sv sv0">zet</mark> de tv <mark class="sv sv0">aan</mark>.</span></li><li>با فعل کمکی یا در جملهٔ وابسته: سر هم: <span class="lat" dir="ltr">Ik wil de tv aanzetten. / … omdat ik de tv aanzet.</span></li><li>ماضی نقلی: ge وسط می‌آید: <span class="lat" dir="ltr">aan<b>ge</b>zet، op<b>ge</b>beld</span>؛ با te: <span class="lat" dir="ltr">aan <b>te</b> zetten</span>.</li><li>be-، ge-، her-، ont-، ver-، er- هیچ‌وقت جدا نمی‌شوند: <span class="lat" dir="ltr">Ik begrijp het. Ik vertel het.</span></li></ul></div>`);
+}
+function kitFind(k,id){return kitAll(k).find(x=>x.id===id)}
+function kitToItem(k,x){
+  const now=Date.now(),ex=x.ex[0]||['',''];
+  const o={id:uid(),lang:'nl',type:'word',text:x.t,fa:x.fa,en:x.en,example:ex[0],exampleFa:ex[1],note:x.n||'',tags:[KIT_META[k].tag],created:now,updated:now,srs:null};
+  if(k==='sep'){const st=x.ik.split(' '),refl=st[1]||'';const hij=(st[0].endsWith('t')?st[0]:st[0]+'t');
+    o.verb={ik:st[0]+(refl?' '+refl:'')+' '+x.p,hij:hij+(refl?' zich':'')+' '+x.p,pastSg:x.ps.split(',')[0]+' '+x.p,pastPl:x.pp.split(',')[0]+' '+x.p,aux:/^is /.test(x.pf)?'zijn':'hebben',part:x.pf.split(' ').pop()}}
+  const it=cleanItem(o);if(x.ex[1])it.exs=[{t:x.ex[1][0],fa:x.ex[1][1],en:'',u:0}];return it;
+}
+function kitAdd(k,list){let n=0;list.forEach(x=>{if(findDup('nl',x.t))return;db.items.push(kitToItem(k,x));n++});if(n){SVX=null;saveData();refreshBadges()}toast(n?faNum(n)+' مورد به کارت‌ها اضافه شد.':'همه از قبل در کارت‌های شما بودند.');return n}
+/* ---------- practice ---------- */
+const KIT_PREPS=['op','aan','voor','van','met','naar','over','in','om','tegen','bij','uit'];
+function kitShuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function kitQ(k,x,all){
+  const pick=(pool,right,n=3)=>kitShuffle([right,...kitShuffle([...new Set(pool.filter(p=>p&&p!==right))]).slice(0,n)]);
+  if(k==='sep'){const e=x.ex[0][0],h=svFind(e).find(z=>z.v.kit===x&&z.split);
+    if(h&&Math.random()<0.75){const pr=h.r[1];return{type:'blank',x,s:e,fa:x.ex[0][1],slot:[pr[0],pr[1]],ans:x.p,ch:pick(['aan','af','op','uit','in','mee','terug','door','over','toe','weg','bij','na','voor','om'],x.p),q:'پیشوند جداشده کدام است؟',hits:[{v:h.v,r:[h.r[0]],split:1}]}}
+    return{type:'mean',x,s:x.t,ans:x.fa,ch:pick(all.map(y=>y.fa),x.fa),q:'معنی این فعل چیست؟'}}
+  if(k==='prep'){const e=x.ex[0][0];if(x.k){const re=new RegExp('(^|[^A-Za-zÀ-ÿ])('+x.k+')(?=[^A-Za-zÀ-ÿ]|$)','i');const m=re.exec(e);
+      if(m&&KIT_PREPS.includes(x.k.toLowerCase())){const s=m.index+m[1].length;return{type:'blank',x,s:e,fa:x.ex[0][1],slot:[s,s+m[2].length],ans:m[2].toLowerCase(),fill:m[2],ch:pick(KIT_PREPS,x.k.toLowerCase()),q:'کدام حرف اضافه؟'}}}
+    return{type:'mean',x,s:x.t,ans:x.fa,ch:pick(all.map(y=>y.fa),x.fa),q:'معنی چیست؟'}}
+  const e=x.ex[0][0];const ws=x.t.replace(/[…?!.,()]/g,' ').split(/\s+/).filter(w=>w.length>=3&&!/^(iets|iemand|zich|het|een|de)$/i.test(w));
+  if(ws.length>1&&Math.random()<0.5){const w=ws.sort((a,b)=>b.length-a.length)[0];const re=new RegExp('(^|[^A-Za-zÀ-ÿ])('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')(?=[^A-Za-zÀ-ÿ]|$)','i');const m=re.exec(e);
+    if(m){const s=m.index+m[1].length;const pool=all.flatMap(y=>y.t.replace(/[…?!.,()]/g,' ').split(/\s+/)).filter(z=>z.length>=3&&Math.abs(z.length-w.length)<=4);return{type:'blank',x,s:e,fa:x.ex[0][1],slot:[s,s+m[2].length],ans:m[2].toLowerCase(),fill:m[2],ch:pick(pool.map(z=>z.toLowerCase()),m[2].toLowerCase()),q:'چانک را کامل کنید'}}}
+  return{type:'mean',x,s:x.t,sub:e,ans:x.fa,ch:pick(x._g.items.map(y=>y.fa).concat(all.map(y=>y.fa)),x.fa),q:'معنی این چانک چیست؟'};
+}
+function kitPracticeHome(k){
+  const body=$('#kit-'+k+' .kit-body'),st=kitSt[k];kitRun=null;
+  body.innerHTML=`<div class="panel kit-ph"><h2 class="h2" style="margin-top:0">تمرین ده‌تایی</h2><p class="hint">${k==='sep'?'جای پیشوند جداشده را در جمله پر کنید یا معنی فعل را انتخاب کنید.':k==='prep'?'حرف اضافهٔ درست را در جمله بگذارید.':'معنی چانک را انتخاب کنید یا تکهٔ جاافتاده را کامل کنید.'} مواردی که اشتباه جواب بدهید، آخر دور دوباره پرسیده می‌شوند.</p>
+    <div class="field"><span class="lbl">از کدام گروه؟</span><div class="kit-gs"><button type="button" class="tag${st.g?'':' on'}" data-kg="">همه</button>${KIT[k].map(g=>`<button type="button" class="tag${st.g===g.id?' on':''}" data-kg="${esc(g.id)}">${kitBidi(g.fa)}</button>`).join('')}</div></div>
+    <div class="btn-row"><button class="btn primary" type="button" data-kstart>شروع تمرین</button></div></div>`;
+}
+function kitStart(k){
+  const st=kitSt[k],all=kitAll(k),pool=all.filter(x=>!st.g||x._g.id===st.g);
+  const fresh=pool.filter(x=>!db.done[kitKey(k,x)]),old=pool.filter(x=>db.done[kitKey(k,x)]);
+  const list=kitShuffle(fresh).slice(0,10);if(list.length<10)list.push(...kitShuffle(old).slice(0,10-list.length));
+  kitRun={k,qs:list.map(x=>kitQ(k,x,all)),i:0,ok:0,wrong:[],ans:null,retry:false};kitPaint();
+}
+function kitPaint(){
+  const r=kitRun,body=$('#kit-'+r.k+' .kit-body');
+  if(r.i>=r.qs.length){
+    if(r.wrong.length&&!r.retry){r.retry=true;r.qs=r.qs.concat(r.wrong.map(x=>kitQ(r.k,x,kitAll(r.k))));r.wrong=[];return kitPaint()}
+    body.innerHTML=`<div class="panel kit-end"><h2 class="h2" style="margin-top:0">${faNum(r.ok)} جواب درست</h2><p class="hint">مواردی که درست جواب دادید در فهرست تیک خوردند. برای ماندگاری، آن‌هایی را که سخت بودند به کارت‌های مرور اضافه کنید.</p><div class="btn-row"><button class="btn primary" type="button" data-kstart>یک دور دیگر</button><button class="btn" type="button" data-ktab="list">برگشت به فهرست</button></div></div>`;return}
+  const q=r.qs[r.i],a=r.ans;
+  const sent=q.type==='blank'?svMark(q.s,q.hits||[],[q.slot[0],q.slot[1],a?`<span class="kit-fill ${a.ok?'ok':'no'}">${esc(q.fill||q.ans)}</span>`:'<span class="blank">____</span>']):`<b>${esc(q.s)}</b>`;
+  body.innerHTML=`<div class="panel kit-qz"><div class="kit-qtop"><span class="hint">${faNum(r.i+1)} از ${faNum(r.qs.length)}</span><button class="link" type="button" data-ktab="list">پایان</button></div>
+    <p class="kit-qq">${q.q}</p><p class="kit-qs lat" dir="ltr">${sent}</p>${q.type==='blank'?`<p class="hint kit-qfa">${esc(q.fa)}</p>`:q.sub?`<p class="hint lat" dir="ltr">${esc(q.sub)}</p>`:''}
+    <div class="kit-ch">${q.ch.map(c=>`<button class="btn${a?(c===q.ans?' ok':c===a.pick?' no':''):''}" type="button" data-kch="${esc(c)}"${a?' disabled':''}><span class="${q.type==='blank'?'lat':''}">${esc(c)}</span></button>`).join('')}</div>
+    ${a?`<div class="kit-fb ${a.ok?'ok':'no'}"><b>${a.ok?'درست است!':'درستش این است:'}</b> <span class="lat" dir="ltr">${esc(q.x.t)}</span>: ${esc(q.x.fa)}<div class="lat" dir="ltr" style="margin-top:4px">${kitExHTML(r.k,q.x,q.x.ex[0][0])}</div><div class="hint">${esc(q.x.ex[0][1])}</div></div><div class="btn-row"><button class="btn primary" type="button" data-knext>بعدی</button>${findDup('nl',q.x.t)?'':`<button class="btn ghost" type="button" data-kadd="${esc(q.x.id)}">افزودن به کارت‌ها</button>`}</div>`:''}</div>`;
+}
+function kitAnswer(c){const r=kitRun;if(!r||r.ans)return;const q=r.qs[r.i];const ok=c===q.ans;r.ans={pick:c,ok};
+  if(ok){r.ok++;db.done[kitKey(r.k,q.x)]=Date.now();saveData(30000)}else r.wrong.push(q.x);
+  kitPaint();speak(q.x.ex[0][0],'nl')}
+/* ---------- events ---------- */
+['sep','prep','chunk'].forEach(k=>{const el=$('#kit-'+k);if(!el)return;
+  bindSeg(el.querySelector('.kit-tab'),v=>{kitSt[k].tab=v;if(v==='practice')kitRun=null;renderKit(k)});
+  el.addEventListener('input',e=>{if(e.target.classList.contains('kit-q')){kitSt[k].q=e.target.value;clearTimeout(el._t);el._t=setTimeout(()=>{renderKit(k);const i=el.querySelector('.kit-q');if(i){i.focus();i.setSelectionRange(i.value.length,i.value.length)}},250)}});
+  el.addEventListener('click',e=>{
+    const g=e.target.closest('[data-kg]');if(g){kitSt[k].g=g.dataset.kg;if(kitSt[k].tab==='practice')kitPracticeHome(k);else renderKit(k);return}
+    const s=e.target.closest('[data-ksay]');if(s){const x=kitFind(k,s.dataset.ksay);if(x){const i=+s.dataset.i;speak(i<0?x.t.replace(/…/g,' ').replace(/\s+/g,' ').trim():x.ex[i][0],'nl')}return}
+    const a=e.target.closest('[data-kadd]');if(a){const x=kitFind(k,a.dataset.kadd);if(x&&kitAdd(k,[x])){if(kitRun&&kitRun.ans)kitPaint();else renderKit(k)}return}
+    const ag=e.target.closest('[data-kaddg]');if(ag){const gg=KIT[k].find(z=>z.id===ag.dataset.kaddg);if(gg){kitAdd(k,gg.items);renderKit(k)}return}
+    if(e.target.closest('[data-kstart]')){kitStart(k);return}
+    const ch=e.target.closest('[data-kch]');if(ch){kitAnswer(ch.dataset.kch);return}
+    if(e.target.closest('[data-knext]')){kitRun.i++;kitRun.ans=null;kitPaint();return}
+    const t=e.target.closest('[data-ktab]');if(t){kitSt[k].tab=t.dataset.ktab;kitRun=null;renderKit(k);return}
+  });
+});
+if(/[?&]debug/.test(location.search))window.__k={svFind,svLex,svMark,kitAll,kitQ,get run(){return kitRun},KIT};
 
 /* ================= THE LEARNING PLAN =================
    One spine: the course path (stages → lessons; each lesson = words → dialogues → grammar → quiz).
