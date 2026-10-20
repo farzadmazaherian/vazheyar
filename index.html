@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-xq6xLyM48xWRbdh9l5TtruLIuZfQ+x3pm/79cGyoed4=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-AGyr7dmnSDwCudxj/iuy7/UoQfvAzOSoZKlEBtNZceQ=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -1350,6 +1350,59 @@ mark.kp,mark.kc{background:var(--acc-soft);color:inherit;font-weight:700;border-
 
 .kit-ch .btn[disabled]{opacity:.5}.kit-ch .btn.ok[disabled],.kit-ch .btn.no[disabled]{opacity:1}
 
+/* v29 word order */
+.zin-card{max-width:720px}
+.zin-q{margin:0 0 6px}
+.zin-fa{font-size:19px;margin:0 0 10px;font-weight:600}
+.zin-src{font-size:19px;margin:0;text-align:left}
+.zin-ans{min-height:58px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:10px;border:2px dashed var(--line);border-radius:12px;margin:12px 0;background:var(--surface)}
+.zin-bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.zt{font:inherit;font-family:var(--f-lat);font-size:18px;padding:7px 13px;border-radius:10px;border:1px solid var(--cobalt-line);background:var(--cobalt-soft);color:var(--ink);cursor:pointer}
+.zt.on{background:var(--surface);border-color:var(--acc)}
+.zt.used{opacity:.25;cursor:default}
+.zlead{font-family:var(--f-lat);font-size:18px;font-weight:700;padding:0 4px}
+.zend{font-family:var(--f-lat);font-size:20px}
+.zin-right{font-size:19px;margin:6px 0;text-align:left}
+.zs{border-bottom:3px solid var(--de)}.zv{color:var(--nl);font-weight:800}.zp{color:var(--nl);font-weight:800;border-bottom:3px solid var(--nl)}
+.zin-leg{font-size:13px;color:var(--muted);margin:6px 0 0;display:flex;gap:12px}
+.zin-rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.zin-rules .panel p.lat{line-height:1.9;text-align:left;font-size:17px}
+/* v29 writing coach */
+.sch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.sch-h{margin:6px 0;padding-inline-start:18px;line-height:2}
+#schIn{width:100%;font-size:17px;line-height:1.7}
+.wc-rep{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.wc-scs{display:flex;flex-direction:column;gap:6px}
+.wc-sc{display:grid;grid-template-columns:200px 1fr 40px;gap:10px;align-items:center;font-size:14px}
+.wc-text{white-space:pre-wrap;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:17px;line-height:1.9;text-align:left}
+mark.wc{background:none;color:inherit;border-bottom:3px solid var(--warn);padding:0 1px}
+mark.wc.s3{border-bottom-color:var(--bad);background:var(--bad-soft)}mark.wc.s2{border-bottom-color:var(--warn);background:var(--warn-soft)}mark.wc.s1{border-bottom:2px dotted var(--muted)}
+mark.wc sup{font-family:var(--f-fa);font-size:10px;color:var(--muted);margin-inline-start:1px}
+.wc-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.wc-list li{background:var(--surface-2);border-radius:10px;padding:8px 12px;border-inline-start:4px solid var(--warn);line-height:1.8}
+.wc-list li.s3{border-inline-start-color:var(--bad)}.wc-list li.s1{border-inline-start-color:var(--line)}
+.wc-n{font-weight:800;color:var(--muted)}
+.wc-q{font-weight:700}
+.wc-tips{margin:0;padding-inline-start:20px;line-height:1.9}
+@media (max-width:620px){.wc-sc{grid-template-columns:1fr 34px}.wc-sc>span{grid-column:1/-1}}
+/* v29 podcast */
+.pod-hero{border-color:var(--acc);margin-bottom:16px}
+.pod-bar{height:6px;border-radius:99px;background:var(--surface-2);overflow:hidden;margin:12px 0 4px}
+.pod-bar span{display:block;height:100%;width:0;background:var(--acc);transition:width .4s}
+.pod-ctl{margin:8px 0}
+.pod-opts{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:4px 0 10px}
+#podTx{display:flex;flex-direction:column}
+.pod-h{font-size:15px;margin:16px 0 4px;color:var(--acc)}
+.pod-s{padding:7px 10px;border-radius:10px;cursor:pointer;border-inline-start:3px solid transparent}
+.pod-s p{margin:0}
+.pod-s .lat{text-align:left;line-height:1.7}
+.pod-s.past{opacity:.6}
+.pod-s.cur{background:var(--acc-soft);border-inline-start-color:var(--acc);opacity:1}
+.pod-s.fa-s .pod-fa{color:var(--muted);font-size:14px}
+.pod-who{color:var(--muted);font-weight:700}
+.pod-rep{color:var(--acc);font-family:var(--f-fa)}
+.lf-card.cur{border-color:var(--acc)}
+
 </style>
 </head>
 <body>
@@ -1399,10 +1452,13 @@ mark.kp,mark.kc{background:var(--acc-soft);color:inherit;font-weight:700;border-
         <div class="nav-label">جعبه‌ابزار</div>
         <button type="button" data-go="life"><svg class="i" viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg><span>موقعیت‌های روزمره</span></button>
         <button type="button" data-go="talk"><svg class="i" viewBox="0 0 24 24"><path d="M12 3.5a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v3.5M8.5 20.5h7"/></svg><span>حرف بزنیم</span></button>
+        <button type="button" data-go="pod"><svg class="i" viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3.5" y="13" width="4" height="6.5" rx="1.5"/><rect x="16.5" y="13" width="4" height="6.5" rx="1.5"/></svg><span>پادکست امروز</span></button>
         <button type="button" data-go="hunt"><svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 7.5v6M7.5 10.5h6"/></svg><span>شکار واژه</span></button>
         <button type="button" data-go="stories"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg><span>داستان‌های فرید</span></button>
         <button type="button" data-go="drills"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg><span>عدد، ساعت و قیمت</span></button>
         <button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg><span>دستور زبان</span></button>
+        <button type="button" data-go="zin"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="9" width="5" height="6" rx="1.2"/><rect x="9.5" y="9" width="5" height="6" rx="1.2"/><rect x="16" y="9" width="5" height="6" rx="1.2"/><path d="M5.5 6.5c3-2 10-2 13 0"/></svg><span>ساختن جمله</span></button>
+        <button type="button" data-go="schrijf"><svg class="i" viewBox="0 0 24 24"><path d="M5 19l1-4 10-10 3 3-10 10z"/><path d="M14 7l3 3"/><path d="M4 21h16"/></svg><span>نوشتن با بازخورد</span></button>
         <button type="button" data-go="sep"><svg class="i" viewBox="0 0 24 24"><path d="M4 8h7M13 16h7"/><path d="M11 5.5v5M13 13.5v5"/></svg><span>فعل‌های جداشدنی</span></button>
         <button type="button" data-go="prep"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h9"/><path d="M11 8l4 4-4 4"/><circle cx="18.5" cy="12" r="2"/></svg><span>حرف اضافه‌های ثابت</span></button>
         <button type="button" data-go="chunk"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="8" width="6" height="8" rx="1.5"/><rect x="9.5" y="8" width="5" height="8" rx="1.5"/><rect x="14.5" y="8" width="6" height="8" rx="1.5"/></svg><span>چانک‌های روزمره</span></button>
@@ -1461,6 +1517,7 @@ mark.kp,mark.kc{background:var(--acc-soft);color:inherit;font-weight:700;border-
         <div class="panel feature" id="phToday" hidden></div>
         <div class="panel feature" id="lifeToday" hidden></div>
         <div class="panel feature" id="talkToday" hidden></div>
+        <div class="panel feature" id="podToday" hidden></div>
         <div class="panel feature" id="huntToday" hidden></div>
       </div>
       <div class="stats">
@@ -1840,6 +1897,25 @@ mark.kp,mark.kc{background:var(--acc-soft);color:inherit;font-weight:700;border-
       <div class="seg kit-tab"><button type="button" data-v="list">فهرست</button><button type="button" data-v="practice">تمرین</button></div>
       <div class="kit-body"></div></div></section>
 
+    <!-- ============ WORD ORDER ============ -->
+    <section class="view" id="v-zin" hidden>
+      <div class="page-head"><div><h1 class="view-title">ساختن جمله</h1><p class="sub">بزرگ‌ترین سختی هلندی برای فارسی‌زبان‌ها جای فعل است. اینجا با تکه‌های جمله‌های واقعی تمرین می‌کنید: جمله بسازید، جمله را تبدیل کنید (با «فردا» شروع کنید، جملهٔ وابسته، ماضی نقلی، سؤال) و قاعده‌ها را مرور کنید.</p><p class="hint" id="zinStat"></p></div></div>
+      <div class="seg" id="zinTab"><button type="button" data-v="build">ساختن جمله</button><button type="button" data-v="trans">تبدیل جمله</button><button type="button" data-v="rules">قاعده‌ها</button></div>
+      <div id="zinBody" style="margin-top:14px"></div>
+    </section>
+
+    <!-- ============ WRITING COACH ============ -->
+    <section class="view" id="v-schrijf" hidden>
+      <div class="page-head"><div><h1 class="view-title">نوشتن با بازخورد</h1><p class="sub">پیام و ایمیل‌هایی مثل آزمون B1 بنویسید. برنامه بررسی می‌کند به همهٔ نکته‌های تکلیف جواب داده‌اید، سلام و پایان و لحن (u یا je) درست است، فعل سر جایش است (بعد از «فردا»، بعد از omdat و dat، فعل جداشدنی، ماضی نقلی با zijn)، de و het و املا را هم نگاه می‌کند. همه روی همین دستگاه.</p></div></div>
+      <div id="schBody"></div>
+    </section>
+
+    <!-- ============ PODCAST ============ -->
+    <section class="view" id="v-pod" hidden>
+      <div class="page-head"><div><h1 class="view-title">پادکست امروز</h1><p class="sub">هر روز یک پادکست چنددقیقه‌ای از واژه‌هایی که همین روزها یاد گرفته‌اید، به‌اضافهٔ یک قسمت از «گپ روزانه»: دو گوینده دربارهٔ زندگی روزمره در هلند حرف می‌زنند. با صدای طبیعی، گویندهٔ فارسی و مکث برای تکرار.</p></div></div>
+      <div id="podBody"></div>
+    </section>
+
     <!-- ============ GRAMMAR ============ -->
     <section class="view" id="v-grammar" hidden>
       <div id="gHome">
@@ -2098,6 +2174,8 @@ mark.kp,mark.kc{background:var(--acc-soft);color:inherit;font-weight:700;border-
             <div class="two">
               <div class="field"><label class="lbl" for="newPerDay">حداکثر کارت تازه در روز</label><input type="number" id="newPerDay" min="0" max="200" class="num"><span class="hint">وقتی مرورهای هفته زیاد است، برنامه خودش کارت تازهٔ کمتری می‌آورد.</span></div>
             </div>
+            <div class="field"><span class="lbl">روش زمان‌بندی مرور</span><div class="seg" id="algoSeg"><button type="button" data-v="fsrs">هوشمند (FSRS)</button><button type="button" data-v="classic">کلاسیک</button></div><span class="hint">FSRS برای هر کارت جدا حساب می‌کند حافظه‌تان چقدر محکم است و کارت را درست پیش از فراموش شدن برمی‌گرداند؛ با مرور کمتر، بیشتر به یاد می‌ماند. کارت‌های قبلی خودکار منتقل می‌شوند.</span></div>
+            <div class="field" id="retWrap"><span class="lbl">چقدر مطمئن باشید یادتان می‌ماند؟</span><div class="seg" id="retSeg"><button type="button" data-v="0.85">۸۵٪ (مرور کمتر)</button><button type="button" data-v="0.9">۹۰٪ (پیشنهادی)</button><button type="button" data-v="0.95">۹۵٪ (مرور بیشتر)</button></div><span class="hint">هرچه عدد بالاتر باشد، کارت‌ها زودتر برمی‌گردند و هر روز مرور بیشتری دارید. برای آماده شدن فوری برای امتحان، ۹۵٪ را انتخاب کنید.</span></div>
             <div class="field"><span class="lbl">معرفی واژهٔ تازه</span><div class="seg" id="introSeg"><button type="button" data-v="on">روشن</button><button type="button" data-v="off">خاموش</button></div><span class="hint">با «روشن»، هر واژهٔ تازه اول با تصویر، تلفظ و نمونه معرفی می‌شود و می‌توانید جملهٔ خودتان و یک ترفند یادآوری برایش بنویسید. چند کارت بعد، همان واژه پرسیده می‌شود.</span></div>
             <div class="field" id="glossWrap"><span class="lbl">زبان توضیح برای هلندی</span><div class="seg" id="glossSeg"><button type="button" data-v="fa">فارسی</button><button type="button" data-v="both">فارسی و انگلیسی</button><button type="button" data-v="en" class="lat">English</button></div><span class="hint">معنی واژه‌ها و ترجمهٔ جمله‌های نمونه در کارت‌ها، فهرست‌ها و تمرین‌ها به این زبان نشان داده می‌شود. با «English» هلندی را از راه انگلیسی یاد می‌گیرید؛ فارسی همچنان در جزئیات هر واژه هست.</span></div>
             <div class="field" id="focusWrap"><span class="lbl">ترتیب کارت‌های تازه</span><div class="seg" id="focusSeg"><button type="button" data-v="series">اول درس‌های کتاب</button><button type="button" data-v="order">به ترتیب افزودن</button></div><span class="hint">با «اول درس‌های کتاب»، کارت‌های تازهٔ De Opmaat زودتر از بسته‌های دیگر وارد مرور می‌شوند.</span></div>
@@ -2118,7 +2196,7 @@ mark.kp,mark.kc{background:var(--acc-soft);color:inherit;font-weight:700;border-
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۸</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۹</p>
     </section>
 
 </main>
@@ -2155,7 +2233,7 @@ mark.kp,mark.kc{background:var(--acc-soft);color:inherit;font-weight:700;border-
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=28"></script>
+<script src="packs.js?v=29"></script>
 <script>
 (function(){
 'use strict';
@@ -2213,7 +2291,7 @@ async function copyOrShow(text,okMsg){
 const DEFAULT_CFG={deviceId:'',seeded:false,theme:'system',lang:'nl',gloss:'both',
   gh:{enabled:false,owner:'',repo:'vazheyar-data',branch:'',token:'',auto:true,lastSync:0,lastError:''},
   tts:{nl:'',en:'',rate:0.9,auto:true},
-  review:{newPerDay:15,dir:'auto',budget:50,intro:true}};
+  review:{newPerDay:15,dir:'auto',budget:50,intro:true,algo:'fsrs',ret:0.9}};
 function loadCfg(){const d=JSON.parse(JSON.stringify(DEFAULT_CFG));const s=readLS(CFG_KEY);if(s){Object.assign(d,s);d.gh=Object.assign({},DEFAULT_CFG.gh,s.gh||{});d.tts=Object.assign({},DEFAULT_CFG.tts,s.tts||{});d.review=Object.assign({},DEFAULT_CFG.review,s.review||{})}if(!d.deviceId)d.deviceId=uid().slice(0,8);return d}
 let cfg=loadCfg();
 const saveCfg=()=>writeLS(CFG_KEY,cfg);
@@ -2269,7 +2347,7 @@ function cleanVerb(v){if(!v||typeof v!=='object')return null;const o={};['ik','j
 function isVerb(i){return!!i.verb}
 function emptyData(){return{items:[],deleted:{},log:{},done:{}}}
 function normData(d){d=d||{};if(d.data&&d.data.items)d=d.data;return{items:Array.isArray(d.items)?d.items.filter(i=>i&&i.id&&i.text).map(cleanItem):[],deleted:(d.deleted&&typeof d.deleted==='object')?d.deleted:{},log:(d.log&&typeof d.log==='object')?d.log:{},done:(d.done&&typeof d.done==='object')?d.done:{},own:(d.own&&typeof d.own==='object')?d.own:{}}}
-function cleanItem(i){return{id:String(i.id),lang:i.lang==='en'?'en':'nl',type:i.type==='sentence'?'sentence':'word',text:String(i.text||''),article:(i.article==='de'||i.article==='het')?i.article:'',plural:i.plural||'',fa:i.fa||'',en:i.en||'',example:i.example||'',exampleFa:i.exampleFa||'',note:i.note||'',tags:Array.isArray(i.tags)?i.tags.filter(Boolean).map(String):[],verb:cleanVerb(i.verb),exs:Array.isArray(i.exs)?i.exs.filter(e=>e&&e.t).map(e=>({t:String(e.t),fa:String(e.fa||''),en:String(e.en||''),u:e.u?1:0})):[],etym:i.etym?String(i.etym):'',pack:i.pack?String(i.pack):'',img:typeof i.img==='string'&&i.img.length<=16?i.img:'',pic:i.pic&&typeof i.pic==='object'&&i.pic.id?{id:String(i.pic.id),up:i.pic.up?1:0}:null,susp:!!i.susp,hook:i.hook?String(i.hook).slice(0,300):'',introAt:+i.introAt||0,seen:Array.isArray(i.seen)?i.seen.filter(x=>x&&+x.t).slice(-30).map(x=>({t:+x.t,w:String(x.w||'other').slice(0,12),h:x.h==='h'?'h':'s'})):[],created:+i.created||0,updated:+i.updated||0,srs:i.srs&&typeof i.srs==='object'?{ivl:+i.srs.ivl||0,ease:+i.srs.ease||2.5,reps:+i.srs.reps||0,lapses:+i.srs.lapses||0,due:+i.srs.due||0,last:+i.srs.last||0,first:i.srs.first||''}:null}}
+function cleanItem(i){return{id:String(i.id),lang:i.lang==='en'?'en':'nl',type:i.type==='sentence'?'sentence':'word',text:String(i.text||''),article:(i.article==='de'||i.article==='het')?i.article:'',plural:i.plural||'',fa:i.fa||'',en:i.en||'',example:i.example||'',exampleFa:i.exampleFa||'',note:i.note||'',tags:Array.isArray(i.tags)?i.tags.filter(Boolean).map(String):[],verb:cleanVerb(i.verb),exs:Array.isArray(i.exs)?i.exs.filter(e=>e&&e.t).map(e=>({t:String(e.t),fa:String(e.fa||''),en:String(e.en||''),u:e.u?1:0})):[],etym:i.etym?String(i.etym):'',pack:i.pack?String(i.pack):'',img:typeof i.img==='string'&&i.img.length<=16?i.img:'',pic:i.pic&&typeof i.pic==='object'&&i.pic.id?{id:String(i.pic.id),up:i.pic.up?1:0}:null,susp:!!i.susp,hook:i.hook?String(i.hook).slice(0,300):'',introAt:+i.introAt||0,seen:Array.isArray(i.seen)?i.seen.filter(x=>x&&+x.t).slice(-30).map(x=>({t:+x.t,w:String(x.w||'other').slice(0,12),h:x.h==='h'?'h':'s'})):[],created:+i.created||0,updated:+i.updated||0,srs:i.srs&&typeof i.srs==='object'?{ivl:+i.srs.ivl||0,ease:+i.srs.ease||2.5,reps:+i.srs.reps||0,lapses:+i.srs.lapses||0,due:+i.srs.due||0,last:+i.srs.last||0,first:i.srs.first||'',s:+i.srs.s||0,d:+i.srs.d||0}:null}}
 let db=normData(readLS(DATA_KEY));
 if(!cfg.seeded){cfg.seeded=true;saveCfg()}
 let dirty=false;
@@ -2282,7 +2360,45 @@ function removeItems(ids){_idx=null;_tIdx=null;const set=new Set(ids),now=Date.n
 
 
 /* ================= spaced repetition ================= */
+/* v29: FSRS-5 (Free Spaced Repetition Scheduler) with its published default parameters. Each card keeps
+   s = stability (days until recall drops to 90%) and d = difficulty (1–10); the next gap is the time until the
+   chance of remembering falls to the chosen retention (default 90%). Older cards are converted from their
+   interval and ease on first review. «کلاسیک» keeps the previous scheduler. */
+const FW=[0.40255,1.18385,3.173,15.69105,7.1949,0.5345,1.4604,0.0046,1.54575,0.1192,1.01925,1.9395,0.11,0.29605,2.2698,0.2315,2.9898,0.51655,0.6621];
+const F_DECAY=-0.5,F_FACTOR=19/81;
+const fsrsR=(t,S)=>Math.pow(1+F_FACTOR*Math.max(0,t)/Math.max(0.01,S),F_DECAY);
+const fsrsIvl=(S,r)=>S/F_FACTOR*(Math.pow(r,1/F_DECAY)-1);
+const fClampD=d=>Math.min(10,Math.max(1,d));
+const fD0=G=>fClampD(FW[4]-Math.exp(FW[5]*(G-1))+1);
+const fsrsOn=()=>(cfg.review.algo||'fsrs')==='fsrs';
+const fsrsRet=()=>{const r=+cfg.review.ret;return r>=0.8&&r<=0.97?r:0.9};
+/* chance (0–1) that a reviewed card is still remembered now */
+function recallP(srs,now=Date.now()){if(!srs||!srs.last)return null;const t=(now-srs.last)/DAY;const S=srs.s>0?srs.s:Math.max(0.3,srs.ivl||0.3);return fsrsR(t,S)}
+function scheduleFsrs(srs,g,now,lang){
+  const s=srs?Object.assign({},srs):{ivl:0,ease:2.5,reps:0,lapses:0,due:0,last:0,first:''};
+  const G=Math.max(1,Math.min(4,g+1)),fresh=!s.last;
+  if(!fresh&&!(s.s>0)){s.s=Math.max(0.3,s.ivl||0.3);s.d=fClampD(5+(2.5-(+s.ease||2.5))*5)}
+  if(fresh){s.s=FW[G-1];s.d=fD0(G)}
+  else{
+    const t=Math.max(0,(now-s.last)/DAY),R=fsrsR(t,s.s),D=s.d;
+    if(t<1)s.s=s.s*Math.exp(FW[17]*(G-3+FW[18]));
+    else if(G===1)s.s=Math.min(s.s,FW[11]*Math.pow(D,-FW[12])*(Math.pow(s.s+1,FW[13])-1)*Math.exp(FW[14]*(1-R)));
+    else s.s=s.s*(1+Math.exp(FW[8])*(11-D)*Math.pow(s.s,-FW[9])*(Math.exp(FW[10]*(1-R))-1)*(G===2?FW[15]:1)*(G===4?FW[16]:1));
+    const nd=D-FW[6]*(G-3)*(10-D)/9;s.d=fClampD(FW[7]*fD0(4)+(1-FW[7])*nd);
+  }
+  s.s=Math.min(36500,Math.max(0.1,s.s));s.ease=Math.round((1.3+(10-s.d)/9*1.9)*100)/100;
+  let ivl;
+  if(G===1){if(!fresh)s.lapses++;s.reps=0;ivl=10*MIN/DAY}
+  else{ivl=fsrsIvl(s.s,fsrsRet());s.reps++;
+    if(fresh)ivl=G===2?Math.min(ivl,0.5):G===3?Math.min(Math.max(ivl,1),2):Math.max(ivl,3);
+    else ivl=Math.max(ivl,G===2?1:G===3?Math.min(s.ivl+1,2):2)}
+  if(ivl>=4&&lang&&typeof balanceIvl==='function')ivl=balanceIvl(Math.round(ivl),lang,now);
+  else if(ivl>=3)ivl=Math.round(ivl*(0.95+Math.random()*0.1));else if(ivl>=1)ivl=Math.round(ivl);
+  ivl=Math.min(ivl,3650);s.ivl=ivl;s.due=now+ivl*DAY;s.last=now;if(!s.first)s.first=dayKey(now);
+  return s;
+}
 function schedule(srs,g,now=Date.now(),lang){
+  if(fsrsOn())return scheduleFsrs(srs,g,now,lang);
   const s=srs?Object.assign({},srs):{ivl:0,ease:2.5,reps:0,lapses:0,due:0,last:0,first:''};
   const learning=s.ivl<1;let ivl;
   if(g===0){if(!learning){s.lapses++;s.ease=Math.max(1.3,s.ease-0.2)}ivl=10*MIN/DAY;s.reps=0}
@@ -2393,7 +2509,7 @@ function todayPlan0(lang){
   return{budget,cap,allow,newLeft,dueNow,learnLater,load,avg7:Math.round(avg7),goal,goalLeft,backlog,clearDays,done,intro,fresh,total,extra:Math.max(0,dueNow-Math.max(0,goalLeft-newLeft))};
 }
 /* risk of forgetting: time since the last review relative to the interval; young cards weigh more */
-function dueRisk(i,now,cf){const s=i.srs;if(s.ivl<1)return 1e9;const el=(now-s.last)/DAY;return el/Math.max(1,s.ivl)*(s.ivl<21?1.3:1)+(cf&&i.pack===cf?0.5:0)}
+function dueRisk(i,now,cf){const s=i.srs;if(s.ivl<1)return 1e9;const el=(now-s.last)/DAY;if(s.s>0&&fsrsOn())return (1-fsrsR(el,s.s))*10+(cf&&i.pack===cf?0.5:0);return el/Math.max(1,s.ivl)*(s.ivl<21?1.3:1)+(cf&&i.pack===cf?0.5:0)}
 /* the day with the fewest due cards inside the fuzz window, so reviews spread evenly over the days */
 function balanceIvl(ivl,lang,now){
   if(!lang||ivl<4)return ivl;
@@ -2886,12 +3002,13 @@ document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','course','exam','progress','life','talk','hunt','sep','prep','chunk','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
+const VIEWS=['today','course','exam','progress','life','talk','hunt','pod','zin','schrijf','sep','prep','chunk','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
   if((currentView==='stories'||currentView==='life'||currentView==='drills')&&v!==currentView){stopSpeech();if(stCur){stCur.tok++;stCur.on=false}lfPlay.tok++}
   if(currentView==='talk'&&v!=='talk'&&typeof tkStop==='function')tkStop();
+  if(v!==currentView&&/^(review|dialogs|stories|talk|life|drills|exam)$/.test(v)&&typeof podStop==='function'&&podOn)podStop();
   if(inSrcView()&&v!==currentView){const au=$('#srcAudio');if(au&&!(playlist&&!au.paused))au.pause();const sb=$('#selBar');if(sb)sb.hidden=true}
   currentView=v;document.documentElement.dataset.view=v;if(sheetOpen())closeSheet();
   const sv=VIEW_SEC[v]?'sources':v;VIEWS.forEach(x=>{const el=$('#v-'+x);if(el)el.hidden=x!==sv});
@@ -2900,7 +3017,7 @@ function showView(v,noHash){
   if(v==='today')renderToday();
   if(v==='course')renderCourse();
   if(v==='exam')renderExam();else if(typeof exLeave==='function')exLeave();
-  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt'){if(!$('#lrOne').hidden&&!lrRec){$('#lrOne').hidden=true;$('#hnHome').hidden=false}renderHunt()}if(v==='sep'||v==='prep'||v==='chunk')renderKit(v);if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
+  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt'){if(!$('#lrOne').hidden&&!lrRec){$('#lrOne').hidden=true;$('#hnHome').hidden=false}renderHunt()}if(v==='sep'||v==='prep'||v==='chunk')renderKit(v);if(v==='pod')renderPod();if(v==='zin')renderZin();if(v==='schrijf')renderSchrijf();if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
   if(v==='grammar')renderGrammar();
   if(v==='phrases')openPhrases();
   if(v==='core')renderCore();
@@ -3002,7 +3119,7 @@ function renderToday(){
   let streak=0;for(let k=0;k<400;k++){const c=dayCount(dayKey(Date.now()-k*DAY),lang);if(c>0)streak++;else if(k===0)continue;else break}
   $('#stStreak').textContent=faNum(streak);$('#stToday').textContent=faNum(dayCount(todayK,lang));$('#stMature').textContent=faNum(s.mature);$('#stTotal').textContent=faNum(s.total);
   const tips=TIPS[lang];$('#tip').innerHTML=tips[tipIdx%tips.length];
-  renderMapCard();renderPath();renderCourseToday();renderLearnToday();renderLisToday();renderCoreLine();renderLifeToday();renderTalkToday();renderHuntToday();
+  renderMapCard();renderPath();renderCourseToday();renderLearnToday();renderLisToday();renderCoreLine();renderLifeToday();renderTalkToday();renderHuntToday();renderPodToday();
 }
 $('#nextTip').addEventListener('click',()=>{tipIdx++;const tips=TIPS[L()];$('#tip').innerHTML=tips[tipIdx%tips.length]});
 $('#startToday').addEventListener('click',e=>{if(e.currentTarget.dataset.lib){const u=CRS()&&currentUnit();if(u){cOpen=u.id;showView('course')}else showView('library');return}startSession()});
@@ -4052,7 +4169,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=28',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=29',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -4075,7 +4192,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 28، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 29، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -5807,7 +5924,7 @@ function wrClick(e){
   if(e.target.closest('[data-wrcheck]')){wrSaveNow();const t=ex.tasks[ex.i],v=$('#wrIn').value.trim();
     if(!v||v===(t.start||'').trim()){toast('اول جوابتان را بنویسید.');return}
     const cs=wrChecks(t,v);
-    $('#wrFb').innerHTML=`<div class="wr-checks">${cs.map(([ok,l])=>`<div class="${ok?'ok':'no'}">${ok?'✓':'✗'} ${esc(l)}</div>`).join('')}</div>
+    $('#wrFb').innerHTML=`<div class="wr-checks">${cs.map(([ok,l])=>`<div class="${ok?'ok':'no'}">${ok?'✓':'✗'} ${esc(l)}</div>`).join('')}</div>${typeof wcCoach==='function'?wcLangHTML(v,wcCoach(v,wcExamTask(t))):''}
       <div class="sp-model"><div class="sp-model-h"><span>یک جواب نمونه (جواب شما می‌تواند فرق داشته باشد)</span></div><p class="lat wr-model" dir="ltr">${esc(t.a)}</p>${t.afa?`<p class="hint">${esc(t.afa)}</p>`:''}</div>
       <p class="hint">در آزمون واقعی ارزیاب‌ها نگاه می‌کنند: به همهٔ نکته‌های تکلیف جواب داده‌اید، متن برای خواننده روشن است، و زبان رسمی یا خودمانی را درست انتخاب کرده‌اید.</p>${rateHTML('exwr:'+t.id)}`;
     $('#wrFb').scrollIntoView({block:'nearest',behavior:'smooth'});return}
@@ -6067,12 +6184,17 @@ function weekActivity(){const wk=weekAgo(),day=dayKey(Date.now()-6*DAY);
   const n=p=>Object.entries(db.done).filter(([k,v])=>p(k)&&+v>=wk).length;
   return[['مرور کارت',rev],['دقیقه گوش دادن',lisMin],['مکالمه',n(k=>/^(nl|th|op|cu|gs)-/.test(k))],['داستان',n(k=>k.startsWith('storyt:'))],['موقعیت',n(k=>k.startsWith('sit:'))],['موضوع گفت‌وگو',n(k=>k.startsWith('talkt:'))],['واژهٔ شکارشده',db.items.reduce((a,i)=>a+(i.seen||[]).filter(s=>s.t>=wk).length,0)],['مأموریت',n(k=>k.startsWith('mis:'))],['نوشته',Object.values(db.own||{}).filter(o=>(+o.u||0)>=wk).length]];
 }
+/* v29: how much of what you reviewed you would still remember right now (FSRS retrievability) */
+function memPanel(){const lang=L(),now=Date.now();const ps=db.items.filter(i=>i.lang===lang&&!i.susp&&i.srs&&i.srs.last).map(i=>recallP(i.srs,now)).filter(x=>x!=null);
+  if(ps.length<5)return'';const avg=ps.reduce((a,b)=>a+b,0)/ps.length,risk=ps.filter(p=>p<0.8).length,strong=db.items.filter(i=>i.lang===lang&&i.srs&&i.srs.s>=21).length;
+  return`<section class="panel"><h2 class="h2">حافظهٔ کارت‌ها</h2><div class="pg-week"><div><b class="num">${faNum(Math.round(avg*100))}٪</b><span>احتمال یادآوری همین الان</span></div><div><b class="num">${faNum(risk)}</b><span>کارت در خطر فراموشی</span></div><div><b class="num">${faNum(strong)}</b><span>کارت محکم (بیش از ۳ هفته)</span></div></div><p class="hint" style="margin:8px 0 0">${fsrsOn()?'برنامه با روش FSRS حساب می‌کند هر کارت را چقدر به یاد دارید و آن را درست پیش از فراموش شدن برمی‌گرداند.':'روش مرور کلاسیک روشن است؛ در تنظیمات می‌توانید FSRS را روشن کنید.'}</p></section>`}
 function renderProgress(){const sk=skillScores(),weak=sk.slice().sort((a,b)=>a.v-b.v)[0],act=weekActivity();
   const kan=(VZ.courses&&VZ.courses.nl?VZ.courses.nl.units:[]).filter(u=>MISSIONS[u.id]);
   $('#pgBody').innerHTML=`<section class="panel pg-sk">${sk.map(s=>`<div class="pg-row"><div class="pg-l"><b>${s.t}</b><span class="pg-lv">${lvlOf(s.v)}</span></div><div class="pg-bar"><span style="width:${Math.max(3,s.v)}%"></span><i style="left:40%"></i><i style="left:70%"></i><i style="left:90%"></i></div><p class="hint">${s.d}</p></div>`).join('')}
     <div class="pg-scale"><span>A1</span><span>A2</span><span>B1</span></div>
     <p class="hint" style="margin:8px 0 0">این تخمین از کارهای خودتان در برنامه است، نه نمرهٔ رسمی. ملاک واقعی آزمون است.</p></section>
     <section class="panel pg-next"><b>پیشنهاد این هفته: ${weak.t}</b><p class="hint" style="margin:4px 0 8px">ضعیف‌ترین مهارت شما الان «${weak.t}» است. کمی بیشتر رویش کار کنید تا مهارت‌ها هم‌سطح شوند.</p><button class="btn sm primary" type="button" data-go="${weak.go}">${weak.gt}</button></section>
+    ${memPanel()}
     <section class="panel"><h2 class="h2">هفت روز گذشته</h2><div class="pg-week">${act.map(([t,n])=>`<div><b class="num">${faNum(n)}</b><span>${t}</span></div>`).join('')}</div></section>
     <section class="panel"><h2 class="h2">در زندگی واقعی از پسش برمی‌آیم</h2><p class="hint" style="margin-top:0">هر درس مسیر یک مأموریت واقعی دارد. وقتی انجامش دادید، اینجا تیک می‌خورد.</p>
       <ul class="pg-kan">${kan.map(u=>{const m=MISSIONS[u.id],d=misDone(u.id);return`<li class="${d?'done':''}"><span class="pg-ck">${d?'✓':''}</span><span><span class="lat">${esc(m.kan[0])}</span><span class="hint">${esc(m.kan[1])}</span></span>${d?'':`<button class="btn sm ghost" type="button" data-cnow="${esc(u.id)}">مأموریت</button>`}</li>`}).join('')}</ul></section>`;
@@ -6204,7 +6326,7 @@ function huntSeen(it,w,h){
   const credit=!it.seen.some(s=>dayKey(s.t)===today);
   it.seen.push({t:now,w:w||'other',h:h==='h'?'h':'s'});if(it.seen.length>30)it.seen=it.seen.slice(-30);
   if(!(it.tags||[]).includes('شکار'))it.tags=(it.tags||[]).concat(['شکار']);
-  if(credit&&it.srs&&it.srs.last)it.srs.ease=Math.min(3,Math.round(((+it.srs.ease||2.5)+0.05)*100)/100);
+  if(credit&&it.srs&&it.srs.last){it.srs.ease=Math.min(3,Math.round(((+it.srs.ease||2.5)+0.05)*100)/100);if(it.srs.s>0)it.srs.s=Math.round(it.srs.s*1.05*100)/100}
   it.updated=now;return true;
 }
 function renderHunt(){
@@ -6741,6 +6863,382 @@ function kitAnswer(c){const r=kitRun;if(!r||r.ans)return;const q=r.qs[r.i];const
 });
 if(/[?&]debug/.test(location.search))window.__k={svFind,svLex,svMark,kitAll,kitQ,get run(){return kitRun},KIT};
 
+/* ================= WORD ORDER (v29): build sentences, transform them, the rules =================
+   Sentences come from the app's own examples (with Persian), and sentences with words from your own cards come first.
+   Transformations are generated: inversion (Morgen ga ik …), subordinate clause (… dat ik … ga), perfect tense,
+   yes/no question. Separable verbs and verb clusters are handled with the separable-verb lexicon from kit.js. */
+const ZIN_SUBJ={ik:1,je:2,jij:2,u:2,hij:3,zij:3,ze:3,het:3,we:4,wij:4,jullie:4};
+const ZIN_FIN_X='ben bent is zijn was waren heb hebt heeft hebben had hadden kan kun kunt kunnen kon konden wil wilt willen wilde wilden moet moeten moest moesten mag mogen mocht zal zult zullen zou zouden ga gaat gaan ging gingen doe doet doen deed word wordt worden werd blijf blijft blijven'.split(' ');
+const ZIN_AUX=new Set('ben bent is zijn heb hebt heeft hebben kan kun kunt kunnen wil wilt willen moet moeten mag mogen zal zult zullen ga gaat gaan'.split(' '));
+const ZIN_ADV=[['Morgen','فردا'],['Vandaag','امروز'],['Soms','گاهی'],['Daarom','برای همین'],['Meestal','معمولاً'],['Nu','حالا'],['Vanavond','امشب'],['Na het werk','بعد از کار']];
+let ZINX=null;
+function zinLex(){
+  if(ZINX&&ZINX.n===PACKS.length)return ZINX;
+  const L=svLex(),fin=new Set(ZIN_FIN_X),info=new Map();
+  L.verbs.forEach(v=>v.fin.forEach(f=>fin.add(f)));
+  /* finite form → {part, aux} for the perfect tense (simple verbs from the verb tables, separable verbs from the kit) */
+  PACKS.forEach(p=>{if(p.lang!=='nl')return;packItems(p).forEach(it=>{const v=it.verb;if(!v||!v.part||!v.ik||v.ik.includes(' '))return;
+    const aux=v.aux==='zijn'?'zijn':'hebben';const fs=svFin(v.ik,it.text.toLowerCase(),(v.pastSg||'').split('/')[0],(v.pastPl||'').split('/')[0]);if(v.hij)fs.add(v.hij.toLowerCase());
+    fs.forEach(f=>{fin.add(f);if(!info.has(f))info.set(f,{part:v.part,aux,inf:it.text,pres:[v.ik,v.hij||'',it.text].map(x=>String(x).toLowerCase())})})})});
+  return ZINX={n:PACKS.length,fin,info,L};
+}
+const zinToks=s=>s.replace(/[.?!]+$/,'').split(/\s+/).filter(Boolean);
+function zinOk(s){return /^[A-Z][^,;:"“”()\[\]0-9/…]*[.?!]$/.test(s)&&!/['’]s /.test(s)&&(n=>n>=4&&n<=11)(zinToks(s).length)}
+function zinPool(){
+  const out=[],seen=new Set();const add=(nl,fa,src)=>{if(!nl||!fa||!zinOk(nl)||seen.has(nl))return;seen.add(nl);out.push({nl,fa,src})};
+  ['sep','prep','chunk'].forEach(k=>(KIT[k]||[]).forEach(g=>g.items.forEach(x=>x.ex.forEach(e=>add(e[0],e[1],k)))));
+  PACKS.forEach(p=>{if(p.lang!=='nl')return;(p.items||[]).forEach(it=>(it.ex||[]).forEach(e=>add(e[0],e[1],'pk')))});
+  ((VZ.pod||{}).eps||[]).forEach(ep=>ep.l.forEach(l=>add(l[1],l[2],'pod')));
+  return out;
+}
+let ZPOOL=null;
+function zinKnown(){const s=new Set();db.items.forEach(i=>{if(i.lang==='nl'&&i.srs&&i.srs.last){s.add(norm(i.text));if(i.plural)s.add(norm(i.plural))}});return s}
+function zinPick(filter,n){
+  ZPOOL=ZPOOL||zinPool();const known=zinKnown();const done=new Set(Object.keys(db.done).filter(k=>k.startsWith('zin:s:')).map(k=>k.slice(6)));
+  const c=ZPOOL.filter(filter).map(x=>{const t=zinToks(x.nl).map(norm);const k=t.filter(w=>known.has(w)).length;return{x,sc:k*2+(done.has(audKey(x.nl))?-3:0)+Math.random()*2.5}});
+  c.sort((a,b)=>b.sc-a.sc);return c.slice(0,n).map(z=>z.x);
+}
+/* split a simple main clause «S V rest» */
+function zinParse(s){
+  const X=zinLex(),t=zinToks(s);if(t.length<3||!/\.$/.test(s))return null;const S=t[0].toLowerCase();if(!ZIN_SUBJ[S]||S==='het')return null;
+  const V=t[1].toLowerCase();if(!X.fin.has(V))return null;if(t.slice(2).some(w=>/^(en|maar|want|omdat|dat|als|die|of|dus|wat|waar|wie|hoe|wanneer|welke|toen|zodat|terwijl|voordat|nadat|om)$/i.test(w)))return null;
+  const sv=svFind(s).find(h=>h.split&&h.r.length===2&&h.r[0][0]===s.indexOf(t[1],t[0].length));
+  const last=t[t.length-1].toLowerCase(),L=X.L;
+  const nonfin=w=>{w=w.toLowerCase();const j=L.joined.get(w);return /^ge[a-zà-ÿ]{2,}(d|t|n)$/.test(w)||(j&&(j.inf===w||j.partc===w))||(/en$/.test(w)&&X.fin.has(w)&&!ZIN_SUBJ[w])};
+  const aux=ZIN_AUX.has(V)&&t.length>3&&nonfin(last);
+  /* a split verb whose particle is not the last word, or a participle/infinitive in the middle: only inversion and question */
+  const complex=(sv&&t[t.length-1].toLowerCase()!==sv.v.p)||(ZIN_AUX.has(V)&&t.slice(2,-1).some(nonfin))||t.some(w=>w.toLowerCase()==='te');
+  return{t,S,V,rest:t.slice(2),sep:sv&&!complex?{p:sv.v.p,v:sv.v,last}:null,aux,complex,perfect:/^(heb|hebt|heeft|hebben|ben|bent|is|zijn)$/.test(V)&&nonfin(last)};
+}
+const zinCap=w=>w.charAt(0).toUpperCase()+w.slice(1);
+const zinLow=(w,S)=>w==='Ik'||ZIN_SUBJ[w.toLowerCase()]?w.toLowerCase():w;
+function zinJ(ws,q){const s=ws.join(' ');return zinCap(s)+(q?'?':'.')}
+/* transformation tasks from one sentence */
+function zinTasks(x){
+  const p=zinParse(x.nl);if(!p)return[];const out=[],t=p.t,S0=zinLow(t[0]),V=t[1],rest=p.rest;
+  /* inversion */
+  const timey=/\b(morgen|vandaag|gisteren|vanavond|vanmiddag|vanochtend|nu|straks|elke|week|maand|jaar|zomer|winter|uur|dag|weekend|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|altijd|nooit|vaak|soms|meestal)\b/i.test(x.nl)||/'s /.test(x.nl);
+  const adv=(timey||p.perfect||p.aux||p.complex?[['Daarom','برای همین'],['Gelukkig','خوشبختانه'],['Helaas','متأسفانه']]:ZIN_ADV).filter(a=>!new RegExp('\\b'+a[0].split(' ')[0]+'\\b','i').test(x.nl));
+  if(adv.length&&!/^(was|waren|had|hadden|ging|deed|werd)$/.test(p.V)){const a=adv[Math.floor(Math.random()*adv.length)];
+    let v=V;if((p.S==='je'||p.S==='jij')&&/t$/.test(v)&&zinLex().fin.has(v.toLowerCase().slice(0,-1)))v=v.slice(0,-1);
+    out.push({k:'inv',q:`جمله را با «${a[1]}» شروع کنید`,lead:a[0],src:x,ans:[zinJ([a[0],v,S0,...rest])],tiles:[v,S0,...rest],rule:'وقتی جمله با زمان، مکان یا واژه‌ای مثل daarom شروع شود، فعل باز هم جای دوم است و فاعل بعد از فعل می‌آید (inversie).'})}
+  /* subordinate clause after «Ik weet dat» */
+  if(!p.complex){let body;const r=rest.slice();
+    if(p.sep&&r.length&&r[r.length-1].toLowerCase()===p.sep.p){r.pop();body=[[S0,...r,p.sep.p+V.toLowerCase()]]}
+    else if(p.aux){const end=r.pop();body=[[S0,...r,V,end],[S0,...r,end,V]]}
+    else body=[[S0,...r,V]];
+    out.push({k:'sub',q:'جمله را بعد از «Ik weet dat …» بنویسید',lead:'Ik weet dat',src:x,ans:body.map(b=>zinJ(['Ik','weet','dat',...b])),tiles:body[0],rule:'در جملهٔ وابسته (بعد از dat، omdat، als، wanneer…) فعل صرف‌شده به آخر جمله می‌رود. پیشوند فعل جداشدنی به آن می‌چسبد: … dat ik de tv aanzet.'})}
+  /* perfect tense */
+  if(!p.complex&&!p.perfect&&!p.aux&&!/\b(morgen|straks|volgende|vanavond|overmorgen|binnenkort|later)\b/i.test(x.nl)){const X=zinLex();let part=null,aux=null,r=rest.slice();
+    if(p.sep&&r.length&&r[r.length-1].toLowerCase()===p.sep.p&&p.sep.v.partc){r.pop();part=p.sep.v.partc;const k=p.sep.v.kit;aux=k?(/^is /.test(k.pf)?'zijn':'hebben'):null;
+      if(!aux){const b=X.info.get(p.V);aux=b?b.aux:'hebben'}}
+    else if(!p.aux&&X.info.has(p.V)){const b=X.info.get(p.V);if(b.pres.includes(p.V)){part=b.part;aux=b.aux}}
+    if(part&&aux&&!/^(was|waren|had|hadden)$/.test(p.V)){const pl=ZIN_SUBJ[p.S]===4||(p.S==='ze'&&/en$/.test(p.V));
+      const A=aux==='zijn'?{1:'ben',2:p.S==='u'?'bent':'bent',3:'is',4:'zijn'}:{1:'heb',2:p.S==='u'?'hebt':'hebt',3:'heeft',4:'hebben'};const a=A[pl?4:ZIN_SUBJ[p.S]];
+      out.push({k:'perf',q:'جمله را به ماضی نقلی (voltooide tijd) ببرید',lead:'',src:x,ans:[zinJ([S0,a,...r,part])],tiles:[S0,a,...r,part],rule:'ماضی نقلی: hebben یا zijn در جای دوم، اسم مفعول (ge…d/t/en) در آخر جمله. فعل‌های حرکت و تغییر حالت (gaan، komen، worden…) با zijn می‌آیند.'})}}
+  /* yes/no question (not for «ik»: «Bel ik je op?» is odd) */
+  if(p.S!=='ik'){let v=V;if((p.S==='je'||p.S==='jij')&&/t$/.test(v)&&zinLex().fin.has(v.toLowerCase().slice(0,-1)))v=v.slice(0,-1);
+    out.push({k:'q',q:'از این جمله یک سؤال بله/نه بسازید',lead:'',src:x,ans:[zinJ([v,S0,...rest],1)],tiles:[v,S0,...rest],rule:'سؤال بله/نه با فعل شروع می‌شود و فاعل بعد از آن می‌آید. با jij و je، حرف t آخر فعل می‌افتد: Jij werkt → Werk jij?'})}
+  return out;
+}
+/* ---------- state & UI ---------- */
+let zinTab='build',zinQ=null;
+function zinTileHTML(w,i,used){return`<button type="button" class="zt${used?' used':''}" data-zt="${i}"${used?' disabled':''}>${esc(w)}</button>`}
+function zinNewBuild(){const x=zinPick(()=>true,30)[Math.floor(Math.random()*6)]||zinPick(()=>true,1)[0];if(!x)return null;
+  const t=zinToks(x.nl);const V=wcVocab().w;const tiles=t.map((w,i)=>i===0&&(V.has(w.toLowerCase())||ZIN_SUBJ[w.toLowerCase()])?w.toLowerCase():w);return{k:'build',src:x,q:'با این تکه‌ها جملهٔ هلندی بسازید',ans:[x.nl],tiles,end:x.nl.slice(-1)}}
+function zinNewTrans(){for(let a=0;a<40;a++){const c=zinPick(x=>/\.$/.test(x.nl)&&!!ZIN_SUBJ[zinToks(x.nl)[0].toLowerCase()],40);const x=c[Math.floor(Math.random()*c.length)];if(!x)return null;
+  const ts=zinTasks(x);if(ts.length){const k=['inv','sub','perf','q'];const pref=ts.filter(z=>z.k===k[(+db.done['zin:n']||0)%4]);return(pref[0]||ts[Math.floor(Math.random()*ts.length)])}}return null}
+function zinStart(){zinQ=zinTab==='build'?zinNewBuild():zinNewTrans();if(zinQ){zinQ.pick=[];zinQ.order=kitShuffle(zinQ.tiles.map((_,i)=>i));zinQ.res=null}renderZin()}
+function zinRoles(s){const X=zinLex(),t=zinToks(s);const end=s.slice(-1);let vi=t.findIndex((w,i)=>i<3&&X.fin.has(w.toLowerCase()));const hits=svFind(s);const parts=new Set();hits.forEach(h=>{if(h.split)parts.add(h.r[1][0])});
+  let pos=0;return t.map((w,i)=>{const at=s.indexOf(w,pos);pos=at+w.length;const c=i===vi?'zv':parts.has(at)?'zp':ZIN_SUBJ[w.toLowerCase()]&&Math.abs(i-vi)===1?'zs':'';return c?`<span class="${c}">${esc(w)}</span>`:esc(w)}).join(' ')+end}
+function renderZin(){
+  const el=$('#zinBody');if(!el)return;setSeg($('#zinTab'),zinTab);
+  const n=+db.done['zin:ok']||0;$('#zinStat').textContent=n?`${faNum(n)} جملهٔ درست ساخته‌اید.`:'';
+  if(zinTab==='rules'){el.innerHTML=ZIN_RULES;return}
+  if(!zinQ){el.innerHTML=`<div class="panel"><p class="hint" style="margin:0 0 10px">${zinTab==='build'?'یک جملهٔ فارسی می‌بینید و تکه‌های هلندی‌اش را به هم ریخته. با لمس تکه‌ها جمله را به ترتیب درست بسازید. جمله‌هایی که واژه‌هایشان را در کارت‌هایتان دارید زودتر می‌آیند.':'یک جملهٔ هلندی را به شکل دیگری درمی‌آورید: با «فردا» شروع کنید، بعد از «Ik weet dat» بنویسید، به ماضی نقلی ببرید یا سؤالش کنید. این دقیقاً همان چیزی است که در نوشتن و صحبت B1 سنجیده می‌شود.'}</p><button class="btn primary" type="button" data-zgo>شروع</button></div>`;return}
+  const q=zinQ,res=q.res;const lead=q.lead?`<span class="zlead">${esc(q.lead)}</span>`:'';
+  el.innerHTML=`<div class="panel zin-card">
+    <p class="zin-q"><b>${esc(q.q)}</b></p>
+    ${q.k==='build'?`<p class="zin-fa">${esc(q.src.fa)}</p>`:`<p class="zin-src lat" dir="ltr">${zinRoles(q.src.nl)}</p><p class="hint">${esc(q.src.fa)}</p>`}
+    <div class="zin-ans lat" dir="ltr">${lead}${q.pick.map((ti,j)=>`<button type="button" class="zt on" data-zu="${j}"${res?' disabled':''}>${esc(q.tiles[ti])}</button>`).join('')}<span class="zend">${q.k==='q'?'?':q.k==='build'?esc(q.end):'.'}</span></div>
+    <div class="zin-bank lat" dir="ltr">${q.order.map(ti=>zinTileHTML(q.tiles[ti],ti,q.pick.includes(ti)||!!res)).join('')}</div>
+    ${res?`<div class="kit-fb ${res.ok?'ok':'no'}"><b>${res.ok?'درست است!':res.v2?'ترتیب شما شاید هم درست باشد، ولی جواب این بود:':'جواب درست:'}</b><p class="lat zin-right" dir="ltr">${zinRoles(q.ans[0])}</p>${q.rule?`<p class="hint" style="margin:4px 0 0">${kitBidi(q.rule)}</p>`:''}<p class="zin-leg"><span class="zs">فاعل</span> <span class="zv">فعل صرف‌شده</span> <span class="zp">پیشوند جداشده</span></p></div>`:''}
+    <div class="btn-row">${res?`<button class="btn primary" type="button" data-zgo>بعدی</button><button class="btn ghost" type="button" data-zsay>پخش جمله</button>${findDup('nl',q.ans[0])?'':`<button class="btn ghost" type="button" data-zcard>افزودن به کارت‌ها</button>`}`:`<button class="btn primary" type="button" data-zcheck${q.pick.length?'':' disabled'}>بررسی</button><button class="btn ghost" type="button" data-zhint>تکهٔ بعدی را نشانم بده</button><button class="btn ghost" type="button" data-zgo>جملهٔ دیگر</button>`}</div></div>`;
+}
+function zinCheck(){const q=zinQ;if(!q||q.res)return;const lead=q.lead?q.lead+' ':'';const got=norm(lead+q.pick.map(i=>q.tiles[i]).join(' '));
+  const ok=q.ans.some(a=>norm(a)===got)&&q.pick.length===q.tiles.length;
+  let v2=false;if(!ok&&q.k==='build'){const X=zinLex(),ws=q.pick.map(i=>q.tiles[i].toLowerCase());v2=ws.length===q.tiles.length&&X.fin.has(ws[1]||'')&&!X.fin.has(ws[0])}
+  q.res={ok,v2};db.done['zin:n']=(+db.done['zin:n']||0)+1;if(ok){db.done['zin:ok']=(+db.done['zin:ok']||0)+1;db.done['zin:s:'+audKey(q.src.nl)]=Date.now()}saveData(30000);
+  renderZin();speak(q.ans[0],'nl');}
+$('#zinBody')&&$('#zinBody').addEventListener('click',e=>{
+  const q=zinQ;
+  if(e.target.closest('[data-zgo]')){zinStart();return}
+  if(!q)return;
+  const t=e.target.closest('[data-zt]');if(t&&!q.res){q.pick.push(+t.dataset.zt);renderZin();return}
+  const u=e.target.closest('[data-zu]');if(u&&!q.res){q.pick.splice(+u.dataset.zu,1);renderZin();return}
+  if(e.target.closest('[data-zcheck]')){zinCheck();return}
+  if(e.target.closest('[data-zhint]')){/* first answer: keep the correct start, add the next correct tile */
+    const want=zinToks(q.ans[0]).slice(q.lead?zinToks(q.lead).length:0).map(w=>w.toLowerCase());let j=0;while(j<q.pick.length&&q.tiles[q.pick[j]].toLowerCase()===want[j])j++;q.pick=q.pick.slice(0,j);
+    const nx=q.tiles.findIndex((w,i)=>w.toLowerCase()===want[j]&&!q.pick.includes(i));if(nx>=0)q.pick.push(nx);renderZin();return}
+  if(e.target.closest('[data-zsay]')){speak(q.ans[0],'nl');return}
+  if(e.target.closest('[data-zcard]')){const now=Date.now();db.items.push(cleanItem({id:uid(),lang:'nl',type:'sentence',text:q.ans[0],fa:q.k==='build'?q.src.fa:q.src.fa,tags:['ترتیب واژه'],created:now,updated:now,srs:null}));saveData();toast('جمله به کارت‌ها رفت.');renderZin();return}
+});
+if($('#zinTab'))bindSeg($('#zinTab'),v=>{zinTab=v;zinQ=null;renderZin()});
+const ZIN_RULES=`<div class="zin-rules">
+<section class="panel"><h2 class="h2">۱. فعل همیشه جای دوم است</h2><p>در جملهٔ اصلی هلندی، فعل صرف‌شده جایگاه دوم را دارد؛ مهم نیست چه چیزی اول آمده.</p><p class="lat" dir="ltr"><span class="zs">Ik</span> <span class="zv">werk</span> morgen thuis.<br>Morgen <span class="zv">werk</span> <span class="zs">ik</span> thuis.</p><p class="hint">اشتباه رایج فارسی‌زبان‌ها: Morgen ik werk thuis. ✗</p></section>
+<section class="panel"><h2 class="h2">۲. فعل دوم به آخر می‌رود</h2><p>با فعل کمکی (willen، kunnen، moeten، gaan…) یا ماضی نقلی، فعل دوم یا اسم مفعول به آخر جمله می‌رود.</p><p class="lat" dir="ltr">Ik <span class="zv">wil</span> morgen naar de markt <b>gaan</b>.<br>Ik <span class="zv">heb</span> gisteren veel <b>gewerkt</b>.</p></section>
+<section class="panel"><h2 class="h2">۳. فعل جداشدنی</h2><p>پیشوند به آخر جمله می‌رود؛ ولی با فعل کمکی یا در جملهٔ وابسته سر هم می‌ماند.</p><p class="lat" dir="ltr">Ik <span class="zv">bel</span> je morgen <span class="zp">op</span>.<br>Ik wil je morgen <b>opbellen</b>. / … omdat ik je morgen <b>opbel</b>.</p></section>
+<section class="panel"><h2 class="h2">۴. جملهٔ وابسته: فعل در آخر</h2><p>بعد از dat، omdat، als، wanneer، terwijl، zodat، of و واژه‌های سؤالی در وسط جمله، فعل صرف‌شده آخر می‌آید. بعد از want و maar و en این‌طور نیست.</p><p class="lat" dir="ltr">Ik blijf thuis, omdat ik ziek <span class="zv">ben</span>.<br>Ik blijf thuis, want ik <span class="zv">ben</span> ziek.</p></section>
+<section class="panel"><h2 class="h2">۵. زمان، شیوه، مکان</h2><p>وقتی چند قید پشت هم می‌آیند، ترتیب معمول: زمان، بعد شیوه (چطور)، بعد مکان.</p><p class="lat" dir="ltr">Ik ga <b>morgen</b> <b>met de fiets</b> <b>naar mijn werk</b>.</p></section>
+<section class="panel"><h2 class="h2">۶. جای niet</h2><p>niet معمولاً قبل از واژه‌ای می‌آید که منفی‌اش می‌کند، و در آخر جمله اگر کل فعل منفی است؛ ولی قبل از اسم مفعول، مصدر و پیشوند.</p><p class="lat" dir="ltr">Ik kom <b>niet</b>.<br>Ik kom morgen <b>niet</b> naar de les.<br>Ik heb het boek <b>niet</b> gelezen.<br>Hij belt me <b>niet</b> op.</p></section>
+<section class="panel"><h2 class="h2">۷. سؤال</h2><p>سؤال بله/نه با فعل شروع می‌شود؛ سؤال با واژهٔ پرسشی، اول واژهٔ پرسشی و بعد فعل. با jij/je حرف t می‌افتد.</p><p class="lat" dir="ltr"><span class="zv">Werk</span> <span class="zs">jij</span> morgen?<br>Waar <span class="zv">werk</span> <span class="zs">je</span>?</p></section></div>`;
+if(/[?&]debug/.test(location.search))window.__z={zinPool,zinParse,zinTasks,zinStart,get q(){return zinQ},set tab(v){zinTab=v}};
+
+/* ================= WRITING COACH (v29) =================
+   Rule-based feedback on Dutch texts, on this device: content points of the task, greeting/closing and register
+   (u or je), word order (inversion, verb at the end of a subordinate clause, infinitive/participle at the end,
+   split separable verbs), the auxiliary of the perfect tense (zijn-verbs), de/het, likely spelling slips,
+   sentence length and linking words. It is a coach, not an examiner: it says what it found and why. */
+const SCH=VZ.schrijf||[];
+const WC_SUBJ=new Set(['ik','je','jij','u','hij','zij','ze','het','we','wij','jullie','men','er']);
+const WC_SUB=new Set(['omdat','dat','als','wanneer','zodat','terwijl','voordat','nadat','hoewel','totdat','sinds','zodra','indien','of']);
+const WC_ADV=['morgen','vandaag','gisteren','straks','daarna','dan','toen','soms','vaak','meestal','daarom','misschien','helaas','gelukkig','natuurlijk','eerst','nu','vanavond','vanmiddag','vanochtend','overmorgen','eergisteren','later','ook','altijd','nooit','dus','hier','daar','thuis','eigenlijk','binnenkort','bovendien','tenslotte','ten eerste','ten tweede','volgende week','vorige week','volgend jaar','vorig jaar','in het weekend','na het werk','na de les','op maandag','op dinsdag','op woensdag','op donderdag','op vrijdag','op zaterdag','op zondag',"'s ochtends","'s middags","'s avonds","'s nachts",'elke dag','elke week','deze week','in de zomer','in de winter'];
+const WC_ZIJN=new Set('gegaan gekomen geweest gebleven geworden vertrokken aangekomen gebeurd overleden geboren verhuisd teruggekomen thuisgekomen opgegroeid gevallen gestorven verdwenen meegegaan weggegaan uitgegaan begonnen ontstaan geslaagd gezakt gestegen gedaald afgevallen opgestaan ingeslapen ingestapt uitgestapt overgestapt'.split(' '));
+const WC_LINK=['omdat','want','daarom','maar','ook','daarna','eerst','dus','bovendien','toen','als','dat','en','of','zodat','terwijl','ten eerste','ten tweede','aan de andere kant','bijvoorbeeld','tenslotte','verder'];
+const WC_MODAL=new Set('wil wilt willen kan kun kunt kunnen moet moeten mag mogen zal zult zullen ga gaat gaan hoef hoeft hoeven'.split(' '));
+const WC_AUXP=new Set('heb hebt heeft hebben had hadden ben bent is zijn was waren'.split(' '));
+let WCV=null;
+function wcVocab(){
+  if(WCV)return WCV;const w=new Set(),art=new Map();const add=t=>String(t||'').toLowerCase().replace(/[’]/g,"'").split(/[^a-zà-ÿ'\-]+/).forEach(x=>{x=x.replace(/^['\-]+|['\-]+$/g,'');if(x)w.add(x)});
+  PACKS.forEach(p=>{if(p.lang!=='nl')return;(p.items||[]).forEach(it=>{add(it.t);add(it.pl);if(it.v)Object.values(it.v).forEach(add);(it.ex||[]).forEach(e=>add(e[0]));
+    if(it.a&&!/\s/.test(it.t)){const k=it.t.toLowerCase();const o=art.get(k);art.set(k,o&&o!==it.a?'?':it.a);if(it.pl)art.set(it.pl.toLowerCase(),'de')}})});
+  (VZ.dialogs||[]).forEach(d=>d.lang==='nl'&&(d.lines||[]).forEach(l=>add(l.t)));
+  ['sep','prep','chunk'].forEach(k=>(KIT[k]||[]).forEach(g=>g.items.forEach(x=>{add(x.t);x.ex.forEach(e=>add(e[0]));if(x.ik)add(x.ik+' '+x.ps+' '+x.pp+' '+x.pf)})));
+  ((VZ.pod||{}).eps||[]).forEach(e=>e.l.forEach(l=>add(l[1])));SCH.forEach(t=>add(t.a));
+  ((VZ.phrases||{}).nl||{items:[]}).items.forEach(p=>{add(p.t);(p.ex||[]).forEach(e=>add(e[0]))});
+  db.items.forEach(i=>{if(i.lang==='nl'){add(i.text);add(i.example);add(i.plural)}});
+  ZIN_FIN_X.forEach(x=>w.add(x));
+  return WCV={w,art};
+}
+function wcNear(x){const V=wcVocab().w;let best=null,bd=3;for(const y of V){if(Math.abs(y.length-x.length)>2||y[0]!==x[0])continue;const d=lev(x,y);if(d<bd){bd=d;best=y;if(d===1)break}}return bd<=2?best:null}
+/* sentence and word positions */
+function wcSents(text){const out=[];const re=/[^.!?\n]+[.!?]*/g;let m;while((m=re.exec(text))){const raw=m[0];const lead=raw.length-raw.trimStart().length;const t=raw.trim();if(t)out.push({t,s:m.index+lead,e:m.index+lead+t.length})}return out}
+function wcWords(s,base){const out=[];const re=/[A-Za-zÀ-ÖØ-öø-ÿ'’\-]+/g;let m;while((m=re.exec(s)))out.push({w:m[0],l:m[0].toLowerCase().replace(/’/g,"'"),s:base+m.index,e:base+m.index+m[0].length});return out}
+const WC_GREET=/^(beste|geachte|hoi|hallo|lieve|dag|hey|goedemorgen|goedemiddag)\b/i,WC_CLOSE=/^(met vriendelijke groet(en)?|vriendelijke groet(en)?|groetjes|groeten|hartelijke groet(en)?|liefs|tot (snel|ziens|morgen|zaterdag|dan)|alvast bedankt|bij voorbaat dank)/i;
+function wcCoach(text,task){
+  const X=zinLex(),V=wcVocab(),issues=[],T=String(text||'');const add=(s,e,sev,msg,fix)=>issues.push({s,e,sev,msg,fix});
+  const lines=T.split('\n');let off=0;const body=[];let greet=null,close=null;
+  lines.forEach((ln,i)=>{const t=ln.trim();if(t){if(!greet&&!body.length&&WC_GREET.test(t)&&t.length<60)greet={t,s:off};else if(WC_CLOSE.test(t))close={t,s:off};else if(close&&t.split(/\s+/).length<=4){}else body.push({t:ln,s:off})}off+=ln.length+1});
+  const words=wcWords(T,0),nW=words.length;
+  /* register */
+  const reg=task&&task.reg;const hasU=words.filter(w=>w.l==='u'||w.l==='uw'),hasJe=words.filter(w=>/^(je|jij|jou|jouw)$/.test(w.l));
+  if(reg==='f'&&hasJe.length)add(hasJe[0].s,hasJe[0].e,2,'این متن رسمی است: به‌جای je و jij از u و به‌جای jouw از uw استفاده کنید.','u');
+  if(reg==='i'&&hasU.length&&!hasJe.length)add(hasU[0].s,hasU[0].e,1,'این پیام خودمانی است: با دوست و همسایه معمولاً je می‌گویند، نه u.','je');
+  if(hasU.length&&hasJe.length&&reg!=='f')add(hasJe[0].s,hasJe[0].e,1,'در یک متن هم u و هم je آمده؛ یکی را انتخاب کنید و تا آخر نگه دارید.','');
+  if(task&&task.k!=='tekst'){
+    if(!greet)add(0,Math.min(T.length,1),2,reg==='f'?'نامه را با یک سلام رسمی شروع کنید، مثلاً: Geachte heer/mevrouw, یا Beste mevrouw … ,':'پیام را با یک سلام شروع کنید، مثلاً: Hoi …, یا Beste …,','');
+    else if(reg==='f'&&/^(hoi|hallo|hey|lieve)\b/i.test(greet.t))add(greet.s,greet.s+greet.t.length,2,'برای نامهٔ رسمی Hoi و Hallo مناسب نیست؛ بنویسید Geachte … یا Beste …','Geachte');
+    if(!close){const lastL=lines.map(l=>l.trim()).filter(Boolean).pop()||'';if(/(met vriendelijke groet|groetjes|groeten|liefs|tot (snel|ziens|morgen|dan|zaterdag))/i.test(lastL.slice(-60)))close={t:lastL,s:T.lastIndexOf(lastL)}}
+    if(!close)add(Math.max(0,T.length-1),T.length,task.k==='mail'?2:1,reg==='f'?'نامه را با «Met vriendelijke groet,» و نامتان تمام کنید.':'پیام را با «Groetjes,» یا «Tot snel!» تمام کنید.','');
+    else if(reg==='f'&&/^(groetjes|liefs)/i.test(close.t))add(close.s,close.s+close.t.length,2,'«Groetjes» برای نامهٔ رسمی خیلی خودمانی است؛ بنویسید: Met vriendelijke groet,','Met vriendelijke groet,')}
+  /* sentences */
+  const sents=[];body.forEach(b=>wcSents(b.t).forEach(s=>sents.push({t:s.t,s:b.s+s.s,e:b.s+s.e})));
+  sents.forEach(se=>{
+    const ws=wcWords(se.t,se.s);if(!ws.length)return;
+    if(/^[a-zà-ÿ]/.test(se.t))add(se.s,se.s+1,1,'جمله را با حرف بزرگ شروع کنید.',se.t[0].toUpperCase());
+    if(!/[.!?]$/.test(se.t)&&ws.length>3)add(se.e-1,se.e,1,'آخر جمله نقطه یا علامت سؤال بگذارید.','.');
+    if(ws.length>28)add(se.s,se.e,1,'این جمله خیلی بلند است ('+faNum(ws.length)+' واژه). آن را دو جمله کنید؛ خواننده راحت‌تر می‌فهمد.','');
+    /* clauses: split at commas and subordinators */
+    const L=ws.map(w=>w.l);
+    /* inversion: adverbial at the start, then subject, then the finite verb */
+    for(const a of WC_ADV){const aw=a.split(' ');if(aw.every((x,i)=>L[i]===x)){const i=aw.length;if(L[i]&&WC_SUBJ.has(L[i])&&L[i]!=='er'&&L[i+1]&&X.fin.has(L[i+1])&&!(a==='dan'&&L[i]==='ook')){
+        add(ws[i].s,ws[i+1].e,3,`بعد از «${ws.slice(0,i).map(w=>w.w).join(' ')}» اول فعل می‌آید و بعد فاعل (inversie): ${ws.slice(0,i).map(w=>w.w).join(' ')} ${ws[i+1].w} ${ws[i].w} …`,ws[i+1].w+' '+ws[i].w)}break}}
+    /* separable verb joined in second position of a main clause */
+    if(!WC_SUB.has(L[0])&&L[1]){const v=X.L.joined.get(L[1]);if(v&&L[1]!==v.inf&&L[1]!==v.partc&&L[1].length>v.p.length+1&&!/^(ge)/.test(L[1].slice(v.p.length)))add(ws[1].s,ws[1].e,3,`«${v.inf}» فعل جداشدنی است: در جملهٔ اصلی پیشوند ${v.p} به آخر جمله می‌رود: … ${L[1].slice(v.p.length)} … ${v.p}.`,L[1].slice(v.p.length)+' … '+v.p)}
+    /* subordinate clause: finite verb right after the subject, followed by more words */
+    for(let i=0;i<L.length-3;i++){if(!WC_SUB.has(L[i]))continue;if(L[i]==='dat'&&i===0)continue;if(L[i]==='of'&&!/^(weet|vraag|vraagt|vroeg|weten)$/.test(L[i-1]||''))continue;
+      if(L[i]==='als'&&i>0&&X.fin.has(L[i-1]))continue;
+      const sI=i+1;if(!WC_SUBJ.has(L[sI]))continue;const vI=sI+1;if(!L[vI]||!X.fin.has(L[vI]))continue;
+      let end=vI+1;while(end<L.length&&!WC_SUB.has(L[end])&&!/^(en|maar|want|dus)$/.test(L[end])){const gap=se.t.slice(ws[end-1].e-se.s,ws[end].s-se.s);if(/[,;]/.test(gap))break;end++}
+      const after=L.slice(vI+1,end);const nonVerb=after.filter(w=>!(/^ge[a-zà-ÿ]+(d|t|en)$/.test(w)||((WC_MODAL.has(L[vI])||WC_AUXP.has(L[vI]))&&/en$/.test(w)&&w===after[after.length-1])));
+      if(nonVerb.length){add(ws[vI].s,ws[vI].e,3,`بعد از «${ws[i].w}» جملهٔ وابسته است و فعل صرف‌شده («${ws[vI].w}») باید به آخر همین جمله برود: ${ws[i].w} ${ws[sI].w} ${after.join(' ')} ${ws[vI].w}`,'');break}}
+    /* modal or auxiliary in a main clause: infinitive/participle should be at the end */
+    if(!WC_SUB.has(L[0])&&L.length>=5){const vi=WC_SUBJ.has(L[0])?1:(X.fin.has(L[1])?1:-1);if(vi>0){const fv=L[vi];const nx=L[vi+1],nI=vi+1;
+      const isInf=w=>w&&/en$/.test(w)&&V.w.has(w)&&!WC_SUBJ.has(w)&&!/^(een|geen|eten|tien|negen|zeven|boven|beneden|open|even|alleen|binnen|buiten|ingen|heen)$/.test(w);
+      const isPart=w=>w&&/^ge[a-zà-ÿ]{2,}(d|t|en)$/.test(w);
+      if(WC_MODAL.has(fv)&&isInf(nx)&&L.length>nI+1&&!/^(en|of|maar)$/.test(L[nI+1]))add(ws[nI].s,ws[nI].e,2,`بعد از «${ws[vi].w}» مصدر («${ws[nI].w}») معمولاً به آخر جمله می‌رود: ${ws.slice(0,nI).map(w=>w.w).join(' ')} ${ws.slice(nI+1).map(w=>w.w).join(' ')} ${ws[nI].w}`,'');
+      else if(WC_AUXP.has(fv)&&isPart(nx)&&L.length>nI+1&&!/^(en|of|maar)$/.test(L[nI+1]))add(ws[nI].s,ws[nI].e,2,`در ماضی نقلی اسم مفعول («${ws[nI].w}») به آخر جمله می‌رود: ${ws.slice(0,nI).map(w=>w.w).join(' ')} ${ws.slice(nI+1).map(w=>w.w).join(' ')} ${ws[nI].w}`,'')}}
+    /* perfect tense with hebben for a zijn-verb */
+    for(let i=0;i<L.length;i++){if(!/^(heb|hebt|heeft|hebben|had|hadden)$/.test(L[i]))continue;for(let j=i+1;j<Math.min(L.length,i+9);j++){if(WC_ZIJN.has(L[j])&&!(L[j]==='begonnen'||L[j]==='geslaagd')){const zv={heb:'ben',hebt:'bent',heeft:'is',hebben:'zijn',had:'was',hadden:'waren'}[L[i]];add(ws[i].s,ws[i].e,3,`«${ws[j].w}» با zijn می‌آید، نه hebben: ${zv} … ${ws[j].w}`,zv);break}}}
+    /* de / het */
+    for(let i=0;i<L.length-1;i++){if(L[i]!=='de'&&L[i]!=='het')continue;let j=i+1;if(/e$/.test(L[j])&&L[j+1]&&V.art.has(L[j+1])&&!V.art.has(L[j]))j++;const a=V.art.get(L[j]);
+      if(a&&a!=='?'&&a!==L[i]&&!(L[i]==='het'&&/^(is|was|gaat|wordt|lijkt|regent)$/.test(L[j+1]||'')))add(ws[i].s,ws[i].e,2,`«${ws[j].w}» حرف تعریف ${a} دارد: ${a} ${ws[j].w}`,a)}
+  });
+  /* spelling: words the app does not know (names and capitalised words are skipped) */
+  const unk=[];words.forEach(w=>{if(w.l.length<4||/^[A-Z]/.test(w.w)||V.w.has(w.l)||/['\-]/.test(w.l))return;const base=w.l.replace(/(je|tje|pje|jes|tjes|s|en|e)$/,'');if(V.w.has(base)||V.w.has(w.l.replace(/s$/,''))||lookupWord(w.l,'nl').length)return;unk.push(w)});
+  unk.filter(w=>!issues.some(x=>x.s<w.e&&x.e>w.s)).slice(0,8).forEach(w=>{const n=wcNear(w.l);add(w.s,w.e,1,n?`املای این واژه را بررسی کنید؛ شاید منظورتان «${n}» است.`:'این واژه در واژه‌نامهٔ برنامه نیست؛ املایش را بررسی کنید.',n||'')});
+  /* content points */
+  const low=' '+T.toLowerCase().replace(/\s+/g,' ')+' ';const pts=(task&&task.p||[]).map(([ks,lab])=>[ks.some(k=>new RegExp('(^|[^a-zà-ÿ])'+k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'([^a-zà-ÿ]|$)').test(low)),lab]);
+  const links=WC_LINK.filter(k=>new RegExp('(^|[^a-zà-ÿ])'+k+'([^a-zà-ÿ]|$)').test(low));
+  const tips=[];if(task&&task.min&&nW<task.min)tips.push(`متن کوتاه است: ${faNum(nW)} واژه؛ دست‌کم ${faNum(task.min)} واژه بنویسید.`);
+  if(nW>=35&&links.filter(k=>!/^(en|of|dat|als)$/.test(k)).length<2)tips.push('جمله‌ها را با واژه‌های ربط به هم وصل کنید: omdat، want، daarom، maar، daarna، bovendien.');
+  if(sents.length>=3&&new Set(sents.map(s=>(s.t.split(/\s+/)[0]||'').toLowerCase())).size<=Math.ceil(sents.length/2))tips.push('بیشتر جمله‌ها با یک واژه شروع می‌شوند؛ چند جمله را با زمان یا daarom شروع کنید (و فعل را جای دوم بگذارید).');
+  issues.sort((a,b)=>a.s-b.s);
+  const lang=issues.filter(i=>i.sev>=2).length,per100=nW?lang/nW*100:0;
+  const sc={inhoud:pts.length?Math.round(pts.filter(p=>p[0]).length/pts.length*100):null,opbouw:Math.max(0,100-issues.filter(i=>/سلام|تمام کنید|Groetjes|رسمی Hoi/.test(i.msg)).length*35-(task&&task.min&&nW<task.min?30:0)),taal:Math.max(0,Math.round(100-per100*6-issues.filter(i=>i.sev===1).length*2))};
+  return{issues,pts,tips,links,nW,sents:sents.length,sc};
+}
+/* text with numbered marks */
+function wcMarked(T,iss){let h='',p=0;iss.forEach((x,k)=>{if(x.s<p)return;h+=esc(T.slice(p,x.s));h+=`<mark class="wc s${x.sev}" data-wci="${k}">${esc(T.slice(x.s,Math.max(x.e,x.s+1)))||'&nbsp;'}<sup>${faNum(k+1)}</sup></mark>`;p=Math.max(x.e,x.s+1)});return h+esc(T.slice(p))}
+function wcReportHTML(T,r,task){
+  const bar=(lab,v)=>v==null?'':`<div class="wc-sc"><span>${lab}</span><div class="pg-bar"><span style="width:${Math.max(3,v)}%"></span></div><b class="num">${faNum(v)}</b></div>`;
+  return`<div class="wc-rep">
+    <div class="wc-scs">${bar('محتوا (نکته‌های تکلیف)',r.sc.inhoud)}${bar('ساختار (سلام، پایان، طول)',r.sc.opbouw)}${bar('زبان (دستور و املا)',r.sc.taal)}</div>
+    ${r.pts.length?`<div class="wr-checks">${r.pts.map(([ok,l])=>`<div class="${ok?'ok':'no'}">${ok?'✓':'✗'} ${esc(l)}</div>`).join('')}</div>`:''}
+    <h3 class="h3">متن شما با نکته‌ها</h3><div class="wc-text lat" dir="ltr">${wcMarked(T,r.issues)}</div>
+    ${r.issues.length?`<ol class="wc-list">${r.issues.map((x,k)=>`<li class="s${x.sev}"><span class="wc-n">${faNum(k+1)}</span> <span class="lat wc-q" dir="ltr">${esc(T.slice(x.s,x.e).slice(0,40))}</span> ${kitBidi(x.msg)}</li>`).join('')}</ol>`:'<p class="kit-fb ok">ایراد دستوری یا املایی‌ای پیدا نشد. آفرین!</p>'}
+    ${r.tips.length?`<ul class="wc-tips">${r.tips.map(t=>`<li>${kitBidi(t)}</li>`).join('')}</ul>`:''}
+    <p class="hint">${faNum(r.nW)} واژه، ${faNum(r.sents)} جمله${r.links.length?'، واژه‌های ربط: <span class="lat">'+esc(r.links.join(', '))+'</span>':''}. این بررسی خودکار و تقریبی است؛ همهٔ اشتباه‌ها را پیدا نمی‌کند و گاهی چیز درستی را هم علامت می‌زند.</p></div>`;
+}
+/* ---------- the writing view ---------- */
+let schCur=null;
+const schKey=t=>'sch:'+t.id;
+const SCH_K={bericht:'پیام خودمانی',mail:'ایمیل رسمی',tekst:'متن کوتاه'};
+function renderSchrijf(){
+  const el=$('#schBody');if(!el)return;
+  if(!schCur){const own=db.own||{};
+    el.innerHTML=`<div class="sch-grid">${SCH.map(t=>{const d=(own[schKey(t)]||{}).t,ok=db.done['sch:'+t.id];return`<button type="button" class="lf-card${ok?' done':''}" data-schopen="${esc(t.id)}"><b>${esc(t.fa.split(/[.:]/)[0])}</b><span class="hint">${SCH_K[t.k]}، ${t.reg==='f'?'رسمی (u)':'خودمانی (je)'}، دست‌کم ${faNum(t.min)} واژه</span>${d?'<span class="pill">پیش‌نویس دارد</span>':''}${ok?'<span class="pill ok">بررسی شده</span>':''}</button>`}).join('')}
+      <button type="button" class="lf-card" data-schopen="free"><b>متن آزاد</b><span class="hint">هر چیزی بنویسید: پیام، ایمیل یا یادداشت روزانه؛ برنامه بررسی‌اش می‌کند.</span></button></div>`;return}
+  const t=schCur,free=t.id==='free',txt=((db.own||{})[schKey(t)]||{}).t||'';
+  el.innerHTML=`<button class="link back" type="button" data-schback>&larr; همهٔ تکلیف‌ها</button>
+    <div class="panel stack">${free?`<p class="hint" style="margin:0">لحن متن:</p><div class="seg" id="schReg"><button type="button" data-v="i">خودمانی (je)</button><button type="button" data-v="f">رسمی (u)</button><button type="button" data-v="t">متن آزاد</button></div>`:`<p class="sp-q lat" dir="ltr">${esc(t.q)}</p><p class="hint" style="margin:0">${esc(t.fa)}</p>`}
+    ${t.h&&t.h.length?`<details class="sp-fa"><summary>جمله‌های کمکی</summary><ul class="sch-h">${t.h.map(h=>`<li><span class="lat" dir="ltr">${esc(h[0])}</span> <span class="hint">${esc(h[1])}</span></li>`).join('')}</ul></details>`:''}
+    <textarea id="schIn" class="lat" dir="ltr" rows="11" spellcheck="false" autocapitalize="sentences" placeholder="${t.reg==='f'?'Geachte heer/mevrouw,':'Hoi …,'}">${esc(txt)}</textarea>
+    <div class="wr-meta"><span id="schCount"></span>${t.min?`<span class="hint">دست‌کم ${faNum(t.min)} واژه</span>`:''}</div>
+    <div class="btn-row"><button class="btn primary" type="button" data-schcheck>بررسی متن</button>${free?'':'<button class="btn ghost" type="button" data-schmodel>جواب نمونه</button>'}</div>
+    <div id="schFb"></div>${free?'':`<div id="schModel" hidden><div class="sp-model"><div class="sp-model-h"><span>یک جواب نمونه</span></div><p class="lat wr-model" dir="ltr">${esc(t.a).replace(/\n/g,'<br>')}</p><p class="hint">${esc(t.afa)}</p></div></div>`}</div>`;
+  if(free){setSeg($('#schReg'),t.reg==='f'?'f':t.k==='tekst'?'t':'i');bindSeg($('#schReg'),v=>{t.reg=v==='t'?'':v;t.k=v==='t'?'tekst':v==='f'?'mail':'bericht'})}
+  schCount();
+}
+function schCount(){const i=$('#schIn'),c=$('#schCount');if(i&&c)c.textContent=faNum(wordsN(i.value))+' واژه'}
+let schSaveT=0;
+$('#schBody')&&$('#schBody').addEventListener('input',e=>{if(e.target.id!=='schIn'||!schCur)return;schCount();clearTimeout(schSaveT);const v=e.target.value,t=schCur;schSaveT=setTimeout(()=>{db.own=db.own||{};db.own[schKey(t)]={t:v,u:Date.now()};saveData()},700)});
+$('#schBody')&&$('#schBody').addEventListener('click',e=>{
+  const o=e.target.closest('[data-schopen]');if(o){const id=o.dataset.schopen;schCur=id==='free'?{id:'free',k:'bericht',reg:'i',min:0,p:[],h:[],a:'',afa:''}:SCH.find(t=>t.id===id);renderSchrijf();window.scrollTo(0,0);return}
+  if(e.target.closest('[data-schback]')){schCur=null;renderSchrijf();return}
+  if(e.target.closest('[data-schmodel]')){const m=$('#schModel');if(m)m.hidden=!m.hidden;return}
+  if(e.target.closest('[data-schcheck]')){const v=$('#schIn').value;if(wordsN(v)<3){toast('اول متنتان را بنویسید.');return}
+    db.own=db.own||{};db.own[schKey(schCur)]={t:v,u:Date.now()};if(schCur.id!=='free')db.done['sch:'+schCur.id]=Date.now();saveData();
+    const r=wcCoach(v,schCur);$('#schFb').innerHTML=wcReportHTML(v,r,schCur);$('#schFb').scrollIntoView({block:'nearest',behavior:'smooth'});return}
+});
+function wcLangHTML(T,r){return`<div class="wc-rep"><h3 class="h3">بازخورد زبانی</h3>${r.issues.length?`<div class="wc-text lat" dir="ltr">${wcMarked(T,r.issues)}</div><ol class="wc-list">${r.issues.map((x,k)=>`<li class="s${x.sev}"><span class="wc-n">${faNum(k+1)}</span> <span class="lat wc-q" dir="ltr">${esc(T.slice(x.s,x.e).slice(0,40))}</span> ${kitBidi(x.msg)}</li>`).join('')}</ol>`:'<p class="hint">ایراد دستوری یا املایی‌ای پیدا نشد.</p>'}${r.tips.length?`<ul class="wc-tips">${r.tips.map(t=>`<li>${kitBidi(t)}</li>`).join('')}</ul>`:''}</div>`}
+/* the same coach under the exam writing tasks */
+function wcExamTask(t){const q=t.q||'';const reg=/\b(u|uw|geachte|meneer|mevrouw|gemeente|leidinggevende|verhuurder|woningcorporatie|bedrijf|klantenservice)\b/i.test(q)?'f':/\b(appje|vriend|vriendin|buurvrouw|buurman|collega|zus|broer)\b/i.test(q)?'i':'';return{reg,k:t.k==='zin'?'tekst':(/e-?mail|brief/i.test(q)?'mail':/bericht|appje|kaart/i.test(q)?'bericht':'tekst'),min:0,p:[]}}
+if(/[?&]debug/.test(location.search))window.__wc={wcCoach,wcVocab,SCH};
+
+/* ================= PODCAST (v29) =================
+   «پادکست امروز» is put together every day from your own cards: the words you reviewed or met in the last days
+   (word, example sentence, a pause to repeat), the «گپ روزانه» episode that uses most of your words and that
+   you have not heard yet (keywords with Persian, the conversation, then once more with pauses to shadow),
+   three everyday chunks and questions to answer out loud. Everything plays with the recorded voices; the Persian
+   narrator says what comes next, so it works with the screen off. */
+const POD=VZ.pod||{eps:[],pr:{}};
+let podList=[],podI=0,podOn=false,podTok=0,podTimer=0,podMode='today',podEp=null,podT0=0,podRate=0.9;
+const podOpt={again:true,fa:true};
+function podFa(k){return POD.pr[k]||''}
+function podDur(t,lang){const c=natClip(t,'nl');return c?c.d:Math.max(1.2,t.split(/\s+/).length*0.42)}
+function podKnown(){const s=new Set();db.items.forEach(i=>{if(i.lang==='nl'&&i.srs&&i.srs.last){s.add(norm(i.text));if(i.plural)s.add(norm(i.plural))}});return s}
+function podHash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)>>>0}return h}
+function podPickEp(){
+  const k=podKnown(),day=dayKey();
+  const sc=POD.eps.map((e,i)=>{const toks=e.l.flatMap(l=>l[1].toLowerCase().split(/[^a-zà-ÿ']+/)).filter(Boolean);const hit=new Set(toks.filter(t=>k.has(t)));const w=e.w.filter(x=>k.has(norm(x[0]))||k.has(norm(x[0].replace(/^(de|het) /,'')))).length;
+    return{e,s:hit.size+w*4-(db.done['pod:'+e.id]?1000:0)+(podHash(day+e.id)%7)}});
+  sc.sort((a,b)=>b.s-a.s);return sc[0]&&sc[0].e;
+}
+function podWords(){
+  const now=Date.now(),wk=dayKey(now-7*DAY);
+  const c=db.items.filter(i=>i.lang==='nl'&&!i.susp&&i.srs&&i.srs.last&&(now-i.srs.last<3*DAY||(i.srs.first||'')>=wk)).sort((a,b)=>b.srs.last-a.srs.last);
+  const out=[];for(const it of c){const ex=exList(it).find(e=>natHas(e.t,'nl')&&e.t.length<=110);if(natHas(fullText(it),'nl')||ex)out.push({it,ex});if(out.length>=8)break}return out;
+}
+function podChunks(){const day=dayKey(),k=podKnown();const all=kitAll('chunk').filter(x=>natHas(x.ex[0][0],'nl'));
+  all.sort((a,b)=>((db.done[kitKey('chunk',a)]?1:0)-(db.done[kitKey('chunk',b)]?1:0))||(podHash(day+b.id)%97-podHash(day+a.id)%97));return all.slice(0,3)}
+/* a program is a list of segments: {t, lang:'nl'|'fa', fa (translation to show), key (audio key), p (pause after, s), h (heading)} */
+function podEpisodeSegs(e,full){const S=[];const fa=(t,h)=>{if(podOpt.fa&&natHas(t,'nl'))S.push({t,lang:'fa',h})};
+  fa(podFa('episode'),'گپ روزانه');fa(e.fa);fa(e.intro);
+  fa(podFa('keywords'),'واژه‌های کلیدی');e.w.forEach(w=>{S.push({t:w[0],lang:'nl',fa:w[1],p:0.6,h:S.length&&S[S.length-1].h==='واژه‌های کلیدی'?'':'واژه‌های کلیدی'});if(podOpt.fa&&natHas(w[1],'nl'))S.push({t:w[1],lang:'fa',p:0.8})});
+  fa(podFa('listen'),'گفت‌وگو');e.l.forEach((l,i)=>S.push({t:l[1],lang:'nl',key:'pod '+e.id+' '+i,who:l[0],fa:l[2],p:0.35,h:i?'':'گفت‌وگو'}));
+  if(podOpt.again){fa(podFa('again'),'یک بار دیگر، با مکث');e.l.forEach((l,i)=>S.push({t:l[1],lang:'nl',key:'pod '+e.id+' '+i,who:l[0],fa:l[2],rep:1,h:i?'':'یک بار دیگر، با مکث'}))}
+  if(full!==false){fa(podFa('yourturn'),'نوبت شما');e.q.forEach((q,i)=>S.push({t:q[0],lang:'nl',fa:q[1],p:9,think:1,h:i?'':'نوبت شما'}))}
+  return S}
+function podBuildToday(){
+  const S=[],fa=(t,h)=>{if(podOpt.fa&&natHas(t,'nl'))S.push({t,lang:'fa',h})};
+  fa(podFa('hello'),'شروع');
+  const ws=podWords();
+  if(ws.length){fa(podFa('words'),'واژه‌های امروز');ws.forEach(({it,ex},i)=>{const h=i?'':'واژه‌های امروز';if(natHas(fullText(it),'nl'))S.push({t:fullText(it),lang:'nl',fa:it.fa,p:1.2,h,card:it.id});if(ex){S.push({t:ex.t,lang:'nl',fa:ex.fa,rep:1,h:natHas(fullText(it),'nl')?'':h})}})}
+  const e=podEp=podPickEp();if(e)S.push(...podEpisodeSegs(e,false));
+  const ch=podChunks();if(ch.length){fa(podFa('chunks'),'چانک‌های امروز');ch.forEach((x,i)=>{S.push({t:x.t.replace(/…/g,' ').replace(/\s+/g,' ').trim(),lang:'nl',fa:x.fa,p:1,h:i?'':'چانک‌های امروز'});S.push({t:x.ex[0][0],lang:'nl',fa:x.ex[0][1],rep:1})})}
+  if(e){fa(podFa('yourturn'),'نوبت شما');e.q.forEach((q,i)=>S.push({t:q[0],lang:'nl',fa:q[1],p:9,think:1,h:i?'':'نوبت شما'}))}
+  fa(podFa('bye'),'پایان');
+  return S;
+}
+function podPause(s){if(s.think)return s.p*1000;if(s.rep)return Math.max(1500,podDur(s.t)*1000/Math.max(0.7,podRate)+900);return(s.p||0.4)*1000}
+function podTotal(L){return L.reduce((a,s)=>a+(s.lang==='fa'?podDur(s.t):podDur(s.t)/podRate)+(s.rep?Math.max(1.5,podDur(s.t)/podRate+0.9):(s.p||0.4))+(s.rep?podDur(s.t)/podRate:0),0)}
+function podStop(){podOn=false;podTok++;clearTimeout(podTimer);stopSpeech();podUI()}
+function podPlayAt(i){
+  clearTimeout(podTimer);podTok++;const tok=podTok;podI=i;
+  if(i>=podList.length){podOn=false;podFinish();podUI();return}
+  podOn=true;podUI();const s=podList[i];
+  const next=()=>{if(tok!==podTok)return;podTimer=setTimeout(()=>{if(tok!==podTok)return;podPlayAt(i+1)},podPause(s))};
+  const say=(cb)=>{if(s.lang==='fa'&&!natHas(s.t,'nl')){cb();return}speak(s.t,'nl',{akey:s.key,rate:s.lang==='fa'?0.9:podRate-0.1,onend:()=>{if(tok===podTok)cb()}})};
+  /* shadowing: say it, leave room to repeat, then say it once more */
+  if(s.rep)say(()=>{if(tok!==podTok)return;podTimer=setTimeout(()=>{if(tok!==podTok)return;say(()=>{if(tok===podTok)podTimer=setTimeout(()=>{if(tok===podTok)podPlayAt(i+1)},500)})},Math.max(1500,podDur(s.t)*1000/Math.max(0.7,podRate)+900))});
+  else say(next);
+  podMedia();
+}
+function podFinish(){const sec=Math.round((Date.now()-podT0)/1000);if(sec>20){const k=lisKey('nl');db.done[k]=(+db.done[k]||0)+Math.min(sec,3600)}
+  if(podMode==='today'){db.done['podday:'+dayKey()]=Date.now();if(podEp)db.done['pod:'+podEp.id]=Date.now()}else if(podEp)db.done['pod:'+podEp.id]=Date.now();
+  saveData();toast('پادکست تمام شد. آفرین!',3000);renderPod()}
+function podMedia(){if(!('mediaSession' in navigator))return;try{navigator.mediaSession.metadata=new MediaMetadata({title:podMode==='today'?'پادکست امروز':(podEp?podEp.nl:'گپ روزانه'),artist:'واژه‌یار',album:'گپ روزانه'});
+  navigator.mediaSession.setActionHandler('pause',()=>podStop());navigator.mediaSession.setActionHandler('play',()=>podPlayAt(podI));
+  navigator.mediaSession.setActionHandler('nexttrack',()=>podSkip(1));navigator.mediaSession.setActionHandler('previoustrack',()=>podSkip(-1))}catch(e){}}
+function podSkip(d){/* jump to the next / previous heading */let i=podI+d;while(i>0&&i<podList.length&&!podList[i].h)i+=d;podPlayAt(Math.max(0,Math.min(podList.length,i)))}
+function podLoad(mode,ep){podStop();podMode=mode;podEp=ep||null;podList=mode==='today'?podBuildToday():podEpisodeSegs(ep);podI=0;renderPod()}
+function podUI(){
+  $$('#podTx .pod-s').forEach(el=>{const i=+el.dataset.pi;el.classList.toggle('cur',i===podI&&podOn);el.classList.toggle('past',i<podI)});
+  const b=$('#podPlay');if(b){b.innerHTML=podOn?'⏸ توقف':podI>0&&podI<podList.length?'▶ ادامه':'▶ پخش';b.setAttribute('aria-pressed',podOn?'true':'false')}
+  const cur=$('#podTx .pod-s.cur');if(cur&&podOn){const r=cur.getBoundingClientRect();if(r.top<80||r.bottom>innerHeight-90)cur.scrollIntoView({block:'center',behavior:'smooth'})}
+  const pr=$('#podProg');if(pr)pr.style.width=(podList.length?Math.round(podI/podList.length*100):0)+'%';
+}
+function renderPod(){
+  const el=$('#podBody');if(!el)return;if(!podList.length)podList=podBuildToday();
+  const mins=Math.max(1,Math.round(podTotal(podList)/60)),ws=podMode==='today'?podWords():[];const heard=POD.eps.filter(e=>db.done['pod:'+e.id]).length;
+  el.innerHTML=`<section class="panel pod-hero"><div class="feature-top"><span class="feature-title">${podMode==='today'?'پادکست امروز، '+lrFaDate(new Date().getDate(),new Date().getMonth()):'گپ روزانه'}</span><span class="pill">حدود ${faNum(mins)} دقیقه</span></div>
+    <h2 class="h2" style="margin:4px 0">${podEp?`<span class="lat" dir="ltr">${esc(podEp.nl)}</span> <span class="hint">${esc(podEp.fa)}</span>`:'واژه‌های شما و چانک‌ها'}</h2>
+    ${podMode==='today'?(ws.length?`<p class="hint" style="margin:0">واژه‌های امروز از کارت‌های خودتان:</p><div class="hn-chips">${ws.map(w=>`<span class="tag lat">${esc(fullText(w.it))}</span>`).join('')}</div>`:'<p class="hint" style="margin:0">هنوز واژه‌ای مرور نکرده‌اید؛ پادکست امروز با گفت‌وگو و چانک‌ها شروع می‌شود. بعد از مرور کارت‌ها، واژه‌های خودتان هم اینجا می‌آیند.</p>'):''}
+    <div class="pod-bar" aria-hidden="true"><span id="podProg"></span></div>
+    <div class="btn-row pod-ctl"><button class="btn primary lg" type="button" id="podPlay">▶ پخش</button><button class="btn ghost" type="button" data-podskip="-1">بخش قبل</button><button class="btn ghost" type="button" data-podskip="1">بخش بعد</button></div>
+    <div class="pod-opts"><div class="seg" id="podRate"><button type="button" data-v="0.75">آهسته</button><button type="button" data-v="0.9">معمولی</button><button type="button" data-v="1">سریع</button></div>
+      <label class="check"><input type="checkbox" id="podAgain"${podOpt.again?' checked':''}><span>تکرار گفت‌وگو با مکث (سایه‌خوانی)</span></label><label class="check"><input type="checkbox" id="podFaOn"${podOpt.fa?' checked':''}><span>گویندهٔ فارسی</span></label></div>
+    <p class="hint" style="margin:0">با صفحهٔ خاموش هم پخش می‌شود. وقتی جمله‌ای دو بار گفته می‌شود، بین دو بار بلند تکرارش کنید. سؤال‌های آخر را بلند جواب بدهید.</p></section>
+    <section class="panel"><h2 class="h2" style="margin-top:0">متن پادکست</h2><div id="podTx">${(()=>{let lh='';return podList.map((s,i)=>{const hh=s.h&&s.h!==lh?(lh=s.h,`<h3 class="pod-h">${esc(s.h)}</h3>`):'';return`${hh}<div class="pod-s ${s.lang==='fa'?'fa-s':''}" data-pi="${i}">${s.lang==='fa'?`<p class="pod-fa">${esc(s.t)}</p>`:`<p class="lat" dir="ltr">${s.who?`<b class="pod-who">${esc(s.who)}:</b> `:''}${svText(s.t,'nl')}${s.rep?' <span class="pod-rep" title="دو بار، با مکث برای تکرار">↻</span>':''}${s.think?' <span class="pod-rep">🎙</span>':''}</p>${s.fa?`<p class="hint">${esc(s.fa)}</p>`:''}`}</div>`}).join('')})()}</div></section>
+    <section class="panel"><div class="feature-top"><h2 class="h2" style="margin:0">همهٔ قسمت‌های گپ روزانه</h2><span class="pill">${faNum(heard)} از ${faNum(POD.eps.length)} شنیده‌اید</span></div><p class="hint">دو گوینده، لوته و برام، دربارهٔ زندگی روزمره در هلند حرف می‌زنند. هر قسمت با واژه‌های کلیدی و ترجمهٔ فارسی هر جمله.</p>
+      <div class="sch-grid">${podMode!=='today'?`<button type="button" class="lf-card" data-podtoday><b>پادکست امروز</b><span class="hint">ساخته‌شده از واژه‌های خودتان</span></button>`:''}${POD.eps.map(e=>`<button type="button" class="lf-card${db.done['pod:'+e.id]?' done':''}${podEp&&podEp.id===e.id&&podMode!=='today'?' cur':''}" data-podep="${esc(e.id)}"><b class="lat" dir="ltr">${esc(e.nl)}</b><span>${esc(e.fa)}</span><span class="hint">${esc(e.lvl)} · ${faNum(e.l.length)} جمله</span></button>`).join('')}</div></section>`;
+  setSeg($('#podRate'),String(podRate));bindSeg($('#podRate'),v=>{podRate=+v});
+  podUI();
+}
+$('#podBody')&&$('#podBody').addEventListener('click',e=>{
+  if(e.target.closest('#podPlay')){if(podOn)podStop();else{if(!podI||podI>=podList.length){podI=0;podT0=Date.now()}else if(!podT0)podT0=Date.now();podPlayAt(podI)}return}
+  const sk=e.target.closest('[data-podskip]');if(sk){podSkip(+sk.dataset.podskip);return}
+  const s=e.target.closest('.pod-s');if(s){if(!podT0)podT0=Date.now();podPlayAt(+s.dataset.pi);return}
+  const ep=e.target.closest('[data-podep]');if(ep){podLoad('ep',POD.eps.find(x=>x.id===ep.dataset.podep));window.scrollTo(0,0);return}
+  if(e.target.closest('[data-podtoday]')){podLoad('today');window.scrollTo(0,0);return}
+});
+$('#podBody')&&$('#podBody').addEventListener('change',e=>{if(e.target.id==='podAgain'){podOpt.again=e.target.checked;podLoad(podMode,podEp)}else if(e.target.id==='podFaOn'){podOpt.fa=e.target.checked;podLoad(podMode,podEp)}});
+function renderPodToday(){const el=$('#podToday');if(!el)return;if(L()!=='nl'||!POD.eps.length){el.hidden=true;return}
+  const done=db.done['podday:'+dayKey()];const e=podPickEp();el.hidden=false;
+  el.innerHTML=`<div class="feature-top"><span class="feature-title">پادکست امروز</span>${done?'<span class="pill ok">✓ شنیدید</span>':''}</div><p style="margin:0">${done?'پادکست امروز را گوش دادید. فردا یکی تازه با واژه‌های همان روز ساخته می‌شود.':'چند دقیقه گوش دادن، مثلاً در راه کار: واژه‌های این روزهای شما، '+(e?'یک گفت‌وگو دربارهٔ «'+esc(e.fa)+'»':'یک گفت‌وگو')+'، چانک‌ها و سؤال برای جواب دادن.'}</p><div class="btn-row"><button class="btn sm${done?'':' primary'}" type="button" data-go="pod">${done?'دوباره گوش بدهید':'گوش بدهید'}</button></div>`}
+if(/[?&]debug/.test(location.search))window.__pod={schedule,recallP,podBuildToday,podPickEp,podWords,podLoad,podPlayAt,podStop,get list(){return podList},get i(){return podI},get on(){return podOn}};
+
 /* ================= THE LEARNING PLAN =================
    One spine: the course path (stages → lessons; each lesson = words → dialogues → grammar → quiz).
    «امروز» always shows three steps built from that spine: ① review cards ② the next step of the current
@@ -7238,7 +7736,7 @@ function renderSettings(){
   $('#ghOwner').value=cfg.gh.owner;$('#ghRepo').value=cfg.gh.repo;$('#ghToken').value=cfg.gh.token;$('#ghAuto').checked=!!cfg.gh.auto;
   renderSyncStatus();fillVoices();renderNat();
   $('#vRate').value=cfg.tts.rate;$('#vRateTxt').textContent=faNum(cfg.tts.rate)+'×';$('#vAuto').checked=!!cfg.tts.auto;
-  $('#newPerDay').value=cfg.review.newPerDay;setSeg($('#introSeg'),cfg.review.intro===false?'off':'on');renderBudget();
+  $('#newPerDay').value=cfg.review.newPerDay;setSeg($('#introSeg'),cfg.review.intro===false?'off':'on');setSeg($('#algoSeg'),cfg.review.algo||'fsrs');setSeg($('#retSeg'),String(fsrsRet()));$('#retWrap').hidden=(cfg.review.algo||'fsrs')!=='fsrs';renderBudget();
   setSeg($('#glossSeg'),cfg.gloss||'both');setSeg($('#focusSeg'),cfg.review.focus||'series');$('#focusWrap').hidden=!PACKS.some(x=>x.series);setSeg($('#pathSeg'),cfg.path.on===false?'off':'on');
   $('#themeWrap').hidden=IS_PREVIEW;setSeg($('#themeSeg'),cfg.theme||'system');
   $('#guideLink').href=IS_PREVIEW?'https://claude.ai/artifact/5zijwQXJNxFYoWK6ZVVEZm':'guide.html';
@@ -7364,6 +7862,8 @@ bindSeg($('#budgetSeg'),v=>{cfg.review.budget=+v;saveCfg();planDirty();renderBud
 bindSeg($('#focusSeg'),v=>{cfg.review.focus=v;saveCfg();refreshBadges()});
 bindSeg($('#pathSeg'),v=>{cfg.path.on=v==='on';saveCfg();refreshBadges()});
 bindSeg($('#introSeg'),v=>{cfg.review.intro=v==='on';saveCfg()});
+bindSeg($('#algoSeg'),v=>{cfg.review.algo=v;saveCfg();$('#retWrap').hidden=v!=='fsrs'});
+bindSeg($('#retSeg'),v=>{cfg.review.ret=+v;saveCfg()});
 $('#newPerDay').addEventListener('change',e=>{let v=Math.round(+e.target.value);if(!(v>=0))v=15;v=Math.min(200,v);cfg.review.newPerDay=v;e.target.value=v;saveCfg();refreshBadges()});
 bindSeg($('#themeSeg'),v=>{cfg.theme=v;saveCfg();applyTheme()});
 function applyTheme(){if(IS_PREVIEW)return;const r=document.documentElement;if(cfg.theme==='light'||cfg.theme==='dark')r.setAttribute('data-theme',cfg.theme);else r.removeAttribute('data-theme')}
