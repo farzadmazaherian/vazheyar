@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-AGyr7dmnSDwCudxj/iuy7/UoQfvAzOSoZKlEBtNZceQ=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-xxayDfk4pYF1Wm/tpSqROg648yzN+zg4hS7kIWFPeFw=' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://cdn.jsdelivr.net https://www.youtube.com https://huggingface.co https://*.huggingface.co https://*.hf.co blob: data:; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#1f3f9e">
 <meta name="description" content="مرور واژه‌ها و جمله‌های هلندی و انگلیسی">
@@ -1403,6 +1403,102 @@ mark.wc sup{font-family:var(--f-fa);font-size:10px;color:var(--muted);margin-inl
 .pod-rep{color:var(--acc);font-family:var(--f-fa)}
 .lf-card.cur{border-color:var(--acc)}
 
+/* v30 listening, reading, shadowing */
+.ls-q{max-width:720px}
+.ls-ch{grid-template-columns:minmax(0,1fr)}
+.ls-tx{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.ls-tx p{margin:0;text-align:start}
+.ls-tx p.cur{background:var(--acc-soft);border-radius:8px}
+.lz-text{max-width:760px}
+.lz-p{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:10px}
+.lz-p>div{flex:1;min-width:0}
+.lz-p p{margin:0}
+.lz-p .lat{font-size:17px;line-height:1.8;text-align:left;cursor:pointer}
+.lz-p.hi{background:var(--warn-soft)}
+.lz-q{padding:10px 0;border-top:1px solid var(--line)}
+.lz-q:first-of-type{border-top:0}
+.lz-q p{margin:0 0 2px}
+.lz-q .kit-ch{grid-template-columns:minmax(0,1fr)}
+.sh-card{max-width:760px}
+.sh-t{font-size:22px;line-height:1.8;margin:10px 0 4px;text-align:left}
+.sh-ctl{margin:10px 0 4px}
+.sw{border-radius:5px;padding:0 3px}
+.sw.ok{background:var(--good-soft);color:var(--good)}
+.sw.near{background:var(--warn-soft);color:var(--warn)}
+.sw.miss{background:var(--bad-soft);color:var(--bad);text-decoration:underline wavy}
+.sh-leg{display:flex;gap:10px;flex-wrap:wrap}
+.sh-res{display:flex;gap:16px;align-items:center;margin-top:10px;padding:12px;border-radius:12px;background:var(--surface-2)}
+.sh-sc{flex:none;width:84px;height:84px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:4px solid var(--line)}
+.sh-sc b{font-size:28px;line-height:1}.sh-sc span{font-size:12px;color:var(--muted)}
+.sh-sc.ok{border-color:var(--good)}.sh-sc.mid{border-color:var(--warn)}.sh-sc.low{border-color:var(--bad)}
+#shTab{margin-bottom:12px}
+@media (max-width:620px){.sh-res{flex-direction:column;align-items:flex-start}.sh-t{font-size:19px}}
+/* ---- v31: verbs, dictation, pronunciation, mock exam ---- */
+#wwTab,#dcBody .seg,#utBody .seg{flex-wrap:wrap}
+.ww-tables{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.ww-t{border-collapse:collapse;width:100%;direction:ltr;font-size:14px;background:var(--surface-2);border-radius:10px;overflow:hidden}
+.ww-t caption{caption-side:top;text-align:right;direction:rtl;font-size:12.5px;color:var(--muted);padding:0 2px 4px;font-family:var(--f-fa)}
+.ww-t td{padding:4px 10px;border-top:1px solid var(--line);text-align:left}
+.ww-t tr:first-child td{border-top:0}
+.ww-t td:first-child{color:var(--muted);width:46%}
+.ww-in{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end;margin-top:6px}
+.ww-in label{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ww-in input,.kit-qz>input,.ww-gap{font-size:17px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);min-width:0}
+.kit-qz>input{width:100%;max-width:320px}
+.ww-big{font-size:20px;line-height:2.1;margin:8px 0;text-align:left}
+.ww-gap{font-size:17px;padding:2px 6px;width:auto;max-width:100%;border-color:var(--acc);font-family:var(--f-lat)}
+.ww-cor{color:var(--good);font-weight:700;font-size:15px}
+.ww-rules ul{margin:0;padding-inline-start:20px;line-height:1.9}
+.ww-rules .panel{margin-bottom:12px}
+@media (max-width:620px){.ww-in{grid-template-columns:1fr}.ww-big{font-size:18px}}
+.dc-card textarea,.pf-wr{width:100%;font-size:18px;line-height:1.6;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);resize:vertical;margin-top:10px}
+.dc-res{font-size:20px;line-height:2;text-align:left;margin:10px 0 4px}
+.dc-x{color:var(--bad);text-decoration:underline;text-underline-offset:3px}
+.dc-why{margin:0;padding-inline-start:18px;line-height:1.8}
+.ut-snd{font-size:22px!important;color:var(--ink)!important;font-weight:700}
+.ut-words{display:flex;flex-wrap:wrap;gap:8px}
+.ut-w{display:flex;flex-direction:column;align-items:center;gap:1px;font:inherit;color:inherit;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:8px 14px;cursor:pointer;min-width:84px}
+.ut-w b{font-size:19px}.ut-w:hover{border-color:var(--cobalt)}
+.ut-pairs{display:flex;flex-direction:column;gap:8px}
+.ut-pair{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ut-vs{color:var(--muted)}
+.ut-ch .btn{min-height:70px}.ut-ch .btn b{font-size:22px}
+.pf-bar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--cobalt);color:#fff;border-radius:12px;padding:8px 14px;margin-bottom:12px}
+.pf-bar .lat{opacity:.8}
+.pf-clock{font-size:20px;font-weight:700;letter-spacing:.5px}
+.pf-clock.low{color:#ffd166}
+.pf-nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.pf-nav .tag{cursor:pointer;font-size:13px;padding:3px 10px}
+.pf-nav .tag.on{background:var(--acc-soft);border-color:var(--acc);color:var(--ink);font-weight:700}
+.pf-dot{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font:inherit;font-size:13px;cursor:pointer}
+.pf-dot.done{background:var(--cobalt-soft);color:var(--cobalt-ink)}.pf-dot.on{border:2px solid var(--acc);color:var(--ink);font-weight:700}
+.pf-p{line-height:1.75;margin:0 0 10px}
+.btn.sel{background:var(--cobalt-soft);border-color:var(--cobalt);color:var(--cobalt-ink);font-weight:700}
+.pf-opts{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.pf-opts .btn{justify-content:flex-start;text-align:left;white-space:normal;min-height:46px}
+.pf-parts{display:flex;flex-wrap:wrap;gap:6px 18px}
+.pf-sp-st{font-size:18px;padding:16px;border-radius:12px;background:var(--surface-2);text-align:center;margin:12px 0}
+.pf-sp-st.rec{background:var(--bad-soft);color:var(--bad);font-weight:700}
+.pf-sp-st.done{background:var(--good-soft);color:var(--good)}
+.pf-recdot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--bad);margin-inline-end:6px;animation:pfblink 1s infinite}
+@keyframes pfblink{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.pf-recdot{animation:none}}
+.pf-scs{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:6px 0 10px}
+.pf-sc{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;border-radius:12px;background:var(--surface-2);border-top:4px solid var(--line)}
+.pf-sc b{font-size:24px}.pf-sc small{color:var(--muted);font-size:12px}
+.pf-sc.ok{border-top-color:var(--good)}.pf-sc.mid{border-top-color:var(--warn)}.pf-sc.low{border-top-color:var(--bad)}.pf-sc.tot{background:var(--cobalt-soft)}
+.pf-tips{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:8px}
+.pf-tips li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:var(--surface-2)}
+.pf-rev{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-top:10px}
+.pf-rev>summary{cursor:pointer;font-weight:700}
+.pf-ri{padding:8px 0;border-top:1px solid var(--line)}
+.pf-ri p{margin:2px 0}.pf-ri.no{border-inline-start:3px solid var(--bad);padding-inline-start:10px}.pf-ri.ok>p:first-child::before{content:'✓ ';color:var(--good)}
+.pf-sprev{margin-top:10px}.pf-sprev .seg{margin-top:4px}
+.pf-hist{width:100%;border-collapse:collapse;font-size:14px}
+.pf-hist th,.pf-hist td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:center}
+@media (max-width:620px){.pf-hist th:nth-child(n+2):not(:last-child),.pf-hist td:nth-child(n+2):not(:last-child){display:none}}
+@media (max-width:900px){.pf-bar{top:calc(64px + env(safe-area-inset-top,0px))}}
+
 </style>
 </head>
 <body>
@@ -1446,6 +1542,7 @@ mark.wc sup{font-family:var(--f-fa);font-size:10px;color:var(--muted);margin-inl
         <button type="button" data-go="course"><svg class="i" viewBox="0 0 24 24"><path d="M5 19.5V6.5a2 2 0 0 1 2-2h11.5v13H7a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h11.5"/><path d="M9 8.5h6M9 12h4"/></svg><span>مسیر درسی</span></button>
         <button type="button" data-go="review"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="16" rx="2"/><path d="M4.5 7v11.5a2 2 0 0 0 2 2H15"/></svg><span>مرور کارت‌ها</span><b class="badge nav-due" hidden></b></button>
         <button type="button" data-go="exam"><svg class="i" viewBox="0 0 24 24"><path d="M8 4.5h8l2.5 2.5v12.5a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-14a1 1 0 0 1 1-1z"/><path d="M9 11l2 2 4-4.5M9 16.5h6"/></svg><span>آمادگی آزمون</span></button>
+        <button type="button" data-go="proef"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M9.5 3h5M12 3v2.5"/></svg><span>آزمون آزمایشی کامل</span></button>
         <button type="button" data-go="progress"><svg class="i" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>پیشرفت من</span></button>
       </div>
       <div class="nav-group" style="margin-top:14px">
@@ -1453,12 +1550,18 @@ mark.wc sup{font-family:var(--f-fa);font-size:10px;color:var(--muted);margin-inl
         <button type="button" data-go="life"><svg class="i" viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg><span>موقعیت‌های روزمره</span></button>
         <button type="button" data-go="talk"><svg class="i" viewBox="0 0 24 24"><path d="M12 3.5a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v3.5M8.5 20.5h7"/></svg><span>حرف بزنیم</span></button>
         <button type="button" data-go="pod"><svg class="i" viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3.5" y="13" width="4" height="6.5" rx="1.5"/><rect x="16.5" y="13" width="4" height="6.5" rx="1.5"/></svg><span>پادکست امروز</span></button>
+        <button type="button" data-go="luister"><svg class="i" viewBox="0 0 24 24"><path d="M6 15a6 6 0 1 1 11.5-2.5c0 2.5-2 3.5-3 5s-1 3-3 3"/><path d="M9.5 12.5a2.5 2.5 0 0 1 5 0"/></svg><span>درک شنیداری</span></button>
+        <button type="button" data-go="lezen"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h7a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4z"/><path d="M20 5.5h-5a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2h5z"/></svg><span>خواندن</span></button>
+        <button type="button" data-go="shadow"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v2.5"/><path d="M3 8l1.5 1M21 8l-1.5 1"/></svg><span>سایه‌خوانی با نمره</span></button>
+        <button type="button" data-go="dictee"><svg class="i" viewBox="0 0 24 24"><path d="M4 9.5h2.5L10 6v12l-3.5-3.5H4z"/><path d="M13 17.5h7M14 13.5l4-4 1.5 1.5-4 4H14z"/></svg><span>دیکته</span></button>
+        <button type="button" data-go="uitspraak"><svg class="i" viewBox="0 0 24 24"><path d="M5 9.5v5M8.5 7v10M12 4.5v15M15.5 7v10M19 9.5v5"/></svg><span>تلفظ</span></button>
         <button type="button" data-go="hunt"><svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 7.5v6M7.5 10.5h6"/></svg><span>شکار واژه</span></button>
         <button type="button" data-go="stories"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg><span>داستان‌های فرید</span></button>
         <button type="button" data-go="drills"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg><span>عدد، ساعت و قیمت</span></button>
         <button type="button" data-go="grammar"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="5" rx="1.2"/><rect x="3.5" y="15.5" width="7" height="5" rx="1.2"/><rect x="13.5" y="15.5" width="7" height="5" rx="1.2"/><path d="M7 8.5v7M7 12h10v3.5"/></svg><span>دستور زبان</span></button>
         <button type="button" data-go="zin"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="9" width="5" height="6" rx="1.2"/><rect x="9.5" y="9" width="5" height="6" rx="1.2"/><rect x="16" y="9" width="5" height="6" rx="1.2"/><path d="M5.5 6.5c3-2 10-2 13 0"/></svg><span>ساختن جمله</span></button>
         <button type="button" data-go="schrijf"><svg class="i" viewBox="0 0 24 24"><path d="M5 19l1-4 10-10 3 3-10 10z"/><path d="M14 7l3 3"/><path d="M4 21h16"/></svg><span>نوشتن با بازخورد</span></button>
+        <button type="button" data-go="ww"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h5M4 12h5M4 18h5"/><path d="M12 6h8M12 12h8M12 18h8"/></svg><span>صرف فعل و زمان‌ها</span></button>
         <button type="button" data-go="sep"><svg class="i" viewBox="0 0 24 24"><path d="M4 8h7M13 16h7"/><path d="M11 5.5v5M13 13.5v5"/></svg><span>فعل‌های جداشدنی</span></button>
         <button type="button" data-go="prep"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h9"/><path d="M11 8l4 4-4 4"/><circle cx="18.5" cy="12" r="2"/></svg><span>حرف اضافه‌های ثابت</span></button>
         <button type="button" data-go="chunk"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="8" width="6" height="8" rx="1.5"/><rect x="9.5" y="8" width="5" height="8" rx="1.5"/><rect x="14.5" y="8" width="6" height="8" rx="1.5"/></svg><span>چانک‌های روزمره</span></button>
@@ -1916,6 +2019,39 @@ mark.wc sup{font-family:var(--f-fa);font-size:10px;color:var(--muted);margin-inl
       <div id="podBody"></div>
     </section>
 
+    <!-- ============ LISTENING, READING, SHADOWING ============ -->
+    <section class="view" id="v-luister" hidden>
+      <div class="page-head"><div><h1 class="view-title">درک شنیداری</h1><p class="sub">تمرین بخش Luisteren آزمون B1 با گفت‌وگوهای «گپ روزانه»: تکه را بدون متن گوش کنید و به سؤال جواب بدهید. بعد از جواب، متن و ترجمهٔ همان تکه را می‌بینید.</p></div></div>
+      <div id="lsBody"></div>
+    </section>
+    <section class="view" id="v-lezen" hidden>
+      <div class="page-head"><div><h1 class="view-title">خواندن</h1><p class="sub">متن‌های کوتاه مثل بخش Lezen آزمون: آگهی، نامهٔ شهرداری و صاحب‌خانه، پیام مدرسه، مقررات، آگهی کار و خبر. هر واژه را می‌شود لمس کرد، هر بند صدا دارد، و ترجمهٔ فارسی تا وقتی نخواهید پنهان می‌ماند.</p></div></div>
+      <div id="lzBody"></div>
+    </section>
+    <section class="view" id="v-shadow" hidden>
+      <div class="page-head"><div><h1 class="view-title">سایه‌خوانی با نمره</h1><p class="sub">جمله را با صدای طبیعی بشنوید، بلند تکرار کنید و ببینید کدام واژه‌ها درست شنیده شد. برای بخش صحبت آزمون و برای اینکه هلندی‌ها حرفتان را راحت بفهمند.</p></div></div>
+      <div id="shBody"></div>
+    </section>
+
+    <!-- ============ VERBS, DICTATION, PRONUNCIATION, MOCK EXAM (v31) ============ -->
+    <section class="view" id="v-ww" hidden>
+      <div class="page-head"><div><h1 class="view-title">صرف فعل و زمان‌ها</h1><p class="sub">زمان حال، گذشتهٔ ساده و ماضی نقلی، و انتخاب <bdi class="lat">hebben</bdi> یا <bdi class="lat">zijn</bdi>. فعل‌های بی‌قاعده بر اساس الگوی صدایشان دسته‌بندی شده‌اند تا راحت‌تر حفظ شوند. هر فعل یک مثال صوتی دارد.</p><p class="hint" id="wwStat"></p></div></div>
+      <div class="seg" id="wwTab"><button type="button" data-v="list">فهرست فعل‌ها</button><button type="button" data-v="practice">تمرین</button><button type="button" data-v="rules">قاعده‌ها</button></div>
+      <div id="wwBody" style="margin-top:14px"></div>
+    </section>
+    <section class="view" id="v-dictee" hidden>
+      <div class="page-head"><div><h1 class="view-title">دیکته</h1><p class="sub">جمله را بشنوید و همان را تایپ کنید. برنامه واژه‌به‌واژه و حرف‌به‌حرف نشان می‌دهد کجا اشتباه کرده‌اید و دلیل اشتباه‌های رایج املای هلندی را توضیح می‌دهد: <bdi class="lat">ei / ij</bdi>، <bdi class="lat">d / t</bdi> آخر فعل، حرف صدادار کوتاه و بلند، و بقیه.</p></div></div>
+      <div id="dcBody"></div>
+    </section>
+    <section class="view" id="v-uitspraak" hidden>
+      <div class="page-head"><div><h1 class="view-title">تلفظ برای فارسی‌زبان‌ها</h1><p class="sub">صداهایی از هلندی که در فارسی نیستند یا فارسی‌زبان‌ها معمولاً اشتباه می‌گویند. در هر درس: توضیح فارسی، واژه‌های نمونه با صدای طبیعی، تمرین تشخیص با گوش بین دو واژهٔ شبیه، و گفتن جمله‌ها با نمره.</p></div></div>
+      <div id="utBody"></div>
+    </section>
+    <section class="view" id="v-proef" hidden>
+      <div class="page-head" id="pfHead"><div><h1 class="view-title">آزمون آزمایشی کامل</h1><p class="sub">پنج بخش آزمون B1 پشت سر هم و با زمان‌سنج: خواندن، شنیدن، KNM، نوشتن و صحبت. در حالت آزمون راهنما و ترجمه نیست و جواب‌ها را آخر کار می‌بینید. در پایان کارنامه می‌گیرید با نقطه‌های ضعف و اینکه برای هر کدام کجای برنامه را تمرین کنید.</p></div></div>
+      <div id="pfBody"></div>
+    </section>
+
     <!-- ============ GRAMMAR ============ -->
     <section class="view" id="v-grammar" hidden>
       <div id="gHome">
@@ -2196,7 +2332,7 @@ mark.wc sup{font-family:var(--f-fa);font-size:10px;color:var(--muted);margin-inl
           <div class="set-head" style="margin:0"><div><h2>حذف همهٔ واژه‌ها</h2><p>همهٔ واژه‌ها و جمله‌ها حذف می‌شوند. اگر همگام‌سازی روشن باشد، از دستگاه‌های دیگر هم حذف می‌شوند.</p></div><button class="btn danger" type="button" id="wipeAll">حذف همه</button></div>
         </div>
       </div>
-      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۲۹</p>
+      <p class="hint" style="text-align:center;margin-top:24px">واژه‌یار، نسخهٔ ۳۱</p>
     </section>
 
 </main>
@@ -2233,7 +2369,7 @@ mark.wc sup{font-family:var(--f-fa);font-size:10px;color:var(--muted);margin-inl
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="upd-bar" id="updBar" hidden role="status"><span>نسخهٔ تازهٔ واژه‌یار آماده است.</span><button class="btn sm primary" type="button" id="updGo">به‌روزرسانی</button><button class="icon-btn mini" type="button" id="updX" aria-label="بعداً"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 
-<script src="packs.js?v=29"></script>
+<script src="packs.js?v=31"></script>
 <script>
 (function(){
 'use strict';
@@ -3002,13 +3138,16 @@ document.addEventListener('click',e=>{if(!e.target.closest('[data-more]'))return
 
 /* ================= navigation ================= */
 let currentView='today';
-const VIEWS=['today','course','exam','progress','life','talk','hunt','pod','zin','schrijf','sep','prep','chunk','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
+const VIEWS=['today','course','exam','progress','life','talk','hunt','pod','luister','lezen','shadow','dictee','uitspraak','ww','proef','zin','schrijf','sep','prep','chunk','stories','drills','grammar','phrases','core','review','dialogs','quiz','library','manage','mine','sources','listen','watch','songs','youtube','share','settings'];
 function showView(v,noHash){
   if(!VIEWS.includes(v))v='today';
   if(currentView==='dialogs'&&v!=='dialogs')stopPlay();
   if((currentView==='stories'||currentView==='life'||currentView==='drills')&&v!==currentView){stopSpeech();if(stCur){stCur.tok++;stCur.on=false}lfPlay.tok++}
   if(currentView==='talk'&&v!=='talk'&&typeof tkStop==='function')tkStop();
-  if(v!==currentView&&/^(review|dialogs|stories|talk|life|drills|exam)$/.test(v)&&typeof podStop==='function'&&podOn)podStop();
+  if(v!==currentView&&/^(review|dialogs|stories|talk|life|drills|exam|luister|shadow|lezen|dictee|uitspraak|ww|proef)$/.test(v)&&typeof podStop==='function'&&podOn)podStop();
+  if(currentView==='luister'&&v!=='luister'&&typeof lsStop==='function')lsStop();
+  if(currentView!==v&&/^(dictee|uitspraak|ww)$/.test(currentView))stopSpeech();
+  if(currentView==='proef'&&v!=='proef'&&typeof pfPause==='function')pfPause();
   if(inSrcView()&&v!==currentView){const au=$('#srcAudio');if(au&&!(playlist&&!au.paused))au.pause();const sb=$('#selBar');if(sb)sb.hidden=true}
   currentView=v;document.documentElement.dataset.view=v;if(sheetOpen())closeSheet();
   const sv=VIEW_SEC[v]?'sources':v;VIEWS.forEach(x=>{const el=$('#v-'+x);if(el)el.hidden=x!==sv});
@@ -3017,7 +3156,7 @@ function showView(v,noHash){
   if(v==='today')renderToday();
   if(v==='course')renderCourse();
   if(v==='exam')renderExam();else if(typeof exLeave==='function')exLeave();
-  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt'){if(!$('#lrOne').hidden&&!lrRec){$('#lrOne').hidden=true;$('#hnHome').hidden=false}renderHunt()}if(v==='sep'||v==='prep'||v==='chunk')renderKit(v);if(v==='pod')renderPod();if(v==='zin')renderZin();if(v==='schrijf')renderSchrijf();if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
+  if(v==='life')renderLife();if(v==='talk')renderTalk();if(v==='hunt'){if(!$('#lrOne').hidden&&!lrRec){$('#lrOne').hidden=true;$('#hnHome').hidden=false}renderHunt()}if(v==='sep'||v==='prep'||v==='chunk')renderKit(v);if(v==='pod')renderPod();if(v==='luister')renderLuister();if(v==='ww')renderWw();if(v==='dictee')renderDictee();if(v==='uitspraak')renderUitspraak();if(v==='proef')renderProef();if(v==='lezen')renderLezen();if(v==='shadow')renderShadow();if(v==='zin')renderZin();if(v==='schrijf')renderSchrijf();if(v==='stories')renderStories();if(v==='drills')renderDrills();if(v==='progress')renderProgress();
   if(v==='grammar')renderGrammar();
   if(v==='phrases')openPhrases();
   if(v==='core')renderCore();
@@ -4169,7 +4308,7 @@ async function transcribe(r,ui){
     const audio=await decode16k(blob);const wins=audioWindows(audio,16000);
     r.info.dur=audio.length/16000;r.segs=[];r.asr={model:cfg.asr==='base'?'base':'small',at:0};
     // the version in the address makes sure an updated app never talks to an old cached worker
-    if(!asrW)asrW=new Worker('asr-worker.js?v=29',{type:'module'});
+    if(!asrW)asrW=new Worker('asr-worker.js?v=31',{type:'module'});
     const files={};
     await new Promise((res,rej)=>{
       asrW.onmessage=async e=>{const m=e.data||{};
@@ -4192,7 +4331,7 @@ function asrErr(msg){msg=String(msg||'');
   if(/integrity/i.test(msg))return'ابزار تبدیل صدا به متن تأیید نشد؛ برای امنیت اجرا نشد.';
   if(/Could not locate|fetch|network|Failed to load|net::|404/i.test(msg))return'دریافت مدل گفتار ممکن نشد. اینترنت را بررسی کنید و دوباره امتحان کنید. (اگر شبکهٔ محل کار سایت huggingface.co را می‌بندد، در خانه امتحان کنید.)';
   if(/memory|allocation|OOM/i.test(msg))return'حافظهٔ دستگاه کافی نیست. حالت «سریع» را انتخاب کنید یا فایل کوتاه‌تری بدهید.';
-  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 29، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
+  return'تبدیل صدا به متن روی این مرورگر اجرا نشد. لطفاً از همین پیام عکس بگیرید و برایم بفرستید. نسخهٔ برنامه 31، موتور '+(asrVer||'?')+'. جزئیات: '+msg.slice(0,420)}
 
 /* ---------- media: local first, otherwise from the private repo ---------- */
 async function localMedia(r){if(!r.media)return null;const m=await idbGet('media',r.media.id).catch(()=>null);return m&&m.blob?m.blob:null}
@@ -5770,8 +5909,8 @@ const EX_PARTS=[
   {id:'spreken',nl:'Spreken B1',fa:'گفتار',tool:'sp',fmt:'حدود ۲۵ دقیقه پشت کامپیوتر با هدفون و میکروفون: ۸ پرسش کوتاه (۲۰ ثانیه برای جواب) و ۸ پرسش متوسط (۳۰ ثانیه). بوق، شروع و پایان وقت را اعلام می‌کند. فرهنگ لغت مجاز نیست.'},
   {id:'schrijven',nl:'Schrijven B1',fa:'نوشتار',tool:'wr',fmt:'۱۰۰ دقیقه، تایپ روی کامپیوتر: ۸ تکلیف جمله‌ای، ۲ تکلیف کامل کردن نامه یا فرم، و ۲ متن کوتاه. ترتیب را خودتان انتخاب می‌کنید. فقط فرهنگ لغت کاغذی Van Dale Pocket NT2 مجاز است.'},
   {id:'knm',nl:'KNM',fa:'شناخت جامعهٔ هلند',tool:'knm',fmt:'حدود ۴۵ دقیقه پشت کامپیوتر: پرسش‌های چندگزینه‌ای، اغلب با تصویر، از ۸ موضوع رسمی.'},
-  {id:'lezen',nl:'Lezen B1',fa:'خواندن',go:'sources',fmt:'۱۱۰ دقیقه: ۳۶ پرسش چندگزینه‌ای دربارهٔ ۶ متن از کار، تحصیل و زندگی روزمره. فرهنگ لغت کاغذی Van Dale Pocket NT2 مجاز است.',app:'متن‌ها و PDFهای «منابع من» را بخوانید و روی واژه‌های ناآشنا بزنید.'},
-  {id:'luisteren',nl:'Luisteren B1',fa:'شنیدن',go:'dialogs',fmt:'۹۰ دقیقه: حدود ۴۰ پرسش سه‌گزینه‌ای. هر فایل فقط یک بار پخش می‌شود و پیش از آن ۲۵ ثانیه برای خواندن پرسش وقت دارید.',app:'قدم ۱ چرخهٔ مکالمه («فقط گوش») همین مهارت را تمرین می‌دهد: یک بار شنیدن، بعد پرسش.'},
+  {id:'lezen',nl:'Lezen B1',fa:'خواندن',go:'lezen',fmt:'۱۱۰ دقیقه: ۳۶ پرسش چندگزینه‌ای دربارهٔ ۶ متن از کار، تحصیل و زندگی روزمره. فرهنگ لغت کاغذی Van Dale Pocket NT2 مجاز است.',app:'بخش «خواندن» متن‌های کوتاه به سبک آزمون با سؤال دارد؛ در «آزمون آزمایشی کامل» همین بخش با زمان‌سنج می‌آید.'},
+  {id:'luisteren',nl:'Luisteren B1',fa:'شنیدن',go:'luister',fmt:'۹۰ دقیقه: حدود ۴۰ پرسش سه‌گزینه‌ای. هر فایل فقط یک بار پخش می‌شود و پیش از آن ۲۵ ثانیه برای خواندن پرسش وقت دارید.',app:'بخش «درک شنیداری» سؤال‌های سه‌گزینه‌ای به سبک آزمون دارد؛ در «آزمون آزمایشی کامل» هر تکه فقط یک بار پخش می‌شود.'},
   {id:'map',nl:'MAP',fa:'بازار کار و مشارکت',go:'course',fmt:'Module Arbeidsmarkt & Participatie. آزمون کامپیوتری نیست؛ با شهرداری دربارهٔ کار، تحصیل و مشارکت در جامعه کار می‌کنید.',app:'درس‌های «کار» در مسیر درسی و بستهٔ های‌تک برای گفت‌وگوهای این بخش آماده‌تان می‌کنند.'},
   {id:'pvt',nl:'PVT',fa:'بیانیهٔ مشارکت',tool:'knm',fmt:'Participatieverklaringstraject: برنامه‌ای کوتاه در شهرداری دربارهٔ ارزش‌های جامعهٔ هلند که با امضای بیانیهٔ مشارکت تمام می‌شود.',app:'موضوع «آداب، ارزش‌ها و هنجارها» در تمرین KNM همین مطالب را پوشش می‌دهد.'}];
 const EX_ST=['','در حال آمادگی','وقت آزمون گرفته‌ام','قبول شدم'];
@@ -5799,7 +5938,7 @@ function renderExam(){if(ex)return;$('#exHome').hidden=false;$('#exRun').hidden=
   $('#exTrainers').innerHTML=[
     {k:'sp',t:'تمرین گفتار',s:`${faNum((EX.spreken||[]).length)} آزمون تمرینی، هر کدام ۸ پرسش کوتاه و ۸ متوسط با زمان‌سنج و ضبط صدا`,p:sp.length?`${faNum(spGood)} از ${faNum(sp.length)} پرسش را «خوب» جواب داده‌اید`:''},
     {k:'wr',t:'تمرین نوشتار',s:`${faNum((EX.schrijven||[]).length)} آزمون تمرینی، هر کدام ۱۲ تکلیف با بررسی خودکار و جواب نمونه`,p:wr.length?`${faNum(wrDone)} از ${faNum(wr.length)} تکلیف را نوشته‌اید`:''},
-    {k:'knm',t:'تمرین KNM',s:`${faNum(kq.length)} پرسش در ۸ موضوع رسمی، با توضیح فارسی؛ تمرین موضوعی یا آزمون کامل ۴۰ پرسشی`,p:kBest?`بهترین نتیجهٔ آزمون کامل: ${faNum(kBest)}٪`:''}].map(x=>`<button type="button" class="ex-tr" data-exopen="${x.k}"><b>${x.t}</b><span>${x.s}</span>${x.p?`<span class="ex-tr-p">${x.p}</span>`:''}</button>`).join('');
+    {k:'knm',t:'تمرین KNM',s:`${faNum(kq.length)} پرسش در ۸ موضوع رسمی، با توضیح فارسی؛ تمرین موضوعی یا آزمون کامل ۴۰ پرسشی`,p:kBest?`بهترین نتیجهٔ آزمون کامل: ${faNum(kBest)}٪`:''}].map(x=>`<button type="button" class="ex-tr" data-exopen="${x.k}"><b>${x.t}</b><span>${x.s}</span>${x.p?`<span class="ex-tr-p">${x.p}</span>`:''}</button>`).join('')+`<button type="button" class="ex-tr" data-go="proef"><b>آزمون آزمایشی کامل</b><span>خواندن، شنیدن، KNM، نوشتن و صحبت پشت سر هم با زمان‌سنج و کارنامه</span></button>`;
   $('#exParts').innerHTML=EX_PARTS.map(p=>{const st=exGet('exst:'+p.id);return`<article class="ex-part${st===3?' ok':''}"><div class="ex-part-h"><b class="lat">${p.nl}</b><span>${p.fa}</span></div><p>${p.fmt}</p>${p.app?`<p class="hint">در واژه‌یار: ${p.app}</p>`:''}<div class="ex-part-f"><div class="seg sm" data-exst="${p.id}">${[1,2,3].map(v=>`<button type="button" data-v="${v}" aria-pressed="${st===v}">${EX_ST[v]}</button>`).join('')}</div>${p.tool?`<button class="btn sm primary" type="button" data-exopen="${p.tool}">تمرین</button>`:p.go?`<button class="btn sm" type="button" data-go="${p.go}">رفتن</button>`:''}</div></article>`}).join('');
   $('#exFree').innerHTML=EX_FREE.map(g=>`<div class="ex-free-g"><h3>${g.h}</h3>${g.items.map(i=>`<div class="ex-free-i">${i.u?`<a href="${esc(i.u)}" target="_blank" rel="noopener noreferrer" class="lat">${esc(i.t)}</a>`:`<b>${esc(i.t)}</b>`}<p>${i.d}</p></div>`).join('')}</div>`).join('');
 }
@@ -5830,7 +5969,7 @@ $('#exBody').addEventListener('click',e=>{
 });
 const rateHTML=(key,lab)=>{const v=exGet(key);return`<div class="ex-rate"><span class="hint">${lab||'خودتان چطور ارزیابی می‌کنید؟'}</span><div class="seg sm">${[[3,'خوب'],[2,'تقریباً'],[1,'هنوز نه']].map(([n,t])=>`<button type="button" data-exrate="${key}|${n}" aria-pressed="${v===n}">${t}</button>`).join('')}</div></div>`};
 function beep(){try{exAC=exAC||new (window.AudioContext||window.webkitAudioContext)();const o=exAC.createOscillator(),g=exAC.createGain();o.frequency.value=880;g.gain.value=0.15;o.connect(g);g.connect(exAC.destination);o.start();o.stop(exAC.currentTime+0.25)}catch(e){}}
-const mmss=s=>faNum(Math.floor(s/60))+':'+faNum(String(Math.floor(s%60)).padStart(2,'0'));
+const mmss=s=>faNum(Math.floor(s/60))+':'+(Math.floor(s%60)<10?'۰':'')+faNum(Math.floor(s%60));
 
 /* ---------- speaking ---------- */
 async function spStart(n,mode){
@@ -7238,6 +7377,604 @@ function renderPodToday(){const el=$('#podToday');if(!el)return;if(L()!=='nl'||!
   const done=db.done['podday:'+dayKey()];const e=podPickEp();el.hidden=false;
   el.innerHTML=`<div class="feature-top"><span class="feature-title">پادکست امروز</span>${done?'<span class="pill ok">✓ شنیدید</span>':''}</div><p style="margin:0">${done?'پادکست امروز را گوش دادید. فردا یکی تازه با واژه‌های همان روز ساخته می‌شود.':'چند دقیقه گوش دادن، مثلاً در راه کار: واژه‌های این روزهای شما، '+(e?'یک گفت‌وگو دربارهٔ «'+esc(e.fa)+'»':'یک گفت‌وگو')+'، چانک‌ها و سؤال برای جواب دادن.'}</p><div class="btn-row"><button class="btn sm${done?'':' primary'}" type="button" data-go="pod">${done?'دوباره گوش بدهید':'گوش بدهید'}</button></div>`}
 if(/[?&]debug/.test(location.search))window.__pod={schedule,recallP,podBuildToday,podPickEp,podWords,podLoad,podPlayAt,podStop,get list(){return podList},get i(){return podI},get on(){return podOn}};
+
+/* ================= LISTENING & READING (v30) =================
+   Luisteren: the «گپ روزانه» episodes with questions in the style of the B1 exam. «تمرین آزمون» plays a short
+   fragment (with the line before it as context) and asks one question; «قسمت به قسمت» plays a whole episode first.
+   Lezen: short real-life texts (adverts, letters, notices, web pages, articles) with exam-style questions, every
+   word tappable, paragraph audio, and a Persian translation that stays hidden until you ask for it. */
+const LEZ=VZ.lezen||[];
+let lsMode='home',lsRun=null,lsTok=0;
+function lsLines(e,a,b){return e.l.slice(Math.max(0,a-1),b).map((l,j)=>({l,i:Math.max(0,a-1)+j}))}
+function lsPlay(e,from,to,done){const tok=++lsTok;let i=from;const step=()=>{if(tok!==lsTok)return;if(i>to){done&&done();lsPaint();return}
+  const k=i;$$('#lsBody [data-lsl]').forEach(x=>x.classList.toggle('cur',+x.dataset.lsl===k));
+  speak(e.l[k][1],'nl',{akey:'pod '+e.id+' '+k,onend:()=>{if(tok!==lsTok)return;i++;setTimeout(step,250)}})};lsRun&&(lsRun.playing=true);lsPaint();step()}
+function lsStop(){lsTok++;stopSpeech();if(lsRun)lsRun.playing=false}
+function lsQuiz(){/* ten questions from episodes you have heard or that use your words, unseen first */
+  const all=[];POD.eps.forEach(e=>e.mc.forEach((q,i)=>all.push({e,q,i,key:'lq:'+e.id+':'+i})));
+  all.sort((a,b)=>((db.done[a.key]?1:0)-(db.done[b.key]?1:0))||(Math.random()-0.5));return all.slice(0,10)}
+function lsStart(mode,ep){lsStop();lsMode=mode;
+  if(mode==='quiz')lsRun={qs:lsQuiz(),i:0,ok:0,ans:null,heard:false,playing:false};
+  else if(mode==='ep')lsRun={e:ep,qs:ep.mc.map((q,i)=>({e:ep,q,i,key:'lq:'+ep.id+':'+i})),i:-1,ok:0,ans:null,heard:false,playing:false,tx:false};
+  else lsRun=null;renderLuister();window.scrollTo(0,0)}
+function renderLuister(){const el=$('#lsBody');if(!el)return;
+  if(lsMode==='home'||!lsRun){const done=POD.eps.reduce((a,e)=>a+e.mc.filter((q,i)=>db.done['lq:'+e.id+':'+i]).length,0),tot=POD.eps.reduce((a,e)=>a+e.mc.length,0);
+    el.innerHTML=`<section class="panel"><h2 class="h2" style="margin-top:0">تمرین به سبک آزمون</h2><p class="hint">مثل بخش Luisteren آزمون: یک تکهٔ کوتاه از یک گفت‌وگو را می‌شنوید (بدون متن)، بعد یک سؤال با سه گزینه. ده سؤال از قسمت‌های مختلف؛ سؤال‌هایی که هنوز درست جواب نداده‌اید اول می‌آیند.</p><p class="hint">${faNum(done)} از ${faNum(tot)} سؤال را درست جواب داده‌اید.</p><button class="btn primary" type="button" data-lsquiz>شروع ده سؤال</button></section>
+    <section class="panel"><h2 class="h2" style="margin-top:0">قسمت به قسمت</h2><p class="hint">اول کل گفت‌وگو را بدون متن گوش کنید، بعد سه سؤال. متن و ترجمه بعد از جواب دادن باز می‌شود.</p><div class="sch-grid">${POD.eps.map(e=>{const ok=e.mc.filter((q,i)=>db.done['lq:'+e.id+':'+i]).length;return`<button type="button" class="lf-card${ok===e.mc.length?' done':''}" data-lsep="${esc(e.id)}"><b class="lat" dir="ltr">${esc(e.nl)}</b><span>${esc(e.fa)}</span><span class="hint">${esc(e.lvl)} · ${faNum(ok)} از ${faNum(e.mc.length)}</span></button>`}).join('')}</div></section>`;return}
+  lsPaint()}
+function lsPaint(){const el=$('#lsBody'),r=lsRun;if(!el||!r)return;
+  const back=`<button class="link back" type="button" data-lshome>&larr; درک شنیداری</button>`;
+  if(lsMode==='ep'&&r.i<0){const e=r.e;el.innerHTML=back+`<section class="panel"><h2 class="h2" style="margin-top:0"><span class="lat" dir="ltr">${esc(e.nl)}</span> <span class="hint">${esc(e.fa)}</span></h2><p class="hint">اول بدون متن گوش کنید. اگر لازم بود دوباره گوش بدهید، بعد سراغ سؤال‌ها بروید.</p>
+    <div class="btn-row"><button class="btn primary" type="button" data-lsall>${r.playing?'⏸ توقف':'▶ پخش کل گفت‌وگو'}</button><button class="btn" type="button" data-lsgo>سؤال‌ها</button></div>
+    <details class="sp-fa"${r.tx?' open':''}><summary>متن (اگر لازم شد)</summary><div class="ls-tx">${e.l.map((l,i)=>`<p class="lat" dir="ltr" data-lsl="${i}"><b>${esc(l[0])}:</b> ${esc(l[1])}</p>`).join('')}</div></details></section>`;return}
+  if(r.i>=r.qs.length){el.innerHTML=back+`<section class="panel kit-end"><h2 class="h2" style="margin-top:0">${faNum(r.ok)} از ${faNum(r.qs.length)} درست</h2><p class="hint">${r.ok>=Math.ceil(r.qs.length*0.7)?'عالی! در آزمون واقعی برای قبولی حدود ۷۰٪ لازم است.':'برای قبولی حدود ۷۰٪ لازم است. قسمت‌هایی را که سخت بودند دوباره در «پادکست» با متن گوش کنید.'}</p><div class="btn-row"><button class="btn primary" type="button" data-lsquiz>ده سؤال دیگر</button><button class="btn" type="button" data-lshome>برگشت</button></div></section>`;return}
+  const x=r.qs[r.i],q=x.q,e=x.e,a=r.ans,frag=lsLines(e,q.a-1,q.b);
+  el.innerHTML=back+`<section class="panel ls-q"><div class="kit-qtop"><span class="hint">${faNum(r.i+1)} از ${faNum(r.qs.length)}${lsMode==='quiz'?' · <span class="lat">'+esc(e.nl)+'</span>':''}</span></div>
+    <div class="btn-row"><button class="btn ${r.heard?'':'primary'}" type="button" data-lsfrag>${r.playing?'⏸ توقف':r.heard?'↻ دوباره گوش کنید':'▶ گوش کنید'}</button></div>
+    ${r.heard||a?`<p class="kit-qq lat" dir="ltr">${esc(q.q)}</p><p class="hint">${esc(q.fa)}</p>
+    <div class="kit-ch ls-ch">${q.o.map((o,k)=>`<button class="btn${a?(k===q.k?' ok':k===a.pick?' no':''):''}" type="button" data-lsch="${k}"${a?' disabled':''}><span class="lat" dir="ltr">${esc(o)}</span></button>`).join('')}</div>`:'<p class="hint">اول تکه را گوش کنید؛ سؤال بعد از آن نشان داده می‌شود.</p>'}
+    ${a?`<div class="kit-fb ${a.ok?'ok':'no'}"><b>${a.ok?'درست است!':'جواب درست: '}</b>${a.ok?'':`<span class="lat" dir="ltr">${esc(q.o[q.k])}</span>`}<div class="ls-tx">${frag.map(f=>`<p data-lsl="${f.i}"><span class="lat" dir="ltr"><b>${esc(f.l[0])}:</b> ${svText(f.l[1],'nl')}</span><br><span class="hint">${esc(f.l[2])}</span></p>`).join('')}</div></div><div class="btn-row"><button class="btn primary" type="button" data-lsnext>${r.i+1<r.qs.length?'سؤال بعد':'نتیجه'}</button></div>`:''}</section>`;
+}
+$('#lsBody')&&$('#lsBody').addEventListener('click',e=>{const r=lsRun;
+  if(e.target.closest('[data-lsquiz]')){lsStart('quiz');return}
+  const ep=e.target.closest('[data-lsep]');if(ep){lsStart('ep',POD.eps.find(x=>x.id===ep.dataset.lsep));return}
+  if(e.target.closest('[data-lshome]')){lsStart('home');return}
+  if(!r)return;
+  if(e.target.closest('[data-lsall]')){if(r.playing){lsStop();lsPaint()}else lsPlay(r.e,0,r.e.l.length-1,()=>{r.playing=false});return}
+  if(e.target.closest('[data-lsgo]')){lsStop();r.i=0;lsPaint();return}
+  if(e.target.closest('[data-lsfrag]')){if(r.playing){lsStop();lsPaint();return}const x=r.qs[r.i];lsPlay(x.e,Math.max(0,x.q.a-2),x.q.b-1,()=>{r.playing=false;r.heard=true});return}
+  const c=e.target.closest('[data-lsch]');if(c&&!r.ans){const x=r.qs[r.i],k=+c.dataset.lsch,ok=k===x.q.k;r.ans={pick:k,ok};if(ok){r.ok++;db.done[x.key]=Date.now();saveData(30000)}lsStop();lsPaint();return}
+  if(e.target.closest('[data-lsnext]')){r.i++;r.ans=null;r.heard=false;lsPaint();return}
+});
+/* ---------- reading ---------- */
+let lzCur=null,lzAns={},lzTr=false;
+function renderLezen(){const el=$('#lzBody');if(!el)return;
+  if(!lzCur){el.innerHTML=`<div class="sch-grid">${LEZ.map(t=>{const b=db.done['lez:'+t.id];return`<button type="button" class="lf-card${b>=100?' done':''}" data-lzopen="${esc(t.id)}"><span class="pill">${esc(t.kind)}</span><b class="lat" dir="ltr">${esc(t.nl)}</b><span>${esc(t.fa)}</span><span class="hint">${esc(t.lvl)} · ${faNum(t.mc.length)} سؤال${b!=null?' · بهترین نتیجه '+faNum(b)+'٪':''}</span></button>`}).join('')}</div>`;return}
+  const t=lzCur,done=Object.keys(lzAns).length===t.mc.length,ok=t.mc.filter((q,i)=>lzAns[i]===q.k).length;
+  el.innerHTML=`<button class="link back" type="button" data-lzback>&larr; همهٔ متن‌ها</button>
+    <article class="panel lz-text"><div class="feature-top"><span class="pill">${esc(t.kind)}</span><label class="check"><input type="checkbox" id="lzTr"${lzTr?' checked':''}><span>ترجمهٔ فارسی</span></label></div>
+    <h2 class="h2 lat" dir="ltr" style="margin:8px 0 2px">${esc(t.nl)}</h2><p class="hint" style="margin:0 0 10px">روی هر واژه بزنید تا معنی‌اش را ببینید. اول بدون ترجمه بخوانید، مثل آزمون.</p>
+    ${t.p.map((p,j)=>`<div class="lz-p${lzHi(t,j)?' hi':''}" id="lzp${j}"><button class="icon-btn mini" type="button" data-lzsay="${j}" aria-label="پخش"><svg class="i"><use href="#i-speak"/></svg></button><div><p class="lat" dir="ltr" data-lzw="${j}">${esc(p[0])}</p>${lzTr?`<p class="hint">${esc(p[1])}</p>`:''}</div></div>`).join('')}</article>
+    <section class="panel"><h2 class="h2" style="margin-top:0">سؤال‌ها</h2>${t.mc.map((q,i)=>{const a=lzAns[i];return`<div class="lz-q"><p class="lat" dir="ltr"><b>${faNum(i+1)}.</b> ${esc(q.q)}</p><p class="hint">${esc(q.fa)}</p><div class="kit-ch">${q.o.map((o,k)=>`<button class="btn${a!=null?(k===q.k?' ok':k===a?' no':''):''}" type="button" data-lzq="${i}" data-k="${k}"${a!=null?' disabled':''}><span class="lat" dir="ltr">${esc(o)}</span></button>`).join('')}</div>${a!=null?`<p class="hint">${a===q.k?'✓ درست.':'✗ جواب در بند '+faNum(q.a)+' است؛ بند رنگی را دوباره بخوانید.'}</p>`:''}</div>`}).join('')}
+    ${done?`<div class="kit-fb ${ok===t.mc.length?'ok':'no'}"><b>${faNum(ok)} از ${faNum(t.mc.length)} درست.</b> ${ok/t.mc.length>=0.7?'برای قبولی کافی است.':'برای قبولی حدود ۷۰٪ لازم است.'}</div><div class="btn-row"><button class="btn" type="button" data-lzagain>دوباره</button><button class="btn primary" type="button" data-lznext>متن بعدی</button></div>`:''}</section>`;
+}
+function lzHi(t,j){return t.mc.some((q,i)=>lzAns[i]!=null&&lzAns[i]!==q.k&&j>=q.a-1&&j<=q.b-1)}
+$('#lzBody')&&$('#lzBody').addEventListener('click',e=>{
+  const o=e.target.closest('[data-lzopen]');if(o){lzCur=LEZ.find(t=>t.id===o.dataset.lzopen);lzAns={};renderLezen();window.scrollTo(0,0);return}
+  if(e.target.closest('[data-lzback]')){lzCur=null;stopSpeech();renderLezen();return}
+  if(!lzCur)return;const t=lzCur;
+  const s=e.target.closest('[data-lzsay]');if(s){const j=+s.dataset.lzsay;speak(t.p[j][0],'nl',{akey:'lez '+t.id+' '+j});return}
+  const q=e.target.closest('[data-lzq]');if(q){const i=+q.dataset.lzq;if(lzAns[i]!=null)return;lzAns[i]=+q.dataset.k;
+    if(Object.keys(lzAns).length===t.mc.length){const sc=Math.round(t.mc.filter((x,k)=>lzAns[k]===x.k).length/t.mc.length*100);db.done['lez:'+t.id]=Math.max(+db.done['lez:'+t.id]||0,sc);saveData(30000)}
+    renderLezen();return}
+  if(e.target.closest('[data-lzagain]')){lzAns={};renderLezen();return}
+  if(e.target.closest('[data-lznext]')){const i=LEZ.indexOf(t);lzCur=LEZ[(i+1)%LEZ.length];lzAns={};renderLezen();window.scrollTo(0,0);return}
+  const w=e.target.closest('[data-lzw]');if(w){const hit=wordAt(e,w);if(hit)wordPop(hit.w,hit.sentence,'nl')}
+});
+$('#lzBody')&&$('#lzBody').addEventListener('change',e=>{if(e.target.id==='lzTr'){lzTr=e.target.checked;renderLezen()}});
+if(/[?&]debug/.test(location.search))window.__lb={lsStart,get ls(){return lsRun},LEZ,openLez:id=>{lzCur=LEZ.find(t=>t.id===id);lzAns={};renderLezen()}};
+
+/* ================= SHADOWING WITH A SCORE (v30) =================
+   Listen to a sentence in a natural voice, say it out loud, and Whisper (on this device, the same speech model as
+   «ساختن متن از صدا») writes down what it heard. Each word of the sentence turns green when it was heard, orange
+   when it was close, and red when it was missing; the score is the share of words heard. Your own recording can
+   be played next to the model. Whisper tends to guess sensible words, so the score is generous: it tells you
+   whether you are understood, not whether every sound is perfect. */
+const SH_SRC={pod:'گپ روزانه',mine:'جمله‌های کارت‌های من',exam:'جواب‌های نمونهٔ صحبت',chunk:'چانک‌ها',ut:'تلفظ'};
+let shUt='',shSrc='pod',shList=[],shI=0,shRec=null,shBusy=false,shRes=null,shW=null,shModel=false;
+function shPool(src){const out=[],seen=new Set();const add=(t,fa,key)=>{t=String(t||'').trim();if(!t||seen.has(t)||t.split(/\s+/).length<3||t.split(/\s+/).length>18)return;if(!natHas(t,'nl',key))return;seen.add(t);out.push({t,fa,key})};
+  if(src==='pod')POD.eps.forEach(e=>e.l.forEach((l,i)=>add(l[1],l[2],'pod '+e.id+' '+i)));
+  else if(src==='mine')db.items.filter(i=>i.lang==='nl'&&!i.susp&&i.srs&&i.srs.last).sort((a,b)=>b.srs.last-a.srs.last).forEach(it=>{if(it.type==='sentence')add(it.text,it.fa);exList(it).slice(0,2).forEach(x=>add(x.t,x.fa))});
+  else if(src==='exam')((typeof EX!=='undefined'&&EX.spreken)||[]).forEach(e=>e.tasks.forEach(t=>add(t.a,t.afa||'')));
+  else if(src==='ut')(VZ.ut||[]).filter(l=>!shUt||l.id===shUt).forEach(l=>l.zin.forEach(z=>add(z[0],z[1])));
+  else kitAll('chunk').forEach(x=>add(x.ex[0][0],x.ex[0][1]));
+  return out}
+/* open shadowing with one source (and for «تلفظ» one lesson) from another view */
+function shUse(src,les){shSrc=src;shUt=les||'';shList=shPool(src);shI=0;shRes=null;showView('shadow')}
+function shLoad(src){shSrc=src;shUt='';shList=shPool(src);if(src!=='mine')shList=kitShuffle(shList);shI=0;shRes=null;renderShadow()}
+const shNorm=w=>w.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9']/g,'');
+/* align target words with what was heard: ok (same), near (one or two letters off), miss */
+function shAlign(target,heard){const T=target.split(/\s+/).filter(Boolean),H=heard.split(/\s+/).map(shNorm).filter(Boolean);const tn=T.map(shNorm);
+  const n=tn.length,m=H.length,D=Array.from({length:n+1},()=>new Array(m+1).fill(0));for(let i=0;i<=n;i++)D[i][0]=i;for(let j=0;j<=m;j++)D[0][j]=j;
+  const sim=(a,b)=>a===b?0:(a.length>=4&&lev(a,b)<=(a.length>=8?2:1))?0.5:1;
+  for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)D[i][j]=Math.min(D[i-1][j]+1,D[i][j-1]+1,D[i-1][j-1]+sim(tn[i-1],H[j-1]));
+  const st=new Array(n).fill('miss');let i=n,j=m;while(i>0&&j>0){const s=sim(tn[i-1],H[j-1]);if(D[i][j]===D[i-1][j-1]+s&&s<1){st[i-1]=s===0?'ok':'near';i--;j--}else if(D[i][j]===D[i-1][j]+1)i--;else if(D[i][j]===D[i][j-1]+1)j--;else{i--;j--}}
+  const sc=Math.round(st.reduce((a,s)=>a+(s==='ok'?1:s==='near'?0.6:0),0)/Math.max(1,n)*100);return{T,st,sc}}
+async function shRecord(){
+  if(shRec&&shRec.on){try{shRec.rec.stop()}catch(e){}return}
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||!window.MediaRecorder){toast('ضبط صدا در این مرورگر ممکن نیست.',4000);return}
+  let st;try{st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}})}catch(e){toast('برنامه اجازهٔ میکروفون ندارد. روی نماد قفل کنار نشانی سایت بزنید و میکروفون را مجاز کنید.',6000);return}
+  stopSpeech();if(shRec&&shRec.url)URL.revokeObjectURL(shRec.url);
+  const x=shList[shI],c=natClip(x.t,'nl',x.key),max=((c?c.d:x.t.split(/\s+/).length*0.45)*2+2.5)*1000;
+  shRec={on:true,chunks:[],rec:new MediaRecorder(st),t0:Date.now()};shRes=null;
+  shRec.rec.ondataavailable=e=>{if(e.data&&e.data.size)shRec.chunks.push(e.data)};
+  shRec.rec.onstop=()=>{clearTimeout(shRec.to);st.getTracks().forEach(t=>t.stop());shRec.on=false;const blob=new Blob(shRec.chunks,{type:shRec.rec.mimeType||'audio/webm'});shRec.blob=blob;shRec.url=URL.createObjectURL(blob);shRec.dur=(Date.now()-shRec.t0)/1000;renderShadow();shScore(blob)};
+  shRec.rec.start();shRec.to=setTimeout(()=>{try{shRec.rec.stop()}catch(e){}},max);renderShadow();
+}
+function shAsr(audio){return new Promise((res,rej)=>{
+  if(!shW)shW=new Worker('asr-worker.js?v=31',{type:'module'});const parts=[];const files={};
+  shW.onmessage=e=>{const m=e.data||{};
+    if(m.type==='load'){if(m.file)files[m.file]=[m.loaded||0,m.total||0];let a=0,b=0;for(const k in files){a+=files[k][0];b+=files[k][1]}const el=$('#shState');if(el)el.textContent='دریافت مدل گفتار (فقط بار اول): '+(b?fmtSize(a)+' از '+fmtSize(b):'…')}
+    else if(m.type==='device'){shModel=true;const el=$('#shState');if(el)el.textContent='در حال گوش دادن به صدای شما…'}
+    else if(m.type==='part')parts.push(...m.segs.map(s=>s.t));
+    else if(m.type==='done')res(parts.join(' '));
+    else if(m.type==='error')rej(new Error(asrErr(m.msg)))};
+  shW.onerror=e=>rej(new Error(asrErr(e.message||'worker')));
+  shW.postMessage({type:'run',model:ASR_MODELS.base,lang:'dutch',audio:audio.buffer,wins:[[0,audio.length]]},[audio.buffer])})}
+async function shScore(blob){if(shBusy)return;shBusy=true;renderShadow();
+  try{const a=await decode16k(blob);let e=0;for(let i=0;i<a.length;i+=160)e+=a[i]*a[i];if(a.length<16000*0.4||e/(a.length/160)<1e-6)throw new Error('صدایی ضبط نشد. نزدیک‌تر به میکروفون و بلندتر بگویید.');
+    const heard=await shAsr(a);const x=shList[shI];const al=shAlign(x.t,heard);const c=natClip(x.t,'nl',x.key);
+    shRes=Object.assign(al,{heard,ratio:c&&shRec?shRec.dur/(c.d+1):0});const k='sh:'+audKey(x.t);db.done[k]=Math.max(+db.done[k]||0,al.sc);db.done['sh:n']=(+db.done['sh:n']||0)+1;saveData(30000)}
+  catch(err){shRes={err:err.message||String(err)}}
+  finally{shBusy=false;renderShadow()}}
+function renderShadow(){const el=$('#shBody');if(!el)return;
+  if(!shList.length&&shSrc){shList=shPool(shSrc);if(shSrc!=='mine')shList=kitShuffle(shList)}
+  const tabs=`<div class="seg" id="shTab">${Object.entries(SH_SRC).map(([k,t])=>`<button type="button" data-v="${k}">${t}</button>`).join('')}</div>`;
+  if(!shList.length){el.innerHTML=tabs+`<p class="empty">${shSrc==='mine'?'هنوز جمله‌ای با صدای طبیعی در کارت‌های مرورشدهٔ شما نیست. اول چند کارت مرور کنید یا منبع دیگری انتخاب کنید.':'جمله‌ای پیدا نشد.'}</p>`;setSeg($('#shTab'),shSrc);bindSeg($('#shTab'),v=>shLoad(v));return}
+  const x=shList[shI],r=shRes,best=+db.done['sh:'+audKey(x.t)]||0,on=shRec&&shRec.on;
+  el.innerHTML=tabs+`<section class="panel sh-card"><div class="kit-qtop"><span class="hint">${faNum(shI+1)} از ${faNum(shList.length)}${best?' · بهترین نمرهٔ شما برای این جمله: '+faNum(best):''}</span><button class="link" type="button" data-shnext>جملهٔ بعد</button></div>
+    <p class="sh-t lat" dir="ltr">${r&&r.T?r.T.map((w,i)=>`<span class="sw ${r.st[i]}">${esc(w)}</span>`).join(' '):svText(x.t,'nl')}</p>${x.fa?`<p class="hint">${esc(x.fa)}</p>`:''}
+    <div class="btn-row sh-ctl"><button class="btn" type="button" data-shplay>▶ گوش کنید</button><button class="btn ghost" type="button" data-shslow>آهسته</button><button class="btn ${on?'danger solid':'primary'} lg" type="button" data-shrec${shBusy?' disabled':''}>${on?'■ تمام شد':'🎙 حالا شما بگویید'}</button></div>
+    <p class="hint" id="shState">${on?'در حال ضبط… جمله را بلند بگویید، بعد «تمام شد» را بزنید.':shBusy?'در حال گوش دادن به صدای شما…':'اول گوش کنید، بعد ضبط را بزنید و جمله را با همان آهنگ بگویید.'}</p>
+    ${r&&r.err?`<p class="note-box bad">${esc(r.err)}</p>`:''}
+    ${r&&r.T?`<div class="sh-res"><div class="sh-sc ${r.sc>=85?'ok':r.sc>=60?'mid':'low'}"><b class="num">${faNum(r.sc)}</b><span>از ۱۰۰</span></div><div><p style="margin:0">${r.sc>=85?'عالی! همهٔ واژه‌ها شنیده شد.':r.sc>=60?'خوب است. واژه‌های نارنجی و قرمز را دوباره گوش کنید و تکرار کنید.':'هنوز چند واژه شنیده نشد. آهسته گوش کنید و بخش‌به‌بخش تکرار کنید.'}</p>
+      <p class="hint" style="margin:4px 0 0">برنامه شنید: <span class="lat" dir="ltr">${esc(r.heard||'—')}</span></p>${r.ratio?`<p class="hint" style="margin:2px 0 0">${r.ratio>1.8?'کمی آهسته‌تر از نمونه گفتید؛ با تمرین روان‌تر می‌شود.':'سرعتتان نزدیک نمونه بود.'}</p>`:''}
+      <div class="btn-row" style="margin-top:6px"><button class="btn sm" type="button" data-shmine>▶ صدای خودم</button><button class="btn sm ghost" type="button" data-shplay>▶ نمونه</button></div></div></div>`:''}
+    <p class="hint sh-leg"><span class="sw ok">درست شنیده شد</span> <span class="sw near">نزدیک</span> <span class="sw miss">شنیده نشد</span></p></section>
+    <p class="hint">صدا روی همین دستگاه به متن تبدیل می‌شود و جایی فرستاده نمی‌شود. بار اول مدل گفتار (حدود ۸۰ مگابایت) دریافت می‌شود. این مدل گاهی واژهٔ درست را حدس می‌زند، پس نمره کمی دست‌ودل‌باز است.</p>`;
+  setSeg($('#shTab'),shSrc);bindSeg($('#shTab'),v=>shLoad(v));
+}
+$('#shBody')&&$('#shBody').addEventListener('click',e=>{if(!shList.length)return;const x=shList[shI];
+  if(e.target.closest('[data-shplay]')){speak(x.t,'nl',{akey:x.key});return}
+  if(e.target.closest('[data-shslow]')){speak(x.t,'nl',{akey:x.key,rate:0.6});return}
+  if(e.target.closest('[data-shrec]')){shRecord();return}
+  if(e.target.closest('[data-shmine]')){if(shRec&&shRec.url){stopSpeech();const a=new Audio(shRec.url);a.play().catch(()=>{})}return}
+  if(e.target.closest('[data-shnext]')){if(shRec&&shRec.on)return;shI=(shI+1)%shList.length;shRes=null;renderShadow();return}
+});
+if(/[?&]debug/.test(location.search))window.__sh={shAlign,shPool,shLoad,get res(){return shRes},set res(v){shRes=v},renderShadow};
+
+/* ================= VERBS AND TENSES (v31) =================
+   Strong and irregular verbs grouped by their vowel pattern (blijven–bleef–gebleven), regular verbs with the
+   't kofschip rule, the present tense (with the jij-inversion), hebben or zijn, and a sentence cloze built from
+   each verb's example. Every correct answer counts in db.done['ww:'+infinitive]; verbs with the fewest correct
+   answers come first in practice. */
+const WW=VZ.ww||[];
+const wwAll=WW.flatMap(g=>g.items.map(v=>Object.assign(v,{_g:g})));
+const WW_MODES={forms:['سه شکل','گذشتهٔ ساده و اسم مفعول را بنویسید و فعل کمکی را انتخاب کنید.'],zin:['جمله','شکل درست فعل را در جای خالی جملهٔ واقعی بنویسید.'],pres:['زمان حال','فعل را برای ik، jij، hij و … صرف کنید؛ با جملهٔ پرسشی.'],aux:['hebben یا zijn','ماضی نقلی با کدام فعل کمکی ساخته می‌شود؟'],rule:['-te یا -de','قاعدهٔ \'t kofschip برای فعل‌های باقاعده.']};
+const WW_SUBJ=[['ik','ik'],['jij','jij'],['hij','hij'],['zij','ze (مفرد)'],['wij','wij'],['jullie','jullie'],['zij-mv','zij (جمع)'],['inv','پرسشی: … jij?']];
+let wwSt={tab:'list',q:'',g:'',mode:'forms',pool:''},wwRun=null;
+const wwN=v=>+db.done['ww:'+v.inf]||0;
+const wwAlt=s=>String(s).split('/').map(x=>x.trim()).filter(Boolean);
+const wwAuxW=(a,who)=>a==='z'?(who==='ik'?'ben':'is'):a==='h'?(who==='ik'?'heb':'heeft'):(who==='ik'?'heb/ben':'heeft/is');
+function wwPres(v){if(v.pres)return{ik:v.pres[0],jij:v.pres[1],hij:v.pres[2],inv:v.pres[3],mv:v.inf};
+  const s=v.ik,t=/t$/.test(s)?s:/[^a]a$/.test(s)?s+'at':s+'t';return{ik:s,jij:t,hij:t,inv:s,mv:v.inf}}
+function wwRecite(v){return v.inf+', '+wwAlt(v.ps)[0]+', '+v.pc}
+const wwExPlain=s=>s.replace(/[\[\]]/g,'');
+function wwExHTML(s){return esc(s).replace(/\[([^\]]+)\]/g,'<mark class="sv sv0">$1</mark>')}
+/* how sure an answer is: ok, near (one letter), no */
+function wwCheck(inp,answers){const a=norm(inp);if(!a)return'no';const L=answers.map(norm);if(L.includes(a))return'ok';return L.some(x=>x.length>=5&&lev(a,x)<=1)?'near':'no'}
+function wwTable(v){const p=wwPres(v),aux=v.aux,ps=wwAlt(v.ps)[0];
+  const row=(a,b)=>`<tr><td class="lat">${a}</td><td class="lat"><b>${esc(b)}</b></td></tr>`;
+  return`<div class="ww-tables"><table class="ww-t"><caption>زمان حال</caption>${row('ik',p.ik)}${row('jij / u',p.jij)}${row('hij / zij / het',p.hij)}${row('wij / jullie / zij',p.mv)}${row('… jij?',p.inv+' jij')}</table>
+    <table class="ww-t"><caption>گذشتهٔ ساده</caption>${row('ik / jij / hij',v.ps)}${row('wij / jullie / zij',v.pp)}</table>
+    <table class="ww-t"><caption>ماضی نقلی</caption>${row('ik',wwAuxW(aux,'ik')+' '+v.pc)}${row('jij / hij',(aux==='z'?'bent/is':aux==='h'?'hebt/heeft':'hebt/heeft · bent/is')+' '+v.pc)}${row('wij / jullie / zij',(aux==='z'?'zijn':aux==='h'?'hebben':'hebben/zijn')+' '+v.pc)}</table></div>
+    ${aux==='hz'?'<p class="hint" style="margin:0">با هر دو: <span class="lat">zijn</span> وقتی مقصد یا تغییر مکان گفته می‌شود (<span class="lat" dir="ltr">Ik ben naar huis gelopen</span>)، <span class="lat">hebben</span> وقتی فقط خود کار مهم است (<span class="lat" dir="ltr">Ik heb veel gelopen</span>).</p>':''}
+    ${v.r?`<p class="hint" style="margin:0">باقاعده: حرف آخرِ ستاکِ مصدر <b class="lat">${esc(wwBase(v).slice(-1))}</b> است، پس <b class="lat">-${v.r}</b>.</p>`:''}`}
+function wwBase(v){return v.inf.replace(/en$/,'').replace(/n$/,'')}
+function wwToItem(v){const now=Date.now(),p=wwPres(v);
+  const it=cleanItem({id:uid(),lang:'nl',type:'word',text:v.inf,fa:v.fa,en:v.en,example:wwExPlain(v.ex[0]),exampleFa:v.ex[1],note:wwRecite(v),tags:['فعل'],created:now,updated:now,srs:null,
+    verb:{ik:wwAlt(p.ik)[0],hij:wwAlt(p.hij)[0],pastSg:wwAlt(v.ps)[0],pastPl:v.pp,aux:v.aux==='z'?'zijn':'hebben',part:v.pc}});return it}
+function wwItemHTML(v){const own=findDup('nl',v.inf),n=wwN(v);
+  return`<details class="kit-it${n>=3?' done':''}" data-wwv="${esc(v.inf)}"><summary><span class="kit-h"><b class="lat" dir="ltr">${esc(v.inf)}</b><small class="lat" dir="ltr">${esc(v.ps)} · ${esc(wwAuxW(v.aux,'hij'))} ${esc(v.pc)}</small></span><span class="kit-m">${esc(v.fa)}<small class="lat">${esc(v.en)}</small></span>${n>=3?'<span class="pill ok">✓</span>':''}</summary>
+    <div class="kit-b">${wwTable(v)}<div class="kit-ex"><button class="icon-btn mini" type="button" data-wwsay="ex" aria-label="پخش"><svg class="i"><use href="#i-speak"/></svg></button><div><p class="lat" dir="ltr">${wwExHTML(v.ex[0])}</p><p class="fa">${esc(v.ex[1])}</p></div></div>
+    <div class="btn-row"><button class="btn sm ghost" type="button" data-wwsay="rec">▶ <span class="lat" dir="ltr">${esc(wwRecite(v))}</span></button>${own?'<span class="pill ok">در کارت‌های شما</span>':'<button class="btn sm" type="button" data-wwadd>افزودن به کارت‌ها</button>'}</div></div></details>`}
+function renderWw(){const el=$('#wwBody');if(!el)return;
+  const ok=wwAll.filter(v=>wwN(v)>=3).length;$('#wwStat').textContent=`${faNum(wwAll.length)} فعل در ${faNum(WW.length)} الگو؛ ${faNum(ok)} فعل را دست‌کم سه بار درست جواب داده‌اید.`;
+  setSeg($('#wwTab'),wwSt.tab);
+  if(wwSt.tab==='rules'){el.innerHTML=WW_RULES;return}
+  if(wwSt.tab==='practice'){if(wwRun)wwPaint();else wwHome();return}
+  const q=norm(wwSt.q);
+  const gs=WW.filter(g=>!wwSt.g||g.id===wwSt.g).map(g=>({g,items:g.items.filter(v=>!q||norm([v.inf,v.ps,v.pp,v.pc,v.fa,v.en,v.ik].join(' ')).includes(q))})).filter(x=>x.items.length);
+  el.innerHTML=`<div class="kit-tools"><input type="search" class="kit-q" id="wwQ" placeholder="جست‌وجو: kwam، gekomen، آمدن…" value="${esc(wwSt.q)}" aria-label="جست‌وجو"><div class="kit-gs"><button type="button" class="tag${wwSt.g?'':' on'}" data-wwg="">همه</button>${WW.map(g=>`<button type="button" class="tag${wwSt.g===g.id?' on':''}" data-wwg="${esc(g.id)}"><bdi class="lat">${esc(g.pat.split('|')[0].trim())}</bdi></button>`).join('')}</div></div>`+
+    (gs.length?gs.map(({g,items})=>`<section class="kit-g"><div class="kit-gh"><h2 class="h2"><bdi class="lat">${esc(g.pat)}</bdi></h2><button class="btn sm ghost" type="button" data-wwpg="${esc(g.id)}">تمرین همین الگو</button></div><p class="hint">${kitBidi(g.fa)}</p><div class="kit-list">${items.map(wwItemHTML).join('')}</div></section>`).join(''):'<p class="empty">فعلی پیدا نشد.</p>');
+}
+/* ---------- practice ---------- */
+function wwHome(){const el=$('#wwBody');const weak=wwAll.filter(v=>wwN(v)<3).length;
+  el.innerHTML=`<section class="panel kit-ph stack"><div class="field"><span class="lbl">نوع تمرین</span><div class="seg" id="wwMode">${Object.entries(WW_MODES).map(([k,m])=>`<button type="button" data-v="${k}"><bdi>${m[0]}</bdi></button>`).join('')}</div><span class="hint" id="wwModeHint">${esc(WW_MODES[wwSt.mode][1])}</span></div>
+    <div class="field"><span class="lbl">کدام فعل‌ها</span><select id="wwPool"><option value="">همه؛ فعل‌هایی که کمتر بلدم اول (${faNum(weak)} فعل هنوز کمتر از سه بار درست)</option>${WW.map(g=>`<option value="${esc(g.id)}"${wwSt.pool===g.id?' selected':''}>${esc(g.pat)} (${faNum(g.items.length)})</option>`).join('')}</select></div>
+    <div class="btn-row"><button class="btn primary lg" type="button" data-wwgo>شروع ده سؤال</button></div></section>`;
+  const m=$('#wwMode');setSeg(m,wwSt.mode);bindSeg(m,v=>{wwSt.mode=v;$('#wwModeHint').textContent=WW_MODES[v][1]});
+  $('#wwPool').value=wwSt.pool}
+function wwPick(mode,pool){let L=pool?wwAll.filter(v=>v._g.id===pool):wwAll.slice();
+  if(mode==='rule'){L=L.filter(v=>v.r);if(L.length<4)L=wwAll.filter(v=>v.r)}
+  if(mode==='aux'&&!pool){const zs=kitShuffle(L.filter(v=>v.aux!=='h')).slice(0,5);L=zs.concat(kitShuffle(L.filter(v=>v.aux==='h')).slice(0,10-zs.length))}
+  L=kitShuffle(L).sort((a,b)=>Math.min(wwN(a),3)-Math.min(wwN(b),3));
+  return kitShuffle(L.slice(0,10)).map(v=>{const q={v};if(mode==='pres')q.s=WW_SUBJ[Math.floor(Math.random()*WW_SUBJ.length)][0];return q})}
+function wwStart(){wwRun={mode:wwSt.mode,qs:wwPick(wwSt.mode,wwSt.pool),i:0,ok:0,ans:null};if(!wwRun.qs.length){toast('در این گروه فعلی برای این تمرین نیست.');wwRun=null;return}wwPaint();window.scrollTo(0,0)}
+function wwPresAns(v,s){const p=wwPres(v);return wwAlt(s==='ik'?p.ik:s==='inv'?p.inv:(s==='wij'||s==='jullie'||s==='zij-mv')?p.mv:s==='jij'?p.jij:p.hij)}
+function wwPresPrompt(v,s){const sj=s==='zij-mv'?'Zij (جمع)':s==='inv'?'':s==='zij'?'Ze (مفرد)':s[0].toUpperCase()+s.slice(1);
+  return s==='inv'?`<span class="kit-fill">____</span> jij morgen …?`:`${esc(sj)} <span class="kit-fill">____</span> …`}
+function wwPaint(){const el=$('#wwBody'),r=wwRun;if(!el||!r)return;
+  const back=`<button class="link back" type="button" data-wwhome>&larr; انتخاب تمرین</button>`;
+  if(r.i>=r.qs.length){el.innerHTML=back+`<section class="panel kit-end"><h2 class="h2" style="margin-top:0">${faNum(r.ok)} از ${faNum(r.qs.length)} درست</h2><p class="hint">${r.ok>=8?'عالی! فعل‌هایی که درست جواب دادید کمتر تکرار می‌شوند.':'فعل‌هایی که اشتباه شد دفعهٔ بعد زودتر می‌آیند. در «فهرست فعل‌ها» جدولشان را یک بار بلند بخوانید.'}</p><div class="btn-row"><button class="btn primary" type="button" data-wwgo>ده سؤال دیگر</button><button class="btn" type="button" data-wwhome>نوع دیگر</button></div></section>`;return}
+  const q=r.qs[r.i],v=q.v,a=r.ans,M=r.mode;
+  let body='';
+  if(M==='forms')body=`<p class="kit-qq"><span class="lat" dir="ltr">${esc(v.inf)}</span> <span class="hint">${esc(v.fa)}</span></p>
+    <div class="ww-in"><label><span class="hint">گذشتهٔ ساده (ik / hij)</span><input type="text" class="lat ltr" dir="ltr" id="wwA1" autocomplete="off" autocapitalize="off" spellcheck="false"${a?' disabled':''} value="${a?esc(a.v1):''}"></label>
+    <label><span class="hint">فعل کمکی</span><span class="seg sm" id="wwAux"><button type="button" data-v="h">heeft</button><button type="button" data-v="z">is</button></span></label>
+    <label><span class="hint">اسم مفعول</span><input type="text" class="lat ltr" dir="ltr" id="wwA2" autocomplete="off" autocapitalize="off" spellcheck="false"${a?' disabled':''} value="${a?esc(a.v2):''}"></label></div>`;
+  else if(M==='pres')body=`<p class="kit-qq"><span class="lat" dir="ltr">${esc(v.inf)}</span> <span class="hint">${esc(v.fa)}</span></p><p class="lat ww-big" dir="ltr">${wwPresPrompt(v,q.s)}</p>
+    <input type="text" class="lat ltr" dir="ltr" id="wwA1" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="شکل فعل"${a?' disabled':''} value="${a?esc(a.v1):''}">`;
+  else if(M==='aux')body=`<p class="kit-qq"><span class="lat" dir="ltr">${esc(v.inf)} → … ${esc(v.pc)}</span> <span class="hint">${esc(v.fa)}</span></p><p class="hint">ماضی نقلی این فعل با کدام فعل کمکی ساخته می‌شود؟</p>
+    <div class="kit-ch">${[['h','hebben'],['z','zijn'],['hz','هر دو (بسته به جمله)']].map(([k,t])=>`<button class="btn${a?(k===v.aux?' ok':k===a.v1?' no':''):''}" type="button" data-wwch="${k}"${a?' disabled':''}>${k==='hz'?t:`<span class="lat">${t}</span>`}</button>`).join('')}</div>`;
+  else if(M==='rule'){const o=[v.ik+'te',v.ik+'de'];body=`<p class="kit-qq"><span class="lat" dir="ltr">${esc(v.inf)}</span> <span class="hint">${esc(v.fa)}</span></p><p class="hint">گذشتهٔ ساده با <span class="lat">ik</span> کدام است؟</p>
+    <div class="kit-ch">${o.map(x=>`<button class="btn${a?(x===v.ps?' ok':x===a.v1?' no':''):''}" type="button" data-wwch="${esc(x)}"${a?' disabled':''}><span class="lat">ik ${esc(x)}</span></button>`).join('')}</div>`}
+  else{const parts=v.ex[0].split(/(\[[^\]]+\])/);let k=0;
+    body=`<p class="kit-qq"><span class="hint">فعل: </span><span class="lat" dir="ltr">${esc(v.inf)}</span> <span class="hint">${esc(v.fa)}</span></p><p class="lat ww-big ww-cloze" dir="ltr">${parts.map(p=>{if(!/^\[/.test(p))return esc(p);const i=k++,ans=p.slice(1,-1);return a?`<span class="kit-fill ${a.st[i]}">${esc(a.vs[i]||'—')}</span>${a.st[i]!=='ok'?` <small class="ww-cor">${esc(ans)}</small>`:''}`:`<input type="text" class="ww-gap" data-wwgap="${i}" size="${Math.max(4,ans.length+1)}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="جای خالی ${faNum(i+1)}">`}).join('')}</p><p class="hint">${esc(v.ex[1])}</p>`}
+  const typed=M==='forms'||M==='pres'||M==='zin';
+  el.innerHTML=back+`<section class="panel kit-qz"><div class="kit-qtop"><span class="hint">${faNum(r.i+1)} از ${faNum(r.qs.length)} · ${esc(WW_MODES[M][0])}</span><span class="hint">${faNum(r.ok)} درست</span></div>${body}
+    ${!a&&typed?'<div class="btn-row" style="margin-top:10px"><button class="btn primary" type="button" data-wwcheck>بررسی</button><button class="btn ghost" type="button" data-wwskip>نمی‌دانم</button></div>':''}
+    ${a?`<div class="kit-fb ${a.ok?'ok':'no'}" style="margin-top:12px"><b>${a.ok?'درست است!':a.near?'تقریباً؛ املا را دقیق ببینید.':'جواب درست:'}</b> ${wwAnswerLine(q)}</div>${wwTable(v)}<div class="kit-ex"><button class="icon-btn mini" type="button" data-wwsay="ex" aria-label="پخش"><svg class="i"><use href="#i-speak"/></svg></button><div><p class="lat" dir="ltr">${wwExHTML(v.ex[0])}</p><p class="fa">${esc(v.ex[1])}</p></div></div>
+      <div class="btn-row" style="margin-top:10px"><button class="btn primary" type="button" data-wwnext>${r.i+1<r.qs.length?'سؤال بعد':'نتیجه'}</button><button class="btn sm ghost" type="button" data-wwsay="rec">▶ <span class="lat" dir="ltr">${esc(wwRecite(v))}</span></button></div>`:''}</section>`;
+  if(M==='forms'){const s=$('#wwAux');setSeg(s,a?a.aux:'');if(!a)bindSeg(s);else $$('button',s).forEach(b=>b.disabled=true)}
+  if(!a){const f=$('#wwBody input:not([disabled])');if(f&&!('ontouchstart' in window))f.focus()}
+}
+function wwAnswerLine(q){const v=q.v,M=wwRun.mode;
+  if(M==='forms')return`<span class="lat" dir="ltr">${esc(v.inf)} – ${esc(v.ps)} – ${esc(wwAuxW(v.aux,'hij'))} ${esc(v.pc)}</span>`;
+  if(M==='pres')return`<span class="lat" dir="ltr">${q.s==='inv'?esc(wwPresAns(v,q.s).join(' / '))+' jij…?':esc((q.s==='zij-mv'?'zij':q.s)+' '+wwPresAns(v,q.s).join(' / '))}</span>${q.s==='inv'&&!v.pres?' <span class="hint">— وقتی jij بعد از فعل می‌آید، t آخر می‌افتد.</span>':''}`;
+  if(M==='aux')return v.aux==='z'?'<span class="lat">zijn</span> — فعل تغییر مکان یا حالت است.':v.aux==='hz'?'هر دو؛ <span class="lat">zijn</span> با مقصد، <span class="lat">hebben</span> بدون مقصد.':'<span class="lat">hebben</span> — بیشتر فعل‌ها با hebben می‌آیند.';
+  if(M==='rule')return`<span class="lat" dir="ltr">ik ${esc(v.ps)}</span> — ${v.r==='te'?'حرف آخرِ ستاک در \'t kofschip هست':'حرف آخرِ ستاک در \'t kofschip نیست'} (<span class="lat">${esc(wwBase(v).slice(-1))}</span>).`;
+  return`<span class="lat" dir="ltr">${wwExHTML(v.ex[0])}</span>`}
+function wwSubmit(skip){const r=wwRun,q=r.qs[r.i],v=q.v,M=r.mode;let ok=false,near=false;const a={};
+  if(M==='forms'){a.v1=skip?'':$('#wwA1').value;a.v2=skip?'':$('#wwA2').value;a.aux=skip?'':segVal($('#wwAux'));
+    const c1=wwCheck(a.v1,wwAlt(v.ps)),c2=wwCheck(a.v2,[v.pc]),c3=a.aux&&(v.aux==='hz'||a.aux===v.aux);ok=c1==='ok'&&c2==='ok'&&c3;near=!ok&&c1!=='no'&&c2!=='no'&&c3}
+  else if(M==='pres'){a.v1=skip?'':$('#wwA1').value;const c=wwCheck(a.v1,wwPresAns(v,q.s));ok=c==='ok';near=c==='near'}
+  else if(M==='zin'){const ans=(v.ex[0].match(/\[[^\]]+\]/g)||[]).map(x=>x.slice(1,-1));a.vs=ans.map((x,i)=>{const e=$(`[data-wwgap="${i}"]`);return skip||!e?'':e.value.trim()});
+    a.st=ans.map((x,i)=>wwCheck(a.vs[i],[x]));ok=a.st.every(s=>s==='ok');near=!ok&&a.st.every(s=>s!=='no')}
+  a.ok=ok;a.near=near;r.ans=a;if(ok){r.ok++;db.done['ww:'+v.inf]=wwN(v)+1;saveData(30000)}wwPaint()}
+function wwChoose(k){const r=wwRun,q=r.qs[r.i],v=q.v;const ok=r.mode==='aux'?k===v.aux:k===v.ps;r.ans={v1:k,ok};if(ok){r.ok++;db.done['ww:'+v.inf]=wwN(v)+1;saveData(30000)}wwPaint()}
+const WW_RULES=`<div class="ww-rules">
+<section class="panel"><h2 class="h2" style="margin-top:0">زمان حال (presens)</h2><ul>
+<li><b>ستاک</b> = مصدر بدون <span class="lat">-en</span>، همان شکل <span class="lat">ik</span>: <span class="lat" dir="ltr">werken → ik werk</span>.</li>
+<li><span class="lat">jij / u / hij / zij / het</span>: ستاک + <span class="lat">t</span>: <span class="lat" dir="ltr">jij werkt, hij werkt</span>. اگر ستاک خودش به t ختم شود، t دوم نمی‌آید: <span class="lat" dir="ltr">hij zit</span>.</li>
+<li>جمع (<span class="lat">wij / jullie / zij</span>) = مصدر: <span class="lat" dir="ltr">wij werken</span>.</li>
+<li>جملهٔ پرسشی یا وارونه: وقتی <span class="lat">jij/je</span> بعد از فعل می‌آید، t می‌افتد: <span class="lat" dir="ltr">Werk jij morgen? Kom je ook?</span> ولی <span class="lat" dir="ltr">Werkt hij morgen?</span></li>
+<li>املای ستاک: هجای باز بلند می‌ماند (<span class="lat" dir="ltr">lopen → loop</span>)، حرف دوتایی یکی می‌شود (<span class="lat" dir="ltr">zetten → zet</span>)، v به f و z به s تبدیل می‌شود (<span class="lat" dir="ltr">leven → leef، reizen → reis</span>).</li>
+<li>ستاکی که به d ختم می‌شود هم t می‌گیرد، هرچند صدایش یکی است: <span class="lat" dir="ltr">hij wordt، hij vindt</span>. ولی: <span class="lat" dir="ltr">word jij?</span></li></ul></section>
+<section class="panel"><h2 class="h2" style="margin-top:0">گذشتهٔ ساده (imperfectum)</h2><ul>
+<li>فعل باقاعده: ستاک + <span class="lat">-te/-de</span> (جمع: <span class="lat">-ten/-den</span>).</li>
+<li>قاعدهٔ <b class="lat">'t kofschip</b>: اگر حرف آخرِ ستاکِ مصدر یکی از <span class="lat">t, k, f, s, ch, p</span> باشد، <span class="lat">-te</span>؛ وگرنه <span class="lat">-de</span>: <span class="lat" dir="ltr">werkte, praatte, woonde</span>.</li>
+<li>مراقب باشید: ملاک حرف مصدر است نه ستاک: <span class="lat" dir="ltr">leven → leefde</span> (v)، <span class="lat" dir="ltr">reizen → reisde</span> (z).</li>
+<li>فعل بی‌قاعده حرف صدادارش عوض می‌شود: <span class="lat" dir="ltr">blijven → bleef, kijken → keek</span>. برای همین در «فهرست فعل‌ها» بر اساس الگو دسته‌بندی شده‌اند.</li></ul></section>
+<section class="panel"><h2 class="h2" style="margin-top:0">ماضی نقلی (perfectum)</h2><ul>
+<li><span class="lat">hebben</span> یا <span class="lat">zijn</span> سر جای دوم، اسم مفعول آخر جمله: <span class="lat" dir="ltr">Ik heb gisteren lang gewerkt.</span></li>
+<li>اسم مفعول باقاعده: <span class="lat">ge</span> + ستاک + <span class="lat">t/d</span> با همان قاعدهٔ kofschip: <span class="lat" dir="ltr">gewerkt, gewoond</span>. اگر ستاک خودش به t یا d ختم شود، حرف دیگری نمی‌آید: <span class="lat" dir="ltr">gepraat, geantwoord</span>.</li>
+<li>بدون <span class="lat">ge</span>: فعل‌هایی که با <span class="lat">be-، ge-، ver-، her-، ont-، er-</span> شروع می‌شوند: <span class="lat" dir="ltr">betaald, gebruikt, verhuisd</span>.</li>
+<li><span class="lat">zijn</span> برای تغییر مکان یا حالت: <span class="lat" dir="ltr">gaan, komen, vertrekken, worden, blijven, sterven, verhuizen</span>. خود <span class="lat">zijn</span> هم: <span class="lat" dir="ltr">Ik ben ziek geweest.</span></li>
+<li>فعل‌های حرکتی با هر دو: با مقصد <span class="lat">zijn</span> (<span class="lat" dir="ltr">Ik ben naar Utrecht gefietst</span>)، بدون مقصد <span class="lat">hebben</span> (<span class="lat" dir="ltr">Ik heb een uur gefietst</span>).</li></ul></section>
+<section class="panel"><h2 class="h2" style="margin-top:0">کدام زمان را کی به کار ببریم؟</h2><ul>
+<li>در گفت‌وگو دربارهٔ گذشته بیشتر <b>ماضی نقلی</b> به کار می‌رود: <span class="lat" dir="ltr">Wat heb je gisteren gedaan?</span></li>
+<li><b>گذشتهٔ ساده</b> برای تعریف کردن یک ماجرا، توصیف وضعیت قبلی و با فعل‌های پرکاربرد: <span class="lat" dir="ltr">Toen ik in Iran woonde, werkte ik als leraar. Het was koud.</span></li>
+<li>در آزمون نوشتن، هر دو درست‌اند؛ مهم این است که شکل فعل درست باشد و جای اسم مفعول آخر جمله.</li></ul></section></div>`;
+$('#wwTab')&&bindSeg($('#wwTab'),v=>{wwSt.tab=v;if(v!=='practice')wwRun=null;renderWw()});
+$('#wwBody')&&$('#wwBody').addEventListener('click',e=>{
+  const g=e.target.closest('[data-wwg]');if(g){wwSt.g=g.dataset.wwg;renderWw();return}
+  const pg=e.target.closest('[data-wwpg]');if(pg){wwSt.tab='practice';wwSt.pool=pg.dataset.wwpg;wwRun=null;renderWw();window.scrollTo(0,0);return}
+  const say=e.target.closest('[data-wwsay]');if(say){const d=say.closest('[data-wwv]'),v=d?wwAll.find(x=>x.inf===d.dataset.wwv):wwRun&&wwRun.qs[wwRun.i].v;if(v){const t=say.dataset.wwsay==='ex'?wwExPlain(v.ex[0]):wwRecite(v);speak(t,'nl')}return}
+  if(e.target.closest('[data-wwadd]')){const d=e.target.closest('[data-wwv]'),v=wwAll.find(x=>x.inf===d.dataset.wwv);if(v&&!findDup('nl',v.inf)){db.items.push(wwToItem(v));SVX=null;saveData();refreshBadges();toast('به کارت‌ها اضافه شد.');renderWw()}return}
+  if(e.target.closest('[data-wwgo]')){const p=$('#wwPool');if(p)wwSt.pool=p.value;wwStart();return}
+  if(e.target.closest('[data-wwhome]')){wwRun=null;stopSpeech();wwHome();return}
+  if(!wwRun)return;
+  if(e.target.closest('[data-wwcheck]')){wwSubmit(false);return}
+  if(e.target.closest('[data-wwskip]')){wwSubmit(true);return}
+  const c=e.target.closest('[data-wwch]');if(c&&!wwRun.ans){wwChoose(c.dataset.wwch);return}
+  if(e.target.closest('[data-wwnext]')){wwRun.i++;wwRun.ans=null;stopSpeech();wwPaint();return}
+});
+$('#wwBody')&&$('#wwBody').addEventListener('input',e=>{if(e.target.id==='wwQ'){wwSt.q=e.target.value;clearTimeout(wwSt.tm);wwSt.tm=setTimeout(()=>{renderWw();const q=$('#wwQ');if(q){q.focus();q.setSelectionRange(q.value.length,q.value.length)}},200)}});
+$('#wwBody')&&$('#wwBody').addEventListener('keydown',e=>{if(e.key!=='Enter'||!wwRun)return;if(wwRun.ans){e.preventDefault();$('[data-wwnext]')&&$('[data-wwnext]').click()}else if(e.target.matches('input')){e.preventDefault();const ins=$$('#wwBody input[type=text]:not([disabled])'),i=ins.indexOf(e.target);if(i>=0&&i<ins.length-1)ins[i+1].focus();else wwSubmit(false)}});
+if(/[?&]debug/.test(location.search))window.__ww={WW,wwAll,wwPres,wwPresAns,wwCheck,wwPick,get run(){return wwRun},set mode(v){wwSt.mode=v},wwStart,renderWw};
+
+/* ================= DICTATION (v31) =================
+   Hear a sentence in a natural voice, type it, and see word by word what went wrong. Typos are explained with the
+   classic Dutch spelling traps (ei/ij, au/ou, d/t at the end of a verb, one or two vowels or consonants, v/f, z/s,
+   g/ch). Capitals and punctuation are ignored unless you ask for them. Scores: db.done['dc:'+audKey]. */
+const DC_SRC={pod:'گپ روزانه',ww:'جمله‌های فعل',chunk:'چانک‌ها',mine:'کارت‌های من'};
+const DC_LEN={kort:['کوتاه',3,7],mid:['متوسط',8,12],lang:['بلند',13,22]};
+let dcSt={src:'pod',len:'kort',strict:false},dcRun=null;
+function dcPool(src,len){const[,lo,hi]=DC_LEN[len],out=[],seen=new Set();
+  const add=(t,fa,key)=>{t=String(t||'').trim();const n=t.split(/\s+/).length;if(!t||seen.has(t)||n<lo||n>hi||/\d/.test(t)||!natHas(t,'nl',key))return;seen.add(t);out.push({t,fa,key})};
+  if(src==='pod')POD.eps.forEach(e=>e.l.forEach((l,i)=>add(l[1],l[2],'pod '+e.id+' '+i)));
+  else if(src==='ww')wwAll.forEach(v=>add(wwExPlain(v.ex[0]),v.ex[1]));
+  else if(src==='chunk')kitAll('chunk').forEach(x=>x.ex.forEach(e=>add(e[0],e[1])));
+  else db.items.filter(i=>i.lang==='nl'&&!i.susp).forEach(it=>{if(it.type==='sentence')add(it.text,it.fa);exList(it).forEach(x=>add(x.t,x.fa))});
+  return out}
+const dcW=w=>w.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');
+const dcTok=s=>String(s).trim().split(/\s+/).filter(Boolean);
+/* word alignment: each target word is ok, typo (with what was typed) or miss; extra typed words are listed */
+function dcAlign(target,typed,strict){const T=dcTok(target),U=dcTok(typed);
+  const key=w=>strict?w.normalize('NFC'):dcW(w);const tk=T.map(key),uk=U.map(key);
+  const cost=(a,b)=>{if(a===b)return 0;const d=lev(dcW(a),dcW(b)),m=Math.max(dcW(a).length,dcW(b).length,1);return d===0?0.3:d/m<=0.5?0.4+d/m:1.5};
+  const n=T.length,m=U.length,D=Array.from({length:n+1},()=>new Array(m+1).fill(0));
+  for(let i=0;i<=n;i++)D[i][0]=i;for(let j=0;j<=m;j++)D[0][j]=j;
+  for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)D[i][j]=Math.min(D[i-1][j]+1,D[i][j-1]+1,D[i-1][j-1]+cost(tk[i-1],uk[j-1]));
+  const res=T.map(w=>({w,st:'miss',u:''})),extra=[];let i=n,j=m;
+  while(i>0||j>0){if(i>0&&j>0){const c=cost(tk[i-1],uk[j-1]);if(D[i][j]===D[i-1][j-1]+c&&c<1.5){res[i-1].st=c===0?'ok':'typo';res[i-1].u=U[j-1];i--;j--;continue}}
+    if(i>0&&D[i][j]===D[i-1][j]+1){i--;continue}if(j>0){extra.unshift(U[j-1]);j--;continue}i--}
+  const tn=T.map(dcW).join(' '),un=U.map(dcW).join(' ');const sc=Math.max(0,Math.round((1-lev(tn,un)/Math.max(tn.length,1))*100));
+  res.forEach(r=>{if(r.st==='typo')r.why=dcWhy(r.w,r.u,strict)});return{res,extra,sc,all:res.every(r=>r.st==='ok')&&!extra.length}}
+/* name the spelling trap behind a typo */
+function dcWhy(t,u,strict){const a=dcW(t),b=dcW(u);if(a===b){if(!strict)return'accent';const L=x=>x.replace(/[^\p{L}]/gu,'');if(L(t)!==L(u)&&L(t).toLowerCase()===L(u).toLowerCase())return'cap';return L(t)===L(u)&&t!==u?'punct':'accent'}
+  const eq=f=>f(a)===f(b);
+  if(eq(x=>x.replace(/ij/g,'ei')))return'eij';
+  if(eq(x=>x.replace(/au/g,'ou')))return'auou';
+  if(/(d|t|dt)$/.test(a)&&a.replace(/(dt|d|t)$/,'')===b.replace(/(dt|d|t)$/,''))return'dt';
+  if(eq(x=>x.replace(/([aeou])\1/g,'$1')))return'vowel';
+  if(eq(x=>x.replace(/([bdfgklmnprstz])\1/g,'$1')))return'cons';
+  if(eq(x=>x.replace(/ie/g,'i')))return'ie';
+  if(eq(x=>x.replace(/ch/g,'g')))return'gch';
+  if(eq(x=>x.replace(/v/g,'f').replace(/z/g,'s')))return'vf';
+  if(eq(x=>x.replace(/uu/g,'u').replace(/oe/g,'u')))return'uoe';
+  if(eq(x=>x.replace(/w/g,'v')))return'wv';
+  return'other'}
+const DC_WHY={eij:['ei یا ij','ei و ij یک صدا دارند؛ املای هر واژه را باید جداگانه حفظ کرد (trein، wijn).'],
+  auou:['au یا ou','au و ou هم یک صدا دارند: blauw، oud. واژه را با املایش حفظ کنید.'],
+  dt:['d یا t آخر فعل','ستاک + t برای jij/hij: hij wordt، hij vindt. اسم مفعول باقاعده با t یا d طبق \'t kofschip: gewerkt، gewoond. با jij وارونه t نمی‌آید: word jij.'],
+  vowel:['یک یا دو حرف صدادار','هجای بسته صدای بلند را با دو حرف می‌نویسد (maan، boom)؛ در هجای باز یک حرف کافی است (manen، bomen).'],
+  cons:['یک یا دو حرف بی‌صدا','بعد از حرف صدادار کوتاه، بی‌صدا در هجای بعد دوتایی می‌شود تا صدا کوتاه بماند: bal → ballen، zet → zetten.'],
+  ie:['i یا ie','i کوتاه است (wit)، ie بلند (wiet، niet).'],gch:['g یا ch','g و ch تقریباً یک صدا دارند (خ)؛ املای واژه را حفظ کنید: lachen، zeggen.'],
+  vf:['v/f یا z/s','در آغاز واژه v و z نرم‌ترند؛ آخر واژه همیشه f و s نوشته می‌شود: leven → leef، reizen → reis.'],
+  uoe:['u، uu یا oe','u و uu صدای «او»ی گرد و جلو دارند، oe مثل «او» فارسی است: buur با boer فرق دارد.'],
+  wv:['w یا v','w هلندی نرم‌تر از v است و لب‌ها به هم نمی‌خورند: wat با vat فرق دارد.'],
+  cap:['حرف بزرگ','اول جمله و اسم‌های خاص با حرف بزرگ نوشته می‌شوند.'],punct:['نقطه‌گذاری','علامت‌های نقطه‌گذاری را هم مثل متن بنویسید.'],accent:['علامت روی حرف','علامت‌هایی مثل é یا ë (één، ideeën) را برنامه ایراد نمی‌گیرد.'],other:['املا','واژه را با صدای آهسته دوباره گوش کنید و حرف‌به‌حرف مقایسه کنید.']};
+/* mark the letters of the right word that were wrong or missing */
+function dcMark(t,u){const a=t,b=u.toLowerCase();const m=a.length,n=b.length,L=Array.from({length:m+1},()=>new Array(n+1).fill(0));
+  for(let i=m-1;i>=0;i--)for(let j=n-1;j>=0;j--)L[i][j]=a[i].toLowerCase()===b[j]?L[i+1][j+1]+1:Math.max(L[i+1][j],L[i][j+1]);
+  let i=0,j=0,out='';while(i<m){if(j<n&&a[i].toLowerCase()===b[j]){out+=esc(a[i]);i++;j++}else if(j<n&&L[i][j+1]>=L[i+1][j])j++;else{out+=`<b class="dc-x">${esc(a[i])}</b>`;i++}}return out}
+function dcStart(){const L=kitShuffle(dcPool(dcSt.src,dcSt.len));if(!L.length){toast(dcSt.src==='mine'?'در کارت‌های شما جملهٔ مناسب با صدای طبیعی پیدا نشد.':'جمله‌ای پیدا نشد.');return}
+  L.sort((a,b)=>(+db.done['dc:'+audKey(a.t)]||0)-(+db.done['dc:'+audKey(b.t)]||0));
+  dcRun={qs:kitShuffle(L.slice(0,10)),i:0,res:null,plays:0,scores:[],why:{}};dcPaint();setTimeout(dcPlay,300)}
+function dcPlay(slow){const x=dcRun&&dcRun.qs[dcRun.i];if(!x)return;dcRun.plays++;const pc=$('#dcPlays');if(pc)pc.textContent=faNum(dcRun.plays)+' بار شنیدید';speak(x.t,'nl',{akey:x.key,rate:slow?0.65:1})}
+function renderDictee(){if(dcRun)return dcPaint();const el=$('#dcBody');if(!el)return;
+  const n=+db.done['dc:n']||0;
+  el.innerHTML=`<section class="panel kit-ph stack"><div class="field"><span class="lbl">جمله‌ها از</span><div class="seg" id="dcSrc">${Object.entries(DC_SRC).map(([k,t])=>`<button type="button" data-v="${k}">${t}</button>`).join('')}</div></div>
+    <div class="field"><span class="lbl">طول جمله</span><div class="seg" id="dcLen">${Object.entries(DC_LEN).map(([k,t])=>`<button type="button" data-v="${k}">${t[0]} (${faNum(t[1])}–${faNum(t[2])} واژه)</button>`).join('')}</div></div>
+    <label class="check"><input type="checkbox" id="dcStrict"${dcSt.strict?' checked':''}><span>حرف بزرگ و نقطه‌گذاری هم بررسی شود</span></label>
+    <p class="hint" id="dcCount"></p>
+    <div class="btn-row"><button class="btn primary lg" type="button" data-dcgo>شروع ده جمله</button></div></section>
+    <p class="hint">${n?`تا حالا ${faNum(n)} جمله دیکته نوشته‌اید. `:''}با هدفون بهتر است. هر جمله را هر چند بار خواستید گوش کنید؛ دکمهٔ «آهسته» صدا را کندتر پخش می‌کند.</p>`;
+  const s=$('#dcSrc'),l=$('#dcLen');setSeg(s,dcSt.src);setSeg(l,dcSt.len);const cnt=()=>{$('#dcCount').textContent=faNum(dcPool(dcSt.src,dcSt.len).length)+' جمله برای این انتخاب هست.'};cnt();
+  bindSeg(s,v=>{dcSt.src=v;cnt()});bindSeg(l,v=>{dcSt.len=v;cnt()})}
+function dcPaint(){const el=$('#dcBody'),r=dcRun;if(!el||!r)return;const back=`<button class="link back" type="button" data-dchome>&larr; دیکته</button>`;
+  if(r.i>=r.qs.length){const avg=Math.round(r.scores.reduce((a,b)=>a+b,0)/Math.max(1,r.scores.length)),top=Object.entries(r.why).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    el.innerHTML=back+`<section class="panel kit-end"><h2 class="h2" style="margin-top:0">میانگین ${faNum(avg)} از ۱۰۰</h2><p class="hint">${faNum(r.scores.filter(s=>s===100).length)} جمله بی‌غلط از ${faNum(r.scores.length)}.</p>
+      ${top.length?`<h3 class="h3">اشتباه‌های رایج شما در این دور</h3><ul class="dc-why">${top.map(([k,c])=>`<li><b>${esc(DC_WHY[k][0])}</b> (${faNum(c)} بار): ${kitBidi(DC_WHY[k][1])}</li>`).join('')}</ul>`:''}
+      <div class="btn-row"><button class="btn primary" type="button" data-dcagain>ده جملهٔ دیگر</button><button class="btn" type="button" data-dchome>تنظیمات</button></div></section>`;return}
+  const x=r.qs[r.i],a=r.res;
+  el.innerHTML=back+`<section class="panel dc-card"><div class="kit-qtop"><span class="hint">${faNum(r.i+1)} از ${faNum(r.qs.length)}</span><span class="hint" id="dcPlays">${r.plays?faNum(r.plays)+' بار شنیدید':''}</span></div>
+    <div class="btn-row"><button class="btn primary" type="button" data-dcplay>▶ گوش کنید</button><button class="btn ghost" type="button" data-dcslow>آهسته</button></div>
+    ${a?`<p class="dc-res lat" dir="ltr">${a.res.map(w=>w.st==='ok'?`<span class="sw ok">${esc(w.w)}</span>`:w.st==='typo'?`<span class="sw near" title="${esc(w.u)}">${dcMark(w.w,w.u)}</span>`:`<span class="sw miss">${esc(w.w)}</span>`).join(' ')}</p>
+      <p class="hint" style="margin:0">شما نوشتید: <bdi class="lat">${esc(r.typed||'—')}</bdi></p>${x.fa?`<p class="hint" style="margin:4px 0 0">${esc(x.fa)}</p>`:''}
+      <div class="sh-res"><div class="sh-sc ${a.sc>=95?'ok':a.sc>=75?'mid':'low'}"><b class="num">${faNum(a.sc)}</b><span>از ۱۰۰</span></div><div>${a.all?'<p style="margin:0">بی‌غلط! 🎉</p>':`<ul class="dc-why">${[...new Map(a.res.filter(w=>w.st==='typo').map(w=>[w.why,w])).values()].map(w=>`<li><span class="lat" dir="ltr">${esc(w.u)} → <b>${esc(w.w)}</b></span>: <b>${esc(DC_WHY[w.why][0])}</b>. ${kitBidi(DC_WHY[w.why][1])}</li>`).join('')}${a.res.some(w=>w.st==='miss')?`<li>واژه‌های قرمز را ننوشتید یا خیلی متفاوت نوشتید.</li>`:''}${a.extra.length?`<li>اضافه نوشتید: <span class="lat" dir="ltr">${esc(a.extra.join(' '))}</span></li>`:''}</ul>`}</div></div>
+      <div class="btn-row"><button class="btn primary" type="button" data-dcnext>${r.i+1<r.qs.length?'جملهٔ بعد':'نتیجه'}</button></div>`
+    :`<textarea id="dcIn" class="lat ltr dc-in" dir="ltr" rows="3" autocomplete="off" autocapitalize="sentences" spellcheck="false" placeholder="جمله‌ای را که شنیدید بنویسید…">${esc(r.draft||'')}</textarea>
+      <div class="btn-row"><button class="btn primary" type="button" data-dccheck>بررسی</button><button class="btn ghost" type="button" data-dcshow>نمی‌دانم، نشان بده</button></div><p class="hint" style="margin:0">Enter = بررسی · Shift+Enter = خط تازه</p>`}
+    <p class="hint sh-leg"><span class="sw ok">درست</span> <span class="sw near">غلط املایی (حرف‌های <b class="dc-x">رنگی</b>)</span> <span class="sw miss">جاافتاده</span></p></section>`;
+  const t=$('#dcIn');if(t&&!('ontouchstart' in window))t.focus()}
+function dcCheck(give){const r=dcRun,x=r.qs[r.i];r.typed=give?'':($('#dcIn').value||'').trim();if(!r.typed&&!give){toast('اول جمله را بنویسید.');return}
+  const a=dcAlign(x.t,r.typed,dcSt.strict);r.res=a;r.scores.push(a.sc);a.res.forEach(w=>{if(w.st==='typo')r.why[w.why]=(r.why[w.why]||0)+1});
+  const k='dc:'+audKey(x.t);db.done[k]=Math.max(+db.done[k]||0,a.sc);db.done['dc:n']=(+db.done['dc:n']||0)+1;saveData(30000);dcPaint()}
+$('#dcBody')&&$('#dcBody').addEventListener('click',e=>{
+  if(e.target.closest('[data-dcgo]')){dcSt.strict=$('#dcStrict').checked;dcStart();return}
+  if(e.target.closest('[data-dchome]')){dcRun=null;stopSpeech();renderDictee();return}
+  if(e.target.closest('[data-dcagain]')){dcStart();return}
+  if(!dcRun)return;
+  if(e.target.closest('[data-dcplay]')){dcPlay(false);return}
+  if(e.target.closest('[data-dcslow]')){dcPlay(true);return}
+  if(e.target.closest('[data-dccheck]')){dcCheck(false);return}
+  if(e.target.closest('[data-dcshow]')){dcCheck(true);return}
+  if(e.target.closest('[data-dcnext]')){dcRun.i++;dcRun.res=null;dcRun.plays=0;dcRun.draft='';stopSpeech();dcPaint();setTimeout(()=>dcPlay(false),300);return}
+});
+$('#dcBody')&&$('#dcBody').addEventListener('keydown',e=>{if(!dcRun)return;if(e.target.id==='dcIn'&&e.key==='Enter'&&!e.shiftKey){e.preventDefault();dcCheck(false)}else if(e.key==='Enter'&&dcRun.res&&!e.target.closest('button')){e.preventDefault();$('[data-dcnext]')&&$('[data-dcnext]').click()}});
+$('#dcBody')&&$('#dcBody').addEventListener('input',e=>{if(e.target.id==='dcIn'&&dcRun)dcRun.draft=e.target.value});
+if(/[?&]debug/.test(location.search))window.__dc={dcAlign,dcWhy,dcPool,dcMark,get run(){return dcRun},dcStart,set st(v){Object.assign(dcSt,v)}};
+
+/* ================= PRONUNCIATION FOR PERSIAN SPEAKERS (v31) =================
+   One lesson per difficult sound: a Persian explanation (how to make the sound, which Persian sound it is
+   mistaken for), example words in a natural voice, a listening test with minimal pairs (which of two similar
+   words did you hear?), and sentences you say out loud and get scored on in «سایه‌خوانی با نمره».
+   Best listening score per lesson: db.done['ut:'+id]; mixed test: db.done['ut:all']. */
+const UT=VZ.ut||[];
+let utCur=null,utRun=null;
+function utPairs(l){return l?l.pairs:UT.flatMap(x=>x.pairs.map(p=>Object.assign([...p],{les:x.id})))}
+function utStart(l){const P=utPairs(l);if(!P.length)return;const qs=[];
+  for(let i=0;i<10;i++){const p=P[(i<P.length?i:Math.floor(Math.random()*P.length))%P.length];qs.push({p,side:Math.random()<0.5?0:1})}
+  utRun={les:l,qs:kitShuffle(qs),i:0,ok:0,ans:null};utPaint();setTimeout(utSay,250)}
+function utSay(){const r=utRun;if(!r)return;const q=r.qs[r.i];if(q)speak(q.p[q.side],'nl')}
+function renderUitspraak(){const el=$('#utBody');if(!el)return;
+  if(utRun)return utPaint();
+  if(!utCur){const all=+db.done['ut:all']||0;
+    el.innerHTML=`<section class="panel ut-intro"><p style="margin:0">فارسی و هلندی صداهای مشترک زیادی دارند، ولی چند حرف صدادار هلندی در فارسی نیست و چند صدای دیگر را فارسی‌زبان‌ها معمولاً اشتباه می‌گیرند. هر درس را باز کنید، واژه‌ها را گوش کنید و تکرار کنید، بعد آزمون گوش بدهید: اگر دو واژه را از هم تشخیص ندهید، گفتنشان هم سخت است.</p>
+      <div class="btn-row" style="margin-top:10px"><button class="btn primary" type="button" data-utmix>آزمون گوش: همهٔ صداها</button>${all?`<span class="hint">بهترین نتیجه: ${faNum(all)}٪</span>`:''}<button class="btn ghost" type="button" data-utsh="">گفتن همهٔ جمله‌ها با نمره</button></div></section>
+      <div class="sch-grid">${UT.map(l=>{const b=+db.done['ut:'+l.id]||0;return`<button type="button" class="lf-card ut-card${b>=90?' done':''}" data-utopen="${esc(l.id)}"><b class="lat ut-snd" dir="ltr">${esc(l.nl)}</b><span>${esc(l.fa)}</span><span class="hint">${l.pairs.length?faNum(l.pairs.length)+' جفت‌واژه':'گفتن'}${b?' · گوش: '+faNum(b)+'٪':''}</span></button>`}).join('')}</div>`;return}
+  const l=utCur,b=+db.done['ut:'+l.id]||0;
+  el.innerHTML=`<button class="link back" type="button" data-utback>&larr; همهٔ صداها</button>
+    <section class="panel"><h2 class="h2" style="margin-top:0"><bdi class="lat">${esc(l.nl)}</bdi> <span class="hint">${esc(l.fa)}</span></h2>${l.x.map(p=>`<p>${kitBidi(p)}</p>`).join('')}</section>
+    <section class="panel"><h2 class="h2" style="margin-top:0">واژه‌ها را گوش کنید و تکرار کنید</h2><div class="ut-words">${l.w.map(w=>`<button type="button" class="ut-w" data-utw="${esc(w[0])}"><b class="lat" dir="ltr">${esc(w[0])}</b><span class="hint">${esc(w[1])}</span></button>`).join('')}</div><p class="hint" style="margin:8px 0 0">روی هر واژه بزنید. با زدن دوباره، آهسته‌تر پخش می‌شود.</p></section>
+    ${l.pairs.length?`<section class="panel"><h2 class="h2" style="margin-top:0">جفت‌واژه‌ها: فقط یک صدا فرق دارد</h2><div class="ut-pairs">${l.pairs.map((p,i)=>`<div class="ut-pair"><button type="button" class="ut-w" data-utw="${esc(p[0])}"><b class="lat" dir="ltr">${esc(p[0])}</b><span class="hint">${esc(p[2])}</span></button><span class="ut-vs">↔</span><button type="button" class="ut-w" data-utw="${esc(p[1])}"><b class="lat" dir="ltr">${esc(p[1])}</b><span class="hint">${esc(p[3])}</span></button><button class="btn sm ghost" type="button" data-utboth="${i}">▶ هر دو</button></div>`).join('')}</div>
+      <div class="btn-row" style="margin-top:12px"><button class="btn primary" type="button" data-utgo>آزمون گوش: ده سؤال</button>${b?`<span class="hint">بهترین نتیجه: ${faNum(b)}٪</span>`:''}</div></section>`:''}
+    <section class="panel"><h2 class="h2" style="margin-top:0">جمله‌ها را بلند بگویید</h2>${l.zin.map(z=>`<div class="kit-ex"><button class="icon-btn mini" type="button" data-utw="${esc(z[0])}" aria-label="پخش"><svg class="i"><use href="#i-speak"/></svg></button><div><p class="lat" dir="ltr">${esc(z[0])}</p><p class="fa">${esc(z[1])}</p></div></div>`).join('')}
+      <div class="btn-row" style="margin-top:10px"><button class="btn primary" type="button" data-utsh="${esc(l.id)}">🎙 گفتن با نمره</button></div><p class="hint" style="margin:6px 0 0">در «سایه‌خوانی با نمره» جمله را می‌شنوید، می‌گویید و می‌بینید کدام واژه‌ها درست فهمیده شد.</p></section>`}
+function utPaint(){const el=$('#utBody'),r=utRun;if(!el||!r)return;const back=`<button class="link back" type="button" data-utstop>&larr; ${r.les?esc(r.les.nl):'همهٔ صداها'}</button>`;
+  if(r.i>=r.qs.length){const pc=Math.round(r.ok/r.qs.length*100);
+    el.innerHTML=back+`<section class="panel kit-end"><h2 class="h2" style="margin-top:0">${faNum(r.ok)} از ${faNum(r.qs.length)} درست</h2><p class="hint">${pc>=90?'گوشتان این صداها را خوب تشخیص می‌دهد. حالا جمله‌ها را با نمره بگویید.':'جفت‌هایی را که اشتباه شد چند بار پشت سر هم گوش کنید («هر دو») و بلند تکرار کنید، بعد دوباره امتحان کنید.'}</p><div class="btn-row"><button class="btn primary" type="button" data-utagain>دوباره</button><button class="btn" type="button" data-utstop>برگشت</button></div></section>`;return}
+  const q=r.qs[r.i],a=r.ans;
+  el.innerHTML=back+`<section class="panel kit-qz"><div class="kit-qtop"><span class="hint">${faNum(r.i+1)} از ${faNum(r.qs.length)}</span><span class="hint">${faNum(r.ok)} درست</span></div>
+    <p class="kit-qq">کدام واژه را شنیدید؟</p><div class="btn-row"><button class="btn" type="button" data-utagainq>▶ دوباره گوش کنید</button></div>
+    <div class="kit-ch ut-ch">${[0,1].map(k=>`<button class="btn${a?(k===q.side?' ok':k===a.pick?' no':''):''}" type="button" data-utch="${k}"${a?' disabled':''}><span><b class="lat" dir="ltr">${esc(q.p[k])}</b><br><span class="hint">${esc(q.p[k+2])}</span></span></button>`).join('')}</div>
+    ${a?`<div class="kit-fb ${a.ok?'ok':'no'}"><b>${a.ok?'درست است!':'این‌بار نه.'}</b> شنیدید: <span class="lat" dir="ltr">${esc(q.p[q.side])}</span>. هر دو را پشت سر هم گوش کنید و فرق را پیدا کنید.</div>
+      <div class="btn-row"><button class="btn sm ghost" type="button" data-utw="${esc(q.p[0])}">▶ <span class="lat">${esc(q.p[0])}</span></button><button class="btn sm ghost" type="button" data-utw="${esc(q.p[1])}">▶ <span class="lat">${esc(q.p[1])}</span></button><button class="btn primary" type="button" data-utnext>${r.i+1<r.qs.length?'بعدی':'نتیجه'}</button></div>`:''}</section>`}
+let utLast={t:'',n:0};
+$('#utBody')&&$('#utBody').addEventListener('click',e=>{
+  const w=e.target.closest('[data-utw]');if(w){const t=w.dataset.utw,slow=utLast.t===t&&Date.now()-utLast.n<4000;utLast={t,n:Date.now()};speak(t,'nl',slow?{rate:0.6}:{});return}
+  const bo=e.target.closest('[data-utboth]');if(bo&&utCur){const p=utCur.pairs[+bo.dataset.utboth];speak(p[0],'nl',{onend:()=>setTimeout(()=>speak(p[1],'nl'),400)});return}
+  const o=e.target.closest('[data-utopen]');if(o){utCur=UT.find(x=>x.id===o.dataset.utopen);renderUitspraak();window.scrollTo(0,0);return}
+  if(e.target.closest('[data-utback]')){utCur=null;stopSpeech();renderUitspraak();return}
+  if(e.target.closest('[data-utmix]')){utStart(null);return}
+  if(e.target.closest('[data-utgo]')){utStart(utCur);return}
+  const sh=e.target.closest('[data-utsh]');if(sh){shUse('ut',sh.dataset.utsh);return}
+  if(!utRun)return;const r=utRun;
+  if(e.target.closest('[data-utstop]')){utRun=null;stopSpeech();renderUitspraak();return}
+  if(e.target.closest('[data-utagain]')){utStart(r.les);return}
+  if(e.target.closest('[data-utagainq]')){utSay();return}
+  const c=e.target.closest('[data-utch]');if(c&&!r.ans){const k=+c.dataset.utch,q=r.qs[r.i];r.ans={pick:k,ok:k===q.side};if(r.ans.ok)r.ok++;
+    if(r.i===r.qs.length-1){const key='ut:'+(r.les?r.les.id:'all'),pc=Math.round(r.ok/r.qs.length*100);db.done[key]=Math.max(+db.done[key]||0,pc);saveData(30000)}utPaint();return}
+  if(e.target.closest('[data-utnext]')){r.i++;r.ans=null;utPaint();if(r.i<r.qs.length)setTimeout(utSay,250);return}
+});
+if(/[?&]debug/.test(location.search))window.__ut={UT,utStart,natHas,get run(){return utRun},open:id=>{utCur=UT.find(x=>x.id===id);utRun=null;renderUitspraak()}};
+
+/* ================= FULL MOCK EXAM (v31) =================
+   Five parts of the B1 exam in a row, in exam conditions: reading (timed, no translation or word taps),
+   listening (25 seconds to read the question, the fragment plays once), KNM (timed, Dutch only), writing (timed,
+   feedback from the writing coach afterwards) and speaking (prompt, beep, 20 or 30 seconds of recording).
+   The report gives a score per part, the weak points with where to practise them, and every answer to review.
+   Results: db.done['pf:'+start] = total, db.done['pf:'+start+':'+part] = part score. */
+const PF_P={lz:['خواندن','Lezen'],ls:['شنیدن','Luisteren'],knm:['شناخت جامعه','KNM'],wr:['نوشتن','Schrijven'],sp:['صحبت','Spreken']};
+const PF_N={kort:{lz:2,ls:8,knm:12,wr:1,sp:4},vol:{lz:5,ls:20,knm:30,wr:2,sp:8}};
+let pfSt={size:'kort',on:{lz:true,ls:true,knm:true,wr:true,sp:true}},pf=null,pfTk=null;
+const pfPartsOf=()=>Object.keys(PF_P).filter(k=>pfSt.on[k]);
+function pfBuild(size,order){const N=PF_N[size],P={};
+  if(order.includes('lz')){const ts=kitShuffle(LEZ).slice(0,N.lz);P.lz={ts,ans:{},ti:0,sec:ts.reduce((a,t)=>a+t.mc.length,0)*180}}
+  if(order.includes('ls')){const all=[];POD.eps.forEach(e=>e.mc.forEach((q,i)=>all.push({e,q,i})));const sh=kitShuffle(all),seen=new Set(),first=sh.filter(x=>!seen.has(x.e.id)&&seen.add(x.e.id));P.ls={qs:first.concat(sh.filter(x=>!first.includes(x))).slice(0,N.ls),i:0,ans:[],st:'read'}}
+  if(order.includes('knm')){const by={};kitShuffle(KNM.qs).forEach(q=>(by[q.t]=by[q.t]||[]).push(q));const th=kitShuffle(Object.keys(by)),qs=[];let r=0;while(qs.length<N.knm&&r<20){th.forEach(t=>{if(qs.length<N.knm&&by[t][r])qs.push(by[t][r])});r++}P.knm={qs:kitShuffle(qs),ans:[],i:0,sec:qs.length*70}}
+  if(order.includes('wr')){const S=VZ.schrijf||[],pick=ks=>kitShuffle(S.filter(t=>ks.includes(t.k)))[0];const tasks=(size==='kort'?[pick(['mail','tekst'])]:[pick(['bericht']),pick(['mail','tekst'])]).filter(Boolean);P.wr={tasks,txt:tasks.map(()=>''),i:0,sec:tasks.reduce((a,t)=>a+(t.k==='bericht'?600:1200),0)}}
+  if(order.includes('sp')){const T=(EX.spreken||[]).flatMap(e=>e.tasks),n=N.sp/2;P.sp={tasks:kitShuffle(T.filter(t=>t.k==='k')).slice(0,n).concat(kitShuffle(T.filter(t=>t.k==='m')).slice(0,n)),i:0,rec:[],rate:[],st:'idle'}}
+  return P}
+function pfStart(){const order=pfPartsOf();if(!order.length){toast('دست‌کم یک بخش را انتخاب کنید.');return}
+  pf={size:pfSt.size,order,pi:0,stage:'intro',ts:Date.now(),P:pfBuild(pfSt.size,order),tok:0};renderProef();window.scrollTo(0,0)}
+const pfPart=()=>pf&&pf.order[pf.pi];
+function pfClock(){clearInterval(pfTk);pfTk=setInterval(()=>{if(!pf||pf.stage!=='run'||!pf.end){clearInterval(pfTk);return}const s=Math.max(0,(pf.end-Date.now())/1000),el=$('#pfClock');if(el){el.textContent=mmss(s);el.classList.toggle('low',s<120)}
+  if(s<=0){clearInterval(pfTk);if(pfPart()==='wr')pfWrSave();toast('وقت این بخش تمام شد.',4000);pfNextPart()}},1000)}
+function pfRunPart(){const k=pfPart(),P=pf.P[k];pf.stage='run';pf.end=P.sec?Date.now()+P.sec*1000:0;if(pf.end)pfClock();
+  if(k==='sp'){pfSpInit();return}renderProef();if(k==='ls')pfLsRead()}
+function pfNextPart(){pfHalt();pf.pi++;if(pf.pi>=pf.order.length){pf.stage='report';pfSave()}else pf.stage='intro';renderProef();window.scrollTo(0,0)}
+/* stop sound, timers and recording (when leaving the view or a part) */
+function pfHalt(){if(!pf)return;pf.tok++;clearTimeout(pf.tm);clearInterval(pf.iv);stopSpeech();const S=pf.P.sp;if(S){try{if(S.mr&&S.mr.state==='recording')S.mr.stop()}catch(e){}}}
+function pfPause(){if(!pf||pf.stage!=='run')return;const k=pfPart();pfHalt();if(k==='ls'){pf.P.ls.st='read'}if(k==='sp'){const S=pf.P.sp;S.st='idle';if(S.stream){S.stream.getTracks().forEach(t=>t.stop());S.stream=null}}}
+function pfBar(){const k=pfPart();return`<div class="pf-bar"><span><b>${esc(PF_P[k][0])}</b> <span class="lat">${PF_P[k][1]}</span> · بخش ${faNum(pf.pi+1)} از ${faNum(pf.order.length)}</span>${pf.end?`<span class="pf-clock num" id="pfClock">${mmss(Math.max(0,(pf.end-Date.now())/1000))}</span>`:''}</div>`}
+function renderProef(){const el=$('#pfBody');if(!el)return;$('#pfHead').hidden=!!pf&&pf.stage!=='report';
+  if(!pf)return pfHome(el);
+  if(pf.stage==='report')return pfReport(el);
+  const k=pfPart(),P=pf.P[k];
+  if(pf.stage==='intro'){const q=k==='lz'?P.ts.reduce((a,t)=>a+t.mc.length,0):0;
+    const txt={lz:()=>`${faNum(P.ts.length)} متن و ${faNum(q)} سؤال؛ ${faNum(Math.round(P.sec/60))} دقیقه وقت دارید. ترجمه و معنی واژه‌ها در دسترس نیست. می‌توانید بین متن‌ها جابه‌جا شوید و جواب‌ها را تا پایان بخش عوض کنید.`,
+      ls:()=>`${faNum(P.qs.length)} سؤال. اول ۲۵ ثانیه برای خواندن سؤال و گزینه‌ها وقت دارید، بعد تکه فقط یک بار پخش می‌شود و جواب می‌دهید. هدفون بگذارید و صدا را تنظیم کنید.`,
+      knm:()=>`${faNum(P.qs.length)} سؤال دربارهٔ جامعهٔ هلند، فقط به هلندی؛ ${faNum(Math.round(P.sec/60))} دقیقه وقت دارید. می‌توانید به سؤال‌های قبلی برگردید.`,
+      wr:()=>`${faNum(P.tasks.length)} تکلیف نوشتن؛ ${faNum(Math.round(P.sec/60))} دقیقه وقت دارید. بازخورد مربی نوشتن را در کارنامه می‌بینید.`,
+      sp:()=>`${faNum(P.tasks.length)} پرسش: نیمی کوتاه (۲۰ ثانیه برای جواب) و نیمی متوسط (۳۰ ثانیه). پرسش پخش می‌شود و روی صفحه می‌آید، بعد از بوق جواب بدهید. ضبط خودکار شروع و تمام می‌شود و صدا فقط روی همین دستگاه می‌ماند.`}[k]();
+    el.innerHTML=`<section class="panel pf-intro"><p class="hint" style="margin:0">بخش ${faNum(pf.pi+1)} از ${faNum(pf.order.length)}</p><h2 class="h2" style="margin:4px 0 8px">${esc(PF_P[k][0])} <span class="lat hint">${PF_P[k][1]}</span></h2><p>${txt}</p>
+      <div class="btn-row"><button class="btn primary lg" type="button" data-pfrun>شروع بخش</button>${pf.pi?'':'<button class="btn ghost" type="button" data-pfquit>انصراف</button>'}</div></section>`;return}
+  if(k==='lz')pfLzHTML(el,P);else if(k==='ls')pfLsHTML(el,P);else if(k==='knm')pfKnmHTML(el,P);else if(k==='wr')pfWrHTML(el,P);else pfSpHTML(el,P)}
+function pfHome(el){const hist=Object.keys(db.done).map(k=>k.match(/^pf:(\d+)$/)).filter(Boolean).map(m=>+m[1]).sort((a,b)=>b-a).slice(0,6);
+  el.innerHTML=`<section class="panel kit-ph stack"><div class="field"><span class="lbl">طول آزمون</span><div class="seg" id="pfSize"><button type="button" data-v="kort">کوتاه (حدود ۷۰ دقیقه)</button><button type="button" data-v="vol">کامل (حدود ۳ ساعت)</button></div><span class="hint">آزمون واقعی بخش‌ها را در روزهای جدا می‌گیرد و طولانی‌تر است. نسخهٔ کوتاه برای سنجیدن سطح است؛ کامل برای تمرین تمرکز و وقت.</span></div>
+    <div class="field"><span class="lbl">بخش‌ها</span><div class="pf-parts">${Object.entries(PF_P).map(([k,p])=>`<label class="check"><input type="checkbox" data-pfon="${k}"${pfSt.on[k]?' checked':''}><span>${esc(p[0])} <span class="lat hint">${p[1]}</span></span></label>`).join('')}</div></div>
+    <p class="hint" style="margin:0">برای بخش صحبت، اجازهٔ میکروفون لازم است. جای آرامی باشید.</p>
+    <div class="btn-row"><button class="btn primary lg" type="button" data-pfgo>شروع آزمون</button></div></section>
+    ${hist.length?`<section class="panel"><h2 class="h2" style="margin-top:0">آزمون‌های قبلی شما</h2><table class="pf-hist"><tr><th>تاریخ</th>${Object.values(PF_P).map(p=>`<th>${esc(p[0])}</th>`).join('')}<th>کل</th></tr>${hist.map(ts=>`<tr><td>${esc(new Date(ts).toLocaleDateString('fa-IR'))}</td>${Object.keys(PF_P).map(k=>{const v=db.done['pf:'+ts+':'+k];return`<td class="num">${v!=null?faNum(v)+'٪':'—'}</td>`}).join('')}<td class="num"><b>${faNum(db.done['pf:'+ts])}٪</b></td></tr>`).join('')}</table></section>`:''}`;
+  const s=$('#pfSize');setSeg(s,pfSt.size);bindSeg(s,v=>pfSt.size=v)}
+/* ---------- reading ---------- */
+function pfLzHTML(el,P){const t=P.ts[P.ti];
+  el.innerHTML=pfBar()+`<div class="pf-nav">${P.ts.map((x,i)=>{const n=x.mc.filter((q,j)=>P.ans[i+':'+j]!=null).length;return`<button type="button" class="tag${i===P.ti?' on':''}" data-pflz="${i}">متن ${faNum(i+1)} · ${faNum(n)} از ${faNum(x.mc.length)}</button>`}).join('')}</div>
+    <article class="panel lz-text"><span class="pill">${esc(t.kind)}</span><h2 class="h2 lat" dir="ltr" style="margin:8px 0 10px">${esc(t.nl)}</h2>${t.p.map(p=>`<p class="lat pf-p" dir="ltr">${esc(p[0])}</p>`).join('')}</article>
+    <section class="panel">${t.mc.map((q,j)=>{const a=P.ans[P.ti+':'+j];return`<div class="lz-q"><p class="lat" dir="ltr"><b>${faNum(j+1)}.</b> ${esc(q.q)}</p><div class="kit-ch">${q.o.map((o,k)=>`<button class="btn${a===k?' sel':''}" type="button" data-pfa="${P.ti}:${j}" data-k="${k}"><span class="lat" dir="ltr">${esc(o)}</span></button>`).join('')}</div></div>`}).join('')}
+    <div class="btn-row">${P.ti>0?'<button class="btn" type="button" data-pflz="'+(P.ti-1)+'">متن قبلی</button>':''}${P.ti<P.ts.length-1?'<button class="btn primary" type="button" data-pflz="'+(P.ti+1)+'">متن بعدی</button>':''}<button class="btn${P.ti===P.ts.length-1?' primary':''}" type="button" data-pfend>پایان بخش خواندن</button></div></section>`}
+/* ---------- listening ---------- */
+function pfLsRead(){const P=pf.P.ls,tok=pf.tok;P.st='read';P.left=window.__pfFast?2:25;renderProef();clearInterval(pf.iv);
+  pf.iv=setInterval(()=>{if(tok!==pf.tok){clearInterval(pf.iv);return}P.left--;const c=$('#pfLsLeft');if(c)c.textContent=faNum(Math.max(0,P.left));if(P.left<=0){clearInterval(pf.iv);pfLsPlay()}},1000)}
+function pfLsPlay(){const P=pf.P.ls,x=P.qs[P.i],tok=++pf.tok;clearInterval(pf.iv);P.st='play';renderProef();
+  let i=Math.max(0,x.q.a-2);const to=x.q.b-1;const step=()=>{if(tok!==pf.tok)return;if(i>to){P.st='ans';renderProef();return}const k=i;speak(x.e.l[k][1],'nl',{akey:'pod '+x.e.id+' '+k,onend:()=>{if(tok!==pf.tok)return;i++;setTimeout(step,250)}})};setTimeout(step,400)}
+function pfLsHTML(el,P){const x=P.qs[P.i],st=P.st;
+  el.innerHTML=pfBar()+`<section class="panel ls-q"><div class="kit-qtop"><span class="hint">سؤال ${faNum(P.i+1)} از ${faNum(P.qs.length)}</span><span class="hint">${st==='read'?`خواندن سؤال: <b class="num" id="pfLsLeft">${faNum(P.left)}</b> ثانیه`:st==='play'?'🔊 در حال پخش… (فقط یک بار)':'جواب بدهید'}</span></div>
+    <p class="kit-qq lat" dir="ltr">${esc(x.q.q)}</p><div class="kit-ch ls-ch">${x.q.o.map((o,k)=>`<button class="btn" type="button" data-pfls="${k}"${st!=='ans'?' disabled':''}><span class="lat" dir="ltr">${esc(o)}</span></button>`).join('')}</div>
+    ${st==='read'?'<div class="btn-row"><button class="btn" type="button" data-pflsgo>آماده‌ام، پخش کن</button></div>':st==='idle'?'<div class="btn-row"><button class="btn primary" type="button" data-pflsgo>▶ پخش</button></div>':''}</section>`}
+/* ---------- KNM ---------- */
+function pfKnmHTML(el,P){const q=P.qs[P.i],a=P.ans[P.i];
+  el.innerHTML=pfBar()+`<div class="pf-nav pf-dots">${P.qs.map((x,i)=>`<button type="button" class="pf-dot${i===P.i?' on':''}${P.ans[i]!=null?' done':''}" data-pfk="${i}" aria-label="سؤال ${faNum(i+1)}">${faNum(i+1)}</button>`).join('')}</div>
+    <section class="panel"><p class="hint" style="margin:0">سؤال ${faNum(P.i+1)} از ${faNum(P.qs.length)}</p><p class="kit-qq lat" dir="ltr">${esc(q.q)}</p><div class="pf-opts">${q.o.map((o,k)=>`<button class="btn${a===k?' sel':''}" type="button" data-pfka="${k}"><span class="lat" dir="ltr">${'ABC'[k]}. ${esc(o)}</span></button>`).join('')}</div>
+    <div class="btn-row">${P.i>0?'<button class="btn" type="button" data-pfk="'+(P.i-1)+'">قبلی</button>':''}${P.i<P.qs.length-1?'<button class="btn primary" type="button" data-pfk="'+(P.i+1)+'">بعدی</button>':''}<button class="btn${P.i===P.qs.length-1?' primary':''}" type="button" data-pfend>پایان بخش KNM</button></div></section>`}
+/* ---------- writing ---------- */
+function pfWrSave(){const P=pf&&pf.P.wr,t=$('#pfWr');if(P&&t)P.txt[P.i]=t.value}
+function pfWrHTML(el,P){const t=P.tasks[P.i],txt=P.txt[P.i]||'',n=(txt.match(/[A-Za-zÀ-ÿ]+/g)||[]).length;
+  el.innerHTML=pfBar()+`<div class="pf-nav">${P.tasks.map((x,i)=>`<button type="button" class="tag${i===P.i?' on':''}" data-pfw="${i}">تکلیف ${faNum(i+1)}${P.txt[i]?' ✓':''}</button>`).join('')}</div>
+    <section class="panel"><p class="lat" dir="ltr" style="margin-top:0"><b>${esc(t.q)}</b></p><p class="hint">دست‌کم ${faNum(t.min)} واژه.</p>
+    <textarea id="pfWr" class="lat ltr pf-wr" dir="ltr" rows="10" spellcheck="false" autocapitalize="sentences">${esc(txt)}</textarea><p class="hint" id="pfWrN">${faNum(n)} واژه</p>
+    <div class="btn-row">${P.i<P.tasks.length-1?'<button class="btn primary" type="button" data-pfw="'+(P.i+1)+'">تکلیف بعد</button>':''}<button class="btn${P.i===P.tasks.length-1?' primary':''}" type="button" data-pfend>پایان بخش نوشتن</button></div></section>`}
+/* ---------- speaking ---------- */
+async function pfSpInit(){const S=pf.P.sp;S.st='idle';renderProef();
+  if(!S.stream&&!S.nomic){try{if(!navigator.mediaDevices||!window.MediaRecorder)throw 0;S.stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}})}catch(e){S.nomic=true;toast('میکروفون در دسترس نیست. باز هم جواب را بلند بگویید؛ فقط ضبط نمی‌شود.',6000)}}
+  pfSpTask()}
+function pfSpTask(){const S=pf.P.sp,tok=++pf.tok,t=S.tasks[S.i];if(!t){pfNextPart();return}S.st='prompt';renderProef();
+  const go=()=>{if(tok!==pf.tok)return;S.st='prep';renderProef();pf.tm=setTimeout(()=>{if(tok!==pf.tok)return;beep();pfSpRec(tok)},1500)};
+  setTimeout(()=>{if(tok!==pf.tok)return;speak(t.q,'nl',{rate:0.95,onend:()=>setTimeout(go,600)})},500)}
+function pfSpRec(tok){const S=pf.P.sp,t=S.tasks[S.i],dur=window.__pfFast?2:t.k==='m'?30:20;S.st='rec';S.left=dur;
+  if(S.stream){const ch=[],mr=new MediaRecorder(S.stream),idx=S.i;S.mr=mr;mr.ondataavailable=e=>{if(e.data&&e.data.size)ch.push(e.data)};mr.onstop=()=>{if(ch.length)S.rec[idx]=URL.createObjectURL(new Blob(ch,{type:mr.mimeType||'audio/webm'}))};mr.start()}
+  renderProef();clearInterval(pf.iv);
+  pf.iv=setInterval(()=>{if(tok!==pf.tok){clearInterval(pf.iv);return}S.left--;const c=$('#pfSpLeft');if(c)c.textContent=faNum(Math.max(0,S.left));if(S.left<=0){clearInterval(pf.iv);pfSpStop(tok)}},1000)}
+function pfSpStop(tok){const S=pf.P.sp;try{if(S.mr&&S.mr.state==='recording')S.mr.stop()}catch(e){}beep();S.st='done';renderProef();pf.tm=setTimeout(()=>{if(tok!==pf.tok)return;S.i++;if(S.i>=S.tasks.length){if(S.stream){S.stream.getTracks().forEach(t=>t.stop());S.stream=null}pfNextPart()}else pfSpTask()},1500)}
+function pfSpHTML(el,P){const t=P.tasks[P.i];if(!t)return;
+  el.innerHTML=pfBar()+`<section class="panel pf-sp"><div class="kit-qtop"><span class="hint">پرسش ${faNum(P.i+1)} از ${faNum(P.tasks.length)} · ${t.k==='m'?'متوسط':'کوتاه'}</span>${P.nomic?'<span class="pill">بدون ضبط</span>':''}</div>
+    <p class="kit-qq lat" dir="ltr">${esc(t.q)}</p>
+    <div class="pf-sp-st ${P.st}">${P.st==='idle'?'آماده‌سازی…':P.st==='prompt'?'🔊 گوش کنید…':P.st==='prep'?'آماده باشید…':P.st==='rec'?`<span class="pf-recdot"></span> حالا جواب بدهید · <b class="num" id="pfSpLeft">${faNum(P.left)}</b> ثانیه`:'✓ ضبط شد'}</div>
+    ${P.st==='idle'&&pf.stage==='run'?'<div class="btn-row"><button class="btn primary" type="button" data-pfspgo>ادامه</button></div>':''}</section>`}
+/* ---------- report ---------- */
+function pfScores(){const P=pf.P,S={};
+  if(P.lz){let ok=0,n=0;P.lz.ts.forEach((t,i)=>t.mc.forEach((q,j)=>{n++;if(P.lz.ans[i+':'+j]===q.k)ok++}));S.lz=Math.round(ok/Math.max(1,n)*100)}
+  if(P.ls)S.ls=Math.round(P.ls.qs.filter((x,i)=>P.ls.ans[i]===x.q.k).length/Math.max(1,P.ls.qs.length)*100);
+  if(P.knm)S.knm=Math.round(P.knm.qs.filter((q,i)=>P.knm.ans[i]===q.a).length/Math.max(1,P.knm.qs.length)*100);
+  if(P.wr){P.wr.co=P.wr.tasks.map((t,i)=>P.wr.txt[i].trim()?wcCoach(P.wr.txt[i],t):null);S.wr=Math.round(P.wr.co.reduce((a,c)=>{if(!c)return a;const v=[c.sc.inhoud,c.sc.opbouw,c.sc.taal].filter(x=>x!=null);return a+v.reduce((x,y)=>x+y,0)/v.length},0)/Math.max(1,P.wr.tasks.length))}
+  if(P.sp){const r=P.sp.rate.filter(Boolean);S.sp=r.length===P.sp.tasks.length?Math.round(r.reduce((a,v)=>a+(v===3?100:v===2?60:20),0)/r.length):null}
+  return S}
+function pfSave(){const S=pfScores(),v=Object.values(S).filter(x=>x!=null);for(const[k,x]of Object.entries(S))if(x!=null)db.done['pf:'+pf.ts+':'+k]=x;if(v.length)db.done['pf:'+pf.ts]=Math.round(v.reduce((a,b)=>a+b,0)/v.length);saveData()}
+function pfReport(el){const S=pfScores(),P=pf.P,v=Object.values(S).filter(x=>x!=null),tot=v.length?Math.round(v.reduce((a,b)=>a+b,0)/v.length):0;
+  const tips=[];
+  if(S.lz!=null&&S.lz<70)tips.push(['خواندن',`${faNum(S.lz)}٪. متن‌های بخش «خواندن» را اول بدون ترجمه بخوانید و برای هر سؤال، جملهٔ جواب را در متن پیدا کنید.`,'lezen']);
+  if(S.ls!=null&&S.ls<70)tips.push(['شنیدن',`${faNum(S.ls)}٪. هر روز یک قسمت «گپ روزانه» را اول بدون متن گوش کنید و بعد سؤال‌های «درک شنیداری» را جواب بدهید.`,'luister']);
+  if(P.knm){const bad={};P.knm.qs.forEach((q,i)=>{if(P.knm.ans[i]!==q.a)bad[q.t]=(bad[q.t]||0)+1});const th=Object.entries(bad).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([t,n])=>((KNM.themes.find(x=>x.id===t)||{}).fa||t)+' ('+faNum(n)+')');if(S.knm<70||th.length>=2)tips.push(['KNM',`${faNum(S.knm)}٪.${th.length?' بیشترین اشتباه در: '+th.join('، ')+'.':''} موضوع‌های ضعیف را در «تمرین KNM» با توضیح فارسی مرور کنید.`,'knm'])}
+  if(P.wr&&S.wr<70){const iss={};(P.wr.co||[]).forEach(c=>c&&c.issues.filter(i=>i.sev>=2).forEach(i=>{const m=i.msg.split(/[.:؛]/)[0];iss[m]=(iss[m]||0)+1}));const top=Object.entries(iss).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>x[0]);tips.push(['نوشتن',`${faNum(S.wr)}٪ (تخمینی).${top.length?' بیشترین ایراد: '+top.join('؛ ')+'.':''} در «نوشتن با بازخورد» همهٔ نکته‌های خواسته‌شده را بنویسید و جمله‌ها را با omdat، daarom و maar وصل کنید.`,'schrijf'])}
+  if(S.sp!=null&&S.sp<70)tips.push(['صحبت',`${faNum(S.sp)}٪ (ارزیابی خودتان). جواب‌های نمونه را در «سایه‌خوانی با نمره» تکرار کنید تا جمله‌های آماده در ذهنتان بماند.`,'shadow']);
+  const go=t=>t==='knm'?'<button class="btn sm" type="button" data-exopen="knm">تمرین</button>':`<button class="btn sm" type="button" data-go="${t}">تمرین</button>`;
+  const card=k=>{const s=S[k];return`<div class="pf-sc ${s==null?'':s>=70?'ok':s>=55?'mid':'low'}"><span>${esc(PF_P[k][0])}</span><b class="num">${s==null?'—':faNum(s)+'٪'}</b><small>${s==null?'ارزیابی کنید':s>=70?'احتمالاً کافی':s>=55?'نزدیک':'نیاز به تمرین'}</small></div>`};
+  let rev='';
+  if(P.lz)rev+=`<details class="pf-rev"><summary>خواندن: جواب‌ها</summary>${P.lz.ts.map((t,i)=>t.mc.map((q,j)=>{const a=P.lz.ans[i+':'+j],ok=a===q.k;return`<div class="pf-ri ${ok?'ok':'no'}"><p class="lat" dir="ltr">${esc(q.q)}</p><p class="hint">${esc(q.fa)} · <span class="lat">${esc(t.nl)}</span></p>${ok?'':`<p>جواب شما: <span class="lat">${a!=null?esc(q.o[a]):'—'}</span> · درست: <b class="lat">${esc(q.o[q.k])}</b> <span class="hint">(بند ${faNum(q.a)}: <span class="lat">${esc(t.p[q.a-1][0])}</span>)</span></p>`}</div>`}).join('')).join('')}</details>`;
+  if(P.ls)rev+=`<details class="pf-rev"><summary>شنیدن: جواب‌ها</summary>${P.ls.qs.map((x,i)=>{const a=P.ls.ans[i],ok=a===x.q.k;return`<div class="pf-ri ${ok?'ok':'no'}"><p class="lat" dir="ltr">${esc(x.q.q)}</p><p class="hint">${esc(x.q.fa)}</p>${ok?'':`<p>جواب شما: <span class="lat">${a!=null?esc(x.q.o[a]):'—'}</span> · درست: <b class="lat">${esc(x.q.o[x.q.k])}</b></p><div class="ls-tx">${lsLines(x.e,x.q.a,x.q.b).map(f=>`<p><span class="lat" dir="ltr"><b>${esc(f.l[0])}:</b> ${esc(f.l[1])}</span><br><span class="hint">${esc(f.l[2])}</span></p>`).join('')}</div>`}</div>`}).join('')}</details>`;
+  if(P.knm)rev+=`<details class="pf-rev"><summary>KNM: جواب‌ها</summary>${P.knm.qs.map((q,i)=>{const a=P.knm.ans[i],ok=a===q.a;return`<div class="pf-ri ${ok?'ok':'no'}"><p class="lat" dir="ltr">${esc(q.q)}</p><p class="hint">${esc(q.fa)}</p>${ok?'':`<p>جواب شما: <span class="lat">${a!=null?esc(q.o[a]):'—'}</span> · درست: <b class="lat">${esc(q.o[q.a])}</b></p>`}<p class="hint">${esc(q.x||'')}</p></div>`}).join('')}</details>`;
+  if(P.wr)rev+=P.wr.tasks.map((t,i)=>`<details class="pf-rev"><summary>نوشتن: تکلیف ${faNum(i+1)}</summary><p class="lat" dir="ltr"><b>${esc(t.q)}</b></p>${P.wr.co[i]?wcReportHTML(P.wr.txt[i],P.wr.co[i],t):'<p class="hint">چیزی ننوشتید.</p>'}<details class="sp-fa"><summary>متن نمونه</summary><p class="lat" dir="ltr" style="white-space:pre-line">${esc(t.a)}</p></details></details>`).join('');
+  if(P.sp)rev+=`<section class="panel pf-sprev"><h2 class="h2" style="margin-top:0">صحبت: جواب‌هایتان را ارزیابی کنید</h2><p class="hint">صدای خودتان را گوش کنید و با جواب نمونه مقایسه کنید. آیا جواب کامل، روشن و با جملهٔ درست بود؟</p>${P.sp.tasks.map((t,i)=>`<div class="pf-ri"><p class="lat" dir="ltr"><b>${faNum(i+1)}.</b> ${esc(t.q)}</p><div class="btn-row">${P.sp.rec[i]?`<button class="btn sm" type="button" data-pfmine="${i}">▶ صدای من</button>`:'<span class="hint">ضبطی نیست</span>'}<button class="btn sm ghost" type="button" data-pfsay="${i}">▶ جواب نمونه</button></div><p class="lat hint" dir="ltr">${esc(t.a)}</p><div class="seg sm" data-pfrate="${i}">${[[3,'خوب'],[2,'تقریباً'],[1,'هنوز نه']].map(([n,l])=>`<button type="button" data-v="${n}" aria-pressed="${P.sp.rate[i]===n}">${l}</button>`).join('')}</div></div>`).join('')}</section>`;
+  el.innerHTML=`<section class="panel pf-rep"><h2 class="h2" style="margin-top:0">کارنامهٔ آزمون آزمایشی</h2><div class="pf-scs">${pf.order.map(card).join('')}<div class="pf-sc tot"><span>میانگین</span><b class="num">${faNum(tot)}٪</b><small>${pf.size==='kort'?'آزمون کوتاه':'آزمون کامل'}</small></div></div>
+    <p class="hint">مرز «احتمالاً کافی» در اینجا ۷۰٪ است؛ این تخمین برنامه است، نه نمرهٔ رسمی. نمرهٔ نوشتن را مربی خودکار تخمین می‌زند و نمرهٔ صحبت را خودتان می‌دهید.</p>
+    ${tips.length?`<h3 class="h3">چه چیزی را تمرین کنید</h3><ul class="pf-tips">${tips.map(t=>`<li><div><b><bdi>${esc(t[0])}</bdi>:</b> ${kitBidi(t[1])}</div>${go(t[2])}</li>`).join('')}</ul>`:'<p class="kit-fb ok">همهٔ بخش‌ها بالای ۷۰٪ بود. آفرین! آزمون کامل را هم امتحان کنید.</p>'}
+    <div class="btn-row"><button class="btn primary" type="button" data-pfnew>آزمون تازه</button></div></section>${rev}`}
+$('#pfBody')&&$('#pfBody').addEventListener('click',async e=>{
+  const on=e.target.closest('[data-pfon]');if(on){pfSt.on[on.dataset.pfon]=on.checked;return}
+  if(e.target.closest('[data-pfgo]')){pfStart();return}
+  if(e.target.closest('[data-pfnew]')){pfHalt();pf=null;renderProef();window.scrollTo(0,0);return}
+  if(!pf)return;const k=pfPart(),P=pf.P[k];
+  if(e.target.closest('[data-pfquit]')){pfHalt();pf=null;renderProef();return}
+  if(e.target.closest('[data-pfrun]')){pfRunPart();return}
+  if(pf.stage==='report'){
+    const mine=e.target.closest('[data-pfmine]');if(mine){stopSpeech();new Audio(pf.P.sp.rec[+mine.dataset.pfmine]).play().catch(()=>{});return}
+    const say=e.target.closest('[data-pfsay]');if(say){speak(pf.P.sp.tasks[+say.dataset.pfsay].a,'nl');return}
+    const rt=e.target.closest('[data-pfrate] button[data-v]');if(rt){const i=+rt.parentElement.dataset.pfrate;pf.P.sp.rate[i]=+rt.dataset.v;pfSave();const y=window.scrollY;renderProef();window.scrollTo(0,y);return}
+    return}
+  if(e.target.closest('[data-pfend]')){if(k==='wr')pfWrSave();const left=k==='lz'?P.ts.reduce((a,t,i)=>a+t.mc.filter((q,j)=>P.ans[i+':'+j]==null).length,0):k==='knm'?P.qs.filter((q,i)=>P.ans[i]==null).length:k==='wr'?P.txt.filter(t=>!t.trim()).length:0;
+    if(left&&!await ask({title:'بخش تمام شود؟',html:`<p style="margin:0">${faNum(left)} ${k==='wr'?'تکلیف':'سؤال'} بی‌جواب مانده است.</p>`,ok:'پایان بخش'}))return;pfNextPart();return}
+  if(k==='lz'){const n=e.target.closest('[data-pflz]');if(n){P.ti=+n.dataset.pflz;renderProef();window.scrollTo(0,0);return}const a=e.target.closest('[data-pfa]');if(a){P.ans[a.dataset.pfa]=+a.dataset.k;const y=window.scrollY;renderProef();window.scrollTo(0,y)}return}
+  if(k==='ls'){if(e.target.closest('[data-pflsgo]')){if(P.st==='read'||P.st==='idle')pfLsPlay();return}const c=e.target.closest('[data-pfls]');if(c&&P.st==='ans'){P.ans[P.i]=+c.dataset.pfls;P.i++;if(P.i>=P.qs.length)pfNextPart();else pfLsRead()}return}
+  if(k==='knm'){const n=e.target.closest('[data-pfk]');if(n){P.i=+n.dataset.pfk;renderProef();return}const a=e.target.closest('[data-pfka]');if(a){P.ans[P.i]=+a.dataset.pfka;if(P.i<P.qs.length-1)P.i++;renderProef()}return}
+  if(k==='wr'){const n=e.target.closest('[data-pfw]');if(n){pfWrSave();P.i=+n.dataset.pfw;renderProef()}return}
+  if(k==='sp'&&e.target.closest('[data-pfspgo]')){pfSpInit();return}
+});
+$('#pfBody')&&$('#pfBody').addEventListener('input',e=>{if(e.target.id==='pfWr'&&pf){pfWrSave();const n=(e.target.value.match(/[A-Za-zÀ-ÿ]+/g)||[]).length,c=$('#pfWrN');if(c)c.textContent=faNum(n)+' واژه'}});
+if(/[?&]debug/.test(location.search))window.__pf={get pf(){return pf},pfStart,pfScores,pfNextPart,pfReport:()=>renderProef(),st:pfSt,pfLsPlay};
 
 /* ================= THE LEARNING PLAN =================
    One spine: the course path (stages → lessons; each lesson = words → dialogues → grammar → quiz).
